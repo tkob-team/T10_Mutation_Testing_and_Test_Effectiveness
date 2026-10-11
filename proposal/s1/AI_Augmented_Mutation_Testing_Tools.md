@@ -1,5 +1,7 @@
 # T10 — AI-Augmented Mutation Testing Tools
 
+> **Scope hiện tại:** Nhóm triển khai/demo StrykerJS + Claude. Đây là khảo sát rộng trước khi chốt scope; rankings và các khuyến nghị bên dưới cần review trong S1, không tạo yêu cầu demo thêm tool.
+
 Khảo sát & Xếp hạng công cụ — chủ đề T10: Mutation Testing & Test Effectiveness
 
 *Cập nhật: 28/09/2026 · Dữ liệu tra cứu qua web search, đối chiếu với trang/tài liệu chính thức của từng tool*

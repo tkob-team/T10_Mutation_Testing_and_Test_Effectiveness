@@ -41,17 +41,16 @@ Nhóm sẽ nghiên cứu cách viết assertion thủ công và cách dùng AI h
 
 Nhóm khảo sát hai hướng: công cụ mutation testing truyền thống và công cụ AI hỗ trợ tạo hoặc cải thiện test. Việc so sánh dựa trên chi phí, độ dễ học, mức phù hợp với EShop, khả năng AI và cộng đồng hỗ trợ [1]; kết quả được tổng hợp trong bảng khảo sát của nhóm.
 
-Bộ công cụ ban đầu gồm **StrykerJS** để thực hiện mutation testing, **ChatGPT** để đề xuất assertion và **Claude** dự phòng cho phần AI. Lý do lựa chọn được trình bày trong [Tool Survey Proposal](Tool_Survey_Proposal.md).
+Bộ công cụ triển khai gồm **StrykerJS** để thực hiện mutation testing và **Claude** để đề xuất assertion. Người dùng đã xác nhận giảng viên yêu cầu hai tool; các candidate khác chỉ phục vụ khảo sát. Scope thực nghiệm vẫn được ghi nhận qua S2. Lý do lựa chọn được trình bày trong [Tool Survey Proposal](Tool_Survey_Proposal.md).
 
 ## 5. Nội dung tìm hiểu và demo dự kiến
 
 | Công cụ | Nội dung dự kiến trình bày |
 |---|---|
 | **StrykerJS** | Nguyên lý hoạt động; cài đặt và cấu hình; chạy mutation, đọc báo cáo; bổ sung test và đánh giá lại; ưu điểm, hạn chế và lỗi thường gặp [4]. |
-| **ChatGPT** | Chuẩn bị code, yêu cầu nghiệp vụ và thông tin mutant; đề xuất assertion; chạy kiểm chứng, chỉnh sửa và đánh giá kết quả. |
-| **Claude - dự phòng** | Thực hiện cùng bài toán đề xuất assertion khi cần thay công cụ AI; thử nghiệm để xem xét mức phù hợp. |
+| **Claude** | Chuẩn bị code, yêu cầu nghiệp vụ và thông tin mutant; đề xuất assertion; nhóm review, chạy kiểm chứng, chỉnh sửa và đánh giá kết quả. |
 
-Với mỗi công cụ được chọn để demo, nhóm chuẩn bị ba mức: **thiết lập, sử dụng cơ bản và vận dụng nâng cao**. Hướng dẫn cuối cùng sẽ có cách xử lý ít nhất 3 lỗi thực tế và ít nhất 3 trường hợp công cụ có thể khiến người dùng hiểu sai kết quả.
+Với mỗi công cụ được chọn để demo, nhóm chuẩn bị ba mức: **thiết lập, sử dụng cơ bản và vận dụng nâng cao**. Hướng dẫn ghi các lỗi thực tế cùng cách xử lý và ít nhất 3 trường hợp công cụ có thể khiến người dùng hiểu sai kết quả.
 
 ### 5.1. Vận dụng trên EShop
 
@@ -74,11 +73,11 @@ Seminar dự kiến làm rõ giá trị và giới hạn của mutation testing,
 
 ## 7. Tài liệu tham khảo
 
-[1] FIT@HCMUS. Seminar Track - Master Guide.
+[1] FIT@HCMUS. [Seminar Track - Master Guide](../../docs/requirements/01_Seminar_Guide.md).
 
-[2] FIT@HCMUS. Software Testing - Seminar Requirements.
+[2] FIT@HCMUS. [Software Testing - Seminar Requirements](../../docs/requirements/02_SoftwareTesting-SeminarRequirements.md).
 
-[3] FIT@HCMUS. T10 - Mutation Testing & Test Effectiveness.
+[3] FIT@HCMUS. [T10 - Mutation Testing & Test Effectiveness](../../docs/requirements/03_T10_Mutation_Testing_and_Test_Effectiveness_Description.md).
 
 [4] Stryker Mutator. [StrykerJS - Introduction](https://stryker-mutator.io/docs/stryker-js/introduction/). Truy cập ngày 28/09/2026.
 

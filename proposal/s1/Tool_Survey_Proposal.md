@@ -13,11 +13,13 @@
 **Trạng thái:** Đề xuất, chờ  góp ý.  
 **Mục tiêu:** Đánh giá khả năng phát hiện lỗi của bộ test EShop bằng mutation testing; so sánh assertion do người viết và AI đề xuất.
 
-## Ba công cụ đề xuất
+## Ba candidate khảo sát
+
+Nhóm triển khai/demo **StrykerJS + Claude** theo xác nhận hai tool của người dùng. ChatGPT giữ vai trò candidate backup trong survey S1, không nằm trong scope demo. Các nhận định khảo sát bên dưới cần được review/cross-check khi hoàn thiện S1.
 
 | Tiêu chí | **StrykerJS** | **ChatGPT** | **Claude** |
 |---|---|---|---|
-| Vai trò | Công cụ truyền thống, tạo mutant và đánh giá test | AI hỗ trợ đề xuất assertion | Dự phòng phần AI |
+| Vai trò | Tool traditional được chọn | Candidate AI backup, chỉ khảo sát | Tool AI được chọn để đề xuất assertion |
 | Chi phí / giấy phép | Miễn phí, Apache-2.0 | Dịch vụ độc quyền; có gói miễn phí giới hạn | Dịch vụ độc quyền; có gói miễn phí giới hạn |
 | Độ dễ học¹ | Cần học cấu hình và đọc báo cáo | Dễ bắt đầu; cần biết kiểm tra assertion | Dễ bắt đầu; cần biết kiểm tra assertion |
 | Phù hợp EShop | Hỗ trợ JavaScript/Node.js; cần tích hợp bộ test | Đề xuất test từ code và yêu cầu EShop | Thực hiện cùng bài toán với ChatGPT |
@@ -26,10 +28,14 @@
 
 ¹ Nhận định sơ bộ, sẽ đánh giá thêm khi thực hành. ChatGPT và Claude không thay thế công cụ chạy mutation testing.
 
-## Lựa chọn ban đầu và lý do
+## Lựa chọn triển khai và lý do
 
-**StrykerJS + ChatGPT; Claude dự phòng cho phần AI.**
+**StrykerJS + Claude.**
 
 - StrykerJS phù hợp backend Node.js của EShop và nội dung thực hành T10.
 - Kết hợp AI đề xuất assertion với StrykerJS chạy kiểm chứng giúp minh họa rõ vai trò của từng công cụ.
-- Có thể bắt đầu với lựa chọn miễn phí; Claude cung cấp phương án thay thế cho phần AI khi cần.
+- Claude là tool AI nhóm chọn; dùng cùng input/spec và mutation reports để lưu bằng chứng kiểm chứng assertion.
+
+## AI Disclosure
+
+Chưa hoàn tất log research/cross-check của survey. Nhóm cần bổ sung tool/model đã dùng, prompt summary, phần đã chỉnh sửa và sources kiểm chứng trước khi nộp S1; không tự ghi như việc đã hoàn thành.
