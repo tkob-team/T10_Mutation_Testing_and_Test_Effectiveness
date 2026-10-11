@@ -2,6 +2,8 @@
 
 Repo tài liệu seminar Nhóm 12, Software Testing, FIT@HCMUS. Nhóm dùng **StrykerJS + Claude** trên EShop backend để đánh giá assertions và chuẩn bị guide, report, demo, activity.
 
+[Seminar Proposal — S2](proposal/s2/T10_Seminar_Proposal.md) tổng hợp mục tiêu, scope đề xuất, phương pháp thực nghiệm và kế hoạch seminar để giảng viên review.
+
 ## Start Here
 
 1. Đọc [Project Context](CONTEXT.md); khi dùng agent, bắt đầu với [AGENTS.md](AGENTS.md).
