@@ -1,0 +1,15 @@
+PS D:\HK7\Testing\Seminars\Repo\mt-demo\mt-demo> npx jest test/cart.weak.test.js --coverage
+ PASS  test/cart.weak.test.js
+  √ tinh tong gio hang (weak) (1 ms)
+
+----------|---------|----------|---------|---------|-------------------
+File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+----------|---------|----------|---------|---------|-------------------
+All files |     100 |       50 |     100 |     100 |
+ cart.js  |     100 |       50 |     100 |     100 | 4-9
+----------|---------|----------|---------|---------|-------------------
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        0.394 s
+Ran all test suites matching test/cart.weak.test.js.

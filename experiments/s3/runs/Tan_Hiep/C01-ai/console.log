@@ -1,0 +1,50 @@
+PS D:\HK7\Testing\Seminars\Repo\mt-demo\mt-demo> npx jest test/cart.ai.test.js
+ PASS  test/cart.ai.test.js
+  √ subtotal 499,999 → shipping added (Claude optional)
+  calcCartTotal – free-shipping boundary (500,000)
+    √ subtotal exactly 500,000 → free shipping (requirement: "500,000 or more") (1 ms)
+    √ subtotal reaches exactly 500,000 only after ignoring qty ≤ 0 items → free shipping (1 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        0.245 s
+Ran all test suites matching test/cart.ai.test.js.
+PS D:\HK7\Testing\Seminars\Repo\mt-demo\mt-demo> npx stryker run stryker.ai.config.json
+20:00:27 (8180) INFO ProjectReader Found 1 of 25 file(s) to be mutated.
+20:00:27 (8180) INFO Instrumenter Instrumented 1 source file(s) with 15 mutant(s)
+20:00:27 (8180) INFO ConcurrencyTokenProvider Creating 15 test runner process(es).
+20:00:28 (8180) INFO DryRunExecutor Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+20:00:28 (8180) INFO DryRunExecutor Initial test run succeeded. Ran 4 tests in 0 seconds (net 2 ms, overhead 411 ms).
+Mutation testing  [======================] 100% (elapsed: <1m, remaining: n/a) 15/15 Mutants tested (1 survived, 0 timed out)
+
+All tests
+  cart.ai.test.js
+    ✓ calcCartTotal – free-shipping boundary (500,000) subtotal exactly 500,000 → free shipping (requirement: "500,000 or more") [line 4] (killed 11)
+    ✓ calcCartTotal – free-shipping boundary (500,000) subtotal reaches exactly 500,000 only after ignoring qty ≤ 0 items → free shipping [line 10] (killed 1)
+    ✓ subtotal 499,999 → shipping added (Claude optional) [line 22] (killed 2)
+  cart.weak.test.js
+    ~ tinh tong gio hang (weak) [line 2] (covered 14)
+
+[Survived] EqualityOperator
+src/cart.js:4:9
+-       if (item.quantity > 0) {
++       if (item.quantity >= 0) {
+Tests ran:
+    calcCartTotal – free-shipping boundary (500,000) subtotal exactly 500,000 → free shipping (requirement: "500,000 or more")
+    calcCartTotal – free-shipping boundary (500,000) subtotal reaches exactly 500,000 only after ignoring qty ≤ 0 items → free shipping
+    subtotal 499,999 → shipping added (Claude optional)
+  and 1 more test!
+
+
+Ran 3.87 tests per mutant on average.
+----------|------------------|----------|-----------|------------|----------|----------|
+          | % Mutation score |          |           |            |          |          |
+File      |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+----------|--------|---------|----------|-----------|------------|----------|----------|
+All files |  93.33 |   93.33 |       14 |         0 |          1 |        0 |        0 |
+ cart.js  |  93.33 |   93.33 |       14 |         0 |          1 |        0 |        0 |
+----------|--------|---------|----------|-----------|------------|----------|----------|
+20:00:29 (8180) INFO JsonReporter Your report can be found at: file:///D:/HK7/Testing/Seminars/Repo/mt-demo/mt-demo/reports/ai/mutation.json
+20:00:29 (8180) INFO HtmlReporter Your report can be found at: file:///D:/HK7/Testing/Seminars/Repo/mt-demo/mt-demo/reports/ai/mutation.html
+20:00:29 (8180) INFO MutationTestExecutor Done in 2 seconds.

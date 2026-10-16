@@ -1,0 +1,9 @@
+{
+  "testRunner": "jest",
+  "coverageAnalysis": "perTest",
+  "mutate": ["src/**/*.js"],
+  "reporters": ["clear-text", "progress", "html", "json"],
+  "htmlReporter": { "fileName": "reports/ai/mutation.html" },
+  "jsonReporter": { "fileName": "reports/ai/mutation.json" },
+  "jest": { "config": { "testMatch": ["**/test/cart.weak.test.js", "**/test/cart.ai.test.js"] } }
+}

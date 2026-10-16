@@ -1,0 +1,132 @@
+PS D:\HK7\Testing\Seminars\Repo\mt-demo\mt-demo> npx stryker --version; npx jest --version; npm -v
+10.0.0
+30.5.2
+11.12.1
+PS D:\HK7\Testing\Seminars\Repo\mt-demo\mt-demo> npm run mutate:weak
+
+> mt-demo@1.0.0 mutate:weak
+> stryker run stryker.weak.config.json
+
+19:43:49 (20724) INFO ProjectReader Found 1 of 7 file(s) to be mutated.
+19:43:49 (20724) INFO Instrumenter Instrumented 1 source file(s) with 15 mutant(s)
+19:43:49 (20724) INFO ConcurrencyTokenProvider Creating 15 test runner process(es).
+19:43:50 (20724) INFO DryRunExecutor Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+19:43:51 (20724) INFO DryRunExecutor Initial test run succeeded. Ran 1 tests in 1 second (net 1 ms, overhead 1435 ms).
+Mutation testing  [] 100% (elapsed: <1m, remaining: n/a) 15/15 Mutants tested (12 survived, 0 timed out)
+
+All tests/cart.weak.test.js
+  ✓ tinh tong gio hang (weak) [line 2] (killed 3)
+
+[Survived] ConditionalExpression
+src/cart.js:8:20
+-     const freeShip = subtotal >= 500000;
++     const freeShip = true;
+Tests ran:
+    tinh tong gio hang (weak)
+
+
+[Survived] ConditionalExpression
+src/cart.js:8:20
+-     const freeShip = subtotal >= 500000;
++     const freeShip = false;
+Tests ran:
+    tinh tong gio hang (weak)
+
+
+[Survived] EqualityOperator
+src/cart.js:8:20
+-     const freeShip = subtotal >= 500000;
++     const freeShip = subtotal > 500000;
+Tests ran:
+    tinh tong gio hang (weak)
+
+
+[Survived] EqualityOperator
+src/cart.js:8:20
+-     const freeShip = subtotal >= 500000;
++     const freeShip = subtotal < 500000;
+Tests ran:
+    tinh tong gio hang (weak)
+
+
+[Survived] ArithmeticOperator
+src/cart.js:9:32
+-     return freeShip ? subtotal : subtotal + shippingFee;
++     return freeShip ? subtotal : subtotal - shippingFee;
+Tests ran:
+    tinh tong gio hang (weak)
+
+
+[Survived] EqualityOperator
+src/cart.js:4:9
+-       if (item.quantity > 0) {
++       if (item.quantity <= 0) {
+Tests ran:
+    tinh tong gio hang (weak)
+
+
+[Survived] ConditionalExpression
+src/cart.js:4:9
+-       if (item.quantity > 0) {
++       if (true) {
+Tests ran:
+    tinh tong gio hang (weak)
+
+
+[Survived] BlockStatement
+src/cart.js:4:28
+-       if (item.quantity > 0) {
+-         subtotal += item.price * item.quantity;
+-       }
++       if (item.quantity > 0) {}
+Tests ran:
+    tinh tong gio hang (weak)
+
+
+[Survived] EqualityOperator
+src/cart.js:4:9
+-       if (item.quantity > 0) {
++       if (item.quantity >= 0) {
+Tests ran:
+    tinh tong gio hang (weak)
+
+
+[Survived] ConditionalExpression
+src/cart.js:4:9
+-       if (item.quantity > 0) {
++       if (false) {
+Tests ran:
+    tinh tong gio hang (weak)
+
+
+[Survived] ArithmeticOperator
+src/cart.js:5:19
+-         subtotal += item.price * item.quantity;
++         subtotal += item.price / item.quantity;
+Tests ran:
+    tinh tong gio hang (weak)
+
+
+[Survived] BlockStatement
+src/cart.js:3:29
+-     for (const item of items) {
+-       if (item.quantity > 0) {
+-         subtotal += item.price * item.quantity;
+-       }
+-     }
++     for (const item of items) {}
+Tests ran:
+    tinh tong gio hang (weak)
+
+
+Ran 1.00 tests per mutant on average.
+----------|------------------|----------|-----------|------------|----------|----------|
+          | % Mutation score |          |           |            |          |          |
+File      |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+----------|--------|---------|----------|-----------|------------|----------|----------|
+All files |  20.00 |   20.00 |        3 |         0 |         12 |        0 |        0 |
+ cart.js  |  20.00 |   20.00 |        3 |         0 |         12 |        0 |        0 |
+----------|--------|---------|----------|-----------|------------|----------|----------|
+19:43:52 (20724) INFO HtmlReporter Your report can be found at: file:///D:/HK7/Testing/Seminars/Repo/mt-demo/mt-demo/reports/weak/mutation.html
+19:43:52 (20724) INFO JsonReporter Your report can be found at: file:///D:/HK7/Testing/Seminars/Repo/mt-demo/mt-demo/reports/weak/mutation.json
+19:43:52 (20724) INFO MutationTestExecutor Done in 3 seconds.

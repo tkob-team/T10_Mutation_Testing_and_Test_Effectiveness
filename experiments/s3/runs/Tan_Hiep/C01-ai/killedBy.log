@@ -1,0 +1,30 @@
+PS D:\HK7\Testing\Seminars\Repo\mt-demo\mt-demo> node show-mutants.js reports/ai/mutation.json
+Killed    ConditionalExpression  src/cart.js:4  "false"
+          killedBy: calcCartTotal – free-shipping boundary (500,000) subtotal exactly 500,000 → free shipping (requirement: "500,000 or more")
+Survived  EqualityOperator       src/cart.js:4  "item.quantity >= 0"
+Killed    EqualityOperator       src/cart.js:4  "item.quantity <= 0"
+          killedBy: calcCartTotal – free-shipping boundary (500,000) subtotal exactly 500,000 → free shipping (requirement: "500,000 or more")
+Killed    BlockStatement         src/cart.js:4  "{}"
+          killedBy: calcCartTotal – free-shipping boundary (500,000) subtotal exactly 500,000 → free shipping (requirement: "500,000 or more")
+Killed    BlockStatement         src/cart.js:1  "{}"
+          killedBy: calcCartTotal – free-shipping boundary (500,000) subtotal exactly 500,000 → free shipping (requirement: "500,000 or more")
+Killed    ConditionalExpression  src/cart.js:8  "true"
+          killedBy: subtotal 499,999 → shipping added (Claude optional)
+Killed    ConditionalExpression  src/cart.js:4  "true"
+          killedBy: calcCartTotal – free-shipping boundary (500,000) subtotal reaches exactly 500,000 only after ignoring qty ≤ 0 items → free shipping
+Killed    BlockStatement         src/cart.js:3  "{}"
+          killedBy: calcCartTotal – free-shipping boundary (500,000) subtotal exactly 500,000 → free shipping (requirement: "500,000 or more")
+Killed    ConditionalExpression  src/cart.js:8  "false"
+          killedBy: calcCartTotal – free-shipping boundary (500,000) subtotal exactly 500,000 → free shipping (requirement: "500,000 or more")
+Killed    EqualityOperator       src/cart.js:8  "subtotal > 500000"
+          killedBy: calcCartTotal – free-shipping boundary (500,000) subtotal exactly 500,000 → free shipping (requirement: "500,000 or more")
+Killed    ArithmeticOperator     src/cart.js:9  "subtotal - shippingFee"
+          killedBy: subtotal 499,999 → shipping added (Claude optional)
+Killed    EqualityOperator       src/cart.js:8  "subtotal < 500000"
+          killedBy: calcCartTotal – free-shipping boundary (500,000) subtotal exactly 500,000 → free shipping (requirement: "500,000 or more")
+Killed    ObjectLiteral          src/cart.js:11  "{}"
+          killedBy: calcCartTotal – free-shipping boundary (500,000) subtotal exactly 500,000 → free shipping (requirement: "500,000 or more")
+Killed    AssignmentOperator     src/cart.js:5  "subtotal -= item.price * item.quantity"
+          killedBy: calcCartTotal – free-shipping boundary (500,000) subtotal exactly 500,000 → free shipping (requirement: "500,000 or more")
+Killed    ArithmeticOperator     src/cart.js:5  "item.price / item.quantity"
+          killedBy: calcCartTotal – free-shipping boundary (500,000) subtotal exactly 500,000 → free shipping (requirement: "500,000 or more")

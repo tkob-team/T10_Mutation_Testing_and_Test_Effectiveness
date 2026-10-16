@@ -1,0 +1,38 @@
+PS D:\HK7\Testing\Seminars\Repo\mt-demo\mt-demo> npm run mutate:strong
+
+> mt-demo@1.0.0 mutate:strong
+> stryker run stryker.strong.config.json
+
+19:48:50 (17624) INFO ProjectReader Found 1 of 21 file(s) to be mutated.
+19:48:50 (17624) INFO Instrumenter Instrumented 1 source file(s) with 15 mutant(s)
+19:48:50 (17624) INFO ConcurrencyTokenProvider Creating 15 test runner process(es).
+19:48:51 (17624) INFO DryRunExecutor Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+19:48:51 (17624) INFO DryRunExecutor Initial test run succeeded. Ran 3 tests in 0 seconds (net 2 ms, overhead 358 ms).
+Mutation testing  [] 100% (elapsed: <1m, remaining: n/a) 15/15 Mutants tested (1 survived, 0 timed out)
+
+All tests/cart.strong.test.js
+  ✓ 2 san pham, chua du freeship -> cong phi ship [line 2] (killed 11)
+  ✓ dung nguong 500.000 -> duoc freeship [line 5] (killed 2)
+  ✓ san pham quantity am bi bo qua [line 8] (killed 1)
+
+[Survived] EqualityOperator
+src/cart.js:4:9
+-       if (item.quantity > 0) {
++       if (item.quantity >= 0) {
+Tests ran:
+    2 san pham, chua du freeship -> cong phi ship
+    dung nguong 500.000 -> duoc freeship
+    san pham quantity am bi bo qua
+
+
+Ran 2.93 tests per mutant on average.
+----------|------------------|----------|-----------|------------|----------|----------|
+          | % Mutation score |          |           |            |          |          |
+File      |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+----------|--------|---------|----------|-----------|------------|----------|----------|
+All files |  93.33 |   93.33 |       14 |         0 |          1 |        0 |        0 |
+ cart.js  |  93.33 |   93.33 |       14 |         0 |          1 |        0 |        0 |
+----------|--------|---------|----------|-----------|------------|----------|----------|
+19:48:52 (17624) INFO HtmlReporter Your report can be found at: file:///D:/HK7/Testing/Seminars/Repo/mt-demo/mt-demo/reports/strong/mutation.html
+19:48:52 (17624) INFO JsonReporter Your report can be found at: file:///D:/HK7/Testing/Seminars/Repo/mt-demo/mt-demo/reports/strong/mutation.json
+19:48:52 (17624) INFO MutationTestExecutor Done in 2 seconds.
