@@ -17,4 +17,4 @@ Chỉ điền việc đã thực hiện; thiếu đầu vào ghi Pending và blo
 
 ## Handoff
 
-[Giao nội dung Markdown để leader ghép Seminar_Slides.pptx. Deck chung ≤15 slides; chữ lớn/nền sáng. Template slides GV chưa có trong workspace thì ghi Pending; đây không thay template chính thức.]
+[Giao nội dung Markdown để leader ghép Seminar_Slides.pptx. Deck chung ≤15 slides; chữ lớn/nền sáng. Chưa nhận template slides GV thì ghi Pending; đây không thay template chính thức.]

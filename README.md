@@ -11,7 +11,7 @@ Repo tài liệu seminar Nhóm 12, Software Testing, FIT@HCMUS. Nhóm dùng **St
 3. Tra [Working Guide](docs/Working_Guide.md) và [Task Output Map](docs/Task_Output_Map.md), tạo file từ template khi bắt đầu.
 4. Bàn giao artifact/evidence để review; dùng checklist stage và Submission trước khi nộp.
 
-Preparation–S2 do Thái Hòa phụ trách. Từ S3, cả ba chia công việc theo domain/section. [Working Files](CONTEXT.md#working-files) dẫn tracker/flow; teammate chỉ clone repo vẫn có context, requirements và templates để bắt đầu.
+Preparation–S2 do Thái Hòa phụ trách. Từ S3, cả ba chia công việc theo domain/section; phân công và Team Sheet được dẫn trong [Project Context](CONTEXT.md).
 
 ## Repositories
 

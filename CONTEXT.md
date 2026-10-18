@@ -4,7 +4,7 @@
 
 Nhóm 12, môn Software Testing, FIT@HCMUS chuẩn bị seminar T10: Mutation Testing & Test Effectiveness. Nhóm nghiên cứu trên EShop backend, so sánh assertion thủ công với assertion do Claude đề xuất, rồi xây dựng guide, report, demo và activity để người khác thực hành lại.
 
-Context này là quyết định và quy ước chung của nhóm. Progress, assignee và dependencies đọc trong `../TASKS.md` khi dùng workspace chung; bản này được trích từ workbook, có ghi rõ nguồn và ngày cập nhật. Yêu cầu chi tiết lấy từ [Requirements](docs/requirements/Seminar_Requirements_Consolidated.md).
+Context này giữ quyết định và quy ước chung của nhóm. Phân công và tiến độ theo [Team Sheet](https://docs.google.com/spreadsheets/d/1XgWdi8CYOSqx33VhL9rBHMAC4WfHXjGu9YSiLv0lyPk/edit); yêu cầu chi tiết lấy từ [Requirements](docs/requirements/Seminar_Requirements_Consolidated.md).
 
 ## Sources & Authority
 
@@ -14,7 +14,7 @@ Context này là quyết định và quy ước chung của nhóm. Progress, ass
 | `docs/requirements/02_SoftwareTesting-SeminarRequirements.md` | Nguồn giảng viên: nội dung, teamwork và bộ nộp |
 | `docs/requirements/03_T10_Mutation_Testing_and_Test_Effectiveness_Description.md` | Nguồn giảng viên riêng T10: objectives, experiments và activity |
 | `docs/requirements/Seminar_Requirements_Consolidated.md` | Bản gộp có REQ IDs, nguồn đối chiếu và điểm chưa thống nhất |
-| `proposal/s1/`, `research/`, templates và flow | Tài liệu hỗ trợ/đề xuất của nhóm; trạng thái approval cần evidence riêng |
+| `proposal/`, `research/` và templates | Tài liệu hỗ trợ/đề xuất của nhóm; trạng thái approval cần evidence riêng |
 | `ai-audit/originals/` | Ba mẫu AI-02/03/04 giảng viên gửi; giữ nguyên, bổ sung nguồn về inputs/verification/signature |
 
 Không mặc định một nguồn giảng viên đã thay thế nguồn khác. Bản Markdown requirements đã được lược bỏ đoạn về mốc hoàn thiện trung gian theo yêu cầu người dùng ngày 2026-10-18; đây là chỉnh sửa bản làm việc, không phải xác nhận GV đổi yêu cầu. Những giới hạn chỉ có trong tài liệu generated là đề xuất, trừ khi có evidence xác nhận.
@@ -28,28 +28,20 @@ Không mặc định một nguồn giảng viên đã thay thế nguồn khác. 
 
 Stage destinations và quy ước bàn giao nằm trong [Working Guide](docs/Working_Guide.md); output/template của từng task nằm trong [Task Output Map](docs/Task_Output_Map.md).
 
-Layout local hiện dùng hai repo cạnh nhau; SUT hiện ở `../eshop-sut/`. Kiểm tra tồn tại trước khi đọc hoặc sửa. Teammate chỉ clone seminar repo có thể clone EShop riêng khi task cần code. Nếu thiếu TASKS/workbook hoặc tài liệu private/local, xin nội dung task hoặc quyền truy cập từ người giao việc; không suy đoán assignee/progress.
-
-## Working Files
-
-Các file local dưới đây nằm ngoài repo và chỉ có khi dùng workspace chung. Nếu chỉ clone repo seminar, dùng Sheet hoặc nội dung task người giao việc cung cấp.
-
-| Resource | Location |
-|---|---|
-| Team Sheet | [Google Sheet](https://docs.google.com/spreadsheets/d/1XgWdi8CYOSqx33VhL9rBHMAC4WfHXjGu9YSiLv0lyPk/edit) |
-| Task Overview | `../TASKS.md` từ repo root; status, assignee, outputs và checklists trích từ workbook |
-| Local Workbook | `../documents/T10_Seminar_Workspace.xlsx` từ repo root |
-| Execution Flow | `../T10_Seminar_Execution_Flow.md` từ repo root |
-
-TASKS là bản đọc tiến độ trong workspace. Khi cập nhật, ghi rõ thay đổi/evidence và nguồn đang dùng; không mặc định TASKS, workbook và Sheet tự đồng bộ. Giữ nguyên task IDs, progress và phân công khi chuyển định dạng.
+Khi task cần code/tests/config, dùng repo EShop được dẫn ở trên và xác minh Git root/commit trước khi sửa. Nếu thiếu đầu vào hoặc quyền truy cập, hỏi người giao việc.
 
 ## Workflow
 
-**Current Stage — 2026-10-18:** S1 và S2 đã hoàn tất, GV đã xác thực theo xác nhận trực tiếp của người dùng. Đã ghi nguồn trong [Scope & Decisions](docs/s2/Scope_and_Decisions.md); bước tiếp theo là S3. TASKS đã cập nhật theo xác nhận này, workbook/Sheet chưa đồng bộ. Không coi S3 đã chạy khi chưa có run evidence.
+**Current Stage — 2026-10-18:** S1 và S2 đã hoàn tất, GV đã xác thực theo xác nhận trực tiếp của Thái Hòa. Nhóm đang làm S3; mỗi task được review dựa trên artifact và evidence tương ứng.
+
+Evidence S3 hiện có trong repo:
+
+- Thái Hòa: [Research Notes](research/s3/Research_Notes_Thai_Hoa.md) cho S3-A02/B02 có bản nháp, **chờ thành viên review**. [AI Record](ai-audit/AI_Record_Thai_Hoa.md) ghi hỗ trợ nghiên cứu; member verdict/reflection còn Pending. Thực nghiệm EShop/Stryker/Claude của Thái Hòa chưa chạy.
+- Tấn Hiệp: [Experiment Log](experiments/s3/Experiment_Log_Tan_Hiep.md) ghi C01-1–C01-6 đã chạy, gồm Stryker/Claude trên demo và khởi động EShop local; C01-7 còn Pending. Các run demo không thay baseline mutation EShop chung; baseline chung chưa có manifest đã điền.
 
 | Stage | Outcome |
 |---|---|
-| Preparation | Requirements, workspace và tasks sẵn sàng phân công |
+| Preparation | Requirements, quy ước bàn giao và phân công sẵn sàng |
 | S1 — Tool Survey | Survey, rationale và proposal |
 | S2 — Scope Review | Góp ý GV và scope có evidence xác nhận |
 | S3 — Research & Experiments | Research notes, tests/config, baseline/manual/AI results và evidence |
@@ -72,9 +64,7 @@ Task ID có dạng Stage–Group–Sequence, ví dụ `S3-D01`. Mỗi task có m
 ## Confirmed Decisions
 
 - Hai tool triển khai/demo: **StrykerJS + Claude**. Candidate khác phục vụ khảo sát S1; không mở lại số tool.
-- Planning nằm ngoài Git repo seminar. Context/quy tắc dùng chung nằm trong repo để teammate đọc được.
 - Nhóm làm theo mục tiêu hoàn thành đầy đủ deliverables; readiness kiểm tra khả năng chạy lại, chất lượng nội dung và evidence, không dùng ngưỡng hoàn thiện trung gian.
-- Workbook dùng các tab Preparation, S1–S8, Submission và `_Config`; giữ cấu trúc hiện có, không thêm Reviewer, deadline hoặc estimate nếu chưa được yêu cầu.
 - S3 giao research notes; S4 dùng notes và evidence để viết tài liệu. Người tổng hợp vẫn cần kiểm tra phần thực nghiệm chung nếu task giao cả nội dung đó.
 - Work-in-progress nằm trong thư mục `sN` của stage tương ứng. Sửa sau feedback ở nguồn stage gốc; `final/` chỉ gom bản đã review.
 
@@ -88,11 +78,11 @@ Task ID có dạng Stage–Group–Sequence, ví dụ `S3-D01`. Mỗi task có m
 6. Equivalent mutant chỉ được kết luận với lập luận/phạm vi rõ; trước khi đủ căn cứ dùng equivalent candidate. Kết quả AI là đầu vào review.
 7. Mỗi run ghi SUT commit, versions/config, command, test set, kết quả và đường dẫn report. Record thời gian chỉ khi đo thật.
 
-Templates có sẵn; tạo phiếu cá nhân khi bắt đầu task. Chúng không xác nhận research/run/report hoàn tất. Khi chuẩn bị cấu trúc này, backend `npm test` còn placeholder báo lỗi. Đây là source inspection, không phải kết quả chạy; kiểm tra lại khi nhận task, không suy ra progress trong Sheet.
+Templates có sẵn; tạo phiếu cá nhân khi bắt đầu task. Chúng không xác nhận research/run/report hoàn tất. Source inspection trước đó ghi backend `npm test` còn placeholder báo lỗi; kiểm tra lại tại commit nhận task. Evidence C01 của Tấn Hiệp được dẫn ở phần Workflow, không chứng minh harness/baseline mutation EShop chung đã hoàn tất; không suy ra progress trong Sheet.
 
 ## Execution Inputs
 
-S2 đã hoàn tất theo xác nhận người dùng. Các mục dưới đây cần tra lại nội dung quyết định khi task sử dụng; việc chưa chép chi tiết vào repo không có nghĩa approval còn chờ. Record hiện có ở [Scope & Decisions](docs/s2/Scope_and_Decisions.md).
+S2 đã hoàn tất theo xác nhận Thái Hòa. Khi task cần các chi tiết dưới đây, đối chiếu proposal/spec và hỏi người phụ trách về phần chưa được ghi lại; việc thiếu record chi tiết không có nghĩa approval còn chờ.
 
 - Scope SUT/module và cách xử lý sai khác code gốc/spec.
 - Lịch seminar và các hạn nộp áp dụng.

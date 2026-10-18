@@ -3,7 +3,7 @@
 ## Start a Task
 
 1. Đọc AGENTS → CONTEXT → requirements/task được giao.
-2. Tra Task ID trong [Task Output Map](Task_Output_Map.md) hoặc Required Output/Notes của tracker hiện tại. Paths tính từ repo root; `SUT/` là repo EShop, `workspace/` là workspace ngoài repo.
+2. Tra Task ID trong [Task Output Map](Task_Output_Map.md) hoặc Required Output/Notes của Team Sheet. Paths tính từ repo root; `SUT/` là repo EShop được dẫn trong CONTEXT.
 3. Nếu output chưa có, copy template khi bắt đầu, tạo folder đích nếu cần và điền Member/Task IDs/Domain. Nếu file đã có, cập nhật section được giao; giữ TEMPLATE làm mẫu chung.
 4. Giao Markdown, code commit và evidence liên quan để review; chỉ task assembly hợp nhất contributions của nhiều người.
 
@@ -13,7 +13,7 @@ Preparation–S2 do **Thái Hòa** thực hiện. Task IDs ở các stage này c
 
 | Stage | Destination / Contract |
 |---|---|
-| Preparation | Requirements/README trong repo; workbook/flow ở workspace; agenda `docs/s2/Meeting_Agenda.md` |
+| Preparation | Requirements/README và quy ước bàn giao; agenda `docs/s2/Meeting_Agenda.md` |
 | S1 | Cập nhật surveys `proposal/s1/Traditional_Mutation_Testing_Tools.md`, `AI_Augmented_Mutation_Testing_Tools.md` và `Tool_Survey_Proposal.md`; comparison/sources đặt trong tài liệu sử dụng |
 | S2 | `docs/s2/Meeting_Agenda.md` và một `Scope_and_Decisions.md`; dùng [Task Notes](templates/Task_Notes_TEMPLATE.md) khi tạo; chia sections **Scope**, **Instructor Questions**, **Decisions & Actions** |
 | S3 | Notes `research/s3/`; logs/manifest/runs `experiments/s3/`; code/tests/config ở SUT |
@@ -23,7 +23,7 @@ Preparation–S2 do **Thái Hòa** thực hiện. Task IDs ở các stage này c
 | S7 | Feedback/actions cá nhân và bản tổng hợp `materials/s7/` |
 | S8 | Peer/contribution notes `materials/s8/`; AI forms chính thức `ai-audit/s8/` |
 | All | Một `ai-audit/AI_Record_<Member>.md` mỗi người khi có usage; từng artifact ghi Stage/Task ID |
-| Final | `final/` chỉ bản đã review; `workspace/submission/` snapshots theo lần nộp |
+| Final | `final/` chỉ bản đã review; lưu link nộp và receipt thật khi bàn giao |
 
 S2 Scope ghi spec/commit, cases và expected results của cả ba domains, sai khác code/spec và baseline/seams đề xuất. Instructor Questions ghi phương án/ảnh hưởng. Decisions & Actions ghi verdict, evidence, owner và việc cần làm trước S3; mục chưa xác nhận giữ Proposed/Pending. S3 nhận scope từ file chung này.
 

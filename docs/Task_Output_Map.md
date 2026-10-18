@@ -1,6 +1,6 @@
 # Task Output Map
 
-Paths tính từ repo root; `SUT/` là repo EShop, `workspace/` là workspace ngoài repo. Đây là contract bàn giao, không phải progress. Required Output/Notes đọc trong TASKS hoặc workbook theo nguồn đang cập nhật; khi đổi output cập nhật pointers liên quan.
+Paths tính từ repo root; `SUT/` là repo EShop được dẫn trong CONTEXT. Bảng này ánh xạ các đầu ra của repo seminar và SUT; phân công, Required Output/Notes và tiến độ theo Team Sheet.
 
 Preparation–S2 do Thái Hòa phụ trách: các task cùng file cập nhật sections nêu trong Notes, không tạo contributions cá nhân. Từ S3 copy template khi bắt đầu; file đã có thì cập nhật phần được giao.
 
@@ -8,9 +8,6 @@ Preparation–S2 do Thái Hòa phụ trách: các task cùng file cập nhật s
 |---|---|---|
 | P-A01 | `docs/requirements/Seminar_Requirements_Consolidated.md` | Update existing document |
 | P-A02 | `README.md`<br>`docs/Working_Guide.md` | Update existing document |
-| P-A03 | `workspace/T10_Seminar_Execution_Flow.md` | Update existing document |
-| P-A04 | `workspace/documents/T10_Seminar_Workspace.xlsx` | Update existing document |
-| P-A05 | `workspace/documents/T10_Seminar_Workspace.xlsx` | Update existing document |
 | P-A06 | `docs/s2/Meeting_Agenda.md` | `docs/templates/Task_Notes_TEMPLATE.md` |
 | S1-A01 | `proposal/s1/Traditional_Mutation_Testing_Tools.md` | Update existing document |
 | S1-A02 | `proposal/s1/AI_Augmented_Mutation_Testing_Tools.md` | Update existing document |
@@ -94,7 +91,7 @@ Preparation–S2 do Thái Hòa phụ trách: các task cùng file cập nhật s
 | S5-E03 | `materials/s5/Readiness_Phuc_Hoang.md` | `docs/templates/Task_Notes_TEMPLATE.md` |
 | S5-F01 | `materials/s5/Activity_Worksheet.md`<br>`materials/s5/Activity_Answer_Key.md`<br>`materials/s5/Seminar_Slides.pptx`<br>`materials/s5/Team_Activity_Pilot.md` | `materials/s5/Activity_Contribution_TEMPLATE.md` |
 | S5-F02 | `materials/s5/Instructor_Rehearsal.md` | `docs/templates/Task_Notes_TEMPLATE.md` |
-| S5-F03 | `workspace/submission/readiness/ (snapshot/links/pre-share evidence)` | `docs/templates/Task_Notes_TEMPLATE.md` |
+| S5-F03 | Bộ tài liệu đã review, links chia sẻ và evidence nộp trước seminar | `docs/templates/Task_Notes_TEMPLATE.md` |
 | S6-A01 | `materials/s6/Session_Notes_Tan_Hiep.md` | `docs/templates/Task_Notes_TEMPLATE.md` |
 | S6-A02 | `materials/s6/Session_Notes_Thai_Hoa.md` | `docs/templates/Task_Notes_TEMPLATE.md` |
 | S6-A03 | `materials/s6/Session_Notes_Phuc_Hoang.md` | `docs/templates/Task_Notes_TEMPLATE.md` |
@@ -135,4 +132,4 @@ Preparation–S2 do Thái Hòa phụ trách: các task cùng file cập nhật s
 | S8-G01 | `final/User_Guide.md`<br>`final/Activity_Worksheet.md`<br>`final/Activity_Answer_Key.md`<br>`SUT commit/run links` | `docs/templates/Task_Notes_TEMPLATE.md` |
 | S8-G02 | `final/Seminar_Report.md hoặc PDF`<br>`final/Final_Reflection.md (scope S2)`<br>`final/Contribution_Summary.md` | `docs/templates/Task_Notes_TEMPLATE.md` |
 | S8-G03 | `ai-audit/s8/ (inputs cho leader, ba AI-03 PDFs tự ký)`<br>`materials/s8/Peer_Review_Partner_<ID>.md (hai partners)`<br>`final/ (slides/video links)` | `docs/templates/Task_Notes_TEMPLATE.md` |
-| S8-H01 | `final/ (bản đã review)`<br>`workspace/submission/final/ (snapshot/receipt)` | `docs/templates/Task_Notes_TEMPLATE.md` |
+| S8-H01 | `final/ (bản đã review)` và evidence nộp/receipt | `docs/templates/Task_Notes_TEMPLATE.md` |

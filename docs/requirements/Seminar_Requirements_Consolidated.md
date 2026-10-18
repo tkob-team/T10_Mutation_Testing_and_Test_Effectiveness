@@ -17,7 +17,7 @@
 | ID | Requirement | Source / Section | Stage | Deliverable / Evidence |
 |---|---|---|---|---|
 | REQ-01 | Giúp người chưa học chủ đề hiểu và áp dụng cơ bản; thể hiện quy trình và công sức của nhóm | G: Yêu cầu chung; M: 1 | All | Guide, demo, activity, contributions |
-| REQ-02 | Nhóm 3–4 SV; chủ động trao đổi nội dung với GV và cập nhật kết quả thường xuyên | G: Yêu cầu chung; M: 2,5 | Preparation–S8 | Task workbook, meeting notes |
+| REQ-02 | Nhóm 3–4 SV; chủ động trao đổi nội dung với GV và cập nhật kết quả thường xuyên | G: Yêu cầu chung; M: 2,5 | Preparation–S8 | Team Sheet, meeting notes |
 | REQ-03 | Trình bày theory, thuật ngữ, mục đích và giới hạn mutation testing | G: Nội dung; T: 1–2,5 | S3–S4 | Report, slides, sources |
 | REQ-04 | Khảo sát ≥3 candidates: traditional, AI và backup; so sánh cost, learning curve, EShop fit, AI capability, community | M: 2.1 S1; G: Nội dung | S1 | Survey matrix |
 | REQ-05 | Proposal ≤1 trang; topic/code, recommended pick, ba lý do chọn và AI Disclosure/cross-check | M: 2.1 S1,4 | S1 | Tool_Survey_Proposal.md |
