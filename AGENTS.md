@@ -11,7 +11,7 @@
 
 - DO NOT SPAWN SUBAGENT WITHOUT ASKING. Chỉ gọi sau khi người dùng trực tiếp cho phép.
 - Seminar docs/evidence ở repo này; SUT/tests/config ở repo EShop theo CONTEXT. Giữ thay đổi ngoài scope và progress hiện có; chỉ đổi phân công khi được yêu cầu.
-- Giữ nguyên ba requirements và ba AI forms giảng viên. Generated references ở `research/s1/reference/` chỉ dùng tham khảo.
+- Giữ nguồn và provenance của requirements; bản Markdown làm việc đã lược bỏ mốc hoàn thiện trung gian theo yêu cầu người dùng ngày 2026-10-18. Ba AI forms giảng viên giữ nguyên. Generated references ở `research/s1/reference/` chỉ dùng tham khảo.
 - Scope/quyết định chung cần đề xuất cụ thể để review trước khi thay đổi. Yêu cầu rõ của người dùng là authorization cho scope tương ứng.
 - English headings, identifiers, filenames và status codes; prose nội bộ bằng tiếng Việt. Deliverables English theo requirements.
 - Claims cần sources; execution, feedback, attendance, đóng góp, reflection và chữ ký phải có evidence thật. Ghi rõ Proposed, Pending hoặc Not run khi chưa xác minh.

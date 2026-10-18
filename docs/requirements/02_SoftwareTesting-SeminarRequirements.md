@@ -1,4 +1,6 @@
 # Seminar Requirement
+
+> Bản làm việc: đoạn về mốc hoàn thiện trung gian đã được lược bỏ theo yêu cầu người dùng ngày 2026-10-18; không phải thông báo thay đổi yêu cầu từ giảng viên.
 - FIT@HCMUS
 - Course: Software Testing
 - Seminar
@@ -38,7 +40,6 @@
 ## Tiến độ và đánh giá
 - **Gặp mặt đầu môn học:** Khoảng Tuần 2-3. Nhóm SV chủ động trình bày các nội dung dự kiến thực hiện để GV góp ý và bổ sung, hiệu chỉnh. Trừ **1đ / 10đ** với trường hợp nhóm ko có thành viên tham dự meeting hoặc chuẩn bị sơ sài nội dung seminar trước buổi gặp mặt.
 
-- **Nộp bài chấm điểm:** Tuần 6. Nhóm SV cần hoàn thành đầy đủ các nội dung yêu cầu, GVTH sẽ chấm một cột điểm quan trọng, chiếm tỉ lệ lớn ở đây. Trừ **3đ / 10đ** với trường hợp nhóm SV ko nộp bài chấm điểm ở Tuần 6 hoặc nội dung bài nộp sơ sài, ko đạt mức 90% so với nội dung seminar chính thức.
 
 - **Trình bày thử:** Trước Tuần seminar. Để đạt được kết quả tốt nhất khi seminar, trước đó, nhóm SV cần chủ động trao đổi với GVTH để được góp ý, chỉnh sửa. Trừ **4đ / 10đ** với trường hợp nhóm seminar nhưng ko nộp trước / trình bày trước nội dung seminar với GVTH.
 

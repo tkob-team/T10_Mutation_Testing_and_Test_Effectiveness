@@ -2,13 +2,13 @@
 
 **Topic:** Mutation Testing & Test Effectiveness
 **Implementation Tools:** StrykerJS + Claude
-**Document Role:** Bản gộp để tra cứu và giao việc, giữ nguồn cho từng yêu cầu. Bản gốc vẫn nguyên vẹn. Các quyết định của nhóm được tách khỏi yêu cầu giảng viên.
+**Document Role:** Bản gộp để tra cứu và giao việc, giữ nguồn cho từng yêu cầu. Theo yêu cầu người dùng ngày 2026-10-18, các bản Markdown nguồn đã lược bỏ đoạn về mốc hoàn thiện trung gian. Mục tiêu của nhóm là hoàn thành đầy đủ deliverables; chỉnh sửa này không được coi là xác nhận GV đổi yêu cầu.
 
 ## Sources
 
 | Code | Official Source | Main Scope |
 |---|---|---|
-| G | [SoftwareTesting-SeminarRequirements.md](02_SoftwareTesting-SeminarRequirements.md) | Nội dung, trình bày, teamwork, bộ 90% và các đợt nộp |
+| G | [SoftwareTesting-SeminarRequirements.md](02_SoftwareTesting-SeminarRequirements.md) | Nội dung, trình bày, teamwork và các đợt nộp |
 | M | [Seminar_Guide.md](01_Seminar_Guide.md) | S1–S8, deliverables, rubric, AI policy, attendance, peer review |
 | T | [T10 Topic Description](03_T10_Mutation_Testing_and_Test_Effectiveness_Description.md) | Learning objectives, experiment và Kill the Mutant |
 
@@ -55,14 +55,13 @@
 
 Quy ước nơi bàn giao và format của nhóm: [Working Guide](../Working_Guide.md). Output/template từng task: [Task Output Map](../Task_Output_Map.md). Preparation–S2 do Thái Hòa thực hiện; từ S3 contributions cá nhân được hợp nhất bởi task assembly.
 
-Các quy ước này không bổ sung yêu cầu giảng viên. Ba requirements và AI forms gốc giữ nguyên; bản cuối chỉ gom artifacts đã review. Reflection/chữ ký do chính thành viên thực hiện.
+Các quy ước này không bổ sung yêu cầu giảng viên. AI forms gốc giữ nguyên; bản cuối chỉ gom artifacts đã review. Reflection/chữ ký do chính thành viên thực hiện.
 
-## Original Milestones
+## Milestones
 
-| Source | Original Milestone |
+| Source | Retained Milestone |
 |---|---|
 | G | Gặp mặt Tuần 2–3; thiếu người/chuẩn bị sơ sài bị trừ 1/10 |
-| G | Nộp Tuần 6 ở mức 90%; không nộp/sơ sài bị trừ 3/10 |
 | G | Nộp/trình bày thử trước tuần seminar; bỏ bước này bị trừ 4/10 |
 | G | Nộp hiệu chỉnh cuối Tuần 12 |
 | M | Topic claim Tuần 5; S1 trong năm ngày làm việc sau claim, due Tuần 6 Sat 23:59 |
@@ -70,7 +69,7 @@ Các quy ước này không bổ sung yêu cầu giảng viên. Ba requirements 
 | M | S3–S5 Tuần 6–10; seminar Tuần 7–11 |
 | M | Pre-share ≥3 ngày làm việc trước seminar; S8 trong năm ngày làm việc sau seminar |
 
-Nhóm tự kiểm tra lịch cụ thể với GV, bao gồm điểm khác nhau giữa mốc 90% của G và proposal/approval của M. Không chuyển các mốc này thành lịch/estimate tự gán trong workbook.
+Nhóm tự kiểm tra lịch cụ thể với GV. Không chuyển các mốc này thành lịch/estimate tự gán trong tracker.
 
 ## Rubric
 
@@ -89,8 +88,8 @@ Seminar chiếm 20% điểm môn học theo M §6. Các trọng số dưới đ�
 ## Open Decisions & Interpretation
 
 - Hai tool đã được xác nhận: StrykerJS + Claude. Không mở lại câu hỏi số tool.
-- Chốt checkpoint 90%, SUT/module, Record & Playback, activity 20/25 phút, kênh video, AI-04/Final Reflection, AI category, slides template và peer partners. Ba AI forms đã tải, không còn pending về file nguồn.
+- Chốt SUT/module, Record & Playback, activity 20/25 phút, kênh video, AI-04/Final Reflection, AI category, slides template và peer partners. Ba AI forms đã tải, không còn pending về file nguồn.
 - Chọn 12–15 slides là đề xuất để đáp ứng cả hai nguồn, chưa phải giới hạn tối thiểu GV ban hành.
 - Không bổ sung nghĩa vụ từ briefing generated như 720p minimum, First Test ≤15 steps hay ≥3 troubleshooting errors.
-- Lưu ý cách tính mutation score theo tool được dùng; bản gộp không tự sửa nội dung bản gốc. Báo cáo Killed và Timeout riêng để giải thích kết quả.
-- Bộ 90% cần kết quả cốt lõi đã kiểm chứng. Feedback/reflection sau seminar chưa diễn ra giữ pending; không dựng bằng chứng để lấp checklist.
+- Lưu ý cách tính mutation score theo tool được dùng. Báo cáo Killed và Timeout riêng để giải thích kết quả.
+- Bộ tài liệu hoàn chỉnh cần kết quả đã kiểm chứng. Feedback/reflection sau seminar chưa diễn ra giữ Pending; không dựng bằng chứng để lấp checklist.

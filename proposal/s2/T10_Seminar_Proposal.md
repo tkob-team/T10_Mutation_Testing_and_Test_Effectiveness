@@ -145,7 +145,7 @@ Bài làm được đánh giá theo tính đúng đắn nghiệp vụ, khả nă
 | **S2 - Scope Review** | Hoàn thiện proposal tổng hợp; trình phạm vi, phương pháp và các phương án cần xác nhận | Góp ý/verdict và scope được ghi nhận trước khi triển khai thực nghiệm S3 |
 | **S3 - Research & Experiments** | Nghiên cứu, dựng harness; baseline; manual/Claude assertions; tổng hợp evidence | Có kết quả tái lập, ≥3 survivors được phân tích, ≥3 manual assertions và AI comparison được kiểm chứng |
 | **S4 - Documentation & Demo** | Viết guide/report từ research và evidence; chuẩn hóa demo; quay screencast | Một thành viên khác chạy lại theo guide; kết luận/report khớp evidence; demo thể hiện cả hai tool |
-| **S5 - Readiness** | Hợp nhất slides/activity; pilot; rehearsal nội bộ và với giảng viên; chuẩn bị bộ 90% | Nội dung cốt lõi đã kiểm chứng, activity khả thi, thời lượng phù hợp và vật liệu sẵn sàng chia sẻ |
+| **S5 - Readiness** | Hợp nhất slides/activity; pilot; rehearsal nội bộ và với giảng viên; hoàn tất bộ tài liệu để chia sẻ | Nội dung cốt lõi đã kiểm chứng, activity khả thi, thời lượng phù hợp và vật liệu sẵn sàng chia sẻ |
 | **S6 - Live Seminar** | Trình bày, demo, facilitation, activity và Q&A | Có ghi nhận buổi seminar, kết quả activity và câu hỏi thực tế |
 | **S7 - Feedback** | Thu minute paper, tổng hợp nội dung đã học/chưa rõ và usefulness 1-5 | Có feedback thật và danh sách cải thiện gắn với vấn đề được ghi nhận |
 | **S8 - Finalization** | Hiệu chỉnh; hoàn tất audit/disclosure/reflection, peer review và bộ cuối | Tài liệu thống nhất với kết quả, hoàn tất review và đóng gói theo yêu cầu |
