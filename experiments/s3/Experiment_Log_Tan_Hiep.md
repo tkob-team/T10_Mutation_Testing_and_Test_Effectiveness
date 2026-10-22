@@ -103,6 +103,8 @@ Run do Claude Code thực hiện trên máy Tấn Hiệp (Windows 11) ngày 2026
 | D01-5-cc | Claude Code | `npx stryker run stryker.cart-orders.config.json --dryRunOnly` (sau D01-Q7) | `Initial test run succeeded. Ran 36 tests` | **Pass** — exit 0, `Initial test run succeeded. Ran 36 tests in 1 second (net 426 ms, overhead 705 ms)`; dry run không sinh `mutation.json`/`.html` | `experiments/s3/runs/Tan_Hiep/D01-5-cc/` |
 | F01-1 | Tấn Hiệp | `npm run test:manual`; `npm run mutate:cart-orders:manual` (nhánh `s3/F01-manual`, working tree trước commit `0236267`: 41 tests = 36 baseline + 5 manual, gồm test coupon Survivor 4; khớp số test của `0236267`, nội dung chưa đối chiếu) | Manual suite pass hết trên code gốc | **Pass** — 41/41 passed. 150 mutants: Killed 100, Timeout 19, Survived 20, NoCoverage 2, RuntimeError 9; score 84.40% (đếm từ `mutation.json`, khớp console) | `experiments/s3/runs/Tan_Hiep/F01-1/` |
 | F01-2-cc | Claude Code | `npm run test:manual`; `npm run mutate:cart-orders:manual` (nhánh `s3/F01-manual` @ `b77f5d6`, `stryker.cart-orders.manual.config.json`, test files `test/cart-orders.test.js` + `test/manual/cart-orders.manual.js`) | Manual suite pass hết trên code gốc | **Pass** — 44/44 passed (36 baseline + 8 manual). 150 mutants: Killed 112, Timeout 18, Survived 11, NoCoverage 2, RuntimeError 7; score 90.91% (E01-1-cc 74.65%, F01-1 84.40%) | `experiments/s3/runs/Tan_Hiep/F01-2-cc/` |
+| G01-1-cc | Claude Code | `npm run test:ai` (nhánh `s3/G01-ai`, raw AI assertions, commit sau run: `143a016`) | AI suite pass hết trên code gốc | **Pass** — 41/41 passed (36 baseline + 5 AI); không chạy Stryker | `experiments/s3/runs/Tan_Hiep/G01-1-cc/` |
+| G01-2-cc | Claude Code | `npm run test:ai`; `npm run mutate:cart-orders:ai` (nhánh `s3/G01-ai` @ `f4696c6`, `stryker.cart-orders.ai.config.json`, test files `test/cart-orders.test.js` + `test/ai/cart-orders.ai.js`) | AI suite pass hết trên code gốc | **Pass** — 41/41 passed. 150 mutants: Killed 97, Timeout 23, Survived 21, NoCoverage 2, RuntimeError 7; score 83.92% (E01-1-cc 74.65%, F01-2-cc 90.91%) | `experiments/s3/runs/Tan_Hiep/G01-2-cc/` |
 | D01-1 / D01-2 / D01-3 | Tấn Hiệp | `npm test`; `npm run test:defects`; Stryker dry run (cấu hình sau D01-Q7) | 36 passed; 9 failed; `Ran 36 tests` | Not run | `experiments/s3/runs/Tan_Hiep/D01-{1,2,3}/` |
 
 Ghi chú D01-2-cc: mỗi DEF test dừng ở assertion fail đầu tiên. DEF-08 mới chứng minh vế "không token → vẫn trả 200"; vế "token user khác" chưa được chạy tới. Tương tự, assertion kiểm DB state phía sau ở DEF-04/05/06 chưa chạy.
@@ -131,7 +133,7 @@ Chạy thử bởi Claude trong sandbox (Linux, Node v22.22.0), **không phải 
 
 | AI Record Artifact ID | Raw Candidate / Edited Test | Spec Review | Original-Code Result | Mutant Result | Run Evidence |
 |---|---|---|---|---|---|
-| [S3-G01] | — | — | Not run | Not run | — |
+| AI-S3-G01-01 | Raw: 5 test AI-CO-01…05 do Claude Code (claude-opus-5-5) sinh ở G01-1-cc (`s3/G01-ai` @ `143a016`), nhắm 5/6 mutant mục tiêu; 550:11 không viết (defect-fixing). Edited: assertion không sửa, chỉ sửa comment header (`f4696c6`) | Spec review 2026-10-23 (Tấn Hiệp + phiên thảo luận): giữ 5/5 test, không sửa assertion; oracle một phần lấy từ code (dạng `[]`, trường `error`) đã ghi ở từng test | Pass — 41/41 (36 baseline + 5 AI) ở G01-1-cc và G01-2-cc | G01-2-cc: 286:7, 292:7, 326:47, 346:45, 532:47 Killed (mỗi mutant bởi test AI tương ứng); 550:11 Survived. Toàn run: Killed 97, Timeout 23, Survived 21, NoCoverage 2, RuntimeError 7; score 83.92% | `experiments/s3/runs/Tan_Hiep/G01-1-cc/`, `G01-2-cc/`, `G01-cc-REPORT.md` |
 
 ## Comparison
 
@@ -139,9 +141,9 @@ Chạy thử bởi Claude trong sandbox (Linux, Node v22.22.0), **không phải 
 |---|---|---|---|---|---|---|
 | Baseline (E01-1-cc) | 87 | 19 | 34 | 2 | 74.65% — Detected / Valid × 100; Detected = Killed + Timeout = 106, Valid = tổng − RuntimeError = 150 − 8 = 142 (StrykerJS 10.0.0) | `experiments/s3/runs/Tan_Hiep/E01-1-cc/` |
 | Manual (F01-2-cc) | 112 | 18 | 11 | 2 | 90.91% — Detected / Valid × 100; Detected = 130, Valid = tổng − RuntimeError = 150 − 7 = 143 (StrykerJS 10.0.0) | `experiments/s3/runs/Tan_Hiep/F01-2-cc/` |
-| AI-assisted | Not run | Not run | Not run | Not run | Not run | — |
+| AI-assisted (G01-2-cc) | 97 | 23 | 21 | 2 | 83.92% — Detected / Valid × 100; Detected = 120, Valid = tổng − RuntimeError = 150 − 7 = 143 (StrykerJS 10.0.0) | `experiments/s3/runs/Tan_Hiep/G01-2-cc/` |
 
-Ghi chú: Manual = baseline 36 + manual 8 test (`test/cart-orders.test.js` + `test/manual/cart-orders.manual.js`, nhánh `s3/F01-manual` @ `b77f5d6`). Cả hai run cùng production code, config mutate (`server.js:280-349, 510-568`) và 150 mutants; CompileError = Ignored = 0. Hai run do Claude Code thực hiện trên Windows (Node v24.15.0). AI-assisted: Not run (S3-G01).
+Ghi chú: Manual = baseline 36 + manual 8 test (`test/cart-orders.test.js` + `test/manual/cart-orders.manual.js`, nhánh `s3/F01-manual` @ `b77f5d6`). Cả hai run cùng production code, config mutate (`server.js:280-349, 510-568`) và 150 mutants; CompileError = Ignored = 0. Hai run do Claude Code thực hiện trên Windows (Node v24.15.0). AI = baseline 36 + AI 5 test (`test/cart-orders.test.js` + `test/ai/cart-orders.ai.js`, nhánh `s3/G01-ai` @ `f4696c6`), chạy cùng production code, config mutate và 150 mutants. Manual có 8 test, trong đó 3 test nằm ngoài 6 mutant mục tiêu, nên so sánh công bằng là trên 6 mutant mục tiêu: cả hai nhánh kill 5/6, cùng để sống 550:11 (xem `G01-cc-REPORT.md`, mục G01-2-cc).
 
 ## Limits & Failure Modes
 

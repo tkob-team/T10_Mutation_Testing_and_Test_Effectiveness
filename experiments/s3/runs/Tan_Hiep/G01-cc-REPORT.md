@@ -68,3 +68,122 @@ Test ID trong cột 1 là ID của E01-1-cc trong `mutation.json`. Test AI nằm
 ### AI usage
 
 - AI log: `ai-audit/evidence/s3/Tan_Hiep/claude-code_prompt_log.md` (hook Stop ghi; tôi không mở file này để giữ blind).
+
+
+---
+
+## Run G01-2-cc
+
+### Metadata
+
+- Task ID: S3-G01. Run ID: `G01-2-cc` (AI assertions sau spec review, mutation run). Yêu cầu blind đã hết theo prompt.
+- Executor: Claude Code, model `claude-opus-5-5`; không phải run chính thức của Tấn Hiệp.
+- Ngày giờ: 2026-10-23T02:05:04+07:00 (`test:ai`), 02:05:11–02:05:42 (Stryker `Done in 30 seconds`). OS: Windows 11 Home Single Language 10.0.26200.
+- EShop: `s3/G01-ai` @ `f4696c6` (chưa push). Seminar: `main`; commit log hook trước task `3dc7ae1`.
+- Versions: Node v24.15.0, npm 11.12.1, Jest 30.5.2, StrykerJS 10.0.0.
+
+### Comment-only Edit (commit `f4696c6`)
+
+`backend/test/ai/cart-orders.ai.js`: dòng 1 bỏ "(đã review)"; dòng 2 thành provenance G01-1-cc (session blind một phần); comment "AI assertions đã review đặt ở đây." và khối "G01-1-cc — raw AI assertions … CHƯA review" thay bằng ghi chú spec review 2026-10-23. Kiểm `git diff`: không dòng nào ngoài comment thay đổi; assertion giữ nguyên.
+
+### Commands
+
+1. `npx jest --config jest.ai.config.js --listTests` → `test/cart-orders.test.js`, `test/ai/cart-orders.ai.js` (`G01-2-cc/listTests.log`).
+2. `npm run test:ai` → **41/41 passed**, 2 suites, exit 0 (`G01-2-cc/test-ai.log`).
+3. `npm run mutate:cart-orders:ai` → exit 0; `G01-2-cc/console.log`, `mutation.html`, `mutation.json`. Stryker tự dọn `stryker-tmp/`.
+
+So sánh sinh bằng `G01-2-cc/compare_runs.py` → `G01-2-cc/compare_runs.md` (đếm từ `mutation.json`; mutant nhận diện bằng vị trí đầu–cuối + mutator + replacement).
+
+### Status Counts
+
+| Run | Total | Killed | Timeout | Survived | NoCoverage | RuntimeError | CompileError | Ignored | Score | Covered |
+|---|---|---|---|---|---|---|---|---|---|---|
+| E01-1-cc | 150 | 87 | 19 | 34 | 2 | 8 | 0 | 0 | 74.65 | 75.71 |
+| F01-2-cc | 150 | 112 | 18 | 11 | 2 | 7 | 0 | 0 | 90.91 | 92.20 |
+| G01-2-cc | 150 | 97 | 23 | 21 | 2 | 7 | 0 | 0 | 83.92 | 85.11 |
+
+Cùng tập mutant ở cả 3 run: có (150 / 150 / 150).
+
+Định nghĩa: score = Detected / Valid × 100, Detected = Killed + Timeout, Valid = tổng − RuntimeError − CompileError. Timeout tính vào Detected theo tool, không phải assertion kill.
+
+### E01-1-cc Survived/NoCoverage → G01-2-cc Killed
+
+13 mutants. `killedBy` lấy từ `mutation.json` của G01-2-cc; cột F01-2-cc để đối chiếu.
+
+| Line:Col | Mutator | Replacement | E01-1-cc | F01-2-cc | killedBy (G01-2-cc) |
+|---|---|---|---|---|---|
+| 286:7 | BooleanLiteral | `userCarts[userId]` | Survived | Killed | AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-01 new user GET /api/cart → 200 with an empty array (`cart-orders.ai.js`) |
+| 286:7 | ConditionalExpression | `false` | Survived | Killed | AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-01 new user GET /api/cart → 200 with an empty array (`cart-orders.ai.js`) |
+| 286:7 | ConditionalExpression | `true` | Survived | Killed | AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-02 add two different products → GET /api/cart returns both (`cart-orders.ai.js`) |
+| 286:47 | ArrayDeclaration | `["Stryker was here"]` | Survived | Killed | AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-01 new user GET /api/cart → 200 with an empty array (`cart-orders.ai.js`) |
+| 292:7 | ConditionalExpression | `true` | Survived | Killed | AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-02 add two different products → GET /api/cart returns both (`cart-orders.ai.js`) |
+| 292:47 | ArrayDeclaration | `["Stryker was here"]` | Survived | Killed | AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-02 add two different products → GET /api/cart returns both (`cart-orders.ai.js`) |
+| 293:3 | CallExpression | `;` | Survived | Killed | AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-02 add two different products → GET /api/cart returns both (`cart-orders.ai.js`) |
+| 326:47 | ObjectLiteral | `{}` | Survived | Killed | AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-03 cancel a non-existent order → 404 with an error message (`cart-orders.ai.js`) |
+| 326:56 | StringLiteral | `""` | Survived | Killed | AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-03 cancel a non-existent order → 404 with an error message (`cart-orders.ai.js`) |
+| 346:45 | ObjectLiteral | `{}` | Survived | Killed | AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-04 order detail of non-existent id → 404 with an error message (`cart-orders.ai.js`) |
+| 346:54 | StringLiteral | `""` | Survived | Killed | AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-04 order detail of non-existent id → 404 with an error message (`cart-orders.ai.js`) |
+| 532:47 | ObjectLiteral | `{}` | Survived | Killed | AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-05 admin changes status of a non-existent order → 404 with an error message (`cart-orders.ai.js`) |
+| 532:56 | StringLiteral | `""` | Survived | Killed | AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-05 admin changes status of a non-existent order → 404 with an error message (`cart-orders.ai.js`) |
+
+2 NoCoverage của E01-1-cc vẫn NoCoverage ở G01-2-cc.
+
+### Other Status Changes (E01-1-cc → G01-2-cc)
+
+| Line:Col | Mutator | Replacement | E01-1-cc | G01-2-cc | F01-2-cc |
+|---|---|---|---|---|---|
+| 311:67 | BlockStatement | `{}` | Timeout | Killed | Killed |
+| 347:5 | CallExpression | `;` | Killed | Timeout | Killed |
+| 510:63 | BlockStatement | `{}` | Killed | Timeout | Killed |
+| 519:22 | BlockStatement | `{}` | Killed | Timeout | Killed |
+| 520:7 | CallExpression | `;` | Killed | Timeout | Killed |
+| 532:11 | BooleanLiteral | `order` | RuntimeError | Timeout | Timeout |
+
+### Killed Overlap (F01-2-cc vs G01-2-cc)
+
+- Killed ở cả hai: 97
+- Killed ở F01-2-cc nhưng không Killed ở G01-2-cc: 15
+- Killed ở G01-2-cc nhưng không Killed ở F01-2-cc: 0
+
+### Target Mutants (6)
+
+| Line:Col | Mutator | Replacement | E01-1-cc | F01-2-cc | killedBy (F01-2-cc) | G01-2-cc | killedBy (G01-2-cc) |
+|---|---|---|---|---|---|---|---|
+| 286:7 | ConditionalExpression | `false` | Survived | Killed | Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 286:7 - GET /api/cart initializes empty cart array for new user (`cart-orders.manual.js`) | Killed | AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-01 new user GET /api/cart → 200 with an empty array (`cart-orders.ai.js`) |
+| 292:7 | ConditionalExpression | `true` | Survived | Killed | Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 292:7 - POST /api/cart preserves existing cart items across multiple additions (`cart-orders.manual.js`) | Killed | AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-02 add two different products → GET /api/cart returns both (`cart-orders.ai.js`) |
+| 326:47 | ObjectLiteral | `{}` | Survived | Killed | Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 326:47 - PUT /api/orders/:id/cancel returns error body when order not found (`cart-orders.manual.js`) | Killed | AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-03 cancel a non-existent order → 404 with an error message (`cart-orders.ai.js`) |
+| 346:45 | ObjectLiteral | `{}` | Survived | Killed | Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 346:45 - GET /api/orders/:id returns error body when order not found (`cart-orders.manual.js`) | Killed | AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-04 order detail of non-existent id → 404 with an error message (`cart-orders.ai.js`) |
+| 532:47 | ObjectLiteral | `{}` | Survived | Killed | Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 532:47 - PUT /api/admin/orders/:id/status returns error body when order not found (`cart-orders.manual.js`) | Killed | AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-05 admin changes status of a non-existent order → 404 with an error message (`cart-orders.ai.js`) |
+| 550:11 | ConditionalExpression | `false` | Survived | Survived | — | Survived | — |
+
+Trên 6 mutant mục tiêu, manual và AI cho cùng kết quả: kill 5/6, 550:11 Survived ở cả hai (defect-fixing, cả hai nhánh đều không viết test). Khác biệt toàn run (Killed 112 vs 97) đến từ 3 test manual ngoài 6 mục tiêu (cancel, checkout, admin status) — không phải so sánh cùng phạm vi.
+
+### Lệch / bất thường
+
+- 4 mutant Killed ở E01-1-cc nhưng **Timeout** ở G01-2-cc: 347:5 CallExpression, 510:63 BlockStatement, 519:22 BlockStatement, 520:7 CallExpression (F01-2-cc: Killed cả 4). Tổng Killed + Timeout + RuntimeError của G01-2-cc = 127 khác E01 (114) vì có 13 mutant mới bị kill, nên không so tổng được như ở E01. Giả thuyết: giống quan sát Timeout phụ thuộc môi trường (Experiment Log, Limits) — **chưa kiểm chứng**, chưa chạy lại.
+- `backend/database.sqlite` không đổi; vẫn `git restore` theo prompt.
+
+### Ghi chú thuyết trình
+
+- Cùng 6 mutant mục tiêu, AI và manual đều kill 5/6 và đều không kill được 550:11 vì mutant đó sửa lỗi gốc; score toàn run khác nhau chủ yếu do số test khác nhau, nên phải so trên cùng tập mutant.
+- Score AI-assisted (83.92%) có 23 Timeout; tách Timeout khỏi assertion kill khi trình bày.
+
+### AI usage (G01-2-cc)
+
+- Tool: Claude Code, model `claude-opus-5-5`, skill `t10-run-report`.
+- Prompt Tấn Hiệp đưa (nguyên văn):
+
+  > Task S3-G01 — spec review xong, run G01-2-cc (skill t10-run-report). Hết yêu cầu blind.
+  > 1. EShop s3/G01-ai, backend/test/ai/cart-orders.ai.js: CHỈ sửa comment, không đụng assertion.
+  >    - Dòng 1: bỏ "(đã review)". Dòng 2 → "Sinh bởi Claude Code (claude-opus-5-5) ở G01-1-cc; session blind một phần (lộ 2 subject commit F01, xem G01-cc-REPORT.md)."
+  >    - "// AI assertions đã review đặt ở đây." và khối "CHƯA review" → "Spec review 2026-10-23 (Tấn Hiệp + phiên thảo luận): giữ 5/5 test, không sửa assertion; oracle một phần lấy từ code (dạng [], trường error) đã ghi ở từng test; 550:11 không viết (defect-fixing)."
+  >    Commit: test(S3-G01): mark AI assertions as reviewed and fix provenance header
+  > 2. npm run test:ai (phải pass) → npm run mutate:cart-orders:ai → lưu console.log, mutation.html, mutation.json vào runs/Tan_Hiep/G01-2-cc/.
+  > 3. G01-cc-REPORT.md, thêm mục G01-2-cc: số Killed/Timeout/Survived/NoCoverage/RuntimeError/score; mutant Survived/NoCoverage ở E01-1-cc → Killed ở G01-2-cc kèm killedBy; bảng 6 mutant mục tiêu: trạng thái ở F01-2-cc vs G01-2-cc, killedBy mỗi bên.
+  > 4. Experiment_Log_Tan_Hiep.md:
+  >    - AI Runs: 1 dòng artifact G01-01 (raw 5 test, assertion không sửa; spec review như bước 1; kết quả code gốc; kết quả mutant; evidence).
+  >    - Comparison: điền dòng AI-assisted (G01-2-cc). Ghi chú: AI = baseline 36 + AI 5; Manual có 8 test, 3 test ngoài 6 mutant mục tiêu, nên so sánh công bằng là trên 6 mutant mục tiêu (xem G01-cc-REPORT.md).
+  >    - Thêm dòng G01-1-cc, G01-2-cc vào bảng Runs.
+  > 5. git restore backend/database.sqlite. Commit seminar: docs(S3-G01): add G01-2-cc mutation run and comparison
+
+- Output chính: commit comment-only `f4696c6`; G01-2-cc (41/41 pass; 150 mutants, 83.92%); `compare_runs.py`/`compare_runs.md`; Experiment Log (AI Runs, Comparison, Runs); 1 commit seminar.
