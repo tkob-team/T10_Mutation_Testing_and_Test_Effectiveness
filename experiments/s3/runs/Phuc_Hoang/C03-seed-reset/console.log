@@ -1,0 +1,11 @@
+# C03-4 seed/reset probe on a git-archive copy of SUT @ bd31bbf (backend only), 2026-10-22, macOS arm64, Node v26.12.0
+$ npm install            -> OK; warn: sqlite3@6.0.1 install script not covered by allowScripts (prebuild-install)
+$ node -e 'require("./database.js")'   -> "Database initialized and seeded (Phase 2)." / "Connected to database"
+$ sqlite3 database.sqlite "select id,name,email,role,login_attempts,locked_until from users"
+1|Admin User|admin@eshop.com|admin|0|
+2|Test User|test@eshop.com|user|0|
+$ sqlite3 database.sqlite "update users set login_attempts=2 where id=1"; re-require database.js
+$ sqlite3 database.sqlite "select id,login_attempts from users where id=1"
+1|0                       -> re-requiring database.js DROPs and re-seeds (reset works)
+# Errors made while probing (my own, not SUT): wrong column names `username` and `lock_until`; real columns: name, locked_until.
+# Seam gaps (grep): database.js exports `db` only (module.exports = db); server.js calls app.listen at top level (line 570) and does not export app.

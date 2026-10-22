@@ -1,0 +1,329 @@
+# defects+spec on scratch copy patched for DF-01,02,03,09,12 only (sed: +1, 30000 ms, 6-digit OTP, role ignored), 2026-10-22 21:40:47
+FAIL test/auth.defects.test.js
+  ● D-REG: README FR-01 registration validation and SEC-01 › DF-04 invalid email is refused: no @
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at toBeGreaterThanOrEqual (test/auth.defects.test.js:17:22)
+      at expectRefused (test/auth.defects.test.js:47:7)
+
+  ● D-REG: README FR-01 registration validation and SEC-01 › DF-04 invalid email is refused: no domain
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at toBeGreaterThanOrEqual (test/auth.defects.test.js:17:22)
+      at expectRefused (test/auth.defects.test.js:47:7)
+
+  ● D-REG: README FR-01 registration validation and SEC-01 › DF-04 invalid email is refused: empty
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at toBeGreaterThanOrEqual (test/auth.defects.test.js:17:22)
+      at expectRefused (test/auth.defects.test.js:47:7)
+
+  ● D-REG: README FR-01 registration validation and SEC-01 › DF-05 a duplicate email is refused ("duy nhất")
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at toBeGreaterThanOrEqual (test/auth.defects.test.js:17:22)
+      at Object.expectRefused (test/auth.defects.test.js:53:5)
+
+  ● D-REG: README FR-01 registration validation and SEC-01 › DF-06 weak password is refused: 7 characters
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at toBeGreaterThanOrEqual (test/auth.defects.test.js:17:22)
+      at expectRefused (test/auth.defects.test.js:61:5)
+
+  ● D-REG: README FR-01 registration validation and SEC-01 › DF-06 weak password is refused: no upper case
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at toBeGreaterThanOrEqual (test/auth.defects.test.js:17:22)
+      at expectRefused (test/auth.defects.test.js:61:5)
+
+  ● D-REG: README FR-01 registration validation and SEC-01 › DF-06 weak password is refused: no lower case
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at toBeGreaterThanOrEqual (test/auth.defects.test.js:17:22)
+      at expectRefused (test/auth.defects.test.js:61:5)
+
+  ● D-REG: README FR-01 registration validation and SEC-01 › DF-06 weak password is refused: no digit
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at toBeGreaterThanOrEqual (test/auth.defects.test.js:17:22)
+      at expectRefused (test/auth.defects.test.js:61:5)
+
+  ● D-REG: README FR-01 registration validation and SEC-01 › DF-06 weak password is refused: no special character
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at toBeGreaterThanOrEqual (test/auth.defects.test.js:17:22)
+      at expectRefused (test/auth.defects.test.js:61:5)
+
+  ● D-REG: README FR-01 registration validation and SEC-01 › DF-07 the name is required
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at toBeGreaterThanOrEqual (test/auth.defects.test.js:17:22)
+      at Object.expectRefused (test/auth.defects.test.js:66:5)
+
+  ● D-REG: README FR-01 registration validation and SEC-01 › DF-08 the password is not stored as plaintext (SEC-01)
+
+    expect(received).not.toBe(expected) // Object.is equality
+
+    Expected: not "Carol123!x"
+
+      70 |   test('DF-08 the password is not stored as plaintext (SEC-01)', async () => {
+      71 |     await request(app).post('/api/register').send(NEW_USER);
+    > 72 |     expect((await testApi.userByEmail(NEW_USER.email)).password).not.toBe(NEW_USER.password);
+         |                                                                      ^
+      73 |   });
+      74 | });
+      75 |
+
+      at Object.toBe (test/auth.defects.test.js:72:70)
+
+  ● D-OTP: README FR-03 and SEC-07 › DF-10 the OTP expires: a token older than 24 hours is refused (SEC-07 "có thời hạn"; 24 h is the test's assumed bound, the spec gives none)
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at toBeGreaterThanOrEqual (test/auth.defects.test.js:17:22)
+      at Object.expectRefused (test/auth.defects.test.js:89:5)
+
+  ● D-OTP: README FR-03 and SEC-07 › DF-11 the new password must satisfy the FR-01 strength rule
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at toBeGreaterThanOrEqual (test/auth.defects.test.js:17:22)
+      at Object.expectRefused (test/auth.defects.test.js:95:5)
+
+  ● D-PROFILE: README FR-04, SEC-06 and API 2.2 › DF-13 invalid phone is refused (FR-04): 9 digits
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at toBeGreaterThanOrEqual (test/auth.defects.test.js:17:22)
+      at expectRefused (test/auth.defects.test.js:116:5)
+
+  ● D-PROFILE: README FR-04, SEC-06 and API 2.2 › DF-13 invalid phone is refused (FR-04): 12 digits
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at toBeGreaterThanOrEqual (test/auth.defects.test.js:17:22)
+      at expectRefused (test/auth.defects.test.js:116:5)
+
+  ● D-PROFILE: README FR-04, SEC-06 and API 2.2 › DF-13 invalid phone is refused (FR-04): not starting with 0
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at toBeGreaterThanOrEqual (test/auth.defects.test.js:17:22)
+      at expectRefused (test/auth.defects.test.js:116:5)
+
+  ● D-PROFILE: README FR-04, SEC-06 and API 2.2 › DF-13 invalid phone is refused (FR-04): letters
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at toBeGreaterThanOrEqual (test/auth.defects.test.js:17:22)
+      at expectRefused (test/auth.defects.test.js:116:5)
+
+  ● D-PROFILE: README FR-04, SEC-06 and API 2.2 › DF-13 invalid phone is refused (FR-04): empty
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at toBeGreaterThanOrEqual (test/auth.defects.test.js:17:22)
+      at expectRefused (test/auth.defects.test.js:116:5)
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       18 failed, 31 passed, 49 total
+Snapshots:   0 total
+Time:        0.333 s, estimated 1 s
+Ran all test suites matching test/auth.defects.test.js|test/auth.spec.test.js.

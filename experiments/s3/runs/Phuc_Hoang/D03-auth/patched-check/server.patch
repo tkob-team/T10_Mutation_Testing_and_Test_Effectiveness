@@ -1,0 +1,17 @@
+54c54
+<       const newAttempts = user.login_attempts + 2;
+---
+>       const newAttempts = user.login_attempts + 1;
+57c57
+<         lockedUntil = new Date(Date.now() + 180000).toISOString();
+---
+>         lockedUntil = new Date(Date.now() + 30000).toISOString();
+72c72
+<     const resetToken = Math.floor(1000 + Math.random() * 9000).toString();
+---
+>     const resetToken = Math.floor(100000 + Math.random() * 900000).toString();
+119c119,120
+<   const { name, shipping_address, phone, role } = req.body;
+---
+>   const { name, shipping_address, phone } = req.body;
+>   const role = undefined;
