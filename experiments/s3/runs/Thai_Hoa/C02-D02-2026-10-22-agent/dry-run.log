@@ -1,0 +1,9 @@
+[32m23:10:32 (21180) INFO ProjectReader[39m Found 1 of 24 file(s) to be mutated.
+[32m23:10:32 (21180) INFO Instrumenter[39m Instrumented 1 source file(s) with 120 mutant(s)
+[32m23:10:32 (21180) INFO ConcurrencyTokenProvider[39m Creating 1 test runner process(es).
+[32m23:10:33 (21180) INFO DryRunExecutor[39m Note: running the dry-run only. No mutations will be tested.
+[32m23:10:33 (21180) INFO DryRunExecutor[39m Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+[32m23:10:34 (21180) INFO DryRunExecutor[39m Initial test run succeeded. Ran 25 tests in 1 second (net 283 ms, overhead 754 ms).
+[32m23:10:34 (21180) INFO MutationTestExecutor[39m The dry-run has been completed successfully. No mutations have been executed.
+npm notice run backend@1.0.0 coupons:dry
+npm notice run stryker run stryker.coupons.config.json --dryRunOnly

@@ -1,0 +1,34 @@
+[32m23:09:10 (31368) INFO ProjectReader[39m Found 1 of 22 file(s) to be mutated.
+[32m23:09:10 (31368) INFO Instrumenter[39m Instrumented 1 source file(s) with 5 mutant(s)
+[32m23:09:10 (31368) INFO ConcurrencyTokenProvider[39m Creating 1 test runner process(es).
+[32m23:09:11 (31368) INFO DryRunExecutor[39m Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+[32m23:09:11 (31368) INFO DryRunExecutor[39m Initial test run succeeded. Ran 2 tests in 0 seconds (net 2 ms, overhead 538 ms).
+
+All tests
+  ai.test.js
+    ✓ exactly at the inclusive minimum qualifies [line 4] (killed 4)
+  weak.test.js
+    ~ above the minimum qualifies [line 2] (covered 5)
+
+[Survived] ConditionalExpression
+tutorial/eligibility.js:4:10
+-     return total >= minimum;
++     return true;
+Tests ran:
+    exactly at the inclusive minimum qualifies
+    above the minimum qualifies
+
+
+Ran 2.00 tests per mutant on average.
+----------------|------------------|----------|-----------|------------|----------|----------|
+                | % Mutation score |          |           |            |          |          |
+File            |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+----------------|--------|---------|----------|-----------|------------|----------|----------|
+All files       |  80.00 |   80.00 |        4 |         0 |          1 |        0 |        0 |
+ eligibility.js |  80.00 |   80.00 |        4 |         0 |          1 |        0 |        0 |
+----------------|--------|---------|----------|-----------|------------|----------|----------|
+[32m23:09:12 (31368) INFO JsonReporter[39m Your report can be found at: file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/reports/tutorial-ai/mutation.json
+[32m23:09:12 (31368) INFO HtmlReporter[39m Your report can be found at: file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/reports/tutorial-ai/mutation.html
+[32m23:09:12 (31368) INFO MutationTestExecutor[39m Done in 2 seconds.
+npm notice run backend@1.0.0 tutorial:mutate:ai
+npm notice run stryker run tutorial/stryker.ai.config.json

@@ -1,0 +1,372 @@
+npm notice run backend@1.0.0 test:defects
+npm notice run jest --config jest.defects.config.cjs --runInBand --json --outputFile D:\Workspace\1. Study\courses-fit-hcmus\2026-2027\csc13003-testing\seminar\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Thai_Hoa\C02-D02-2026-10-22-agent\defects.json
+FAIL test/defects/coupons.defects.js
+  ● CD-01 exact minimum must be accepted (FR-09 C3 >=)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+      Object {
+    -   "discount": 50000,
+    -   "final": 450000,
+    -   "status": 200,
+    +   "discount": undefined,
+    +   "final": undefined,
+    +   "status": 400,
+      }
+
+      20 |   const res = await apply({total_amount:500000});
+      21 |   expect({status:res.status,discount:res.body.discount_amount,final:res.body.final_amount})
+    > 22 |     .toEqual({status:200,discount:50000,final:450000});
+         |      ^
+      23 | });
+      24 | test('CD-02 10 percent means divide by 100 (FR-09 formula)', async () => {
+      25 |   await h.seedCoupon(db,{type:'percent',discount_value:10});
+
+      at Object.<anonymous> (test/defects/coupons.defects.js:22:6)
+
+  ● CD-02 10 percent means divide by 100 (FR-09 formula)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "discount": 70000,
+    -   "final": 630000,
+    +   "discount": -6300000,
+    +   "final": 7000000,
+        "status": 200,
+      }
+
+      26 |   const res = await apply({});
+      27 |   expect({status:res.status,discount:res.body.discount_amount,final:res.body.final_amount})
+    > 28 |     .toEqual({status:200,discount:70000,final:630000});
+         |      ^
+      29 | });
+      30 | test('CD-03 exactly at expiry is invalid (FR-09 C2 now < expiry)', async () => {
+      31 |   await h.seedCoupon(db); h.freeze(h.EXPIRY);
+
+      at Object.<anonymous> (test/defects/coupons.defects.js:28:6)
+
+  ● CD-03 exactly at expiry is invalid (FR-09 C2 now < expiry)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "refused": true,
+    +   "refused": false,
+        "usage": 0,
+      }
+
+      33 |   const res = await apply({});
+      34 |   expect({refused:refused(res),usage:await h.count(db,'coupon_usage')})
+    > 35 |     .toEqual({refused:true,usage:0});
+         |      ^
+      36 | });
+      37 | test.each(['absent','invalid'])('CD-04 %s JWT cannot apply a valid coupon (FR-09 C4)', async kind => {
+      38 |   await h.seedCoupon(db);
+
+      at Object.<anonymous> (test/defects/coupons.defects.js:35:6)
+
+  ● CD-04 absent JWT cannot apply a valid coupon (FR-09 C4)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      37 | test.each(['absent','invalid'])('CD-04 %s JWT cannot apply a valid coupon (FR-09 C4)', async kind => {
+      38 |   await h.seedCoupon(db);
+    > 39 |   expect(refused(await apply({},kind === 'absent' ? null : 'invalid-token'))).toBe(true);
+         |                                                                               ^
+      40 | });
+      41 | test.each(['omitted','another-user'])('CD-05 body user_id %s cannot bypass my limit (FR-09 C4/C5)', async kind => {
+      42 |   const coupon = await h.seedCoupon(db);
+
+      at test/defects/coupons.defects.js:39:79
+
+  ● CD-04 invalid JWT cannot apply a valid coupon (FR-09 C4)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      37 | test.each(['absent','invalid'])('CD-04 %s JWT cannot apply a valid coupon (FR-09 C4)', async kind => {
+      38 |   await h.seedCoupon(db);
+    > 39 |   expect(refused(await apply({},kind === 'absent' ? null : 'invalid-token'))).toBe(true);
+         |                                                                               ^
+      40 | });
+      41 | test.each(['omitted','another-user'])('CD-05 body user_id %s cannot bypass my limit (FR-09 C4/C5)', async kind => {
+      42 |   const coupon = await h.seedCoupon(db);
+
+      at test/defects/coupons.defects.js:39:79
+
+  ● CD-05 body user_id omitted cannot bypass my limit (FR-09 C4/C5)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "refused": true,
+    +   "refused": false,
+        "usage": 2,
+      }
+
+      44 |   const res = await apply({user_id:kind === 'omitted' ? undefined : 1});
+      45 |   expect({refused:refused(res),usage:await h.count(db,'coupon_usage')})
+    > 46 |     .toEqual({refused:true,usage:2});
+         |      ^
+      47 | });
+      48 | test.each(['list','create','delete'])('CD-06 ordinary user cannot %s coupons (FR-12, SEC-03; API 5.2)', async action => {
+      49 |   const coupon = await h.seedCoupon(db);
+
+      at test/defects/coupons.defects.js:46:6
+
+  ● CD-05 body user_id another-user cannot bypass my limit (FR-09 C4/C5)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "refused": true,
+    +   "refused": false,
+        "usage": 2,
+      }
+
+      44 |   const res = await apply({user_id:kind === 'omitted' ? undefined : 1});
+      45 |   expect({refused:refused(res),usage:await h.count(db,'coupon_usage')})
+    > 46 |     .toEqual({refused:true,usage:2});
+         |      ^
+      47 | });
+      48 | test.each(['list','create','delete'])('CD-06 ordinary user cannot %s coupons (FR-12, SEC-03; API 5.2)', async action => {
+      49 |   const coupon = await h.seedCoupon(db);
+
+      at test/defects/coupons.defects.js:46:6
+
+  ● CD-06 ordinary user cannot list coupons (FR-12, SEC-03; API 5.2)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "refused": true,
+    +   "refused": false,
+        "rows": 1,
+      }
+
+      53 |   const res = await req.set(h.bearer(token));
+      54 |   expect({refused:refused(res),rows:await h.count(db,'coupons')})
+    > 55 |     .toEqual({refused:true,rows:1});
+         |      ^
+      56 | });
+      57 | test.each([
+      58 |   ['missing-code',{code:undefined}],
+
+      at test/defects/coupons.defects.js:55:6
+
+  ● CD-06 ordinary user cannot create coupons (FR-12, SEC-03; API 5.2)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "refused": true,
+    -   "rows": 1,
+    +   "refused": false,
+    +   "rows": 2,
+      }
+
+      53 |   const res = await req.set(h.bearer(token));
+      54 |   expect({refused:refused(res),rows:await h.count(db,'coupons')})
+    > 55 |     .toEqual({refused:true,rows:1});
+         |      ^
+      56 | });
+      57 | test.each([
+      58 |   ['missing-code',{code:undefined}],
+
+      at test/defects/coupons.defects.js:55:6
+
+  ● CD-06 ordinary user cannot delete coupons (FR-12, SEC-03; API 5.2)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "refused": true,
+    -   "rows": 1,
+    +   "refused": false,
+    +   "rows": 0,
+      }
+
+      53 |   const res = await req.set(h.bearer(token));
+      54 |   expect({refused:refused(res),rows:await h.count(db,'coupons')})
+    > 55 |     .toEqual({refused:true,rows:1});
+         |      ^
+      56 | });
+      57 | test.each([
+      58 |   ['missing-code',{code:undefined}],
+
+      at test/defects/coupons.defects.js:55:6
+
+  ● CD-07 admin validation: missing-code is refused without insertion (FR-17)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "refused": true,
+    -   "rows": 0,
+    +   "refused": false,
+    +   "rows": 1,
+      }
+
+      66 |     .send({...h.validAdminCoupon(),...invalid});
+      67 |   expect({refused:refused(res),rows:await h.count(db,'coupons')})
+    > 68 |     .toEqual({refused:true,rows:0});
+         |      ^
+      69 | });
+      70 |
+
+      at test/defects/coupons.defects.js:68:6
+
+  ● CD-07 admin validation: unknown-type is refused without insertion (FR-17)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "refused": true,
+    -   "rows": 0,
+    +   "refused": false,
+    +   "rows": 1,
+      }
+
+      66 |     .send({...h.validAdminCoupon(),...invalid});
+      67 |   expect({refused:refused(res),rows:await h.count(db,'coupons')})
+    > 68 |     .toEqual({refused:true,rows:0});
+         |      ^
+      69 | });
+      70 |
+
+      at test/defects/coupons.defects.js:68:6
+
+  ● CD-07 admin validation: zero-discount is refused without insertion (FR-17)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "refused": true,
+    -   "rows": 0,
+    +   "refused": false,
+    +   "rows": 1,
+      }
+
+      66 |     .send({...h.validAdminCoupon(),...invalid});
+      67 |   expect({refused:refused(res),rows:await h.count(db,'coupons')})
+    > 68 |     .toEqual({refused:true,rows:0});
+         |      ^
+      69 | });
+      70 |
+
+      at test/defects/coupons.defects.js:68:6
+
+  ● CD-07 admin validation: negative-minimum is refused without insertion (FR-17)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "refused": true,
+    -   "rows": 0,
+    +   "refused": false,
+    +   "rows": 1,
+      }
+
+      66 |     .send({...h.validAdminCoupon(),...invalid});
+      67 |   expect({refused:refused(res),rows:await h.count(db,'coupons')})
+    > 68 |     .toEqual({refused:true,rows:0});
+         |      ^
+      69 | });
+      70 |
+
+      at test/defects/coupons.defects.js:68:6
+
+  ● CD-07 admin validation: zero-uses is refused without insertion (FR-17)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "refused": true,
+    -   "rows": 0,
+    +   "refused": false,
+    +   "rows": 1,
+      }
+
+      66 |     .send({...h.validAdminCoupon(),...invalid});
+      67 |   expect({refused:refused(res),rows:await h.count(db,'coupons')})
+    > 68 |     .toEqual({refused:true,rows:0});
+         |      ^
+      69 | });
+      70 |
+
+      at test/defects/coupons.defects.js:68:6
+
+  ● CD-07 admin validation: missing-expiry is refused without insertion (FR-17)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "refused": true,
+    -   "rows": 0,
+    +   "refused": false,
+    +   "rows": 1,
+      }
+
+      66 |     .send({...h.validAdminCoupon(),...invalid});
+      67 |   expect({refused:refused(res),rows:await h.count(db,'coupons')})
+    > 68 |     .toEqual({refused:true,rows:0});
+         |      ^
+      69 | });
+      70 |
+
+      at test/defects/coupons.defects.js:68:6
+
+Test Suites: 1 failed, 1 total
+Tests:       16 failed, 16 total
+Snapshots:   0 total
+Time:        0.721 s, estimated 1 s
+Ran all test suites.
+Test results written to: ..\..\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Thai_Hoa\C02-D02-2026-10-22-agent\defects.json

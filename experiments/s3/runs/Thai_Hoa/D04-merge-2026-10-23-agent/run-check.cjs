@@ -1,0 +1,24 @@
+// Evidence capture for approved branch merges. Invocation does not modify SUT files.
+const fs = require('node:fs');
+const path = require('node:path');
+const crypto = require('node:crypto');
+const { spawnSync } = require('node:child_process');
+const [backend, id, tool, ...args] = process.argv.slice(2);
+if (!path.isAbsolute(backend || '') || !/^[\w-]+$/.test(id || '') || !['jest','stryker'].includes(tool)) throw new Error('Usage: node run-check.cjs ABS_BACKEND ID jest|stryker ...args');
+const out = path.join(__dirname, id);
+if (fs.existsSync(out + '.meta.json')) throw new Error('Existing evidence must not be overwritten');
+const sha = file => crypto.createHash('sha256').update(fs.readFileSync(path.join(backend,file))).digest('hex');
+const protectedFiles = ['server.js','database.js','database.sqlite'];
+const hashes = () => Object.fromEntries(protectedFiles.map(file => [file, sha(file)]));
+const git = (...flags) => spawnSync('git',flags,{cwd:backend,encoding:'utf8'}).stdout.trim();
+const before=hashes();
+const startedUtc=new Date().toISOString();
+const started=performance.now();
+const cli=path.join(backend,tool==='jest'?'node_modules/jest/bin/jest.js':'node_modules/@stryker-mutator/core/bin/stryker.js');
+const result=spawnSync(process.execPath,[cli,...args],{cwd:backend,encoding:'utf8',timeout:900000,maxBuffer:64*1024*1024,env:{...process.env,FORCE_COLOR:'0'}});
+const after=hashes();
+fs.writeFileSync(out+'.log','--- stdout ---\n'+(result.stdout||'')+'\n--- stderr ---\n'+(result.stderr||''));
+const meta={id,executor:'OpenAI Codex AI Agent; not a member self-run',startedUtc,finishedUtc:new Date().toISOString(),elapsedMs:Math.round(performance.now()-started),command:[process.execPath,cli,...args],cwd:backend,node:process.version,platform:process.platform,commit:git('rev-parse','HEAD'),branch:git('branch','--show-current'),mergeHead:git('rev-parse','--verify','MERGE_HEAD'),packageSha256:sha('package.json'),lockSha256:sha('package-lock.json'),before,after,protectedUnchanged:JSON.stringify(before)===JSON.stringify(after),exitCode:result.status,error:result.error?.message,signal:result.signal};
+fs.writeFileSync(out+'.meta.json',JSON.stringify(meta,null,2)+'\n');
+console.log(JSON.stringify({id,exitCode:meta.exitCode,protectedUnchanged:meta.protectedUnchanged,elapsedMs:meta.elapsedMs}));
+process.exitCode=result.status===null?2:result.status;

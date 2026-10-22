@@ -1,0 +1,246 @@
+Generate 1-3 Jest integration tests to kill the supplied surviving mutants on the UNCHANGED original EShop code. Return testCode and reasoning using the JSON schema. This is the G02 experimental candidate; no manual solution is provided. Do not assert arbitrary message strings or codify original bugs. Tests must pass original code and derive literal expected values from SRS. Do not edit production or weaken the baseline. Use at least three meaningful assertions. If impossible, explain rather than inventing an oracle.
+
+SRS FR-09: code exists/active; now < expiry; total >= min_order_amount; valid JWT; per-user uses < max_uses_per_user. fixed discount=value; percent discount=total*value/100; final=total-discount. FR-17: Admin create/list/delete coupons. Required unique code, type percent/fixed, positive discount_value, expiry, min_order_amount>=0, max_uses_per_user>=1. Exact HTTP errors unspecified. Known ORIGINAL bugs (not targets): percent formula, inclusive minimum, equality expiry, apply auth/body identity and admin role/validation. Do not write tests that fail because of them.
+
+Candidate file will be backend/test/ai/coupons.ai.js. Use require('../helpers/coupons'). Exports and fixtures below. beforeAll awaits loadApp, beforeEach freezes clock and resets coupons then logs in the USER and ADMIN; afterEach restores real timers; afterAll closes db. Database assertions/seed are test fixtures. Native SQLite/supertest must stay asynchronous.
+
+HELPERS:
+// Test-only fixtures. Real SQLite and SUT SQL; no production edits.
+// Reuse D01 isolation/app loader at 8d60e9b. Time alone is faked.
+const { loadApp, login, ADMIN, bearer, request, get } = require('./app');
+const NOW = '2026-10-22T12:00:00.000Z';
+const EXPIRY = '2026-10-23T12:00:00.000Z';
+const USER = { email: 'test@eshop.com', password: 'Test1234!' };
+function run(db, sql, params = []) {
+  return new Promise((resolve, reject) => db.run(sql, params, function (err) {
+    if (err) reject(err); else resolve({ id: this.lastID, changes: this.changes });
+  }));
+}
+function freeze(iso = NOW) {
+  jest.useFakeTimers({ now: Date.parse(iso), doNotFake: [
+    'nextTick', 'setImmediate', 'clearImmediate', 'setTimeout', 'clearTimeout',
+    'setInterval', 'clearInterval', 'queueMicrotask', 'performance', 'hrtime',
+  ] });
+}
+async function resetCoupons(db) {
+  await run(db, 'DELETE FROM coupon_usage');
+  await run(db, 'DELETE FROM coupons');
+  await run(db, "DELETE FROM sqlite_sequence WHERE name IN ('coupons', 'coupon_usage')");
+  await run(db, 'UPDATE users SET login_attempts = 0, locked_until = NULL');
+}
+async function seedCoupon(db, overrides = {}) {
+  const c = { code: 'FIXED50', type: 'fixed', discount_value: 50000,
+    min_order_amount: 500000, expired_at: EXPIRY, is_active: 1, max_uses_per_user: 2,
+    ...overrides };
+  const row = await run(db, `INSERT INTO coupons
+    (code,type,discount_value,min_order_amount,expired_at,is_active,max_uses_per_user)
+    VALUES (?,?,?,?,?,?,?)`, Object.values(c));
+  return { ...c, id: row.id };
+}
+async function seedUsage(db, couponId, userId, count) {
+  for (let i = 0; i < count; i++) {
+    await run(db, 'INSERT INTO coupon_usage(coupon_id,user_id) VALUES (?,?)', [couponId,userId]);
+  }
+}
+async function count(db, table) {
+  // Only test-owned table identifiers are accepted; values still use bind parameters.
+  if (!['coupons','coupon_usage'].includes(table)) throw new Error('Unsupported fixture table');
+  return (await get(db, 'SELECT COUNT(*) AS n FROM ' + table)).n;
+}
+const validAdminCoupon = () => ({ code: 'NEW_FIXED', type: 'fixed', discount_value: 25000,
+  min_order_amount: 0, expired_at: EXPIRY, max_uses_per_user: 1 });
+module.exports = { loadApp, login, ADMIN, USER, bearer, request, get, run,
+  NOW, EXPIRY, freeze, resetCoupons, seedCoupon, seedUsage, count, validAdminCoupon };
+
+
+Shared helper login(app,{email,password}) returns JWT; bearer(token) makes Authorization header; request is supertest; get(db,sql,params=[]) returns row.
+
+FROZEN ORIGINAL COUPON ROUTES:
+// GET all coupons (public - for admin display)
+app.get("/api/coupons", authenticateToken, (req, res) => {
+  db.all("SELECT * FROM coupons", [], (err, rows) => {
+    res.json(rows);
+  });
+});
+
+// POST apply-coupon
+app.post("/api/apply-coupon", (req, res) => {
+  const { code, total_amount, user_id } = req.body;
+
+  if (!code)
+    return res.status(400).json({ error: "Vui lòng nhập mã giảm giá" });
+
+  db.get(
+    "SELECT * FROM coupons WHERE code = ? AND is_active = 1",
+    [code],
+    (err, coupon) => {
+      if (!coupon) {
+        return res
+          .status(404)
+          .json({ error: "Mã giảm giá không tồn tại hoặc đã bị vô hiệu hóa" });
+      }
+
+      if (total_amount > coupon.min_order_amount) {
+        const now = new Date();
+        const expiry = new Date(coupon.expired_at);
+        if (expiry < now) {
+          return res.status(400).json({ error: "Mã giảm giá đã hết hạn" });
+        }
+
+        if (user_id) {
+          db.get(
+            "SELECT COUNT(*) as usage_count FROM coupon_usage WHERE coupon_id = ? AND user_id = ?",
+            [coupon.id, user_id],
+            (err, result) => {
+              if (result.usage_count >= coupon.max_uses_per_user) {
+                return res.status(400).json({
+                  error: `Bạn đã sử dụng mã này ${coupon.max_uses_per_user} lần (đã đạt giới hạn)`,
+                });
+              }
+
+              let discount_amount = 0;
+              if (coupon.type === "percent") {
+                discount_amount = Math.floor(
+                  total_amount * (1 - coupon.discount_value),
+                );
+              } else {
+                discount_amount = coupon.discount_value;
+              }
+
+              const final_amount = total_amount - discount_amount;
+              return res.json({
+                success: true,
+                coupon_id: coupon.id,
+                discount_amount,
+                final_amount,
+                message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+              });
+            },
+          );
+        } else {
+          let discount_amount = 0;
+          if (coupon.type === "percent") {
+            discount_amount = Math.floor(
+              total_amount * (1 - coupon.discount_value),
+            );
+          } else {
+            discount_amount = coupon.discount_value;
+          }
+          const final_amount = total_amount - discount_amount;
+          return res.json({
+            success: true,
+            coupon_id: coupon.id,
+            discount_amount,
+            final_amount,
+            message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+          });
+        }
+      } else {
+        return res.status(400).json({
+          error: `Đơn hàng chưa đủ giá trị tối thiểu ${coupon.min_order_amount.toLocaleString()} ₫ để áp dụng mã này`,
+        });
+      }
+    },
+  );
+});
+
+// POST save coupon usage (called after successful checkout)
+app.post("/api/coupon-usage", authenticateToken, (req, res) => {
+  const { coupon_id } = req.body;
+  db.run(
+    "INSERT INTO coupon_usage (coupon_id, user_id) VALUES (?, ?)",
+    [coupon_id, req.user.id],
+    function (err) {
+      if (err) return res.status(500).json({ error: err.message });
+      res.json({ message: "Usage recorded" });
+    },
+  );
+});
+
+// ADMIN: CRUD Coupons
+app.post("/api/admin/coupons", authenticateToken, (req, res) => {
+  const {
+    code,
+    type,
+    discount_value,
+    min_order_amount,
+    expired_at,
+    max_uses_per_user,
+  } = req.body;
+  db.run(
+    "INSERT INTO coupons (code, type, discount_value, min_order_amount, expired_at, max_uses_per_user) VALUES (?, ?, ?, ?, ?, ?)",
+    [
+      code,
+      type,
+      discount_value,
+      min_order_amount,
+      expired_at,
+      max_uses_per_user || 1,
+    ],
+    function (err) {
+      if (err) return res.status(500).json({ error: err.message });
+      res.json({ message: "Coupon created", id: this.lastID });
+    },
+  );
+});
+
+app.delete("/api/admin/coupons/:id", authenticateToken, (req, res) => {
+  db.run("DELETE FROM coupons WHERE id = ?", [req.params.id], function (err) {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json({ message: "Coupon deleted" });
+  });
+});
+
+// ==========================================
+// ADMIN APIS
+// ==========================================
+
+TARGET SURVIVORS (id/location/mutator/replacement):
+[
+  {
+    "id": "111",
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "status": "Survived",
+    "static": false,
+    "testsCompleted": 4,
+    "coveredBy": [
+      "20",
+      "24"
+    ],
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 474
+      },
+      "start": {
+        "column": 7,
+        "line": 474
+      }
+    }
+  },
+  {
+    "id": "113",
+    "mutatorName": "LogicalOperator",
+    "replacement": "max_uses_per_user && 1",
+    "status": "Survived",
+    "static": false,
+    "testsCompleted": 4,
+    "coveredBy": [
+      "20",
+      "24"
+    ],
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 474
+      },
+      "start": {
+        "column": 7,
+        "line": 474
+      }
+    }
+  }
+]
+
+Return a complete file. Code is AI-generated and must be labelled so; no claim of human authorship or execution. Include scope/limitations in reasoning.

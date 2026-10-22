@@ -4,7 +4,7 @@
 
 Nhóm 12, môn Software Testing, FIT@HCMUS chuẩn bị seminar T10: Mutation Testing & Test Effectiveness. Nhóm nghiên cứu trên EShop backend, so sánh assertion thủ công với assertion do AI Agent đề xuất, rồi xây dựng guide, report, demo và activity để người khác thực hành lại. Agent/model thực tế được ghi riêng cho từng run.
 
-Context này giữ quyết định và quy ước chung của nhóm. Phân công và tiến độ theo [Team Sheet](https://docs.google.com/spreadsheets/d/1XgWdi8CYOSqx33VhL9rBHMAC4WfHXjGu9YSiLv0lyPk/edit); yêu cầu chi tiết lấy từ [Requirements](docs/requirements/Seminar_Requirements_Consolidated.md).
+Context này giữ quyết định và quy ước chung của nhóm. Phân công và tiến độ theo [Team Sheet](https://docs.google.com/spreadsheets/d/1vuIXJeVhuoKQu8Gw4cHN__d09kIcB4K-hccIz27DxKc/edit) do Thái Hòa cung cấp ngày 2026-10-22; yêu cầu chi tiết lấy từ [Requirements](docs/requirements/Seminar_Requirements_Consolidated.md).
 
 ## Sources & Authority
 
@@ -32,13 +32,13 @@ Khi task cần code/tests/config, dùng repo EShop được dẫn ở trên và 
 
 ## Workflow
 
-**Current Stage — 2026-10-18:** S1 và S2 đã hoàn tất, GV đã xác thực theo xác nhận trực tiếp của Thái Hòa. Nhóm đang làm S3; mỗi task được review dựa trên artifact và evidence tương ứng.
+**Current Stage — 2026-10-23:** S1 và S2 đã hoàn tất theo xác nhận trực tiếp của Thái Hòa. Nhóm đang làm S3; baseline chung đã freeze tại SUT `806ba19` sau khi merge các bàn giao được review vào main. [Manifest](experiments/s3/Baseline_Manifest.md) và [review](experiments/s3/D04_Integration_Review_2026-10-23.md) ghi rõ technical verification và member review/self-run còn riêng biệt.
 
 Evidence S3 hiện có trong repo:
 
-- Thái Hòa: [Research Notes](research/s3/Research_Notes_Thai_Hoa.md) cho S3-A02/B02 đạt tiêu chí task nghiên cứu sau review kỹ thuật của Codex ngày 2026-10-18 theo yêu cầu quản lý/review của người dùng. Thực nghiệm EShop/Stryker/Claude của Thái Hòa chưa có run evidence.
-- Tấn Hiệp: [Research Notes](research/s3/Research_Notes_Tan_Hiep.md) đạt S3-B01; S3-A01 còn Review để làm rõ mẫu số của số liệu Google 30% diffs ở F-A01-05. [Experiment Log](experiments/s3/Experiment_Log_Tan_Hiep.md) và reports khớp C01-1–C01-6; S3-C01 còn In Progress vì C01-7 seed/reset trong test Pending. Các run demo không thay baseline mutation EShop chung; baseline chung chưa có manifest đã điền.
-- Phúc Hoàng: chưa có research notes hoặc experiment log cá nhân trong repo tại lần review này; chưa đủ căn cứ đổi trạng thái các task.
+- Thái Hòa: [Research Notes](research/s3/Research_Notes_Thai_Hoa.md) cho A02/B02; [Experiment Log](experiments/s3/Experiment_Log_Thai_Hoa.md) có Agent runs C02/D02/D04/E02, F02 draft, G02 và H02 comparison. Common tests 88 pass; 54 defects tách riêng. Coupons: baseline 39 Killed/21 Timeout/30 Survived/25 NoCoverage/5 RuntimeError; F02 và G02 cùng kill thêm hai mutants usage-limit. F02 được người dùng giao Codex soạn để review; G02 dùng Codex cùng context theo lựa chọn trực tiếp sau lỗi đăng nhập Claude. Không gọi đây là independent human-vs-AI experiment.
+- Tấn Hiệp: [Research Notes](research/s3/Research_Notes_Tan_Hiep.md) và [Experiment Log](experiments/s3/Experiment_Log_Tan_Hiep.md) có bàn giao Cart baseline/manual/AI/comparison. Claim Google đã sửa mẫu số. Main đã nhận suite D01 từ `8d60e9b`; các nhánh manual/AI không merge vào baseline. Raw C01/E01/F01/G01 lịch sử giữ nguyên, không gán run Agent mới thành Hiệp tự chạy.
+- Phúc Hoàng: [Research Notes](research/s3/Research_Notes_Phuc_Hoang.md), [Experiment Log](experiments/s3/Experiment_Log_Phuc_Hoang.md), Auth tests và E03-provisional đã có. Người dùng cho phép import 5 files Auth nguyên bản từ evidence vì không có SUT commit bàn giao; commit `958fca3`, hashes khớp. Agent đã reproduce baseline Auth; F03/G03/H03 chưa bàn giao nên I02 chỉ Partial.
 
 Review trên xác nhận chất lượng đầu ra task, không thay xác nhận trải nghiệm, verdict AI audit, reflection hoặc chữ ký của thành viên. [AI Record Thái Hòa](ai-audit/AI_Record_Thai_Hoa.md) và [AI Record Tấn Hiệp](ai-audit/AI_Record_Tan_Hiep.md) vẫn còn inputs Pending; phần audit S8 đang được tích lũy, chưa hoàn tất. S1/S2 giữ trạng thái đã được người dùng xác nhận.
 
@@ -55,6 +55,15 @@ Review trên xác nhận chất lượng đầu ra task, không thay xác nhận
 | S8 — Finalization | Hiệu chỉnh, audit/reflection/peer review và bộ cuối |
 
 Mục tiêu là hoàn thành đầy đủ nội dung, thực nghiệm, tài liệu và bộ nộp có evidence kiểm chứng. Feedback/reflection sau seminar chỉ bổ sung khi sự kiện đã diễn ra; phần chưa có đầu vào giữ Pending.
+
+### Coupons Handoff — 2026-10-22
+
+Trên nhánh `codex/s3-coupons-hoa`, Codex AI Agent đã chuẩn bị S3-C02/D02:
+[Contract](experiments/s3/Coupons_Test_Contract_Thai_Hoa.md), [Experiment Log](experiments/s3/Experiment_Log_Thai_Hoa.md), [run evidence](experiments/s3/runs/Thai_Hoa/C02-D02-2026-10-22-agent/README.md).
+25 baseline tests pass, 16 original-defect tests fail tại assertions đúng kỳ vọng; Stryker dry run tìm và chạy đủ 25 tests. Production source/database giữ nguyên.
+Tutorial Stryker + AI Agent riêng có target mutant Survived→Killed, không thay E02/G02 hoặc baseline chung.
+Member run/review của Thái Hòa, D04 và E02/F02/G02/H02/I02 vẫn Pending. Không suy ra Sheet đã đồng bộ.
+Hướng dẫn tự học/cách tự chạy chi tiết nằm ngoài hai repo team theo yêu cầu người dùng; contract/log trong repo vẫn đủ để teammate nhận bàn giao.
 
 ## Team & Task Ownership
 

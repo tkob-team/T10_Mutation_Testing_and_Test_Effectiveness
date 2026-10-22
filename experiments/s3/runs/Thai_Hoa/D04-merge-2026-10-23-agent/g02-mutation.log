@@ -1,0 +1,2259 @@
+--- stdout ---
+[32m02:56:04 (23600) INFO ProjectReader[39m Found 1 of 59 file(s) to be mutated.
+[32m02:56:04 (23600) INFO Instrumenter[39m Instrumented 1 source file(s) with 120 mutant(s)
+[32m02:56:04 (23600) INFO ConcurrencyTokenProvider[39m Creating 2 test runner process(es).
+[32m02:56:06 (23600) INFO DryRunExecutor[39m Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+[32m02:56:08 (23600) INFO DryRunExecutor[39m Initial test run succeeded. Ran 56 tests in 2 seconds (net 742 ms, overhead 1600 ms).
+[33m02:56:28 (23600) WARN ChildProcessProxy[39m Child process [pid 17044] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 17044] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 17044,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:56:29 (23600) WARN ChildProcessProxy[39m Child process [pid 27284] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 27284] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 27284,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:57:04 (23600) WARN ChildProcessProxy[39m Child process [pid 5700] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 5700] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 5700,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:57:05 (23600) WARN ChildProcessProxy[39m Child process [pid 22252] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 22252] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 22252,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:57:39 (23600) WARN ChildProcessProxy[39m Child process [pid 32832] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 32832] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 32832,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:57:40 (23600) WARN ChildProcessProxy[39m Child process [pid 32536] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 32536] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 32536,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:57:53 (23600) WARN ChildProcessProxy[39m Child process [pid 26988] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 26988] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 26988,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:57:54 (23600) WARN ChildProcessProxy[39m Child process [pid 32016] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 32016] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 32016,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:58:09 (23600) WARN ChildProcessProxy[39m Child process [pid 16524] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 16524] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 16524,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:58:11 (23600) WARN ChildProcessProxy[39m Child process [pid 16452] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 16452] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 16452,
+  exitCode: 3221225477,
+  signal: null
+}
+
+All tests
+  ai/coupons.ai.js
+    ✓ AI: admin limit 2 persists and controls the per-user boundary (FR-17, FR-09 C5) [line 14] (killed 2)
+    ~ AI: admin limit 4 persists and controls the per-user boundary (FR-17, FR-09 C5) [line 14] (covered 70)
+  coupons-flow.test.js
+    ~ CP-FLOW fixed quote -> checkout -> explicit usage recording -> limit enforced [line 7] (covered 54)
+  coupons.test.js
+    ✓ CP-01 fixed coupon: total 500001 gives final 450001 (FR-09) [line 18] (killed 17)
+    ~ CP-01 fixed coupon: total 700000 gives final 650000 (FR-09) [line 18] (covered 43)
+    ✓ CP-02 one currency unit below minimum is refused (FR-09 C3) [line 27] (killed 2)
+    ✓ CP-03 missing/empty code is refused: undefined [line 36] (killed 1)
+    ~ CP-03 missing/empty code is refused:  [line 36] (covered 6)
+    ~ CP-04 unknown code is unavailable (FR-09 C1) [line 42] (covered 13)
+    ~ CP-04 inactive code is unavailable (FR-09 C1) [line 42] (covered 13)
+    ~ CP-05 one millisecond before expiry is valid (FR-09 C2) [line 48] (covered 43)
+    ✓ CP-06 one millisecond after expiry is refused (FR-09 C2) [line 56] (killed 2)
+    ~ CP-07 usage 0 is below limit 2 (FR-09 C5) [line 64] (covered 43)
+    ~ CP-07 usage 1 is below limit 2 (FR-09 C5) [line 64] (covered 43)
+    ✓ CP-08 usage 2 meets/exceeds limit 2 (FR-09 C5) [line 72] (killed 5)
+    ~ CP-08 usage 3 meets/exceeds limit 2 (FR-09 C5) [line 72] (covered 32)
+    ~ CP-09 another user usage does not consume my per-user allowance [line 80] (covered 43)
+    ~ CP-10 another coupon usage does not consume this coupon allowance [line 85] (covered 43)
+    ✓ CP-11 quoting repeatedly does not consume allowance; recording usage does [line 94] (killed 2)
+    ✘ CP-12 usage recording with absent JWT is refused (SEC-02; code is convention) [line 108] (covered 0)
+    ✘ CP-12 usage recording with invalid JWT is refused (SEC-02; code is convention) [line 108] (covered 0)
+    ✓ CP-13 admin lists the current fixture; reset removed original coupons [line 116] (killed 3)
+    ✘ CP-14 list without JWT is refused (API 5.2) [line 123] (covered 0)
+    ✓ CP-15 admin creates minimum=0 and max_uses=1; resulting coupon is usable [line 126] (killed 4)
+    ✓ CP-16 admin deletes only the addressed coupon (FR-17) [line 136] (killed 2)
+    ✘ CP-17 create without JWT has no side effects (FR-12) [line 144] (covered 0)
+    ✘ CP-17 delete without JWT has no side effects (FR-12) [line 144] (covered 0)
+    ✓ CP-18 duplicate code cannot create a second coupon (FR-17) [line 152] (killed 1)
+
+[NoCoverage] BlockStatement
+server.js:398:46
+-                 if (coupon.type === "percent") {
+-                   discount_amount = Math.floor(
+-                     total_amount * (1 - coupon.discount_value),
+-                   );
+-                 } else {
++                 if (coupon.type === "percent") {} else {
+
+[NoCoverage] ArithmeticOperator
+server.js:400:19
+-                     total_amount * (1 - coupon.discount_value),
++                     total_amount / (1 - coupon.discount_value),
+
+[NoCoverage] ArithmeticOperator
+server.js:400:35
+-                     total_amount * (1 - coupon.discount_value),
++                     total_amount * (1 + coupon.discount_value),
+
+[NoCoverage] StringLiteral
+server.js:412:106
+-                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "" : coupon.discount_value.toLocaleString() + " ₫"}`,
+
+[NoCoverage] BlockStatement
+server.js:416:16
+-           } else {
+-             let discount_amount = 0;
+-             if (coupon.type === "percent") {
+-               discount_amount = Math.floor(
+-                 total_amount * (1 - coupon.discount_value),
+-               );
+-             } else {
+-               discount_amount = coupon.discount_value;
+-             }
+-             const final_amount = total_amount - discount_amount;
+-             return res.json({
+-               success: true,
+-               coupon_id: coupon.id,
+-               discount_amount,
+-               final_amount,
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+-             });
+-           }
++           } else {}
+
+[NoCoverage] ConditionalExpression
+server.js:418:15
+-             if (coupon.type === "percent") {
++             if (true) {
+
+[NoCoverage] ConditionalExpression
+server.js:418:15
+-             if (coupon.type === "percent") {
++             if (false) {
+
+[NoCoverage] EqualityOperator
+server.js:418:15
+-             if (coupon.type === "percent") {
++             if (coupon.type !== "percent") {
+
+[NoCoverage] StringLiteral
+server.js:418:31
+-             if (coupon.type === "percent") {
++             if (coupon.type === "") {
+
+[NoCoverage] BlockStatement
+server.js:418:42
+-             if (coupon.type === "percent") {
+-               discount_amount = Math.floor(
+-                 total_amount * (1 - coupon.discount_value),
+-               );
+-             } else {
++             if (coupon.type === "percent") {} else {
+
+[NoCoverage] ArithmeticOperator
+server.js:420:15
+-                 total_amount * (1 - coupon.discount_value),
++                 total_amount / (1 - coupon.discount_value),
+
+[NoCoverage] ArithmeticOperator
+server.js:420:31
+-                 total_amount * (1 - coupon.discount_value),
++                 total_amount * (1 + coupon.discount_value),
+
+[NoCoverage] BlockStatement
+server.js:422:18
+-             } else {
+-               discount_amount = coupon.discount_value;
+-             }
++             } else {}
+
+[NoCoverage] ArithmeticOperator
+server.js:425:32
+-             const final_amount = total_amount - discount_amount;
++             const final_amount = total_amount + discount_amount;
+
+[NoCoverage] ObjectLiteral
+server.js:426:27
+-             return res.json({
+-               success: true,
+-               coupon_id: coupon.id,
+-               discount_amount,
+-               final_amount,
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+-             });
++             return res.json({});
+
+[NoCoverage] BooleanLiteral
+server.js:427:22
+-               success: true,
++               success: false,
+
+[NoCoverage] StringLiteral
+server.js:431:22
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++               message: ``,
+
+[NoCoverage] ConditionalExpression
+server.js:431:50
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++               message: `Áp dụng thành công! Giảm ${true ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+
+[NoCoverage] ConditionalExpression
+server.js:431:50
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++               message: `Áp dụng thành công! Giảm ${false ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+
+[NoCoverage] EqualityOperator
+server.js:431:50
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++               message: `Áp dụng thành công! Giảm ${coupon.type !== "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+
+[NoCoverage] StringLiteral
+server.js:431:66
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++               message: `Áp dụng thành công! Giảm ${coupon.type === "" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+
+[NoCoverage] StringLiteral
+server.js:431:102
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "" : coupon.discount_value.toLocaleString() + " ₫"}`,
+
+[NoCoverage] StringLiteral
+server.js:431:149
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + ""}`,
+
+[NoCoverage] ObjectLiteral
+server.js:450:44
+-         if (err) return res.status(500).json({ error: err.message });
++         if (err) return res.status(500).json({});
+
+[NoCoverage] ObjectLiteral
+server.js:485:42
+-       if (err) return res.status(500).json({ error: err.message });
++       if (err) return res.status(500).json({});
+
+[Survived] ObjectLiteral
+server.js:367:33
+-       return res.status(400).json({ error: "Vui lòng nhập mã giảm giá" });
++       return res.status(400).json({});
+Tests ran:
+    CP-03 missing/empty code is refused: undefined
+    CP-03 missing/empty code is refused: 
+
+
+[Survived] StringLiteral
+server.js:367:42
+-       return res.status(400).json({ error: "Vui lòng nhập mã giảm giá" });
++       return res.status(400).json({ error: "" });
+Tests ran:
+    CP-03 missing/empty code is refused: undefined
+    CP-03 missing/empty code is refused: 
+
+
+[Survived] ObjectLiteral
+server.js:376:17
+-             .json({ error: "Mã giảm giá không tồn tại hoặc đã bị vô hiệu hóa" });
++             .json({});
+Tests ran:
+    CP-04 unknown code is unavailable (FR-09 C1)
+    CP-04 inactive code is unavailable (FR-09 C1)
+
+
+[Survived] StringLiteral
+server.js:376:26
+-             .json({ error: "Mã giảm giá không tồn tại hoặc đã bị vô hiệu hóa" });
++             .json({ error: "" });
+Tests ran:
+    CP-04 unknown code is unavailable (FR-09 C1)
+    CP-04 inactive code is unavailable (FR-09 C1)
+
+
+[Survived] EqualityOperator
+server.js:379:11
+-         if (total_amount > coupon.min_order_amount) {
++         if (total_amount >= coupon.min_order_amount) {
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-02 one currency unit below minimum is refused (FR-09 C3)
+  and 13 more tests!
+
+
+[Survived] EqualityOperator
+server.js:382:13
+-           if (expiry < now) {
++           if (expiry <= now) {
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 12 more tests!
+
+
+[Survived] ObjectLiteral
+server.js:383:39
+-             return res.status(400).json({ error: "Mã giảm giá đã hết hạn" });
++             return res.status(400).json({});
+Tests ran:
+    CP-06 one millisecond after expiry is refused (FR-09 C2)
+
+
+[Survived] StringLiteral
+server.js:383:48
+-             return res.status(400).json({ error: "Mã giảm giá đã hết hạn" });
++             return res.status(400).json({ error: "" });
+Tests ran:
+    CP-06 one millisecond after expiry is refused (FR-09 C2)
+
+
+[Survived] ConditionalExpression
+server.js:386:13
+-           if (user_id) {
++           if (true) {
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 11 more tests!
+
+
+[Survived] ObjectLiteral
+server.js:392:45
+-                   return res.status(400).json({
+-                     error: `Bạn đã sử dụng mã này ${coupon.max_uses_per_user} lần (đã đạt giới hạn)`,
+-                   });
++                   return res.status(400).json({});
+Tests ran:
+    CP-08 usage 2 meets/exceeds limit 2 (FR-09 C5)
+    CP-08 usage 3 meets/exceeds limit 2 (FR-09 C5)
+    CP-11 quoting repeatedly does not consume allowance; recording usage does
+  and 3 more tests!
+
+
+[Survived] StringLiteral
+server.js:393:26
+-                     error: `Bạn đã sử dụng mã này ${coupon.max_uses_per_user} lần (đã đạt giới hạn)`,
++                     error: ``,
+Tests ran:
+    CP-08 usage 2 meets/exceeds limit 2 (FR-09 C5)
+    CP-08 usage 3 meets/exceeds limit 2 (FR-09 C5)
+    CP-11 quoting repeatedly does not consume allowance; recording usage does
+  and 3 more tests!
+
+
+[Survived] ConditionalExpression
+server.js:398:19
+-                 if (coupon.type === "percent") {
++                 if (false) {
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 9 more tests!
+
+
+[Survived] StringLiteral
+server.js:398:35
+-                 if (coupon.type === "percent") {
++                 if (coupon.type === "") {
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 9 more tests!
+
+
+[Survived] StringLiteral
+server.js:412:26
+-                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++                   message: ``,
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 9 more tests!
+
+
+[Survived] ConditionalExpression
+server.js:412:54
+-                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++                   message: `Áp dụng thành công! Giảm ${true ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 9 more tests!
+
+
+[Survived] ConditionalExpression
+server.js:412:54
+-                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++                   message: `Áp dụng thành công! Giảm ${false ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 9 more tests!
+
+
+[Survived] EqualityOperator
+server.js:412:54
+-                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++                   message: `Áp dụng thành công! Giảm ${coupon.type !== "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 9 more tests!
+
+
+[Survived] StringLiteral
+server.js:412:70
+-                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++                   message: `Áp dụng thành công! Giảm ${coupon.type === "" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 9 more tests!
+
+
+[Survived] StringLiteral
+server.js:412:153
+-                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + ""}`,
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 9 more tests!
+
+
+[Survived] StringLiteral
+server.js:436:18
+-             error: `Đơn hàng chưa đủ giá trị tối thiểu ${coupon.min_order_amount.toLocaleString()} ₫ để áp dụng mã này`,
++             error: ``,
+Tests ran:
+    CP-02 one currency unit below minimum is refused (FR-09 C3)
+
+
+[Survived] ConditionalExpression
+server.js:450:11
+-         if (err) return res.status(500).json({ error: err.message });
++         if (false) return res.status(500).json({ error: err.message });
+Tests ran:
+    CP-11 quoting repeatedly does not consume allowance; recording usage does
+    AI: admin limit 2 persists and controls the per-user boundary (FR-17, FR-09 C5)
+    AI: admin limit 4 persists and controls the per-user boundary (FR-17, FR-09 C5)
+  and 1 more test!
+
+
+[Survived] ObjectLiteral
+server.js:451:16
+-         res.json({ message: "Usage recorded" });
++         res.json({});
+Tests ran:
+    CP-11 quoting repeatedly does not consume allowance; recording usage does
+    AI: admin limit 2 persists and controls the per-user boundary (FR-17, FR-09 C5)
+    AI: admin limit 4 persists and controls the per-user boundary (FR-17, FR-09 C5)
+  and 1 more test!
+
+
+[Survived] StringLiteral
+server.js:451:27
+-         res.json({ message: "Usage recorded" });
++         res.json({ message: "" });
+Tests ran:
+    CP-11 quoting repeatedly does not consume allowance; recording usage does
+    AI: admin limit 2 persists and controls the per-user boundary (FR-17, FR-09 C5)
+    AI: admin limit 4 persists and controls the per-user boundary (FR-17, FR-09 C5)
+  and 1 more test!
+
+
+[Survived] ObjectLiteral
+server.js:477:44
+-         if (err) return res.status(500).json({ error: err.message });
++         if (err) return res.status(500).json({});
+Tests ran:
+    CP-18 duplicate code cannot create a second coupon (FR-17)
+
+
+[Survived] StringLiteral
+server.js:478:27
+-         res.json({ message: "Coupon created", id: this.lastID });
++         res.json({ message: "", id: this.lastID });
+Tests ran:
+    CP-15 admin creates minimum=0 and max_uses=1; resulting coupon is usable
+    AI: admin limit 2 persists and controls the per-user boundary (FR-17, FR-09 C5)
+    AI: admin limit 4 persists and controls the per-user boundary (FR-17, FR-09 C5)
+
+
+[Survived] ConditionalExpression
+server.js:485:9
+-       if (err) return res.status(500).json({ error: err.message });
++       if (false) return res.status(500).json({ error: err.message });
+Tests ran:
+    CP-16 admin deletes only the addressed coupon (FR-17)
+
+
+[Survived] ObjectLiteral
+server.js:486:14
+-       res.json({ message: "Coupon deleted" });
++       res.json({});
+Tests ran:
+    CP-16 admin deletes only the addressed coupon (FR-17)
+
+
+[Survived] StringLiteral
+server.js:486:25
+-       res.json({ message: "Coupon deleted" });
++       res.json({ message: "" });
+Tests ran:
+    CP-16 admin deletes only the addressed coupon (FR-17)
+
+
+Ran 11.90 tests per mutant on average.
+-----------|------------------|----------|-----------|------------|----------|----------|
+           | % Mutation score |          |           |            |          |          |
+File       |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+All files  |  53.91 |   68.89 |       41 |        21 |         28 |       25 |        5 |
+ server.js |  53.91 |   68.89 |       41 |        21 |         28 |       25 |        5 |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+[32m02:58:27 (23600) INFO JsonReporter[39m Your report can be found at: file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/reports/coupons-ai/mutation.json
+[32m02:58:27 (23600) INFO HtmlReporter[39m Your report can be found at: file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/reports/coupons-ai/mutation.html
+[32m02:58:27 (23600) INFO MutationTestExecutor[39m Done in 2 minutes and 23 seconds.
+
+--- stderr ---

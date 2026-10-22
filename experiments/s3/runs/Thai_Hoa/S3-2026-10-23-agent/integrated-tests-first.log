@@ -1,0 +1,408 @@
+--- stdout ---
+
+--- stderr ---
+FAIL test/auth.spec.test.js
+  ● Console
+
+    console.log
+      Database initialized and seeded (Phase 2).
+
+      at MemoryDatabase.<anonymous> (database.js:113:17)
+
+  ● Registration (API 1.1) › AU-R01 valid registration returns 200, the success message and a numeric id
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Registration (API 1.1) › AU-R02 a registered user can log in with the same credentials (API 1.2)
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Login and lock (API 1.2, README FR-02) › AU-L01 correct credentials return 200, a JWT and the user
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Login and lock (API 1.2, README FR-02) › AU-L02 the JWT carries the user id and role (FR-02, SEC-03)
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Login and lock (API 1.2, README FR-02) › AU-L03 wrong password is refused with 401 (convention) and no token
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Login and lock (API 1.2, README FR-02) › AU-L04 unknown email gets the same status and body as a wrong password (FR-02: no cause leaked)
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Login and lock (API 1.2, README FR-02) › AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Login and lock (API 1.2, README FR-02) › AU-L06 the lock still holds 29 seconds after the third wrong attempt (FR-02: 30 s)
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Login and lock (API 1.2, README FR-02) › AU-L07 a lock whose time has passed no longer blocks login
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Login and lock (API 1.2, README FR-02) › AU-L08 a successful login resets the failure counter: wrong, ok, wrong, ok never locks (FR-02 "consecutive")
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Login and lock (API 1.2, README FR-02) › AU-L09 failures of one account do not lock another account
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) › AU-P01 forgot-password for a registered email returns 200, the message and a reset token (API 1.3)
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) › AU-P02 forgot-password for an unknown email gives no token
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) › AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4)
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) › AU-P04 reset with a wrong token is refused with 400 (convention) and the password is unchanged
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) › AU-P05 a token issued to one email cannot reset another account (FR-03)
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) › AU-P06 a token is invalidated after use (SEC-07): the second reset with it is refused
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Profile (API 2.1-2.2, README FR-04, SEC-02) › AU-U01 GET /me without a token is refused with 401 (SEC-02)
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Profile (API 2.1-2.2, README FR-04, SEC-02) › AU-U02 GET /me with an invalid token is refused (SEC-02)
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Profile (API 2.1-2.2, README FR-04, SEC-02) › AU-U03 GET /me returns the profile of the token owner only (API 2.1)
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Profile (API 2.1-2.2, README FR-04, SEC-02) › AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2)
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Profile (API 2.1-2.2, README FR-04, SEC-02) › AU-U05 updating one user's profile leaves other users unchanged (FR-04: own profile only)
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Profile (API 2.1-2.2, README FR-04, SEC-02) › AU-U06 the email cannot be changed through PUT /me (FR-04)
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Profile (API 2.1-2.2, README FR-04, SEC-02) › AU-U07 PUT /me without a token is refused with 401 (SEC-02)
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Profile (API 2.1-2.2, README FR-04, SEC-02) › AU-U08 a valid phone is accepted (FR-04: starts with 0, 10-11 digits): 10 digits
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+  ● Profile (API 2.1-2.2, README FR-04, SEC-02) › AU-U08 a valid phone is accepted (FR-04: starts with 0, 10-11 digits): 11 digits
+
+    TypeError: run is not a function
+
+      3 | const { run, get } = require('./app');
+      4 | async function resetUsers(users) {
+    > 5 |   await run(db, 'DELETE FROM users');
+        |         ^
+      6 |   await run(db, "DELETE FROM sqlite_sequence WHERE name = 'users'");
+      7 |   for (const u of users) await run(db, 'INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)', [u.name,u.email,u.password,u.role || 'user']);
+      8 | }
+
+      at Object.resetUsers (test/helpers/auth-db.js:5:9)
+      at Object.<anonymous> (test/auth.spec.test.js:14:40)
+
+
+Test Suites: 1 failed, 3 passed, 4 total
+Tests:       26 failed, 62 passed, 88 total
+Snapshots:   0 total
+Time:        1.429 s
+Ran all test suites.
+Test results written to: ..\..\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Thai_Hoa\S3-2026-10-23-agent\integrated-tests.json

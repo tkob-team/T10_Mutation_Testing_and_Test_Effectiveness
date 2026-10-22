@@ -1,0 +1,2057 @@
+{
+  "summary": {
+    "label": "cart-ai-frozen-comparison",
+    "sameSource": true,
+    "sameSourceIgnoringCR": true,
+    "matched": 150,
+    "totalBaseline": 150,
+    "sameUniverse": true,
+    "baseline": {
+      "Killed": 82,
+      "Timeout": 25,
+      "Survived": 34,
+      "NoCoverage": 2,
+      "RuntimeError": 7,
+      "CompileError": 0,
+      "Ignored": 0,
+      "Pending": 0,
+      "total": 150,
+      "valid": 143,
+      "score": 74.82517482517483,
+      "assertionKillPercent": 57.34265734265734
+    },
+    "variant": {
+      "Killed": 95,
+      "Timeout": 25,
+      "Survived": 21,
+      "NoCoverage": 2,
+      "RuntimeError": 7,
+      "CompileError": 0,
+      "Ignored": 0,
+      "Pending": 0,
+      "total": 150,
+      "valid": 143,
+      "score": 83.91608391608392,
+      "assertionKillPercent": 66.43356643356644
+    },
+    "transitions": {
+      "NoCoverage -> NoCoverage": 2,
+      "Survived -> Killed": 13,
+      "Timeout -> Timeout": 25,
+      "Killed -> Killed": 82,
+      "Survived -> Survived": 21,
+      "RuntimeError -> RuntimeError": 7
+    },
+    "newAssertionKills": [
+      {
+        "file": "server.js",
+        "signature": "286|7|286|25|BooleanLiteral|userCarts[userId]",
+        "baselineId": "3",
+        "variantId": "3",
+        "baseline": "Survived",
+        "variant": "Killed",
+        "killedBy": [
+          {
+            "id": "36",
+            "name": "AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-01 new user GET /api/cart → 200 with an empty array"
+          }
+        ]
+      },
+      {
+        "file": "server.js",
+        "signature": "286|7|286|25|ConditionalExpression|true",
+        "baselineId": "4",
+        "variantId": "4",
+        "baseline": "Survived",
+        "variant": "Killed",
+        "killedBy": [
+          {
+            "id": "37",
+            "name": "AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-02 add two different products → GET /api/cart returns both"
+          }
+        ]
+      },
+      {
+        "file": "server.js",
+        "signature": "286|7|286|25|ConditionalExpression|false",
+        "baselineId": "5",
+        "variantId": "5",
+        "baseline": "Survived",
+        "variant": "Killed",
+        "killedBy": [
+          {
+            "id": "36",
+            "name": "AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-01 new user GET /api/cart → 200 with an empty array"
+          }
+        ]
+      },
+      {
+        "file": "server.js",
+        "signature": "286|47|286|49|ArrayDeclaration|[\"Stryker was here\"]",
+        "baselineId": "6",
+        "variantId": "6",
+        "baseline": "Survived",
+        "variant": "Killed",
+        "killedBy": [
+          {
+            "id": "36",
+            "name": "AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-01 new user GET /api/cart → 200 with an empty array"
+          }
+        ]
+      },
+      {
+        "file": "server.js",
+        "signature": "292|7|292|25|ConditionalExpression|true",
+        "baselineId": "12",
+        "variantId": "12",
+        "baseline": "Survived",
+        "variant": "Killed",
+        "killedBy": [
+          {
+            "id": "37",
+            "name": "AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-02 add two different products → GET /api/cart returns both"
+          }
+        ]
+      },
+      {
+        "file": "server.js",
+        "signature": "292|47|292|49|ArrayDeclaration|[\"Stryker was here\"]",
+        "baselineId": "14",
+        "variantId": "14",
+        "baseline": "Survived",
+        "variant": "Killed",
+        "killedBy": [
+          {
+            "id": "37",
+            "name": "AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-02 add two different products → GET /api/cart returns both"
+          }
+        ]
+      },
+      {
+        "file": "server.js",
+        "signature": "293|3|293|36|CallExpression|;",
+        "baselineId": "15",
+        "variantId": "15",
+        "baseline": "Survived",
+        "variant": "Killed",
+        "killedBy": [
+          {
+            "id": "37",
+            "name": "AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-02 add two different products → GET /api/cart returns both"
+          }
+        ]
+      },
+      {
+        "file": "server.js",
+        "signature": "326|47|326|75|ObjectLiteral|{}",
+        "baselineId": "51",
+        "variantId": "51",
+        "baseline": "Survived",
+        "variant": "Killed",
+        "killedBy": [
+          {
+            "id": "38",
+            "name": "AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-03 cancel a non-existent order → 404 with an error message"
+          }
+        ]
+      },
+      {
+        "file": "server.js",
+        "signature": "326|56|326|73|StringLiteral|\"\"",
+        "baselineId": "52",
+        "variantId": "52",
+        "baseline": "Survived",
+        "variant": "Killed",
+        "killedBy": [
+          {
+            "id": "38",
+            "name": "AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-03 cancel a non-existent order → 404 with an error message"
+          }
+        ]
+      },
+      {
+        "file": "server.js",
+        "signature": "346|45|346|73|ObjectLiteral|{}",
+        "baselineId": "83",
+        "variantId": "83",
+        "baseline": "Survived",
+        "variant": "Killed",
+        "killedBy": [
+          {
+            "id": "39",
+            "name": "AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-04 order detail of non-existent id → 404 with an error message"
+          }
+        ]
+      },
+      {
+        "file": "server.js",
+        "signature": "346|54|346|71|StringLiteral|\"\"",
+        "baselineId": "84",
+        "variantId": "84",
+        "baseline": "Survived",
+        "variant": "Killed",
+        "killedBy": [
+          {
+            "id": "39",
+            "name": "AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-04 order detail of non-existent id → 404 with an error message"
+          }
+        ]
+      },
+      {
+        "file": "server.js",
+        "signature": "532|47|532|75|ObjectLiteral|{}",
+        "baselineId": "104",
+        "variantId": "104",
+        "baseline": "Survived",
+        "variant": "Killed",
+        "killedBy": [
+          {
+            "id": "40",
+            "name": "AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-05 admin changes status of a non-existent order → 404 with an error message"
+          }
+        ]
+      },
+      {
+        "file": "server.js",
+        "signature": "532|56|532|73|StringLiteral|\"\"",
+        "baselineId": "105",
+        "variantId": "105",
+        "baseline": "Survived",
+        "variant": "Killed",
+        "killedBy": [
+          {
+            "id": "40",
+            "name": "AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-05 admin changes status of a non-existent order → 404 with an error message"
+          }
+        ]
+      }
+    ]
+  },
+  "mutants": [
+    {
+      "file": "server.js",
+      "signature": "305|44|305|66|ObjectLiteral|{}",
+      "baselineId": "29",
+      "variantId": "29",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "551|29|551|33|BooleanLiteral|false",
+      "baselineId": "156",
+      "variantId": "156",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "286|7|286|25|BooleanLiteral|userCarts[userId]",
+      "baselineId": "3",
+      "variantId": "3",
+      "baseline": "Survived",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "36",
+          "name": "AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-01 new user GET /api/cart → 200 with an empty array"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "286|7|286|25|ConditionalExpression|true",
+      "baselineId": "4",
+      "variantId": "4",
+      "baseline": "Survived",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "37",
+          "name": "AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-02 add two different products → GET /api/cart returns both"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "286|7|286|25|ConditionalExpression|false",
+      "baselineId": "5",
+      "variantId": "5",
+      "baseline": "Survived",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "36",
+          "name": "AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-01 new user GET /api/cart → 200 with an empty array"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "286|47|286|49|ArrayDeclaration|[\"Stryker was here\"]",
+      "baselineId": "6",
+      "variantId": "6",
+      "baseline": "Survived",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "36",
+          "name": "AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-01 new user GET /api/cart → 200 with an empty array"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "284|55|288|2|BlockStatement|{}",
+      "baselineId": "2",
+      "variantId": "2",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "287|3|287|31|CallExpression|;",
+      "baselineId": "7",
+      "variantId": "7",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "292|7|292|25|BooleanLiteral|userCarts[userId]",
+      "baselineId": "11",
+      "variantId": "11",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "37",
+          "name": "AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-02 add two different products → GET /api/cart returns both"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "292|7|292|25|ConditionalExpression|true",
+      "baselineId": "12",
+      "variantId": "12",
+      "baseline": "Survived",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "37",
+          "name": "AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-02 add two different products → GET /api/cart returns both"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "292|7|292|25|ConditionalExpression|false",
+      "baselineId": "13",
+      "variantId": "13",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "37",
+          "name": "AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-02 add two different products → GET /api/cart returns both"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "292|47|292|49|ArrayDeclaration|[\"Stryker was here\"]",
+      "baselineId": "14",
+      "variantId": "14",
+      "baseline": "Survived",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "37",
+          "name": "AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-02 add two different products → GET /api/cart returns both"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "293|3|293|36|CallExpression|;",
+      "baselineId": "15",
+      "variantId": "15",
+      "baseline": "Survived",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "37",
+          "name": "AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-02 add two different products → GET /api/cart returns both"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "294|12|294|40|ObjectLiteral|{}",
+      "baselineId": "17",
+      "variantId": "17",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "294|23|294|38|StringLiteral|\"\"",
+      "baselineId": "18",
+      "variantId": "18",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "290|56|295|2|BlockStatement|{}",
+      "baselineId": "10",
+      "variantId": "10",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "302|5|302|95|StringLiteral|\"\"",
+      "baselineId": "23",
+      "variantId": "23",
+      "baseline": "RuntimeError",
+      "variant": "RuntimeError",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "303|5|303|56|ArrayDeclaration|[]",
+      "baselineId": "24",
+      "variantId": "24",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "11",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "303|28|303|37|StringLiteral|\"\"",
+      "baselineId": "25",
+      "variantId": "25",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "18",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "297|60|309|2|BlockStatement|{}",
+      "baselineId": "21",
+      "variantId": "21",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "304|20|307|6|BlockStatement|{}",
+      "baselineId": "26",
+      "variantId": "26",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "305|11|305|14|ConditionalExpression|true",
+      "baselineId": "27",
+      "variantId": "27",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "305|11|305|14|ConditionalExpression|false",
+      "baselineId": "28",
+      "variantId": "28",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "306|16|306|72|ObjectLiteral|{}",
+      "baselineId": "31",
+      "variantId": "31",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "8",
+          "name": "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "306|27|306|48|StringLiteral|\"\"",
+      "baselineId": "32",
+      "variantId": "32",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "313|5|313|62|StringLiteral|\"\"",
+      "baselineId": "37",
+      "variantId": "37",
+      "baseline": "RuntimeError",
+      "variant": "RuntimeError",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "314|5|314|18|ArrayDeclaration|[]",
+      "baselineId": "38",
+      "variantId": "38",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "311|67|319|2|BlockStatement|{}",
+      "baselineId": "35",
+      "variantId": "35",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "315|22|317|6|BlockStatement|{}",
+      "baselineId": "39",
+      "variantId": "39",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "316|7|316|24|CallExpression|;",
+      "baselineId": "40",
+      "variantId": "40",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "323|5|323|56|StringLiteral|\"\"",
+      "baselineId": "45",
+      "variantId": "45",
+      "baseline": "RuntimeError",
+      "variant": "RuntimeError",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "324|5|324|33|ArrayDeclaration|[]",
+      "baselineId": "46",
+      "variantId": "46",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "11",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "321|68|342|2|BlockStatement|{}",
+      "baselineId": "43",
+      "variantId": "43",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "325|21|340|6|BlockStatement|{}",
+      "baselineId": "47",
+      "variantId": "47",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "326|11|326|17|BooleanLiteral|order",
+      "baselineId": "48",
+      "variantId": "48",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "326|11|326|17|ConditionalExpression|true",
+      "baselineId": "49",
+      "variantId": "49",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "11",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "326|47|326|75|ObjectLiteral|{}",
+      "baselineId": "51",
+      "variantId": "51",
+      "baseline": "Survived",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "38",
+          "name": "AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-03 cancel a non-existent order → 404 with an error message"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "326|56|326|73|StringLiteral|\"\"",
+      "baselineId": "52",
+      "variantId": "52",
+      "baseline": "Survived",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "38",
+          "name": "AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-03 cancel a non-existent order → 404 with an error message"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "329|11|329|70|ConditionalExpression|true",
+      "baselineId": "53",
+      "variantId": "53",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "11",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "329|11|329|70|ConditionalExpression|false",
+      "baselineId": "54",
+      "variantId": "54",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "13",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "329|11|329|70|LogicalOperator|order.status === \"delivered\" && order.status === \"canceled\"",
+      "baselineId": "55",
+      "variantId": "55",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "13",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "329|11|329|39|ConditionalExpression|false",
+      "baselineId": "56",
+      "variantId": "56",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "13",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "329|11|329|39|EqualityOperator|order.status !== \"delivered\"",
+      "baselineId": "57",
+      "variantId": "57",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "11",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "329|28|329|39|StringLiteral|\"\"",
+      "baselineId": "58",
+      "variantId": "58",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "13",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "329|43|329|70|ConditionalExpression|false",
+      "baselineId": "59",
+      "variantId": "59",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "14",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "329|43|329|70|EqualityOperator|order.status !== \"canceled\"",
+      "baselineId": "60",
+      "variantId": "60",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "11",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "329|60|329|70|StringLiteral|\"\"",
+      "baselineId": "61",
+      "variantId": "61",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "14",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "326|11|326|17|ConditionalExpression|false",
+      "baselineId": "50",
+      "variantId": "50",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "329|72|331|8|BlockStatement|{}",
+      "baselineId": "62",
+      "variantId": "62",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "13",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "330|37|330|75|ObjectLiteral|{}",
+      "baselineId": "63",
+      "variantId": "63",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "330|46|330|73|StringLiteral|\"\"",
+      "baselineId": "64",
+      "variantId": "64",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "335|9|335|36|ArrayDeclaration|[]",
+      "baselineId": "67",
+      "variantId": "67",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "335|10|335|20|StringLiteral|\"\"",
+      "baselineId": "68",
+      "variantId": "68",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "334|9|334|52|StringLiteral|\"\"",
+      "baselineId": "66",
+      "variantId": "66",
+      "baseline": "RuntimeError",
+      "variant": "RuntimeError",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "337|20|337|62|ObjectLiteral|{}",
+      "baselineId": "71",
+      "variantId": "71",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "337|31|337|60|StringLiteral|\"\"",
+      "baselineId": "72",
+      "variantId": "72",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "336|24|338|10|BlockStatement|{}",
+      "baselineId": "69",
+      "variantId": "69",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "344|42|349|2|BlockStatement|{}",
+      "baselineId": "75",
+      "variantId": "75",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "345|47|345|62|ArrayDeclaration|[]",
+      "baselineId": "78",
+      "variantId": "78",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "8",
+          "name": "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "345|10|345|45|StringLiteral|\"\"",
+      "baselineId": "77",
+      "variantId": "77",
+      "baseline": "RuntimeError",
+      "variant": "RuntimeError",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "346|9|346|15|BooleanLiteral|order",
+      "baselineId": "80",
+      "variantId": "80",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "8",
+          "name": "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "346|9|346|15|ConditionalExpression|true",
+      "baselineId": "81",
+      "variantId": "81",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "8",
+          "name": "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "346|9|346|15|ConditionalExpression|false",
+      "baselineId": "82",
+      "variantId": "82",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "9",
+          "name": "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-10 [invalid] order detail of non-existent id → 404"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "346|45|346|73|ObjectLiteral|{}",
+      "baselineId": "83",
+      "variantId": "83",
+      "baseline": "Survived",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "39",
+          "name": "AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-04 order detail of non-existent id → 404 with an error message"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "346|54|346|71|StringLiteral|\"\"",
+      "baselineId": "84",
+      "variantId": "84",
+      "baseline": "Survived",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "39",
+          "name": "AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-04 order detail of non-existent id → 404 with an error message"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "345|80|348|4|BlockStatement|{}",
+      "baselineId": "79",
+      "variantId": "79",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "347|5|347|21|CallExpression|;",
+      "baselineId": "85",
+      "variantId": "85",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "512|5|517|6|StringLiteral|``",
+      "baselineId": "90",
+      "variantId": "90",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "518|5|518|7|ArrayDeclaration|[\"Stryker was here\"]",
+      "baselineId": "91",
+      "variantId": "91",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "510|63|523|2|BlockStatement|{}",
+      "baselineId": "88",
+      "variantId": "88",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "519|22|521|6|BlockStatement|{}",
+      "baselineId": "92",
+      "variantId": "92",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "520|7|520|24|CallExpression|;",
+      "baselineId": "93",
+      "variantId": "93",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "529|5|529|45|StringLiteral|\"\"",
+      "baselineId": "98",
+      "variantId": "98",
+      "baseline": "RuntimeError",
+      "variant": "RuntimeError",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "525|74|568|2|BlockStatement|{}",
+      "baselineId": "96",
+      "variantId": "96",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "530|5|530|20|ArrayDeclaration|[]",
+      "baselineId": "99",
+      "variantId": "99",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "18",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "531|21|566|6|BlockStatement|{}",
+      "baselineId": "100",
+      "variantId": "100",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "532|11|532|17|BooleanLiteral|order",
+      "baselineId": "101",
+      "variantId": "101",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "532|11|532|17|ConditionalExpression|true",
+      "baselineId": "102",
+      "variantId": "102",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "18",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "532|47|532|75|ObjectLiteral|{}",
+      "baselineId": "104",
+      "variantId": "104",
+      "baseline": "Survived",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "40",
+          "name": "AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-05 admin changes status of a non-existent order → 404 with an error message"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "532|56|532|73|StringLiteral|\"\"",
+      "baselineId": "105",
+      "variantId": "105",
+      "baseline": "Survived",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "40",
+          "name": "AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-05 admin changes status of a non-existent order → 404 with an error message"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "535|31|535|36|BooleanLiteral|true",
+      "baselineId": "106",
+      "variantId": "106",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "23",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "538|9|539|58|ConditionalExpression|true",
+      "baselineId": "107",
+      "variantId": "107",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "23",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "538|9|539|58|ConditionalExpression|false",
+      "baselineId": "108",
+      "variantId": "108",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "18",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "538|9|539|58|LogicalOperator|currentStatus === \"pending\" || status === \"confirmed\" || status === \"canceled\"",
+      "baselineId": "109",
+      "variantId": "109",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "23",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "538|9|538|36|ConditionalExpression|true",
+      "baselineId": "110",
+      "variantId": "110",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "28",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] shipping → confirmed → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "538|9|538|36|EqualityOperator|currentStatus !== \"pending\"",
+      "baselineId": "111",
+      "variantId": "111",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "18",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "538|27|538|36|StringLiteral|\"\"",
+      "baselineId": "112",
+      "variantId": "112",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "18",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "539|10|539|57|ConditionalExpression|true",
+      "baselineId": "113",
+      "variantId": "113",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "23",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "532|11|532|17|ConditionalExpression|false",
+      "baselineId": "103",
+      "variantId": "103",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "539|10|539|57|LogicalOperator|status === \"confirmed\" && status === \"canceled\"",
+      "baselineId": "114",
+      "variantId": "114",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "18",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "539|10|539|32|EqualityOperator|status !== \"confirmed\"",
+      "baselineId": "116",
+      "variantId": "116",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "18",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "539|10|539|32|ConditionalExpression|false",
+      "baselineId": "115",
+      "variantId": "115",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "18",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "539|21|539|32|StringLiteral|\"\"",
+      "baselineId": "117",
+      "variantId": "117",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "18",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "539|36|539|57|ConditionalExpression|false",
+      "baselineId": "118",
+      "variantId": "118",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "21",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → canceled → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "539|36|539|57|EqualityOperator|status !== \"canceled\"",
+      "baselineId": "119",
+      "variantId": "119",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "21",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → canceled → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "539|47|539|57|StringLiteral|\"\"",
+      "baselineId": "120",
+      "variantId": "120",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "21",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → canceled → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "541|29|541|33|BooleanLiteral|false",
+      "baselineId": "121",
+      "variantId": "121",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "18",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "543|9|544|57|ConditionalExpression|true",
+      "baselineId": "122",
+      "variantId": "122",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "23",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "543|9|544|57|ConditionalExpression|false",
+      "baselineId": "123",
+      "variantId": "123",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "19",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "543|9|543|38|ConditionalExpression|true",
+      "baselineId": "125",
+      "variantId": "125",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "23",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "543|9|544|57|LogicalOperator|currentStatus === \"confirmed\" || status === \"shipping\" || status === \"canceled\"",
+      "baselineId": "124",
+      "variantId": "124",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "23",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "543|9|543|38|EqualityOperator|currentStatus !== \"confirmed\"",
+      "baselineId": "126",
+      "variantId": "126",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "19",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "543|27|543|38|StringLiteral|\"\"",
+      "baselineId": "127",
+      "variantId": "127",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "19",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "544|10|544|56|ConditionalExpression|true",
+      "baselineId": "128",
+      "variantId": "128",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "25",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] confirmed → delivered → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "544|10|544|56|LogicalOperator|status === \"shipping\" && status === \"canceled\"",
+      "baselineId": "129",
+      "variantId": "129",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "19",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "544|10|544|31|ConditionalExpression|false",
+      "baselineId": "130",
+      "variantId": "130",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "19",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "544|10|544|31|EqualityOperator|status !== \"shipping\"",
+      "baselineId": "131",
+      "variantId": "131",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "19",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "544|35|544|56|ConditionalExpression|false",
+      "baselineId": "133",
+      "variantId": "133",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "22",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → canceled → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "544|21|544|31|StringLiteral|\"\"",
+      "baselineId": "132",
+      "variantId": "132",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "19",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "544|35|544|56|EqualityOperator|status !== \"canceled\"",
+      "baselineId": "134",
+      "variantId": "134",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "22",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → canceled → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "544|46|544|56|StringLiteral|\"\"",
+      "baselineId": "135",
+      "variantId": "135",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "22",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → canceled → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "546|29|546|33|BooleanLiteral|false",
+      "baselineId": "136",
+      "variantId": "136",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "19",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "547|11|547|65|ConditionalExpression|true",
+      "baselineId": "137",
+      "variantId": "137",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "23",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "547|11|547|65|ConditionalExpression|false",
+      "baselineId": "138",
+      "variantId": "138",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "20",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "547|11|547|65|LogicalOperator|currentStatus === \"shipping\" || status === \"delivered\"",
+      "baselineId": "139",
+      "variantId": "139",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "24",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "547|11|547|39|ConditionalExpression|true",
+      "baselineId": "140",
+      "variantId": "140",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "24",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "547|11|547|39|EqualityOperator|currentStatus !== \"shipping\"",
+      "baselineId": "141",
+      "variantId": "141",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "20",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "547|29|547|39|StringLiteral|\"\"",
+      "baselineId": "142",
+      "variantId": "142",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "20",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "547|43|547|65|ConditionalExpression|true",
+      "baselineId": "143",
+      "variantId": "143",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "27",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] shipping → pending → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "547|43|547|65|EqualityOperator|status !== \"delivered\"",
+      "baselineId": "144",
+      "variantId": "144",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "20",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "547|54|547|65|StringLiteral|\"\"",
+      "baselineId": "145",
+      "variantId": "145",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "20",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "548|29|548|33|BooleanLiteral|false",
+      "baselineId": "146",
+      "variantId": "146",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "20",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "550|11|550|65|ConditionalExpression|true",
+      "baselineId": "147",
+      "variantId": "147",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "23",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "550|11|550|65|ConditionalExpression|false",
+      "baselineId": "148",
+      "variantId": "148",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "550|11|550|65|LogicalOperator|currentStatus === \"canceled\" || status === \"delivered\"",
+      "baselineId": "149",
+      "variantId": "149",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "24",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "550|11|550|39|ConditionalExpression|true",
+      "baselineId": "150",
+      "variantId": "150",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "24",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "550|11|550|39|EqualityOperator|currentStatus !== \"canceled\"",
+      "baselineId": "151",
+      "variantId": "151",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "24",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "550|29|550|39|StringLiteral|\"\"",
+      "baselineId": "152",
+      "variantId": "152",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "550|43|550|65|ConditionalExpression|true",
+      "baselineId": "153",
+      "variantId": "153",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "32",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → pending → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "550|43|550|65|EqualityOperator|status !== \"delivered\"",
+      "baselineId": "154",
+      "variantId": "154",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "32",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → pending → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "550|54|550|65|StringLiteral|\"\"",
+      "baselineId": "155",
+      "variantId": "155",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "553|11|553|29|BooleanLiteral|isValidTransition",
+      "baselineId": "157",
+      "variantId": "157",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "18",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "553|11|553|29|ConditionalExpression|true",
+      "baselineId": "158",
+      "variantId": "158",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "18",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "553|11|553|29|ConditionalExpression|false",
+      "baselineId": "159",
+      "variantId": "159",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "23",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "553|31|557|8|BlockStatement|{}",
+      "baselineId": "160",
+      "variantId": "160",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "23",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "554|37|556|10|ObjectLiteral|{}",
+      "baselineId": "161",
+      "variantId": "161",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "555|18|555|79|StringLiteral|``",
+      "baselineId": "162",
+      "variantId": "162",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "561|9|561|32|ArrayDeclaration|[]",
+      "baselineId": "165",
+      "variantId": "165",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "560|9|560|52|StringLiteral|\"\"",
+      "baselineId": "164",
+      "variantId": "164",
+      "baseline": "RuntimeError",
+      "variant": "RuntimeError",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "563|20|563|55|ObjectLiteral|{}",
+      "baselineId": "168",
+      "variantId": "168",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "563|31|563|53|StringLiteral|\"\"",
+      "baselineId": "169",
+      "variantId": "169",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "284|9|284|20|StringLiteral|\"\"",
+      "baselineId": "1",
+      "variantId": "1",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "0",
+          "name": "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-01 [invalid] get cart without token → 401"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "290|10|290|21|StringLiteral|\"\"",
+      "baselineId": "9",
+      "variantId": "9",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "2",
+          "name": "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-03 [normal] add one item, then read the cart"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "297|10|297|25|StringLiteral|\"\"",
+      "baselineId": "20",
+      "variantId": "20",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "5",
+          "name": "Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-06 [invalid] checkout without token → 401"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "562|24|564|10|BlockStatement|{}",
+      "baselineId": "166",
+      "variantId": "166",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "311|9|311|32|StringLiteral|\"\"",
+      "baselineId": "34",
+      "variantId": "34",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "7",
+          "name": "Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "321|9|321|33|StringLiteral|\"\"",
+      "baselineId": "42",
+      "variantId": "42",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "11",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "344|9|344|26|StringLiteral|\"\"",
+      "baselineId": "74",
+      "variantId": "74",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "8",
+          "name": "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "510|9|510|28|StringLiteral|\"\"",
+      "baselineId": "87",
+      "variantId": "87",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "10",
+          "name": "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "525|9|525|39|StringLiteral|\"\"",
+      "baselineId": "95",
+      "variantId": "95",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "18",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+        }
+      ]
+    }
+  ]
+}

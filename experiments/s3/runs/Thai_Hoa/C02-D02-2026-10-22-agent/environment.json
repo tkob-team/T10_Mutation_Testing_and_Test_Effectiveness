@@ -1,0 +1,31 @@
+{
+  "executor": "OpenAI Codex AI Agent (current chat); not a member-run",
+  "model": "GPT-6 family; exact backend model revision not exposed by this session",
+  "platform": "win32",
+  "arch": "x64",
+  "node": "v24.16.0",
+  "npm": "12.0.2",
+  "sutBase": "92bbf226459bc8de076a465e368c1f20401380a0",
+  "branch": "codex/s3-coupons-hoa",
+  "harnessOrigin": "8d60e9b8ab6b79d533c18d8c5b5e5b60b4b6720f",
+  "timeZoneForFixtures": "UTC; offset explicit in every datetime",
+  "protectedBefore": {
+    "backend/server.js": "e2263811a1690a63a7dbb4446c3fd33fb87f50d073d9f8cdfab7083a52f5e8ed",
+    "backend/database.js": "50012f35c2cf0776dd837482d76adf701f0ee40cdcb9d80143278fccde034717",
+    "backend/database.sqlite": "c63f00544180ba1fbb1427a9b9dd3f1784842698809972f33ce90482e7420ba6"
+  },
+  "protectedAfter": {
+    "backend/server.js": "e2263811a1690a63a7dbb4446c3fd33fb87f50d073d9f8cdfab7083a52f5e8ed",
+    "backend/database.js": "50012f35c2cf0776dd837482d76adf701f0ee40cdcb9d80143278fccde034717",
+    "backend/database.sqlite": "c63f00544180ba1fbb1427a9b9dd3f1784842698809972f33ce90482e7420ba6"
+  },
+  "protectedUnchanged": true,
+  "sutCommit": "6850e9f899a47702982fb65a482ad821245de31e",
+  "dependencies": {
+    "jest": "30.5.2",
+    "supertest": "7.3.1",
+    "sqlite3": "6.0.1",
+    "@stryker-mutator/core": "10.0.0",
+    "@stryker-mutator/jest-runner": "10.0.0"
+  }
+}
