@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Nhóm 12, môn Software Testing, FIT@HCMUS chuẩn bị seminar T10: Mutation Testing & Test Effectiveness. Nhóm nghiên cứu trên EShop backend, so sánh assertion thủ công với assertion do Claude đề xuất, rồi xây dựng guide, report, demo và activity để người khác thực hành lại.
+Nhóm 12, môn Software Testing, FIT@HCMUS chuẩn bị seminar T10: Mutation Testing & Test Effectiveness. Nhóm nghiên cứu trên EShop backend, so sánh assertion thủ công với assertion do AI Agent đề xuất, rồi xây dựng guide, report, demo và activity để người khác thực hành lại. Agent/model thực tế được ghi riêng cho từng run.
 
 Context này giữ quyết định và quy ước chung của nhóm. Phân công và tiến độ theo [Team Sheet](https://docs.google.com/spreadsheets/d/1XgWdi8CYOSqx33VhL9rBHMAC4WfHXjGu9YSiLv0lyPk/edit); yêu cầu chi tiết lấy từ [Requirements](docs/requirements/Seminar_Requirements_Consolidated.md).
 
@@ -36,8 +36,11 @@ Khi task cần code/tests/config, dùng repo EShop được dẫn ở trên và 
 
 Evidence S3 hiện có trong repo:
 
-- Thái Hòa: [Research Notes](research/s3/Research_Notes_Thai_Hoa.md) cho S3-A02/B02 có bản nháp, **chờ thành viên review**. [AI Record](ai-audit/AI_Record_Thai_Hoa.md) ghi hỗ trợ nghiên cứu; member verdict/reflection còn Pending. Thực nghiệm EShop/Stryker/Claude của Thái Hòa chưa chạy.
-- Tấn Hiệp: [Experiment Log](experiments/s3/Experiment_Log_Tan_Hiep.md) ghi C01-1–C01-6 đã chạy, gồm Stryker/Claude trên demo và khởi động EShop local; C01-7 còn Pending. Các run demo không thay baseline mutation EShop chung; baseline chung chưa có manifest đã điền.
+- Thái Hòa: [Research Notes](research/s3/Research_Notes_Thai_Hoa.md) cho S3-A02/B02 đạt tiêu chí task nghiên cứu sau review kỹ thuật của Codex ngày 2026-10-18 theo yêu cầu quản lý/review của người dùng. Thực nghiệm EShop/Stryker/Claude của Thái Hòa chưa có run evidence.
+- Tấn Hiệp: [Research Notes](research/s3/Research_Notes_Tan_Hiep.md) đạt S3-B01; S3-A01 còn Review để làm rõ mẫu số của số liệu Google 30% diffs ở F-A01-05. [Experiment Log](experiments/s3/Experiment_Log_Tan_Hiep.md) và reports khớp C01-1–C01-6; S3-C01 còn In Progress vì C01-7 seed/reset trong test Pending. Các run demo không thay baseline mutation EShop chung; baseline chung chưa có manifest đã điền.
+- Phúc Hoàng: chưa có research notes hoặc experiment log cá nhân trong repo tại lần review này; chưa đủ căn cứ đổi trạng thái các task.
+
+Review trên xác nhận chất lượng đầu ra task, không thay xác nhận trải nghiệm, verdict AI audit, reflection hoặc chữ ký của thành viên. [AI Record Thái Hòa](ai-audit/AI_Record_Thai_Hoa.md) và [AI Record Tấn Hiệp](ai-audit/AI_Record_Tan_Hiep.md) vẫn còn inputs Pending; phần audit S8 đang được tích lũy, chưa hoàn tất. S1/S2 giữ trạng thái đã được người dùng xác nhận.
 
 | Stage | Outcome |
 |---|---|
@@ -63,17 +66,29 @@ Task ID có dạng Stage–Group–Sequence, ví dụ `S3-D01`. Mỗi task có m
 
 ## Confirmed Decisions
 
-- Hai tool triển khai/demo: **StrykerJS + Claude**. Candidate khác phục vụ khảo sát S1; không mở lại số tool.
+- Hai vai trò triển khai/demo hiện hành: **StrykerJS + AI Agent**, theo điều chỉnh trực tiếp của người dùng để mỗi thành viên linh hoạt agent/model. Records lịch sử và raw outputs vẫn giữ tên tool thực sự đã dùng; không gán quyết định mới thành approval mới của GV.
 - Nhóm làm theo mục tiêu hoàn thành đầy đủ deliverables; readiness kiểm tra khả năng chạy lại, chất lượng nội dung và evidence, không dùng ngưỡng hoàn thiện trung gian.
 - S3 giao research notes; S4 dùng notes và evidence để viết tài liệu. Người tổng hợp vẫn cần kiểm tra phần thực nghiệm chung nếu task giao cả nội dung đó.
 - Work-in-progress nằm trong thư mục `sN` của stage tương ứng. Sửa sau feedback ở nguồn stage gốc; `final/` chỉ gom bản đã review.
+
+### Draft Preparation Decisions
+
+Người dùng giao Thái Hòa cùng agent chuẩn bị đầy đủ docs trước trong `draft/`; agent/plan/tasks riêng nằm ở workspace `.local/`. Mỗi task map stage và mục bộ nộp. Tests/experiments từng domain và personal live demo nhận sau từ từng người, rồi bổ sung evidence; tracker/phân công và flow team giữ nguyên. Draft không tự xác nhận run hoặc human review đã hoàn tất.
+
+- Record & Playback có thể bỏ hoặc thay theo xác nhận người dùng; giữ data-driven/checkpoints mapping, không tự mô tả một test runner là GUI recorder.
+- Activity tối đa 20 phút theo người dùng; đây là giới hạn sản phẩm, không phải lịch/estimate session.
+- Demo video nộp bằng link; ghi file/version và kiểm tra access khi có media thật.
+- Slides: agent viết `draft/Seminar_Slides_Content.md` chi tiết; người dùng dựng PPTX thủ công.
+- Kế hoạch chỉ chia đầu việc, dependencies và acceptance; không đưa ngày, lịch hoặc estimate vào roadmap/session.
+
+Đây là quyết định người dùng cho preparation hiện tại; sources và AI forms originals giữ nguyên. Khi thiếu local planning ở clone teammate, phần này vẫn đủ xác định scope; không cần local files để làm task team.
 
 ## Experiment Contract
 
 1. Chốt SUT commit, phạm vi và expected results từ spec; ghi sai khác code gốc/spec trước khi đóng băng baseline.
 2. Dựng harness và data/reset để tests tái lập. Kiểm tra package scripts và version tại thời điểm làm; không mặc định runner hoặc lệnh đã hoạt động.
 3. Chạy baseline mutation; phân tích ít nhất 3 surviving mutants và bổ sung ít nhất 3 manual assertions theo yêu cầu T10.
-4. So sánh manual và Claude assertions trên cùng baseline production code/config và các mutant được chọn. Lưu raw AI output, bản đã sửa và kết quả kiểm chứng.
+4. So sánh manual và AI Agent assertions trên cùng baseline production code/config và các mutant được chọn. Mỗi run ghi agent/tool/model thực tế; lưu raw AI output, bản đã sửa và kết quả kiểm chứng. Khác model giữa thành viên là điều kiện cần công bố, không tự suy model ranking.
 5. Báo `Killed` và `Timeout` riêng. Mutation score theo định nghĩa/version tool; score tăng chưa đủ chứng minh assertion phát hiện lỗi tốt hơn.
 6. Equivalent mutant chỉ được kết luận với lập luận/phạm vi rõ; trước khi đủ căn cứ dùng equivalent candidate. Kết quả AI là đầu vào review.
 7. Mỗi run ghi SUT commit, versions/config, command, test set, kết quả và đường dẫn report. Record thời gian chỉ khi đo thật.
@@ -86,8 +101,8 @@ S2 đã hoàn tất theo xác nhận Thái Hòa. Khi task cần các chi tiết 
 
 - Scope SUT/module và cách xử lý sai khác code gốc/spec.
 - Lịch seminar và các hạn nộp áp dụng.
-- Cách áp dụng Record & Playback cho T10.
-- Activity 20/25 phút; kênh nộp video.
+- Cách bỏ/thay Record & Playback được mô tả chính xác trong demo matrix theo quyết định preparation nêu trên.
+- Activity theo giới hạn người dùng đã chốt; actual video link/access evidence bổ sung khi có.
 - AI-04/Final Reflection có cần tách file/cách điền group author info; AI category, slides template và peer partners. Ba AI forms đã có trong originals, không còn là đầu vào chưa tải.
 
 Tra nội dung S2 người dùng cung cấp và Requirements cho chi tiết cần dùng. Khi bổ sung quyết định, giữ nguồn và cập nhật pointers liên quan; không tự dựng chi tiết phản hồi của giảng viên.
@@ -102,7 +117,7 @@ Tra nội dung S2 người dùng cung cấp và Requirements cho chi tiết cầ
 | Killed | Mutant khiến test phát hiện sai khác; dẫn test/report tương ứng |
 | Timeout | Run mutant vượt giới hạn thời gian; báo tách khỏi assertion kills |
 | Manual assertion | Assertion do thành viên viết từ spec và phân tích mutant |
-| AI assertion candidate | Assertion Claude đề xuất; cần review và thực thi kiểm chứng |
+| AI assertion candidate | Assertion do AI Agent đề xuất; ghi tool/model thực tế, cần review và thực thi kiểm chứng |
 | Equivalent candidate | Mutant có khả năng giữ nguyên hành vi trong phạm vi xét, chưa phải kết luận đã chứng minh |
 | Research notes | Notes có nguồn, câu hỏi đã trả lời và điểm chưa xác minh; đầu vào S4 |
 | Evidence | Artifact hoặc record có thật hỗ trợ đúng claim đang báo cáo |
