@@ -1,8 +1,8 @@
 # AI Prompt Log — claude.ai (Seminar Testing Software)
 
-Nguồn: 9ffbcb5b-f74a-59c0-99f6-d4383af57bf4.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 02:09 (Asia/Saigon).
+Nguồn: 9ffbcb5b-f74a-59c0-99f6-d4383af57bf4.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 02:36 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 64 lượt prompt; theo model: claude-sonnet-4-6 2 lượt; claude-opus-5-5 62 lượt; unknown 1 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 71 lượt prompt; theo model: claude-sonnet-4-6 2 lượt; claude-opus-5-5 69 lượt; unknown 1 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-16 18:54 — model: claude-sonnet-4-6 — session 2586dd77
 
@@ -3334,4 +3334,239 @@ Bây giờ đã 2 giờ sáng. Nếu bạn muốn nghỉ, mọi thứ đã nằm
 ```text
 Push xong hết rồi mà
 ```
+
+### Output
+
+````text
+I added the G01 entry to your AI Record and updated the Experiment Log, and the three files (`AI_Record_Tan_Hiep.md`, `Experiment_Log_Tan_Hiep.md`, `claude-ai_2026-10-16_9ffbcb5b.md`) are attached. The commit message assumes Claude Code's prompt log has new lines from the G01-2-cc turn, so it adds that log too. After copying the three files in, run `git status`. If anything other than these 4 files shows as modified, stop and tell me.
+
+```bash
+git add ai-audit experiments/s3/Experiment_Log_Tan_Hiep.md
+git commit -m "docs(S3-G01): add AI Record artifact G01-01, limits notes and updated prompt logs"
+```
+
+**About H01 and I01:**
+- **S3-H01** ("compare baseline/manual/Claude") is unblocked now that E01, F01 and G01 are done. About 80% of the data is already in place: the Comparison table and the 6-mutant table in `G01-cc-REPORT.md`. What's left:
+  1. A Claude Code prompt that pulls the data in: the 6-mutant table and each Stryker run's runtime. Runtime is metric M5 in the seminar requirements. I'll send this prompt.
+  2. **3–5 sentences of conclusion that you write yourself**, then I review them. You'll present this part in class, so it needs to be in your words.
+- **S3-I01** ("re-run a teammate's case: Coupons") is **blocked**. It waits on Hòa's S3-H02, so it can't start yet.
+
+It's 2 a.m. and the rest of H01 isn't urgent. If you're still going, tell me and I'll send the H01 prompt. Otherwise, commit and pick it up tomorrow.
+
+I didn't commit or push from here, because you commit and push the repos yourself. The uncommitted changes were the edits I made to the AI Record and Experiment Log in my own copy of the repo, so I discarded them there and that copy is clean again.
+
+The three files you need to place are still the ones attached in my previous message: `AI_Record_Tan_Hiep.md`, `Experiment_Log_Tan_Hiep.md` and `claude-ai_2026-10-16_9ffbcb5b.md`. Copy them into the seminar repo and commit with the command I gave there.
+````
+
+### Hành động
+
+- Gửi file: /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/deliver/AI_Record_Tan_Hiep.md, /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/deliver/Experiment_Log_Tan_Hiep.md, /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/deliver/claude-ai_2026-10-16_9ffbcb5b.md
+
+## #65 — 2026-10-23 02:12 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+đưa claude-ai_2026-10-16_9ffbcb5b.md vào ai-audit của repo sao?
+```
+
+### Output
+
+````text
+Đúng, nhưng không đặt thẳng vào `ai-audit/` mà vào thư mục con:
+
+```
+T10_Mutation_Testing_and_Test_Effectiveness/ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-16_9ffbcb5b.md
+```
+
+Ở đó đã có sẵn file cùng tên (bản trích trước, đến lượt #33). Bạn **ghi đè** file đó. File mới là log của phiên thảo luận này đến lượt #64, nằm cạnh `claude-code_prompt_log.md`.
+
+Lý do cần file này: artifact G01-01 trong AI Record trỏ tới "claude.ai lượt #59–#64", mà các lượt đó chỉ có trong bản mới.
+````
+
+## #66 — 2026-10-23 02:14 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+commit rồi, push rồi, check nhé
+```
+
+### Output
+
+```text
+Mình đã kiểm commit `37a2d91` và mọi thứ đều khớp:
+- Cả 3 file trên repo giống hệt bản mình gửi, đúng vị trí.
+- Log claude.ai có đủ 64 lượt.
+
+Có một điều bạn cần biết: `claude-code_prompt_log.md` không nằm trong commit này. Vì vậy lượt G01-2-cc mà artifact G01-01 trỏ tới có thể chưa có trên repo. Không cần xử lý gì: lần sau mở Claude Code, nó sẽ tự commit `chore(ai-log)` theo quy tắc trong CLAUDE.md. Nếu muốn chắc ngay, bạn chạy `git status` trong repo seminar trên máy. Nếu file đó hiện modified thì commit `chore(ai-log): update prompt logs` rồi push.
+
+Trên sheet, chuyển S3-F01 và S3-G01 sang **Review** nếu bạn chưa làm.
+
+Việc tiếp theo là **S3-H01**: mình gửi prompt lấy dữ liệu, rồi bạn viết 3–5 câu kết luận. Khi nào bạn muốn làm tiếp, kể cả để mai, chỉ cần nhắn "H01".
+```
+
+## #67 — 2026-10-23 02:15 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+H01
+```
+
+### Output
+
+````text
+H01 còn thiếu 3 phần. Bảng Comparison và thời gian chạy đã có sẵn, mình vừa kiểm `console.log`: E01 mất 26s, F01-2 mất 27s, G01-2 mất 30s.
+
+1. **Bảng 6 mutant mục tiêu** đặt ngay trong Experiment Log. Hiện bảng này chỉ nằm trong `G01-cc-REPORT.md`.
+2. **Kiểm chứng câu "toàn bộ 15 mutant chỉ manual kill được đến từ 3 test ngoài phạm vi"**. Câu này mình mới suy luận, chưa đối chiếu `killedBy`, nên chưa được đưa lên slide.
+3. **Metrics M5** theo đề: run time và flake. Mỗi run chỉ chạy 1 lần, nên chưa có flake rate thật. Phải ghi rõ điều đó và dùng 4 mutant đổi Killed ↔ Timeout làm tín hiệu.
+
+Bạn dán prompt này vào Claude Code:
+
+```text
+Task S3-H01 — dữ liệu so sánh baseline/manual/AI (Cart & Orders). Chỉ đọc evidence có sẵn, không chạy run mới.
+Experiment_Log_Tan_Hiep.md, cuối mục Comparison (trước Limits), thêm "### S3-H01 — Comparison analysis":
+a. Bảng 6 mutant mục tiêu: mutant | E01-1-cc | F01-2-cc (killedBy) | G01-2-cc (killedBy) — lấy từ mutation.json.
+b. 15 mutant chỉ F01-2-cc kill: nhóm theo test manual đã kill (killedBy). Kiểm: có phải tất cả do 3 test ngoài 6 mục tiêu (checkout DB, cancel pending, admin transition) không; nếu không, liệt kê ngoại lệ.
+c. Bảng metrics mỗi run (E01-1-cc, F01-2-cc, G01-2-cc): số test (baseline + thêm), thời gian Stryker ("Done in" trong console.log), Survived tuyệt đối, score. Ghi: mỗi run chạy 1 lần nên chưa đo flake rate; tín hiệu: 4 mutant Killed↔Timeout (xem Limits).
+d. Dòng cuối: "**Kết luận (Tấn Hiệp viết):** Pending".
+Không viết nhận định hay kết luận. Commit: docs(S3-H01): add comparison analysis data
+```
+
+Chạy xong, bạn dán khối báo cáo vào đây. Sau đó bạn viết phần kết luận 3–5 câu, dựa trên ba ý:
+- Trên 6 mutant mục tiêu, kết quả manual và AI khác nhau thế nào.
+- Khác biệt về score toàn run do đâu.
+- Bạn rút ra gì về oracle và về mutant 550:11.
+
+Một ý có thể đưa vào kết luận, vì Claude Code không biết chuyện này: **số vòng chỉnh sửa**. Bản manual qua 3 lần sửa bảng phân tích và 2 lần sửa file test mới đạt. AI làm trong 1 lượt và qua spec review mà không phải sửa assertion. Bù lại, prompt cho AI đã chứa sẵn các luật mà bạn chỉ học được sau những lần review đó. Có dùng ý này hay không là do bạn quyết định.
+````
+
+## #68 — 2026-10-23 02:23 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+- Nhiệm vụ: S3-H01, dữ liệu so sánh — Done. Chỉ đọc evidence có sẵn, không chạy run mới, không viết nhận định.
+- a. 6 mutant mục tiêu: F01-2-cc và G01-2-cc đều kill 5/6, mỗi mutant bởi đúng test tương ứng của mỗi nhánh; 550:11 Survived ở cả ba run.
+- b. 15 mutant chỉ F01-2-cc kill: chỉ 8/15 do 3 test manual ngoài mục tiêu kill (cancel pending 4, admin transition 3, checkout DB 1). 7 ngoại lệ:
+  - 294:12 và 294:23: do test manual "Kill Mutant 292:7" kill. G01 vẫn để sống, dù test AI-CO-02 nhắm cùng mutant 292:7.
+  - 347:5, 510:63, 519:22, 520:7: do test baseline CO-09 và CO-11 kill ở F01; ở G01 là Timeout.
+  - 315:22: do test baseline CO-08 kill ở F01; ở E01 và G01 là Timeout.
+- c. Metrics mỗi run:
+  - E01-1-cc: 36 test, 26 s, Survived 34, score 74.65%.
+  - F01-2-cc: 36 + 8 test, 27 s, Survived 11, score 90.91%.
+  - G01-2-cc: 36 + 5 test, 30 s, Survived 21, score 83.92%.
+  - Mỗi run chạy 1 lần nên chưa đo flake rate.
+- Evidence: T10_.../experiments/s3/Experiment_Log_Tan_Hiep.md, mục "S3-H01 — Comparison analysis", dòng cuối "Kết luận (Tấn Hiệp viết): Pending". Script sinh dữ liệu và bản Markdown ở runs/Tan_Hiep/H01-cc/; tôi thêm thư mục này để truy được nguồn số liệu.
+- Commit seminar: 64f74dd trên main (ahead 2, chưa push). Trước task có thêm d1eda58 (chore(ai-log)) cho log do hook ghi. EShop không đổi.
+- Bất thường mới: 5 trong 7 ngoại lệ ở mục b là mutant do test baseline kill nhưng Timeout ở run khác (experiments/s3/runs/Tan_Hiep/H01-cc/h01_comparison.md). Vì vậy một phần chênh lệch 15 mutant giữa F01 và G01 đến từ Killed↔Timeout, không phải từ test manual.
+- Cần quyết định: Không
+===
+Kết luận:
+
+* Hiệu quả kill mutant mục tiêu: Cả bộ test Manual (F01-2-cc) và bộ test AI (G01-2-cc) đều tiêu diệt thành công 5/6 mutant mục tiêu (286:7, 292:7, 326:47, 346:45, 532:47), mỗi mutant bị kill bởi đúng test tương ứng được thiết kế của từng nhánh. Mutant 550:11 tiếp tục sống sót ở cả 3 run do thuộc nhóm lỗi logic mã nguồn gốc (defect-fixing). 
+* Nguyên nhân chênh lệch 15 mutant giữa F01 và G01: - 8 mutant: Do 3 test manual mở rộng ngoài mục tiêu (cancel pending kill 4, admin transition kill 3, checkout DB kill 1) thực hiện thêm các thao tác và assertion trên database. - 2 mutant (294:12, 294:23): Do test manual Kill Mutant 292:7 thực hiện thêm lượt GET /api/cart sau chuỗi POST tiêu diệt được, trong khi test AI-CO-02 dù nhắm cùng mục tiêu nhưng không bắt được 2 mutant phụ này. - 5 mutant ngoại lệ (347:5, 510:63, 519:22, 520:7, 315:22): Xuất phát từ hiện tượng dao động trạng thái Killed ↔ Timeout của các test baseline (CO-08, CO-09, CO-11) giữa các lượt chạy chứ không phải do đóng góp của test manual. 
+* Cải thiện Mutation Score: So với baseline E01-1-cc (74.65%, 36 tests, 26s), việc bổ sung bộ test manual trong F01-2-cc (44 tests, 27s) giúp nâng Mutation Score lên 90.91% (giảm Survived xuống 11), còn bộ test AI trong G01-2-cc (41 tests, 30s) đạt 83.92% (Survived 21).
+```
+
+### Output
+
+````text
+Kết luận đi đúng hướng và số liệu đều khớp với báo cáo. Có 3 chỗ cần sửa, trong đó một chỗ sai về kỹ thuật:
+
+**1. Lý do của 294:12 và 294:23 chưa đúng.** Bạn mở lại test "Kill Mutant 292:7" trong file manual, xem các dòng ngay sau mỗi lần POST:
+```js
+expect(resPost1.body.message).toBe('Added to cart');
+```
+Hai mutant này nằm ở dòng 294: `res.json({ message: "Added to cart" })` bị đổi thành `{}` và `""`. Thứ kill chúng là **assertion lên message của POST**, không phải lượt GET. AI-CO-02 chỉ assert status của POST, vì AI đã cố ý không assert chuỗi lấy từ code.
+
+Đây là điểm đáng giá nhất của H01: **oracle càng chặt (assert nguyên văn chuỗi trong code) thì kill càng nhiều, nhưng càng gắn chặt vào cài đặt hiện tại.** Bạn nên viết lại ý này bằng lời của mình.
+
+**2. Nên tách chuyện "Killed" khỏi chuyện "phát hiện".** 5 mutant đổi trạng thái (347:5, 510:63, 519:22, 520:7, 315:22) là **Timeout** ở G01. Timeout vẫn được tính là phát hiện. Vì vậy chúng không làm AI bỏ sót mutant nào, mà chỉ lệch ở cột Killed. Nhìn theo Survived sẽ thấy rõ: 21 − 11 = **10 = 8 + 2**. 8 mutant đến từ 3 test ngoài mục tiêu, 2 mutant đến từ assertion message của POST. Ngoài ra, cách viết "dao động của các test baseline" chưa chính xác. Thứ đổi trạng thái là **mutant**, còn test không thay đổi.
+
+**3. Còn thiếu bài học về oracle và về 550:11.** Một câu là đủ. Cũng nên nói chính xác hơn: 550:11 sống vì **mutant chính là bản sửa bug** của code gốc, chứ không phải chỉ "thuộc nhóm lỗi logic".
+
+Thêm một chỗ nhỏ: bullet 3 có thể rút gọn. Chênh lệch thời gian chạy (26–30s) không có ý nghĩa, nên chỉ cần nêu Survived và score.
+
+Bạn viết lại rồi dán vào đây, mình review lần cuối. Sau đó bạn thay dòng `**Kết luận (Tấn Hiệp viết):** Pending` trong Experiment Log, push cùng 2 commit đang ahead, và chuyển H01 sang Review.
+````
+
+## #69 — 2026-10-23 02:26 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Mình push hết rồi. Bạn xem nhé
+```
+
+### Output
+
+```text
+Nội dung giờ đã đúng. Lý do của 294:12/294:23, phép tách 10 = 8 + 2 và cách xử lý Timeout đều chuẩn, phần trade-off của oracle viết rõ. Còn 2 việc:
+
+**1. Trong bài có 9 chỗ `[cite: 11]`.** Đây là dấu trích dẫn mà một số công cụ AI, như Gemini, tự chèn khi trả lời dựa trên file được tải lên. Nó không phải cú pháp Markdown của repo. Mình hỏi thẳng: **bạn có dùng AI để viết hoặc chuốt lại phần kết luận không?**
+- **Nếu có**: hoàn toàn không sao, nhưng phải công khai. Đổi nhãn thành `**Kết luận (Tấn Hiệp viết, <tên AI> hỗ trợ diễn đạt):**` và gửi mình prompt bạn đã dùng, mình ghi thành artifact **AI-S3-H01-01** trong AI Record. Nhãn hiện tại ghi "Tấn Hiệp viết". Nếu AI có tham gia mà không công khai, đó đúng là loại sai lệch mà phần AI Audit sẽ bị soi.
+- **Nếu không**: chỉ cần xóa các dấu `[cite: 11]`.
+
+**2. Một câu về 550:11 nên chính xác hơn.** "Không thể viết test… mà không sửa code trước" chưa đúng trọng tâm. Ý đúng: test kill được mutant này phải assert `canceled → delivered = 200`, tức là assert theo bug và trái FR-10. Còn test đúng spec (đòi 400) thì fail trên code gốc, nên đã được tách ra thành DEF-05.
+
+Sửa xong thì commit `docs(S3-H01): clean up conclusion`, push, rồi chuyển H01 sang **Review**. Sau đó toàn bộ phần S3 của bạn chỉ còn **I01**, đang chờ Hòa làm xong H02.
+```
+
+## #70 — 2026-10-23 02:28 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+không phải. Mình push rồi. Xem nhé
+```
+
+### Output
+
+```text
+Commit `41bfb88` ổn: các dấu `[cite: 11]` đã được xóa hết, và câu về 550:11 giờ đã đúng ý. Bạn không dùng AI nên không cần thêm artifact vào AI Record. **S3-H01 xong**, bạn chuyển sang **Review** trên sheet.
+
+**Tình trạng S3 của bạn:**
+
+| Task | Trạng thái |
+|---|---|
+| A01, B01, C01, D01, E01, F01, G01, H01 | Review |
+| I01 (chạy lại case Coupons của Hòa) | Chờ Hòa xong **S3-H02** |
+
+**Việc còn treo, không gấp:**
+- **Chạy lại E01** sau khi Phúc Hoàng làm xong D04 (baseline chung).
+- **Tự chạy lại các run có đuôi `-cc`** (D01, E01, F01-2, G01-2) để có member run. Lần chạy lại này cũng kiểm luôn giả thuyết Killed ↔ Timeout.
+- **Cập nhật skill `t10-mutation-testing`** với các bẫy đã gặp:
+  - Không tự xóa sandbox Stryker.
+  - Dùng `stryker-tmp` thay cho `.stryker-tmp` trên Windows.
+  - Session blind phải checkout nhánh AI trước khi giao task, và không chạy `git log`.
+  - Assertion học theo bug.
+
+  Lúc nào bạn muốn, mình soạn bản đề xuất skill để bạn bấm lưu.
+
+Đã gần 2:30 sáng. Mọi thứ đã nằm trong repo, mai bạn chỉ cần nhắn việc muốn làm tiếp.
+```
+
+## #71 — 2026-10-23 02:31 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Rồi. Giúp mình cập nhật skill nhé. Và có lẽ là session này khá dài rồi. Giúp mình viết handoff cho project này đọc. Để mình bắt đầu ở session mới và hoàn thành các task còn lại có thể (như là s4, s5, s6, s7, s8). Cũng như giúp mình viết prompt cho Claude Code cũng để nó cập nhật lại CLAUDE.md, cũng như những file khác cần thiết.
+Sau đó giúp mình viết prompt để sử dụng ở session mới làm việc tiếp
+```
+
+### Output
+
+```text
+Confirmed D04 = Thái Hòa. Now writing the handoff to the Project.
+```
+
+### Hành động
+
+- Đề xuất skill: t10-mutation-testing, t10-run-report
+- Đề xuất skill: t10-mutation-testing, t10-run-report
+- Write: /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/deliver/Handoff_T10_Tan_Hiep.md
 

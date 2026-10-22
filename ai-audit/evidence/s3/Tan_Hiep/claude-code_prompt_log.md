@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 02:07 (Asia/Saigon).
+Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 02:17 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 13 lượt prompt; theo model: claude-opus-5-5 13 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 14 lượt prompt; theo model: claude-opus-5-5 14 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-22 19:50 — model: claude-opus-5-5 — session 4a560803
 
@@ -626,4 +626,45 @@ Nối mục G01-2-cc vào G01-cc-REPORT.md:
 ### Hành động
 
 - Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Tan_Hiep\G01-2-cc\compare_runs.py
+
+## #14 — 2026-10-23 02:16 — model: claude-opus-5-5 — session 4a560803
+
+### Prompt
+
+```text
+<pasted_content id="3d1a">
+Task S3-H01 — dữ liệu so sánh baseline/manual/AI (Cart & Orders). Chỉ đọc evidence có sẵn, không chạy run mới.
+Experiment_Log_Tan_Hiep.md, cuối mục Comparison (trước Limits), thêm "### S3-H01 — Comparison analysis":
+a. Bảng 6 mutant mục tiêu: mutant | E01-1-cc | F01-2-cc (killedBy) | G01-2-cc (killedBy) — lấy từ mutation.json.
+b. 15 mutant chỉ F01-2-cc kill: nhóm theo test manual đã kill (killedBy). Kiểm: có phải tất cả do 3 test ngoài 6 mục tiêu (checkout DB, cancel pending, admin transition) không; nếu không, liệt kê ngoại lệ.
+c. Bảng metrics mỗi run (E01-1-cc, F01-2-cc, G01-2-cc): số test (baseline + thêm), thời gian Stryker ("Done in" trong console.log), Survived tuyệt đối, score. Ghi: mỗi run chạy 1 lần nên chưa đo flake rate; tín hiệu: 4 mutant Killed↔Timeout (xem Limits).
+d. Dòng cuối: "**Kết luận (Tấn Hiệp viết):** Pending".
+Không viết nhận định hay kết luận. Commit: docs(S3-H01): add comparison analysis data
+</pasted_content id="3d1a">
+```
+
+### Output
+
+```text
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: S3-H01, dữ liệu so sánh — Done. Chỉ đọc evidence có sẵn, không chạy run mới, không viết nhận định.
+- a. 6 mutant mục tiêu: F01-2-cc và G01-2-cc đều kill 5/6, mỗi mutant bởi đúng test tương ứng của mỗi nhánh; 550:11 Survived ở cả ba run.
+- b. 15 mutant chỉ F01-2-cc kill: chỉ 8/15 do 3 test manual ngoài mục tiêu kill (cancel pending 4, admin transition 3, checkout DB 1). 7 ngoại lệ:
+  - 294:12 và 294:23: do test manual "Kill Mutant 292:7" kill. G01 vẫn để sống, dù test AI-CO-02 nhắm cùng mutant 292:7.
+  - 347:5, 510:63, 519:22, 520:7: do test baseline CO-09 và CO-11 kill ở F01; ở G01 là Timeout.
+  - 315:22: do test baseline CO-08 kill ở F01; ở E01 và G01 là Timeout.
+- c. Metrics mỗi run:
+  - E01-1-cc: 36 test, 26 s, Survived 34, score 74.65%.
+  - F01-2-cc: 36 + 8 test, 27 s, Survived 11, score 90.91%.
+  - G01-2-cc: 36 + 5 test, 30 s, Survived 21, score 83.92%.
+  - Mỗi run chạy 1 lần nên chưa đo flake rate.
+- Evidence: `T10_.../experiments/s3/Experiment_Log_Tan_Hiep.md`, mục "S3-H01 — Comparison analysis", dòng cuối "Kết luận (Tấn Hiệp viết): Pending". Script sinh dữ liệu và bản Markdown ở `runs/Tan_Hiep/H01-cc/`; tôi thêm thư mục này để truy được nguồn số liệu.
+- Commit seminar: `64f74dd` trên `main` (ahead 2, chưa push). Trước task có thêm `d1eda58` (`chore(ai-log)`) cho log do hook ghi. EShop không đổi.
+- Bất thường mới: 5 trong 7 ngoại lệ ở mục b là mutant do test baseline kill nhưng Timeout ở run khác (`experiments/s3/runs/Tan_Hiep/H01-cc/h01_comparison.md`). Vì vậy một phần chênh lệch 15 mutant giữa F01 và G01 đến từ Killed↔Timeout, không phải từ test manual.
+- Cần quyết định: Không
+```
+
+### Hành động
+
+- Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Tan_Hiep\H01-cc\h01_comparison.py
 
