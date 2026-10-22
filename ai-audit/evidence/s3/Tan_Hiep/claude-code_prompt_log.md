@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-22 20:46 (Asia/Saigon).
+Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-22 21:01 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 6 lượt prompt; theo model: claude-opus-5-5 6 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 7 lượt prompt; theo model: claude-opus-5-5 7 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-22 19:50 — model: claude-opus-5-5 — session 4a560803
 
@@ -279,4 +279,61 @@ Cả hai vô hại: `[user]` chỉ là từ khóa grep được nhắc trong AI 
 - Sau lượt này hook Stop sẽ ghi lại `claude-code_prompt_log.md`, nên working tree seminar sẽ bẩn ở file đó. Theo CLAUDE.md thì không tính là bẩn.
 - Cần quyết định: Không
 ```
+
+## #7 — 2026-10-22 20:57 — model: claude-opus-5-5 — session 4a560803
+
+### Prompt
+
+```text
+<pasted_content id="3d1a">
+Task S3-E01 (Cart & Orders). Dùng skill t10-run-report và t10-mutation-testing. Được commit, không push.
+
+Bối cảnh: Hòa cho chạy E01 trên suite domain trước khi D04 ghép (2026-10-22). Ghi rõ "baseline domain, trước D04".
+
+1. Repo EShop, nhánh s3/D01-cart-orders @ 8d60e9b, trong backend:
+   - E01-1-cc: npx stryker run stryker.cart-orders.config.json (full run). Để Stryker tự dọn sandbox, không xóa tay.
+   - Lưu console.log, mutation.html, mutation.json vào experiments/s3/runs/Tan_Hiep/E01-1-cc/.
+2. Đếm status từ mutation.json. Tạo E01-1-cc/mutants_by_route.md bằng script: nhóm mutant theo route (server.js 284-288 GET cart, 290-295 POST cart, 297-309 checkout, 311-319 my-orders, 321-342 cancel, 344-349 order detail, 510-523 admin list, 525-568 admin status), mỗi nhóm đếm theo status; liệt kê từng Survived/NoCoverage/Timeout/RuntimeError: line, mutator, replacement, coveredBy. KHÔNG phân tích vì sao survive (đó là F01).
+3. Experiment Log, mục Baseline: thêm dòng E01-1-cc (SUT commit, config, command, đường dẫn evidence, Killed/Timeout/Survived/NoCoverage/RuntimeError/score). Tham khảo sandbox Linux trước đó: 150 mutants, 74.83%; khác thì ghi số thật.
+4. AI Record: bỏ "(đề xuất…)" và chốt verdict: C01-02, C01-03, D01-02, D01-03 = VALID; D01-01, D01-04, WF-02 = INCOMPLETE. Cập nhật Accuracy Summary (tổng 11).
+5. Commit seminar: "docs(S3-E01): record Cart & Orders domain baseline run; finalize AI Record verdicts".
+6. Báo cáo theo CLAUDE.md.
+</pasted_content id="3d1a">
+```
+
+### Output
+
+```text
+Seminar chỉ bẩn ở log do hook → commit `chore(ai-log)` theo CLAUDE.md, rồi pull.
+
+Run xong, tree EShop sạch, sandbox tự dọn. Copy report và viết script nhóm theo route:
+
+Tổng khớp console (150; 87/19/34/2/8; 74.65%). Khác số sandbox Linux (74.83%). Giờ xem mục Baseline và AI Record:
+
+Tally: verdict cũ 2 VALID (A01, C01-01) + 2 INCOMPLETE (B01, WF-01); thêm 4 VALID + 3 INCOMPLETE → 6/5, tổng 11. Sửa docs:
+
+Experiment Log đã sửa; AI Record chưa đổi (assert chặn trước khi ghi). Làm lại đơn giản hơn:
+
+Viết REPORT:
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: S3-E01 (Cart & Orders, baseline domain, trước D04) — Done
+- Kết quả: E01-1-cc Pass, exit 0. 150 mutants: Killed 87, Timeout 19, Survived 34, NoCoverage 2, RuntimeError 8, Ignored 0.
+- Score 74.65% = Detected 106 / Valid 142; score trên phần code được cover 75.71%. Số đếm từ `mutation.json`, khớp console.
+- Score theo route: thấp nhất GET cart 42.86% và POST cart 44.44%; cao nhất admin status 84.06%. Chi tiết ở `E01-1-cc/mutants_by_route.md`, không phân tích lý do survive.
+- Evidence: `T10_.../experiments/s3/runs/Tan_Hiep/E01-cc-REPORT.md`. Run-dir `E01-1-cc/` có `console.log`, `mutation.html/json`, `mutants_by_route.md` và script `mutants_by_route.py`.
+- Commit seminar: `16a4f72` trên `main`, chưa push. Trước task có thêm `e2851f8` (`chore(ai-log)`) cho log do hook ghi, theo CLAUDE.md.
+- Docs đã sửa:
+  - Experiment Log, mục Baseline: thêm dòng E01-1-cc; giữ dòng `[S3-E01] Pending (S3-D04)` cho run sau khi D04 ghép.
+  - AI Record: chốt 11 verdict, gồm 6 VALID (54.55%), 0 INVALID, 5 INCOMPLETE (45.45%).
+  - AI Record: tôi cũng sửa dòng Evidence Status và mục Handoff cho khớp, vì hai chỗ này vẫn ghi verdict đang chờ.
+- EShop: sạch, Stryker tự dọn sandbox. `database.sqlite` không đổi.
+- Bất thường mới: số khác run sandbox Linux trước đó (74.83%: Killed 91, Timeout 16, RuntimeError 7). Survived và NoCoverage giống nhau. Chưa rõ nguyên nhân và chưa so được từng mutant, vì repo không có `mutation.json` của run sandbox.
+- Cần quyết định: Không
+```
+
+### Hành động
+
+- Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Tan_Hiep\E01-1-cc\mutants_by_route.py
+- Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Tan_Hiep\E01-cc-REPORT.md
 
