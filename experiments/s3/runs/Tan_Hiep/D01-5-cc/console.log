@@ -1,0 +1,8 @@
+[32m20:14:26 (3500) INFO ProjectReader[39m Found 1 of 11 file(s) to be mutated.
+[32m20:14:26 (3500) INFO Instrumenter[39m Instrumented 1 source file(s) with 150 mutant(s)
+[32m20:14:26 (3500) INFO ConcurrencyTokenProvider[39m Creating 15 test runner process(es).
+[32m20:14:26 (3500) INFO BroadcastReporter[39m Detected that current console does not support the "progress" reporter, downgrading to "progress-append-only" reporter
+[32m20:14:26 (3500) INFO DryRunExecutor[39m Note: running the dry-run only. No mutations will be tested.
+[32m20:14:26 (3500) INFO DryRunExecutor[39m Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+[32m20:14:28 (3500) INFO DryRunExecutor[39m Initial test run succeeded. Ran 36 tests in 1 second (net 426 ms, overhead 705 ms).
+[32m20:14:28 (3500) INFO MutationTestExecutor[39m The dry-run has been completed successfully. No mutations have been executed.

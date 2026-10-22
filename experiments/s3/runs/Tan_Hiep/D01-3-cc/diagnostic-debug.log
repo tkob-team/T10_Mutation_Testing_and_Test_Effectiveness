@@ -1,0 +1,173 @@
+[36m19:52:49 (2712) DEBUG ConfigReader[39m Loading config from stryker.cart-orders.config.json
+[36m19:52:49 (2712) DEBUG ConfigReader[39m Loaded config: {
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "testRunner": "jest",
+  "coverageAnalysis": "perTest",
+  "mutate": [
+    "server.js:280-349",
+    "server.js:510-568"
+  ],
+  "reporters": [
+    "clear-text",
+    "progress",
+    "html",
+    "json"
+  ],
+  "htmlReporter": {
+    "fileName": "reports/cart-orders/mutation.html"
+  },
+  "jsonReporter": {
+    "fileName": "reports/cart-orders/mutation.json"
+  },
+  "tempDirName": ".stryker-tmp",
+  "dryRunOnly": true,
+  "logLevel": "debug",
+  "concurrency": 1,
+  "configFile": "stryker.cart-orders.config.json",
+  "allowConsoleColors": true,
+  "checkers": [],
+  "checkerNodeArgs": [],
+  "commandRunner": {
+    "command": "npm test"
+  },
+  "clearTextReporter": {
+    "allowColor": true,
+    "allowEmojis": false,
+    "logTests": true,
+    "maxTestsToLog": 3,
+    "reportTests": true,
+    "reportMutants": true,
+    "reportScoreTable": true,
+    "skipFull": false
+  },
+  "dashboard": {
+    "baseUrl": "https://dashboard.stryker-mutator.io/api/reports",
+    "reportType": "full"
+  },
+  "eventReporter": {
+    "baseDir": "reports/mutation/events"
+  },
+  "ignorePatterns": [],
+  "ignoreStatic": false,
+  "incremental": false,
+  "incrementalFile": "reports/stryker-incremental.json",
+  "force": false,
+  "fileLogLevel": "off",
+  "inPlace": false,
+  "maxConcurrentTestRunners": 9007199254740991,
+  "maxTestRunnerReuse": 0,
+  "mutator": {
+    "plugins": null,
+    "excludedMutations": []
+  },
+  "plugins": [
+    "@stryker-mutator/*"
+  ],
+  "appendPlugins": [],
+  "disableTypeChecks": true,
+  "symlinkNodeModules": true,
+  "cleanTempDir": true,
+  "testRunnerNodeArgs": [],
+  "thresholds": {
+    "high": 80,
+    "low": 60,
+    "break": null
+  },
+  "timeoutFactor": 1.5,
+  "timeoutMS": 5000,
+  "dryRunTimeoutMinutes": 5,
+  "tsconfigFile": "tsconfig.json",
+  "warnings": true,
+  "disableBail": false,
+  "allowEmpty": false,
+  "ignorers": [],
+  "testFiles": []
+}
+[36m19:52:49 (2712) DEBUG PluginLoader[39m Loading @stryker-mutator/* from D:\HK7\Testing\Seminars\Repo\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\backend\node_modules\@stryker-mutator
+[36m19:52:49 (2712) DEBUG PluginLoader[39m Loading plugin "@stryker-mutator/jest-runner" (matched with expression @stryker-mutator/*)
+[36m19:52:49 (2712) DEBUG PluginLoader[39m Loading plugin @stryker-mutator/jest-runner
+[36m19:52:49 (2712) DEBUG PluginLoader[39m Loading plugin file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/instrumenter/dist/src/frameworks/index.js
+[36m19:52:49 (2712) DEBUG PluginLoader[39m Loading plugin file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+[36m19:52:49 (2712) DEBUG MetaSchemaBuilder[39m Contributing 1 schemas from plugins to options validation.
+[32m19:52:49 (2712) INFO ProjectReader[39m Found 1 of 11 file(s) to be mutated.
+[36m19:52:49 (2712) DEBUG ProjectReader[39m All input files: [
+  "D:\\HK7\\Testing\\Seminars\\Repo\\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\\backend\\database.js",
+  "D:\\HK7\\Testing\\Seminars\\Repo\\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\\backend\\database.sqlite",
+  "D:\\HK7\\Testing\\Seminars\\Repo\\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\\backend\\package-lock.json",
+  "D:\\HK7\\Testing\\Seminars\\Repo\\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\\backend\\package.json",
+  "D:\\HK7\\Testing\\Seminars\\Repo\\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\\backend\\server.js",
+  "D:\\HK7\\Testing\\Seminars\\Repo\\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\\backend\\stryker.cart-orders.config.json",
+  "D:\\HK7\\Testing\\Seminars\\Repo\\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\\backend\\test\\cart-orders.test.js",
+  "D:\\HK7\\Testing\\Seminars\\Repo\\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\\backend\\test\\defects\\cart-orders.defects.js",
+  "D:\\HK7\\Testing\\Seminars\\Repo\\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\\backend\\test\\helpers\\app.js",
+  "D:\\HK7\\Testing\\Seminars\\Repo\\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\\backend\\test\\helpers\\isolate.js",
+  "D:\\HK7\\Testing\\Seminars\\Repo\\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\\backend\\test_profile.js"
+]
+[36m19:52:49 (2712) DEBUG ProjectReader[39m Files to mutate: [
+  "D:\\HK7\\Testing\\Seminars\\Repo\\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\\backend\\server.js"
+]
+[36m19:52:49 (2712) DEBUG TemporaryDirectory[39m Using temp directory "D:\HK7\Testing\Seminars\Repo\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\backend\.stryker-tmp\sandbox-oe9niH"
+[36m19:52:49 (2712) DEBUG Instrumenter[39m Instrumenting 1 source files with mutants
+[36m19:52:49 (2712) DEBUG Instrumenter[39m Instrumented server.js (150 mutant(s))
+[32m19:52:49 (2712) INFO Instrumenter[39m Instrumented 1 source file(s) with 150 mutant(s)
+[32m19:52:49 (2712) INFO ConcurrencyTokenProvider[39m Creating 1 test runner process(es).
+[36m19:52:49 (2712) DEBUG ChildProcessProxy[39m Started CheckerWorker in worker process 0 with pid 21856 
+[36m19:52:50 (21856) DEBUG PluginLoader[39m Loading plugin @stryker-mutator/jest-runner
+[36m19:52:50 (21856) DEBUG PluginLoader[39m Loading plugin file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/instrumenter/dist/src/frameworks/index.js
+[36m19:52:50 (21856) DEBUG PluginLoader[39m Loading plugin file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+[36m19:52:50 (2712) DEBUG Sandbox[39m Creating a sandbox for files in D:\HK7\Testing\Seminars\Repo\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\backend\.stryker-tmp\sandbox-oe9niH
+[36m19:52:50 (2712) DEBUG Sandbox[39m Start symlink node_modules
+[36m19:52:50 (2712) DEBUG Sandbox[39m Create symlink from D:\HK7\Testing\Seminars\Repo\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\backend\node_modules to D:\HK7\Testing\Seminars\Repo\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\backend\.stryker-tmp\sandbox-oe9niH\node_modules
+[32m19:52:50 (2712) INFO BroadcastReporter[39m Detected that current console does not support the "progress" reporter, downgrading to "progress-append-only" reporter
+[36m19:52:50 (2712) DEBUG BroadcastReporter[39m Broadcasting to reporters ["clear-text","progress-append-only","html","json"]
+[36m19:52:50 (2712) DEBUG ChildProcessProxy[39m Started ChildProcessTestRunnerWorker in worker process 0 with pid 13424 
+[36m19:52:50 (13424) DEBUG PluginLoader[39m Loading plugin @stryker-mutator/jest-runner
+[36m19:52:50 (13424) DEBUG PluginLoader[39m Loading plugin file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/instrumenter/dist/src/frameworks/index.js
+[36m19:52:50 (13424) DEBUG PluginLoader[39m Loading plugin file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+[36m19:52:50 (13424) DEBUG ChildProcessProxyWorker[39m Changing current working directory for this process to D:\HK7\Testing\Seminars\Repo\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\backend\.stryker-tmp\sandbox-oe9niH
+[36m19:52:50 (13424) DEBUG jestTestAdapterFactory[39m Detected Jest version 30.5.2
+[36m19:52:50 (13424) DEBUG JestTestRunner[39m Running jest with --findRelatedTests flag. Set jest.enableFindRelatedTests to false to run all tests on every mutant.
+[36m19:52:50 (13424) DEBUG CustomJestConfigLoader[39m Read config from "package.json" (used native `readInitialOptions` from jest-config).
+[36m19:52:50 (13424) DEBUG JestTestRunner[39m Merging file-based config {
+  "testEnvironment": "node",
+  "setupFiles": [
+    "<rootDir>/test/helpers/isolate.js"
+  ],
+  "testMatch": [
+    "<rootDir>/test/**/*.test.js"
+  ],
+  "rootDir": "D:\\HK7\\Testing\\Seminars\\Repo\\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\\backend\\.stryker-tmp\\sandbox-oe9niH"
+}
+      with custom config {}
+      and default (internal) stryker config {
+  "collectCoverage": false,
+  "verbose": false,
+  "notify": false,
+  "bail": false,
+  "reporters": []
+}
+[32m19:52:50 (2712) INFO DryRunExecutor[39m Note: running the dry-run only. No mutations will be tested.
+[32m19:52:50 (2712) INFO DryRunExecutor[39m Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+[36m19:52:50 (2712) DEBUG DryRunExecutor[39m Using timeout of 300000 ms.
+[36m19:52:50 (2712) DEBUG TimeoutDecorator[39m Starting timeout timer (300000 ms) for a test run
+[32m19:52:50 (2712) INFO DryRunExecutor[39m No tests were found
+[36m19:52:50 (2712) DEBUG Stryker[39m Not removing the temp dir because an error occurred
+[91m19:52:50 (2712) ERROR Stryker[39m No tests were executed. Stryker will exit prematurely. Please check your configuration.
+[36m19:52:50 (2712) DEBUG ChildProcessProxy[39m Disposing of worker process 13424
+[36m19:52:50 (2712) DEBUG ChildProcessProxy[39m Kill 13424
+[36m19:52:50 (2712) DEBUG ChildProcessProxy[39m Disposing of worker process 21856
+[36m19:52:50 (2712) DEBUG ChildProcessProxy[39m Kill 21856
+file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/process/3-dry-run-executor.js:47
+            throw new ConfigError('No tests were executed. Stryker will exit prematurely. Please check your configuration.');
+                  ^
+
+ConfigError: No tests were executed. Stryker will exit prematurely. Please check your configuration.
+    at DryRunExecutor.execute (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/process/3-dry-run-executor.js:47:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Stryker.run (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/stryker.js:52:53)
+    at async Stryker.runMutationTest (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/stryker.js:27:20)
+    at async Command.<anonymous> (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/stryker-cli.js:51:13) {
+  innerError: undefined
+}
+
+Node.js v24.15.0
