@@ -111,6 +111,7 @@ Chạy thử bởi Claude trong sandbox (Linux, Node v22.22.0), **không phải 
 
 | Run ID | SUT Commit | Config / Test Set | Command | HTML / JSON / Log | Outcome |
 |---|---|---|---|---|---|
+| E01-1-cc (Claude Code; baseline domain, trước D04) | `8d60e9b` (EShop, nhánh `s3/D01-cart-orders`) | `backend/stryker.cart-orders.config.json` (`mutate: server.js:280-349, 510-568`, `coverageAnalysis: perTest`, `tempDirName: stryker-tmp`); test set `backend/test/cart-orders.test.js` (36 tests); StrykerJS 10.0.0, Jest 30.5.2, Node v24.15.0, Windows 11 | `cd backend; npx stryker run stryker.cart-orders.config.json` | `experiments/s3/runs/Tan_Hiep/E01-1-cc/` (`mutation.html`, `mutation.json`, `console.log`, `mutants_by_route.md`) | 150 mutants — Killed 87, Timeout 19, Survived 34, NoCoverage 2, RuntimeError 8, CompileError 0, Ignored 0; score 74.65% (Detected 106 / Valid 142); score on covered 75.71%. Khác sandbox Linux trước đó (74.83%: Killed 91, Timeout 16, RuntimeError 7) |
 | [S3-E01] | Pending (S3-D04) | — | — | — | Not run |
 
 ## Survivors & Manual Assertions

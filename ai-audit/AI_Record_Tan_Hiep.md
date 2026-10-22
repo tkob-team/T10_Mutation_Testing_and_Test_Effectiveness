@@ -5,7 +5,7 @@
 **Assignment:** T10 Seminar  
 **Class / Cohort:** Software Testing - CQ2023/3, Nhóm 12  
 **AI Use:** Yes  
-**Evidence Status:** Partial — có prompt log claude.ai và Claude Code; verdict đã xác nhận: A01, B01, C01-01, WF-01; verdict đề xuất chờ xác nhận: C01-02, C01-03, D01-03, D01-04, WF-02; Pending: D01-01, D01-02
+**Evidence Status:** Partial — có prompt log claude.ai và Claude Code; verdict đã chốt cho cả 11 artifacts (2026-10-22)
 
 Copy file này thành `ai-audit/AI_Record_<Member>.md` khi bắt đầu ghi usage. Mỗi người dùng một file xuyên suốt S1–S8. Điền ngay khi làm; mỗi artifact có Stage và Task ID để không lẫn các giai đoạn. Mục reflection do chính thành viên viết từ trải nghiệm thật. Student ID, ngày nộp và chữ ký điền trực tiếp vào bản nộp bởi thành viên; không đưa vào prompt AI.
 
@@ -231,7 +231,7 @@ Rejected: câu giải thích "would catch mutants like `>= 499999`" (StrykerJS k
 | Tool / Model | Claude (claude.ai), Claude Opus 5.5 |
 | Recorded Time & Provenance | 2026-10-18, từ 13:02 (UTC+7), theo timestamp tin nhắn trong conversation claude.ai |
 | Output Artifact / Section | `SUT/backend/test/helpers/isolate.js`, `test/helpers/app.js`, `test/cart-orders.test.js` (CO-01…CO-19, 36 tests), `test/defects/cart-orders.defects.js` (DEF-01…08), `package.json` (devDependencies, scripts, jest), `stryker.cart-orders.config.json`; Experiment Log mục Test Cases và D01 |
-| Verdict | Pending — chờ Tấn Hiệp review và chạy D01-1…3 |
+| Verdict | INCOMPLETE — usable after edits |
 | Reasoning & Source | Expected results từ `SUT/README.md` (SRS v2.0: FR-07, FR-08, FR-10, FR-11, FR-12, FR-18, FR-20, SEC-03) và `api_specification.md` §4, §6.2. [Bổ sung course slide/ISTQB section theo AI-02 khi review] |
 | Verification | Sandbox Claude (Linux, Node v22.22.0): `npm test` 36/36 pass (3 lần + `--runInBand`); `npm run test:defects` 8/8 fail đúng lý do; `database.sqlite` không đổi (md5); Stryker 150 mutants, score 74.83%. **Member run: Not run** (D01-1…3 trong Experiment Log) |
 | Student Fix | Pending |
@@ -275,7 +275,7 @@ Xem prompt log ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-16_9ffbcb5b.md, l
 | Tool / Model | Claude Code, model Claude Opus 5.5 (Tấn Hiệp xác nhận) |
 | Recorded Time & Provenance | 2026-10-22, trước 19:55 (UTC+7) — thời điểm Tấn Hiệp dán báo cáo vào claude.ai; giờ chạy chính xác: xem `D01-cc-REPORT.md` |
 | Output Artifact / Section | `experiments/s3/runs/Tan_Hiep/D01-1-cc/`, `D01-2-cc/`, `D01-3-cc/`, `D01-cc-REPORT.md`; nhánh local `s3/D01-cart-orders` (repo EShop): `backend/package.json`, `backend/package-lock.json`, `backend/stryker.cart-orders.config.json`, `backend/test/` |
-| Verdict | Pending — chờ Tấn Hiệp review evidence và tự chạy lại |
+| Verdict | VALID — accepted as-is |
 | Reasoning & Source | Expected của từng run lấy từ Experiment Log mục D01 — Runs (bản 2026-10-18) |
 | Verification | Theo báo cáo: D01-1-cc 36/36 pass; D01-2-cc 8/8 fail đúng lý do; D01-3-cc fail (`No tests were found`). Chẩn đoán thêm với `--tempDirName stryker-tmp` thì dry run thành công. Claude Code không sửa test/config. **Member run: Not run** |
 | Student Fix | Pending |
@@ -390,7 +390,7 @@ Xem prompt log ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-16_9ffbcb5b.md, l
 | Tool / Model | Claude (claude.ai), Claude Opus 5.5 |
 | Recorded Time & Provenance | 2026-10-16 19:33–20:27 (UTC+7), prompt log claude.ai lượt #4–#18, #20, #21 |
 | Output Artifact / Section | `experiments/s3/Experiment_Log_Tan_Hiep.md` dòng C01-1…C01-6 và mục Limits & Failure Modes; `console.log`/`killedBy.log` trong `experiments/s3/runs/Tan_Hiep/C01-*/` (tạo từ output Tấn Hiệp dán); `show-mutants.js` (công cụ phụ, không commit); prompt C01-5; cập nhật AI Record |
-| Verdict | VALID (đề xuất của Claude, chờ Tấn Hiệp xác nhận) — số liệu chép từ output thật; Tấn Hiệp đã review và commit (b43a899, 42f5003) |
+| Verdict | VALID — số liệu chép từ output thật; Tấn Hiệp đã review và commit (b43a899, 42f5003) |
 | Reasoning & Source | Output console của các lần chạy C01 trên máy Tấn Hiệp |
 | Verification | Đối chiếu số trong log với console output (C01-2: 20.00%, C01-4: 93.33%, C01-5: 93.33%); `killedBy.log` sinh bằng script từ `mutation.json` thật |
 | Student Fix | Chỉ ra Claude không nói rõ nơi đặt `console.log` (lượt #12); sửa vị trí thư mục report |
@@ -409,7 +409,7 @@ Xem prompt log ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-16_9ffbcb5b.md, l
 | Tool / Model | Claude (claude.ai), Claude Opus 5.5 |
 | Recorded Time & Provenance | 2026-10-16 20:20 (UTC+7), prompt log claude.ai lượt #19 |
 | Output Artifact / Section | `SUT/.gitignore` (commit EShop 92bbf22) |
-| Verdict | VALID (đề xuất của Claude, chờ Tấn Hiệp xác nhận) |
+| Verdict | VALID |
 | Reasoning & Source | `git status` thật của Tấn Hiệp (lượt #19) |
 | Verification | Claude thử các rule trên bản clone: chỉ `.gitignore` hiện là file mới, `backend/package-lock.json` vẫn được track. Nội dung trên GitHub trùng bản gửi (kiểm 2026-10-16) |
 | Student Fix | Accepted as-is |
@@ -428,7 +428,7 @@ Xem prompt log ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-16_9ffbcb5b.md, l
 | Tool / Model | Claude (claude.ai), Claude Opus 5.5 |
 | Recorded Time & Provenance | 2026-10-16 20:28 (UTC+7), prompt log claude.ai lượt #22 |
 | Output Artifact / Section | Tin nhắn gửi Thái Hòa (ngoài repo) |
-| Verdict | INCOMPLETE (đề xuất của Claude, chờ Tấn Hiệp xác nhận) — các câu hỏi scope dựa trên F-B01-04 bản cũ, chưa đọc SRS `README.md`; câu hỏi 1 thừa |
+| Verdict | INCOMPLETE — các câu hỏi scope dựa trên F-B01-04 bản cũ, chưa đọc SRS `README.md`; câu hỏi 1 thừa |
 | Reasoning & Source | Research Notes F-B01-04 (bản 2026-10-16) |
 | Verification | Câu trả lời của Hòa (lượt #23) dẫn tới việc đọc SRS và sửa F-B01-04 |
 | Student Fix | Accepted as-is khi gửi |
@@ -447,7 +447,7 @@ Xem prompt log ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-16_9ffbcb5b.md, l
 | Tool / Model | Claude (claude.ai), Claude Opus 5.5 — soạn prompt và docs; Claude Code, Claude Opus 5.5 — sửa file, chạy, commit |
 | Recorded Time & Provenance | 2026-10-22 20:04–20:16 (UTC+7): claude.ai lượt #29; Claude Code lượt #2 |
 | Output Artifact / Section | `backend/stryker.cart-orders.config.json` (`tempDirName: "stryker-tmp"`), `.gitignore` EShop, `backend/test/defects/cart-orders.defects.js` (DEF-08a/08b); runs `D01-4-cc`, `D01-5-cc`; Experiment Log D01; commit EShop 8d60e9b, seminar 5fc08df |
-| Verdict | VALID (đề xuất của Claude, chờ Tấn Hiệp xác nhận) |
+| Verdict | VALID |
 | Reasoning & Source | Quyết định D01-Q7, D01-Q8 của Tấn Hiệp (Experiment Log) |
 | Verification | D01-4-cc: 9/9 defect tests fail đúng lý do; D01-5-cc: dry run `Ran 36 tests`. **Member run: Not run** |
 | Student Fix | Accepted as-is |
@@ -467,7 +467,7 @@ Claude Code: ai-audit/evidence/s3/Tan_Hiep/claude-code_prompt_log.md, lượt #2
 | Tool / Model | Claude (claude.ai), Claude Opus 5.5 — viết script và hook; Claude Code, Claude Opus 5.5 — cài, trích log, kiểm tra, commit |
 | Recorded Time & Provenance | 2026-10-22 20:16–20:41 (UTC+7): claude.ai lượt #30–#33 và các lượt sau; Claude Code lượt #3–#5 |
 | Output Artifact / Section | `Repo/tools/extract_ai_log.py`, `Repo/.claude/settings.json` (ngoài repo nhóm); `ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-16_9ffbcb5b.md`, `ai-audit/evidence/s3/Tan_Hiep/claude-code_prompt_log.md`; commit seminar b1674c8, 345e1b1, 78642bd |
-| Verdict | INCOMPLETE (đề xuất của Claude, chờ Tấn Hiệp xác nhận) — cần 4 lần sửa trước khi đạt |
+| Verdict | INCOMPLETE — cần 4 lần sửa trước khi đạt |
 | Reasoning & Source | Định dạng transcript JSONL của Claude Code; tài liệu hooks https://code.claude.com/docs/en/hooks (truy cập 2026-10-22) |
 | Verification | Script chạy thật trên transcript claude.ai và Claude Code; hook Stop tự ghi log sau lượt (Claude Code xác nhận); grep `tanhi`, MSSV, email = 0 trong cả hai log |
 | Student Fix | Lỗi phát hiện qua review: (1) tính lệnh local `/exit` là prompt; (2) transcript rỗng ghi đè file `unknown_session`; (3) phiên resume làm lặp prompt; (4) không che tên user Windows đứng riêng, regex phân biệt hoa thường; (5) prompt ghi sai đường dẫn `Repo-setup.zip`. Đã sửa (1)–(4) trong script; (5) sửa ở prompt sau. Bản sửa `re.I` của (4) chưa cài trên máy |
@@ -483,12 +483,12 @@ Claude Code: ai-audit/evidence/s3/Tan_Hiep/claude-code_prompt_log.md, lượt #3
 
 | Metric | Count | Percentage |
 |---|---|---|
-| Total audited | 4 | 100% |
-| VALID: accepted as-is | 2 | 50% |
+| Total audited | 11 | 100% |
+| VALID: accepted as-is | 6 | 54.55% |
 | INVALID: rejected | 0 | 0% |
-| INCOMPLETE: usable after edits | 2 | 50% |
+| INCOMPLETE: usable after edits | 5 | 45.45% |
 
-Verdict đề xuất chờ xác nhận (chưa đếm): AI-S3-C01-02 VALID, AI-S3-C01-03 VALID, AI-S3-D01-03 VALID, AI-S3-D01-04 INCOMPLETE, AI-S3-WF-02 INCOMPLETE. Còn Pending: AI-S3-D01-01, AI-S3-D01-02.
+VALID: AI-S3-A01-01, AI-S3-C01-01, AI-S3-C01-02, AI-S3-C01-03, AI-S3-D01-02, AI-S3-D01-03. INCOMPLETE: AI-S3-B01-01, AI-S3-WF-01, AI-S3-D01-01, AI-S3-D01-04, AI-S3-WF-02. Không còn Pending (chốt 2026-10-22).
 
 Chỉ đếm artifacts đã có verdict; tổng ba verdict phải bằng Total. Total = 0 thì Percentage ghi n.a.; pending không bị tính là verdict. Leader loại trùng cùng artifact trước khi tổng hợp.
 
@@ -533,7 +533,7 @@ Write your answers in English from your own experience. Leader uses these inputs
 
 ## 6. Member Review & Handoff
 
-- Missing artifacts / pending verification: course slide/ISTQB source cho Reasoning & Source theo AI-02; verdict D01-01, D01-02 và xác nhận các verdict đề xuất
+- Missing artifacts / pending verification: course slide/ISTQB source cho Reasoning & Source theo AI-02
 - Member confirmation of accuracy: Pending
 - Official AI-03 disclosure/signature: Pending; mỗi người kiểm tra và tự ký PDF khi leader chuẩn bị bản chính thức.
 - Official AI-04 signature when required: Pending; tác giả kiểm tra bản tổng hợp trước khi ký.
