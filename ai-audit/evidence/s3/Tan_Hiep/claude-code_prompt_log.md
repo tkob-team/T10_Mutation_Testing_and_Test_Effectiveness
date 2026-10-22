@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 02:17 (Asia/Saigon).
+Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 02:41 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 14 lượt prompt; theo model: claude-opus-5-5 14 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 16 lượt prompt; theo model: claude-opus-5-5 15 lượt; unknown 1 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-22 19:50 — model: claude-opus-5-5 — session 4a560803
 
@@ -667,4 +667,64 @@ Không viết nhận định hay kết luận. Commit: docs(S3-H01): add compari
 ### Hành động
 
 - Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Tan_Hiep\H01-cc\h01_comparison.py
+
+## #15 — 2026-10-23 02:38 — model: claude-opus-5-5 — session 4a560803
+
+### Prompt
+
+```text
+<pasted_content id="3d1a">
+Task WF — cập nhật Repo/CLAUDE.md và hook cho S4. Không chạy test.
+1. Seminar repo: nếu ai-audit/evidence/s3/Tan_Hiep/ có thay đổi → commit chore(ai-log): update prompt logs.
+2. Repo/CLAUDE.md:
+   - "Quyết định đã chốt", thêm:
+     - 2026-10-23 (S3-F01): oracle lấy từ code phải ghi rõ nguồn trong comment test và Experiment Log; không chép công thức/logic từ code làm expected.
+     - 2026-10-23 (S3-G01): AI nhận đúng 6 mutant mục tiêu như manual; raw run → spec review ở phiên thảo luận → Stryker. G01 ghi "blind một phần".
+     - 2026-10-23 (S3-H01): so sánh manual/AI trên mutant mục tiêu và bằng Survived tuyệt đối, không chỉ score.
+   - "Quy tắc", thêm: "Session blind: Tấn Hiệp checkout nhánh trước; preflight chỉ git status + git pull --ff-only, không git log/git show." và "S4–S8: không soạn nội dung guide/report/slides/activity thay Tấn Hiệp khi prompt chưa nói rõ mức AI được phép."
+   - "Đọc gì trước", thêm: "S4+: output và template theo docs/Task_Output_Map.md; deliverable S4 viết tiếng Anh."
+   - Thêm mục "Trạng thái" 3 dòng: S3 A01–H01 Review; I01 chờ S3-H02 (Hòa); E01 chạy lại sau S3-D04 (Hòa); member re-run các run -cc chưa làm.
+   - Mục "AI log": đổi đường dẫn cố định "s3" thành "<stage>".
+3. Repo/.claude/settings.json: đổi --out-dir của hook từ .../evidence/s3/Tan_Hiep sang .../evidence/s4/Tan_Hiep và thêm --since <giờ hiện tại UTC, dạng 2026-10-23T05:00:00Z> để log S4 không chép lại lịch sử S3. In lại file sau khi sửa.
+4. CLAUDE.md và settings.json nằm ngoài repo, không commit. Báo cáo theo mẫu.
+</pasted_content id="3d1a">
+```
+
+### Output
+
+```text
+UTC hiện tại là `2026-10-22T19:38:28Z` (02:38 ngày 23 giờ VN). Ví dụ `2026-10-23T05:00:00Z` trong prompt chỉ là mẫu định dạng, nên tôi dùng giờ thật. Commit log trước:
+
+Kiểm nhanh PII trong log claude.ai vừa đổi, rồi sửa CLAUDE.md:
+
+Chỉ có `admin@eshop.com` (tài khoản seed). Sửa CLAUDE.md:
+
+Sửa settings.json:
+
+Thử nhanh bộ lọc `--since`, ghi ra thư mục tạm chứ không ghi vào repo:
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: WF, chuẩn bị CLAUDE.md và hook cho S4 — Done. Không chạy test.
+- Bước 1: commit seminar `9f3ca79` (`chore(ai-log): update prompt logs`, gồm 2 log s3) trên `main`, ahead 1, chưa push. Kiểm PII 2 log: `[user]` 0, MSSV 0; email chỉ có `admin@eshop.com` (tài khoản seed).
+- `Repo/CLAUDE.md` đã sửa:
+  - Quyết định đã chốt: thêm 3 dòng S3-F01, S3-G01, S3-H01.
+  - Quy tắc: thêm 2 dòng (session blind; S4–S8 không soạn nội dung thay Tấn Hiệp).
+  - Đọc gì trước: thêm mục 4 về S4+.
+  - Thêm mục mới "Trạng thái" (3 dòng).
+  - AI log: đường dẫn dùng `<stage>`; dòng đổi stage ghi hiện tại là `s4` và nhắc đặt `--since`.
+- `Repo/.claude/settings.json`: `--out-dir` đổi sang `.../evidence/s4/Tan_Hiep`, thêm `--since 2026-10-22T19:38:28Z` (giờ UTC thật lúc sửa; trong prompt `2026-10-23T05:00:00Z` chỉ là mẫu định dạng). File đã in lại ở trên.
+- Kiểm `--since` ở thư mục tạm: với giờ trên thì không ghi file nào, đúng ý định. Lùi về 19:30Z thì log có 1 lượt, chính là task này.
+- Hai file trên nằm ngoài repo nên không commit. EShop không đổi.
+- Bất thường mới: prompt của task này lúc `2026-10-22T19:38:15Z`, trước mốc `--since`, nên sẽ không vào log S4. Log S3 cũng không được ghi thêm vì hook đã chuyển sang s4. Kết quả là task WF này không nằm trong log nào.
+- Bất thường mới: quy tắc nhánh EShop vẫn ghi `s3/<task-id>` (`Repo/CLAUDE.md:29`); prompt không yêu cầu đổi nên tôi để nguyên.
+- Cần quyết định: W1 – lượt WF này ghi vào log nào? – (a) đổi `--since` thành `2026-10-22T19:38:15Z` để WF vào log S4; (b) trích lại log S3 một lần để WF vào log S3; (c) chấp nhận mất lượt này.
+```
+
+## #16 — 2026-10-23 02:41 — model: unknown — session 4a560803
+
+### Prompt
+
+```text
+W1 = (b). Chạy tools/extract_ai_log.py một lần, không --since, trên toàn bộ transcript của Repo, ghi đè T10_.../ai-audit/evidence/s3/Tan_Hiep/claude-code_prompt_log.md (như hook cũ). Kiểm PII ([user], MSSV, email cá nhân = 0). Commit: chore(ai-log): include WF turn in S3 log. Không sửa settings.json.
+```
 
