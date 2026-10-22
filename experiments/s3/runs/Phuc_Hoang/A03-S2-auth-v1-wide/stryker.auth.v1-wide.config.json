@@ -1,0 +1,11 @@
+{
+  "testRunner": "jest",
+  "coverageAnalysis": "perTest",
+  "mutate": ["server.js:32-110"],
+  "reporters": ["clear-text", "html", "json"],
+  "htmlReporter": { "fileName": "reports/auth-v1-wide/mutation.html" },
+  "jsonReporter": { "fileName": "reports/auth-v1-wide/mutation.json" },
+  "jest": { "config": { "testEnvironment": "node", "testMatch": ["**/test/auth.v1.test.js"] } },
+  "tempDirName": "stryker-tmp",
+  "concurrency": 2
+}

@@ -1,0 +1,9 @@
+node v26.12.0
+npm 11.20.0
+jest 30.5.2
+@stryker-mutator/core 10.0.0
+@stryker-mutator/jest-runner 10.0.0
+supertest 7.3.1
+express 5.2.1
+jsonwebtoken 9.0.3
+SUT commit bd31bbf; server.js sha1 f9d3a16e8f2dc5bf9e3a09e64520135fa0ad3d06

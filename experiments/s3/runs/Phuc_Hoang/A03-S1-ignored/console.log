@@ -1,0 +1,23 @@
+13:34:21 (5791) INFO ProjectReader Found 1 of 5 file(s) to be mutated.
+13:34:21 (5791) INFO Instrumenter Instrumented 1 source file(s) with 18 mutant(s)
+13:34:21 (5791) INFO ConcurrencyTokenProvider Creating 9 test runner process(es).
+13:34:21 (5791) INFO DryRunExecutor Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+13:34:22 (5791) INFO DryRunExecutor Initial test run succeeded. Ran 4 tests in 0 seconds (net 2 ms, overhead 162 ms).
+
+All tests/equiv.strong.test.js
+  ✓ cart total sums price x quantity exactly [line 3] (killed 8)
+  ~ empty cart totals 0 [line 7] (covered 2)
+  ✓ items with non-positive quantity are skipped [line 11] (killed 1)
+  ✓ registration age boundary is exactly 18 [line 16] (killed 5)
+
+Ran 1.50 tests per mutant on average.
+----------|------------------|----------|-----------|------------|----------|----------|
+          | % Mutation score |          |           |            |          |          |
+File      |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+----------|--------|---------|----------|-----------|------------|----------|----------|
+All files | 100.00 |  100.00 |       14 |         0 |          0 |        0 |        0 |
+ equiv.js | 100.00 |  100.00 |       14 |         0 |          0 |        0 |        0 |
+----------|--------|---------|----------|-----------|------------|----------|----------|
+13:34:22 (5791) INFO JsonReporter Your report can be found at: file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/2ceadd35-3522-4bb4-80b4-d79c15c2e9c6/scratchpad/sbx/a03-s1/ignored/reports/ignored/mutation.json
+13:34:22 (5791) INFO HtmlReporter Your report can be found at: file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/2ceadd35-3522-4bb4-80b4-d79c15c2e9c6/scratchpad/sbx/a03-s1/ignored/reports/ignored/mutation.html
+13:34:22 (5791) INFO MutationTestExecutor Done in 0 seconds.

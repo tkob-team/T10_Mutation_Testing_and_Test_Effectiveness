@@ -1,0 +1,69 @@
+13:33:57 (5308) INFO ProjectReader Found 1 of 8 file(s) to be mutated.
+13:33:58 (5308) INFO Instrumenter Instrumented 1 source file(s) with 18 mutant(s)
+13:33:58 (5308) INFO ConcurrencyTokenProvider Creating 9 test runner process(es).
+13:33:58 (5308) INFO DryRunExecutor Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+13:33:58 (5308) INFO DryRunExecutor Initial test run succeeded. Ran 2 tests in 0 seconds (net 2 ms, overhead 450 ms).
+
+All tests/equiv.weak.test.js
+  ✓ cart total is positive [line 3] (killed 9)
+  ✓ adult can register [line 7] (killed 3)
+
+[Survived] ConditionalExpression
+src/equiv.js:8:9
+-       if (item.quantity > 0) {
++       if (true) {
+Tests ran:
+    cart total is positive
+
+
+[Survived] EqualityOperator
+src/equiv.js:8:9
+-       if (item.quantity > 0) {
++       if (item.quantity >= 0) {
+Tests ran:
+    cart total is positive
+
+
+[Survived] ConditionalExpression
+src/equiv.js:5:7
+-     if (items.length === 0) return 0; // E2: redundant guard (loop already yields 0)
++     if (false) return 0; // E2: redundant guard (loop already yields 0)
+Tests ran:
+    cart total is positive
+
+
+[Survived] ArithmeticOperator
+src/equiv.js:9:16
+-         total += item.price * item.quantity;
++         total += item.price / item.quantity;
+Tests ran:
+    cart total is positive
+
+
+[Survived] EqualityOperator
+src/equiv.js:17:10
+-     return age >= 18;
++     return age > 18;
+Tests ran:
+    adult can register
+
+
+[Survived] ConditionalExpression
+src/equiv.js:17:10
+-     return age >= 18;
++     return true;
+Tests ran:
+    adult can register
+
+
+Ran 1.06 tests per mutant on average.
+----------|------------------|----------|-----------|------------|----------|----------|
+          | % Mutation score |          |           |            |          |          |
+File      |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+----------|--------|---------|----------|-----------|------------|----------|----------|
+All files |  66.67 |   66.67 |       12 |         0 |          6 |        0 |        0 |
+ equiv.js |  66.67 |   66.67 |       12 |         0 |          6 |        0 |        0 |
+----------|--------|---------|----------|-----------|------------|----------|----------|
+13:33:59 (5308) INFO JsonReporter Your report can be found at: file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/2ceadd35-3522-4bb4-80b4-d79c15c2e9c6/scratchpad/sbx/a03-s1/reports/weak/mutation.json
+13:33:59 (5308) INFO HtmlReporter Your report can be found at: file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/2ceadd35-3522-4bb4-80b4-d79c15c2e9c6/scratchpad/sbx/a03-s1/reports/weak/mutation.html
+13:33:59 (5308) INFO MutationTestExecutor Done in 1 second.
