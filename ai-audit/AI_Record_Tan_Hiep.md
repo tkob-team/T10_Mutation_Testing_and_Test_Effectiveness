@@ -5,7 +5,7 @@
 **Assignment:** T10 Seminar  
 **Class / Cohort:** Software Testing - CQ2023/3, Nhóm 12  
 **AI Use:** Yes  
-**Evidence Status:** Partial — có prompt log claude.ai và Claude Code; verdict đã chốt cho cả 11 artifacts (2026-10-22)
+**Evidence Status:** Partial — có prompt log claude.ai và Claude Code; verdict đã chốt cho cả 12 artifacts (2026-10-23)
 
 Copy file này thành `ai-audit/AI_Record_<Member>.md` khi bắt đầu ghi usage. Mỗi người dùng một file xuyên suốt S1–S8. Điền ngay khi làm; mỗi artifact có Stage và Task ID để không lẫn các giai đoạn. Mục reflection do chính thành viên viết từ trải nghiệm thật. Student ID, ngày nộp và chữ ký điền trực tiếp vào bản nộp bởi thành viên; không đưa vào prompt AI.
 
@@ -24,6 +24,7 @@ Copy file này thành `ai-audit/AI_Record_<Member>.md` khi bắt đầu ghi usag
 | Claude (claude.ai, model Claude Opus 5.5) | s3 | S3-D01 | drafting | Tin nhắn gửi Thái Hòa về seams và scope Cart & Orders | Soạn tin nhắn | Gửi tin, chuyển câu trả lời của Hòa | AI-S3-D01-04 |
 | Claude Code (model Claude Opus 5.5) + Claude (claude.ai, model Claude Opus 5.5) | s3 | S3-D01 | coding / data analysis | Đổi `tempDirName`, `.gitignore` EShop, tách DEF-08; runs D01-4-cc, D01-5-cc; commit 8d60e9b, 5fc08df | claude.ai soạn prompt và docs; Claude Code sửa file, chạy, commit | Chọn phương án D01-Q7, D01-Q8; cho phép commit | AI-S3-D01-03 |
 | Claude (claude.ai, model Claude Opus 5.5) + Claude Code (model Claude Opus 5.5) | s3 | — (workflow) | coding | `Repo/tools/extract_ai_log.py`, `Repo/.claude/settings.json` (hook Stop), hai prompt log trong `ai-audit/evidence/s3/Tan_Hiep/` | Viết script trích log, cấu hình hook, trích log; Claude Code cài và kiểm tra | Yêu cầu tự xuất log; quyết định che tên user, xóa file thừa | AI-S3-WF-02 |
+| Claude Code (model Claude Opus 5.5) + Claude (claude.ai, model Claude Opus 5.5) | s3 | S3-G01 | coding / data analysis | `SUT/backend/test/ai/cart-orders.ai.js` (AI-CO-01…05, nhánh `s3/G01-ai`); runs `G01-1-cc`, `G01-2-cc`; `G01-cc-REPORT.md`; Experiment Log mục AI Runs, Comparison | Claude Code: phân tích 6 survivor, sinh 5 test, giải thích vì sao không viết test cho 550:11, chạy Jest và Stryker. claude.ai: soạn prompt, spec review | Chọn 6 mutant mục tiêu (phương án a), quyết định cách xử lý khi lộ thông tin ở preflight, duyệt kết quả spec review | AI-S3-G01-01 |
 
 ## 2. Artifact Audit
 
@@ -479,16 +480,36 @@ claude.ai: ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-16_9ffbcb5b.md, lư�
 Claude Code: ai-audit/evidence/s3/Tan_Hiep/claude-code_prompt_log.md, lượt #3–#5.
 ```
 
+### Artifact AI-S3-G01-01
+
+| Field | Value |
+|---|---|
+| Stage / Task ID | S3 / S3-G01 |
+| Tool / Model | Claude Code, Claude Opus 5.5 (`claude-opus-5-5`) — sinh assertion, chạy Jest/Stryker, ghi evidence; Claude (claude.ai), Claude Opus 5.5 — soạn prompt, spec review |
+| Recorded Time & Provenance | 2026-10-23 01:40–02:08 (UTC+7). Claude Code session `85a13ef2`: lượt #11 (bị dừng ở preflight), #12 (G01-1-cc), lượt G01-2-cc kế tiếp. claude.ai: lượt #59–#64 |
+| Output Artifact / Section | `backend/test/ai/cart-orders.ai.js` — AI-CO-01…05 (EShop `s3/G01-ai` @ `143a016` raw, `f4696c6` chỉ sửa comment); runs `experiments/s3/runs/Tan_Hiep/G01-1-cc/`, `G01-2-cc/`; `G01-cc-REPORT.md`; Experiment Log mục AI Runs, Comparison |
+| Verdict | VALID |
+| Reasoning & Source | Oracle theo SRS `README.md` (FR-07, FR-10 dòng 162, FR-18) và `api_specification.md` §4.1, §4.2, §4.5, §4.6, §6.2. Spec không định nghĩa body lỗi 404 và dạng response của GET /api/cart; AI tự ghi rõ hai chỗ oracle một phần lấy từ code (dạng `[]`, trường `error`) và không assert nguyên văn chuỗi lỗi. 550:11 không viết test vì là mutant defect-fixing (DEF-05) — lập luận đúng |
+| Verification | G01-1-cc: 41/41 pass trên code gốc, chạy một lần, không sửa test. G01-2-cc: 286:7, 292:7, 326:47, 346:45, 532:47 Killed, mỗi mutant bởi test AI tương ứng (`killedBy` trong `mutation.json`); 550:11 Survived. Toàn run: Killed 97, Timeout 23, Survived 21, NoCoverage 2, RuntimeError 7; score 83.92%. Spec review từng test: kiểm FR/§ trích dẫn trong README và `api_specification.md`, dữ liệu item khớp seed `database.js:98, 101`. **Member run: Not run** |
+| Student Fix | Accepted as-is (assertion không sửa). Chỉ sửa comment header ở `f4696c6`: header có sẵn từ commit setup ghi "(đã review)" và "sinh trong session sạch" — cả hai sai tại thời điểm sinh. Hạn chế ghi nhận: **blind một phần** — session `85a13ef2` đã in 2 subject commit F01 ở preflight (không có assertion, diff hay số liệu); agent tự phát hiện, dừng và báo; G01-1-cc chạy tiếp trong chính session đó thay vì session mới như phương án đã chọn |
+
+#### Verbatim Prompt / Verbatim AI Output
+
+```text
+Claude Code: ai-audit/evidence/s3/Tan_Hiep/claude-code_prompt_log.md, session 85a13ef2, lượt #11, #12 và lượt G01-2-cc kế tiếp.
+claude.ai: ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-16_9ffbcb5b.md, lượt #59–#64.
+```
+
 ## 3. Accuracy Summary & Audit Conclusion
 
 | Metric | Count | Percentage |
 |---|---|---|
-| Total audited | 11 | 100% |
-| VALID: accepted as-is | 6 | 54.55% |
+| Total audited | 12 | 100% |
+| VALID: accepted as-is | 7 | 58.33% |
 | INVALID: rejected | 0 | 0% |
-| INCOMPLETE: usable after edits | 5 | 45.45% |
+| INCOMPLETE: usable after edits | 5 | 41.67% |
 
-VALID: AI-S3-A01-01, AI-S3-C01-01, AI-S3-C01-02, AI-S3-C01-03, AI-S3-D01-02, AI-S3-D01-03. INCOMPLETE: AI-S3-B01-01, AI-S3-WF-01, AI-S3-D01-01, AI-S3-D01-04, AI-S3-WF-02. Không còn Pending (chốt 2026-10-22).
+VALID: AI-S3-A01-01, AI-S3-C01-01, AI-S3-C01-02, AI-S3-C01-03, AI-S3-D01-02, AI-S3-D01-03, AI-S3-G01-01. INCOMPLETE: AI-S3-B01-01, AI-S3-WF-01, AI-S3-D01-01, AI-S3-D01-04, AI-S3-WF-02. Không còn Pending (chốt 2026-10-23).
 
 Chỉ đếm artifacts đã có verdict; tổng ba verdict phải bằng Total. Total = 0 thì Percentage ghi n.a.; pending không bị tính là verdict. Leader loại trùng cùng artifact trước khi tổng hợp.
 

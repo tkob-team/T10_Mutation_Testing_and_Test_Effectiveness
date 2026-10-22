@@ -3,9 +3,9 @@
 **Document Role:** Working log cá nhân S3; chỉ ghi kết quả chạy thật trên máy Tấn Hiệp. Run do AI Agent chạy có hậu tố `-cc` (Claude Code) và ghi executor; Tấn Hiệp chạy lại các run chính thức bằng ID không hậu tố.  
 **Stage:** S3  
 **Member:** Lê Tấn Hiệp  
-**Task IDs:** S3-C01 (Review, 2026-10-22 — C01-7 giải quyết bằng harness D01); S3-D01 (Review, 2026-10-22); S3-E01, S3-F01, S3-G01, S3-H01, S3-I01 (chưa bắt đầu)  
+**Task IDs:** S3-C01 (Review, 2026-10-22 — C01-7 giải quyết bằng harness D01); S3-D01 (Review, 2026-10-22); S3-E01 (Review, 2026-10-22 — baseline domain trên `s3/D01-cart-orders` @ `8d60e9b`, trước D04); S3-F01 (Review, 2026-10-23); S3-G01 (Review, 2026-10-23); S3-H01 (đang làm); S3-I01 (chờ S3-H02)  
 **Domain / Section:** Cart & Orders  
-**Evidence Status:** Partial — C01-1 → C01-6 đã chạy; D01-1-cc, D01-2-cc đúng kỳ vọng; D01-3-cc fail (Stryker dry run trên Windows) → quyết định D01-Q7, chạy lại ở D01-5-cc; member runs D01 chưa chạy
+**Evidence Status:** Partial — C01, D01, E01-1-cc, F01-1, F01-2-cc, G01-1-cc, G01-2-cc đã chạy; member runs có hậu tố `-cc` chưa chạy lại; E01 cần chạy lại sau khi D04 ghép
 
 Chỉ điền việc đã thực hiện; thiếu đầu vào ghi Pending và blocker. Giữ prompt, số liệu và evidence nguyên gốc. Đọc `docs/Working_Guide.md` để biết nơi bàn giao.
 
@@ -156,6 +156,8 @@ Ghi chú: Manual = baseline 36 + manual 8 test (`test/cart-orders.test.js` + `te
 - **Failure mode — AI giải thích sai về tool (C01-5):** Claude biện minh test 499.999 bằng mutant `>= 499999`, mutant mà StrykerJS không sinh ra (không có mutator đổi hằng số, SRC-06 trong Research Notes). Assertion vẫn đúng và có ích; lý do thì sai → phải kiểm bằng run, không tin lời giải thích.
 - **Environment-dependent Timeout (E01-1-cc vs sandbox Linux):** cùng 150 mutants, E01-1-cc (Windows, Node v24.15.0) so với sandbox Linux của Claude (Node v22.22.0): Killed 87/91, Timeout 19/16, RuntimeError 8/7; tổng ba loại đều là 114. Survived 34 và NoCoverage 2 giống nhau. Giả thuyết: máy chậm hơn nên một số mutant chạm ngưỡng timeout — **chưa kiểm chứng** (chưa so từng mutant vì không có `mutation.json` của run sandbox). Hệ quả: luôn ghi môi trường kèm số Killed/Timeout.
 - **Failure mode — assertion học theo bug (F01-1, human):** test Survivor 4 (`POST /api/apply-coupon`) tính expected bằng đúng công thức chép từ `server.js:399–400`, nên pass trên code gốc kể cả khi code sai spec (FR-09); `/api/apply-coupon` cũng nằm ngoài vùng mutate (`280-349`, `510-568`) nên không nhắm mutant nào. Đã xóa khỏi suite manual trước F01-2. Bài học: expected lấy từ SRS/spec, không lấy từ code đang test.
+- **Near-miss — rò thông tin vào nhánh AI (G01, workflow):** EShop đang checkout sẵn `s3/F01-manual` khi giao task G01; preflight `git log --oneline -1` in ra subject commit của nhánh manual (và 1 subject F01 ở repo seminar). Claude Code tự phát hiện, dừng và báo trước khi đọc bất kỳ file nào. Phương án chọn là mở session mới, nhưng G01-1-cc lại chạy tiếp trong chính session đó → ghi là "blind một phần" (AI-S3-G01-01). Bài học: trước khi giao task blind, checkout nhánh AI trước; preflight của session blind không chạy `git log`.
+- **Killed ↔ Timeout giữa các run (G01-2-cc):** 4 mutant `347:5`, `510:63`, `519:22`, `520:7` Killed ở E01-1-cc và F01-2-cc nhưng Timeout ở G01-2-cc (`G01-2-cc/compare_runs.md`); Timeout dao động 19 → 18 → 23 qua E01-1-cc, F01-2-cc, G01-2-cc. Score gần như không đổi vì Timeout tính vào Detected. Giả thuyết: mutant làm handler không trả response, nên kết quả Killed/Timeout phụ thuộc test nào chạy trước và tải máy (15 process song song) — **chưa kiểm chứng**; kiểm lại khi Tấn Hiệp chạy lại các run. Hệ quả: khi so run, so cả số Survived tuyệt đối (34 → 11 / 21 trên cùng 150 mutant), không chỉ score.
 
 ## Cross Reproduction
 

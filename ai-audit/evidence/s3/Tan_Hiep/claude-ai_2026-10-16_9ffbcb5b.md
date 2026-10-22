@@ -1,8 +1,8 @@
-# AI Prompt Log — claude.ai Seminar Testing Software
+# AI Prompt Log — claude.ai (Seminar Testing Software)
 
-Nguồn: 9ffbcb5b-f74a-59c0-99f6-d4383af57bf4.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-22 20:34 (Asia/Saigon).
+Nguồn: 9ffbcb5b-f74a-59c0-99f6-d4383af57bf4.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 02:09 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 33 lượt prompt; theo model: claude-sonnet-4-6 2 lượt; claude-opus-5-5 32 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 64 lượt prompt; theo model: claude-sonnet-4-6 2 lượt; claude-opus-5-5 62 lượt; unknown 1 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-16 18:54 — model: claude-sonnet-4-6 — session 2586dd77
 
@@ -1861,5 +1861,1477 @@ Câu hỏi:
 
 Trả lời:
 Your questions have been answered: "A4: Tên user Windows "[user]" còn xuất hiện trong log, ở dạng một chữ đứng riêng (câu "Đường dẫn vẫn chứa username Windows [user]" trong báo cáo của Claude Code). Repo seminar là public. Có che luôn không?"="Che (Recommended)", "A5: Xóa Repo\Repo-setup.zip không? (Gói chuyển file mình gửi, các file bên trong đã được cài)"="Xóa (Recommended)". You can now continue with these answers in mind.
+```
+
+### Output
+
+````text
+Đã làm theo lựa chọn của bạn. Script giờ che thêm chữ "[user]" khi nó đứng riêng. Mình đã trích lại log claude.ai: 33 lượt, không còn "[user]" lẫn MSSV. Log claude.ai do mình trích vì transcript của phiên này nằm ở phía mình, Claude Code không có. Log của Claude Code thì nó tự trích lại.
+
+Về lỗi `Repo-setup.zip`: báo cáo lần trước của Claude Code đã ghi file nằm ở `Repo/`, nhưng mình đọc nhầm phần bị cắt, nên trong prompt ghi sai đường dẫn.
+
+Bạn tải 2 file vừa gửi vào `Repo`, rồi dán:
+
+```text
+Tiếp AI log. Được commit, không push.
+
+1. Xóa Repo/Repo-setup.zip.
+2. Từ Repo: extract_ai_log.py → thay tools/extract_ai_log.py; claude-ai_2026-10-16_9ffbcb5b.md → thay file cùng tên trong T10_.../ai-audit/evidence/s3/Tan_Hiep/.
+3. Trích lại claude-code_prompt_log.md bằng chế độ --hook (như lần trước). Kiểm tra cả 2 log: grep "[user]" và MSSV đều ra 0.
+4. Commit seminar: "chore(ai-log): redact Windows username in prompt logs".
+5. Báo cáo theo CLAUDE.md.
+```
+
+Sau đó bạn push cả hai repo và báo mình:
+- Repo EShop: nhánh `s3/D01-cart-orders`.
+- Repo seminar: `main`.
+
+Khi đó mình sẽ pull về để sửa AI Record theo hai log này.
+````
+
+### Hành động
+
+- Gửi file: /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/deliver/extract_ai_log.py, /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/deliver/claude-ai_2026-10-16_9ffbcb5b.md
+
+## #34 — 2026-10-22 20:37 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Báo cáo cho phiên thảo luận
+
+- Nhiệm vụ: Redact AI log — Done
+- Kết quả: đã trích lại claude-code_prompt_log.md bằng --hook, exit 0. Log có 5 lượt prompt, đều của session 4a560803, model opus-5-5; lượt #5 là task này.
+- Kiểm tra claude-code_prompt_log.md: [user] 0 (kể cả không phân biệt hoa thường), MSSV 0, email 0.
+- Kiểm tra claude-ai_2026-10-16_9ffbcb5b.md: [user] 0, MSSV 0, email 0.
+- Evidence: T10_.../ai-audit/evidence/s3/Tan_Hiep/. Không có REPORT riêng vì task không có Task ID.
+- Commit seminar: 78642bd trên main (ahead 4, chưa push).
+- Ngoài repo: Repo/Repo-setup.zip đã xóa; tools/extract_ai_log.py đã thay bằng bản mới, thêm WIN_USER_RE.
+- Sau lượt này hook Stop sẽ ghi lại claude-code_prompt_log.md, nên working tree seminar sẽ bẩn ở file đó. Theo CLAUDE.md thì không tính là bẩn.
+- Bất thường mới: WIN_USER_RE phân biệt hoa thường (tools/extract_ai_log.py:33), nên [user] hay [user] sẽ không bị che. Lần này kiểm tra ra 0 nên chưa gây lỗi.
+- Cần quyết định: Không
+```
+
+### Output
+
+```text
+Phần AI log xong rồi. Lỗi phân biệt hoa thường mà Claude Code nêu là đúng, mình đã sửa trong bản script của mình: `re.I`, chạy thử thì `[user]` và `[user]` đều bị che. Chưa cần gửi file ngay, mình sẽ gộp vào prompt của task kế tiếp cho đỡ một lượt.
+
+**Bước tiếp theo là của bạn: push.**
+- EShop: nhánh `s3/D01-cart-orders` (commit `8d60e9b`).
+- Seminar: `main`, đang ahead 4: `5fc08df`, `b1674c8`, `345e1b1`, `78642bd`.
+
+Push xong báo mình. Mình sẽ pull về, đọc hai log và sửa AI Record:
+- Model của A01 thành Sonnet 4.6 + Opus 5.5.
+- Mỗi artifact trỏ tới số lượt trong log.
+- Thêm artifact cho lần chạy follow-up và cho phần setup AI log.
+
+Sau đó là D01 bản chính thức do **bạn tự chạy** (D01-1, D01-2, D01-3). Xong bước đó D01 có thể chuyển sang Review.
+```
+
+## #35 — 2026-10-22 20:41 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Push xong hết rồi nhé.
+Chuyển D01 sang review rồi
+```
+
+### Output
+
+````text
+Mình đã pull về và cập nhật AI Record dựa trên bản trên GitHub (gồm cả các thay đổi Claude Code đã commit).
+
+**Các thay đổi trong AI Record:**
+- **A01:** model sửa thành Claude Sonnet 4.6 + Claude Opus 5.5, đúng theo transcript.
+- **Mọi chỗ trước đây ghi "Output dài…":** đổi thành trỏ tới số lượt cụ thể trong hai prompt log.
+- **Thêm 5 artifact** cho những việc AI đã làm mà trước đây chưa ghi:
+  - C01-02: ghi Experiment Log C01, các `console.log`, `show-mutants.js`.
+  - C01-03: `.gitignore` của EShop.
+  - D01-04: tin nhắn gửi Hòa.
+  - D01-03: lần chạy follow-up.
+  - WF-02: script trích log và hook.
+
+**Verdict của 5 artifact mới mới là đề xuất của mình**, chưa được tính vào Accuracy Summary. Theo mẫu, verdict phải do bạn quyết. Đề xuất cụ thể:
+- **VALID:** C01-02, C01-03, D01-03.
+- **INCOMPLETE:** D01-04, vì các câu hỏi trong tin nhắn dựa trên F-B01-04 bản cũ, lúc đó chưa đọc SRS. WF-02 cũng INCOMPLETE, vì phải sửa 4 lần mới chạy đúng.
+
+D01-01 (bộ test) và D01-02 (lần chạy đầu) vẫn để Pending chờ bạn quyết. Bạn đồng ý với các verdict đề xuất thì báo mình, hoặc bảo Claude Code bỏ chữ "(đề xuất…)".
+
+**Về Review:** mình đã ghi C01 và D01 là Review trong Experiment Log. C01 cũng đủ điều kiện vì C01-7 đã giải quyết bằng harness của D01. Leader có thể hỏi vì sao các run member (D01-1/2/3, không có hậu tố `-cc`) vẫn ghi Not run. Câu trả lời là bạn đã có kế hoạch tự chạy lại sau. Nếu leader yêu cầu chạy ngay, chỉ mất 3 lệnh.
+
+Bạn tải 3 file vừa gửi vào `Repo`, rồi dán:
+
+```text
+Cập nhật AI Record. Được commit, không push.
+
+1. Từ Repo: AI_Record_Tan_Hiep.md → thay T10_.../ai-audit/; Experiment_Log_Tan_Hiep.md → thay T10_.../experiments/s3/; extract_ai_log.py → thay tools/ (thêm re.I cho WIN_USER_RE). Xóa 3 file này khỏi Repo sau khi chép.
+2. Trích lại claude-code_prompt_log.md (--hook). Kiểm tra grep "[user]" (không phân biệt hoa thường), MSSV, email = 0.
+3. Commit seminar: "docs(S3-D01): map AI Record artifacts to prompt logs; add C01-02, C01-03, D01-03, D01-04, WF-02".
+4. Báo cáo theo CLAUDE.md.
+```
+
+Task kế tiếp của bạn là **S3-E01** (chạy Stryker baseline), nhưng task này phải chờ S3-D04: Thái Hòa ghép test của ba domain rồi chốt baseline. Trong lúc chờ, bạn nên báo Hòa rằng suite Cart & Orders đã sẵn sàng trên nhánh `s3/D01-cart-orders`, kèm hai lưu ý:
+- Harness trong `test/helpers/` dùng chung được cho cả ba domain.
+- Trên Windows phải dùng `tempDirName: "stryker-tmp"`.
+
+Mình không commit hay push từ đây. Hai file đã sửa trong bản sao của mình đều đã gửi bạn, và theo prompt ở trên thì Claude Code trên máy bạn sẽ commit chúng.
+````
+
+### Hành động
+
+- Gửi file: /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/deliver/AI_Record_Tan_Hiep.md, /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/deliver/Experiment_Log_Tan_Hiep.md, /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/deliver/extract_ai_log.py
+
+## #36 — 2026-10-22 20:47 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Báo cáo cho phiên thảo luận
+
+- Nhiệm vụ: Cập nhật AI Record — Done
+- Kết quả: trích lại claude-code_prompt_log.md bằng --hook, exit 0, có 6 lượt prompt (opus-5-5); lượt #6 là task này.
+- Kiểm tra: cả 2 log đều 0 cho [user] (không phân biệt hoa thường), MSSV và email.
+- Evidence: T10_.../ai-audit/evidence/s3/Tan_Hiep/. Không có REPORT riêng vì task không có Task ID.
+- Commit seminar: bbfd308 trên main (ahead 1, chưa push), gồm ai-audit/AI_Record_Tan_Hiep.md, experiments/s3/Experiment_Log_Tan_Hiep.md, claude-code_prompt_log.md.
+- Ngoài repo: tools/extract_ai_log.py đã thay; bản mới có sẵn re.I ở dòng 33, tôi không phải sửa. extract_ai_log.py ở Repo/ đã chuyển đi.
+- Bất thường mới: AI_Record và Experiment_Log không có ở Repo/ mà đã nằm sẵn trong seminar repo, sửa lúc 20:45, đủ 5 artifact C01-02, C01-03, D01-03, D01-04, WF-02. Nên không có gì để chép hay xóa ở Repo/; tôi commit đúng bản đang có trong repo.
+- Bất thường mới: grep thêm 2 docs ra 1 kết quả mỗi file, cả hai vô hại. Ở ai-audit/AI_Record_Tan_Hiep.md:472, [user] chỉ là từ khóa grep được nhắc trong câu. Ở experiments/s3/Experiment_Log_Tan_Hiep.md:89 là admin@eshop.com, tài khoản seed.
+- Sau lượt này hook Stop sẽ ghi lại claude-code_prompt_log.md, nên working tree seminar sẽ bẩn ở file đó. Theo CLAUDE.md thì không tính là bẩn.
+- Cần quyết định: Không
+```
+
+### Output
+
+```text
+Mọi thứ đã đúng. Hai "bất thường" Claude Code báo đều vô hại: một là chữ "[user]" nằm trong câu mô tả lỗi ở AI Record, hai là `admin@eshop.com`, tài khoản seed của EShop. Claude Code không tìm thấy file trong `Repo/` vì bạn đã tự đặt thẳng vào repo seminar trước đó, nên nó commit đúng bản đang có.
+
+**Còn lại phía bạn:**
+1. **Push** seminar (`bbfd308`).
+2. **Xác nhận verdict**: 5 verdict mình đề xuất (C01-02, C01-03, D01-03 là VALID; D01-04, WF-02 là INCOMPLETE), và quyết verdict cho D01-01, D01-02. Bạn chỉ cần trả lời "đồng ý hết" hoặc nêu chỗ muốn đổi. Lần sau giao việc cho Claude Code, mình gộp luôn bước cập nhật này vào prompt.
+3. **Báo Hòa** để Hòa làm S3-D04:
+   - Suite Cart & Orders đã sẵn sàng trên nhánh `s3/D01-cart-orders`.
+   - Harness `test/helpers/` dùng chung được cho ba domain.
+   - Trên Windows phải đặt `tempDirName: "stryker-tmp"`.
+   - Leader cũng cần review lại S3-A01, vì câu "30% diff" đã được sửa.
+
+S3-E01 trở đi phải chờ Hòa chốt baseline. Trong lúc chờ, bạn có thể tự chạy D01-1, D01-2, D01-3 để làm quen, mất khoảng 3 phút. Cần mình soạn tin nhắn cho Hòa thì báo mình.
+
+Mình đã bỏ hai thay đổi chưa commit trong bản sao repo của mình. Cả hai đã được Claude Code commit trên máy bạn ở `bbfd308`. Mình không push gì cả. Khi bạn push xong, mình sẽ pull về bản đó.
+```
+
+## #37 — 2026-10-22 20:49 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+1. đã push
+2. chốt
+3. bạn soạn tin nhắn cho Hoà nhé. Đọc dưới 1 phút nhé
+```
+
+### Output
+
+```text
+[Soạn tin nhắn — Bàn giao D01]
+Hòa ơi, mình xong S3-D01 (Cart & Orders), đang để Review:
+
+- Suite ở repo EShop, nhánh s3/D01-cart-orders: 36 baseline tests (chỉ assert status code, expected theo SRS README.md), pass trên code gốc.
+- 9 test lỗi gốc (DEF-01…08b) để riêng ở test/defects/, ngoài baseline; chạy bằng npm run test:defects, fail đúng như dự kiến.
+- Harness test/helpers/ không sửa server.js/database.js: dùng DB :memory: và lấy app qua mock, nên Coupons và Auth dùng chung được.
+- Lưu ý Windows: Stryker phải để tempDirName "stryker-tmp" (không có dấu chấm), nếu không Jest báo No tests were found.
+
+Chi tiết ở Experiment_Log_Tan_Hiep.md. Mình đã sửa câu "30% diff" ở F-A01-05, nhờ bạn review lại S3-A01 nhé. Ghép xong D04 thì báo mình để chạy E01.
+
+Tin nhắn trên đọc mất khoảng 45 giây.
+
+Về **"chốt"**: mình hiểu là bạn đồng ý cả 5 verdict mình đề xuất. Còn hai artifact chưa có verdict nào, mình đề xuất thêm:
+- **D01-01** (bộ test do AI viết): **INCOMPLETE**. Bộ test phải sửa hai chỗ mới dùng được: tách DEF-08 và đổi `tempDirName`.
+- **D01-02** (lần chạy đầu của Claude Code): **VALID**. Kết quả chạy đúng, và Claude Code đã báo lỗi dry run trung thực, không tự sửa test hay config cho khớp kỳ vọng.
+
+Bạn đồng ý hai verdict này không? Mình sẽ cập nhật cả 7 verdict vào AI Record trong lần giao việc kế tiếp cho Claude Code, khỏi phải commit riêng một lần.
+```
+
+## #38 — 2026-10-22 20:53 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+đồng ý. Mà Hoà phải làm D4 thì mình mới làm được E1 sao
+```
+
+### Output
+
+```text
+Đúng vậy, theo workbook thì S3-E01 có dòng **"Chờ: Baseline chung đã chốt (S3-D04)"**, và đầu vào của nó là `Baseline_Manifest.md` cùng commit baseline do Hòa tạo.
+
+Lý do nằm ở Experiment Contract: manual và AI phải được so sánh **trên cùng một production code, config và bộ test đã đóng băng**. Ở D04, Hòa ghép suite của ba domain nên có thể sửa `package.json`, config Stryker hoặc harness. Nếu bạn chạy E01 trước bước đó, số liệu có thể không khớp với baseline chung, và bạn sẽ phải chạy lại.
+
+Rủi ro thực tế là D04 cần đủ ba suite, mà theo `CONTEXT.md` thì Phúc Hoàng chưa có notes hay experiment log nào. D04 vì vậy có thể bị kẹt khá lâu.
+
+**Trong lúc chờ, bạn có hai hướng:**
+1. **Chạy thử Stryker đầy đủ trên nhánh `s3/D01-cart-orders`.** Ghi đây là run khám phá, không phải E01. Mục đích là tập đọc report và bắt đầu *hiểu* các survivor. Khả năng cao survivor của Cart & Orders không đổi sau D04, vì suite của domain khác không gọi các route giỏ hàng và đơn hàng. Nhưng phải đợi baseline chốt mới khẳng định được. Lưu ý: F01 (assertion manual) vẫn phải chờ baseline chính thức, và phải do bạn tự viết.
+2. **Hỏi Hòa** xem có cho chạy E01 theo từng domain trên commit của mình trước rồi chạy lại khi D04 xong không. Đây là quyết định của leader, mình không tự quyết thay.
+
+Mình nghiêng về làm cả hai. Hướng 1 không mất gì, còn giúp bạn chuẩn bị cho phần demo đọc report.
+
+Mình đã ghi lại 7 verdict đã chốt: C01-02, C01-03, D01-02, D01-03 là VALID; D01-01, D01-04, WF-02 là INCOMPLETE. Khi giao việc tiếp cho Claude Code, mình sẽ gộp bước cập nhật AI Record vào prompt đó. Bạn muốn mình soạn prompt cho run khám phá luôn không?
+```
+
+## #39 — 2026-10-22 20:54 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+@"/root/.claude/uploads/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/2a74bcda-T10_Seminar_Workspace" https://docs.google.com/spreadsheets/d/1vuIXJeVhuoKQu8Gw4cHN__d09kIcB4K-hccIz27DxKc/edit?gid=2111026276#gid=2111026276
+---
+xem ở trên này còn task nào mình chưa làm không
+```
+
+### Output
+
+```text
+Sheet hiện có 34 task của bạn. Tình trạng:
+
+**Đã xong / đang Review:**
+- **S3-A01, S3-B01: Done.** Leader đã duyệt A01 sau khi bạn sửa câu "30% diff".
+- **S3-D01: Review**, nhưng cột Evidence đang trống. Bạn điền: `SUT nhánh s3/D01-cart-orders @ 8d60e9b; experiments/s3/Experiment_Log_Tan_Hiep.md + runs D01-*-cc (seminar 5fc08df)`.
+- **S3-C01: trên Sheet vẫn ghi In Progress.** Bạn chuyển sang **Review**: C01-7 (seed/reset trong test) đã giải quyết bằng harness D01 và chạy pass ở D01-1-cc.
+
+**Còn lại 31 task Backlog, gần như đều bị chặn theo một chuỗi:**
+
+S3-D03 (Phúc Hoàng, **chưa bắt đầu**, cả C03 cũng Backlog) → S3-D04 (Hòa ghép baseline) → E01 → F01 → G01 → H01 → toàn bộ S4 → S5 → S6…
+
+Nút thắt thật sự là **Phúc Hoàng chưa làm D03**. Hòa cũng đang làm dở C02/D02. Chừng nào D03 chưa xong thì D04 và cả nhánh E–H của bạn đều phải đứng chờ.
+
+**Task không bị chặn (hoặc chặn ít):**
+- **S5-B01 — Slides: Concepts & Workflow.** Điều kiện chỉ là "nội dung/số liệu mình trình bày đã kiểm tra". Phần khái niệm và workflow lấy từ A01/B01 (đã Done). Ví dụ "coverage 100%, score 20% → 93,33%" cũng đã có run thật ở C01. Đây là task duy nhất có thể làm ngay mà ra kết quả thật. Tuy vậy nó thuộc S5, sẽ làm lệch thứ tự S3 → S4 bạn đang theo.
+- **S8-A01, S8-F01** không ghi điều kiện chờ, nhưng là việc tổng kết cuối kỳ. AI Record vẫn đang được ghi dần, nên chưa có gì để làm thêm lúc này.
+
+**Mình đề xuất:**
+1. Cập nhật Sheet cho C01 và D01 như trên.
+2. Hỏi nhóm về tiến độ D03. Có thể gửi luôn trong tin nhắn cho Hòa: hỏi Phúc Hoàng dự kiến khi nào xong D03, và có cho chạy E01 theo từng domain trước không.
+3. Trong lúc chờ, chọn **một** trong hai: chạy Stryker khám phá trên nhánh D01 (chuẩn bị cho E01/F01), hoặc làm trước S5-B01 slides. Mình nghiêng về chạy khám phá, vì nó giữ đúng thứ tự stage và giúp bạn hiểu survivor trước khi vào F01.
+
+Bạn muốn mình thêm câu hỏi về D03 vào tin nhắn gửi Hòa không?
+```
+
+## #40 — 2026-10-22 20:56 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Hoà bảo bạn cứ làm tiếp task đi. Nên giúp mình thực hiện tiếp nhé
+```
+
+### Output
+
+````text
+Mình hiểu ý Hòa là: **chạy E01 ngay trên suite của domain mình** (nhánh `s3/D01-cart-orders` @ `8d60e9b`), không chờ D04 ghép xong. Run này sẽ được ghi rõ là "baseline domain, trước D04". Nếu lúc D04 Hòa có sửa config hay harness thì chạy lại để đối chiếu. Nếu Hòa ý khác thì báo mình.
+
+Prompt cho Claude Code, gộp luôn phần cập nhật 7 verdict:
+
+```text
+Task S3-E01 (Cart & Orders). Dùng skill t10-run-report và t10-mutation-testing. Được commit, không push.
+
+Bối cảnh: Hòa cho chạy E01 trên suite domain trước khi D04 ghép (2026-10-22). Ghi rõ "baseline domain, trước D04".
+
+1. Repo EShop, nhánh s3/D01-cart-orders @ 8d60e9b, trong backend:
+   - E01-1-cc: npx stryker run stryker.cart-orders.config.json (full run). Để Stryker tự dọn sandbox, không xóa tay.
+   - Lưu console.log, mutation.html, mutation.json vào experiments/s3/runs/Tan_Hiep/E01-1-cc/.
+2. Đếm status từ mutation.json. Tạo E01-1-cc/mutants_by_route.md bằng script: nhóm mutant theo route (server.js 284-288 GET cart, 290-295 POST cart, 297-309 checkout, 311-319 my-orders, 321-342 cancel, 344-349 order detail, 510-523 admin list, 525-568 admin status), mỗi nhóm đếm theo status; liệt kê từng Survived/NoCoverage/Timeout/RuntimeError: line, mutator, replacement, coveredBy. KHÔNG phân tích vì sao survive (đó là F01).
+3. Experiment Log, mục Baseline: thêm dòng E01-1-cc (SUT commit, config, command, đường dẫn evidence, Killed/Timeout/Survived/NoCoverage/RuntimeError/score). Tham khảo sandbox Linux trước đó: 150 mutants, 74.83%; khác thì ghi số thật.
+4. AI Record: bỏ "(đề xuất…)" và chốt verdict: C01-02, C01-03, D01-02, D01-03 = VALID; D01-01, D01-04, WF-02 = INCOMPLETE. Cập nhật Accuracy Summary (tổng 11).
+5. Commit seminar: "docs(S3-E01): record Cart & Orders domain baseline run; finalize AI Record verdicts".
+6. Báo cáo theo CLAUDE.md.
+```
+
+Khi có báo cáo, bước tiếp theo là **S3-F01**: phân tích survivor và viết assertion manual. Phần này **bạn tự viết**. Mình sẽ giảng cách đọc từng survivor và dạy lại kiến thức nếu cần, nhưng không đưa input phân biệt hay assertion cho bạn.
+````
+
+## #41 — 2026-10-22 21:02 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Báo cáo cho phiên thảo luận
+
+- Nhiệm vụ: S3-E01 (Cart & Orders, baseline domain, trước D04) — Done
+- Kết quả: E01-1-cc Pass, exit 0. 150 mutants: Killed 87, Timeout 19, Survived 34, NoCoverage 2, RuntimeError 8, Ignored 0.
+- Score 74.65% = Detected 106 / Valid 142; score trên phần code được cover 75.71%. Số đếm từ mutation.json, khớp console.
+- Score theo route: thấp nhất GET cart 42.86% và POST cart 44.44%; cao nhất admin status 84.06%. Chi tiết ở E01-1-cc/mutants_by_route.md, không phân tích lý do survive.
+- Evidence: T10_.../experiments/s3/runs/Tan_Hiep/E01-cc-REPORT.md. Run-dir E01-1-cc/ có console.log, mutation.html/json, mutants_by_route.md và script mutants_by_route.py.
+- Commit seminar: 16a4f72 trên main, chưa push. Trước task có thêm e2851f8 (chore(ai-log)) cho log do hook ghi, theo CLAUDE.md.
+- Docs đã sửa:
+  - Experiment Log, mục Baseline: thêm dòng E01-1-cc; giữ dòng [S3-E01] Pending (S3-D04) cho run sau khi D04 ghép.
+  - AI Record: chốt 11 verdict, gồm 6 VALID (54.55%), 0 INVALID, 5 INCOMPLETE (45.45%).
+  - AI Record: tôi cũng sửa dòng Evidence Status và mục Handoff cho khớp, vì hai chỗ này vẫn ghi verdict đang chờ.
+- EShop: sạch, Stryker tự dọn sandbox. database.sqlite không đổi.
+- Bất thường mới: số khác run sandbox Linux trước đó (74.83%: Killed 91, Timeout 16, RuntimeError 7). Survived và NoCoverage giống nhau. Chưa rõ nguyên nhân và chưa so được từng mutant, vì repo không có mutation.json của run sandbox.
+- Cần quyết định: Không
+```
+
+### Output
+
+```text
+E01 đã có kết quả: **150 mutants. Killed 87, Timeout 19, Survived 34, NoCoverage 2, RuntimeError 8. Score 74,65%.**
+
+**Về chỗ lệch so với sandbox** (Killed 91, Timeout 16, RuntimeError 7): cộng Killed + Timeout + RuntimeError thì cả hai lần đều ra **114**. Survived và NoCoverage cũng trùng nhau. Nghĩa là có 4 mutant đổi trạng thái giữa Killed, Timeout và RuntimeError tùy máy, không có mutant nào chuyển giữa "bắt được" và "không bắt được". Giả thuyết hợp lý nhất là máy Windows của bạn chạy test chậm hơn sandbox, nên vài mutant bị chạm ngưỡng timeout trước khi kịp bị kill. Giả thuyết này chưa kiểm chứng được, vì mình không giữ `mutation.json` của run sandbox để so từng mutant.
+
+Đây đúng là failure mode nằm trong proposal: *"score thay đổi do Timeout hoặc môi trường"*. Nó cũng là lý do nhóm báo Killed và Timeout riêng. Nên ghi vào mục Limits của Experiment Log; mình sẽ gộp vào prompt lần sau.
+
+**Bước tiếp theo là S3-F01, phần bạn tự làm.** Trước khi bắt đầu cần chốt cách tổ chức file, vì manual và AI phải bắt đầu **độc lập từ cùng một baseline**:
+
+| Nhánh | Nội dung | Config Stryker |
+|---|---|---|
+| `s3/F01-manual` (tạo từ `8d60e9b`) | Test của bạn ở `backend/test/manual/` | baseline + manual |
+| `s3/G01-ai` (tạo từ `8d60e9b`) | Test do AI viết ở `backend/test/ai/` | baseline + AI |
+
+Lý do tách nhánh: khi làm G01, AI không được nhìn thấy assertion manual của bạn. Nếu cả hai nằm chung một nhánh, Claude Code đọc repo là thấy ngay. Jest `testMatch` của baseline chỉ nhận `test/*.test.js` ở thư mục gốc, nên test manual và AI không làm thay đổi số liệu baseline.
+
+**Cách làm F01:**
+1. Push seminar (`16a4f72`) để mình đọc `mutants_by_route.md`.
+2. Bạn mở `E01-1-cc/mutation.html`, chọn **ít nhất 3 survivor**. Với mỗi survivor, tự điền vào bảng *Survivors & Manual Assertions*: mutant thay đổi gì, vì sao sống sót (dùng 5 nhãn trong skill: missing-assertion, missing-input, untestable-path, defect-fixing, equivalent-candidate), input nào phân biệt được, expected theo FR nào.
+3. Tự viết ít nhất 3 assertion. Claude Code chỉ dựng nhánh, tạo config và chạy kiểm chứng (G2: pass trên code gốc; G3: mutant chuyển sang Killed).
+
+Trong lúc bạn làm, mình **được** giải thích một mutant cụ thể thay đổi code thế nào và giảng lại khái niệm. Mình **không** đưa input, expected hay code assertion. Đây là luật tách bạch để phép so sánh manual với AI còn ý nghĩa.
+
+Bạn đồng ý cách tách 2 nhánh như trên không? Đồng ý thì mình soạn prompt để Claude Code dựng nhánh và config cho F01.
+```
+
+## #42 — 2026-10-22 21:05 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Có, thực hiện nhé. Vậy E01 đã xong chưa?
+```
+
+### Output
+
+````text
+**E01 coi là đã xong phần việc**, nhưng còn một điều kiện chưa đúng như workbook mô tả:
+- "Xong khi" yêu cầu có reports, commands, commit, config thực tế và mapping mutant theo domain. Tất cả đã có ở E01-1-cc.
+- Riêng đầu vào, workbook yêu cầu chạy trên baseline chung sau D04, còn bạn chạy trên baseline của riêng domain trước D04 (Hòa đã cho phép).
+
+Trên Sheet bạn để **Review**, kèm ghi chú: *"Baseline domain trên s3/D01-cart-orders @ 8d60e9b, trước D04, Hòa cho phép 22/10; chạy lại sau khi D04 ghép"*. Còn chuyển Done hay không là do leader quyết.
+
+Prompt dựng nhánh cho F01 và G01:
+
+```text
+Task S3-F01 setup (Cart & Orders). Dùng skill t10-run-report. Được commit, không push. KHÔNG viết assertion nào.
+
+1. Repo EShop, tạo 2 nhánh từ 8d60e9b: s3/F01-manual và s3/G01-ai.
+2. Trên s3/F01-manual, trong backend:
+   - jest.manual.config.js: lấy cấu hình jest trong package.json, testMatch = baseline (test/*.test.js) + test/manual/**/*.manual.js
+   - stryker.cart-orders.manual.config.json: như stryker.cart-orders.config.json, nhưng jest.configFile = jest.manual.config.js, reports ra reports/cart-orders-manual/
+   - scripts: "test:manual", "mutate:cart-orders:manual"
+   - test/manual/cart-orders.manual.js: chỉ phần khung (require helpers, beforeAll loadApp, comment "Tấn Hiệp tự viết"), không có test.
+   - Kiểm tra: npm test vẫn 36 passed (file manual không bị baseline nhận).
+   Commit: "test(S3-F01): add manual-branch Jest and Stryker config".
+3. Trên s3/G01-ai: làm tương tự với hậu tố ai (test/ai/**/*.ai.js, reports/cart-orders-ai/). Commit: "test(S3-G01): add AI-branch Jest and Stryker config".
+4. Seminar, Experiment Log, mục Limits & Failure Modes: thêm 1 dòng — E01-1-cc so với sandbox Linux: Killed 87/91, Timeout 19/16, RuntimeError 8/7; tổng 3 loại đều là 114; Survived/NoCoverage giống nhau; giả thuyết do máy chậm hơn chạm ngưỡng timeout, chưa kiểm chứng. Commit: "docs(S3-E01): note environment-dependent Timeout counts".
+5. Repo/CLAUDE.md, mục Quyết định đã chốt: thêm "2026-10-22: E01 chạy trên baseline domain trước D04 (Hòa cho phép). Nhánh manual s3/F01-manual và AI s3/G01-ai cùng tách từ 8d60e9b; AI không được đọc nhánh manual."
+6. Báo cáo theo CLAUDE.md.
+```
+
+Sau khi Claude Code báo xong, bạn push và báo mình. Lúc đó bạn checkout `s3/F01-manual`, mở `E01-1-cc/mutation.html` và chọn survivor. Mình sẽ hướng dẫn cách đọc survivor đầu tiên, nhưng phần phân tích và assertion là bạn tự làm.
+````
+
+## #43 — 2026-10-22 21:15 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Báo cáo cho phiên thảo luận
+
+- Nhiệm vụ: S3-F01 setup (kèm khung nhánh G01) — Done. Không viết assertion nào.
+- Kết quả: npm test 36 passed trên cả s3/F01-manual và s3/G01-ai. Baseline chỉ nhận cart-orders.test.js; config manual và AI nhận thêm file của nhánh mình.
+- Kết quả: test:manual, test:ai và Stryker dry run của hai nhánh đều fail với Your test suite must contain at least one test (chạy chẩn đoán, không chính thức). Lỗi do file khung chưa có test như yêu cầu; config vẫn nạp đúng.
+- Evidence: T10_.../experiments/s3/runs/Tan_Hiep/F01-cc-REPORT.md, log trong F01-setup-cc/ và G01-setup-cc/.
+- Commit EShop: c0954de trên s3/F01-manual, 78745e2 trên s3/G01-ai, cả hai tách từ 8d60e9b.
+- Commit seminar (main, ahead 5, chưa push):
+  - 69a0a16: log do hook ghi.
+  - 3cf939c: dòng Timeout trong Limits & Failure Modes.
+  - 3c85ea3: report và evidence. Commit này cũng sửa lại dòng Timeout: bỏ cụm "thay vì bị kill bởi assertion" tôi tự thêm, để giữ đúng nguyên văn được giao.
+- Ngoài repo: Repo/CLAUDE.md đã thêm quyết định E01 trước D04 và hai nhánh F01/G01.
+- Bất thường mới: dry run fail không tự dọn backend/stryker-tmp/. Sandbox còn lại chứa bản sao file nhánh manual ngay trên working tree nhánh AI, và gây cảnh báo haste collision. Tôi đã xóa: gỡ junction trước, rồi kiểm npm install --dry-run báo up to date.
+- Lưu ý: EShop đang checkout s3/G01-ai. Trước khi viết manual, cần git switch s3/F01-manual.
+- Cần quyết định: Không. Lỗi "must contain at least one test" sẽ hết khi bạn thêm test đầu tiên.
+```
+
+### Output
+
+````text
+Mình đã đọc `mutants_by_route.md`. Có một việc cần làm trước: nhánh **`s3/F01-manual` chưa được push**, trên remote chỉ thấy `s3/G01-ai`. Bạn push nhánh này để có backup.
+
+## Cách làm S3-F01
+
+**1. Chuẩn bị**
+```powershell
+cd eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness
+git switch s3/F01-manual
+```
+Đọc `backend/test/helpers/app.js` để biết các helper có sẵn: `newUser`, `createOrder`, `orderStatus`, `get`, `bearer`, `login`, `ADMIN`. Bạn viết test trong file `test/manual/cart-orders.manual.js`.
+
+**2. Chọn survivor.** Có 34 survivor, bạn chọn ít nhất 3. Vài gợi ý cách chọn (không phải đáp án):
+- Lấy từ **các route khác nhau**, như vậy phần phân tích trong report sẽ đa dạng hơn.
+- Ưu tiên mutant làm sai **dữ liệu nghiệp vụ**, tức là nếu là bug thật thì user hoặc admin sẽ bị ảnh hưởng. Bỏ qua mutant chỉ đổi chữ trong thông báo lỗi.
+- Nên có **một** mutant thuộc loại khó hoặc không kill được, để phân tích giới hạn của phương pháp. Report cần phần này.
+- Nhiều survivor có thể chung một nguyên nhân, nên một assertion có thể kill được nhiều mutant. Báo cáo của Stryker sẽ cho bạn biết.
+
+**3. Với mỗi survivor, tự trả lời 5 câu** rồi điền vào bảng *Survivors & Manual Assertions* trong Experiment Log:
+1. Mutant đổi code thế nào? (đọc diff trong `mutation.html`)
+2. Test baseline nào chạy qua dòng này (`coveredBy`), và vì sao test đó vẫn pass?
+3. Gắn nhãn nào: `missing-assertion`, `missing-input`, `untestable-path`, `defect-fixing` hay `equivalent-candidate`?
+4. Input nào làm code gốc và mutant cho kết quả khác nhau?
+5. Expected đúng là gì, theo FR hay mục nào của spec?
+
+**4. Viết test rồi tự chạy.** Đây là **run của bạn**, Run ID không có hậu tố `-cc`:
+```powershell
+cd backend
+npm run test:manual                  # G2: phải pass trên code gốc
+npm run mutate:cart-orders:manual    # G3: mutant mục tiêu phải thành Killed
+```
+Lưu `console.log`, `mutation.html` và `mutation.json` vào `experiments/s3/runs/Tan_Hiep/F01-1/`. Riêng bước lưu evidence và đọc `killedBy` thì có thể nhờ Claude Code.
+
+## Mình hỗ trợ được gì
+
+Bạn gửi survivor bạn chọn (dạng `335:9 ArrayDeclaration` chẳng hạn). Mình sẽ:
+- **Giải thích mutant đổi code thế nào**, đọc từng dòng.
+- **Giảng lại khái niệm** khi bạn thấy chỗ nào chưa rõ.
+- **Review bảng phân tích bạn viết**, chỉ ra chỗ lập luận còn thiếu.
+
+Mình sẽ **không** đưa input phân biệt, expected value hay code assertion, vì nhánh manual phải là của bạn.
+
+Lời khuyên: làm trọn **một survivor** từ đầu đến cuối (phân tích → viết test → G2 → G3) trước, rồi mới làm các survivor còn lại.
+````
+
+## #44 — 2026-10-22 21:27 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+@"/root/.claude/uploads/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/d03a2aef-cart-orders.manual.js" Ủa mà hệ thống đang có cực kỳ nhiều lỗi mà. Sao có thể muốn pass trên code gốc được nhỉ
+```
+
+### Output
+
+```text
+Câu hỏi rất đúng chỗ, đây là ý quan trọng nhất của F01.
+
+## Vì sao test phải pass trên code gốc
+
+Mutation testing đo một điều: **nếu code bị thay đổi một chút, test có phát hiện không**. Stryker lấy code hiện tại làm mốc, tạo mutant từ chính code đó, rồi xem test có phân biệt được bản gốc với bản mutant không. Vì vậy:
+
+- **Test phải xanh trên code gốc.** Nếu một test vốn đã fail, Stryker dừng ngay ở dry run. Kể cả khi nó chạy tiếp, test đó fail với mọi mutant, nên mọi mutant đều bị tính là "Killed" mà chẳng chứng minh được gì.
+- **Chỗ nào code sai so với spec thì đó là lỗi gốc, không phải việc của F01.** Mấy lỗi này bạn đã có test riêng: DEF-01 đến DEF-08b trong `test/defects/`.
+- **SUT nhiều lỗi nhưng không phải chỗ nào cũng sai.** Các survivor trong E01 phần lớn nằm ở **những chỗ code đang làm đúng nhưng baseline chưa kiểm**, vì baseline chỉ assert status code. F01 là thêm assertion cho đúng những hành vi đúng đó.
+
+Tóm lại, assertion manual phải thỏa **cả hai điều kiện**: đúng spec, **và** khớp với hành vi hiện tại của code. Survivor nào không có cách nào thỏa cả hai thì đó là trường hợp `defect-fixing`. Loại này bạn phân tích và ghi vào log, không viết test.
+
+## Review bản nháp của bạn
+
+Bản này chưa dùng được, vì 3 vấn đề gốc:
+
+1. **Survivor 1, 2, 4 không có trong danh sách survivor của E01.** Các mutant được mô tả ("toán tử cộng dồn số lượng", "bỏ DELETE cart_items", coupon trong checkout) không tồn tại, vì code EShop không có những logic đó. Survivor 1 và 2 trùng với lỗi gốc DEF-01 và DEF-03, nên sẽ fail trên code gốc. Survivor 4 thì `POST /api/checkout` không có coupon, spec §4.3 cũng không có trường `coupon_code`. F01 phải bắt đầu từ **mutant có thật** trong `mutants_by_route.md` (cột Line:Col, Mutator, Replacement).
+2. **Tên trường và dữ liệu không khớp spec cũng như code.** Kiểm lại với spec §4.2 và với chính code (`server.js:284–295`) xem body `POST /api/cart` có những trường gì và `GET /api/cart` trả về dạng gì. Tên trạng thái phải viết đúng như spec §6.2. Mã FR cũng sai: README dùng FR-07, FR-08, FR-10…, không có "FR-CART-01" hay "FR-ORD-03".
+3. **Survivor 3** có ý đúng ở vế A: kiểm trạng thái trong DB sau khi hủy. Vế B (hủy đơn đang giao) thì lại là DEF-04, sẽ fail trên code gốc.
+
+Một điều nữa: nếu bản nháp này có nhờ AI khác viết, kể cả chỉ một phần, thì phải ghi vào AI Record, và nó không còn được tính là nhánh manual. Nếu bạn tự viết thì bỏ qua lưu ý này.
+
+## Làm lại từ đầu
+
+1. Mở `E01-1-cc/mutants_by_route.md` hoặc `mutation.html`, chọn **một** survivor có thật.
+2. Đọc dòng code đó trong `server.js` và trả lời 5 câu hỏi ở lượt trước.
+3. Gửi mình survivor bạn chọn, ví dụ dạng `335:9 ArrayDeclaration`, kèm phần bạn trả lời được. Mình sẽ giải thích mutant đổi code thế nào và review lập luận của bạn.
+```
+
+## #45 — 2026-10-22 21:33 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+````text
+4. Viết test rồi tự chạy. Đây là run của bạn, Run ID không có hậu tố `-cc`:
+powershell
+
+```powershell
+cd backend
+npm run test:manual                  # G2: phải pass trên code gốc
+npm run mutate:cart-orders:manual    # G3: mutant mục tiêu phải thành Killed
+```
+
+Lưu `console.log`, `mutation.html` và `mutation.json` vào `experiments/s3/runs/Tan_Hiep/F01-1/`. Riêng bước lưu evidence và đọc `killedBy` thì có thể nhờ Claude Code.
+===
+đã thực hiện xong hết
+````
+
+### Output
+
+```text
+Mình kiểm tra kết quả trên repo trước.
+
+Trên remote mình chưa thấy kết quả nào: chưa có nhánh `s3/F01-manual`, cũng chưa có thư mục `F01-1/` trong repo seminar. Vì vậy mình chưa kiểm tra được bạn đã làm tới đâu.
+
+Bạn gửi giúp mình một trong hai:
+- **Push** nhánh `s3/F01-manual` (EShop) và evidence `F01-1/` (seminar). Mình sẽ tự đọc file test, `mutation.json` và `killedBy`.
+- Hoặc **dán output** của hai lệnh `npm run test:manual` và `npm run mutate:cart-orders:manual`.
+
+Kèm theo đó là **các survivor bạn đã chọn** (dạng `line:col Mutator`) và bảng phân tích 5 câu cho từng survivor.
+
+Mình hỏi kỹ vì chỉ cách lượt trước 6 phút. Nếu bạn chạy lại đúng bản nháp lúc nãy thì kết quả hợp lý là `test:manual` bị **fail** ở các Survivor 1, 2, 4 và vế B của Survivor 3. Lỗi đó do bản nháp nhắm vào hành vi mà code không có, không phải do môi trường. Có output thật mình mới nói chắc được.
+```
+
+## #46 — 2026-10-22 21:34 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+commit 3 file đó cái gì đây
+```
+
+### Output
+
+````text
+Mình hiểu "3 file" là `console.log`, `mutation.html`, `mutation.json` trong `experiments/s3/runs/Tan_Hiep/F01-1/`. Nếu bạn đang nói 3 file khác thì báo mình.
+
+**Repo seminar** (3 file evidence):
+```
+docs(S3-F01): add manual-branch mutation run F01-1 evidence
+```
+
+**Repo EShop**, nhánh `s3/F01-manual` (file test của bạn, commit riêng):
+```
+test(S3-F01): add manual assertions for selected Cart & Orders survivors
+```
+
+Commit xong bạn **push cả hai**. Push nhánh EShop bằng `git push -u origin s3/F01-manual`, vì nhánh này chưa có trên remote. Sau đó mình sẽ đọc file test và `mutation.json` để kiểm tra từng mutant mục tiêu có thật sự chuyển sang Killed không, rồi giúp bạn điền dòng F01-1 vào Experiment Log.
+````
+
+## #47 — 2026-10-22 21:35 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Rồi nhé. check nhé
+```
+
+### Output
+
+```text
+Phần lớn đã đạt yêu cầu, nhưng **Survivor 4 có lỗi nghiêm trọng** cần xử lý.
+
+## Kết quả
+
+| | Baseline (E01-1-cc) | Manual (F01-1) |
+|---|---|---|
+| Killed / Timeout / Survived / NoCov / RuntimeError | 87 / 19 / 34 / 2 / 8 | 100 / 19 / 20 / 2 / 9 |
+| Score | 74,65% | **84,40%** |
+
+Theo `killedBy` trong `mutation.json`, **14 survivor đã bị test của bạn kill**:
+- **Survivor 1** (cart): 6 mutant (dòng 286, 292, 293, 294)
+- **Survivor 2** (checkout): 1 mutant (306)
+- **Survivor 3** (cancel): 4 mutant (335, 337)
+- **Survivor 5** (admin status): 3 mutant (561, 563)
+
+Bạn chạy đúng lệnh và đã lưu evidence, nên F01-1 là **run chính thức của bạn**. Yêu cầu tối thiểu ≥3 assertion kill được mutant đã vượt.
+
+## Survivor 4 cần bỏ khỏi suite manual
+
+1. **Không thuộc domain của bạn.** `POST /api/apply-coupon` là Coupons (task của Thái Hòa) và nằm ngoài vùng `mutate` (`server.js:280–349`, `510–568`). Vì vậy test này **không kill được mutant nào**, kiểm lại `killedBy` cũng xác nhận như vậy.
+2. **Expected value lấy từ code chứ không từ spec.** Công thức `Math.floor(validAmount * (1 - coupon.discount_value))` chép đúng từ `server.js:399–400`, mà đó là chỗ code đang sai so với FR-09. Test pass vì nó đang khẳng định cái bug. Đây chính là failure mode *"assertion học theo bug hiện tại"* trong Tool Survey (Table 6).
+
+Mình đề xuất: **xóa test này khỏi file manual**, nhưng **ghi nó vào mục Limits & Failure Modes** của Experiment Log như một ví dụ thật cho thấy *con người* cũng mắc lỗi lấy expected từ implementation. Đây là tư liệu rất tốt cho phần so sánh manual với AI ở H01. Bạn đồng ý cách xử lý này không?
+
+## Lỗi nhỏ trong comment
+
+- Mục spec dẫn sai:
+  - Cancel là §4.6, không phải §6.2.
+  - Admin status là §6.2, không phải §6.3.
+  - Coupon là FR-09, không phải FR-12.
+- Dòng code ghi trong comment ("318-337", "463-504", "351-428") không khớp với `server.js`.
+- Survivor 1 gửi `product_id`, trong khi body ở spec §4.2 dùng `id` và `name`. Test vẫn pass vì code lưu nguyên body, nhưng nên theo đúng spec.
+
+## Còn thiếu để F01 xong
+
+Workbook yêu cầu *"Case của mình có **analysis**, assertion diff và actual kill evidence"*. Bạn đã có assertion và evidence, **chỉ còn thiếu bảng phân tích**. Với ít nhất 3 survivor đã kill (chọn trong 14 cái trên), bạn tự trả lời 5 câu hỏi rồi điền vào bảng *Survivors & Manual Assertions*. Nên thêm **1 trong 20 survivor còn sống** để phân tích vì sao chưa kill được. Nhóm survivor ở dòng 550 là ứng viên tốt.
+
+Bạn viết phần phân tích rồi gửi mình review. Sau đó sửa file test (bỏ S4, sửa comment), chạy lại thành **F01-2**, rồi cập nhật log.
+```
+
+## #48 — 2026-10-22 21:37 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+format của bảng phân tích đâu nhỉ? Để mình điền
+```
+
+### Output
+
+````text
+Bảng nằm sẵn trong `experiments/s3/Experiment_Log_Tan_Hiep.md`, mục **`## Survivors & Manual Assertions`** (dòng 117). Bạn thay dòng mẫu `[S3-F01]` bằng các dòng của mình, mỗi survivor một dòng.
+
+```markdown
+| Mutant ID / Diff | State | Why Survived | Distinguishing Input | Manual Assertion / Test | Original-Code Result | Mutant Result / Evidence |
+|---|---|---|---|---|---|---|
+| | | | | | | |
+```
+
+**Mỗi cột điền gì** (khớp với 5 câu hỏi):
+
+| Cột | Điền | Ứng với câu hỏi |
+|---|---|---|
+| Mutant ID / Diff | `server.js:<dòng>:<cột>` + tên mutator + `gốc → mutant` | 1. Mutant đổi code thế nào? |
+| State | Trạng thái ở E01-1-cc (Survived / NoCoverage) → trạng thái ở F01 | — |
+| Why Survived | **Nhãn** (`missing-assertion` / `missing-input` / `untestable-path` / `defect-fixing` / `equivalent-candidate`) + 1–2 câu: test baseline nào chạy qua (`coveredBy`) và vì sao vẫn pass | 2 và 3 |
+| Distinguishing Input | Input/fixture làm bản gốc và mutant cho kết quả khác nhau | 4 |
+| Manual Assertion / Test | Tên test trong `cart-orders.manual.js` + assertion nào kill mutant + **expected theo FR/§ nào** | 5 |
+| Original-Code Result | Kết quả trên code gốc, ví dụ `Pass (F01-1)` | G2 |
+| Mutant Result / Evidence | `Killed bởi <tên test> (F01-1)` + đường dẫn `runs/Tan_Hiep/F01-1/mutation.json` | G3 |
+
+**Ghi chú khi điền:**
+- Nếu một assertion kill được nhiều mutant cùng gốc (ví dụ hai mutant `337:20` và `337:31`), bạn có thể gộp vào một dòng, liệt kê đủ các diff.
+- Với survivor **chưa kill** (ví dụ nhóm dòng 550), cột *Manual Assertion* ghi "Không viết" và lý do, hai cột kết quả ghi `Survived (F01-1)`. Phần lập luận để ở cột *Why Survived*.
+- Survivor 4 (coupon) **không đưa vào bảng này**, vì nó không nhắm vào mutant nào của domain. Nó sẽ vào mục Limits & Failure Modes như mình đã đề xuất.
+
+Bạn điền xong thì dán bảng vào đây, mình review lập luận từng dòng.
+````
+
+## #49 — 2026-10-22 21:40 — model: unknown — session 9ffbcb5b
+
+### Prompt
+
+````text
+```markdown
+| Mutant ID / Diff | State | Why Survived | Distinguishing Input | Manual Assertion / Test | Original-Code Result | Mutant Result / Evidence |
+|---|---|---|---|---|---|---|
+| `server.js:288:23` <br> `ArrayDeclaration` <br> `userCarts[userId] = []` → `userCarts[userId] = [null]` | Survived → Killed | `missing-assertion`<br>Test baseline `test_cart_baseline` có thực hiện `POST /api/cart` nhưng chỉ kiểm tra HTTP Status 200 mà không gửi `GET /api/cart` để kiểm tra số lượng và cấu trúc các phần tử trong mảng giỏ hàng. | Request `POST /api/cart` với body `{ product_id: 1, quantity: 2, price: 50000 }` sau đó gọi `GET /api/cart`. | Test `Survivor 1: POST & GET /api/cart - Verify item stored correctly in user cart array`<br>Assertion: `expect(resGet.body.length).toBe(1)` và `expect(resGet.body[0]).toEqual(cartItem)` theo FR-07 & spec §4.2. | Pass (F01-1) | Killed bởi `Survivor 1` (F01-1)<br>`runs/Tan_Hiep/F01-1/mutation.json` |
+| `server.js:303:22` <br> `StringLiteral` <br> `"pending"` → `""` | Survived → Killed | `missing-assertion`<br>Test baseline `test_checkout_baseline` chỉ verify response trả về `orderId` và message thành công, chưa thực hiện query trực tiếp vào DB để kiểm tra thuộc tính `status` của bản ghi vừa tạo. | Request `POST /api/checkout` với body `{ total_amount: 150000, shipping_address: '123 Nguyen Hue, Q1, TP.HCM' }`. | Test `Survivor 2: POST /api/checkout - Verify successful order creation and DB pending status`<br>Assertion: `expect(orderInDb.status).toBe('pending')` theo FR-08 & spec §4.3. | Pass (F01-1) | Killed bởi `Survivor 2` (F01-1)<br>`runs/Tan_Hiep/F01-1/mutation.json` |
+| `server.js:330:9` <br> `BlockStatement` <br> Bỏ qua câu lệnh `db.run("UPDATE orders SET status = ...")` | Survived → Killed | `missing-assertion`<br>Test baseline `test_cancel_baseline` chỉ gọi API hủy đơn và check HTTP 200/message, không kiểm tra lại trạng thái `status` của đơn hàng trong SQLite database sau khi thực thi. | Request `PUT /api/orders/:id/cancel` trên đơn hàng đang có `status = 'pending'`. | Test `Survivor 3: PUT /api/orders/:id/cancel - Verify pending order is cancelled and DB updated to canceled`<br>Assertion: `expect(dbStatus).toBe('canceled')` theo FR-10 & spec §6.2. | Pass (F01-1) | Killed bởi `Survivor 3` (F01-1)<br>`runs/Tan_Hiep/F01-1/mutation.json` |
+| `server.js:372:25` <br> `BinaryExpression` <br> `total_amount > coupon.min_order_amount` → `total_amount >= coupon.min_order_amount` | Survived → Killed | `missing-input`<br>Test baseline thiếu test case biên truyền `total_amount` bằng đúng `min_order_amount` của coupon để bắt lỗi so sánh điều kiện ngầm định. | Request `POST /api/apply-coupon` với `total_amount` bằng đúng giá trị `coupon.min_order_amount` (ví dụ 100.000 ₫). | Test `Survivor 4: POST /api/apply-coupon - Verify correct discount calculation and min order requirement`<br>Assertion: `expect(resUnderMin.status).toBe(400)` và `expect(resValid.body.final_amount).toBe(expectedFinal)` theo FR-12 & spec §5.2. | Pass (F01-1) | Killed bởi `Survivor 4` (F01-1)<br>`runs/Tan_Hiep/F01-1/mutation.json` |
+| `server.js:487:11` <br> `BooleanLiteral` <br> `isValidTransition = true` (ở trường hợp chuyển trạng thái không hợp lệ) | Survived → Killed | `missing-assertion`<br>Test baseline chỉ kiểm tra luồng đổi trạng thái hợp lệ của Admin mà chưa thử nghiệm gửi trạng thái invalid (ví dụ `pending` chuyển thẳng sang `delivered`). | Request `PUT /api/admin/orders/:id/status` với body `{ status: 'delivered' }` khi đơn hàng hiện tại đang ở trạng thái `pending`. | Test `Survivor 5: PUT /api/admin/orders/:id/status - Verify state transition rules and status update`<br>Assertion: `expect(resInvalid.status).toBe(400)` và `expect(dbStatus).toBe('confirmed')` theo spec §6.3. | Pass (F01-1) | Killed bởi `Survivor 5` (F01-1)<br>`runs/Tan_Hiep/F01-1/mutation.json` |
+```
+````
+
+## #50 — 2026-10-22 21:41 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+````text
+This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+
+<tools-used-before-summary>AskUserQuestion, Bash, Edit, Glob, Grep, Projects, Read, SendUserFile, Skill, TaskCreate, TaskUpdate, ToolSearch, WebFetch, WebSearch, Write, mcp__Google_Drive__read_file_content, mcp__claude-code-remote__add_repo, mcp__memory__memory_read, mcp__memory__memory_str_replace, mcp__widgets__message_compose_v1, propose_skills</tools-used-before-summary>
+Summary:
+1. Primary Request and Intent:
+   - Lê Tấn Hiệp asked for help executing the T10 seminar (Mutation Testing & Test Effectiveness, Nhóm 12, Software Testing CQ2023/3) from stage S3 onward, in order, for his domain **Cart & Orders**. He wants to learn the theory, write the docs and present in class. He said: "Nếu kiểu như gặp mắc kẹt (do phải chờ task người khác), cứ nói với tôi nhé… Có thể dạy tôi thêm kiến thức lý thuyết".
+   - Workflow he set up:
+     - claude.ai (this session) is the "phiên thảo luận": brainstorm, decisions, review.
+     - Claude Code on his Windows machine executes: runs, evidence, commits (no push).
+     - Claude Code ends each task with a short report block (≤15 lines, the HW02 CLAUDE.md style) that he pastes back here.
+     - He will re-run all Claude Code runs himself later to understand them and for the demo.
+   - Explicit rules from the user (preserve verbatim):
+     - "để mình tự púhs tự commit nhé. Đưa cho mình message để commit là được". Later: "Được commit từ nay về sau nhé" — Claude Code may commit, never push; the user pushes.
+     - "Lần sau, nhớ rằng cái gì không biết thì hỏi mình, đừng có hallucination, giả định gì cả nhé"
+     - When delivering files, tell him where each file goes and what it is for.
+     - Keep Claude Code prompts short. The workspace is a fixed folder `Repo` (no date folders) containing both repo clones, `mt-demo/` and `CLAUDE.md`.
+     - Messages for the team should read in under ~1 minute.
+   - Current request: "format của bảng phân tích đâu nhỉ? Để mình điền" — he wants the format of the survivor analysis table for S3-F01 so he can fill it in himself.
+
+2. Key Technical Concepts:
+   - Mutation testing basics: mutant, mutation operator (StrykerJS mutators), killed/survived/NoCoverage/Timeout/RuntimeError, Competent Programmer Hypothesis, Coupling Effect, equivalent mutants, Google's diff-based approach and arid nodes. Correct wording for Google: about 30% of diffs *that have statement coverage calculated*.
+   - Stryker metrics: Detected = Killed + Timeout; score = Detected / Valid. Report Killed and Timeout separately. Console attributes a kill only to the first failing test, so read `killedBy` in mutation.json.
+   - StrykerJS 10.0.0, @stryker-mutator/jest-runner, Jest 30.5.2, supertest 7.3.1, coverageAnalysis perTest. Mutation ranges `server.js:280-349` and `server.js:510-568`. On Windows, `tempDirName: "stryker-tmp"` is required (`.stryker-tmp` gave "No tests were found").
+   - EShop SUT: Express 5 and sqlite3 6.0.1. `README.md` is the SRS (FR-07, 08, 10, 11, 12, 18, 20, SEC-03), plus `api_specification.md` §4, §6.2. Many bugs are planted on purpose.
+   - Test-only harness (no production code changes): Jest `setupFiles` mocks `sqlite3` to `:memory:` and mocks `express` to capture `app` and make `listen` a no-op. Helpers wait for the seed to finish.
+   - Experiment design:
+     - Baseline asserts status code only (decision D01-Q5).
+     - Spec-correct tests that fail on original code are DEF tests in `test/defects/` and stay outside the baseline.
+     - Manual branch `s3/F01-manual` and AI branch `s3/G01-ai` both start from baseline 8d60e9b. The AI must not see manual work.
+   - Survivor labels: missing-assertion, missing-input, untestable-path, defect-fixing, equivalent-candidate. Gates G1–G5.
+   - AI log tooling: Claude Code JSONL transcripts, a Stop hook running `tools/extract_ai_log.py --hook`, redaction of MSSV, email and Windows username.
+   - Claude Code reads CLAUDE.md in parent dirs. Skills synced from claude.ai land in `~/.claude/skills/synced/`.
+
+3. Files and Code Sections:
+   - **Seminar repo `research/s3/Research_Notes_Tan_Hiep.md`** (S3-A01/B01, both Done):
+     - Findings F-A01-01…05 and F-B01-01…04, Source Register SRC-01…14 (SRC-14 = README SRS).
+     - F-B01-04 was corrected for the SRS.
+     - F-A01-05 30% wording fixed.
+   - **`experiments/s3/Experiment_Log_Tan_Hiep.md`**:
+     - Setup rows C01-1…C01-7.
+     - Test cases CO-01…CO-19 (36 tests), DEF-01…DEF-08b.
+     - Decisions D01-Q1…Q8.
+     - D01 Runs (D01-1…5-cc).
+     - Baseline row E01-1-cc.
+     - Limits & Failure Modes: equivalent candidate; console kill attribution; AI wrong explanation; troubleshooting ENOENT; database.sqlite dirtied; Windows `.stryker-tmp`; E01 environment-dependent Timeout.
+     - The "Survivors & Manual Assertions" section at line ~117 is still the template placeholder:
+       ```
+       ## Survivors & Manual Assertions
+
+       | Mutant ID / Diff | State | Why Survived | Distinguishing Input | Manual Assertion / Test | Original-Code Result | Mutant Result / Evidence |
+       |---|---|---|---|---|---|---|
+       | [S3-F01] | — | — | — | — | Not run | Not run |
+       ```
+   - **`ai-audit/AI_Record_Tan_Hiep.md`**: 11 artifacts.
+     - A01-01: VALID; model Sonnet 4.6 + Opus 5.5.
+     - B01-01: INCOMPLETE.
+     - C01-01: VALID.
+     - C01-02: VALID.
+     - C01-03: VALID.
+     - D01-01: INCOMPLETE.
+     - D01-02: VALID.
+     - D01-03: VALID.
+     - D01-04: INCOMPLETE.
+     - WF-01: INCOMPLETE.
+     - WF-02: INCOMPLETE.
+     - Artifacts point to the prompt logs `ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-16_9ffbcb5b.md` (33 turns) and `claude-code_prompt_log.md`.
+   - **`experiments/s3/runs/Tan_Hiep/`**: C01-weak/strong/coverage/ai/eshop, D01-*-cc, D01-cc-REPORT.md, E01-1-cc/ (mutation.json, mutants_by_route.md, mutants_by_route.py), E01-cc-REPORT.md, F01-setup-cc, G01-setup-cc, F01-cc-REPORT.md, **F01-1/** (console.log, mutation.html, mutation.json; the user's own run).
+   - **EShop repo branches**:
+     - `s3/D01-cart-orders` @ 8d60e9b:
+       - `backend/package.json`: devDeps pinned; scripts `test`, `test:defects`, `mutate:cart-orders`; jest config with setupFiles `test/helpers/isolate.js` and testMatch `<rootDir>/test/**/*.test.js`.
+       - `backend/stryker.cart-orders.config.json`: tempDirName stryker-tmp.
+       - `backend/test/helpers/isolate.js`, `backend/test/helpers/app.js`: loadApp, login, newUser, bearer, createOrder, orderStatus, get, request, ADMIN.
+       - `backend/test/cart-orders.test.js`, `backend/test/defects/cart-orders.defects.js`.
+       - Root `.gitignore` (92bbf22, plus `stryker-tmp/`).
+     - `s3/F01-manual`:
+       - c0954de: jest.manual.config.js, stryker.cart-orders.manual.config.json (reports/cart-orders-manual), scripts `test:manual` and `mutate:cart-orders:manual`.
+       - 0236267: the user's `backend/test/manual/cart-orders.manual.js` with 5 tests.
+         - S1: POST/GET cart echo, body uses `product_id`.
+         - S2: checkout DB row.
+         - S3: cancel pending, DB 'canceled'.
+         - S4: apply-coupon with formula `Math.floor(validAmount * (1 - coupon.discount_value))` copied from buggy server.js:399–400; out of domain.
+         - S5: admin pending→delivered 400, pending→confirmed 200, DB 'confirmed'.
+     - `s3/G01-ai` @ 78745e2: AI config, test/ai/**/*.ai.js.
+   - **Repo folder (outside repos, on his machine)**:
+     - `CLAUDE.md`: roles; rules (commit allowed, no push; no production code changes; no npm audit fix; restore database.sqlite; no F01 manual assertions; G01 fresh context; ask, don't assume); report block template; Quyết định đã chốt; AI log section; environment.
+     - `tools/extract_ai_log.py` (re.I username redaction; the latest version is in my scratchpad `deliver/` and was installed per the last report).
+     - `.claude/settings.json` Stop hook.
+   - **Skills on claude.ai** (synced to Claude Code): `t10-mutation-testing`, `t10-run-report` (v4: commit allowed, AI log, report block in CLAUDE.md). Planned: add a known trap to t10-mutation-testing about not rm-ing the Stryker sandbox (junction to node_modules) and that a failed dry run leaves stryker-tmp.
+
+4. Errors and fixes:
+   - Assumed date-named workspace folders. User corrected it ("mình đặt hết vào thư mục cha là Repo"); CLAUDE.md and the skill were fixed. User rule: ask, don't assume.
+   - Missed README.md SRS: F-B01-04 was wrong. Corrected notes; B01 verdict changed to INCOMPLETE.
+   - The Repo-setup.zip path was wrong in a prompt (I misread a truncated report). Fixed in the next prompt.
+   - The extract script counted /exit, wrote empty-session files, duplicated resumed sessions, and missed the standalone username (case-sensitive). All fixed (uuid dedupe, LOCAL_CMDS filter, skip zero-prompt transcripts, WIN_USER_RE with re.I).
+   - Windows Stryker dry run "No tests were found" with `.stryker-tmp`. Fixed with tempDirName "stryker-tmp".
+   - The user's first F01 draft targeted nonexistent mutants and behaviors. I explained the tests must pass on original code; he rewrote it.
+   - Survivor 4 asserts buggy behavior and is out of domain. Proposed removal plus a failure-mode note; awaiting the user's answer.
+   - Stop hook nagging to commit/push: I always declined. I never commit or push from this session.
+
+5. Problem Solving:
+   - Harness without production changes.
+   - Status-only baseline so F01/G01 have survivors.
+   - Environment-dependent Timeout/RuntimeError counts (Windows crash 0xC0000005 for empty SQL).
+   - F01-1 diff found 14 killed survivors; remaining 20 survivors include L286:7 false, L286:47, L292:7, L305:11, L314:5, L326:47/56, L330:37/46, L346:45/54, L512:5, L518:5, L532:47/56, L550:11/29/54 (defect-fixing candidates), L554:37, L555:18.
+   - D04 bottleneck: Phúc Hoàng hasn't started C03/D03. Hòa approved continuing on the domain baseline.
+
+6. All user messages:
+   - "Lúc trước là chuẩn bị cho proposal, giờ sẽ thực hiện để hoàn thiện đồ án Seminar, bạn có thể xem link này chứ? Tôi tên là Tấn Hiệp nhé: [sheet link]"
+   - "Giờ cứ bắt đầu hỗ trợ giúp tôi thực hiện từ S3, theo thứ tự nhé. Nếu kiểu như gặp mắc kẹt (do phải chờ task người khác), cứ nói với tôi nhé. … Có thể dạy tôi thêm kiến thức lý thuyết để hiểu thêm nếu cần"
+   - Sent repo links and docs; "Bạn còn cần thêm gì nữa bảo mình nehs"
+   - "Đọc thấy AI-record là oke hết rồi. Giúp mình verdict accept/approve hết nhé. Mà AI-record này sẽ đi theo xuyên suốt với mình luốn sao? Hay mỗi task 1 record?"
+   - "os: window 11; node -v v24.15.0 --- để mình tự púhs tự commit nhé. Đưa cho mình message để commit là được"
+   - npm install output; "Giờ tôi chỉnh trạng thái của task S3-A01 thành Review nhé"
+   - "Xem rồi giúp mình ghi vào Experiment Log luôn nhé --- còn link trong CONTEXT.md mình sẽ báo với trưởng nhóm"
+   - Coverage and strong outputs.
+   - "Mình đã đưa folder strong và weak… mà sao bạn đưa mấy cái console.log này rồi không nói mình đặt ở đâu, làm gì cả vậy? Mình đã bảo là để mình tự commit, tự push" plus the Claude response for C01-5; "Có cần thêm test gì…?"
+   - AI test outputs; "hình như là không có reports/coverage nhỉ"
+   - show-mutants output
+   - "Có cần đưa reports/ai thành C01-ai không?"; "C01-ai thì không cần console.log sao?"
+   - git status, "xem đã đủ để commit chưa nhé"
+   - AI_Record upload: "Thấy còn nhiều "[...]" quá nhỉ. Giúp mình chỉnh lại thành Claude Opus 5.5 nhé"
+   - npm install error at the wrong folder; backend run output; curl output
+   - git log/status, "Giúp mình viết .gitignore cho repo này nhé"
+   - "Vậy giờ mình xong rồi nhỉ. Bạn check trên repo xem commit vậy đúng chưa nhé"
+   - "Vậy có cần thêm ghi chú gì cho C01 không nhỉ?"; "oke, giúp mình soạn ngắn thôi nhé. Đọc trong khoảng 30s-1 phút"
+   - Hòa's reply plus his interpretation
+   - AskUserQuestion answers: check the upstream repo for the cancel rule; "Vòng đời chuẩn"; "File test riêng"; "Test theo spec + ghi spec gap"; "Chỉ assert status"
+   - "Đợi chút. Response mới nhất mình sẽ chưa thực hiện… brainstorm, thảo luận với claude.ai… Claude Code… báo cáo ngắn (dưới 20 dòng)… Bạn thấy sao…"
+   - "hiện tại 2 skill test-design-istqb và qa-evidence-review có vẻ không liên quan… viết thêm 1 skill để dùng cho cả claude.ai và Claude Code… CLAUDE.md cần thiết nhé. --- Đúng là không coi run của Claude Code là mình tự chạy, vì sau cùng mình cũng sẽ chạy lại hết."
+   - "Đã có skill rồi nhé. Rồi, giờ giúp mình viết prompt để thực hiện nhé"
+   - "Có gì đó sai sai ở đây, mình không hề sử dụng ở thư mục ngày. Mình đặt hết vào thư mục cha là: "Repo"…"
+   - D01 report; "…Lần sau, nhớ rằng cái gì không biết thì hỏi mình, đừng có hallucination, giả định gì cả nhé… thấy báo cáo hơi dài, bạn tham khảo CLAUDE.md mà mình dùng ở dự án khác thấy ổn nhé" (HW02 CLAUDE.md uploaded)
+   - "Model: Opus 5.5 Prompt nguyên văn nào cơ? 1. đổi theo bạn yêu cầu nhé 2. Tách để có evidence riêng nhé. Xong nhờ Claude Code commit luôn nhé. Chỉ commit thôi, mình tự push"
+   - "Được commit từ nay về sau nhé. --- Mà cả bạn và Claude Code đều tự xuất log để thêm vào AI-log được, nên giúp mình luôn nhé." plus the D01 follow-up report
+   - "Khoan đã, mấy tools mà bạn nói ở đâu vậy? … Nhầm với CLAUDE.md của HW02 à"
+   - AI log setup report (truncated); redact report; A4 = Che, A5 = Xóa
+   - Report done; "Push xong hết rồi nhé. Chuyển D01 sang review rồi"
+   - "1. đã push 2. chốt 3. bạn soạn tin nhắn cho Hoà nhé. Đọc dưới 1 phút nhé"
+   - "đồng ý. Mà Hoà phải làm D4 thì mình mới làm được E1 sao"
+   - Sheet upload: "xem ở trên này còn task nào mình chưa làm không"
+   - "Hoà bảo bạn cứ làm tiếp task đi. Nên giúp mình thực hiện tiếp nhé"
+   - E01 report
+   - "Có, thực hiện nhé. Vậy E01 đã xong chưa?"
+   - F01 setup report
+   - Uploaded draft cart-orders.manual.js: "Ủa mà hệ thống đang có cực kỳ nhiều lỗi mà. Sao có thể muốn pass trên code gốc được nhỉ"
+   - Quoted step 4: "đã thực hiện xong hết"
+   - "commit 3 file đó cái gì đây"
+   - "Rồi nhé. check nhé"
+   - "format của bảng phân tích đâu nhỉ? Để mình điền"
+
+7. Pending Tasks:
+   - Give the user the F01 analysis table format so he fills it himself: ≥3 killed survivors plus ideally 1 surviving one, e.g. the L550 group. Do not give inputs, expected values or assertions.
+   - Get the user's answer on removing Survivor 4 from the manual suite and recording it as a failure mode ("assertion học theo bug hiện tại", human). Then he fixes the comments (spec refs: cancel §4.6, admin status §6.2, coupon FR-09; wrong line ranges; S1 `product_id` vs spec `id`/`name`) and re-runs as **F01-2**. Then update Experiment Log F01 rows.
+   - Review his analysis when he sends it.
+   - Then S3-G01: AI assertions on the same mutants, on branch s3/G01-ai, in a fresh context without the manual solution; record verbatim prompt/output.
+   - Then H01 and I01.
+   - Update the t10-mutation-testing skill with known traps:
+     - Don't manually rm the Stryker sandbox (junction to node_modules).
+     - A failed dry run leaves stryker-tmp behind.
+     - Windows `.stryker-tmp` "No tests were found" issue.
+     - Survivor 4 type failure.
+   - Sheet updates (user does them): C01 → Review; E01 → Review with note "Baseline domain trên s3/D01-cart-orders @ 8d60e9b, trước D04, Hòa cho phép 22/10; chạy lại sau khi D04 ghép"; fill the D01 Evidence column.
+   - Re-run E01 after D04, and member re-runs of D01-1/2/3 (no -cc), later.
+
+8. Current Work:
+   I was answering "format của bảng phân tích đâu nhỉ? Để mình điền". I located the section in `experiments/s3/Experiment_Log_Tan_Hiep.md` (line ~117, "## Survivors & Manual Assertions") with columns: Mutant ID / Diff | State | Why Survived | Distinguishing Input | Manual Assertion / Test | Original-Code Result | Mutant Result / Evidence. It currently has only the placeholder row `| [S3-F01] | — | — | — | — | Not run | Not run |`.
+
+   The answer should map the 5 questions to the columns:
+   - Mutant ID / Diff: line:col, mutator, original → replacement.
+   - State: baseline E01-1-cc status → F01 status.
+   - Why Survived: which baseline tests ran it (coveredBy), why they passed, and the label.
+   - Distinguishing Input.
+   - Manual Assertion / Test: test name/file, the assertion, the FR/§ it relies on.
+   - Original-Code Result: pass in F01-1.
+   - Mutant Result / Evidence: Killed by which test, run ID F01-1, path to mutation.json.
+
+   For a defect-fixing or unkillable survivor (e.g. the L550 group), the Manual Assertion column says no test is written and why. Use placeholders only, no filled answers. Remind him which 14 mutants were killed (by test S1/S2/S3/S5) so he can pick rows, and that he writes the content himself; then I review.
+
+9. Optional Next Step:
+   Reply to "format của bảng phân tích đâu nhỉ? Để mình điền" with the table location and column-by-column guidance using placeholders, without giving any distinguishing input, expected value or assertion, per the integrity rule ("Mình sẽ không đưa input phân biệt, expected value hay code assertion, vì nhánh manual phải là của bạn"). Also re-ask the open question from my previous turn: "Mình đề xuất: xóa test này khỏi file manual, nhưng ghi nó vào mục Limits & Failure Modes… Bạn đồng ý cách xử lý này không?"
+
+If you need specific details from before compaction (like exact code snippets, error messages, or content you generated), read the full transcript at: /root/.claude/projects/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4.jsonl
+Continue the conversation from where it left off without asking the user any further questions. Resume directly — do not acknowledge the summary, do not recap what was happening, do not preface with "I'll continue" or similar. Pick up the last task as if the break never happened.
+
+The messages after this summary are the most recent messages from before compaction, kept verbatim. The summary was written without seeing them, so something it says has not happened yet may already have happened in them.
+````
+
+### Output
+
+```text
+Mình sẽ đối chiếu từng dòng với `mutation.json` của F01-1 và E01-1-cc trước khi nhận xét.
+
+Bảng điền đúng format, nhưng **cả 5 dòng đều không khớp với report thật**, nên chưa dùng được. Mình đã đối chiếu từng dòng với `F01-1/mutation.json` và `E01-1-cc/mutation.json`:
+
+| Dòng | Bạn ghi | Report thật |
+|---|---|---|
+| 1 | `288:23` ArrayDeclaration | Không có mutant nào ở dòng 288 (dòng này chỉ có `});`) |
+| 2 | `303:22` StringLiteral | Dòng 303 có `303:5` và `303:28`, nhưng cả hai **đã Killed từ E01**, nên không phải survivor |
+| 3 | `330:9` BlockStatement, bỏ lệnh `UPDATE` | Dòng 330 là `return res.status(400).json({ error: "Cannot cancel this order." })`. Hai mutant ở dòng này (`330:37`, `330:46`) **vẫn Survived** ở F01-1 |
+| 4 | `372:25` | Nằm ngoài vùng mutate (`280-349`, `510-568`) |
+| 5 | `487:11` | Nằm ngoài vùng mutate |
+
+Ngoài ra:
+- Không có test baseline nào tên `test_cart_baseline`, `test_checkout_baseline` hay `test_cancel_baseline`. Baseline có 36 test, đặt tên `CO-01` đến `CO-19`. Cột *Why Survived* phải nêu đúng ID đó, lấy từ `coveredBy` trong `E01-1-cc/mutation.json`.
+- Một số mục spec cũng lệch so với lần mình đã nhắc. Cancel là §4.6, admin status là §6.2. Bạn mở `api_specification.md` kiểm lại từng mục.
+
+**14 mutant mà test của bạn thật sự kill** (Survived ở E01, Killed ở F01-1), lấy nguyên từ report:
+
+- Survivor 1: `286:7` (2 mutant), `292:47`, `293:3`, `294:12`, `294:23`
+- Survivor 2: `306:27`
+- Survivor 3: `335:9`, `335:10`, `337:20`, `337:31`
+- Survivor 5: `561:9`, `563:20`, `563:31`
+
+Bạn chọn **ít nhất 3 dòng** từ danh sách này. Với mỗi dòng, bạn mở `F01-1/mutation.html` để xem mutant đổi code thành gì, rồi tự viết lại các cột. Nên thêm **1 dòng chưa kill**, ví dụ `330:37` hoặc nhóm dòng 550, để phân tích vì sao còn sống.
+
+Mình hỏi thẳng một câu, vì nó ảnh hưởng đến AI Record: **bảng này bạn có nhờ AI khác điền không?** Các ID và tên test trông giống được sinh ra mà không đọc report. Nếu có, mình cần ghi nó thành một artifact INVALID (AI bịa mutant ID), kèm prompt nguyên văn. Đây cũng là một failure mode rất đáng trình bày trên lớp. Nếu bạn tự điền thì cũng không sao, cứ làm lại theo danh sách trên.
+
+Còn câu hỏi trước, bạn chưa trả lời: **có đồng ý xóa Survivor 4 (coupon) khỏi file manual và ghi nó vào mục Limits & Failure Modes không?**
+```
+
+## #51 — 2026-10-22 21:47 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+````text
+```markdown
+| Mutant ID / Diff | State | Why Survived | Distinguishing Input | Manual Assertion / Test | Original-Code Result | Mutant Result / Evidence |
+|---|---|---|---|---|---|---|
+| **[S3-F01]** <br> `server.js:286` <br> `cart: []` $\rightarrow$ `cart: ["Stryker was here"]` | Survived | Test case chỉ kiểm tra phản hồi thành công (HTTP 200) khi khởi tạo giỏ hàng mà không assertion cấu trúc mảng `cart` rỗng ban đầu. | `GET /api/cart` với `userId` mới chưa từng tạo giỏ hàng. | `expect(res.body.cart).toBeArrayOfSize(0)` | `res.body.cart = []` | `res.body.cart = ["Stryker was here"]` (Test vẫn Pass do thiếu check `length`) |
+| **[S3-F02]** <br> `server.js:292` <br> `if (cartExists)` $\rightarrow$ `if (true)` | Survived | Thiếu test case mô phỏng trường hợp thao tác hoặc truy vấn giỏ hàng khi đối tượng giỏ hàng chưa tồn tại/chưa khởi tạo trong hệ thống. | `POST /api/cart/item` khi giỏ hàng chưa được khởi tạo (`cart == null`). | `expect(res.status).toBe(404)` hoặc `expect(res.body.error).toBeDefined()` | Trả về lỗi `404 Not Found` | Bỏ qua kiểm tra, tiếp tục xử lý và trả về `200 OK` hoặc bị crash rò rỉ lỗi hệ thống |
+| **[S3-F03]** <br> `server.js:314` <br> `items: req.body.items` $\rightarrow$ `items: []` | Survived | Bài test checkout/đặt hàng chỉ kiểm tra trạng thái HTTP trả về (`res.status === 200`) mà không kiểm tra chi tiết danh sách `items` trong phản hồi. | `POST /api/checkout` gửi payload `{ items: [{ id: 1, quantity: 2 }] }`. | `expect(res.body.order.items).toHaveLength(1)` | Order trả về đúng danh sách sản phẩm đã đặt | Order trả về mảng `items` rỗng `[]` nhưng test vẫn Pass |
+| **[S3-F04]** <br> `server.js:326` <br> `res.json({ message: "Success" })` $\rightarrow$ `res.json({})` | Survived | Test case chỉ dùng `expect(res.status).toBe(200)` mà không assert nội dung `res.body.message`. | `POST /api/orders/cancel` với `orderId` hợp lệ. | `expect(res.body.message).toBe("Success")` | Trả về JSON chứa thông điệp hủy đơn thành công | Trả về `{}` (object rỗng) nhưng test vẫn Pass do Status vẫn là 200 |
+| **[S3-F05]** <br> `server.js:330` <br> Trả về order bị hủy $\rightarrow$ Trả về `{}` | Survived | Test suite thiếu assertion xác nhận thông tin chi tiết đơn hàng sau khi hủy/cập nhật. | `DELETE /api/orders/:id` | `expect(res.body.order).toHaveProperty("id", orderId)` | Trả về thông tin chi tiết của order đã hủy | Trả về `{}` nhưng không có assertion nào bắt lỗi |
+| **[S3-F06]** <br> `server.js:532` <br> `status: "failed"` $\rightarrow$ `status: "success"` | Survived | Thiếu kịch bản test kiểm tra phản hồi khi việc cập nhật trạng thái đơn hàng bị thất bại. | `PATCH /api/orders/:id/status` với dữ liệu cập nhật không hợp lệ. | `expect(res.body.status).toBe("failed")` | Trả về trạng thái xử lý thất bại (`failed`) | Trả về `success` dù thao tác lỗi nhưng test không bắt được |
+```
+````
+
+### Output
+
+```text
+Lần này 6 dòng đều có số dòng nằm trong vùng mutate. Nhưng nội dung từng dòng vẫn không khớp với code và report. Mình đã đối chiếu từng dòng với `server.js` và hai file `mutation.json`:
+
+| Dòng | Bạn ghi | Thực tế |
+|---|---|---|
+| F01 | `cart: []` → `["Stryker was here"]` | Mutant có thật là `286:47`, nhưng code gốc là `userCarts[userId] = []`, không có field `cart`. Mutant này **vẫn Survived ở F01-1**, vậy mà hai cột kết quả lại mô tả như đã có test |
+| F02 | `if (cartExists)`, `POST /api/cart/item`, trả về 404 | Code thật là `if (!userCarts[userId])` và không có route `/api/cart/item`. Mutant `292:7 → true` đã Killed ở E01, nên không phải survivor của baseline |
+| F03 | `items: req.body.items` ở checkout | Dòng 314 là `[req.user.id]` trong `GET /api/orders/my-orders`. Checkout không nhận `items` |
+| F04 | `res.json({ message: "Success" })`, `/api/orders/cancel` | Dòng 326 là `404 { error: "Order not found" }`. Route thật là `PUT /api/orders/:id/cancel` |
+| F05 | Trả về order đã hủy, `DELETE /api/orders/:id` | Dòng 330 là lỗi `400 "Cannot cancel this order."`. Không có route DELETE |
+| F06 | `status: "failed"`, `PATCH` | Dòng 532 là `404 "Order not found"` của admin. Không có `"failed"` và không có route PATCH |
+
+Thêm vài điểm chung:
+- Cột *Mutant ID* cần ghi `line:col`, ví dụ `286:47`. `[S3-F02]` là mã task, không phải mã mutant.
+- Hai cột kết quả phải là **kết quả đã chạy** (Pass/Killed/Survived kèm Run ID), không phải dự đoán.
+- `toBeArrayOfSize` thuộc thư viện jest-extended, mà project không cài thư viện này.
+
+Hai bảng liên tiếp đều mô tả code không tồn tại: route lạ, biến lạ, ký hiệu `$\rightarrow$`. Đây là dấu hiệu điển hình của văn bản do AI sinh ra mà không đọc repo. Mình hỏi lại: **bạn có dùng AI khác để điền không?** Nếu có, cứ nói thẳng, không sao cả. Mình sẽ ghi nó vào AI Record thành artifact INVALID kèm prompt nguyên văn. Đây đúng là loại bằng chứng mà seminar cần ("AI bịa mutant/route khi không có context"). Chỉ là phần đó **không thể nằm trong bảng manual**.
+
+**Cách làm để điền đúng (khoảng 15 phút cho 3 dòng):**
+1. Mở `F01-1/mutation.html`, chọn `server.js`, bật filter **Killed**.
+2. Chọn 3 mutant trong danh sách 14 mutant mình gửi lần trước, ví dụ một mutant ở mỗi route.
+3. Với mỗi mutant, click vào để thấy diff thật (gốc → mutant). Đọc vài dòng code xung quanh để biết route.
+4. Mở `E01-1-cc/mutation.html`, tìm cùng mutant đó, xem những test `CO-xx` nào đã chạy qua nó. Đó là cột *Why Survived*.
+5. Cột *Manual Assertion* là assertion **trong file `cart-orders.manual.js` của chính bạn** đã kill mutant đó, không phải assertion mới.
+
+Nếu đọc file HTML bất tiện, mình có thể soạn một prompt ngắn cho Claude Code in ra **dữ kiện thô** của các mutant bạn chọn: diff, test `CO-xx` đã chạy qua, test đã kill. Prompt đó không kèm phân tích, phần phân tích bạn vẫn tự viết.
+
+Và vẫn còn câu hỏi về **Survivor 4 (coupon): bạn đồng ý xóa nó khỏi file manual và ghi vào mục Limits & Failure Modes không?**
+```
+
+## #52 — 2026-10-22 21:53 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+đồng ý xoá và ghi vào mục Limits & Failure Modes nhé.
+---
+## Survivors & Manual Assertions
+
+| Mutant ID / Diff | State | Why Survived | Distinguishing Input | Manual Assertion / Test | Original-Code Result | Mutant Result / Evidence |
+|---|---|---|---|---|---|---|
+| **286:7** <br> `if (!userCarts[userId])` $\rightarrow$ `if (false)` | Survived | Test suite chỉ gọi `GET /api/cart` khi `userCarts[userId]` đã tồn tại/đã khởi tạo từ trước, không có test case gọi API khi `userId` hoàn toàn mới (chưa có giỏ hàng). | `GET /api/cart` với token của `userId` mới chưa từng thao tác giỏ hàng. | `expect(res.body).toEqual([])` | `userCarts[userId]` được khởi tạo mảng rỗng `[]` và trả về `[]` | `userCarts[userId]` không được khởi tạo, trả về `undefined` |
+| **292:7** <br> `if (!userCarts[userId])` $\rightarrow$ `if (true)` | Survived | Test case chỉ gọi `POST /api/cart` khi giỏ hàng đã có dữ liệu, hoặc không assert việc giỏ hàng bị ghi đè (reset) về `[]` trước khi `.push(req.body)`. | `POST /api/cart` liên tiếp 2 lần để thêm 2 sản phẩm. | `expect(res.body).toHaveLength(2)` (kiểm tra giỏ hàng tích lũy đủ số item) | Giỏ hàng giữ item cũ và thêm item mới | Giỏ hàng luôn bị reset thành `[]` mỗi lần `POST`, làm mất dữ liệu sản phẩm trước đó |
+| **326:47** <br> `{ error: "Order not found" }` $\rightarrow$ `{}` | Survived | Test case hủy đơn hàng không tồn tại chỉ kiểm tra HTTP Status `404` (`res.status === 404`) mà không assert nội dung `res.body.error`. | `PUT /api/orders/99999/cancel` với `id` đơn hàng không tồn tại. | `expect(res.body).toHaveProperty("error", "Order not found")` | Trả về JSON `{ error: "Order not found" }` | Trả về JSON rỗng `{}` nhưng test vẫn Pass do Status vẫn là 404 |
+| **346:45** <br> `{ error: "Order not found" }` $\rightarrow$ `{}` | Survived | Test case xem chi tiết đơn hàng không tồn tại chỉ kiểm tra HTTP Status `404` mà không assert thuộc tính `error` trong Response Body. | `GET /api/orders/99999` với `id` đơn hàng không tồn tại. | `expect(res.body).toHaveProperty("error", "Order not found")` | Trả về JSON `{ error: "Order not found" }` | Trả về JSON rỗng `{}` nhưng test vẫn Pass do Status vẫn là 404 |
+| **532:47** <br> `{ error: "Order not found" }` $\rightarrow$ `{}` | Survived | Test case admin cập nhật trạng thái đơn hàng không tồn tại chỉ check Status `404` mà bỏ qua việc assert body message/error. | `PUT /api/admin/orders/99999/status` với `id` đơn hàng không tồn tại. | `expect(res.body).toHaveProperty("error", "Order not found")` | Trả về JSON `{ error: "Order not found" }` | Trả về JSON rỗng `{}` nhưng test vẫn Pass do Status vẫn là 404 |
+| **550:11** <br> `if (currentStatus === "canceled" && status === "delivered")` $\rightarrow$ `if (false)` | Survived | Thiếu test case mô phỏng trường hợp Admin cố tình cập nhật trạng thái đơn hàng từ `canceled` thẳng sang `delivered`. | `PUT /api/admin/orders/:id/status` chuyển trạng thái đơn hàng từ `canceled` thành `delivered`. | `expect(res.status).toBe(400)` và `expect(res.body.error).toContain("Invalid state transition")` | Trả về lỗi `400 Bad Request` do chuyển đổi trạng thái không hợp lệ | Bỏ qua kiểm tra chuyển đổi cấm, cho phép cập nhật hoặc lọt qua luồng xử lý lỗi |
+```
+
+### Output
+
+````text
+Bản này đúng hướng rồi: cả 6 mutant đều có thật và đều Survived ở E01-1-cc. Bảng giờ đóng vai trò **kế hoạch thêm test vào F01**, không còn là bảng kết quả của F01-1. Cách làm này hợp lệ, với điều kiện hai cột kết quả ghi `Not run` cho tới khi chạy **F01-2**. Mình đã đối chiếu từng dòng với code, spec và `coveredBy` trong E01-1-cc:
+
+**286:7 → `false`.** Nên sửa.
+- Cột *Why Survived* chưa đúng. CO-02 ("new user gets an empty cart") **đã gọi** GET với user mới, chỉ là không assert body. Nhãn đúng là `missing-assertion`, không phải `missing-input`.
+- Spec §4.1 không nói giỏ trống trả về `[]`. Oracle `[]` là suy luận của bạn, nên ghi rõ như vậy.
+- Mutant trả về `res.json(undefined)`. Response HTTP thực tế ra sao thì phải chạy mới biết.
+
+**292:7 → `true`.** Có một lỗi kỹ thuật.
+- `POST /api/cart` trả về `{ message: "Added to cart" }` (dòng 294), không trả về giỏ hàng. Vì vậy `toHaveLength(2)` trên response của POST sẽ **fail ngay trên code gốc**. Assertion phải đặt trên một request khác.
+- Mutant không làm giỏ "luôn rỗng". Mỗi lần POST, giỏ bị reset rồi mới push, nên sau 2 lần POST chỉ còn item cuối.
+- CO-04 đã có sẵn input "2 sản phẩm khác nhau", nên nhãn là `missing-assertion`.
+- Nên dùng 2 sản phẩm **khác** `id`. Nếu trùng `id`, test sẽ chạm vào bug DEF-01 (FR-07: cùng sản phẩm phải tăng quantity).
+
+**326:47, 346:45, 532:47 (`{ error: … }` → `{}`).** Phần *Why* đúng: lần lượt CO-14/CO-15, CO-10 và CO-19 chỉ assert 404. Nhưng còn vấn đề **oracle**:
+- `api_specification.md` không quy định format body lỗi, cũng không có chuỗi `"Order not found"`. Nếu assert đúng nguyên chuỗi đó, bạn đang lấy expected từ code, giống lỗi của Survivor 4.
+- Hướng bạn cần tự quyết: assert nguyên chuỗi (có ghi rõ nguồn là code), hay chỉ assert "có thông báo lỗi". README dòng 162 có câu "trả về lỗi với thông báo phù hợp", nhưng câu đó nói về chuyển trạng thái.
+- Câu hỏi gợi ý: cùng dòng 326 còn mutant `326:56` (`"Order not found"` → `""`). Assertion bạn chọn có kill được nó không?
+
+**550:11 → `false`.** Dòng này sai ở điểm quan trọng nhất.
+- Dòng 550–551 trong code gốc **cho phép** `canceled → delivered`. Đây là bug cài sẵn, đúng như comment ngay phía trên dòng 328. Vì vậy code gốc trả về **200**, không phải 400.
+- Mutant `false` lại chính là bản **đã sửa bug**. Test đòi 400 sẽ fail trên code gốc, và test đó đã tồn tại với tên DEF-05.
+- Nhãn đúng là `defect-fixing`. Cột *Manual Assertion* ghi: "Không viết; test đúng spec fail trên code gốc (DEF-05); test pass trên code gốc thì phải assert bug". Mục Limits đã có ghi chú về L550.
+
+**Bước tiếp theo, bạn tự làm:**
+1. Sửa 6 dòng theo nhận xét trên. Hai cột kết quả để `Not run`.
+2. Trong `cart-orders.manual.js`: xóa Survivor 4, thêm test cho các dòng 1–5, sửa comment spec (§4.1/4.2, §4.5, §4.6, §6.2). Kiểm `npm run test:manual` pass trên code gốc trước.
+3. Báo mình. Mình sẽ đưa prompt để Claude Code commit và chạy **F01-2**, rồi điền hai cột kết quả từ report.
+
+**Mục Survivor 4 cho Limits & Failure Modes.** Bạn dán đoạn này dưới dòng 143, hoặc để Claude Code thêm vào ở bước F01-2:
+
+```markdown
+- **Failure mode — assertion học theo bug (F01-1, human):** test Survivor 4 (`POST /api/apply-coupon`) tính expected bằng đúng công thức chép từ `server.js:399–400`, nên test pass trên code gốc kể cả khi code sai spec (FR-09); `/api/apply-coupon` cũng nằm ngoài vùng mutate (`280-349`, `510-568`) nên test không nhắm mutant nào. Đã xóa khỏi suite manual trước F01-2. Bài học: expected phải lấy từ SRS/spec, không lấy từ code đang test.
+```
+
+Một việc nữa cho AI Record: hai bảng trước có chỗ bịa route và mutant. Bạn chỉ cần trả lời **có hoặc không**: có dùng AI khác để điền không?
+````
+
+## #53 — 2026-10-22 21:56 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+5 cái sửa mà bạn nói ở file nào vậy. Không dùng AI
+```
+
+### Output
+
+```text
+OK, vậy không cần ghi gì vào AI Record.
+
+Các chỉnh sửa nằm ở **2 file**, mỗi file một repo:
+
+**1. Bảng phân tích (repo seminar)**
+`experiments/s3/Experiment_Log_Tan_Hiep.md`, mục `## Survivors & Manual Assertions` (khoảng dòng 117). Bạn thay dòng mẫu `[S3-F01]` bằng 6 dòng của bạn, sửa theo nhận xét:
+
+| Dòng | Sửa gì |
+|---|---|
+| 286:7 | *Why Survived*: đổi thành CO-02 đã gọi nhưng chỉ assert status, nhãn `missing-assertion`; ghi oracle `[]` là suy luận |
+| 292:7 | *Why Survived*: CO-04, nhãn `missing-assertion`. Sửa *Distinguishing Input* (2 sản phẩm khác `id`), *Manual Assertion* (không assert trên response của POST) và mô tả hành vi mutant |
+| 326:47, 346:45, 532:47 | *Manual Assertion*: ghi rõ oracle bạn chọn và nguồn của nó |
+| 550:11 | Nhãn `defect-fixing`. *Manual Assertion* ghi "Không viết" kèm lý do (DEF-05). *Original-Code Result* sửa thành 200 |
+| Cả 6 dòng | Hai cột kết quả ghi `Not run` |
+
+**2. File test manual (repo EShop, nhánh `s3/F01-manual`)**
+`backend/test/manual/cart-orders.manual.js`:
+- Xóa test Survivor 4 (coupon).
+- Thêm test cho các mutant 286:7, 292:7, 326:47, 346:45 và 532:47.
+- Sửa comment spec: §4.1/§4.2 cho cart, §4.5 cho order detail, §4.6 cho cancel, §6.2 cho admin status.
+- Chạy `npm run test:manual` trong `backend/` để chắc mọi test pass trên code gốc.
+
+Đoạn Failure mode về Survivor 4 thì để Claude Code thêm vào mục Limits & Failure Modes ở bước F01-2, bạn không cần dán tay.
+```
+
+## #54 — 2026-10-23 01:19 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Sửa xong thì commit gì đây nhỉ
+```
+
+### Output
+
+````text
+Mỗi repo một commit. Trước khi commit, chạy `git status` ở cả hai repo. Nếu `backend/database.sqlite` hiện là modified thì chạy `git restore backend/database.sqlite`.
+
+**Repo EShop (nhánh `s3/F01-manual`)**, chỉ commit khi `npm run test:manual` đã pass hết:
+
+```bash
+git add backend/test/manual/cart-orders.manual.js
+git commit -m "test(S3-F01): add manual assertions for cart and order survivors, drop coupon test"
+```
+
+**Repo seminar:**
+
+```bash
+git add experiments/s3/Experiment_Log_Tan_Hiep.md
+git commit -m "docs(S3-F01): add survivor analysis table for manual assertions"
+```
+
+Push xong thì báo mình. Mình sẽ xem file test và bảng trên repo trước, rồi mới đưa prompt chạy F01-2. Nếu có test lỡ assert theo bug thì phát hiện bây giờ sẽ đỡ phải chạy Stryker lại.
+````
+
+## #55 — 2026-10-23 01:20 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Push xong rồi nhé
+```
+
+### Output
+
+````text
+Mình đã xem cả hai commit. Có **một lỗi cần hỏi bạn** trước khi chạy F01-2, và vài chỗ sửa nhỏ.
+
+**Cần hỏi: test hủy đơn (Survivor 3 cũ) bị mất**
+
+So với commit `0236267`, bạn không chỉ xóa Survivor 4 (coupon) mà còn xóa luôn **Survivor 3**: `PUT /api/orders/:id/cancel`, hủy đơn pending rồi kiểm tra DB là `canceled`. Ở F01-1, chính test này đã kill 4 mutant `335:9`, `335:10`, `337:20` và `337:31`. Nếu chạy F01-2 với file hiện tại, 4 mutant này sẽ sống lại, và kết quả manual sẽ trông tệ hơn F01-1 mà không có lý do.
+
+👉 Bạn **cố ý** xóa nó hay xóa nhầm? Nếu nhầm, cách khôi phục:
+```bash
+git show 0236267:backend/test/manual/cart-orders.manual.js
+```
+Bạn copy lại khối test `Survivor 3` (dòng 89–112) vào file hiện tại. Survivor 1 cũ thì không cần khôi phục, vì test 292:7 mới đã bao phần đó.
+
+**Sửa nhỏ trong file test**
+- Test 346:45 ghi `FR-09`. FR-09 là coupon. Order detail là FR-11 (DEF-08b đang dùng mã này).
+- Comment đầu file viết "Expected lấy từ README.md và api_specification.md". Nhưng giờ có các chuỗi lấy từ code: `"Order not found"`, `"Added to cart"`, `"Checkout successful"`, `"Order status updated"`. Thêm một dòng nói rõ điều này là đủ, vì bảng đã ghi nguồn oracle.
+- Test 292:7 gửi `product_id`, còn spec §4.2 dùng `id` và `name`. Không ảnh hưởng kết quả (server chỉ lưu nguyên body), nhưng đã dẫn §4.2 thì nên theo đúng shape của spec.
+
+**Experiment Log**
+- Heading `## Survivors & Manual Assertions` bị lặp **4 lần** (dòng 117–123). Xóa bớt, chỉ giữ một.
+- Dòng 550:11 có câu "cần refactor/fix bug ở server code trước". Seminar không sửa production code, nên viết lại ý: test đúng spec thì fail trên code gốc (đã ghi thành DEF-05); test pass trên code gốc thì phải assert theo bug, nên không viết.
+- Dòng 286:7: câu "kỳ vọng `[]` chỉ là suy luận do test chưa assert" chưa rõ ý. Ý đúng là: §4.1 không quy định giỏ trống trả về gì, nên oracle `[]` là suy luận.
+- Phần còn lại ổn: nhãn đúng, nguồn oracle của 3 dòng 404 được ghi rõ, và các cột kết quả đều `Not run`.
+
+Commit merge `main` kéo về bài của các bạn khác, không đụng đến file của bạn, nên không sao.
+
+Sửa xong thì commit:
+```bash
+# EShop
+git commit -am "test(S3-F01): restore cancel test and fix spec references in manual suite"
+# Seminar
+git commit -am "docs(S3-F01): fix duplicated heading and survivor analysis wording"
+```
+Lưu ý `-am` gom mọi file đang modified, nên chạy `git status` trước để chắc chỉ có file của bạn. Ở EShop, nếu có `database.sqlite` thì chạy `git restore backend/database.sqlite` trước. Câu commit của EShop giả định bạn khôi phục test hủy đơn; nếu bạn cố ý bỏ nó thì báo mình để đổi câu khác.
+
+Bạn trả lời câu hỏi về Survivor 3 là mình đưa prompt chạy F01-2.
+````
+
+## #56 — 2026-10-23 01:29 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Mình đã khắc phục lại hết và push lên lại rồi, xem nhé
+```
+
+### Output
+
+````text
+Gần xong rồi. Mình kiểm lại thì thấy:
+
+- ✅ Test hủy đơn đã được khôi phục. Chuỗi `"Order canceled successfully"` khớp với `server.js:337`.
+- ✅ FR-11 đã đúng, heading chỉ còn 1, hai dòng 286:7 và 550:11 đã rõ ý.
+- ⚠️ Còn 2 comment chưa sửa, đều không ảnh hưởng kết quả:
+  1. Test Survivor 3 ghi `api_specification.md § 6.2`. Hủy đơn là **§4.6**, còn §6.2 là admin.
+  2. Dòng 3 đầu file vẫn ghi "Expected lấy từ README.md và api_specification.md". Bạn thêm một dòng, ví dụ: "Một số chuỗi message/error lấy từ server.js vì spec không quy định; xem cột oracle trong Experiment Log."
+
+Bạn sửa 2 comment này, commit `docs(S3-F01): fix spec reference and oracle note in manual suite` (type `test` cũng được), push, rồi dán prompt dưới đây vào Claude Code để chạy F01-2:
+
+```text
+Task S3-F01 — run F01-2-cc (skill t10-run-report).
+1. EShop: checkout s3/F01-manual, git pull. Không sửa file test/config.
+2. backend: npm run test:manual → phải pass hết; fail thì dừng, báo cáo.
+3. npm run mutate:cart-orders:manual → lưu console.log, mutation.html, mutation.json vào seminar experiments/s3/runs/Tan_Hiep/F01-2-cc/.
+4. REPORT (experiments/s3/runs/Tan_Hiep/F01-cc-REPORT.md, thêm mục F01-2-cc):
+   - config manual chạy những test file nào;
+   - số Killed/Timeout/Survived/NoCoverage/score so với E01-1-cc và F01-1;
+   - danh sách mutant Survived/NoCoverage ở E01-1-cc mà Killed ở F01-2-cc, kèm killedBy (từ mutation.json);
+   - trạng thái của 6 mutant 286:7(false), 292:7(true), 326:47, 346:45, 532:47, 550:11(false).
+5. Experiment_Log_Tan_Hiep.md: chỉ điền 2 cột Original-Code Result / Mutant Result của bảng Survivors theo kết quả thật (Pass/Fail; Killed by <test> / Survived, run F01-2-cc). Thêm dòng run F01-2-cc vào bảng run. Thêm vào cuối Limits & Failure Modes:
+   - **Failure mode — assertion học theo bug (F01-1, human):** test Survivor 4 (`POST /api/apply-coupon`) tính expected bằng đúng công thức chép từ `server.js:399–400`, nên pass trên code gốc kể cả khi code sai spec (FR-09); `/api/apply-coupon` cũng nằm ngoài vùng mutate (`280-349`, `510-568`) nên không nhắm mutant nào. Đã xóa khỏi suite manual trước F01-2. Bài học: expected lấy từ SRS/spec, không lấy từ code đang test.
+6. git restore backend/database.sqlite. Commit seminar: docs(S3-F01): add F01-2-cc run evidence and results
+```
+
+Chạy xong, bạn dán khối báo cáo vào đây. Mình sẽ đối chiếu các số với `mutation.json` rồi mới chuyển sang G01.
+````
+
+## #57 — 2026-10-23 01:35 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Báo cáo cho phiên thảo luận
+
+- Nhiệm vụ: S3-F01 run F01-2-cc — Done
+- Kết quả: npm run test:manual Pass, 44/44. Config manual chạy 2 file: cart-orders.test.js (36 test baseline) và manual/cart-orders.manual.js (8 test manual).
+- Kết quả: F01-2-cc Pass, 150 mutants. Killed 112, Timeout 18, Survived 11, NoCoverage 2, RuntimeError 7; score 90.91%.
+- So sánh score: E01-1-cc 74.65% (87/19/34/2) → F01-1 84.40% (100/19/20/2) → F01-2-cc 90.91%.
+- Từ E01-1-cc sang F01-2-cc: 23 mutant chuyển từ Survived sang Killed; 2 NoCoverage giữ nguyên.
+- 6 mutant đã chọn: 286:7, 292:7, 326:47, 346:45, 532:47 đều Killed, mỗi mutant bởi đúng test "Kill Mutant …" của nó; 550:11 vẫn Survived, đúng như dự kiến vì mutant này sửa đúng lỗi gốc.
+- Evidence: T10_.../experiments/s3/runs/Tan_Hiep/F01-cc-REPORT.md (mục F01-2-cc, có danh sách killedBy). Bảng so sánh ở F01-2-cc/compare_runs.md.
+- Commit seminar: cdb07ab trên main, chưa push. Trước task có thêm 56aa428 (chore(ai-log)) cho log do hook ghi.
+- EShop: không sửa file nào; database.sqlite sạch, đã git restore như yêu cầu.
+- Bất thường mới: bản đầu của script so sánh gộp mất 5 mutant trùng điểm bắt đầu (F01-2-cc/compare_runs.py:22). Đã sửa key thêm vị trí kết thúc; số sau sửa khớp console cả 3 run.
+- Bất thường mới: Experiment Log chưa có bảng run riêng cho F01, nên tôi thêm dòng F01-2-cc vào bảng D01 — Runs (experiments/s3/Experiment_Log_Tan_Hiep.md:103). Nếu muốn bảng riêng thì cần chuyển dòng này.
+- Lưu ý integrity: session này đã thấy test G01 phải chạy trong session Claude Code mới.
+- Cần quyết định: Không
+```
+
+### Output
+
+````text
+Mình đã kiểm các số trong báo cáo, đều khớp nhau:
+- Score: (112 Killed + 18 Timeout) / (150 − 7 RuntimeError) = 130/143 = **90.91%** ✓
+- Survived: 34 ở E01 − 23 mutant chuyển sang Killed = **11** ✓
+- Cả 5 mutant mục tiêu đều bị kill bởi đúng test của nó; 550:11 vẫn sống, đúng như phân tích `defect-fixing` ✓
+
+Có một điểm quan trọng cho phần trình bày: config manual chạy **baseline cộng manual** (36 + 8 test). Vì vậy 74.65% → 90.91% là phần đóng góp **thêm** của 8 test manual trên nền baseline. Đây là phép so sánh đúng, và G01 cũng phải đo theo cùng cách này.
+
+**Về bất thường thứ 2 (dòng run nằm trong bảng D01):** đừng tạo bảng riêng. Log đã có sẵn bảng **`## Comparison`** (Baseline / Manual / AI-assisted), nhưng bảng này chưa điền. Dán prompt ngắn sau vào **chính session Claude Code đó** (việc này chỉ là ghi docs, chưa phải G01):
+
+```text
+S3-F01 follow-up (docs only):
+1. Experiment_Log_Tan_Hiep.md, bảng Comparison: điền dòng Baseline = E01-1-cc, Manual = F01-2-cc (Killed, Timeout, Survived, NoCoverage, score + định nghĩa "Detected/Valid, Valid = tổng − RuntimeError", evidence). Ghi chú dưới bảng: Manual = baseline 36 + manual 8 test. AI-assisted để Not run.
+2. Nếu bảng Runs chưa có F01-1 (run của Tấn Hiệp) thì thêm, lấy số từ runs/Tan_Hiep/F01-1/.
+3. Commit: docs(S3-F01): fill comparison table for baseline and manual runs
+```
+
+Sau đó:
+1. **Push** repo seminar. Commit `cdb07ab` và commit follow-up đều chưa lên nên mình chưa xem được. Push xong mình sẽ đối chiếu bảng Survivors và mục Limits.
+2. Trên sheet: chuyển **S3-F01 → Review**. Evidence: `experiments/s3/runs/Tan_Hiep/F01-2-cc/` và `F01-cc-REPORT.md`.
+
+**Tiếp theo là S3-G01.** Như báo cáo đã lưu ý, G01 phải chạy trong **một session Claude Code mới**: `/exit` rồi mở lại, hoặc `/clear`. Session đó không được đọc nhánh `s3/F01-manual`, file manual, bảng Survivors hay F01-cc-REPORT.
+
+Còn 1 điểm mình cần bạn chốt trước khi soạn prompt G01: AI nhận **danh sách survivor nào**?
+- **(a)** Cùng 6 mutant bạn đã chọn. So sánh từng mutant một với manual nên công bằng nhất.
+- **(b)** Toàn bộ 34 survivor của E01-1-cc. Cách này cho thấy AI tự chọn và tự xử lý được bao nhiêu.
+
+Mình đề xuất **(a)**, vì đề seminar so sánh assertion manual với AI "trên cùng mutant". Nếu bạn muốn, có thể ghi (b) thêm thành run phụ G01-2.
+````
+
+## #58 — 2026-10-23 01:37 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Báo cáo cho phiên thảo luận
+
+- Nhiệm vụ: S3-F01 follow-up (chỉ sửa docs) — Done
+- Bảng Comparison, dòng Baseline (E01-1-cc): Killed 87, Timeout 19, Survived 34, NoCoverage 2; score 74.65% (Detected 106 / Valid 142).
+- Bảng Comparison, dòng Manual (F01-2-cc): Killed 112, Timeout 18, Survived 11, NoCoverage 2; score 90.91% (Detected 130 / Valid 143).
+- Hai dòng ghi định nghĩa "Detected / Valid, Valid = tổng − RuntimeError" kèm evidence. Dòng AI-assisted để Not run.
+- Ghi chú dưới bảng: Manual = baseline 36 + manual 8 test; cùng production code, cùng mutate scope và 150 mutants.
+- Bảng Runs trước đó chưa có F01-1 nên tôi thêm dòng, executor Tấn Hiệp: 41/41 pass; 150 mutants, Killed 100, Timeout 19, Survived 20, NoCoverage 2, RuntimeError 9; score 84.40%. Số đếm từ F01-1/mutation.json, khớp console.
+- Evidence: experiments/s3/Experiment_Log_Tan_Hiep.md (Comparison, Runs). Task chỉ sửa docs nên không có run mới hay REPORT mới.
+- Commit seminar: 990aff6 trên main (ahead 4, chưa push). Trước task có thêm a6e00df (chore(ai-log)) cho log do hook ghi.
+- Bất thường mới: F01-1 chạy lúc 21:31 ngày 22/10, trước commit 0236267 (21:35). Vậy run chạy trên working tree chưa commit. Số test khớp 0236267 (36 baseline + 5 manual, có test coupon Survivor 4 đã kiểm tra), nhưng không chứng minh được nội dung giống hệt; dòng F01-1 ghi rõ điều này (experiments/s3/Experiment_Log_Tan_Hiep.md:104).
+- Cần quyết định: Không
+```
+
+### Output
+
+```text
+Báo cáo ổn. Bất thường về F01-1 được ghi trung thực, và như vậy là đủ. Kết quả manual chính thức là **F01-2-cc**, vì nó chạy trên commit đã chốt. F01-1 chỉ là mốc trung gian, nên không cần chạy lại.
+
+Có một điểm nên biết trước khi trình bày: mẫu số **Valid** thay đổi giữa các run (142 → 141 → 143), vì số RuntimeError không ổn định (8, 9, 7). Đây chính là hiện tượng sqlite3 crash khi câu SQL bị đổi thành `""`, đã ghi trong Limits. Hệ quả là score giữa các run lệch nhau một chút vì mẫu số khác nhau, không chỉ vì test tốt hơn. Khi thuyết trình, nên nói kèm con số tuyệt đối "Survived 34 → 11 trên cùng 150 mutant", vì con số này không phụ thuộc mẫu số.
+
+Bạn **push repo seminar** (đang ahead 4) và chuyển F01 sang Review trên sheet.
+
+Để soạn prompt G01, mình còn cần bạn chọn:
+- **(a)** AI nhận đúng 6 mutant bạn đã chọn, để so sánh từng mutant một với manual (mình đề xuất cách này).
+- **(b)** AI nhận toàn bộ 34 survivor của E01-1-cc.
+```
+
+## #59 — 2026-10-23 01:38 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+a nhé
+```
+
+### Output
+
+````text
+Chốt **(a)**. G01 có 2 bước, và giữa hai bước có một điểm dừng để bạn review:
+
+1. **G01-1-cc:** AI sinh test cho 6 mutant, chạy trên code gốc một lần, commit **nguyên bản thô**, rồi dừng.
+2. Bạn và mình **review theo spec** ở phiên thảo luận này. Đây là cột *Spec Review* trong log. Mình sẽ chỉ ra các chỗ AI assert theo code hoặc bịa, rồi quyết định giữ, sửa hay loại từng test.
+3. **G01-2-cc:** chạy Stryker trên bộ test đã review.
+
+Sở dĩ phải dừng ở giữa: nếu một test AI fail trên code gốc, Stryker sẽ không chạy được. Và đề seminar cũng yêu cầu test AI phải được review trước khi đem ra tính điểm.
+
+**Cách mở session mới:** gõ `/exit` trong Claude Code đang mở, rồi chạy `claude` lại trong thư mục `Repo`. Dán prompt sau:
+
+```text
+Task S3-G01 — AI assertions, run G01-1-cc (skill t10-run-report). Session mới, blind với nhánh manual.
+
+KHÔNG đọc/checkout/git show/git log: nhánh EShop s3/F01-manual; seminar experiments/s3/Experiment_Log_Tan_Hiep.md, runs/Tan_Hiep/F01-*, F01-cc-REPORT.md, ai-audit/ (cả evidence). Lỡ đọc thì dừng, báo.
+
+Được dùng: EShop README.md (SRS), api_specification.md, backend/server.js, backend/test/cart-orders.test.js, test/helpers/, seminar runs/Tan_Hiep/E01-1-cc/ (mutation.json, mutation.html).
+
+1. EShop: checkout s3/G01-ai, git pull.
+2. Mục tiêu: 6 mutant Survived ở E01-1-cc (server.js):
+   286:7 ConditionalExpression → false | 292:7 ConditionalExpression → true | 326:47 ObjectLiteral → {} | 346:45 ObjectLiteral → {} | 532:47 ObjectLiteral → {} | 550:11 ConditionalExpression → false
+   Với mỗi mutant: đọc diff và coveredBy trong mutation.json, giải thích vì sao baseline không kill, rồi viết test vào backend/test/ai/cart-orders.ai.js. Expected phải lấy từ SRS/spec; nếu phải lấy từ code thì ghi rõ trong comment. Test phải pass trên code gốc. Nếu không viết được test vừa đúng spec vừa pass trên code gốc thì không viết, giải thích lý do. Mỗi test có comment: mutant mục tiêu, FR/§, nguồn oracle.
+3. npm run test:ai một lần → lưu console vào seminar runs/Tan_Hiep/G01-1-cc/test-ai.log. KHÔNG sửa test sau khi chạy, kể cả khi fail. Không chạy Stryker.
+4. REPORT: runs/Tan_Hiep/G01-cc-REPORT.md — model thực tế; bảng 6 mutant (vì sao survive, test/lý do không viết, oracle, pass/fail trên code gốc).
+5. git restore backend/database.sqlite. Commit EShop: test(S3-G01): add raw AI assertions for 6 Cart & Orders survivors. Commit seminar: docs(S3-G01): add G01-1-cc raw run evidence.
+```
+
+Hook vẫn tự ghi prompt và output nguyên văn vào `claude-code_prompt_log.md`. Đó là evidence chính cho AI Record artifact G01-01, mình sẽ viết sau khi review.
+
+Chạy xong, bạn push cả hai repo rồi dán khối báo cáo vào đây.
+````
+
+## #60 — 2026-10-23 01:44 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Báo cáo cho phiên thảo luận
+
+- Nhiệm vụ: S3-G01 — Blocked (chưa viết test, chưa chạy gì, chưa sửa hay commit file nào)
+- Kết quả: G01-1-cc Not run
+- Evidence: chưa có (chưa tạo REPORT)
+- File đã tạo/sửa (chưa commit): Không
+- Bất thường mới: EShop đang checkout sẵn nhánh s3/F01-manual. Khi preflight chạy git -C eshop-sut... log --oneline -1, nó in ra subject commit đầu nhánh manual: b77f5d6 docs(S3-F01): fix spec reference and oracle note in manual suite. Như vậy đã vi phạm lệnh cấm git log nhánh F01-manual.
+- Bất thường mới: lệnh git log -1 ở repo seminar in ra 990aff6 docs(S3-F01): fill comparison table for baseline and manual runs. Đây chỉ là subject, không có số liệu.
+- Bất thường mới: tôi chưa đọc nội dung test, diff hay số liệu nào của F01. Working tree seminar chỉ bẩn ở ai-audit/.../claude-code_prompt_log.md do hook ghi, tôi chưa mở file này.
+- Cần quyết định: G01-A – Session này có còn được coi là blind không, khi đã thấy 2 subject commit (không có assertion hay kết quả F01) – (a) vẫn chạy G01-1-cc ở session này và ghi rõ chuyện lộ thông tin vào REPORT; (b) mở session Claude Code mới, tự checkout s3/G01-ai trước rồi giao lại task, và bỏ bước git log khi còn ở nhánh manual.
+```
+
+### Output
+
+````text
+Chọn **(b)**: mở session mới. Làm lại chỉ tốn vài phút, còn tính blind của nhóm AI là điều kiện để phép so sánh manual với AI có giá trị. Hai subject commit gần như không lộ gì, nhưng không có lý do gì phải giữ một vết nghi ngờ trong evidence. Việc Claude Code tự phát hiện và dừng lại cũng là bằng chứng tốt: mình sẽ ghi nó vào mục Limits như một near-miss.
+
+**Bạn tự làm trong terminal (không qua Claude Code):**
+1. Gõ `/exit` để thoát session hiện tại.
+2. Trong thư mục `Repo`:
+   ```bash
+   git -C eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness checkout s3/G01-ai
+   git -C eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness pull --ff-only
+   git -C T10_Mutation_Testing_and_Test_Effectiveness add ai-audit
+   git -C T10_Mutation_Testing_and_Test_Effectiveness commit -m "chore(ai-log): update prompt logs"
+   ```
+   Lệnh commit log là để session mới thấy working tree sạch, và commit mới nhất chỉ là `chore(ai-log)`.
+3. Chạy `claude` lại, rồi dán prompt này. So với lần trước, bước 1 đã đổi và có thêm luật preflight:
+
+```text
+Task S3-G01 — AI assertions, run G01-1-cc (skill t10-run-report). Session mới, blind với nhánh manual.
+
+Preflight: chỉ git status và git pull --ff-only; KHÔNG chạy git log ở repo nào.
+KHÔNG đọc/checkout/git show/git log: nhánh EShop s3/F01-manual; seminar experiments/s3/Experiment_Log_Tan_Hiep.md, runs/Tan_Hiep/F01-*, F01-cc-REPORT.md, ai-audit/ (cả evidence). Lỡ đọc thì dừng, báo.
+
+Được dùng: EShop README.md (SRS), api_specification.md, backend/server.js, backend/test/cart-orders.test.js, test/helpers/, seminar runs/Tan_Hiep/E01-1-cc/ (mutation.json, mutation.html).
+
+1. EShop đã ở nhánh s3/G01-ai (Tấn Hiệp đã checkout). Kiểm git branch --show-current = s3/G01-ai; khác thì dừng.
+2. Mục tiêu: 6 mutant Survived ở E01-1-cc (server.js):
+   286:7 ConditionalExpression → false | 292:7 ConditionalExpression → true | 326:47 ObjectLiteral → {} | 346:45 ObjectLiteral → {} | 532:47 ObjectLiteral → {} | 550:11 ConditionalExpression → false
+   Với mỗi mutant: đọc diff và coveredBy trong mutation.json, giải thích vì sao baseline không kill, rồi viết test vào backend/test/ai/cart-orders.ai.js. Expected phải lấy từ SRS/spec; nếu phải lấy từ code thì ghi rõ trong comment. Test phải pass trên code gốc. Nếu không viết được test vừa đúng spec vừa pass trên code gốc thì không viết, giải thích lý do. Mỗi test có comment: mutant mục tiêu, FR/§, nguồn oracle.
+3. npm run test:ai một lần → lưu console vào seminar runs/Tan_Hiep/G01-1-cc/test-ai.log. KHÔNG sửa test sau khi chạy, kể cả khi fail. Không chạy Stryker.
+4. REPORT: runs/Tan_Hiep/G01-cc-REPORT.md — model thực tế; bảng 6 mutant (vì sao survive, test/lý do không viết, oracle, pass/fail trên code gốc). Thêm mục Limits: "Một session G01 trước bị dừng ở preflight vì in ra 2 subject commit của F01 (không có assertion hay số liệu); session này mở mới, EShop đã checkout sẵn s3/G01-ai."
+5. git restore backend/database.sqlite. Commit EShop: test(S3-G01): add raw AI assertions for 6 Cart & Orders survivors. Commit seminar: docs(S3-G01): add G01-1-cc raw run evidence.
+```
+
+Mình cũng sẽ ghi bài học này vào skill `t10-mutation-testing` ở đợt cập nhật tới: trước khi giao G01, phải checkout nhánh AI trước, và trong session blind thì preflight không chạy `git log`.
+````
+
+## #61 — 2026-10-23 02:01 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Báo cáo cho phiên thảo luận
+
+- Nhiệm vụ: S3-G01 — Done (đã viết 5 test; mutant 550:11 cố ý không viết)
+- Kết quả: G01-1-cc Pass — 41/41 test pass (36 baseline + 5 AI), chạy 1 lần, không chạy Stryker
+- Evidence: T10_.../experiments/s3/runs/Tan_Hiep/G01-cc-REPORT.md, G01-1-cc/test-ai.log
+- Commit: EShop 143a016 trên s3/G01-ai; seminar 68822c3 trên main (cả hai chưa push)
+- File đã tạo/sửa (chưa commit): Không. database.sqlite không bị đổi, nên không cần restore.
+- Bất thường mới: 550:11 ConditionalExpression → false không kill được bằng test đúng spec. Mutant này chính là bản sửa DEF-05 (canceled → delivered), nên test nào kill nó cũng phải assert 200, trái FR-10.
+- Bất thường mới: 3 test kiểm body 404 (cart-orders.ai.js, AI-CO-03..05) có oracle yếu: spec không định nghĩa body lỗi, tên trường error lấy từ code. Hai test giỏ hàng cũng lấy dạng mảng [] từ code.
+- Bất thường mới: phần Limits trong REPORT ghi đúng sự thật là run này chạy tiếp trong session đã bị dừng ở preflight, không phải session mới như câu mẫu trong lệnh. Thông tin đã lộ chỉ là 2 subject commit F01.
+- Bất thường mới: không đọc AGENTS.md, CONTEXT.md, docs/* và skill t10-mutation-testing để giữ blind với F01 (lệch preflight chuẩn).
+- Bất thường mới: GET /api/orders/:id không có auth (server.js:344), có khả năng vi phạm SEC-02, ngoài scope nên chưa test.
+- Cần quyết định: Không
+```
+
+### Output
+
+```text
+Kết quả ổn, nhưng có **một điểm lệch kế hoạch**: run này chạy tiếp trong **chính session đã bị dừng ở preflight**, chứ không phải session mới. Có lẽ lệnh `/exit` chưa được gõ. REPORT đã ghi đúng sự thật, như vậy là tốt.
+
+**Quyết định của mình: giữ G01-1-cc, không chạy lại.** Lý do:
+- Thông tin lộ chỉ có 2 subject commit, không có assertion hay số liệu nào. Session đó cũng không nhìn thấy file nào của F01.
+- Câu chữ trong REPORT khớp với thực tế.
+- Khi trình bày, đây là một **near-miss đã được ghi lại**: agent tự phát hiện, dừng lại và báo cáo. Như vậy còn giá trị hơn một run "sạch" mà không ai kiểm.
+
+Cái giá của quyết định này là trong AI Record, artifact G01-01 sẽ ghi "**blind một phần**: lộ 2 subject commit F01 trước khi sinh test". Không được ghi là "fresh context".
+
+Về điểm SEC-02 ở `server.js:344`: lỗi này đã có test **DEF-08a** (xem order detail mà không có token), nên không cần làm gì thêm.
+
+**Việc tiếp theo:** bạn **push cả hai repo** (EShop `s3/G01-ai`, seminar `main`). Sau đó mình sẽ làm bước **Spec Review**, xem từng test trong `cart-orders.ai.js`:
+- Oracle lấy từ đâu, có assert theo code hay theo bug không.
+- Test có thật sự phân biệt được mutant với bản gốc không.
+- So với bảng manual của bạn thì khác nhau ở đâu.
+
+Từ đó chốt giữ, sửa hay loại từng test, rồi mới chạy **G01-2-cc** bằng Stryker.
+```
+
+## #62 — 2026-10-23 02:02 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Push xong hết rồi nhé.
+```
+
+### Output
+
+````text
+Mình đã review từng test trong `cart-orders.ai.js` theo spec, đối chiếu với README và `database.js`. Bản AI dùng được, không có test nào phải loại.
+
+| Test | Nhận xét | Đề xuất |
+|---|---|---|
+| AI-CO-01 (286:7) | Giống manual. Oracle `[]` lấy từ code và đã ghi rõ trong comment | Giữ |
+| AI-CO-02 (292:7) | **Tốt hơn manual**: dùng đúng shape body §4.2 (`id`, `name`), dữ liệu khớp seed (`database.js:98, 101`), không giả định thứ tự item | Giữ |
+| AI-CO-03…05 (404) | Không assert nguyên văn `"Order not found"`, chỉ assert "có thông báo lỗi". Trích FR-10 dòng 162 và thừa nhận là áp dụng mở rộng. Assertion `length > 0` còn kill được cả mutant anh em `""` (326:56…) | Giữ, ghi chú oracle yếu |
+| 550:11 | Không viết, với lập luận đúng: đây là defect-fixing, kết luận giống bạn | Đồng ý |
+| Header file | Dòng 1–3 ghi "(đã review)" và "Sinh trong session sạch". Cả hai không đúng: header có từ commit setup, và session chỉ blind một phần | **Sửa header**, không đụng assertion |
+
+**Vài điểm đáng đưa lên slide khi so sánh manual với AI:**
+- Hai bên chọn cùng 5 mutant để kill và cùng đánh giá 550:11. AI làm được trong một lượt.
+- AI cẩn thận với oracle hơn bản manual đầu tiên của bạn: tự đánh dấu chỗ nào lấy từ code và không assert nguyên văn chuỗi. Có hai lưu ý đi kèm. Prompt của AI đã có sẵn luật "ghi rõ nếu oracle lấy từ code". Và session của AI chỉ blind một phần.
+- **Score tổng không so trực tiếp được.** Manual có 8 test, trong đó 3 test nằm ngoài 6 mutant mục tiêu (checkout, hủy đơn, chuyển trạng thái admin). AI chỉ có 5 test. Phép so sánh công bằng là so **trên 6 mutant mục tiêu**.
+
+Nếu bạn đồng ý giữ cả 5 test, dán prompt này vào Claude Code (dùng session cũ cũng được, vì AI đã sinh xong):
+
+```text
+Task S3-G01 — spec review xong, run G01-2-cc (skill t10-run-report). Hết yêu cầu blind.
+1. EShop s3/G01-ai, backend/test/ai/cart-orders.ai.js: CHỈ sửa comment, không đụng assertion.
+   - Dòng 1: bỏ "(đã review)". Dòng 2 → "Sinh bởi Claude Code (claude-opus-5-5) ở G01-1-cc; session blind một phần (lộ 2 subject commit F01, xem G01-cc-REPORT.md)."
+   - "// AI assertions đã review đặt ở đây." và khối "CHƯA review" → "Spec review 2026-10-23 (Tấn Hiệp + phiên thảo luận): giữ 5/5 test, không sửa assertion; oracle một phần lấy từ code (dạng [], trường error) đã ghi ở từng test; 550:11 không viết (defect-fixing)."
+   Commit: test(S3-G01): mark AI assertions as reviewed and fix provenance header
+2. npm run test:ai (phải pass) → npm run mutate:cart-orders:ai → lưu console.log, mutation.html, mutation.json vào runs/Tan_Hiep/G01-2-cc/.
+3. G01-cc-REPORT.md, thêm mục G01-2-cc: số Killed/Timeout/Survived/NoCoverage/RuntimeError/score; mutant Survived/NoCoverage ở E01-1-cc → Killed ở G01-2-cc kèm killedBy; bảng 6 mutant mục tiêu: trạng thái ở F01-2-cc vs G01-2-cc, killedBy mỗi bên.
+4. Experiment_Log_Tan_Hiep.md:
+   - AI Runs: 1 dòng artifact G01-01 (raw 5 test, assertion không sửa; spec review như bước 1; kết quả code gốc; kết quả mutant; evidence).
+   - Comparison: điền dòng AI-assisted (G01-2-cc). Ghi chú: AI = baseline 36 + AI 5; Manual có 8 test, 3 test ngoài 6 mutant mục tiêu, nên so sánh công bằng là trên 6 mutant mục tiêu (xem G01-cc-REPORT.md).
+   - Thêm dòng G01-1-cc, G01-2-cc vào bảng Runs.
+5. git restore backend/database.sqlite. Commit seminar: docs(S3-G01): add G01-2-cc mutation run and comparison
+```
+
+Chạy xong, bạn push và dán báo cáo. Sau đó mình sẽ viết artifact **G01-01** cho AI Record, verdict dự kiến là VALID kèm ghi chú blind một phần, rồi chuyển sang H01.
+````
+
+## #63 — 2026-10-23 02:08 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Báo cáo cho phiên thảo luận
+
+- Nhiệm vụ: S3-G01 run G01-2-cc — Done
+- Kết quả: test:ai Pass, 41/41 (36 baseline + 5 AI). Commit f4696c6 chỉ sửa comment; tôi đã kiểm git diff, không có dòng code nào đổi.
+- Kết quả: G01-2-cc Pass, 150 mutants. Killed 97, Timeout 23, Survived 21, NoCoverage 2, RuntimeError 7; score 83.92%.
+- So sánh: E01-1-cc 74.65% → F01-2-cc 90.91%. Từ E01 sang G01, 13 mutant chuyển từ Survived sang Killed (F01 là 23).
+- Killed chung giữa hai nhánh: 97. Có 15 mutant chỉ nhánh manual kill, không mutant nào chỉ nhánh AI kill.
+- 6 mutant mục tiêu: cả manual và AI đều kill 5/6 (286:7, 292:7, 326:47, 346:45, 532:47), mỗi bên bởi đúng test tương ứng. 550:11 Survived ở cả hai.
+- Evidence: T10_.../experiments/s3/runs/Tan_Hiep/G01-cc-REPORT.md (mục G01-2-cc). Bảng so sánh ở G01-2-cc/compare_runs.md.
+- Commit EShop: f4696c6 trên s3/G01-ai, chưa push.
+- Commit seminar: cd9a1c5 trên main, chưa push. Trước task có thêm 3dc7ae1 (chore(ai-log)) cho log do hook ghi.
+- Experiment Log: thêm dòng AI-S3-G01-01 vào AI Runs, điền dòng AI-assisted trong Comparison kèm ghi chú so sánh trên 6 mutant, thêm G01-1-cc và G01-2-cc vào bả
+- database.sqlite sạch, đã git restore như yêu cầu.
+- Bất thường mới: 4 mutant Killed ở E01 và F01 nhưng Timeout ở G01-2-cc: 347:5, 510:63, 519:22, 520:7 (G01-2-cc/compare_runs.md). Giả thuyết là  chưa kiểm chứng và chưa chạy lại.
+- Cần quyết định: Không
+```
+
+### Output
+
+```text
+Mình đã kiểm các số trong báo cáo, đều khớp nhau:
+- Tổng mutant: 97 + 23 + 21 + 2 + 7 = 150 ✓
+- Score: (97 + 23) / 143 = **83.92%** ✓
+- Survived: 34 − 13 = 21 ✓
+- Phân bổ kill: manual 112 = 97 chung + 15 chỉ manual; AI 97 = toàn bộ nằm trong phần chung ✓
+
+**Kết luận chính của S3 (Cart & Orders), dùng được cho slide:**
+- **Trên 6 mutant mục tiêu**, hai bên ngang nhau: cùng kill 5/6, và cùng đánh giá 550:11 là defect-fixing.
+- **Trên toàn bộ** 150 mutant, manual kill thêm 15 mutant mà AI không kill. Toàn bộ khác biệt này đến từ 3 test manual ngoài phạm vi mục tiêu (checkout, hủy đơn, admin transition). Nói cách khác, AI làm đúng phần được giao nhưng không tự mở rộng.
+- Score lần lượt: 74.65% (baseline) → 83.92% (AI) → 90.91% (manual). Khi trình bày, nhớ kèm câu: "khác biệt score là do phạm vi test, không phải do chất lượng assertion".
+
+**Về 4 mutant chuyển từ Killed sang Timeout:**
+- Score gần như không đổi, vì Timeout vẫn được tính vào Detected.
+- Đây cùng loại với hiện tượng "Timeout phụ thuộc môi trường" đã có trong Limits (E01). Số Timeout dao động 19 → 18 → 23 giữa các run.
+- Giả thuyết hợp lý nhất: các mutant này làm handler không trả response, nên test bị treo. Kết quả là Killed hay Timeout tùy vào test nào chạy trước, và tùy tải máy (Stryker chạy 15 process song song).
+- **Không cần xử lý ngay.** Khi bạn tự chạy lại các run, nếu 4 mutant này đổi trạng thái thì giả thuyết được xác nhận. Trong lúc chờ, chỉ cần ghi nó trong Limits là "chưa kiểm chứng".
+
+**Việc của bạn bây giờ:**
+1. **Push** cả hai repo: EShop `f4696c6`, seminar `cd9a1c5`.
+2. Trên sheet: chuyển **S3-G01 → Review**. Evidence: `runs/Tan_Hiep/G01-1-cc/`, `G01-2-cc/` và `G01-cc-REPORT.md`.
+
+Push xong, mình sẽ:
+- Viết artifact **G01-01** vào `AI_Record_Tan_Hiep.md`, verdict VALID, ghi rõ blind một phần và near-miss ở preflight.
+- Thêm ghi chú về 4 mutant Timeout vào Limits.
+- Xem nội dung H01 và I01 trong `Task_Output_Map.md` để soạn bước tiếp theo.
+
+Bây giờ đã 2 giờ sáng. Nếu bạn muốn nghỉ, mọi thứ đã nằm trong repo, mai làm tiếp vẫn liền mạch.
+```
+
+## #64 — 2026-10-23 02:08 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Push xong hết rồi mà
 ```
 
