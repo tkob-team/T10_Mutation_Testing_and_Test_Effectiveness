@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-22 21:10 (Asia/Saigon).
+Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 01:34 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 8 lượt prompt; theo model: claude-opus-5-5 8 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 9 lượt prompt; theo model: claude-opus-5-5 9 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-22 19:50 — model: claude-opus-5-5 — session 4a560803
 
@@ -390,4 +390,64 @@ Viết REPORT và commit:
 ### Hành động
 
 - Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Tan_Hiep\F01-cc-REPORT.md
+
+## #9 — 2026-10-23 01:31 — model: claude-opus-5-5 — session 4a560803
+
+### Prompt
+
+```text
+<pasted_content id="3d1a">
+Task S3-F01 — run F01-2-cc (skill t10-run-report).
+1. EShop: checkout s3/F01-manual, git pull. Không sửa file test/config.
+2. backend: npm run test:manual → phải pass hết; fail thì dừng, báo cáo.
+3. npm run mutate:cart-orders:manual → lưu console.log, mutation.html, mutation.json vào seminar experiments/s3/runs/Tan_Hiep/F01-2-cc/.
+4. REPORT (experiments/s3/runs/Tan_Hiep/F01-cc-REPORT.md, thêm mục F01-2-cc):
+   - config manual chạy những test file nào;
+   - số Killed/Timeout/Survived/NoCoverage/score so với E01-1-cc và F01-1;
+   - danh sách mutant Survived/NoCoverage ở E01-1-cc mà Killed ở F01-2-cc, kèm killedBy (từ mutation.json);
+   - trạng thái của 6 mutant 286:7(false), 292:7(true), 326:47, 346:45, 532:47, 550:11(false).
+5. Experiment_Log_Tan_Hiep.md: chỉ điền 2 cột Original-Code Result / Mutant Result của bảng Survivors theo kết quả thật (Pass/Fail; Killed by <test> / Survived, run F01-2-cc). Thêm dòng run F01-2-cc vào bảng run. Thêm vào cuối Limits & Failure Modes:
+   - **Failure mode — assertion học theo bug (F01-1, human):** test Survivor 4 (`POST /api/apply-coupon`) tính expected bằng đúng công thức chép từ `server.js:399–400`, nên pass trên code gốc kể cả khi code sai spec (FR-09); `/api/apply-coupon` cũng nằm ngoài vùng mutate (`280-349`, `510-568`) nên không nhắm mutant nào. Đã xóa khỏi suite manual trước F01-2. Bài học: expected lấy từ SRS/spec, không lấy từ code đang test.
+6. git restore backend/database.sqlite. Commit seminar: docs(S3-F01): add F01-2-cc run evidence and results
+</pasted_content id="3d1a">
+```
+
+### Output
+
+```text
+44/44 pass (36 baseline + 8 manual). Chạy mutation:
+
+Run xong, EShop sạch. Xem F01-1 và bảng Survivors trong Experiment Log:
+
+Bỏ qua phần HTML in thừa. Viết script so sánh mutant giữa E01-1-cc, F01-1 và F01-2-cc, nhận diện mutant bằng line:col + mutator + replacement:
+
+Lỗi trong script: Total ra 145 thay vì 150, vì key chỉ có điểm đầu nên các mutant trùng điểm bắt đầu bị gộp. Thêm vị trí kết thúc vào key:
+
+Số liệu giờ khớp console của cả 3 run. Kiểm số mutant chuyển trạng thái, và xem test manual nào kill/bao phủ 550:11:
+
+Đủ dữ liệu: 23 mutant chuyển từ Survived sang Killed (34 → 11); NoCoverage vẫn 2. Điền Experiment Log:
+
+Nối mục F01-2-cc vào REPORT:
+
+Sửa một câu sai trong Presentation Notes: 23 mutant được kill bởi 8 test manual, không phải "6 test nhắm 5 survivor". Sau đó commit:
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: S3-F01 run F01-2-cc — Done
+- Kết quả: `npm run test:manual` Pass, 44/44. Config manual chạy 2 file: `cart-orders.test.js` (36 test baseline) và `manual/cart-orders.manual.js` (8 test manual).
+- Kết quả: F01-2-cc Pass, 150 mutants. Killed 112, Timeout 18, Survived 11, NoCoverage 2, RuntimeError 7; score 90.91%.
+- So sánh score: E01-1-cc 74.65% (87/19/34/2) → F01-1 84.40% (100/19/20/2) → F01-2-cc 90.91%.
+- Từ E01-1-cc sang F01-2-cc: 23 mutant chuyển từ Survived sang Killed; 2 NoCoverage giữ nguyên.
+- 6 mutant đã chọn: 286:7, 292:7, 326:47, 346:45, 532:47 đều Killed, mỗi mutant bởi đúng test "Kill Mutant …" của nó; 550:11 vẫn Survived, đúng như dự kiến vì mutant này sửa đúng lỗi gốc.
+- Evidence: `T10_.../experiments/s3/runs/Tan_Hiep/F01-cc-REPORT.md` (mục F01-2-cc, có danh sách killedBy). Bảng so sánh ở `F01-2-cc/compare_runs.md`.
+- Commit seminar: `cdb07ab` trên `main`, chưa push. Trước task có thêm `56aa428` (`chore(ai-log)`) cho log do hook ghi.
+- EShop: không sửa file nào; `database.sqlite` sạch, đã `git restore` như yêu cầu.
+- Bất thường mới: bản đầu của script so sánh gộp mất 5 mutant trùng điểm bắt đầu (`F01-2-cc/compare_runs.py:22`). Đã sửa key thêm vị trí kết thúc; số sau sửa khớp console cả 3 run.
+- Bất thường mới: Experiment Log chưa có bảng run riêng cho F01, nên tôi thêm dòng F01-2-cc vào bảng `D01 — Runs` (`experiments/s3/Experiment_Log_Tan_Hiep.md:103`). Nếu muốn bảng riêng thì cần chuyển dòng này.
+- Lưu ý integrity: session này đã thấy test và kết quả của nhánh manual. G01 phải chạy trong session Claude Code mới.
+- Cần quyết định: Không
+```
+
+### Hành động
+
+- Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Tan_Hiep\F01-2-cc\compare_runs.py
 
