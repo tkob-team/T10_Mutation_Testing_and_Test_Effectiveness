@@ -260,5 +260,23 @@ Cập nhật AI Record. Được commit, không push.
 
 ```text
 AI_Record và Experiment_Log không có ở `Repo/`; trong seminar repo hai file này đã ở trạng thái `M` → có vẻ đã được chép sẵn. Kiểm tra:
+
+Docs mới đã nằm sẵn trong repo (mtime 20:45, không còn ở `Repo/`), đủ 5 artifact mới. Chỉ còn thay script:
+
+Hai log đạt. Tôi kiểm thêm hai docs, thấy mỗi file 1 chỗ:
+
+Cả hai vô hại: `[user]` chỉ là từ khóa grep được nhắc trong AI Record, còn email là `admin@eshop.com` (tài khoản seed). Commit:
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: Cập nhật AI Record — Done
+- Kết quả: trích lại `claude-code_prompt_log.md` bằng `--hook`, exit 0, có 6 lượt prompt (opus-5-5); lượt #6 là task này.
+- Kiểm tra: cả 2 log đều 0 cho `[user]` (không phân biệt hoa thường), MSSV và email.
+- Evidence: `T10_.../ai-audit/evidence/s3/Tan_Hiep/`. Không có REPORT riêng vì task không có Task ID.
+- Commit seminar: `bbfd308` trên `main` (ahead 1, chưa push), gồm `ai-audit/AI_Record_Tan_Hiep.md`, `experiments/s3/Experiment_Log_Tan_Hiep.md`, `claude-code_prompt_log.md`.
+- Ngoài repo: `tools/extract_ai_log.py` đã thay; bản mới có sẵn `re.I` ở dòng 33, tôi không phải sửa. `extract_ai_log.py` ở `Repo/` đã chuyển đi.
+- Bất thường mới: AI_Record và Experiment_Log không có ở `Repo/` mà đã nằm sẵn trong seminar repo, sửa lúc 20:45, đủ 5 artifact C01-02, C01-03, D01-03, D01-04, WF-02. Nên không có gì để chép hay xóa ở `Repo/`; tôi commit đúng bản đang có trong repo.
+- Bất thường mới: grep thêm 2 docs ra 1 kết quả mỗi file, cả hai vô hại. Ở `ai-audit/AI_Record_Tan_Hiep.md:472`, `[user]` chỉ là từ khóa grep được nhắc trong câu. Ở `experiments/s3/Experiment_Log_Tan_Hiep.md:89` là `admin@eshop.com`, tài khoản seed.
+- Sau lượt này hook Stop sẽ ghi lại `claude-code_prompt_log.md`, nên working tree seminar sẽ bẩn ở file đó. Theo CLAUDE.md thì không tính là bẩn.
+- Cần quyết định: Không
 ```
 
