@@ -1,8 +1,8 @@
 # AI Prompt Log — claude.ai (Seminar Testing Software)
 
-Nguồn: 9ffbcb5b-f74a-59c0-99f6-d4383af57bf4.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 02:36 (Asia/Saigon).
+Nguồn: 9ffbcb5b-f74a-59c0-99f6-d4383af57bf4.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 02:43 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 71 lượt prompt; theo model: claude-sonnet-4-6 2 lượt; claude-opus-5-5 69 lượt; unknown 1 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 73 lượt prompt; theo model: claude-sonnet-4-6 2 lượt; claude-opus-5-5 71 lượt; unknown 1 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-16 18:54 — model: claude-sonnet-4-6 — session 2586dd77
 
@@ -3560,13 +3560,118 @@ Sau đó giúp mình viết prompt để sử dụng ở session mới làm vi�
 
 ### Output
 
-```text
+````text
 Confirmed D04 = Thái Hòa. Now writing the handoff to the Project.
+
+I've updated both skills, written the handoff into the Project and exported the final log of this session. Below are the prompt for Claude Code and the prompt for the new session.
+
+**1. Skills:** the review card above has the updates for `t10-mutation-testing` and `t10-run-report`. They cover the traps from S3, the blind-session preflight, how to handle oracles when the spec is silent, the real Cart & Orders routes, and how to reuse the S3 results in S4–S8. Press save on the card.
+
+**2. Handoff:** it's in the Project as `claude/Handoff_T10_Tan_Hiep.md`. It has the workflow you set, the S3 results, the AI Record, every remaining task from S4 to S8 with its output path and what it waits on, the instructor's requirements, the open questions and the traps.
+
+**3. Log of this session:** the file `claude-ai_2026-10-16_9ffbcb5b.md` (71 turns) replaces the old one in `ai-audit/evidence/s3/Tan_Hiep/` in the seminar repo. Commit it with `chore(ai-log): final claude.ai log for S3 session` and push.
+
+**4. Prompt for Claude Code** (updates CLAUDE.md and moves the hook to S4):
+
+```text
+Task WF — cập nhật Repo/CLAUDE.md và hook cho S4. Không chạy test.
+1. Seminar repo: nếu ai-audit/evidence/s3/Tan_Hiep/ có thay đổi → commit chore(ai-log): update prompt logs.
+2. Repo/CLAUDE.md:
+   - "Quyết định đã chốt", thêm:
+     - 2026-10-23 (S3-F01): oracle lấy từ code phải ghi rõ nguồn trong comment test và Experiment Log; không chép công thức/logic từ code làm expected.
+     - 2026-10-23 (S3-G01): AI nhận đúng 6 mutant mục tiêu như manual; raw run → spec review ở phiên thảo luận → Stryker. G01 ghi "blind một phần".
+     - 2026-10-23 (S3-H01): so sánh manual/AI trên mutant mục tiêu và bằng Survived tuyệt đối, không chỉ score.
+   - "Quy tắc", thêm: "Session blind: Tấn Hiệp checkout nhánh trước; preflight chỉ git status + git pull --ff-only, không git log/git show." và "S4–S8: không soạn nội dung guide/report/slides/activity thay Tấn Hiệp khi prompt chưa nói rõ mức AI được phép."
+   - "Đọc gì trước", thêm: "S4+: output và template theo docs/Task_Output_Map.md; deliverable S4 viết tiếng Anh."
+   - Thêm mục "Trạng thái" 3 dòng: S3 A01–H01 Review; I01 chờ S3-H02 (Hòa); E01 chạy lại sau S3-D04 (Hòa); member re-run các run -cc chưa làm.
+   - Mục "AI log": đổi đường dẫn cố định "s3" thành "<stage>".
+3. Repo/.claude/settings.json: đổi --out-dir của hook từ .../evidence/s3/Tan_Hiep sang .../evidence/s4/Tan_Hiep và thêm --since <giờ hiện tại UTC, dạng 2026-10-23T05:00:00Z> để log S4 không chép lại lịch sử S3. In lại file sau khi sửa.
+4. CLAUDE.md và settings.json nằm ngoài repo, không commit. Báo cáo theo mẫu.
 ```
+
+Step 3 needs `--since` because the log script collects every Claude Code session in `Repo`. Without it, the new S4 log would repeat the whole S3 history.
+
+**5. Prompt to open a new claude.ai session** (in this Project):
+
+```text
+Mình là Tấn Hiệp, tiếp tục seminar T10 (Cart & Orders) từ S4. Đọc claude/Handoff_T10_Tan_Hiep.md trong Project trước, clone 2 repo tkob-team (seminar + eshop-sut) để xác nhận trạng thái thật. Giữ nguyên cách làm việc ở mục 2 của handoff. Bắt đầu bằng các câu hỏi ở mục 6 (từng câu, kèm phương án đề xuất), rồi lập kế hoạch cho S4-A01 và S4-B01.
+```
+
+The most important open question for the new session is how much AI may help write the S4–S5 deliverables (guide, report, slides). That decision sets how all of S4 is done and recorded in the AI Record, so answer it first. Get some rest.
+````
 
 ### Hành động
 
 - Đề xuất skill: t10-mutation-testing, t10-run-report
 - Đề xuất skill: t10-mutation-testing, t10-run-report
 - Write: /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/deliver/Handoff_T10_Tan_Hiep.md
+- Gửi file: /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/deliver/claude-ai_2026-10-16_9ffbcb5b.md
+
+## #72 — 2026-10-23 02:40 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Báo cáo cho phiên thảo luận
+
+- Nhiệm vụ: WF, chuẩn bị CLAUDE.md và hook cho S4 — Done. Không chạy test.
+- Bước 1: commit seminar 9f3ca79 (chore(ai-l2 log s3) trên main, ahead 1, chưa push. Kiểm
+
+- Nhiệm vụ: WF, chuẩn bị CLAUDE.md và hook cho S4 — Done. Không chạy test.
+- Bước 1: commit seminar 9f3ca79 (chore(ai-log): update prompt logs, gồm 2 log s3) trên main, ahead 1, chưa push. Kiểm PII 2 log: [user] 0, MSSV 0; email chỉ có admin@eshop.com (tài khoản seed).
+- Repo/CLAUDE.md đã sửa:
+  - Quyết định đã chốt: thêm 3 dòng S3-F01, S3-G01, S3-H01.
+  - Quy tắc: thêm 2 dòng (session blind; S4–ấn Hiệp).
+  - Đọc gì trước: thêm mục 4 về S4+.
+  - Thêm mục mới "Trạng thái" (3 dòng).
+  - AI log: đường dẫn dùng <stage>; dòng đổi stage ghi hiện tại là s4 và nhắc đặt --since.
+- Repo/.claude/settings.json: --out-dir đổi sang .../evidence/s4/Tan_Hiep, thêm --since 2026-10-22T19:38:28Z (giờ UTC
+  thật lúc sửa; trong prompt 2026-10-23T05:0File đã in lại ở trên.
+- Kiểm --since ở thư mục tạm: với giờ trên thì không ghi file nào, đúng ý định. Lùi về 19:30Z thì log có 1 lượt, chính là task này.
+- Hai file trên nằm ngoài repo nên không commit. EShop không đổi.
+- Bất thường mới: prompt của task này lúc 20 --since, nên sẽ không vào log S4. Log S3cũng không được ghi thêm vì hook đã chuyển sang s4. Kết quả là task WF này không nằm trong log nào.
+- Bất thường mới: quy tắc nhánh EShop vẫn ghd:29); prompt không yêu cầu đổi nên tôi đểnguyên.
+- Cần quyết định: W1 – lượt WF này ghi vào lnh 2026-10-22T19:38:15Z để WF vào log S4; (b) trích lại log S3 một lần để WF vào log S3; (c) chấp nhận mất lượt này.
+===
+Xem oke để kết thúc phiên chưa nhé
+```
+
+### Output
+
+````text
+The report looks fine. You can end the session after two short steps.
+
+**Answer to W1: choose (b).** The WF task is the last step of S3, so it belongs in the S3 log. Re-extract the S3 log once by hand and leave the hook alone. Paste this into Claude Code:
+
+```text
+W1 = (b). Chạy tools/extract_ai_log.py một lần, không --since, trên toàn bộ transcript của Repo, ghi đè T10_.../ai-audit/evidence/s3/Tan_Hiep/claude-code_prompt_log.md (như hook cũ). Kiểm PII ([user], MSSV, email cá nhân = 0). Commit: chore(ai-log): include WF turn in S3 log. Không sửa settings.json.
+```
+
+The EShop branch rule `s3/<task-id>`: leave it for now. S4 mostly writes docs in the seminar repo. If an S4 task does need a change in EShop, decide the branch name then.
+
+**Before you end the session:**
+1. In the seminar repo, place the file `claude-ai_2026-10-16_9ffbcb5b.md` (71 turns) as I described, commit it, then **push** everything: commit `9f3ca79`, the W1 commit and the claude.ai log commit.
+2. Check that you pressed save on the skill card for both skills.
+
+I added one item to the handoff in the Project: the AI Record still owes an artifact **AI-S3-WF-03** for the work at the end of this session (skill updates, the handoff, the WF prompt). The new session will record it first. In the new session, just paste the start prompt from my previous message.
+````
+
+## #73 — 2026-10-23 02:43 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Báo cáo cho phiên thảo luận
+
+- Nhiệm vụ: W1 = (b), đưa lượt WF vào log S3 — Done
+- Kết quả: đã trích lại claude-code_prompt_log.md (s3) một lần, không dùng --since, gộp 6 transcript của Repo; exit 0. Log có 16 lượt prompt (14 của session 4a560803, 2 của 85a13ef2); lượt WF là #15.
+- Kiểm PII: [user] 0, MSSV 0; email chỉ có admin@eshop.com (tài khoản seed).
+- Commit seminar: a840f13 trên main (ahead 2, chưa push).
+- Repo/.claude/settings.json không đổi: vẫn ghi vào s4, --since 2026-10-22T19:38:28Z.
+- Bất thường mới: lượt #16 trong log S3 chính là prompt W1 này. Lúc trích, lượt này chưa có output nên log ghi model unknown và trống phần output (ai-audit/evidence/s3/Tan_Hiep/claude-code_prompt_log.md).
+- Bất thường mới: prompt W1 gửi sau mốc --since, nên khi lượt này kết thúc, hook sẽ ghi nó vào log S4 thành #1, đủ cả output. Vậy lượt W1 sẽ có ở cả hai log: bản thiếu output ở S3, bản đầy đủ ở S4.
+- Cần quyết định: W2 – xử lý lượt W1 bị trùng? – (a) giữ cả hai, coi bản S4 là bản đầy đủ; (b) trích lại log S3 với giới hạn thời gian dừng trước W1 (script hiện chưa có tùy chọn này, phải sửa script).
+===
+Vậy Eshop sẽ PR vào main hay sao nhỉ. Hiện tôi đã push hết lên ròi nhé. Check giúp tôi nhé. Nếu xong bạn giúp tôi viết log rồi tôi đưa vào repo luôn nhé
+```
 
