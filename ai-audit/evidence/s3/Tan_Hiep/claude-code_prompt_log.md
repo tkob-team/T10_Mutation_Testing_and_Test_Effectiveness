@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 01:34 (Asia/Saigon).
+Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 01:40 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 9 lượt prompt; theo model: claude-opus-5-5 9 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 11 lượt prompt; theo model: claude-opus-5-5 11 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-22 19:50 — model: claude-opus-5-5 — session 4a560803
 
@@ -450,4 +450,57 @@ Sửa một câu sai trong Presentation Notes: 23 mutant được kill bởi 8 t
 ### Hành động
 
 - Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Tan_Hiep\F01-2-cc\compare_runs.py
+
+## #10 — 2026-10-23 01:35 — model: claude-opus-5-5 — session 4a560803
+
+### Prompt
+
+```text
+<pasted_content id="3d1a">
+S3-F01 follow-up (docs only):
+1. Experiment_Log_Tan_Hiep.md, bảng Comparison: điền dòng Baseline = E01-1-cc, Manual = F01-2-cc (Killed, Timeout, Survived, NoCoverage, score + định nghĩa "Detected/Valid, Valid = tổng − RuntimeError", evidence). Ghi chú dưới bảng: Manual = baseline 36 + manual 8 test. AI-assisted để Not run.
+2. Nếu bảng Runs chưa có F01-1 (run của Tấn Hiệp) thì thêm, lấy số từ runs/Tan_Hiep/F01-1/.
+3. Commit: docs(S3-F01): fill comparison table for baseline and manual runs
+</pasted_content id="3d1a">
+```
+
+### Output
+
+```text
+Kiểm lại một chi tiết tôi vừa ghi: F01-1 có test coupon không.
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: S3-F01 follow-up (chỉ sửa docs) — Done
+- Bảng Comparison, dòng Baseline (E01-1-cc): Killed 87, Timeout 19, Survived 34, NoCoverage 2; score 74.65% (Detected 106 / Valid 142).
+- Bảng Comparison, dòng Manual (F01-2-cc): Killed 112, Timeout 18, Survived 11, NoCoverage 2; score 90.91% (Detected 130 / Valid 143).
+- Hai dòng ghi định nghĩa "Detected / Valid, Valid = tổng − RuntimeError" kèm evidence. Dòng AI-assisted để Not run.
+- Ghi chú dưới bảng: Manual = baseline 36 + manual 8 test; cùng production code, cùng mutate scope và 150 mutants.
+- Bảng Runs trước đó chưa có F01-1 nên tôi thêm dòng, executor Tấn Hiệp: 41/41 pass; 150 mutants, Killed 100, Timeout 19, Survived 20, NoCoverage 2, RuntimeError 9; score 84.40%. Số đếm từ `F01-1/mutation.json`, khớp console.
+- Evidence: `experiments/s3/Experiment_Log_Tan_Hiep.md` (Comparison, Runs). Task chỉ sửa docs nên không có run mới hay REPORT mới.
+- Commit seminar: `990aff6` trên `main` (ahead 4, chưa push). Trước task có thêm `a6e00df` (`chore(ai-log)`) cho log do hook ghi.
+- Bất thường mới: F01-1 chạy lúc 21:31 ngày 22/10, trước commit `0236267` (21:35). Vậy run chạy trên working tree chưa commit. Số test khớp `0236267` (36 baseline + 5 manual, có test coupon Survivor 4 đã kiểm tra), nhưng không chứng minh được nội dung giống hệt; dòng F01-1 ghi rõ điều này (`experiments/s3/Experiment_Log_Tan_Hiep.md:104`).
+- Cần quyết định: Không
+```
+
+## #11 — 2026-10-23 01:40 — model: claude-opus-5-5 — session 85a13ef2
+
+### Prompt
+
+```text
+<pasted_content id="2084">
+Task S3-G01 — AI assertions, run G01-1-cc (skill t10-run-report). Session mới, blind với nhánh manual.
+
+KHÔNG đọc/checkout/git show/git log: nhánh EShop s3/F01-manual; seminar experiments/s3/Experiment_Log_Tan_Hiep.md, runs/Tan_Hiep/F01-*, F01-cc-REPORT.md, ai-audit/ (cả evidence). Lỡ đọc thì dừng, báo.
+
+Được dùng: EShop README.md (SRS), api_specification.md, backend/server.js, backend/test/cart-orders.test.js, test/helpers/, seminar runs/Tan_Hiep/E01-1-cc/ (mutation.json, mutation.html).
+
+1. EShop: checkout s3/G01-ai, git pull.
+2. Mục tiêu: 6 mutant Survived ở E01-1-cc (server.js):
+   286:7 ConditionalExpression → false | 292:7 ConditionalExpression → true | 326:47 ObjectLiteral → {} | 346:45 ObjectLiteral → {} | 532:47 ObjectLiteral → {} | 550:11 ConditionalExpression → false
+   Với mỗi mutant: đọc diff và coveredBy trong mutation.json, giải thích vì sao baseline không kill, rồi viết test vào backend/test/ai/cart-orders.ai.js. Expected phải lấy từ SRS/spec; nếu phải lấy từ code thì ghi rõ trong comment. Test phải pass trên code gốc. Nếu không viết được test vừa đúng spec vừa pass trên code gốc thì không viết, giải thích lý do. Mỗi test có comment: mutant mục tiêu, FR/§, nguồn oracle.
+3. npm run test:ai một lần → lưu console vào seminar runs/Tan_Hiep/G01-1-cc/test-ai.log. KHÔNG sửa test sau khi chạy, kể cả khi fail. Không chạy Stryker.
+4. REPORT: runs/Tan_Hiep/G01-cc-REPORT.md — model thực tế; bảng 6 mutant (vì sao survive, test/lý do không viết, oracle, pass/fail trên code gốc).
+5. git restore backend/database.sqlite. Commit EShop: test(S3-G01): add raw AI assertions for 6 Cart & Orders survivors. Commit seminar: docs(S3-G01): add G01-1-cc raw run evidence.
+</pasted_content id="2084">
+```
 
