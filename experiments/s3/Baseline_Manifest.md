@@ -20,6 +20,10 @@
 | Shared mutation policy | `coverageAnalysis: perTest`, concurrency 2, `timeoutMS: 5000`, `timeoutFactor: 1.5`, `tempDirName: stryker-tmp`; HTML/JSON/console kept separately per run |
 | Manual / AI comparison | `s3/F02-coupons` / `a6abc7f` and `s3/G02-coupons` / `f12a6cc` fork from this commit; production, scope and timeout policy unchanged. F02 is an AI-assisted spec-analysis draft for Hòa to review. G02 uses Codex in the same context by explicit user choice after failed Claude login; independent/blind comparison is not claimed |
 
+## Supplemental Coupons Extension
+
+Theo yêu cầu người dùng ngày 2026-10-23: thêm bốn nhóm vào manual, tám nhóm vào Agent (bao gồm bốn nhóm chung), giữ các tests cũ. [Evidence/snapshots](runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/README.md) dùng archive chính xác của frozen commit với variants/helper/config overlays có hashes. Đây là rerun của variants trên frozen input, không thay baseline. Fresh original-code profiles: 88 baseline, 35 manual và 40 Agent pass. Comparisons cũ ở bảng trên vẫn là records lịch sử tại commits đã ghi.
+
 ## Reproduction
 
 Checkout the frozen commit in the SUT repository, then run from `backend/`:

@@ -1,0 +1,26 @@
+[
+  {
+    "path": "backend/server.js",
+    "sha256": "E2263811A1690A63A7DBB4446C3FD33FB87F50D073D9F8CDFAB7083A52F5E8ED"
+  },
+  {
+    "path": "backend/database.js",
+    "sha256": "50012F35C2CF0776DD837482D76ADF701F0EE40CDCB9D80143278FCCDE034717"
+  },
+  {
+    "path": "backend/database.sqlite",
+    "sha256": "C63F00544180BA1FBB1427A9B9DD3F1784842698809972F33CE90482E7420BA6"
+  },
+  {
+    "path": "backend/package.json",
+    "sha256": "490D9EFE41331670D7F5FAA191226B48BB5FC0A9A3BB2E52DC19718131CD6238"
+  },
+  {
+    "path": "backend/package-lock.json",
+    "sha256": "BBE5845D320B318BB2FD9D4F4C2826D6CA5C69FA417766E45886A41DD5F9DA09"
+  },
+  {
+    "path": "backend/stryker.coupons.config.json",
+    "sha256": "D2CB920434E1C92EFAEE88B0713A6A23FE1147AC6354809E45B4DE8098BDED6A"
+  }
+]

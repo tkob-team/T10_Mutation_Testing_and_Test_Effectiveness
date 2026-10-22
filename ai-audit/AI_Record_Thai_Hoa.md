@@ -77,6 +77,21 @@ Personal learning/run walkthrough is outside both team repos by explicit user re
 | Limitations | Shared context; only two business targets at one location; original defects remain; Auth manual/AI input absent; performance/model superiority conclusions unsupported |
 | Human verdict / fixes | Pending Hòa review. No member approval, reflection, labour time or signature invented |
 
+### Artifact TH-S3-SUMMARY-01
+
+- **Stage / use:** S3 handoff explanation; OpenAI Codex, exact serving revision unavailable; 2026-10-23.
+- **User request:** Explain S3 simply in `docs/Stage3-Sumary.md`, including where Hòa can review the manual tests; follow-up expands the summary into separate sections for Hiệp, Hòa and Hoàng and asks to identify unclear/pending comments for the user to remove.
+- **Output / inputs:** [Stage 3 summary](../docs/Stage3-Sumary.md), derived from the frozen manifest, three member logs, cross reproduction, survivor analysis, original-defect notes, recorded comparisons and SUT F02 commit `a6abc7f`. Read-only inspection covers backend tests/helpers/tutorial and Cart manual/AI remote-tracking refs. No new experiment results generated; existing user edits in SUT preserved.
+- **Verification / review:** Read original F02 code and configs using `git show`; checked summary numbers against retained reports and local links. Human review Pending; no new member verdict assigned.
+
+### Artifact TH-S3-COUPONS-EXTENSION-01
+
+- **Stage / tasks:** S3-F02/G02/H02; 2026-10-23 Asia/Saigon. OpenAI Codex AI Agent; exact serving revision unavailable.
+- **User authorization:** Sau khi review candidate bank và shortlist, Hòa yêu cầu thêm bốn nhóm vào manual, và đủ tám nhóm vào Agent, gồm cả bốn nhóm đầu. Đây là phê duyệt phạm vi triển khai; không tự gán verdict audit hoặc xác nhận member self-run.
+- **Inputs / output:** SRS FR-09/12/17, API 5/6.4, baseline `806ba19`, existing suites và [bank snapshot](../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/candidate-bank.input.md). Bổ sung manual MF-04–07 và Agent AG-01–08; dùng chung scenario helper cho bốn nhóm giao nhau. [Provenance và raw source snapshots](../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/PROVENANCE.md).
+- **Agent verification:** Fresh baseline 88/88, manual profile 35/35, Agent profile 40/40 trên bản sao frozen input; commands/logs, mutation reports, signature comparisons và protected hashes trong [run evidence](../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/README.md). Không sửa production source/DB, baseline config hoặc raw evidence cũ.
+- **Limitations / human verdict:** Cả hai phần bổ sung đều AI-assisted và cùng context; Agent collection bao gồm bốn nhóm manual theo yêu cầu, không có điều kiện blind/independent. Human audit verdict, trải nghiệm/reflection và member self-run Pending; không thay đổi Accuracy Summary bằng verdict tự gán.
+
 ## 3. Accuracy Summary & Audit Conclusion
 
 | Metric | Count | Percentage |

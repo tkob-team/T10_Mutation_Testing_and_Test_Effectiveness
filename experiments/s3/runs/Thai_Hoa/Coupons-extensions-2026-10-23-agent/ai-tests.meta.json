@@ -1,0 +1,20 @@
+{
+  "name": "ai-tests",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:\\Workspace\\1. Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\.coupons-work\\coupons-extensions-2026-10-23\\backend\\node_modules\\jest\\bin\\jest.js",
+    "--config",
+    "jest.coupons.ai.config.cjs",
+    "--runInBand",
+    "--json",
+    "--outputFile",
+    "D:\\Workspace\\1. Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\T10_Mutation_Testing_and_Test_Effectiveness\\experiments\\s3\\runs\\Thai_Hoa\\Coupons-extensions-2026-10-23-agent\\ai-tests.json"
+  ],
+  "cwd": "D:\\Workspace\\1. Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\.coupons-work\\coupons-extensions-2026-10-23\\backend",
+  "startedAt": "2026-10-22T21:04:17.022Z",
+  "endedAt": "2026-10-22T21:04:18.615Z",
+  "durationMs": 1593,
+  "code": 0,
+  "signal": null,
+  "nodeVersion": "v24.16.0"
+}

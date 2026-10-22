@@ -1,0 +1,7 @@
+
+Test Suites: 4 passed, 4 total
+Tests:       88 passed, 88 total
+Snapshots:   0 total
+Time:        2.156 s
+Ran all test suites in 2 projects.
+Test results written to: ..\..\..\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Thai_Hoa\Coupons-extensions-2026-10-23-agent\baseline-tests.json

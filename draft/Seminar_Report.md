@@ -6,10 +6,9 @@
 
 **Môn học: Kiểm thử phần mềm**
 
-# KIỂM THỬ ĐỘT BIẾN VÀ HIỆU QUẢ CỦA BỘ KIỂM THỬ
+# Mutation Testing & Test Effectiveness
 
-**Mutation Testing & Test Effectiveness**  
-**Chủ đề T10 · Nhóm 12**
+**Chủ đề T10 - Nhóm 12**
 
 | Thành viên | Mã số sinh viên |
 |---|---|
@@ -30,8 +29,6 @@
 Trong báo cáo này, chúng tôi trình bày cơ sở lý thuyết của kiểm thử đột biến, khảo sát công cụ và xây dựng thiết kế nghiên cứu trường hợp trên EShop backend. Phạm vi bao gồm giỏ hàng và đơn hàng, mã giảm giá, xác thực và người dùng. StrykerJS đảm nhiệm việc sinh đột biến và thực thi kiểm thử; AI Agent hỗ trợ đề xuất assertion. Thiết kế so sánh gồm bộ kiểm thử ban đầu, bộ bổ sung assertion thủ công và bộ bổ sung assertion do AI đề xuất sau khi được con người kiểm tra. Các phương án sử dụng cùng mã nguồn sản phẩm và cấu hình đột biến để đối chiếu kết quả ở mức từng mutant, đồng thời xem xét các trường hợp nghi ngờ tương đương và giới hạn của phép đo.
 
 <!-- Bổ sung kết quả định lượng chính và kết luận thực nghiệm sau khi hoàn thành Chương 6–7. Không nêu hiệu quả vượt trội của bất kỳ phương án nào khi chưa có số liệu. -->
-
-**Từ khóa:** kiểm thử đột biến; hiệu quả kiểm thử; StrykerJS; assertion; AI Agent; EShop.
 
 ## Mục lục
 
@@ -76,7 +73,7 @@ Kiểm thử tự động giúp kiểm tra hành vi phần mềm sau mỗi thay 
 
 Độ bao phủ mã nguồn cho biết các thành phần mã nào được thực thi. Thông tin này hỗ trợ tìm vùng chưa được kiểm tra, nhưng cần kết hợp với đánh giá dữ liệu đầu vào và assertion. Kiểm thử đột biến bổ sung một góc nhìn bằng cách đặt câu hỏi: khi hành vi của chương trình bị thay đổi, bộ kiểm thử có nhận biết được thay đổi đó hay không [1], [7].
 
-### 1.2. Động cơ lựa chọn đề tài
+### 1.2. Động cơ lựa chọn seminar
 
 Trong EShop, sai lệch nhỏ tại điều kiện biên hoặc phép tính có thể ảnh hưởng đến số tiền thanh toán, quyền truy cập hoặc trạng thái đơn hàng. Các trường hợp này phù hợp để phân tích quan hệ giữa yêu cầu nghiệp vụ, dữ liệu kiểm thử và khả năng phát hiện lỗi.
 
@@ -84,7 +81,7 @@ Sự xuất hiện của AI Agent tạo thêm một phương án xây dựng ass
 
 ### 1.3. Mục tiêu
 
-Đề tài hướng đến bốn mục tiêu:
+Seminar hướng đến bốn mục tiêu:
 
 1. Giải thích nguyên lý kiểm thử đột biến, cách đọc kết quả và giới hạn của mutation score.
 2. Thiết lập quy trình áp dụng StrykerJS trên phạm vi EShop được lựa chọn.
@@ -109,14 +106,14 @@ Thiết kế này đánh giá khả năng phát hiện các đột biến đư�
 
 ### 1.6. Bố cục báo cáo
 
-Chương 2 trình bày lý thuyết và các nghiên cứu liên quan. Chương 3 khảo sát, lựa chọn và giải thích vai trò công cụ. Chương 4 xác định thiết kế thực nghiệm; Chương 5 mô tả quy trình triển khai. Chương 6 dành cho kết quả, Chương 7 phân tích ý nghĩa và giới hạn, Chương 8 tổng kết đề tài. Các phụ lục lưu thông tin tái lập, bằng chứng, hồ sơ AI và đóng góp thành viên.
+Chương 2 trình bày lý thuyết và các nghiên cứu liên quan. Chương 3 khảo sát, lựa chọn và giải thích vai trò công cụ. Chương 4 xác định thiết kế thực nghiệm; Chương 5 mô tả quy trình triển khai. Chương 6 dành cho kết quả, Chương 7 phân tích ý nghĩa và giới hạn, Chương 8 tổng kết seminar. Các phụ lục lưu thông tin tái lập, bằng chứng, hồ sơ AI và đóng góp thành viên.
 
 <a id="chuong-2"></a>
 ## 2. Cơ sở lý thuyết và nghiên cứu liên quan
 
 ### 2.1. Độ bao phủ, test oracle và assertion
 
-Một test case gồm trạng thái ban đầu, dữ liệu hoặc thao tác kích hoạt hành vi, và điều kiện đánh giá kết quả. Test oracle cung cấp căn cứ cho điều kiện đánh giá đó. Trong đề tài này, oracle xuất phát từ yêu cầu nghiệp vụ đã được làm rõ; mã nguồn hiện tại là đối tượng đối chiếu, không tự động trở thành định nghĩa hành vi đúng.
+Một test case gồm trạng thái ban đầu, dữ liệu hoặc thao tác kích hoạt hành vi, và điều kiện đánh giá kết quả. Test oracle cung cấp căn cứ cho điều kiện đánh giá đó. Trong seminar này, oracle xuất phát từ yêu cầu nghiệp vụ đã được làm rõ; mã nguồn hiện tại là đối tượng đối chiếu, không tự động trở thành định nghĩa hành vi đúng.
 
 Chẳng hạn, một kiểm thử xác nhận phản hồi có thuộc tính `discount` mới chỉ kiểm tra sự hiện diện của dữ liệu. Để đánh giá phép tính, cần xác định giá trị mong đợi, đơn vị, quy tắc làm tròn và các điều kiện áp dụng. Một assertion đúng cú pháp nhưng sử dụng giá trị mong đợi sai vẫn có thể làm giảm giá trị của bộ kiểm thử.
 
@@ -211,7 +208,7 @@ Chúng tôi phân biệt đầu ra AI nguyên gốc với phiên bản được 
 
 ### 2.8. Nghiên cứu liên quan
 
-**Bảng 2.4. Các nguồn nghiên cứu và liên hệ với đề tài.**
+**Bảng 2.4. Các nguồn nghiên cứu và liên hệ với seminar.**
 
 | Nghiên cứu | Nội dung được sử dụng | Liên hệ với thiết kế của nhóm |
 |---|---|---|
@@ -229,7 +226,7 @@ Các công trình trên cung cấp nền tảng và hướng tiếp cận. Nghi�
 
 Chúng tôi xem xét công cụ theo năm tiêu chí: chi phí và điều kiện sử dụng; yêu cầu kiến thức khi tiếp cận; mức phù hợp với EShop; vai trò hỗ trợ AI; tài liệu và cộng đồng hỗ trợ. Phép so sánh cần phân biệt khả năng được tài liệu công cụ mô tả với khả năng đã được kiểm chứng trên hệ thống cụ thể.
 
-Đối với đề tài này, tính phù hợp với ngôn ngữ backend và khả năng truy vết kết quả là hai điều kiện quan trọng. Các nhận xét về tốc độ, mức dễ học hoặc chi phí sử dụng thực tế cần gắn với môi trường, phiên bản và tài khoản đã dùng. Thời gian làm quen chưa được đo không được trình bày như số liệu thực nghiệm.
+Đối với seminar này, tính phù hợp với ngôn ngữ backend và khả năng truy vết kết quả là hai điều kiện quan trọng. Các nhận xét về tốc độ, mức dễ học hoặc chi phí sử dụng thực tế cần gắn với môi trường, phiên bản và tài khoản đã dùng. Thời gian làm quen chưa được đo không được trình bày như số liệu thực nghiệm.
 
 ### 3.2. Các công cụ truyền thống
 

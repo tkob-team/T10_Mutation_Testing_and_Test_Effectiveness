@@ -21,6 +21,10 @@ F02 uses three assertions scenarios: persisted input, limit−1 accepted, limit 
 - L386 `if(user_id)` → true: behavior depends on whether body identity is supplied. Body/token identity is an original security defect. Do not claim equivalent globally; limit any observational equivalence to the declared valid input subset.
 - RuntimeError mutants and Timeout require original logs. NoCoverage in the broken percent/no-body path is a real limitation of the original-code-passing test set, not evidence that those paths are safe.
 
+## Supplemental Extension — 2026-10-23
+
+Theo request phân chia mới, manual thêm bốn groups (sáu cases), Agent thêm đủ tám groups (12 cases), bao gồm bốn groups chung. [Evidence](runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/README.md): profiles 35/40 pass; cả hai mutation reports vẫn 41 Killed, 21 Timeout, 28 Survived, 25 NoCoverage, 5 RuntimeError. Source và 120 signatures khớp; không status transition so F02/G02 lịch sử. Các tests mới củng cố API configuration/lifecycle và dữ liệu không bị thay đổi ngoài ý muốn; chưa có additional assertion kill trong universe hiện tại. Không gán các ý tưởng SQL semantic trong bank thành mutants mà Stryker đã phát sinh.
+
 ## Comparison Provenance
 
 The user asked Codex to draft F02's spec-derived/manual-analysis condition for Hòa to review. Claude CLI G02 failed authentication (`Not logged in`), with the failed request retained. The user then explicitly selected Codex in the same conversation for G02. Both conditions are AI-assisted and share context; this is a descriptive comparison of additions, **not an independent human-versus-model experiment**. Human review remains Pending. Hiệp's human-authored manual suite retains its original attribution and is not relabelled as Hòa's work.

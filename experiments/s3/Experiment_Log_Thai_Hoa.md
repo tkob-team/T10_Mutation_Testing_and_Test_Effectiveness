@@ -141,6 +141,18 @@ Failure modes backed by evidence:
 
 Definition reference: [Stryker states/metrics](https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/). Timing/logs are actual; no student labour time or productivity comparison is inferred.
 
+## F02/G02 Extension — 2026-10-23
+
+Theo yêu cầu trực tiếp của Hòa, Codex bổ sung **4 nhóm / 6 cases** vào manual (MF-04–07) và **đủ 8 nhóm / 12 cases** vào Agent/AI (AG-01–08), bao gồm cả bốn nhóm chung. Giữ nguyên MF-01–03 và hai AI limit cases cũ. Bốn nhóm chung: chọn đúng coupon, minimum tạo qua Admin, expiry tạo qua Admin và usage isolation qua API. Bốn nhóm Agent bổ sung: duplicate không đổi dữ liệu cũ, xóa rồi apply, list nhiều coupons và invalid JWT cho list/create/delete.
+
+Các nhóm chung dùng `backend/test/helpers/coupons-scenarios.js`; assertions mới quan sát public API, expected tiền là ví dụ literal từ FR-09. Không thêm equality/percent defects, exact messages hoặc giả định atomic checkout vào passing profiles. Không đổi source, SQLite gốc hay baseline selection.
+
+Chạy trên archive chính xác của frozen `806ba19`, overlay đúng variants/configs/helper đã snapshot. Fresh Jest: **88/88 baseline**, **35/35 manual** (26+3+6), **40/40 Agent** (26+2+12). [Evidence và kết quả mutation mới](runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/README.md), [phân chia/provenance](runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/PROVENANCE.md), [source snapshots](runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/sources/backend/test/helpers/coupons-scenarios.js). Kết quả cũ ở các sections trên là lịch sử và được giữ nguyên.
+
+Fresh mutation của cả hai profiles: **41 Killed / 21 Timeout / 28 Survived / 25 NoCoverage / 5 RuntimeError**, score 53.91%. Source khớp sau chuẩn hóa CRLF/LF, 120/120 signatures khớp. So baseline vẫn chỉ kill thêm 111/113; so F02/G02 cũ không có status transition. Các nhóm bổ sung không tăng số kills trong universe hiện tại. Hashes sáu protected files giữ nguyên; SQLite archived khớp byte với frozen blob.
+
+Đây là phân chia collections theo yêu cầu người dùng; cả phần bổ sung manual và Agent đều do Codex hỗ trợ trong cùng context. Bộ Agent có nhiều scenarios hơn theo thiết kế, không dùng chênh lệch đó để suy ra agent tốt hơn người hoặc đây là thử nghiệm độc lập. Human review/audit verdict và member self-run vẫn riêng biệt.
+
 ## I02 — Auth Reproduction
 
 Codex reproduced original Auth suite on this machine: 26 pass; all 23 original defect tests fail at assertions in the separate profile. Full Auth mutation on frozen inputs: 125 mutants, 60 Killed, 27 Timeout, 23 Survived, 7 NoCoverage, 8 RuntimeError.

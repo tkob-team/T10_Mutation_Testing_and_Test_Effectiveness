@@ -1,0 +1,181 @@
+{
+  "frozenCommit": "806ba19ee4e09eafe9b2696ccf117a2b1ab841ef",
+  "profiles": {
+    "manual": {
+      "testsPassed": 35,
+      "testsFailed": 0,
+      "counts": {
+        "NoCoverage": 25,
+        "Killed": 41,
+        "Timeout": 21,
+        "Survived": 28,
+        "RuntimeError": 5
+      },
+      "baseline": {
+        "matched": 120,
+        "sourceEqual": true,
+        "transitions": [
+          {
+            "id": "111",
+            "line": 474,
+            "mutator": "ConditionalExpression",
+            "replacement": "true",
+            "before": "Survived",
+            "after": "Killed",
+            "killedBy": [
+              "25"
+            ]
+          },
+          {
+            "id": "113",
+            "line": 474,
+            "mutator": "LogicalOperator",
+            "replacement": "max_uses_per_user && 1",
+            "before": "Survived",
+            "after": "Killed",
+            "killedBy": [
+              "25"
+            ]
+          }
+        ]
+      },
+      "previousVariant": {
+        "matched": 120,
+        "sourceEqual": true,
+        "transitions": []
+      }
+    },
+    "ai": {
+      "testsPassed": 40,
+      "testsFailed": 0,
+      "counts": {
+        "NoCoverage": 25,
+        "Killed": 41,
+        "Timeout": 21,
+        "Survived": 28,
+        "RuntimeError": 5
+      },
+      "baseline": {
+        "matched": 120,
+        "sourceEqual": true,
+        "transitions": [
+          {
+            "id": "111",
+            "line": 474,
+            "mutator": "ConditionalExpression",
+            "replacement": "true",
+            "before": "Survived",
+            "after": "Killed",
+            "killedBy": [
+              "25"
+            ]
+          },
+          {
+            "id": "113",
+            "line": 474,
+            "mutator": "LogicalOperator",
+            "replacement": "max_uses_per_user && 1",
+            "before": "Survived",
+            "after": "Killed",
+            "killedBy": [
+              "25"
+            ]
+          }
+        ]
+      },
+      "previousVariant": {
+        "matched": 120,
+        "sourceEqual": true,
+        "transitions": []
+      }
+    }
+  },
+  "protectedFiles": [
+    {
+      "path": "backend/server.js",
+      "sha256": "e2263811a1690a63a7dbb4446c3fd33fb87f50d073d9f8cdfab7083a52f5e8ed",
+      "unchanged": true
+    },
+    {
+      "path": "backend/database.js",
+      "sha256": "50012f35c2cf0776dd837482d76adf701f0ee40cdcb9d80143278fccde034717",
+      "unchanged": true
+    },
+    {
+      "path": "backend/database.sqlite",
+      "sha256": "c63f00544180ba1fbb1427a9b9dd3f1784842698809972f33ce90482e7420ba6",
+      "unchanged": true
+    },
+    {
+      "path": "backend/package.json",
+      "sha256": "490d9efe41331670d7f5faa191226b48bb5fc0a9a3bb2e52dc19718131cd6238",
+      "unchanged": true
+    },
+    {
+      "path": "backend/package-lock.json",
+      "sha256": "bbe5845d320b318bb2fd9d4f4c2826d6ca5c69fa417766e45886a41dd5f9da09",
+      "unchanged": true
+    },
+    {
+      "path": "backend/stryker.coupons.config.json",
+      "sha256": "d2cb920434e1c92efaee88b0713a6a23fe1147ac6354809e45b4de8098bded6a",
+      "unchanged": true
+    }
+  ],
+  "frozenInputFiles": [
+    {
+      "path": "backend/server.js",
+      "byteEqual": false,
+      "normalizedTextEqual": true,
+      "gitBytes": 17538,
+      "runtimeBytes": 18110,
+      "note": "LF git blob versus CRLF archive/checkout; text otherwise identical"
+    },
+    {
+      "path": "backend/database.js",
+      "byteEqual": false,
+      "normalizedTextEqual": true,
+      "gitBytes": 5043,
+      "runtimeBytes": 5162,
+      "note": "LF git blob versus CRLF archive/checkout; text otherwise identical"
+    },
+    {
+      "path": "backend/database.sqlite",
+      "byteEqual": true,
+      "normalizedTextEqual": false,
+      "gitBytes": 36864,
+      "runtimeBytes": 36864,
+      "note": "Byte-identical"
+    }
+  ],
+  "overlay": [
+    {
+      "path": "backend/test/manual/coupons.manual.js",
+      "sha256": "9a8aa34946ea904e77fbfc72af703757397359e29355fa97369835b2a440f86f"
+    },
+    {
+      "path": "backend/test/ai/coupons.ai.js",
+      "sha256": "7311a1a039f9d65b6cee5b68613b19b098c6ea63c8f449855a872b8cb52dc522"
+    },
+    {
+      "path": "backend/test/helpers/coupons-scenarios.js",
+      "sha256": "31580ac123cb75f12b6d097f0d5d6adeb7cf66ec08142a0698a5b17b5c68bb95"
+    },
+    {
+      "path": "backend/jest.coupons.manual.config.cjs",
+      "sha256": "155f7a56c2fb6c08af33d7ce5d10be9813709afc1fbbea194f6fd351f9a5a29b"
+    },
+    {
+      "path": "backend/jest.coupons.ai.config.cjs",
+      "sha256": "5f960d3b990e61c89c70c8bb433c8f88af592f32adf977b4a2bdac3d39a28135"
+    },
+    {
+      "path": "backend/stryker.coupons.manual.config.json",
+      "sha256": "65ef66f70c6e17b6912ada968afd34741da3b23563c3ef3d97909caf1315d6b0"
+    },
+    {
+      "path": "backend/stryker.coupons.ai.config.json",
+      "sha256": "b1e231b2fbf2c96b13cebebcb08c75715a2d20dd6455ef542cc58603f185a809"
+    }
+  ]
+}

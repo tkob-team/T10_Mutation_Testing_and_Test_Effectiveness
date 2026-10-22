@@ -1,0 +1,16 @@
+{
+  "sut": "D:\\Workspace\\1. Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness",
+  "runtime": "D:\\Workspace\\1. Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\.coupons-work\\coupons-extensions-2026-10-23",
+  "evidence": "D:\\Workspace\\1. Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\T10_Mutation_Testing_and_Test_Effectiveness\\experiments\\s3\\runs\\Thai_Hoa\\Coupons-extensions-2026-10-23-agent",
+  "frozenCommit": "806ba19ee4e09eafe9b2696ccf117a2b1ab841ef",
+  "workingHead": "4e014b9f8a702d4b302b338983705fe5fc73b27a",
+  "overlay": [
+    "backend/test/manual/coupons.manual.js",
+    "backend/test/ai/coupons.ai.js",
+    "backend/test/helpers/coupons-scenarios.js",
+    "backend/jest.coupons.manual.config.cjs",
+    "backend/jest.coupons.ai.config.cjs",
+    "backend/stryker.coupons.manual.config.json",
+    "backend/stryker.coupons.ai.config.json"
+  ]
+}
