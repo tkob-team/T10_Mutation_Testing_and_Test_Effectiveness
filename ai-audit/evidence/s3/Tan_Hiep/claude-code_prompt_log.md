@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-22 21:01 (Asia/Saigon).
+Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-22 21:10 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 7 lượt prompt; theo model: claude-opus-5-5 7 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 8 lượt prompt; theo model: claude-opus-5-5 8 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-22 19:50 — model: claude-opus-5-5 — session 4a560803
 
@@ -336,4 +336,58 @@ Viết REPORT:
 
 - Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Tan_Hiep\E01-1-cc\mutants_by_route.py
 - Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Tan_Hiep\E01-cc-REPORT.md
+
+## #8 — 2026-10-22 21:07 — model: claude-opus-5-5 — session 4a560803
+
+### Prompt
+
+```text
+<pasted_content id="3d1a">
+Task S3-F01 setup (Cart & Orders). Dùng skill t10-run-report. Được commit, không push. KHÔNG viết assertion nào.
+
+1. Repo EShop, tạo 2 nhánh từ 8d60e9b: s3/F01-manual và s3/G01-ai.
+2. Trên s3/F01-manual, trong backend:
+   - jest.manual.config.js: lấy cấu hình jest trong package.json, testMatch = baseline (test/*.test.js) + test/manual/**/*.manual.js
+   - stryker.cart-orders.manual.config.json: như stryker.cart-orders.config.json, nhưng jest.configFile = jest.manual.config.js, reports ra reports/cart-orders-manual/
+   - scripts: "test:manual", "mutate:cart-orders:manual"
+   - test/manual/cart-orders.manual.js: chỉ phần khung (require helpers, beforeAll loadApp, comment "Tấn Hiệp tự viết"), không có test.
+   - Kiểm tra: npm test vẫn 36 passed (file manual không bị baseline nhận).
+   Commit: "test(S3-F01): add manual-branch Jest and Stryker config".
+3. Trên s3/G01-ai: làm tương tự với hậu tố ai (test/ai/**/*.ai.js, reports/cart-orders-ai/). Commit: "test(S3-G01): add AI-branch Jest and Stryker config".
+4. Seminar, Experiment Log, mục Limits & Failure Modes: thêm 1 dòng — E01-1-cc so với sandbox Linux: Killed 87/91, Timeout 19/16, RuntimeError 8/7; tổng 3 loại đều là 114; Survived/NoCoverage giống nhau; giả thuyết do máy chậm hơn chạm ngưỡng timeout, chưa kiểm chứng. Commit: "docs(S3-E01): note environment-dependent Timeout counts".
+5. Repo/CLAUDE.md, mục Quyết định đã chốt: thêm "2026-10-22: E01 chạy trên baseline domain trước D04 (Hòa cho phép). Nhánh manual s3/F01-manual và AI s3/G01-ai cùng tách từ 8d60e9b; AI không được đọc nhánh manual."
+6. Báo cáo theo CLAUDE.md.
+</pasted_content id="3d1a">
+```
+
+### Output
+
+```text
+Seminar chỉ bẩn ở log hook → commit `chore(ai-log)` trước. Tạo nhánh F01:
+
+Baseline không nhận file manual; config manual nhận cả hai. Chạy kiểm tra:
+
+Hai nhánh EShop đã commit. Còn Experiment Log, CLAUDE.md và REPORT.
+
+Viết REPORT và commit:
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: S3-F01 setup (kèm khung nhánh G01) — Done. Không viết assertion nào.
+- Kết quả: `npm test` 36 passed trên cả `s3/F01-manual` và `s3/G01-ai`. Baseline chỉ nhận `cart-orders.test.js`; config manual và AI nhận thêm file của nhánh mình.
+- Kết quả: `test:manual`, `test:ai` và Stryker dry run của hai nhánh đều fail với `Your test suite must contain at least one test` (chạy chẩn đoán, không chính thức). Lỗi do file khung chưa có test như yêu cầu; config vẫn nạp đúng.
+- Evidence: `T10_.../experiments/s3/runs/Tan_Hiep/F01-cc-REPORT.md`, log trong `F01-setup-cc/` và `G01-setup-cc/`.
+- Commit EShop: `c0954de` trên `s3/F01-manual`, `78745e2` trên `s3/G01-ai`, cả hai tách từ `8d60e9b`.
+- Commit seminar (`main`, ahead 5, chưa push):
+  - `69a0a16`: log do hook ghi.
+  - `3cf939c`: dòng Timeout trong Limits & Failure Modes.
+  - `3c85ea3`: report và evidence. Commit này cũng sửa lại dòng Timeout: bỏ cụm "thay vì bị kill bởi assertion" tôi tự thêm, để giữ đúng nguyên văn được giao.
+- Ngoài repo: `Repo/CLAUDE.md` đã thêm quyết định E01 trước D04 và hai nhánh F01/G01.
+- Bất thường mới: dry run fail không tự dọn `backend/stryker-tmp/`. Sandbox còn lại chứa bản sao file nhánh manual ngay trên working tree nhánh AI, và gây cảnh báo haste collision. Tôi đã xóa: gỡ junction trước, rồi kiểm `npm install --dry-run` báo `up to date`.
+- Lưu ý: EShop đang checkout `s3/G01-ai`. Trước khi viết manual, cần `git switch s3/F01-manual`.
+- Cần quyết định: Không. Lỗi "must contain at least one test" sẽ hết khi bạn thêm test đầu tiên.
+```
+
+### Hành động
+
+- Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Tan_Hiep\F01-cc-REPORT.md
 
