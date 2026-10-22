@@ -116,20 +116,14 @@ Chạy thử bởi Claude trong sandbox (Linux, Node v22.22.0), **không phải 
 
 ## Survivors & Manual Assertions
 
-## Survivors & Manual Assertions
-
-## Survivors & Manual Assertions
-
-## Survivors & Manual Assertions
-
 | Mutant ID / Diff | State | Why Survived | Distinguishing Input | Manual Assertion / Test | Original-Code Result | Mutant Result / Evidence |
 |---|---|---|---|---|---|---|
-| **286:7** <br> `if (!userCarts[userId])` --> `if (false)` | Survived | CO-02 đã gọi `GET /api/cart` nhưng chỉ assert status `200` mà không kiểm tra cấu trúc/nội dung phản hồi (nhãn `missing-assertion`). Việc kỳ vọng `[]` cho user mới chỉ là suy luận do test chưa assert. | `GET /api/cart` với token của `userId` chưa từng khởi tạo giỏ hàng. | `expect(res.body).toEqual([])` | Not run | Not run |
+| **286:7** <br> `if (!userCarts[userId])` --> `if (false)` | Survived | CO-02 đã gọi `GET /api/cart` nhưng chỉ assert status `200` mà không kiểm tra cấu trúc/nội dung phản hồi (nhãn `missing-assertion`). §4.1 không quy định giỏ trống trả về gì, nên oracle [] là suy luận. | `GET /api/cart` với token của `userId` chưa từng khởi tạo giỏ hàng. | `expect(res.body).toEqual([])` | Not run | Not run |
 | **292:7** <br> `if (!userCarts[userId])` --> `if (true)` | Survived | CO-04 đã gọi `POST /api/cart` nhưng bị thiếu assertion kiểm tra giỏ hàng bị reset dữ liệu (nhãn `missing-assertion`). Mutant khiến `userCarts[userId]` luôn bị gán lại thành `[]` trước mỗi lần push, làm mất toàn bộ sản phẩm đã thêm trước đó. | Gọi `POST /api/cart` thêm sản phẩm A (`id: 1`), sau đó tiếp tục gọi `POST /api/cart` thêm sản phẩm B (`id: 2`). Gọi tiếp `GET /api/cart` để kiểm tra. | Kiểm tra trên response của `GET /api/cart` sau lần POST thứ 2: <br> `expect(res.body).toHaveLength(2)` <br> *(Không assert trực tiếp trên response của `POST /api/cart` vì route này chỉ trả về `{ message: "Added to cart" }`)* | Not run | Not run |
 | **326:47** <br> `{ error: "Order not found" }` --> `{}` | Survived | Test case hủy đơn hàng không tồn tại chỉ assert status `404` mà không assert Response Body (nhãn `missing-assertion`). | `PUT /api/orders/99999/cancel` với `id` đơn hàng không tồn tại. | Oracle chọn: `{ error: "Order not found" }` (Nguồn: Giá trị chuỗi gốc trong `server.js` tại dòng 326). <br> `expect(res.body).toEqual({ error: "Order not found" })` | Not run | Not run |
 | **346:45** <br> `{ error: "Order not found" }` --> `{}` | Survived | Test case truy vấn đơn hàng không tồn tại chỉ assert status `404` mà không assert Response Body (nhãn `missing-assertion`). | `GET /api/orders/99999` với `id` đơn hàng không tồn tại. | Oracle chọn: `{ error: "Order not found" }` (Nguồn: Giá trị chuỗi gốc trong `server.js` tại dòng 346). <br> `expect(res.body).toEqual({ error: "Order not found" })` | Not run | Not run |
 | **532:47** <br> `{ error: "Order not found" }` --> `{}` | Survived | Test case admin cập nhật đơn hàng không tồn tại chỉ assert status `404` mà không assert Response Body (nhãn `missing-assertion`). | `PUT /api/admin/orders/99999/status` với `id` đơn hàng không tồn tại. | Oracle chọn: `{ error: "Order not found" }` (Nguồn: Giá trị chuỗi gốc trong `server.js` tại dòng 532). <br> `expect(res.body).toEqual({ error: "Order not found" })` | Not run | Not run |
-| **550:11** <br> `if (currentStatus === "canceled" && status === "delivered")` --> `if (false)` | Survived | Đây là lỗi logic thiếu điều kiện chặn ở mã nguồn gốc, không thuộc về thiếu hụt của test case (nhãn `defect-fixing`). | `PUT /api/admin/orders/:id/status` với đơn hàng có trạng thái hiện tại là `canceled` và `status` mới truyền vào là `delivered`. | Không viết (Theo DEF-05: Mutant này sống sót do mã nguồn gốc xử lý sai/thiếu logic validation, cần refactor/fix bug ở server code trước thay vì viết thêm assertion cho test case). | Not run | Not run |
+| **550:11** <br> `if (currentStatus === "canceled" && status === "delivered")` --> `if (false)` | Survived | Đây là lỗi logic thiếu điều kiện chặn ở mã nguồn gốc, không thuộc về thiếu hụt của test case (nhãn `defect-fixing`). | `PUT /api/admin/orders/:id/status` với đơn hàng có trạng thái hiện tại là `canceled` và `status` mới truyền vào là `delivered`. | test đúng spec thì fail trên code gốc (đã ghi thành DEF-05); test pass trên code gốc thì phải assert theo bug, nên không viết. | Not run | Not run |
 
 ## AI Runs
 
