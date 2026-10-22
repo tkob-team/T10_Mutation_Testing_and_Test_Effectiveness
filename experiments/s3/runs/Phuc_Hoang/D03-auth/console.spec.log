@@ -1,0 +1,28 @@
+# npm test (spec suite) on SUT bd31bbf + branch s3/D03-auth-phuc-hoang, 2026-10-22 21:40:44
+--- run 1
+MustScanSubDirs UserDroppedTo resolve, please review the information on
+To clear this warning, run:
+
+Test Suites: 1 passed, 1 total
+Tests:       26 passed, 26 total
+Snapshots:   0 total
+Time:        0.257 s, estimated 1 s
+Ran all test suites matching test/auth.spec.test.js.
+--- run 2
+MustScanSubDirs UserDroppedTo resolve, please review the information on
+To clear this warning, run:
+
+Test Suites: 1 passed, 1 total
+Tests:       26 passed, 26 total
+Snapshots:   0 total
+Time:        0.184 s, estimated 1 s
+Ran all test suites matching test/auth.spec.test.js.
+--- run 3
+MustScanSubDirs UserDroppedTo resolve, please review the information on
+To clear this warning, run:
+
+Test Suites: 1 passed, 1 total
+Tests:       26 passed, 26 total
+Snapshots:   0 total
+Time:        0.189 s, estimated 1 s
+Ran all test suites matching test/auth.spec.test.js.

@@ -1,0 +1,10 @@
+{
+  "testRunner": "jest",
+  "coverageAnalysis": "perTest",
+  "mutate": ["src/**/*.js"],
+  "reporters": ["clear-text", "html", "json"],
+  "htmlReporter": { "fileName": "reports/strong/mutation.html" },
+  "jsonReporter": { "fileName": "reports/strong/mutation.json" },
+  "jest": { "config": { "testMatch": ["**/test/equiv.strong.test.js"] } },
+  "tempDirName": "stryker-tmp"
+}

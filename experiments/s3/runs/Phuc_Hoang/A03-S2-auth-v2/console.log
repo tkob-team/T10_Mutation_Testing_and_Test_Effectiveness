@@ -1,0 +1,63 @@
+13:37:23 (7869) INFO ProjectReader Found 1 of 17 file(s) to be mutated.
+13:37:23 (7869) INFO Instrumenter Instrumented 1 source file(s) with 60 mutant(s)
+13:37:23 (7869) INFO ConcurrencyTokenProvider Creating 2 test runner process(es).
+13:37:24 (7869) INFO DryRunExecutor Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+13:37:24 (7869) INFO DryRunExecutor Initial test run succeeded. Ran 9 tests in 0 seconds (net 27 ms, overhead 231 ms).
+
+All tests/auth.v2.test.js
+  ✓ scope A (API-reachable states) A1 correct password: 200, token id/role, attempts reset [line 12] (killed 14)
+  ✓ scope A (API-reachable states) A2 unknown email: 401 with generic message [line 21] (killed 3)
+  ✓ scope A (API-reachable states) A3 first wrong password: 401, attempts 0 -> 2, not locked [line 27] (killed 8)
+  ✓ scope A (API-reachable states) A4 second wrong password: attempts 2 -> 4, locked about 180 s [line 34] (killed 3)
+  ✓ scope A (API-reachable states) A5 locked account (state produced by A4) returns 403 even with correct password [line 45] (killed 5)
+  ✓ scope A (API-reachable states) A6 expired lock (timestamp in the past) allows login [line 53] (killed 2)
+  ✓ scope A (API-reachable states) A7 no Authorization header: 401 Unauthorized [line 60] (killed 7)
+  ✓ scope A (API-reachable states) A8 bad token: 403 Forbidden [line 66] (killed 5)
+  ✓ scope A (API-reachable states) A9 valid token: 200 with own profile [line 72] (killed 3)
+
+[NoCoverage] ObjectLiteral
+server.js:36:42
+-       if (err) return res.status(500).json({ error: err.message });
++       if (err) return res.status(500).json({});
+
+[Survived] ConditionalExpression
+server.js:36:9
+-       if (err) return res.status(500).json({ error: err.message });
++       if (false) return res.status(500).json({ error: err.message });
+Tests ran:
+    scope A (API-reachable states) A1 correct password: 200, token id/role, attempts reset
+    scope A (API-reachable states) A2 unknown email: 401 with generic message
+    scope A (API-reachable states) A3 first wrong password: 401, attempts 0 -> 2, not locked
+  and 3 more tests!
+
+
+[Survived] EqualityOperator
+server.js:40:30
+-       if (user.locked_until && new Date() < new Date(user.locked_until)) {
++       if (user.locked_until && new Date() <= new Date(user.locked_until)) {
+Tests ran:
+    scope A (API-reachable states) A5 locked account (state produced by A4) returns 403 even with correct password
+    scope A (API-reachable states) A6 expired lock (timestamp in the past) allows login
+
+
+[Survived] EqualityOperator
+server.js:56:11
+-         if (newAttempts >= 3) {
++         if (newAttempts > 3) {
+Tests ran:
+    scope A (API-reachable states) A3 first wrong password: 401, attempts 0 -> 2, not locked
+    scope A (API-reachable states) A4 second wrong password: attempts 2 -> 4, locked about 180 s
+    scope A (API-reachable states) A5 locked account (state produced by A4) returns 403 even with correct password
+
+
+Ran 2.75 tests per mutant on average.
+-----------|------------------|----------|-----------|------------|----------|----------|
+           | % Mutation score |          |           |            |          |          |
+File       |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+All files  |  93.33 |   94.92 |       50 |         6 |          3 |        1 |        0 |
+ server.js |  93.33 |   94.92 |       50 |         6 |          3 |        1 |        0 |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+13:37:47 (7869) INFO JsonReporter Your report can be found at: file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/2ceadd35-3522-4bb4-80b4-d79c15c2e9c6/scratchpad/sbx/a03-s2/backend/reports/auth-v2/mutation.json
+13:37:47 (7869) INFO HtmlReporter Your report can be found at: file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/2ceadd35-3522-4bb4-80b4-d79c15c2e9c6/scratchpad/sbx/a03-s2/backend/reports/auth-v2/mutation.html
+13:37:47 (7869) INFO MutationTestExecutor Done in 23 seconds.

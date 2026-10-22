@@ -1,0 +1,458 @@
+13:39:42 (8868) INFO ProjectReader Found 1 of 25 file(s) to be mutated.
+13:39:42 (8868) INFO Instrumenter Instrumented 1 source file(s) with 92 mutant(s)
+13:39:42 (8868) INFO ConcurrencyTokenProvider Creating 2 test runner process(es).
+13:39:42 (8868) INFO DryRunExecutor Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+13:39:43 (8868) INFO DryRunExecutor Initial test run succeeded. Ran 6 tests in 0 seconds (net 24 ms, overhead 286 ms).
+
+All tests/auth.v1.test.js
+  ✓ login with correct password returns 200 and a token carrying id/role [line 16] (killed 12)
+  ✓ login with unknown email returns 401 [line 23] (killed 1)
+  ✓ login with wrong password returns 401 [line 28] (killed 2)
+  ✓ account locked in the future returns 403 [line 33] (killed 3)
+  ✓ GET /api/users/me without token returns 401 [line 39] (killed 5)
+  ✓ GET /api/users/me with valid token returns the user [line 44] (killed 6)
+
+[NoCoverage] ObjectLiteral
+server.js:36:42
+-       if (err) return res.status(500).json({ error: err.message });
++       if (err) return res.status(500).json({});
+
+[NoCoverage] BlockStatement
+server.js:56:29
+-         if (newAttempts >= 3) {
+-           lockedUntil = new Date(Date.now() + 180000).toISOString();
+-         }
++         if (newAttempts >= 3) {}
+
+[NoCoverage] ArithmeticOperator
+server.js:57:32
+-           lockedUntil = new Date(Date.now() + 180000).toISOString();
++           lockedUntil = new Date(Date.now() - 180000).toISOString();
+
+[NoCoverage] BlockStatement
+server.js:68:48
+-   app.post("/api/forgot-password", (req, res) => {
+-     const { email } = req.body;
+-     db.get("SELECT * FROM users WHERE email = ?", [email], (err, user) => {
+-       if (!user) return res.status(404).json({ error: "User not found" });
+-       const resetToken = Math.floor(1000 + Math.random() * 9000).toString();
+-       db.run(
+-         "UPDATE users SET reset_token = ? WHERE id = ?",
+-         [resetToken, user.id],
+-         (err) => {
+-           if (err) return res.status(500).json({ error: err.message });
+-           res.json({
+-             message: "Mã đặt lại mật khẩu đã được tạo",
+-             resetToken: resetToken,
+-           });
+-         },
+-       );
+-     });
+-   });
++   app.post("/api/forgot-password", (req, res) => {});
+
+[NoCoverage] StringLiteral
+server.js:70:10
+-     db.get("SELECT * FROM users WHERE email = ?", [email], (err, user) => {
++     db.get("", [email], (err, user) => {
+
+[NoCoverage] ArrayDeclaration
+server.js:70:49
+-     db.get("SELECT * FROM users WHERE email = ?", [email], (err, user) => {
++     db.get("SELECT * FROM users WHERE email = ?", [], (err, user) => {
+
+[NoCoverage] BlockStatement
+server.js:70:73
+-     db.get("SELECT * FROM users WHERE email = ?", [email], (err, user) => {
+-       if (!user) return res.status(404).json({ error: "User not found" });
+-       const resetToken = Math.floor(1000 + Math.random() * 9000).toString();
+-       db.run(
+-         "UPDATE users SET reset_token = ? WHERE id = ?",
+-         [resetToken, user.id],
+-         (err) => {
+-           if (err) return res.status(500).json({ error: err.message });
+-           res.json({
+-             message: "Mã đặt lại mật khẩu đã được tạo",
+-             resetToken: resetToken,
+-           });
+-         },
+-       );
+-     });
++     db.get("SELECT * FROM users WHERE email = ?", [email], (err, user) => {});
+
+[NoCoverage] BooleanLiteral
+server.js:71:9
+-       if (!user) return res.status(404).json({ error: "User not found" });
++       if (user) return res.status(404).json({ error: "User not found" });
+
+[NoCoverage] ConditionalExpression
+server.js:71:9
+-       if (!user) return res.status(404).json({ error: "User not found" });
++       if (true) return res.status(404).json({ error: "User not found" });
+
+[NoCoverage] ConditionalExpression
+server.js:71:9
+-       if (!user) return res.status(404).json({ error: "User not found" });
++       if (false) return res.status(404).json({ error: "User not found" });
+
+[NoCoverage] ObjectLiteral
+server.js:71:44
+-       if (!user) return res.status(404).json({ error: "User not found" });
++       if (!user) return res.status(404).json({});
+
+[NoCoverage] StringLiteral
+server.js:71:53
+-       if (!user) return res.status(404).json({ error: "User not found" });
++       if (!user) return res.status(404).json({ error: "" });
+
+[NoCoverage] ArithmeticOperator
+server.js:72:35
+-       const resetToken = Math.floor(1000 + Math.random() * 9000).toString();
++       const resetToken = Math.floor(1000 - Math.random() * 9000).toString();
+
+[NoCoverage] ArithmeticOperator
+server.js:72:42
+-       const resetToken = Math.floor(1000 + Math.random() * 9000).toString();
++       const resetToken = Math.floor(1000 + Math.random() / 9000).toString();
+
+[NoCoverage] StringLiteral
+server.js:74:7
+-         "UPDATE users SET reset_token = ? WHERE id = ?",
++         "",
+
+[NoCoverage] ArrayDeclaration
+server.js:75:7
+-         [resetToken, user.id],
++         [],
+
+[NoCoverage] BlockStatement
+server.js:76:16
+-         (err) => {
+-           if (err) return res.status(500).json({ error: err.message });
+-           res.json({
+-             message: "Mã đặt lại mật khẩu đã được tạo",
+-             resetToken: resetToken,
+-           });
+-         },
++         (err) => {},
+
+[NoCoverage] ConditionalExpression
+server.js:77:13
+-           if (err) return res.status(500).json({ error: err.message });
++           if (true) return res.status(500).json({ error: err.message });
+
+[NoCoverage] ConditionalExpression
+server.js:77:13
+-           if (err) return res.status(500).json({ error: err.message });
++           if (false) return res.status(500).json({ error: err.message });
+
+[NoCoverage] ObjectLiteral
+server.js:77:46
+-           if (err) return res.status(500).json({ error: err.message });
++           if (err) return res.status(500).json({});
+
+[NoCoverage] ObjectLiteral
+server.js:78:18
+-           res.json({
+-             message: "Mã đặt lại mật khẩu đã được tạo",
+-             resetToken: resetToken,
+-           });
++           res.json({});
+
+[NoCoverage] StringLiteral
+server.js:79:20
+-             message: "Mã đặt lại mật khẩu đã được tạo",
++             message: "",
+
+[NoCoverage] BlockStatement
+server.js:87:47
+-   app.post("/api/reset-password", (req, res) => {
+-     const { email, resetToken, newPassword } = req.body;
+-     db.run(
+-       "UPDATE users SET password = ?, reset_token = NULL WHERE email = ? AND reset_token = ?",
+-       [newPassword, email, resetToken],
+-       function (err) {
+-         if (this.changes === 0)
+-           return res.status(400).json({ error: "Invalid token or email" });
+-         res.json({ message: "Password reset successfully" });
+-       },
+-     );
+-   });
++   app.post("/api/reset-password", (req, res) => {});
+
+[NoCoverage] StringLiteral
+server.js:90:5
+-       "UPDATE users SET password = ?, reset_token = NULL WHERE email = ? AND reset_token = ?",
++       "",
+
+[NoCoverage] ArrayDeclaration
+server.js:91:5
+-       [newPassword, email, resetToken],
++       [],
+
+[NoCoverage] BlockStatement
+server.js:92:20
+-       function (err) {
+-         if (this.changes === 0)
+-           return res.status(400).json({ error: "Invalid token or email" });
+-         res.json({ message: "Password reset successfully" });
+-       },
++       function (err) {},
+
+[NoCoverage] ConditionalExpression
+server.js:93:11
+-         if (this.changes === 0)
++         if (true)
+
+[NoCoverage] ConditionalExpression
+server.js:93:11
+-         if (this.changes === 0)
++         if (false)
+
+[NoCoverage] EqualityOperator
+server.js:93:11
+-         if (this.changes === 0)
++         if (this.changes !== 0)
+
+[NoCoverage] ObjectLiteral
+server.js:94:37
+-           return res.status(400).json({ error: "Invalid token or email" });
++           return res.status(400).json({});
+
+[NoCoverage] StringLiteral
+server.js:94:46
+-           return res.status(400).json({ error: "Invalid token or email" });
++           return res.status(400).json({ error: "" });
+
+[NoCoverage] ObjectLiteral
+server.js:95:16
+-         res.json({ message: "Password reset successfully" });
++         res.json({});
+
+[NoCoverage] StringLiteral
+server.js:95:27
+-         res.json({ message: "Password reset successfully" });
++         res.json({ message: "" });
+
+[NoCoverage] ObjectLiteral
+server.js:106:42
+-       if (err) return res.status(403).json({ error: "Forbidden" });
++       if (err) return res.status(403).json({});
+
+[NoCoverage] StringLiteral
+server.js:106:51
+-       if (err) return res.status(403).json({ error: "Forbidden" });
++       if (err) return res.status(403).json({ error: "" });
+
+[Survived] ConditionalExpression
+server.js:36:9
+-       if (err) return res.status(500).json({ error: err.message });
++       if (false) return res.status(500).json({ error: err.message });
+Tests ran:
+    login with correct password returns 200 and a token carrying id/role
+    login with unknown email returns 401
+    login with wrong password returns 401
+  and 1 more test!
+
+
+[Survived] ObjectLiteral
+server.js:38:35
+-         return res.status(401).json({ error: "Invalid email or password" });
++         return res.status(401).json({});
+Tests ran:
+    login with unknown email returns 401
+
+
+[Survived] StringLiteral
+server.js:38:44
+-         return res.status(401).json({ error: "Invalid email or password" });
++         return res.status(401).json({ error: "" });
+Tests ran:
+    login with unknown email returns 401
+
+
+[Survived] LogicalOperator
+server.js:40:9
+-       if (user.locked_until && new Date() < new Date(user.locked_until)) {
++       if (user.locked_until || new Date() < new Date(user.locked_until)) {
+Tests ran:
+    login with correct password returns 200 and a token carrying id/role
+    login with wrong password returns 401
+    account locked in the future returns 403
+
+
+[Survived] ConditionalExpression
+server.js:40:30
+-       if (user.locked_until && new Date() < new Date(user.locked_until)) {
++       if (user.locked_until && true) {
+Tests ran:
+    account locked in the future returns 403
+
+
+[Survived] EqualityOperator
+server.js:40:30
+-       if (user.locked_until && new Date() < new Date(user.locked_until)) {
++       if (user.locked_until && new Date() <= new Date(user.locked_until)) {
+Tests ran:
+    account locked in the future returns 403
+
+
+[Survived] ObjectLiteral
+server.js:43:15
+-           .json({ error: "Tài khoản đã bị khóa. Vui lòng thử lại sau." });
++           .json({});
+Tests ran:
+    account locked in the future returns 403
+
+
+[Survived] StringLiteral
+server.js:43:24
+-           .json({ error: "Tài khoản đã bị khóa. Vui lòng thử lại sau." });
++           .json({ error: "" });
+Tests ran:
+    account locked in the future returns 403
+
+
+[Survived] StringLiteral
+server.js:48:9
+-           "UPDATE users SET login_attempts = 0, locked_until = NULL WHERE id = ?",
++           "",
+Tests ran:
+    login with correct password returns 200 and a token carrying id/role
+
+
+[Survived] ArrayDeclaration
+server.js:49:9
+-           [user.id],
++           [],
+Tests ran:
+    login with correct password returns 200 and a token carrying id/role
+
+
+[Survived] StringLiteral
+server.js:52:27
+-         res.json({ message: "Login successful", token, user });
++         res.json({ message: "", token, user });
+Tests ran:
+    login with correct password returns 200 and a token carrying id/role
+
+
+[Survived] ArithmeticOperator
+server.js:54:27
+-         const newAttempts = user.login_attempts + 2;
++         const newAttempts = user.login_attempts - 2;
+Tests ran:
+    login with wrong password returns 401
+
+
+[Survived] ConditionalExpression
+server.js:56:11
+-         if (newAttempts >= 3) {
++         if (true) {
+Tests ran:
+    login with wrong password returns 401
+
+
+[Survived] ConditionalExpression
+server.js:56:11
+-         if (newAttempts >= 3) {
++         if (false) {
+Tests ran:
+    login with wrong password returns 401
+
+
+[Survived] EqualityOperator
+server.js:56:11
+-         if (newAttempts >= 3) {
++         if (newAttempts > 3) {
+Tests ran:
+    login with wrong password returns 401
+
+
+[Survived] EqualityOperator
+server.js:56:11
+-         if (newAttempts >= 3) {
++         if (newAttempts < 3) {
+Tests ran:
+    login with wrong password returns 401
+
+
+[Survived] StringLiteral
+server.js:60:9
+-           "UPDATE users SET login_attempts = ?, locked_until = ? WHERE id = ?",
++           "",
+Tests ran:
+    login with wrong password returns 401
+
+
+[Survived] ArrayDeclaration
+server.js:61:9
+-           [newAttempts, lockedUntil, user.id],
++           [],
+Tests ran:
+    login with wrong password returns 401
+
+
+[Survived] ObjectLiteral
+server.js:63:28
+-         res.status(401).json({ error: "Invalid email or password" });
++         res.status(401).json({});
+Tests ran:
+    login with wrong password returns 401
+
+
+[Survived] StringLiteral
+server.js:63:37
+-         res.status(401).json({ error: "Invalid email or password" });
++         res.status(401).json({ error: "" });
+Tests ran:
+    login with wrong password returns 401
+
+
+[Survived] ObjectLiteral
+server.js:103:50
+-     if (token == null) return res.status(401).json({ error: "Unauthorized" });
++     if (token == null) return res.status(401).json({});
+Tests ran:
+    GET /api/users/me without token returns 401
+
+
+[Survived] StringLiteral
+server.js:103:59
+-     if (token == null) return res.status(401).json({ error: "Unauthorized" });
++     if (token == null) return res.status(401).json({ error: "" });
+Tests ran:
+    GET /api/users/me without token returns 401
+
+
+[Survived] ConditionalExpression
+server.js:106:9
+-       if (err) return res.status(403).json({ error: "Forbidden" });
++       if (false) return res.status(403).json({ error: "Forbidden" });
+Tests ran:
+    GET /api/users/me with valid token returns the user
+
+
+[Survived] StringLiteral
+server.js:68:10
+-   app.post("/api/forgot-password", (req, res) => {
++   app.post("", (req, res) => {
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+server.js:87:10
+-   app.post("/api/reset-password", (req, res) => {
++   app.post("", (req, res) => {
+Ran all tests for this mutant.
+
+Ran 1.15 tests per mutant on average.
+-----------|------------------|----------|-----------|------------|----------|----------|
+           | % Mutation score |          |           |            |          |          |
+File       |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+All files  |  34.78 |   56.14 |       29 |         3 |         25 |       35 |        0 |
+ server.js |  34.78 |   56.14 |       29 |         3 |         25 |       35 |        0 |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+13:40:05 (8868) INFO JsonReporter Your report can be found at: file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/2ceadd35-3522-4bb4-80b4-d79c15c2e9c6/scratchpad/sbx/a03-s2/backend/reports/auth-v1-wide/mutation.json
+13:40:05 (8868) INFO HtmlReporter Your report can be found at: file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/2ceadd35-3522-4bb4-80b4-d79c15c2e9c6/scratchpad/sbx/a03-s2/backend/reports/auth-v1-wide/mutation.html
+13:40:05 (8868) INFO MutationTestExecutor Done in 23 seconds.

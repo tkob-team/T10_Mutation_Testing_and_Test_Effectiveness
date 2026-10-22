@@ -1,0 +1,31 @@
+13:37:48 (8120) INFO ProjectReader Found 1 of 21 file(s) to be mutated.
+13:37:48 (8120) INFO Instrumenter Instrumented 1 source file(s) with 60 mutant(s)
+13:37:48 (8120) INFO ConcurrencyTokenProvider Creating 2 test runner process(es).
+13:37:48 (8120) INFO DryRunExecutor Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+13:37:48 (8120) INFO DryRunExecutor Initial test run succeeded. Ran 12 tests in 0 seconds (net 29 ms, overhead 214 ms).
+
+All tests/auth.v3.test.js
+  ✓ scope A (API-reachable states) A1 correct password: 200, token id/role, attempts reset [line 12] (killed 14)
+  ✓ scope A (API-reachable states) A2 unknown email: 401 with generic message [line 21] (killed 3)
+  ✓ scope A (API-reachable states) A3 first wrong password: 401, attempts 0 -> 2, not locked [line 27] (killed 8)
+  ✓ scope A (API-reachable states) A4 second wrong password: attempts 2 -> 4, locked about 180 s [line 34] (killed 3)
+  ✓ scope A (API-reachable states) A5 locked account (state produced by A4) returns 403 even with correct password [line 45] (killed 5)
+  ✓ scope A (API-reachable states) A6 expired lock (timestamp in the past) allows login [line 53] (killed 2)
+  ✓ scope A (API-reachable states) A7 no Authorization header: 401 Unauthorized [line 60] (killed 7)
+  ✓ scope A (API-reachable states) A8 bad token: 403 Forbidden [line 66] (killed 5)
+  ✓ scope A (API-reachable states) A9 valid token: 200 with own profile [line 72] (killed 3)
+  ✓ scope B (state/clock/error injection) B1 login_attempts = 1 (not producible via API): wrong password -> 3 -> locked [line 18] (killed 1)
+  ✓ scope B (state/clock/error injection) B2 now == locked_until exactly: lock has expired, login allowed [line 25] (killed 1)
+  ✓ scope B (state/clock/error injection) B3 DB error on lookup: 500 with error message [line 33] (killed 2)
+
+Ran 3.63 tests per mutant on average.
+-----------|------------------|----------|-----------|------------|----------|----------|
+           | % Mutation score |          |           |            |          |          |
+File       |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+All files  | 100.00 |  100.00 |       54 |         6 |          0 |        0 |        0 |
+ server.js | 100.00 |  100.00 |       54 |         6 |          0 |        0 |        0 |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+13:38:11 (8120) INFO JsonReporter Your report can be found at: file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/2ceadd35-3522-4bb4-80b4-d79c15c2e9c6/scratchpad/sbx/a03-s2/backend/reports/auth-v3/mutation.json
+13:38:11 (8120) INFO HtmlReporter Your report can be found at: file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/2ceadd35-3522-4bb4-80b4-d79c15c2e9c6/scratchpad/sbx/a03-s2/backend/reports/auth-v3/mutation.html
+13:38:11 (8120) INFO MutationTestExecutor Done in 23 seconds.

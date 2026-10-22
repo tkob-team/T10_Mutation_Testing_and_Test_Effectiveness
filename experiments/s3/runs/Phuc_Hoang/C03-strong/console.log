@@ -1,0 +1,42 @@
+21:29:10 (86785) INFO ProjectReader Found 1 of 12 file(s) to be mutated.
+21:29:10 (86785) INFO Instrumenter Instrumented 1 source file(s) with 18 mutant(s)
+21:29:10 (86785) INFO ConcurrencyTokenProvider Creating 9 test runner process(es).
+21:29:11 (86785) INFO DryRunExecutor Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+21:29:11 (86785) INFO DryRunExecutor Initial test run succeeded. Ran 4 tests in 0 seconds (net 1 ms, overhead 309 ms).
+
+All tests/equiv.strong.test.js
+  ✓ cart total sums price x quantity exactly [line 3] (killed 10)
+  ~ empty cart totals 0 [line 7] (covered 4)
+  ✓ items with non-positive quantity are skipped [line 11] (killed 1)
+  ✓ registration age boundary is exactly 18 [line 16] (killed 5)
+
+[Survived] EqualityOperator
+src/equiv.js:8:9
+-       if (item.quantity > 0) {
++       if (item.quantity >= 0) {
+Tests ran:
+    cart total sums price x quantity exactly
+    items with non-positive quantity are skipped
+
+
+[Survived] ConditionalExpression
+src/equiv.js:5:7
+-     if (items.length === 0) return 0; // E2: redundant guard (loop already yields 0)
++     if (false) return 0; // E2: redundant guard (loop already yields 0)
+Tests ran:
+    cart total sums price x quantity exactly
+    empty cart totals 0
+    items with non-positive quantity are skipped
+
+
+Ran 2.06 tests per mutant on average.
+----------|------------------|----------|-----------|------------|----------|----------|
+          | % Mutation score |          |           |            |          |          |
+File      |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+----------|--------|---------|----------|-----------|------------|----------|----------|
+All files |  88.89 |   88.89 |       16 |         0 |          2 |        0 |        0 |
+ equiv.js |  88.89 |   88.89 |       16 |         0 |          2 |        0 |        0 |
+----------|--------|---------|----------|-----------|------------|----------|----------|
+21:29:11 (86785) INFO JsonReporter Your report can be found at: file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/2ceadd35-3522-4bb4-80b4-d79c15c2e9c6/scratchpad/c03/mt-demo/reports/strong/mutation.json
+21:29:11 (86785) INFO HtmlReporter Your report can be found at: file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/2ceadd35-3522-4bb4-80b4-d79c15c2e9c6/scratchpad/c03/mt-demo/reports/strong/mutation.html
+21:29:11 (86785) INFO MutationTestExecutor Done in 1 second.

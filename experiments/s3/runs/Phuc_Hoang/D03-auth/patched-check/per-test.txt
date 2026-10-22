@@ -1,0 +1,23 @@
+passed  DF-01 each wrong login adds exactly 1 to the counter ("đúng 1 đơn vị")
+passed  DF-02 two wrong logins do not lock; the third does ("từ 3 lần trở lên")
+passed  DF-03 the lock lasts 30 seconds: login succeeds 31 s after the third wrong attem
+failed  DF-04 invalid email is refused: no @
+failed  DF-04 invalid email is refused: no domain
+failed  DF-04 invalid email is refused: empty
+failed  DF-05 a duplicate email is refused ("duy nhất")
+failed  DF-06 weak password is refused: 7 characters
+failed  DF-06 weak password is refused: no upper case
+failed  DF-06 weak password is refused: no lower case
+failed  DF-06 weak password is refused: no digit
+failed  DF-06 weak password is refused: no special character
+failed  DF-07 the name is required
+failed  DF-08 the password is not stored as plaintext (SEC-01)
+passed  DF-09 the OTP has 6 digits ("6 chữ số", SEC-07 "tối thiểu 6 chữ số")
+failed  DF-10 the OTP expires: a token older than 24 hours is refused (SEC-07 "có thời h
+failed  DF-11 the new password must satisfy the FR-01 strength rule
+passed  DF-12 PUT /me cannot change the role (SEC-06, FR-04)
+failed  DF-13 invalid phone is refused (FR-04): 9 digits
+failed  DF-13 invalid phone is refused (FR-04): 12 digits
+failed  DF-13 invalid phone is refused (FR-04): not starting with 0
+failed  DF-13 invalid phone is refused (FR-04): letters
+failed  DF-13 invalid phone is refused (FR-04): empty
