@@ -194,7 +194,21 @@ Kiểm: 8/15 mutant được kill bởi 3 test manual ngoài 6 mục tiêu (chec
 
 Mỗi run chạy 1 lần nên chưa đo flake rate. Tín hiệu: 4 mutant Killed ↔ Timeout giữa các run (xem Limits & Failure Modes).
 
-**Kết luận (Tấn Hiệp viết):** Pending
+**Kết luận (Tấn Hiệp viết):** 
+
+1. **Hiệu quả tiêu diệt mutant mục tiêu và bài học từ Oracle & Bug:**
+   - Cả bộ test Manual (`F01-2-cc`) và AI (`G01-2-cc`) đều phát hiện 5/6 mutant mục tiêu (`286:7`, `292:7`, `326:47`, `346:45`, `532:47`) thông qua đúng các test case được thiết kế riêng tương ứng[cite: 11].
+   - **Bài học về Oracle:** Việc Manual test dùng oracle chặt (assert chính xác giá trị chuỗi `message: "Added to cart"` trong code) giúp diệt thêm 2 mutant phụ (`294:12` và `294:23`)[cite: 11], thể hiện sự đánh đổi rõ rệt: oracle càng khắt khe thì khả năng diệt mutant càng cao nhưng lại phụ thuộc chặt vào chi tiết cài đặt hiện tại.
+   - **Bài học về Bug mã nguồn (`550:11`):** Mutant `550:11` sống sót ở cả 3 run vì chính mutant lại đóng vai trò là bản sửa lỗi logic (validation) cho code gốc, do đó không thể viết test case tiêu diệt mutant này mà không sửa code trước.
+
+2. **Phân tích chênh lệch 10 mutant bị bỏ sót giữa Manual và AI:**
+   - Xét theo tiêu chí Survived (21 mutant ở G01 − 11 mutant ở F01 = 10 mutant chênh lệch)[cite: 11]:
+     - **8 mutant:** Do 3 test manual viết bổ sung ngoài mục tiêu (`cancel pending`, `admin transition`, `checkout DB`) bao phủ sâu hơn các luồng thao tác và cập nhật dữ liệu[cite: 11].
+     - **2 mutant (`294:12`, `294:23`):** Do assertion kiểm tra nội dung `message` ở response của lệnh `POST /api/cart` trong test manual kill được[cite: 11], trong khi test AI cố ý chỉ check HTTP status code để tránh phụ thuộc chuỗi cứng.
+   - **Về 5 mutant chuyển trạng thái giữa Killed ↔ Timeout (`347:5`, `510:63`, `519:22`, `520:7`, `315:22`):** Việc các mutant này chuyển sang Timeout ở run `G01-2-cc` vẫn được Stryker tính vào số lượng mutant phát hiện thành công[cite: 11], nên không làm sai lệch số mutant mà AI bỏ sót.
+
+3. **Cải thiện chỉ số Mutation Score:**
+   - So với baseline `E01-1-cc` (Score 74.65%, 34 Survived)[cite: 11], việc bổ sung test manual trong `F01-2-cc` giúp giảm Survived xuống 11 (Score 90.91%)[cite: 11], còn bộ test AI trong `G01-2-cc` giảm Survived xuống 21 (Score 83.92%)[cite: 11].
 
 ## Limits & Failure Modes
 
