@@ -14,6 +14,7 @@ Phiếu này ghi usage của Thái Hòa xuyên suốt S1–S8. Mỗi artifact c�
 | Tool / Model | Stage | Task ID | Use Type | Artifact / Section | AI Contribution | My Own Work | Evidence |
 |---|---|---|---|---|---|---|---|
 | OpenAI Codex (exact model variant not logged) | S3 | S3-A02, S3-B02 | research/drafting/verification | Research_Notes_Thai_Hoa.md | Source checks, explanations, inline examples and draft | Pending member input; not attributed as self-authored | TH-S3-RESEARCH-01 |
+| OpenAI Codex AI Agent (GPT-6 family; exact serving revision unavailable) | S3 | S3-C02, S3-D02 | assisted production / local verification | Coupons harness/tests/tooling, tutorial and experiment evidence | Spec cases, original-defect suite, seeded memory DB, tool execution, evidence/docs | Member self-run and review Pending | TH-S3-C02D02-01 |
 
 ## 2. Artifact Audit
 
@@ -43,6 +44,22 @@ Pending — chưa có bản raw output bất biến trong bộ tài liệu hiệ
 #### Corrected Artifact & Highlighted Changes
 
 Current artifact: [Research Notes](../research/s3/Research_Notes_Thai_Hoa.md). Human/student corrections and highlighted changes: Pending. Agent validation does not count as member approval.
+
+### Artifact TH-S3-C02D02-01
+
+| Field | Value |
+|---|---|
+| Stage / Task ID | S3 / S3-C02, S3-D02 |
+| Tool / Model | OpenAI Codex AI Agent; GPT-6 family, exact serving revision not exposed |
+| Recorded Time & Provenance | 2026-10-22 Asia/Saigon; actual UTC timestamps in commands.json |
+| Output Artifact / Section | [Experiment Log](../experiments/s3/Experiment_Log_Thai_Hoa.md), [Contract](../experiments/s3/Coupons_Test_Contract_Thai_Hoa.md), SUT branch codex/s3-coupons-hoa |
+| Verdict | Pending member review; no official verdict assigned |
+| Reasoning & Source | SUT README FR-09/12/17/SEC-02/03, API §5/6.4; official Jest/Stryker docs; npm 12 local help/source |
+| Verification | Agent-run: npm ci pass, 25 baseline tests pass twice, 16 defect tests fail at assertions, dry run pass; tutorial target Survived→Killed; source/DB hashes unchanged |
+| Raw / Provenance | [AI Provenance](../experiments/s3/runs/Thai_Hoa/C02-D02-2026-10-22-agent/AI_Provenance.md), [raw toy candidate](../experiments/s3/runs/Thai_Hoa/C02-D02-2026-10-22-agent/ai-candidate.raw.txt); full chat transcript not exported |
+| Student Fix | Pending; no member corrections/approval invented |
+
+Personal learning/run walkthrough is outside both team repos by explicit user request. This artifact is AI-assisted D02 and a C02 tutorial, not self-authored F02 or completed G02. Same-session toy candidate generation is not a blinded manual-vs-AI comparison.
 
 ## 3. Accuracy Summary & Audit Conclusion
 

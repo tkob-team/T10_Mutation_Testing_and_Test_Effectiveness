@@ -4,7 +4,7 @@
 
 Nhóm 12, môn Software Testing, FIT@HCMUS chuẩn bị seminar T10: Mutation Testing & Test Effectiveness. Nhóm nghiên cứu trên EShop backend, so sánh assertion thủ công với assertion do AI Agent đề xuất, rồi xây dựng guide, report, demo và activity để người khác thực hành lại. Agent/model thực tế được ghi riêng cho từng run.
 
-Context này giữ quyết định và quy ước chung của nhóm. Phân công và tiến độ theo [Team Sheet](https://docs.google.com/spreadsheets/d/1XgWdi8CYOSqx33VhL9rBHMAC4WfHXjGu9YSiLv0lyPk/edit); yêu cầu chi tiết lấy từ [Requirements](docs/requirements/Seminar_Requirements_Consolidated.md).
+Context này giữ quyết định và quy ước chung của nhóm. Phân công và tiến độ theo [Team Sheet](https://docs.google.com/spreadsheets/d/1vuIXJeVhuoKQu8Gw4cHN__d09kIcB4K-hccIz27DxKc/edit) do Thái Hòa cung cấp ngày 2026-10-22; yêu cầu chi tiết lấy từ [Requirements](docs/requirements/Seminar_Requirements_Consolidated.md).
 
 ## Sources & Authority
 
@@ -55,6 +55,15 @@ Review trên xác nhận chất lượng đầu ra task, không thay xác nhận
 | S8 — Finalization | Hiệu chỉnh, audit/reflection/peer review và bộ cuối |
 
 Mục tiêu là hoàn thành đầy đủ nội dung, thực nghiệm, tài liệu và bộ nộp có evidence kiểm chứng. Feedback/reflection sau seminar chỉ bổ sung khi sự kiện đã diễn ra; phần chưa có đầu vào giữ Pending.
+
+### Coupons Handoff — 2026-10-22
+
+Trên nhánh `codex/s3-coupons-hoa`, Codex AI Agent đã chuẩn bị S3-C02/D02:
+[Contract](experiments/s3/Coupons_Test_Contract_Thai_Hoa.md), [Experiment Log](experiments/s3/Experiment_Log_Thai_Hoa.md), [run evidence](experiments/s3/runs/Thai_Hoa/C02-D02-2026-10-22-agent/README.md).
+25 baseline tests pass, 16 original-defect tests fail tại assertions đúng kỳ vọng; Stryker dry run tìm và chạy đủ 25 tests. Production source/database giữ nguyên.
+Tutorial Stryker + AI Agent riêng có target mutant Survived→Killed, không thay E02/G02 hoặc baseline chung.
+Member run/review của Thái Hòa, D04 và E02/F02/G02/H02/I02 vẫn Pending. Không suy ra Sheet đã đồng bộ.
+Hướng dẫn tự học/cách tự chạy chi tiết nằm ngoài hai repo team theo yêu cầu người dùng; contract/log trong repo vẫn đủ để teammate nhận bàn giao.
 
 ## Team & Task Ownership
 

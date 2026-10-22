@@ -1,0 +1,22 @@
+{
+  "sutBase": "92bbf226459bc8de076a465e368c1f20401380a0",
+  "files": {
+    "backend/package.json": "cc71cd2e35680fd4f7681a89a101d52835273322e1d6a60592a9de7434dc67bb",
+    "backend/package-lock.json": "10dc5c6dd2c51e08d8caf7e7425eb0918e97420519e436e5590831640fec3373",
+    "backend/jest.defects.config.cjs": "637742056f32269e15657444f7861fc9d7d299eb91341b202a5970fc39151596",
+    "backend/stryker.coupons.config.json": "64abad461b8dfe5f0e54abbea7b02f4f439a80b37cce80b6b87ae028ef43c01c",
+    "backend/test/helpers/isolate.js": "cdf36e86b6a7418ccb35fb08f9c2de4a713ec810b889a6c07986c2b73e5cb8c6",
+    "backend/test/helpers/app.js": "c14303a468947d42f1258990832817a8093bfde490858ff5a7ee84bd96506415",
+    "backend/test/helpers/coupons.js": "856c069777212ec8044dc7560a4e6b60fa1bc7d6a8d4b7060f1617a3d5a6f0c3",
+    "backend/test/coupons.test.js": "c3d17a9916c28521938918136fbedb14a47fd81b2fbad73a08f06fade824bdf6",
+    "backend/test/defects/coupons.defects.js": "947d60d40e55a13262bc52a435f5e8396540da54fcbdfefc96103a59ebf4a2d6",
+    "backend/tutorial/eligibility.js": "bfcce4cd9fa7c97eccd0ec6a8732948d70c41eeb183b9abec86fe4120f5c3069",
+    "backend/tutorial/weak.test.js": "5134d6e69b1abce1abe2178d1f2110d6c57896e6ba122e9fa455318f5b75b1b7",
+    "backend/tutorial/ai.test.js": "28c6840c2ead39fc92293f8b0d5b753e0e3b4596c1cbe4400ac98ef489fc97f4",
+    "backend/tutorial/jest.weak.config.cjs": "4b326ec82238f126a11131a2ff4a95465a38c50af93df69a17e0040cf464c90e",
+    "backend/tutorial/jest.ai.config.cjs": "8bc66c2a72c78a1f6a143b9956792ab09f6e77341b19b0c8f254dad83fbcdf3c",
+    "backend/tutorial/stryker.weak.config.json": "ca9ba848c53edaaf925c23400748ae079b7c6aef204c8bdb03804ad87433c6d9",
+    "backend/tutorial/stryker.ai.config.json": "3f21bb67d91b0825614674840a2dbcced3b91f3ff7b82d0e447fb8f9fb94c43d"
+  },
+  "sutCommit": "6850e9f899a47702982fb65a482ad821245de31e"
+}

@@ -1,0 +1,46 @@
+{
+  "checks": [
+    {
+      "name": "production source/database byte-preserved",
+      "pass": true
+    },
+    {
+      "name": "reuse matches pinned D01: backend/test/helpers/app.js",
+      "pass": true
+    },
+    {
+      "name": "reuse matches pinned D01: backend/test/helpers/isolate.js",
+      "pass": true
+    },
+    {
+      "name": "reuse matches pinned D01: backend/package-lock.json",
+      "pass": true
+    },
+    {
+      "name": "toy production source and mutant signatures identical",
+      "pass": true
+    },
+    {
+      "name": "target survives weak and is killed with AI",
+      "pass": true
+    },
+    {
+      "name": "raw AI candidate byte matches executed candidate",
+      "pass": true
+    },
+    {
+      "name": "baseline discovery excludes defects/tutorial",
+      "pass": true
+    },
+    {
+      "name": "personal guide outside both team repositories",
+      "pass": true
+    },
+    {
+      "name": "new/updated document local links resolve",
+      "pass": true
+    }
+  ],
+  "localLinksChecked": 53,
+  "errors": []
+}

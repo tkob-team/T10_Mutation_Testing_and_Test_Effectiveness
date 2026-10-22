@@ -1,0 +1,51 @@
+[
+  {
+    "id": "install",
+    "command": "npm ci --no-audit --no-fund",
+    "startedUtc": "2026-10-22T16:08:23.377Z",
+    "exitCode": 0,
+    "expectedExit": 0
+  },
+  {
+    "id": "baseline",
+    "command": "npm test",
+    "startedUtc": "2026-10-22T16:10:27.275Z",
+    "exitCode": 0,
+    "expectedExit": 0
+  },
+  {
+    "id": "baseline-repeat",
+    "command": "npm run test:coupons",
+    "startedUtc": "2026-10-22T16:10:28.703Z",
+    "exitCode": 0,
+    "expectedExit": 0
+  },
+  {
+    "id": "defects",
+    "command": "npm run test:defects -- --json --outputFile \"D:\\\\Workspace\\\\1. Study\\\\courses-fit-hcmus\\\\2026-2027\\\\csc13003-testing\\\\seminar\\\\T10_Mutation_Testing_and_Test_Effectiveness\\\\experiments\\\\s3\\\\runs\\\\Thai_Hoa\\\\C02-D02-2026-10-22-agent\\\\defects.json\"",
+    "startedUtc": "2026-10-22T16:10:30.056Z",
+    "exitCode": 1,
+    "expectedExit": 1
+  },
+  {
+    "id": "dry-run",
+    "command": "npm run coupons:dry",
+    "startedUtc": "2026-10-22T16:10:31.393Z",
+    "exitCode": 0,
+    "expectedExit": 0
+  },
+  {
+    "id": "tutorial-weak",
+    "command": "npm run tutorial:mutate:weak",
+    "startedUtc": "2026-10-22T16:09:05.905Z",
+    "exitCode": 0,
+    "expectedExit": 0
+  },
+  {
+    "id": "tutorial-ai",
+    "command": "npm run tutorial:mutate:ai",
+    "startedUtc": "2026-10-22T16:09:09.216Z",
+    "exitCode": 0,
+    "expectedExit": 0
+  }
+]
