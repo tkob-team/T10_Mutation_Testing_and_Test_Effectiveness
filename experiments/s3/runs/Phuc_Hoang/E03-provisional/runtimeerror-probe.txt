@@ -1,0 +1,7 @@
+# 2026-10-22, scratch copy of SUT backend @ bd31bbf, sqlite3 6.0.1, macOS arm64
+# RuntimeError mutants in E03-provisional (12): 8x StringLiteral "" -> "SIGSEGV"; 4x L37/L71 `if(!user)` -> false -> TypeError.
+$ node -e 'const d=new (require("sqlite3").Database)(":memory:"); d.run("",["a","b","c"],cb)'   -> exit=139 (SIGSEGV), callback never called
+$ node -e 'const d=new (require("sqlite3").Database)(":memory:"); d.get("",["a"],cb)'          -> exit=139 (SIGSEGV)
+$ node -e 'const d=new (require("sqlite3").Database)(":memory:"); d.get("",[],cb)'             -> cb error "SQLITE_MISUSE: not an error" (no crash without bind params)
+# Stryker with --mutate server.js:23-23 crashes with SIGSEGV on Node v26.12.1 and on v26.12.0 (deterministic, 2 runs + 1 run).
+# Node was upgraded by Homebrew 26.12.0 -> 26.12.1 on 2026-10-22 21:37 (Cellar dir mtime): C03 runs used 26.12.0, D03/E03 used 26.12.1.

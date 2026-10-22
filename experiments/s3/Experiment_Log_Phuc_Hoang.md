@@ -3,9 +3,9 @@
 **Document Role:** Working log cá nhân S3; chỉ ghi kết quả đã chạy thật trên máy Phúc Hoàng.  
 **Stage:** S3  
 **Member:** Nguyễn Phúc Hoàng  
-**Task IDs:** S3-C03 (xong, còn C03-5 Pending chờ D04); S3-D03 (tests đã viết và chạy, chờ review); S3-E03, S3-F03, S3-G03, S3-H03, S3-I03 (chưa bắt đầu)  
+**Task IDs:** S3-C03 (xong, còn C03-5 Pending chờ D04); S3-D03 (tests đã viết và chạy, chờ review); S3-E03 (đã chạy provisional, chờ Baseline_Manifest S3-D04); S3-F03, S3-G03, S3-H03, S3-I03 (chưa bắt đầu)  
 **Domain / Section:** Authentication & Users  
-**Evidence Status:** Partial — C03-1 → C03-4 đã chạy (C03-3: `--bare` lỗi "Not logged in", chạy lại bằng `claude -p` không `--bare`); C03-5 Pending (chờ S3-D04); D03 đã chạy (26 pass, 23 defect tests fail đúng lý do)
+**Evidence Status:** Partial — C03-1 → C03-4 đã chạy (C03-3: `--bare` lỗi "Not logged in", chạy lại bằng `claude -p` không `--bare`); C03-5 Pending (chờ S3-D04); D03 đã chạy (26 pass, 23 defect tests fail đúng lý do); E03 provisional đã chạy (73,45%)
 
 Chỉ điền việc đã thực hiện; thiếu đầu vào ghi Pending và blocker. Giữ prompt, số liệu và evidence nguyên gốc. Đọc `docs/Working_Guide.md` để biết nơi bàn giao.
 
@@ -51,7 +51,16 @@ Nguồn expected: `api_specification.md` §1–2 (chỉ định nghĩa phản h�
 
 | Run ID | SUT Commit | Config / Test Set | Command | HTML / JSON / Log | Outcome |
 |---|---|---|---|---|---|
-| [ ] | [ ] | [ ] | [ ] | [ ] | Not run |
+| E03-provisional (**không phải baseline chung**: chưa có `Baseline_Manifest.md` / S3-D04) | `bd31bbf` + test D03 chưa commit (SUT branch `s3/D03-auth-phuc-hoang`; `server.js` giống hệt `bd31bbf`, kiểm bằng `diff`) | `stryker.e03.config.json`: `mutate: ["server.js:20-135"]` (toàn bộ Auth & Users: 6 route + `authenticateToken`), `coverageAnalysis: perTest`, reporters clear-text/html/json; test set = `auth.spec.test.js` (26 test). Chạy trên bản `git archive` + overlay test trong scratchpad (SUT không bị sửa thêm). Node v26.12.1, npm 11.20.0, StrykerJS 10.0.0, Jest 30.5.2 | `npx stryker run stryker.e03.config.json --dryRunOnly` rồi `npx stryker run stryker.e03.config.json` (2026-10-22 21:48; full run 21 s) | `experiments/s3/runs/Phuc_Hoang/E03-provisional/` (`mutation.html`, `mutation.json`, `console.log`, `console.dry.log`, `run_meta.txt`, `by_route.md`, `summary.md`, `runtimeerror-probe.txt`) | **Pass (provisional)**: dry run OK (26 test, net 91 ms). 125 mutants: **Killed 60, Timeout 23, Survived 23, NoCoverage 7, RuntimeError 12**, Ignored 0. Stryker score **73.45%** (= (60+23)/113; 12 RuntimeError bị loại khỏi mẫu số), covered 78.30%, **assertion kill 60/113 = 53.10%**. Mapping domain: cả 125 mutant nằm trong 6 route + `authenticateToken` (0 mutant ngoài phạm vi) |
+
+**Mapping mutants theo route** (`by_route.md`): register 10 (4K/3T/1S/1NC/1E); login 43 (26/5/6/1/5); forgot-password 20 (6/4/5/1/4); reset-password 12 (5/2/4/0/1); authenticateToken 17 (10/3/4/0/0); GET /users/me 6 (2/3/0/0/1); PUT /users/me 17 (7/3/3/4/0). Tổng 125.
+
+**Quan sát từ run (đưa sang F03/H03):**
+- **Timeout chiếm 23/83 "kill":** score 73.45% nhưng assertion kill 53.10%. Timeout đến từ `BlockStatement {}` / `ConditionalExpression true` làm handler không trả response. Không tính là assertion kill.
+- **12 RuntimeError bị loại khỏi score** (không phải Killed): 8 mutant `StringLiteral ""` ở câu SQL làm `sqlite3` 6.0.1 **SIGSEGV** (exit 139), tái hiện bằng script riêng không qua Stryker (`db.run("", [..], cb)`; không crash khi không có bind params), lặp lại trên Node v26.12.0 và v26.12.1; 4 mutant `if (!user)` → `false` (L37, L71) ném `TypeError` trong callback, ngoài `try/catch` nên làm sập process. Đây là failure mode của Stryker (Errors không tính vào mẫu số) và lỗ hổng độ bền của SUT (thiếu kiểm tra `err`/`user`), ứng viên cho Guide REQ-18.
+- **Node đổi giữa phiên:** Homebrew nâng v26.12.0 → v26.12.1 lúc 21:37 (2026-10-22). Run C03 dùng 26.12.0; D03 (26/26 pass) và E03 dùng 26.12.1. Không thấy khác biệt kết quả, nhưng cần ghi vì reproducibility.
+- **Survivor đáng chú ý (chưa phân loại, thuộc S3-F03/H03):** L56 `newAttempts >= 3` → `> 3` (**Survived**, đúng dự đoán cho code gốc `+2`), L40 `<` → `<=`, L72 hai `ArithmeticOperator` của OTP, L124 `ConditionalExpression` ở `if (role)` của PUT /me (bộ test spec không có case `role` vì case đó nằm ở `auth.defects.test.js`), nhiều mutant string/object của body lỗi (L43, L71, L94, L95, L103, L106).
+- **Giới hạn:** chạy chỉ với `auth.spec.test.js`; `auth.defects.test.js` (23 test fail trên code gốc) không đưa vào vì không pass. Số liệu này sẽ thay bằng baseline chung khi D04 chốt `Baseline_Manifest.md`.
 
 ## Survivors & Manual Assertions
 
