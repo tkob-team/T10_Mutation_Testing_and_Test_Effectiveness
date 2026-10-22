@@ -1,0 +1,960 @@
+--- stdout ---
+
+--- stderr ---
+FAIL auth-defects test/auth.defects.test.js
+  ● D-LOCK: README FR-02 login counter and lock › DF-01 each wrong login adds exactly 1 to the counter ("đúng 1 đơn vị")
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      22 |   test('DF-01 each wrong login adds exactly 1 to the counter ("đúng 1 đơn vị")', async () => {
+      23 |     await login(app, ALICE.email, 'Wrong123!');
+    > 24 |     expect((await testApi.userByEmail(ALICE.email)).login_attempts).toBe(1);
+         |                                                                     ^
+      25 |   });
+      26 |
+      27 |   test('DF-02 two wrong logins do not lock; the third does ("từ 3 lần trở lên")', async () => {
+
+      at Object.<anonymous> (test/auth.defects.test.js:24:69)
+
+  ● D-LOCK: README FR-02 login counter and lock › DF-02 two wrong logins do not lock; the third does ("từ 3 lần trở lên")
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 403
+
+      28 |     await login(app, ALICE.email, 'Wrong123!');
+      29 |     await login(app, ALICE.email, 'Wrong123!');
+    > 30 |     expect((await login(app, ALICE.email, ALICE.password)).status).toBe(200);
+         |                                                                    ^
+      31 |   });
+      32 |
+      33 |   test('DF-03 the lock lasts 30 seconds: login succeeds 31 s after the third wrong attempt', async () => {
+
+      at Object.<anonymous> (test/auth.defects.test.js:30:68)
+
+  ● D-LOCK: README FR-02 login counter and lock › DF-03 the lock lasts 30 seconds: login succeeds 31 s after the third wrong attempt
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 403
+
+      35 |     for (let i = 0; i < 3; i += 1) await login(app, ALICE.email, 'Wrong123!');
+      36 |     advanceClock(31000);
+    > 37 |     expect((await login(app, ALICE.email, ALICE.password)).status).toBe(200);
+         |                                                                    ^
+      38 |   });
+      39 | });
+      40 |
+
+      at Object.<anonymous> (test/auth.defects.test.js:37:68)
+
+  ● D-REG: README FR-01 registration validation and SEC-01 › DF-04 invalid email is refused: no @
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at expectRefused (test/auth.defects.test.js:17:22)
+      at test/auth.defects.test.js:47:7
+
+  ● D-REG: README FR-01 registration validation and SEC-01 › DF-04 invalid email is refused: no domain
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at expectRefused (test/auth.defects.test.js:17:22)
+      at test/auth.defects.test.js:47:7
+
+  ● D-REG: README FR-01 registration validation and SEC-01 › DF-04 invalid email is refused: empty
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at expectRefused (test/auth.defects.test.js:17:22)
+      at test/auth.defects.test.js:47:7
+
+  ● D-REG: README FR-01 registration validation and SEC-01 › DF-05 a duplicate email is refused ("duy nhất")
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at expectRefused (test/auth.defects.test.js:17:22)
+      at Object.<anonymous> (test/auth.defects.test.js:53:5)
+
+  ● D-REG: README FR-01 registration validation and SEC-01 › DF-06 weak password is refused: 7 characters
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at expectRefused (test/auth.defects.test.js:17:22)
+      at test/auth.defects.test.js:61:5
+
+  ● D-REG: README FR-01 registration validation and SEC-01 › DF-06 weak password is refused: no upper case
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at expectRefused (test/auth.defects.test.js:17:22)
+      at test/auth.defects.test.js:61:5
+
+  ● D-REG: README FR-01 registration validation and SEC-01 › DF-06 weak password is refused: no lower case
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at expectRefused (test/auth.defects.test.js:17:22)
+      at test/auth.defects.test.js:61:5
+
+  ● D-REG: README FR-01 registration validation and SEC-01 › DF-06 weak password is refused: no digit
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at expectRefused (test/auth.defects.test.js:17:22)
+      at test/auth.defects.test.js:61:5
+
+  ● D-REG: README FR-01 registration validation and SEC-01 › DF-06 weak password is refused: no special character
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at expectRefused (test/auth.defects.test.js:17:22)
+      at test/auth.defects.test.js:61:5
+
+  ● D-REG: README FR-01 registration validation and SEC-01 › DF-07 the name is required
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at expectRefused (test/auth.defects.test.js:17:22)
+      at Object.<anonymous> (test/auth.defects.test.js:66:5)
+
+  ● D-REG: README FR-01 registration validation and SEC-01 › DF-08 the password is not stored as plaintext (SEC-01)
+
+    expect(received).not.toBe(expected) // Object.is equality
+
+    Expected: not "Carol123!x"
+
+      70 |   test('DF-08 the password is not stored as plaintext (SEC-01)', async () => {
+      71 |     await request(app).post('/api/register').send(NEW_USER);
+    > 72 |     expect((await testApi.userByEmail(NEW_USER.email)).password).not.toBe(NEW_USER.password);
+         |                                                                      ^
+      73 |   });
+      74 | });
+      75 |
+
+      at Object.<anonymous> (test/auth.defects.test.js:72:70)
+
+  ● D-OTP: README FR-03 and SEC-07 › DF-09 the OTP has 6 digits ("6 chữ số", SEC-07 "tối thiểu 6 chữ số")
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /^\d{6}$/
+    Received string:  "8201"
+
+      80 |
+      81 |   test('DF-09 the OTP has 6 digits ("6 chữ số", SEC-07 "tối thiểu 6 chữ số")', async () => {
+    > 82 |     expect((await forgot(ALICE.email)).body.resetToken).toMatch(/^\d{6}$/);
+         |                                                         ^
+      83 |   });
+      84 |
+      85 |   test('DF-10 the OTP expires: a token older than 24 hours is refused (SEC-07 "có thời hạn"; 24 h is the test\'s assumed bound, the spec gives none)', async () => {
+
+      at Object.<anonymous> (test/auth.defects.test.js:82:57)
+
+  ● D-OTP: README FR-03 and SEC-07 › DF-10 the OTP expires: a token older than 24 hours is refused (SEC-07 "có thời hạn"; 24 h is the test's assumed bound, the spec gives none)
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at expectRefused (test/auth.defects.test.js:17:22)
+      at Object.<anonymous> (test/auth.defects.test.js:89:5)
+
+  ● D-OTP: README FR-03 and SEC-07 › DF-11 the new password must satisfy the FR-01 strength rule
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at expectRefused (test/auth.defects.test.js:17:22)
+      at Object.<anonymous> (test/auth.defects.test.js:95:5)
+
+  ● D-PROFILE: README FR-04, SEC-06 and API 2.2 › DF-12 PUT /me cannot change the role (SEC-06, FR-04)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "user"
+    Received: "admin"
+
+      106 |     const token = await loginOk(app, ALICE);
+      107 |     await update(token, { ...PROFILE, role: 'admin' });
+    > 108 |     expect((await me(token)).body.role).toBe('user');
+          |                                         ^
+      109 |   });
+      110 |
+      111 |   test.each([
+
+      at Object.<anonymous> (test/auth.defects.test.js:108:41)
+
+  ● D-PROFILE: README FR-04, SEC-06 and API 2.2 › DF-13 invalid phone is refused (FR-04): 9 digits
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at expectRefused (test/auth.defects.test.js:17:22)
+      at test/auth.defects.test.js:116:5
+
+  ● D-PROFILE: README FR-04, SEC-06 and API 2.2 › DF-13 invalid phone is refused (FR-04): 12 digits
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at expectRefused (test/auth.defects.test.js:17:22)
+      at test/auth.defects.test.js:116:5
+
+  ● D-PROFILE: README FR-04, SEC-06 and API 2.2 › DF-13 invalid phone is refused (FR-04): not starting with 0
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at expectRefused (test/auth.defects.test.js:17:22)
+      at test/auth.defects.test.js:116:5
+
+  ● D-PROFILE: README FR-04, SEC-06 and API 2.2 › DF-13 invalid phone is refused (FR-04): letters
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at expectRefused (test/auth.defects.test.js:17:22)
+      at test/auth.defects.test.js:116:5
+
+  ● D-PROFILE: README FR-04, SEC-06 and API 2.2 › DF-13 invalid phone is refused (FR-04): empty
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+      15 | // "Refused" = a client error. The spec says "từ chối" without a code, so any 4xx is accepted.
+      16 | const expectRefused = (res) => {
+    > 17 |   expect(res.status).toBeGreaterThanOrEqual(400);
+         |                      ^
+      18 |   expect(res.status).toBeLessThan(500);
+      19 | };
+      20 |
+
+      at expectRefused (test/auth.defects.test.js:17:22)
+      at test/auth.defects.test.js:116:5
+
+FAIL cart-coupons-defects test/defects/cart-orders.defects.js
+  ● DEF-01 FR-07: adding the same product again increases quantity, no new line
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 7
+
+      Array [
+        Object {
+          "id": 4,
+          "name": "Tai nghe AirPods Pro 2",
+          "price": 6000000,
+    -     "quantity": 3,
+    +     "quantity": 2,
+    +   },
+    +   Object {
+    +     "id": 4,
+    +     "name": "Tai nghe AirPods Pro 2",
+    +     "price": 6000000,
+    +     "quantity": 1,
+        },
+      ]
+
+      20 |   await request(app).post('/api/cart').set(bearer(token)).send({ ...item, quantity: 1 });
+      21 |   const cart = await request(app).get('/api/cart').set(bearer(token));
+    > 22 |   expect(cart.body).toEqual([{ ...item, quantity: 3 }]);
+         |                     ^
+      23 | });
+      24 |
+      25 | test('DEF-02 FR-08: backend recomputes total from the cart, ignores client total_amount', async () => {
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:22:21)
+
+  ● DEF-02 FR-08: backend recomputes total from the cart, ignores client total_amount
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 12000000
+    Received: 1
+
+      31 |     .send({ total_amount: 1, shipping_address: 'HCM' });
+      32 |   const order = await get(db, 'SELECT total_amount FROM orders WHERE id = ?', [res.body.orderId]);
+    > 33 |   expect(order.total_amount).toBe(12000000);
+         |                              ^
+      34 | });
+      35 |
+      36 | test('DEF-03 FR-08: cart is cleared after a successful checkout', async () => {
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:33:30)
+
+  ● DEF-03 FR-08: cart is cleared after a successful checkout
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 8
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "id": 4,
+    +     "name": "Tai nghe AirPods Pro 2",
+    +     "price": 6000000,
+    +     "quantity": 2,
+    +   },
+    + ]
+
+      39 |   await request(app).post('/api/checkout').set(bearer(user.token)).send({ total_amount: 12000000, shipping_address: 'HCM' });
+      40 |   const cart = await request(app).get('/api/cart').set(bearer(user.token));
+    > 41 |   expect(cart.body).toEqual([]);
+         |                     ^
+      42 | });
+      43 |
+      44 | test('DEF-04 FR-10/FR-20: user cannot cancel a shipping order', async () => {
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:41:21)
+
+  ● DEF-04 FR-10/FR-20: user cannot cancel a shipping order
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 200
+
+      46 |   const id = await createOrder(app, db, token, 'shipping');
+      47 |   const res = await request(app).put(`/api/orders/${id}/cancel`).set(bearer(token));
+    > 48 |   expect(res.status).toBe(400);
+         |                      ^
+      49 |   expect(await orderStatus(db, id)).toBe('shipping');
+      50 | });
+      51 |
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:48:22)
+
+  ● DEF-05 FR-10: canceled is a final state, canceled → delivered is rejected
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 200
+
+      57 |     .set(bearer(adminToken))
+      58 |     .send({ status: 'delivered' });
+    > 59 |   expect(res.status).toBe(400);
+         |                      ^
+      60 |   expect(await orderStatus(db, id)).toBe('canceled');
+      61 | });
+      62 |
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:59:22)
+
+  ● DEF-06 FR-12/SEC-03: non-admin cannot change order status
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected value: 200
+    Received array: [401, 403]
+
+      68 |     .set(bearer(user.token))
+      69 |     .send({ status: 'confirmed' });
+    > 70 |   expect([401, 403]).toContain(res.status);
+         |                      ^
+      71 |   expect(await orderStatus(db, id)).toBe('pending');
+      72 | });
+      73 |
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:70:22)
+
+  ● DEF-07 FR-12/SEC-03: non-admin cannot list all orders
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected value: 200
+    Received array: [401, 403]
+
+      75 |   const { token } = await newUser(app);
+      76 |   const res = await request(app).get('/api/admin/orders').set(bearer(token));
+    > 77 |   expect([401, 403]).toContain(res.status);
+         |                      ^
+      78 | });
+      79 |
+      80 | test('DEF-08a spec §4 header, SEC-02: order detail without token is rejected', async () => {
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:77:22)
+
+  ● DEF-08a spec §4 header, SEC-02: order detail without token is rejected
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 401
+    Received: 200
+
+      83 |
+      84 |   const anonymous = await request(app).get(`/api/orders/${id}`);
+    > 85 |   expect(anonymous.status).toBe(401);
+         |                            ^
+      86 | });
+      87 |
+      88 | test("DEF-08b FR-11: user cannot view another user's order detail", async () => {
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:85:28)
+
+  ● DEF-08b FR-11: user cannot view another user's order detail
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected value: 200
+    Received array: [403, 404]
+
+      92 |
+      93 |   const notOwner = await request(app).get(`/api/orders/${id}`).set(bearer(other.token));
+    > 94 |   expect([403, 404]).toContain(notOwner.status);
+         |                      ^
+      95 | });
+      96 |
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:94:22)
+
+FAIL cart-coupons-defects test/defects/coupons.defects.js
+  ● CD-01 exact minimum must be accepted (FR-09 C3 >=)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+      Object {
+    -   "discount": 50000,
+    -   "final": 450000,
+    -   "status": 200,
+    +   "discount": undefined,
+    +   "final": undefined,
+    +   "status": 400,
+      }
+
+      20 |   const res = await apply({total_amount:500000});
+      21 |   expect({status:res.status,discount:res.body.discount_amount,final:res.body.final_amount})
+    > 22 |     .toEqual({status:200,discount:50000,final:450000});
+         |      ^
+      23 | });
+      24 | test('CD-02 10 percent means divide by 100 (FR-09 formula)', async () => {
+      25 |   await h.seedCoupon(db,{type:'percent',discount_value:10});
+
+      at Object.<anonymous> (test/defects/coupons.defects.js:22:6)
+
+  ● CD-02 10 percent means divide by 100 (FR-09 formula)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "discount": 70000,
+    -   "final": 630000,
+    +   "discount": -6300000,
+    +   "final": 7000000,
+        "status": 200,
+      }
+
+      26 |   const res = await apply({});
+      27 |   expect({status:res.status,discount:res.body.discount_amount,final:res.body.final_amount})
+    > 28 |     .toEqual({status:200,discount:70000,final:630000});
+         |      ^
+      29 | });
+      30 | test('CD-03 exactly at expiry is invalid (FR-09 C2 now < expiry)', async () => {
+      31 |   await h.seedCoupon(db); h.freeze(h.EXPIRY);
+
+      at Object.<anonymous> (test/defects/coupons.defects.js:28:6)
+
+  ● CD-03 exactly at expiry is invalid (FR-09 C2 now < expiry)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "refused": true,
+    +   "refused": false,
+        "usage": 0,
+      }
+
+      33 |   const res = await apply({});
+      34 |   expect({refused:refused(res),usage:await h.count(db,'coupon_usage')})
+    > 35 |     .toEqual({refused:true,usage:0});
+         |      ^
+      36 | });
+      37 | test.each(['absent','invalid'])('CD-04 %s JWT cannot apply a valid coupon (FR-09 C4)', async kind => {
+      38 |   await h.seedCoupon(db);
+
+      at Object.<anonymous> (test/defects/coupons.defects.js:35:6)
+
+  ● CD-04 absent JWT cannot apply a valid coupon (FR-09 C4)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      37 | test.each(['absent','invalid'])('CD-04 %s JWT cannot apply a valid coupon (FR-09 C4)', async kind => {
+      38 |   await h.seedCoupon(db);
+    > 39 |   expect(refused(await apply({},kind === 'absent' ? null : 'invalid-token'))).toBe(true);
+         |                                                                               ^
+      40 | });
+      41 | test.each(['omitted','another-user'])('CD-05 body user_id %s cannot bypass my limit (FR-09 C4/C5)', async kind => {
+      42 |   const coupon = await h.seedCoupon(db);
+
+      at test/defects/coupons.defects.js:39:79
+
+  ● CD-04 invalid JWT cannot apply a valid coupon (FR-09 C4)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      37 | test.each(['absent','invalid'])('CD-04 %s JWT cannot apply a valid coupon (FR-09 C4)', async kind => {
+      38 |   await h.seedCoupon(db);
+    > 39 |   expect(refused(await apply({},kind === 'absent' ? null : 'invalid-token'))).toBe(true);
+         |                                                                               ^
+      40 | });
+      41 | test.each(['omitted','another-user'])('CD-05 body user_id %s cannot bypass my limit (FR-09 C4/C5)', async kind => {
+      42 |   const coupon = await h.seedCoupon(db);
+
+      at test/defects/coupons.defects.js:39:79
+
+  ● CD-05 body user_id omitted cannot bypass my limit (FR-09 C4/C5)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "refused": true,
+    +   "refused": false,
+        "usage": 2,
+      }
+
+      44 |   const res = await apply({user_id:kind === 'omitted' ? undefined : 1});
+      45 |   expect({refused:refused(res),usage:await h.count(db,'coupon_usage')})
+    > 46 |     .toEqual({refused:true,usage:2});
+         |      ^
+      47 | });
+      48 | test.each(['list','create','delete'])('CD-06 ordinary user cannot %s coupons (FR-12, SEC-03; API 5.2)', async action => {
+      49 |   const coupon = await h.seedCoupon(db);
+
+      at test/defects/coupons.defects.js:46:6
+
+  ● CD-05 body user_id another-user cannot bypass my limit (FR-09 C4/C5)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "refused": true,
+    +   "refused": false,
+        "usage": 2,
+      }
+
+      44 |   const res = await apply({user_id:kind === 'omitted' ? undefined : 1});
+      45 |   expect({refused:refused(res),usage:await h.count(db,'coupon_usage')})
+    > 46 |     .toEqual({refused:true,usage:2});
+         |      ^
+      47 | });
+      48 | test.each(['list','create','delete'])('CD-06 ordinary user cannot %s coupons (FR-12, SEC-03; API 5.2)', async action => {
+      49 |   const coupon = await h.seedCoupon(db);
+
+      at test/defects/coupons.defects.js:46:6
+
+  ● CD-06 ordinary user cannot list coupons (FR-12, SEC-03; API 5.2)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "refused": true,
+    +   "refused": false,
+        "rows": 1,
+      }
+
+      53 |   const res = await req.set(h.bearer(token));
+      54 |   expect({refused:refused(res),rows:await h.count(db,'coupons')})
+    > 55 |     .toEqual({refused:true,rows:1});
+         |      ^
+      56 | });
+      57 | test.each([
+      58 |   ['missing-code',{code:undefined}],
+
+      at test/defects/coupons.defects.js:55:6
+
+  ● CD-06 ordinary user cannot create coupons (FR-12, SEC-03; API 5.2)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "refused": true,
+    -   "rows": 1,
+    +   "refused": false,
+    +   "rows": 2,
+      }
+
+      53 |   const res = await req.set(h.bearer(token));
+      54 |   expect({refused:refused(res),rows:await h.count(db,'coupons')})
+    > 55 |     .toEqual({refused:true,rows:1});
+         |      ^
+      56 | });
+      57 | test.each([
+      58 |   ['missing-code',{code:undefined}],
+
+      at test/defects/coupons.defects.js:55:6
+
+  ● CD-06 ordinary user cannot delete coupons (FR-12, SEC-03; API 5.2)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "refused": true,
+    -   "rows": 1,
+    +   "refused": false,
+    +   "rows": 0,
+      }
+
+      53 |   const res = await req.set(h.bearer(token));
+      54 |   expect({refused:refused(res),rows:await h.count(db,'coupons')})
+    > 55 |     .toEqual({refused:true,rows:1});
+         |      ^
+      56 | });
+      57 | test.each([
+      58 |   ['missing-code',{code:undefined}],
+
+      at test/defects/coupons.defects.js:55:6
+
+  ● CD-07 admin validation: missing-code is refused without insertion (FR-17)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "refused": true,
+    -   "rows": 0,
+    +   "refused": false,
+    +   "rows": 1,
+      }
+
+      66 |     .send({...h.validAdminCoupon(),...invalid});
+      67 |   expect({refused:refused(res),rows:await h.count(db,'coupons')})
+    > 68 |     .toEqual({refused:true,rows:0});
+         |      ^
+      69 | });
+      70 |
+
+      at test/defects/coupons.defects.js:68:6
+
+  ● CD-07 admin validation: unknown-type is refused without insertion (FR-17)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "refused": true,
+    -   "rows": 0,
+    +   "refused": false,
+    +   "rows": 1,
+      }
+
+      66 |     .send({...h.validAdminCoupon(),...invalid});
+      67 |   expect({refused:refused(res),rows:await h.count(db,'coupons')})
+    > 68 |     .toEqual({refused:true,rows:0});
+         |      ^
+      69 | });
+      70 |
+
+      at test/defects/coupons.defects.js:68:6
+
+  ● CD-07 admin validation: zero-discount is refused without insertion (FR-17)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "refused": true,
+    -   "rows": 0,
+    +   "refused": false,
+    +   "rows": 1,
+      }
+
+      66 |     .send({...h.validAdminCoupon(),...invalid});
+      67 |   expect({refused:refused(res),rows:await h.count(db,'coupons')})
+    > 68 |     .toEqual({refused:true,rows:0});
+         |      ^
+      69 | });
+      70 |
+
+      at test/defects/coupons.defects.js:68:6
+
+  ● CD-07 admin validation: negative-minimum is refused without insertion (FR-17)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "refused": true,
+    -   "rows": 0,
+    +   "refused": false,
+    +   "rows": 1,
+      }
+
+      66 |     .send({...h.validAdminCoupon(),...invalid});
+      67 |   expect({refused:refused(res),rows:await h.count(db,'coupons')})
+    > 68 |     .toEqual({refused:true,rows:0});
+         |      ^
+      69 | });
+      70 |
+
+      at test/defects/coupons.defects.js:68:6
+
+  ● CD-07 admin validation: zero-uses is refused without insertion (FR-17)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "refused": true,
+    -   "rows": 0,
+    +   "refused": false,
+    +   "rows": 1,
+      }
+
+      66 |     .send({...h.validAdminCoupon(),...invalid});
+      67 |   expect({refused:refused(res),rows:await h.count(db,'coupons')})
+    > 68 |     .toEqual({refused:true,rows:0});
+         |      ^
+      69 | });
+      70 |
+
+      at test/defects/coupons.defects.js:68:6
+
+  ● CD-07 admin validation: missing-expiry is refused without insertion (FR-17)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "refused": true,
+    -   "rows": 0,
+    +   "refused": false,
+    +   "rows": 1,
+      }
+
+      66 |     .send({...h.validAdminCoupon(),...invalid});
+      67 |   expect({refused:refused(res),rows:await h.count(db,'coupons')})
+    > 68 |     .toEqual({refused:true,rows:0});
+         |      ^
+      69 | });
+      70 |
+
+      at test/defects/coupons.defects.js:68:6
+
+Test Suites: 3 failed, 3 total
+Tests:       48 failed, 48 total
+Snapshots:   0 total
+Time:        1.401 s
+Ran all test suites in 2 projects.
+Test results written to: ..\..\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Thai_Hoa\D04-merge-2026-10-23-agent\three-domain-defects.json

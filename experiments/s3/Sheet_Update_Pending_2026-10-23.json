@@ -1,0 +1,672 @@
+{
+  "spreadsheetId": "1vuIXJeVhuoKQu8Gw4cHN__d09kIcB4K-hccIz27DxKc",
+  "sheet": "S3 - Experiments",
+  "attempted": true,
+  "result": "403 PERMISSION_DENIED; no successful write",
+  "changes": [
+    {
+      "row": 15,
+      "id": "S3-C02",
+      "from": "Done",
+      "to": "Done",
+      "note": "Agent official-doc-guided adaptation + toy coverage/weak/AI/strong runs; Experiment_Log_Thai_Hoa.md; D04-merge-2026-10-23-agent. Member self-run/review separate."
+    },
+    {
+      "row": 18,
+      "id": "S3-D02",
+      "from": "Done",
+      "to": "Done",
+      "note": "SUT 806ba19: Coupons 25 + API flow 1 pass; 22 separate defect assertion failures; Original_Defects_and_Assumptions.md + oracle-patch-check. Production unchanged."
+    },
+    {
+      "row": 20,
+      "id": "S3-D04",
+      "from": "Done",
+      "to": "Done",
+      "note": "Baseline_Manifest.md; SUT frozen 806ba19; accepted main fd6cbfa; clean frozen tests 88 pass, defects 54 assertion failures. Auth five files SHA-identical."
+    },
+    {
+      "row": 22,
+      "id": "S3-E02",
+      "from": "In Progress",
+      "to": "Review",
+      "note": "806ba19 / frozen-coupons-baseline: 120 mutants; K39 T21 S30 NC25 E5; score52.17%. Agent run; HTML/JSON/log in D04-merge-2026-10-23-agent."
+    },
+    {
+      "row": 25,
+      "id": "S3-F02",
+      "from": "In Progress",
+      "to": "Review",
+      "note": "s3/F02-coupons a6abc7f: AI-assisted spec/manual-analysis draft authorized for Hòa review; 29 pass; 2 S->K (111/113); 41K/21T/28S/25NC/5E. Not independent human authorship."
+    },
+    {
+      "row": 28,
+      "id": "S3-G02",
+      "from": "In Progress",
+      "to": "Review",
+      "note": "s3/G02-coupons f12a6cc: Codex same context explicitly authorized after Claude login failed. 28 pass; 2 S->K; raw/executed SHA identical. Human review Pending; no blind comparison."
+    },
+    {
+      "row": 31,
+      "id": "S3-H02",
+      "from": "In Progress",
+      "to": "Review",
+      "note": "Experiment_Log_Thai_Hoa.md H02 + Coupons_Survivor_Analysis_Thai_Hoa.md; 120/120 signatures/source match; score52.17->53.91 for both variants; 5 evidenced failure modes; same-context confound disclosed."
+    },
+    {
+      "row": 34,
+      "id": "S3-I02",
+      "from": "In Progress",
+      "to": "In Progress",
+      "note": "Auth baseline reproduced: 26 pass;125 mutants K60 T27 S23 NC7 E8; same signatures as provisional. Partial: Auth F03/G03/H03 not delivered; manual/AI reproduction Pending."
+    },
+    {
+      "row": 39,
+      "id": "S3-CHK01",
+      "to": "Checked"
+    },
+    {
+      "row": 40,
+      "id": "S3-CHK02",
+      "to": "Checked"
+    },
+    {
+      "row": 41,
+      "id": "S3-CHK03",
+      "to": "Checked"
+    },
+    {
+      "row": 42,
+      "id": "S3-CHK04",
+      "to": "Checked"
+    },
+    {
+      "row": 43,
+      "id": "S3-CHK05",
+      "to": "Checked"
+    },
+    {
+      "row": 44,
+      "id": "S3-CHK06",
+      "to": "Pending"
+    }
+  ],
+  "requests": [
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 2111026276,
+          "startRowIndex": 14,
+          "endRowIndex": 15,
+          "startColumnIndex": 4,
+          "endColumnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Done"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-10-23: Agent official-doc-guided adaptation + toy coverage/weak/AI/strong runs; Experiment_Log_Thai_Hoa.md; D04-merge-2026-10-23-agent. Member self-run/review separate."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 2111026276,
+          "startRowIndex": 14,
+          "endRowIndex": 15,
+          "startColumnIndex": 6,
+          "endColumnIndex": 7
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Làm: Tự chạy Stryker tutorial và Claude assertion workflow; chuẩn bị seed/reset cho Coupons.\nĐầu vào: Official tutorials; Tool Notes; runner/config nhóm chọn.\nXong khi: Mình chạy được hai workflow và lưu commands/output/errors thực tế.\nChờ: Runner/config S2 đã thống nhất; đọc notes cần dùng, không chờ toàn bộ research.\nMẫu: experiments/s3/Experiment_Log_TEMPLATE.md; tạo file khi bắt đầu, giữ nguyên TEMPLATE.\nReview 2026-10-23 (Codex Agent): Agent official-doc-guided adaptation + toy coverage/weak/AI/strong runs; Experiment_Log_Thai_Hoa.md; D04-merge-2026-10-23-agent. Member self-run/review separate."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 2111026276,
+          "startRowIndex": 17,
+          "endRowIndex": 18,
+          "startColumnIndex": 4,
+          "endColumnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Done"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-10-23: SUT 806ba19: Coupons 25 + API flow 1 pass; 22 separate defect assertion failures; Original_Defects_and_Assumptions.md + oracle-patch-check. Production unchanged."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 2111026276,
+          "startRowIndex": 17,
+          "endRowIndex": 18,
+          "startColumnIndex": 6,
+          "endColumnIndex": 7
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Làm: Viết normal/invalid/boundary tests cho minimum amount, expiry, discount type, usage limit; cô lập DB/time/token khi cần. Expected results theo spec.\nĐầu vào: API Specification §5, §6.4; scope Coupons; môi trường S3-C02.\nXong khi: Tests tái lập, expected results có căn cứ; ghi lỗi gốc và giao suite cho S3-D04.\nChờ: Setup của mình xong; scope/seams S2 đã chốt.\nMẫu: experiments/s3/Experiment_Log_TEMPLATE.md; tạo file khi bắt đầu, giữ nguyên TEMPLATE.\nReview 2026-10-23 (Codex Agent): SUT 806ba19: Coupons 25 + API flow 1 pass; 22 separate defect assertion failures; Original_Defects_and_Assumptions.md + oracle-patch-check. Production unchanged."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 2111026276,
+          "startRowIndex": 19,
+          "endRowIndex": 20,
+          "startColumnIndex": 4,
+          "endColumnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Done"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-10-23: Baseline_Manifest.md; SUT frozen 806ba19; accepted main fd6cbfa; clean frozen tests 88 pass, defects 54 assertion failures. Auth five files SHA-identical."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 2111026276,
+          "startRowIndex": 19,
+          "endRowIndex": 20,
+          "startColumnIndex": 6,
+          "endColumnIndex": 7
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Làm: Ghép ba suites, xử lý fixture/config conflicts; chạy original tests rồi freeze source/tests/config.\nĐầu vào: Tests ba domain (S3-D01–D03); scope S2.\nXong khi: Original tests pass; commit/config/commands trong manifest đủ để cả nhóm chạy cùng baseline.\nChờ: Ba test suites đã bàn giao, lỗi gốc ảnh hưởng baseline đã xử lý.\nMẫu: experiments/s3/Baseline_Manifest_TEMPLATE.md; tạo file khi bắt đầu, giữ nguyên TEMPLATE.\nReview 2026-10-23 (Codex Agent): Baseline_Manifest.md; SUT frozen 806ba19; accepted main fd6cbfa; clean frozen tests 88 pass, defects 54 assertion failures. Auth five files SHA-identical."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 2111026276,
+          "startRowIndex": 21,
+          "endRowIndex": 22,
+          "startColumnIndex": 4,
+          "endColumnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Review"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-10-23: 806ba19 / frozen-coupons-baseline: 120 mutants; K39 T21 S30 NC25 E5; score52.17%. Agent run; HTML/JSON/log in D04-merge-2026-10-23-agent."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 2111026276,
+          "startRowIndex": 21,
+          "endRowIndex": 22,
+          "startColumnIndex": 6,
+          "endColumnIndex": 7
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Làm: Checkout baseline chung, tự chạy Stryker và map mutants thuộc Coupons; lưu reports gốc.\nĐầu vào: Baseline_Manifest.md và baseline commit (S3-D04).\nXong khi: Có reports/commands/commit/config thực tế; mutant mapping đúng domain.\nChờ: Baseline chung đã chốt (S3-D04).\nMẫu: experiments/s3/Experiment_Log_TEMPLATE.md; tạo file khi bắt đầu, giữ nguyên TEMPLATE.\nReview 2026-10-23 (Codex Agent): 806ba19 / frozen-coupons-baseline: 120 mutants; K39 T21 S30 NC25 E5; score52.17%. Agent run; HTML/JSON/log in D04-merge-2026-10-23-agent."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 2111026276,
+          "startRowIndex": 24,
+          "endRowIndex": 25,
+          "startColumnIndex": 4,
+          "endColumnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Review"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-10-23: s3/F02-coupons a6abc7f: AI-assisted spec/manual-analysis draft authorized for Hòa review; 29 pass; 2 S->K (111/113); 41K/21T/28S/25NC/5E. Not independent human authorship."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 2111026276,
+          "startRowIndex": 24,
+          "endRowIndex": 25,
+          "startColumnIndex": 6,
+          "endColumnIndex": 7
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Làm: Đọc mutant diff, giải thích test bỏ sót và viết assertion theo spec; chạy tests/mutation từ baseline. Nếu thiếu case phù hợp, báo nhóm đổi case.\nĐầu vào: Baseline report của mình (S3-E02); API Specification §5, §6.4.\nXong khi: Case của mình có analysis, assertion diff và actual kill evidence; giao để nhóm ghép bộ chung.\nChờ: Baseline report của mình đã có.\nMẫu: experiments/s3/Experiment_Log_TEMPLATE.md; tạo file khi bắt đầu, giữ nguyên TEMPLATE.\nReview 2026-10-23 (Codex Agent): s3/F02-coupons a6abc7f: AI-assisted spec/manual-analysis draft authorized for Hòa review; 29 pass; 2 S->K (111/113); 41K/21T/28S/25NC/5E. Not independent human authorship."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 2111026276,
+          "startRowIndex": 27,
+          "endRowIndex": 28,
+          "startColumnIndex": 4,
+          "endColumnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Review"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-10-23: s3/G02-coupons f12a6cc: Codex same context explicitly authorized after Claude login failed. 28 pass; 2 S->K; raw/executed SHA identical. Human review Pending; no blind comparison."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 2111026276,
+          "startRowIndex": 27,
+          "endRowIndex": 28,
+          "startColumnIndex": 6,
+          "endColumnIndex": 7
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Làm: Dùng cùng mutants đã phân tích; lưu Claude candidates, đối chiếu spec, ghi accepted/edited/rejected rồi chạy kiểm chứng. Nhánh AI bắt đầu từ baseline, tách nhánh manual.\nĐầu vào: Mutant analysis S3-F02; spec, code và baseline chung.\nXong khi: Mình có prompt/raw output, human edits và actual kill mapping cho cùng mutants.\nChờ: Mutants của mình đã được phân tích; có thể thử AI trước khi manual run hoàn tất.\nMẫu: experiments/s3/Experiment_Log_TEMPLATE.md; tạo file khi bắt đầu, giữ nguyên TEMPLATE.\nReview 2026-10-23 (Codex Agent): s3/G02-coupons f12a6cc: Codex same context explicitly authorized after Claude login failed. 28 pass; 2 S->K; raw/executed SHA identical. Human review Pending; no blind comparison."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 2111026276,
+          "startRowIndex": 30,
+          "endRowIndex": 31,
+          "startColumnIndex": 4,
+          "endColumnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Review"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-10-23: Experiment_Log_Thai_Hoa.md H02 + Coupons_Survivor_Analysis_Thai_Hoa.md; 120/120 signatures/source match; score52.17->53.91 for both variants; 5 evidenced failure modes; same-context confound disclosed."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 2111026276,
+          "startRowIndex": 30,
+          "endRowIndex": 31,
+          "startColumnIndex": 6,
+          "endColumnIndex": 7
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Làm: Đối chiếu ba kết quả trên cùng source/config; giải thích Killed/Timeout/errors, equivalent candidates và failure-mode case. S4-B dùng notes này để viết report.\nĐầu vào: Baseline/manual/AI reports của domain mình; Theory Notes.\nXong khi: Comparison có raw counts/evidence; không cộng hay lấy trung bình score domain.\nChờ: Ba nhánh chạy của mình có kết quả (S3-E02/F02/G02).\nMẫu: experiments/s3/Experiment_Log_TEMPLATE.md; tạo file khi bắt đầu, giữ nguyên TEMPLATE.\nReview 2026-10-23 (Codex Agent): Experiment_Log_Thai_Hoa.md H02 + Coupons_Survivor_Analysis_Thai_Hoa.md; 120/120 signatures/source match; score52.17->53.91 for both variants; 5 evidenced failure modes; same-context confound disclosed."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 2111026276,
+          "startRowIndex": 33,
+          "endRowIndex": 34,
+          "startColumnIndex": 4,
+          "endColumnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "In Progress"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-10-23: Auth baseline reproduced: 26 pass;125 mutants K60 T27 S23 NC7 E8; same signatures as provisional. Partial: Auth F03/G03/H03 not delivered; manual/AI reproduction Pending."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 2111026276,
+          "startRowIndex": 33,
+          "endRowIndex": 34,
+          "startColumnIndex": 6,
+          "endColumnIndex": 7
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Làm: Chạy baseline/manual/Claude của Authentication & Users theo notes teammate; đọc và giải thích ba mutant cases chung; gửi lỗi hướng dẫn cho tác giả.\nĐầu vào: experiments/s3/Experiment_Log_Phuc_Hoang.md; reports và commands teammate cung cấp.\nXong khi: Mình tự chạy được case teammate, có actual log và góp ý cụ thể.\nChờ: Case teammate đã có comparison (S3-H03); không chờ domain thứ ba.\nMẫu: experiments/s3/Experiment_Log_TEMPLATE.md; tạo file khi bắt đầu, giữ nguyên TEMPLATE.\nReview 2026-10-23 (Codex Agent): Auth baseline reproduced: 26 pass;125 mutants K60 T27 S23 NC7 E8; same signatures as provisional. Partial: Auth F03/G03/H03 not delivered; manual/AI reproduction Pending."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 2111026276,
+          "startRowIndex": 38,
+          "endRowIndex": 39,
+          "startColumnIndex": 3,
+          "endColumnIndex": 5
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Checked"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Baseline_Manifest.md + frozen-commit-final-tests.json:88 pass on806ba19; production unchanged."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 2111026276,
+          "startRowIndex": 39,
+          "endRowIndex": 40,
+          "startColumnIndex": 3,
+          "endColumnIndex": 5
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Checked"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Cross_Reproduction_Notes_Thai_Hoa.md: three distinct Cart survivors (L286/L293/L335) with spec/kill mapping; Coupons analysis separately lists2 targets."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 2111026276,
+          "startRowIndex": 40,
+          "endRowIndex": 41,
+          "startColumnIndex": 3,
+          "endColumnIndex": 5
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Checked"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Unedited Hiệp manual b77f5d6:44 tests pass,23 S->K; existing AI f4696c6:41 pass,13 S->K; same frozen source/150 signatures. Coupons F02 is AI-assisted; human attribution not fabricated."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 2111026276,
+          "startRowIndex": 41,
+          "endRowIndex": 42,
+          "startColumnIndex": 3,
+          "endColumnIndex": 5
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Checked"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Frozen-source/universe comparisons: Cart150, Coupons120. Killed/Timeout/RuntimeError separated; no score averaging. Baseline_Manifest.md and mappings."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 2111026276,
+          "startRowIndex": 42,
+          "endRowIndex": 43,
+          "startColumnIndex": 3,
+          "endColumnIndex": 5
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Checked"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Coupons_Survivor_Analysis_Thai_Hoa.md + log H02: correcting/scoped equivalent candidates, >=3 actual failure modes, sources/provenance/AI record."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": 2111026276,
+          "startRowIndex": 43,
+          "endRowIndex": 44,
+          "startColumnIndex": 3,
+          "endColumnIndex": 5
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Pending"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Agent runs do not replace member self-run evidence; Auth manual/AI/comparison missing; I02 Partial."
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    }
+  ]
+}

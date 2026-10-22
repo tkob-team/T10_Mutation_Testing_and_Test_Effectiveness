@@ -1,0 +1,475 @@
+--- stdout ---
+[32m02:50:09 (28776) INFO ProjectReader[39m Found 1 of 52 file(s) to be mutated.
+[32m02:50:10 (28776) INFO Instrumenter[39m Instrumented 1 source file(s) with 125 mutant(s)
+[32m02:50:10 (28776) INFO ConcurrencyTokenProvider[39m Creating 2 test runner process(es).
+[32m02:50:11 (28776) INFO DryRunExecutor[39m Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+[32m02:50:12 (28776) INFO DryRunExecutor[39m Initial test run succeeded. Ran 26 tests in 1 second (net 284 ms, overhead 778 ms).
+[33m02:50:12 (28776) WARN ChildProcessProxy[39m Child process [pid 11616] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 11616] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 11616,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:50:13 (28776) WARN ChildProcessProxy[39m Child process [pid 23676] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 23676] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 23676,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:50:26 (28776) WARN ChildProcessProxy[39m Child process [pid 32512] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 32512] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 32512,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:50:27 (28776) WARN ChildProcessProxy[39m Child process [pid 21112] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 21112] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 21112,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:50:47 (28776) WARN ChildProcessProxy[39m Child process [pid 5140] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 5140] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 5140,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:50:48 (28776) WARN ChildProcessProxy[39m Child process [pid 9172] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 9172] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 9172,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:50:56 (28776) WARN ChildProcessProxy[39m Child process [pid 32388] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 32388] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 32388,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:50:57 (28776) WARN ChildProcessProxy[39m Child process [pid 16600] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 16600] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 16600,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:50:59 (28776) WARN ChildProcessProxy[39m Child process [pid 30028] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 30028] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 30028,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:51:00 (28776) WARN ChildProcessProxy[39m Child process [pid 26556] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 26556] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 26556,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:51:14 (28776) WARN ChildProcessProxy[39m Child process [pid 24032] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 24032] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 24032,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:51:15 (28776) WARN ChildProcessProxy[39m Child process [pid 25616] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 25616] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 25616,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:51:24 (28776) WARN ChildProcessProxy[39m Child process [pid 1204] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 1204] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 1204,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:51:25 (28776) WARN ChildProcessProxy[39m Child process [pid 23148] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 23148] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 23148,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:51:47 (28776) WARN ChildProcessProxy[39m Child process [pid 27992] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 27992] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 27992,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m02:51:48 (28776) WARN ChildProcessProxy[39m Child process [pid 21616] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 21616] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 21616,
+  exitCode: 3221225477,
+  signal: null
+}
+
+All tests/auth.spec.test.js
+  ✓ Registration (API 1.1) AU-R01 valid registration returns 200, the success message and a numeric id [line 18] (killed 3)
+  ✓ Registration (API 1.1) AU-R02 a registered user can log in with the same credentials (API 1.2) [line 26] (killed 8)
+  ~ Login and lock (API 1.2, README FR-02) AU-L01 correct credentials return 200, a JWT and the user [line 35] (covered 21)
+  ✓ Login and lock (API 1.2, README FR-02) AU-L02 the JWT carries the user id and role (FR-02, SEC-03) [line 43] (killed 1)
+  ✓ Login and lock (API 1.2, README FR-02) AU-L03 wrong password is refused with 401 (convention) and no token [line 50] (killed 1)
+  ✓ Login and lock (API 1.2, README FR-02) AU-L04 unknown email gets the same status and body as a wrong password (FR-02: no cause leaked) [line 56] (killed 4)
+  ✓ Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02) [line 63] (killed 8)
+  ~ Login and lock (API 1.2, README FR-02) AU-L06 the lock still holds 29 seconds after the third wrong attempt (FR-02: 30 s) [line 70] (covered 33)
+  ✓ Login and lock (API 1.2, README FR-02) AU-L07 a lock whose time has passed no longer blocks login [line 77] (killed 2)
+  ✓ Login and lock (API 1.2, README FR-02) AU-L08 a successful login resets the failure counter: wrong, ok, wrong, ok never locks (FR-02 "consecutive") [line 84] (killed 3)
+  ~ Login and lock (API 1.2, README FR-02) AU-L09 failures of one account do not lock another account [line 91] (covered 39)
+  ✓ Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P01 forgot-password for a registered email returns 200, the message and a reset token (API 1.3) [line 102] (killed 5)
+  ~ Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P02 forgot-password for an unknown email gives no token [line 110] (covered 9)
+  ✓ Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4) [line 116] (killed 5)
+  ✓ Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P04 reset with a wrong token is refused with 400 (convention) and the password is unchanged [line 124] (killed 1)
+  ~ Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P05 a token issued to one email cannot reset another account (FR-03) [line 132] (covered 46)
+  ~ Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P06 a token is invalidated after use (SEC-07): the second reset with it is refused [line 139] (covered 48)
+  ✓ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U01 GET /me without a token is refused with 401 (SEC-02) [line 153] (killed 6)
+  ✓ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U02 GET /me with an invalid token is refused (SEC-02) [line 157] (killed 1)
+  ✓ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U03 GET /me returns the profile of the token owner only (API 2.1) [line 162] (killed 5)
+  ✓ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2) [line 169] (killed 7)
+  ~ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U05 updating one user's profile leaves other users unchanged (FR-04: own profile only) [line 180] (covered 46)
+  ~ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U06 the email cannot be changed through PUT /me (FR-04) [line 187] (covered 51)
+  ~ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U07 PUT /me without a token is refused with 401 (SEC-02) [line 193] (covered 10)
+  ~ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U08 a valid phone is accepted (FR-04: starts with 0, 10-11 digits): 10 digits [line 197] (covered 51)
+  ~ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U08 a valid phone is accepted (FR-04: starts with 0, 10-11 digits): 11 digits [line 197] (covered 51)
+
+[NoCoverage] ObjectLiteral
+server.js:26:44
+-         if (err) return res.status(500).json({ error: err.message });
++         if (err) return res.status(500).json({});
+
+[NoCoverage] ObjectLiteral
+server.js:36:42
+-       if (err) return res.status(500).json({ error: err.message });
++       if (err) return res.status(500).json({});
+
+[NoCoverage] ObjectLiteral
+server.js:77:46
+-           if (err) return res.status(500).json({ error: err.message });
++           if (err) return res.status(500).json({});
+
+[NoCoverage] BlockStatement
+server.js:124:13
+-     if (role) {
+-       query += ", role = ?";
+-       params.push(role);
+-     }
++     if (role) {}
+
+[NoCoverage] StringLiteral
+server.js:125:14
+-       query += ", role = ?";
++       query += "";
+
+[NoCoverage] CallExpression
+server.js:126:5
+-       params.push(role);
++       ;
+
+[NoCoverage] ObjectLiteral
+server.js:132:42
+-       if (err) return res.status(500).json({ error: err.message });
++       if (err) return res.status(500).json({});
+
+[Survived] ConditionalExpression
+server.js:26:11
+-         if (err) return res.status(500).json({ error: err.message });
++         if (false) return res.status(500).json({ error: err.message });
+Tests ran:
+    Registration (API 1.1) AU-R01 valid registration returns 200, the success message and a numeric id
+    Registration (API 1.1) AU-R02 a registered user can log in with the same credentials (API 1.2)
+
+
+[Survived] ConditionalExpression
+server.js:36:9
+-       if (err) return res.status(500).json({ error: err.message });
++       if (false) return res.status(500).json({ error: err.message });
+Tests ran:
+    Registration (API 1.1) AU-R02 a registered user can log in with the same credentials (API 1.2)
+    Login and lock (API 1.2, README FR-02) AU-L01 correct credentials return 200, a JWT and the user
+    Login and lock (API 1.2, README FR-02) AU-L02 the JWT carries the user id and role (FR-02, SEC-03)
+  and 17 more tests!
+
+
+[Survived] EqualityOperator
+server.js:40:30
+-       if (user.locked_until && new Date() < new Date(user.locked_until)) {
++       if (user.locked_until && new Date() <= new Date(user.locked_until)) {
+Tests ran:
+    Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)
+    Login and lock (API 1.2, README FR-02) AU-L06 the lock still holds 29 seconds after the third wrong attempt (FR-02: 30 s)
+    Login and lock (API 1.2, README FR-02) AU-L07 a lock whose time has passed no longer blocks login
+  and 1 more test!
+
+
+[Survived] ObjectLiteral
+server.js:43:15
+-           .json({ error: "Tài khoản đã bị khóa. Vui lòng thử lại sau." });
++           .json({});
+Tests ran:
+    Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)
+    Login and lock (API 1.2, README FR-02) AU-L06 the lock still holds 29 seconds after the third wrong attempt (FR-02: 30 s)
+    Login and lock (API 1.2, README FR-02) AU-L07 a lock whose time has passed no longer blocks login
+  and 1 more test!
+
+
+[Survived] StringLiteral
+server.js:43:24
+-           .json({ error: "Tài khoản đã bị khóa. Vui lòng thử lại sau." });
++           .json({ error: "" });
+Tests ran:
+    Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)
+    Login and lock (API 1.2, README FR-02) AU-L06 the lock still holds 29 seconds after the third wrong attempt (FR-02: 30 s)
+    Login and lock (API 1.2, README FR-02) AU-L07 a lock whose time has passed no longer blocks login
+  and 1 more test!
+
+
+[Survived] StringLiteral
+server.js:52:27
+-         res.json({ message: "Login successful", token, user });
++         res.json({ message: "", token, user });
+Tests ran:
+    Registration (API 1.1) AU-R02 a registered user can log in with the same credentials (API 1.2)
+    Login and lock (API 1.2, README FR-02) AU-L01 correct credentials return 200, a JWT and the user
+    Login and lock (API 1.2, README FR-02) AU-L02 the JWT carries the user id and role (FR-02, SEC-03)
+  and 13 more tests!
+
+
+[Survived] EqualityOperator
+server.js:56:11
+-         if (newAttempts >= 3) {
++         if (newAttempts > 3) {
+Tests ran:
+    Login and lock (API 1.2, README FR-02) AU-L03 wrong password is refused with 401 (convention) and no token
+    Login and lock (API 1.2, README FR-02) AU-L04 unknown email gets the same status and body as a wrong password (FR-02: no cause leaked)
+    Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)
+  and 5 more tests!
+
+
+[Survived] ObjectLiteral
+server.js:71:44
+-       if (!user) return res.status(404).json({ error: "User not found" });
++       if (!user) return res.status(404).json({});
+Tests ran:
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P02 forgot-password for an unknown email gives no token
+
+
+[Survived] StringLiteral
+server.js:71:53
+-       if (!user) return res.status(404).json({ error: "User not found" });
++       if (!user) return res.status(404).json({ error: "" });
+Tests ran:
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P02 forgot-password for an unknown email gives no token
+
+
+[Survived] ArithmeticOperator
+server.js:72:35
+-       const resetToken = Math.floor(1000 + Math.random() * 9000).toString();
++       const resetToken = Math.floor(1000 - Math.random() * 9000).toString();
+Tests ran:
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P01 forgot-password for a registered email returns 200, the message and a reset token (API 1.3)
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4)
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P04 reset with a wrong token is refused with 400 (convention) and the password is unchanged
+  and 2 more tests!
+
+
+[Survived] ArithmeticOperator
+server.js:72:42
+-       const resetToken = Math.floor(1000 + Math.random() * 9000).toString();
++       const resetToken = Math.floor(1000 + Math.random() / 9000).toString();
+Tests ran:
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P01 forgot-password for a registered email returns 200, the message and a reset token (API 1.3)
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4)
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P04 reset with a wrong token is refused with 400 (convention) and the password is unchanged
+  and 2 more tests!
+
+
+[Survived] ConditionalExpression
+server.js:77:13
+-           if (err) return res.status(500).json({ error: err.message });
++           if (false) return res.status(500).json({ error: err.message });
+Tests ran:
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P01 forgot-password for a registered email returns 200, the message and a reset token (API 1.3)
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4)
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P04 reset with a wrong token is refused with 400 (convention) and the password is unchanged
+  and 2 more tests!
+
+
+[Survived] ObjectLiteral
+server.js:94:37
+-           return res.status(400).json({ error: "Invalid token or email" });
++           return res.status(400).json({});
+Tests ran:
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P04 reset with a wrong token is refused with 400 (convention) and the password is unchanged
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P05 a token issued to one email cannot reset another account (FR-03)
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P06 a token is invalidated after use (SEC-07): the second reset with it is refused
+
+
+[Survived] StringLiteral
+server.js:94:46
+-           return res.status(400).json({ error: "Invalid token or email" });
++           return res.status(400).json({ error: "" });
+Tests ran:
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P04 reset with a wrong token is refused with 400 (convention) and the password is unchanged
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P05 a token issued to one email cannot reset another account (FR-03)
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P06 a token is invalidated after use (SEC-07): the second reset with it is refused
+
+
+[Survived] ObjectLiteral
+server.js:95:16
+-         res.json({ message: "Password reset successfully" });
++         res.json({});
+Tests ran:
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4)
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P06 a token is invalidated after use (SEC-07): the second reset with it is refused
+
+
+[Survived] StringLiteral
+server.js:95:27
+-         res.json({ message: "Password reset successfully" });
++         res.json({ message: "" });
+Tests ran:
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4)
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P06 a token is invalidated after use (SEC-07): the second reset with it is refused
+
+
+[Survived] ObjectLiteral
+server.js:103:50
+-     if (token == null) return res.status(401).json({ error: "Unauthorized" });
++     if (token == null) return res.status(401).json({});
+Tests ran:
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U01 GET /me without a token is refused with 401 (SEC-02)
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U07 PUT /me without a token is refused with 401 (SEC-02)
+
+
+[Survived] StringLiteral
+server.js:103:59
+-     if (token == null) return res.status(401).json({ error: "Unauthorized" });
++     if (token == null) return res.status(401).json({ error: "" });
+Tests ran:
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U01 GET /me without a token is refused with 401 (SEC-02)
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U07 PUT /me without a token is refused with 401 (SEC-02)
+
+
+[Survived] ObjectLiteral
+server.js:106:42
+-       if (err) return res.status(403).json({ error: "Forbidden" });
++       if (err) return res.status(403).json({});
+Tests ran:
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U02 GET /me with an invalid token is refused (SEC-02)
+
+
+[Survived] StringLiteral
+server.js:106:51
+-       if (err) return res.status(403).json({ error: "Forbidden" });
++       if (err) return res.status(403).json({ error: "" });
+Tests ran:
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U02 GET /me with an invalid token is refused (SEC-02)
+
+
+[Survived] ConditionalExpression
+server.js:124:7
+-     if (role) {
++     if (true) {
+Tests ran:
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2)
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U05 updating one user's profile leaves other users unchanged (FR-04: own profile only)
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U06 the email cannot be changed through PUT /me (FR-04)
+  and 2 more tests!
+
+
+[Survived] ConditionalExpression
+server.js:124:7
+-     if (role) {
++     if (false) {
+Tests ran:
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2)
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U05 updating one user's profile leaves other users unchanged (FR-04: own profile only)
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U06 the email cannot be changed through PUT /me (FR-04)
+  and 2 more tests!
+
+
+[Survived] ConditionalExpression
+server.js:132:9
+-       if (err) return res.status(500).json({ error: err.message });
++       if (false) return res.status(500).json({ error: err.message });
+Tests ran:
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2)
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U05 updating one user's profile leaves other users unchanged (FR-04: own profile only)
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U06 the email cannot be changed through PUT /me (FR-04)
+  and 2 more tests!
+
+
+Ran 5.73 tests per mutant on average.
+-----------|------------------|----------|-----------|------------|----------|----------|
+           | % Mutation score |          |           |            |          |          |
+File       |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+All files  |  74.36 |   79.09 |       60 |        27 |         23 |        7 |        8 |
+ server.js |  74.36 |   79.09 |       60 |        27 |         23 |        7 |        8 |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+[32m02:52:09 (28776) INFO JsonReporter[39m Your report can be found at: file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/reports/auth/mutation.json
+[32m02:52:09 (28776) INFO HtmlReporter[39m Your report can be found at: file:///D:/Workspace/1.%20Study/courses-fit-hcmus/2026-2027/csc13003-testing/seminar/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/reports/auth/mutation.html
+[32m02:52:09 (28776) INFO MutationTestExecutor[39m Done in 1 minute and 59 seconds.
+
+--- stderr ---

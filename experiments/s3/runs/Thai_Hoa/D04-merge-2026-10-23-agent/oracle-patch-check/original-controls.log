@@ -1,0 +1,82 @@
+
+FAIL test/defects/coupons.defects.js
+  ● CD-01 exact minimum must be accepted (FR-09 C3 >=)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+      Object {
+    -   "discount": 50000,
+    -   "final": 450000,
+    -   "status": 200,
+    +   "discount": undefined,
+    +   "final": undefined,
+    +   "status": 400,
+      }
+
+      20 |   const res = await apply({total_amount:500000});
+      21 |   expect({status:res.status,discount:res.body.discount_amount,final:res.body.final_amount})
+    > 22 |     .toEqual({status:200,discount:50000,final:450000});
+         |      ^
+      23 | });
+      24 | test('CD-02 10 percent means divide by 100 (FR-09 formula)', async () => {
+      25 |   await h.seedCoupon(db,{type:'percent',discount_value:10});
+
+      at Object.<anonymous> (test/defects/coupons.defects.js:22:6)
+
+  ● CD-02 10 percent means divide by 100 (FR-09 formula)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "discount": 70000,
+    -   "final": 630000,
+    +   "discount": -6300000,
+    +   "final": 7000000,
+        "status": 200,
+      }
+
+      26 |   const res = await apply({});
+      27 |   expect({status:res.status,discount:res.body.discount_amount,final:res.body.final_amount})
+    > 28 |     .toEqual({status:200,discount:70000,final:630000});
+         |      ^
+      29 | });
+      30 | test('CD-03 exactly at expiry is invalid (FR-09 C2 now < expiry)', async () => {
+      31 |   await h.seedCoupon(db); h.freeze(h.EXPIRY);
+
+      at Object.<anonymous> (test/defects/coupons.defects.js:28:6)
+
+  ● CD-03 exactly at expiry is invalid (FR-09 C2 now < expiry)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "refused": true,
+    +   "refused": false,
+        "usage": 0,
+      }
+
+      33 |   const res = await apply({});
+      34 |   expect({refused:refused(res),usage:await h.count(db,'coupon_usage')})
+    > 35 |     .toEqual({refused:true,usage:0});
+         |      ^
+      36 | });
+      37 | test.each(['absent','invalid'])('CD-04 %s JWT cannot apply a valid coupon (FR-09 C4)', async kind => {
+      38 |   await h.seedCoupon(db);
+
+      at Object.<anonymous> (test/defects/coupons.defects.js:35:6)
+
+Test Suites: 1 failed, 1 total
+Tests:       3 failed, 19 skipped, 22 total
+Snapshots:   0 total
+Time:        0.653 s
+Ran all test suites with tests matching "CD-01|CD-02|CD-03".
+Test results written to: D:\Workspace\1. Study\courses-fit-hcmus\2026-2027\csc13003-testing\seminar\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Thai_Hoa\D04-merge-2026-10-23-agent\oracle-patch-check\original-controls.json

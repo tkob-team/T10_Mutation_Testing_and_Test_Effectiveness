@@ -1,0 +1,38 @@
+{
+  "id": "cart-before-merge",
+  "executor": "OpenAI Codex AI Agent; not a member self-run",
+  "startedUtc": "2026-10-22T19:38:04.407Z",
+  "finishedUtc": "2026-10-22T19:38:05.872Z",
+  "elapsedMs": 1464,
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "D:\\Workspace\\1. Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\\backend\\node_modules\\jest\\bin\\jest.js",
+    "--runInBand",
+    "--runTestsByPath",
+    "test/cart-orders.test.js",
+    "--json",
+    "--outputFile",
+    "D:\\Workspace\\1. Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\T10_Mutation_Testing_and_Test_Effectiveness\\experiments\\s3\\runs\\Thai_Hoa\\D04-merge-2026-10-23-agent\\cart-before-merge.json"
+  ],
+  "cwd": "D:\\Workspace\\1. Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\\backend",
+  "node": "v24.16.0",
+  "platform": "win32",
+  "commit": "92bbf226459bc8de076a465e368c1f20401380a0",
+  "branch": "main",
+  "mergeHead": "8d60e9b8ab6b79d533c18d8c5b5e5b60b4b6720f",
+  "packageSha256": "326c12a984171f98d12fdd19497a154df9a53598f4d544beccf881a6bd82d6c4",
+  "lockSha256": "bbe5845d320b318bb2fd9d4f4c2826d6ca5c69fa417766e45886a41dd5f9da09",
+  "before": {
+    "server.js": "e2263811a1690a63a7dbb4446c3fd33fb87f50d073d9f8cdfab7083a52f5e8ed",
+    "database.js": "50012f35c2cf0776dd837482d76adf701f0ee40cdcb9d80143278fccde034717",
+    "database.sqlite": "c63f00544180ba1fbb1427a9b9dd3f1784842698809972f33ce90482e7420ba6"
+  },
+  "after": {
+    "server.js": "e2263811a1690a63a7dbb4446c3fd33fb87f50d073d9f8cdfab7083a52f5e8ed",
+    "database.js": "50012f35c2cf0776dd837482d76adf701f0ee40cdcb9d80143278fccde034717",
+    "database.sqlite": "c63f00544180ba1fbb1427a9b9dd3f1784842698809972f33ce90482e7420ba6"
+  },
+  "protectedUnchanged": true,
+  "exitCode": 0,
+  "signal": null
+}

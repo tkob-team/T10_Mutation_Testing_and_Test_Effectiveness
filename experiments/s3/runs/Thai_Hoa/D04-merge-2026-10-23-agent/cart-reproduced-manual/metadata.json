@@ -1,0 +1,22 @@
+{
+  "executor": "OpenAI Codex AI Agent reproduction, not a teammate self-run",
+  "baseCommit": "806ba19ee4e09eafe9b2696ccf117a2b1ab841ef",
+  "overlayRef": "origin/s3/F01-manual",
+  "overlayCommit": "b77f5d6ab580ae1823fb4272290116a94328c42e",
+  "overlay": "test/manual/cart-orders.manual.js",
+  "overlaySha256": "5a6c41a6a1639623571b726e552566ef49e32898725fce4100f74ca0bf1fa70c",
+  "startedUtc": "2026-10-22T19:59:00.918Z",
+  "finishedUtc": "2026-10-22T20:01:31.949Z",
+  "scratch": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-cart-reproduce-DlHFRD",
+  "command": [
+    "C:\\nvm4w\\nodejs\\node.exe",
+    "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-cart-reproduce-DlHFRD\\backend\\node_modules\\@stryker-mutator\\core\\bin\\stryker.js",
+    "run",
+    "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-cart-reproduce-DlHFRD\\backend\\reproduce-manual.json"
+  ],
+  "node": "v24.16.0",
+  "originalExit": 0,
+  "mutationExit": 0,
+  "sourceSha256": "e2263811a1690a63a7dbb4446c3fd33fb87f50d073d9f8cdfab7083a52f5e8ed",
+  "workingSourceUnchanged": true
+}

@@ -32,13 +32,13 @@ Khi task cần code/tests/config, dùng repo EShop được dẫn ở trên và 
 
 ## Workflow
 
-**Current Stage — 2026-10-18:** S1 và S2 đã hoàn tất, GV đã xác thực theo xác nhận trực tiếp của Thái Hòa. Nhóm đang làm S3; mỗi task được review dựa trên artifact và evidence tương ứng.
+**Current Stage — 2026-10-23:** S1 và S2 đã hoàn tất theo xác nhận trực tiếp của Thái Hòa. Nhóm đang làm S3; baseline chung đã freeze tại SUT `806ba19` sau khi merge các bàn giao được review vào main. [Manifest](experiments/s3/Baseline_Manifest.md) và [review](experiments/s3/D04_Integration_Review_2026-10-23.md) ghi rõ technical verification và member review/self-run còn riêng biệt.
 
 Evidence S3 hiện có trong repo:
 
-- Thái Hòa: [Research Notes](research/s3/Research_Notes_Thai_Hoa.md) cho S3-A02/B02 đạt tiêu chí task nghiên cứu sau review kỹ thuật của Codex ngày 2026-10-18 theo yêu cầu quản lý/review của người dùng. Thực nghiệm EShop/Stryker/Claude của Thái Hòa chưa có run evidence.
-- Tấn Hiệp: [Research Notes](research/s3/Research_Notes_Tan_Hiep.md) đạt S3-B01; S3-A01 còn Review để làm rõ mẫu số của số liệu Google 30% diffs ở F-A01-05. [Experiment Log](experiments/s3/Experiment_Log_Tan_Hiep.md) và reports khớp C01-1–C01-6; S3-C01 còn In Progress vì C01-7 seed/reset trong test Pending. Các run demo không thay baseline mutation EShop chung; baseline chung chưa có manifest đã điền.
-- Phúc Hoàng: chưa có research notes hoặc experiment log cá nhân trong repo tại lần review này; chưa đủ căn cứ đổi trạng thái các task.
+- Thái Hòa: [Research Notes](research/s3/Research_Notes_Thai_Hoa.md) cho A02/B02; [Experiment Log](experiments/s3/Experiment_Log_Thai_Hoa.md) có Agent runs C02/D02/D04/E02, F02 draft, G02 và H02 comparison. Common tests 88 pass; 54 defects tách riêng. Coupons: baseline 39 Killed/21 Timeout/30 Survived/25 NoCoverage/5 RuntimeError; F02 và G02 cùng kill thêm hai mutants usage-limit. F02 được người dùng giao Codex soạn để review; G02 dùng Codex cùng context theo lựa chọn trực tiếp sau lỗi đăng nhập Claude. Không gọi đây là independent human-vs-AI experiment.
+- Tấn Hiệp: [Research Notes](research/s3/Research_Notes_Tan_Hiep.md) và [Experiment Log](experiments/s3/Experiment_Log_Tan_Hiep.md) có bàn giao Cart baseline/manual/AI/comparison. Claim Google đã sửa mẫu số. Main đã nhận suite D01 từ `8d60e9b`; các nhánh manual/AI không merge vào baseline. Raw C01/E01/F01/G01 lịch sử giữ nguyên, không gán run Agent mới thành Hiệp tự chạy.
+- Phúc Hoàng: [Research Notes](research/s3/Research_Notes_Phuc_Hoang.md), [Experiment Log](experiments/s3/Experiment_Log_Phuc_Hoang.md), Auth tests và E03-provisional đã có. Người dùng cho phép import 5 files Auth nguyên bản từ evidence vì không có SUT commit bàn giao; commit `958fca3`, hashes khớp. Agent đã reproduce baseline Auth; F03/G03/H03 chưa bàn giao nên I02 chỉ Partial.
 
 Review trên xác nhận chất lượng đầu ra task, không thay xác nhận trải nghiệm, verdict AI audit, reflection hoặc chữ ký của thành viên. [AI Record Thái Hòa](ai-audit/AI_Record_Thai_Hoa.md) và [AI Record Tấn Hiệp](ai-audit/AI_Record_Tan_Hiep.md) vẫn còn inputs Pending; phần audit S8 đang được tích lũy, chưa hoàn tất. S1/S2 giữ trạng thái đã được người dùng xác nhận.
 

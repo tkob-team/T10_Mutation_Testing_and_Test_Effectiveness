@@ -1,0 +1,40 @@
+{
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "testRunner": "jest",
+  "coverageAnalysis": "perTest",
+  "mutate": [
+    "server.js:280-349",
+    "server.js:510-568"
+  ],
+  "tempDirName": "stryker-tmp",
+  "concurrency": 2,
+  "timeoutMS": 5000,
+  "timeoutFactor": 1.5,
+  "reporters": [
+    "clear-text",
+    "html",
+    "json"
+  ],
+  "htmlReporter": {
+    "fileName": "D:\\Workspace\\1. Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\T10_Mutation_Testing_and_Test_Effectiveness\\experiments\\s3\\runs\\Thai_Hoa\\D04-merge-2026-10-23-agent\\cart-reproduced-manual\\mutation.html"
+  },
+  "jsonReporter": {
+    "fileName": "D:\\Workspace\\1. Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\T10_Mutation_Testing_and_Test_Effectiveness\\experiments\\s3\\runs\\Thai_Hoa\\D04-merge-2026-10-23-agent\\cart-reproduced-manual\\mutation.json"
+  },
+  "jest": {
+    "config": {
+      "testEnvironment": "node",
+      "setupFiles": [
+        "<rootDir>/test/helpers/isolate.js"
+      ],
+      "testMatch": [
+        "**/test/cart-orders.test.js",
+        "**/test/manual/cart-orders.manual.js"
+      ],
+      "modulePathIgnorePatterns": [
+        "<rootDir>/stryker-tmp/"
+      ],
+      "displayName": "cart-coupons"
+    }
+  }
+}

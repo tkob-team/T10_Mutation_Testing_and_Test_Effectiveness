@@ -1,0 +1,11 @@
+--- stdout ---
+
+--- stderr ---
+
+Seed:        231023
+Test Suites: 4 passed, 4 total
+Tests:       88 passed, 88 total
+Snapshots:   0 total
+Time:        1.699 s, estimated 2 s
+Ran all test suites.
+Test results written to: ..\..\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Thai_Hoa\S3-2026-10-23-agent\integrated-shuffled.json

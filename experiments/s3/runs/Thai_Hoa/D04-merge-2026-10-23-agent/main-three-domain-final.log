@@ -1,0 +1,10 @@
+--- stdout ---
+
+--- stderr ---
+
+Test Suites: 3 passed, 3 total
+Tests:       87 passed, 87 total
+Snapshots:   0 total
+Time:        1.445 s, estimated 2 s
+Ran all test suites in 2 projects.
+Test results written to: ..\..\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Thai_Hoa\D04-merge-2026-10-23-agent\main-three-domain-final.json
