@@ -101,6 +101,7 @@ Run do Claude Code thực hiện trên máy Tấn Hiệp (Windows 11) ngày 2026
 | D01-3-cc (chẩn đoán, không chính thức) | Claude Code | như D01-3-cc + `--tempDirName stryker-tmp` | — | `Initial test run succeeded. Ran 36 tests` | log chẩn đoán trong `D01-3-cc/` |
 | D01-4-cc | Claude Code | `npm run test:defects` (sau khi tách DEF-08) | 9 failed, đúng lý do ở bảng lỗi gốc | **Pass (đúng kỳ vọng)** — 9/9 failed, lý do khớp DEF-01…07, DEF-08a, DEF-08b (bảng lỗi gốc) | `experiments/s3/runs/Tan_Hiep/D01-4-cc/` |
 | D01-5-cc | Claude Code | `npx stryker run stryker.cart-orders.config.json --dryRunOnly` (sau D01-Q7) | `Initial test run succeeded. Ran 36 tests` | **Pass** — exit 0, `Initial test run succeeded. Ran 36 tests in 1 second (net 426 ms, overhead 705 ms)`; dry run không sinh `mutation.json`/`.html` | `experiments/s3/runs/Tan_Hiep/D01-5-cc/` |
+| F01-1 | Tấn Hiệp | `npm run test:manual`; `npm run mutate:cart-orders:manual` (nhánh `s3/F01-manual`, working tree trước commit `0236267`: 41 tests = 36 baseline + 5 manual, gồm test coupon Survivor 4; khớp số test của `0236267`, nội dung chưa đối chiếu) | Manual suite pass hết trên code gốc | **Pass** — 41/41 passed. 150 mutants: Killed 100, Timeout 19, Survived 20, NoCoverage 2, RuntimeError 9; score 84.40% (đếm từ `mutation.json`, khớp console) | `experiments/s3/runs/Tan_Hiep/F01-1/` |
 | F01-2-cc | Claude Code | `npm run test:manual`; `npm run mutate:cart-orders:manual` (nhánh `s3/F01-manual` @ `b77f5d6`, `stryker.cart-orders.manual.config.json`, test files `test/cart-orders.test.js` + `test/manual/cart-orders.manual.js`) | Manual suite pass hết trên code gốc | **Pass** — 44/44 passed (36 baseline + 8 manual). 150 mutants: Killed 112, Timeout 18, Survived 11, NoCoverage 2, RuntimeError 7; score 90.91% (E01-1-cc 74.65%, F01-1 84.40%) | `experiments/s3/runs/Tan_Hiep/F01-2-cc/` |
 | D01-1 / D01-2 / D01-3 | Tấn Hiệp | `npm test`; `npm run test:defects`; Stryker dry run (cấu hình sau D01-Q7) | 36 passed; 9 failed; `Ran 36 tests` | Not run | `experiments/s3/runs/Tan_Hiep/D01-{1,2,3}/` |
 
@@ -136,9 +137,11 @@ Chạy thử bởi Claude trong sandbox (Linux, Node v22.22.0), **không phải 
 
 | Run / Test Set | Killed | Timeout | Survived | NoCoverage | Tool Score & Definition | Evidence |
 |---|---|---|---|---|---|---|
-| Baseline | — | — | — | — | — | — |
-| Manual | — | — | — | — | — | — |
-| AI-assisted | — | — | — | — | — | — |
+| Baseline (E01-1-cc) | 87 | 19 | 34 | 2 | 74.65% — Detected / Valid × 100; Detected = Killed + Timeout = 106, Valid = tổng − RuntimeError = 150 − 8 = 142 (StrykerJS 10.0.0) | `experiments/s3/runs/Tan_Hiep/E01-1-cc/` |
+| Manual (F01-2-cc) | 112 | 18 | 11 | 2 | 90.91% — Detected / Valid × 100; Detected = 130, Valid = tổng − RuntimeError = 150 − 7 = 143 (StrykerJS 10.0.0) | `experiments/s3/runs/Tan_Hiep/F01-2-cc/` |
+| AI-assisted | Not run | Not run | Not run | Not run | Not run | — |
+
+Ghi chú: Manual = baseline 36 + manual 8 test (`test/cart-orders.test.js` + `test/manual/cart-orders.manual.js`, nhánh `s3/F01-manual` @ `b77f5d6`). Cả hai run cùng production code, config mutate (`server.js:280-349, 510-568`) và 150 mutants; CompileError = Ignored = 0. Hai run do Claude Code thực hiện trên Windows (Node v24.15.0). AI-assisted: Not run (S3-G01).
 
 ## Limits & Failure Modes
 
