@@ -81,7 +81,7 @@ Jia & Harman nhắc rủi ro của việc lọc mutant: *"retain the highly valu
 |---|---|---|---|
 | L1 | **Chi phí tính toán**: mỗi mutant chạy lại test | [P01 §2.3, §3]; [P04]: Google 2 tỷ dòng, >150 triệu test/ngày | EShop nhỏ nhưng `server.js` gom mọi route: 92 mutants cho 79 dòng auth, chạy 23 s (F-A03-06). Dùng `mutate` range/incremental |
 | L2 | **Equivalent mutant problem** | [P01 §4, §9.1]; [P05] | Score không đạt 100% dù test tốt; phải review tay; ghi remaining candidates (T10 §6.5) |
-| L3 | **Human oracle problem**: ai quyết định output đúng? | [P01 §2.3] | Spec Auth chỉ nêu response thành công; ngưỡng lock không có trong spec. Test sandbox A3/A4 dùng behavior quan sát được (`+2`), **chưa phải expected từ spec** |
+| L3 | **Human oracle problem**: ai quyết định output đúng? | [P01 §2.3] | `api_specification.md` §1–2 chỉ nêu response thành công; rule lock nằm ở `README.md` FR-02 [P16] (mỗi lần sai +1, khóa từ lần sai thứ 3, 30 giây). Test sandbox A3/A4 dùng behavior quan sát được (`+2`), **chưa phải expected từ spec**; phát hiện README sau khi viết sandbox (xem F-A03-06 #1) |
 | L4 | **Giả định CPH/Coupling Effect**: mutant đơn giản đại diện cho lỗi thật | [P01 §2.1]; [Tấn Hiệp F-A01-01] | Kill nhiều mutant không chứng minh bắt được mọi lỗi thật |
 | L5 | **Score phụ thuộc cấu hình/phạm vi** | [P06][P10]; run F-A03-06 | Cùng code và test: 34.78% (range 32–110) so với 53.33% (range login + middleware). Chỉ so sánh trên cùng baseline/config |
 | L6 | **Timeout được tính là detected** | [P06]; run F-A03-06 v3 | Score 100% nhưng 6/60 là Timeout, không phải assertion kill. Báo `Killed`/`Timeout` riêng |
@@ -187,7 +187,7 @@ if (newAttempts >= 3) { lockedUntil = new Date(Date.now() + 180000).toISOString(
 **Survivors của v1 bị kill ở v2** đều là real gap: `||` thay `&&` (kill bằng A6, lock đã hết hạn), `login_attempts - 2` (kill bằng kiểm DB state), các string/body mutants (kill bằng `toEqual({ error: ... })`), `if (err)` ở middleware (kill bằng A8, bad token → 403).
 
 **Quan sát cần chuyển cho S3-D03/H03:**
-1. Tăng `+2` mỗi lần sai nghĩa là lock sau **2** lần sai, dù code so sánh với ngưỡng 3. Spec §1.2 không nêu rule lock. Đây là *sai khác cần xác nhận*, chưa kết luận là bug. Test A3/A4 hiện mã hóa behavior của code, chưa phải expected từ spec (L3 oracle problem). Nếu nhóm sửa `+2` thành `+1`, mutant `> 3` sẽ trở thành real gap (kill được qua API), tức là phân loại đổi theo code.
+1. Tăng `+2` mỗi lần sai nghĩa là lock sau **2** lần sai, dù code so sánh với ngưỡng 3. `api_specification.md` §1.2 không nêu rule lock, nhưng `README.md` FR-02 [P16] nêu: bộ đếm tăng "đúng 1 đơn vị", sai từ 3 lần liên tiếp thì khóa 30 giây. Code vi phạm cả hai (`+2`, và `180000` ms = 180 giây), nên đây là **lỗi gốc so với spec** (xem S3-D03: `DF-01`…`DF-03`). Bản ghi trước đây "spec không nêu, cần xác nhận" là thiếu sót do chưa đọc README. Test A3/A4 của sandbox vẫn mã hóa behavior của code (L3 oracle problem). Với code đúng spec (`+1`), `login_attempts` nhận mọi giá trị nguyên, nên mutant L56 `> 3` kill được qua API (khi đó có lần sai thứ 3 cho `newAttempts = 3`): phân loại "equivalent candidate" ở bảng trên chỉ đúng cho **code gốc hiện tại** (chưa kiểm bằng run trên bản `+1`)
 2. 6 Timeout ở v3 đến từ `BlockStatement {}` của route handler: handler không trả response nên request treo. Chúng được tính vào score nhưng không phải assertion kill. **Tỷ lệ assertion kill v3 = 54/60 = 90%.**
 
 **Remaining equivalent candidates (T10 §6.5), trong phạm vi notes:** chỉ E1, E2 (sandbox) và L56 `> 3` (Auth, scope A). Danh sách cho baseline thật sẽ do S3-H03 lập.
@@ -278,12 +278,12 @@ Mỗi mục ghi rõ: đã tái hiện bằng run, hay chỉ dựa trên docs/lit
 |---|---|---|---|---|
 | FM-S1 | Stryker | **Disable comment ẩn luôn mutant kill được.** `disable next-line EqualityOperator` ignore *mọi* EqualityOperator trên dòng, kể cả `<= 0` đã bị kill. Kết quả: 4 Ignored (2 trong đó killable), score từ 88.89% lên 100% | **Run** A03-S1-strong so với A03-S1-ignored | Disable ở mức mutant nhỏ nhất có thể; ghi lý do; báo cả score trước khi ignore |
 | FM-S2 | Stryker | **Timeout được tính là detected**: score 100% nhưng 6/60 mutant chỉ làm request treo | **Run** A03-S2-auth-v3; công thức [P06] | Báo `Killed`/`Timeout` riêng; tính tỷ lệ assertion kill (54/60) |
-| FM-S3 | Stryker | **Cùng mutant đổi trạng thái giữa các test set**: L46:37 và L53:12 là `Killed` ở v1 nhưng `Timeout` ở v2/v3 | **Run** v1 so với v2 | So sánh theo mutant ID + trạng thái, không chỉ theo tổng |
+| FM-S3 | Stryker | **Cùng mutant đổi trạng thái giữa các test set**: L46:37, L53:12 và L105:48 là `Killed` ở v1 nhưng `Timeout` ở v2/v3 | **Run** v1 so với v2 (`compare_runs.js`) | So sánh theo từng mutant + trạng thái, không chỉ theo tổng |
 | FM-S4 | Stryker | **Score phụ thuộc phạm vi mutate**: cùng code và test cho 34.78% hoặc 53.33% | **Run** A03-S2-auth-v1-wide so với v1 | Chốt `mutate` trong baseline manifest; không so score khác config |
 | FM-S5 | Stryker | **Survived ≠ test yếu**: equivalent/scope-dependent vẫn hiện là Survived; tool không phát hiện được [P05] | **Run** F-A03-05/06 | Phân loại theo bảng F-A03-01 |
 | FM-S6 | Stryker + Jest | "All mutants survive"/"No tests executed" khi tempDir ẩn hoặc do `findRelatedTests` [P11] | Docs; phiên này đặt `tempDirName: stryker-tmp` nên chưa gặp | Đặt tempDir không ẩn; kiểm dry run |
 | FM-C1 | Claude | **Verdict "equivalent" sai**: agent của ACH có precision 0.79 trước pre-processing [P08] | Literature | Không loại khỏi mẫu số theo AI; người review + lập luận phạm vi |
-| FM-C2 | Claude | **Assertion mã hóa bug hiện tại**: khi chỉ thấy code, AI (và cả người, như A3/A4) dễ lấy behavior `+2` làm expected | Quan sát trong phiên (F-A03-06 #1); L3 oracle | Đưa spec vào prompt; ghi "spec silent" thay vì đoán |
+| FM-C2 | Claude | **Assertion mã hóa bug hiện tại**: khi chỉ thấy code, AI (và cả người, như A3/A4) dễ lấy behavior `+2` làm expected | Quan sát trong phiên (F-A03-06 #1); L3 oracle | Đưa spec vào prompt (cả `README.md` FR/SEC, không chỉ API spec); ghi "spec silent" thay vì đoán |
 | FM-C3 | Claude | **Hallucination / không ổn định giữa các lần chạy** [P15] | Docs | Bắt trích code; best-of-N; chạy lại Stryker là bằng chứng duy nhất |
 | FM-C4 | Claude Code | **Context khác nhau giữa các máy**: `-p` thường load CLAUDE.md/hooks của máy; `--bare` thì không [P13] | Docs | Dùng `--bare` + prompt file trong repo khi cần tái lập |
 
@@ -306,6 +306,7 @@ Mỗi mục ghi rõ: đã tái hiện bằng run, hay chỉ dựa trên docs/lit
 | P13 | Claude Code — Run Claude Code programmatically | https://code.claude.com/docs/en/headless | `-p`, `--output-format json`, `--json-schema`, `--bare` | 2026-10-19 |
 | P14 | Claude Code — Skills | https://code.claude.com/docs/en/skills | `SKILL.md`, frontmatter, `$ARGUMENTS` | 2026-10-19 |
 | P15 | Anthropic — Reduce hallucinations | https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations | Cho phép "không biết", trích dẫn, best-of-N; không loại bỏ hoàn toàn hallucination | 2026-10-19 |
+| P16 | EShop SUT — System Requirements (`README.md` FR-01…FR-04, SEC-01…SEC-07) | `eshop-sut-fithcmus/README.md` @ `bd31bbf` | Rule lock FR-02, OTP FR-03/SEC-07, hồ sơ FR-04/SEC-06 | 2026-10-22 |
 | L01 | EShop SUT `backend/server.js`, `backend/database.js`, `api_specification.md` §1–2 @ `bd31bbf` | `/Users/nphoang/Developer/hcmus/software-testing/eshop-sut-fithcmus` | Code login/lock/middleware; default `login_attempts`; spec Auth | 2026-10-19 |
 | L02 | Run evidence của notes này | `experiments/s3/runs/Phuc_Hoang/A03-*` (HTML/JSON/console/config/tests/versions) | Số liệu F-A03-05/06, FM-S1–S5 | 2026-10-19 |
 | L03 | Proposal S2 — Scope | `proposal/s2/T10_Seminar_Proposal.md` (bảng scope domain) | Phạm vi Auth & Users | 2026-10-19 |
@@ -315,7 +316,7 @@ Mỗi mục ghi rõ: đã tái hiện bằng run, hay chỉ dựa trên docs/lit
 - Target stage / task / section:
   - S4-B03 (report): Background (equivalent mutants), Limits / Threats to Validity, Related Work (AI approaches).
   - S4-A03 (guide): Advanced Usage, Failure Modes (REQ-18), Troubleshooting.
-  - S3-D03/H03/I03: dùng bảng phân loại, quan sát `+2` và harness tham khảo.
+  - S3-D03/H03/I03: dùng bảng phân loại, quan sát `+2` (nay là lỗi gốc theo README FR-02) và harness tham khảo.
   - S3-G03: dùng prompt F-B03-02.
   - S5 activity: dùng E1/B1 làm cặp "equivalent vs killable".
 - Main conclusions:
@@ -323,7 +324,7 @@ Mỗi mục ghi rõ: đã tái hiện bằng run, hay chỉ dựa trên docs/lit
   - Stryker không phát hiện equivalent; `Ignored` và `Timeout` đều có thể đẩy score lên 100% mà không phản ánh chất lượng assertion (đã chạy).
   - AI (LLM-EMD, ACH, MuTAP) hữu ích để lọc và đề xuất, nhưng precision/recall chưa đủ để thay quyết định của người; cổng kiểm chứng là chạy lại Stryker.
 - Open questions:
-  1. Rule lock tài khoản: `+2` / ngưỡng 3 là intended hay defect? Spec không nêu → cần nhóm/GV xác nhận trước khi chốt expected (S3-D03).
+  1. ~~Rule lock tài khoản: `+2` / ngưỡng 3 là intended hay defect?~~ Đã có căn cứ: `README.md` FR-02 [P16] quy định +1 và khóa 30 giây, code lệch → lỗi gốc (S3-D03 `DF-01`…`DF-03`). Còn chờ nhóm xác nhận: baseline giữ code lỗi nguyên trạng (mặc định) hay có sửa.
   2. Harness cho baseline chung (S3-D04) có dùng fake DB/spy `listen` như sandbox này không, hay thêm seam vào production code?
   3. Có cho phép test scope B (inject state/clock) trong baseline? Câu trả lời quyết định L56 là equivalent candidate hay real gap.
   4. Full text P03, P07–P09 chưa đọc; số liệu lấy từ abstract.
