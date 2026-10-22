@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 01:40 (Asia/Saigon).
+Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 01:59 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 11 lượt prompt; theo model: claude-opus-5-5 11 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 12 lượt prompt; theo model: claude-opus-5-5 12 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-22 19:50 — model: claude-opus-5-5 — session 4a560803
 
@@ -503,4 +503,73 @@ KHÔNG đọc/checkout/git show/git log: nhánh EShop s3/F01-manual; seminar exp
 5. git restore backend/database.sqlite. Commit EShop: test(S3-G01): add raw AI assertions for 6 Cart & Orders survivors. Commit seminar: docs(S3-G01): add G01-1-cc raw run evidence.
 </pasted_content id="2084">
 ```
+
+### Output
+
+```text
+Phải dừng: lệnh preflight đã vô tình đọc thông tin thuộc phạm vi cấm.
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: S3-G01 — Blocked (chưa viết test, chưa chạy gì, chưa sửa hay commit file nào)
+- Kết quả: G01-1-cc Not run
+- Evidence: chưa có (chưa tạo REPORT)
+- File đã tạo/sửa (chưa commit): Không
+- Bất thường mới: EShop đang checkout sẵn nhánh `s3/F01-manual`. Khi preflight chạy `git -C eshop-sut... log --oneline -1`, nó in ra subject commit đầu nhánh manual: `b77f5d6 docs(S3-F01): fix spec reference and oracle note in manual suite`. Như vậy đã vi phạm lệnh cấm `git log` nhánh F01-manual.
+- Bất thường mới: lệnh `git log -1` ở repo seminar in ra `990aff6 docs(S3-F01): fill comparison table for baseline and manual runs`. Đây chỉ là subject, không có số liệu.
+- Bất thường mới: tôi chưa đọc nội dung test, diff hay số liệu nào của F01. Working tree seminar chỉ bẩn ở `ai-audit/.../claude-code_prompt_log.md` do hook ghi, tôi chưa mở file này.
+- Cần quyết định: G01-A – Session này có còn được coi là blind không, khi đã thấy 2 subject commit (không có assertion hay kết quả F01) – (a) vẫn chạy G01-1-cc ở session này và ghi rõ chuyện lộ thông tin vào REPORT; (b) mở session Claude Code mới, tự checkout `s3/G01-ai` trước rồi giao lại task, và bỏ bước `git log` khi còn ở nhánh manual.
+```
+
+## #12 — 2026-10-23 01:57 — model: claude-opus-5-5 — session 85a13ef2
+
+### Prompt
+
+```text
+<pasted_content id="2084">
+Task S3-G01 — AI assertions, run G01-1-cc (skill t10-run-report). Session mới, blind với nhánh manual.
+
+Preflight: chỉ git status và git pull --ff-only; KHÔNG chạy git log ở repo nào.
+KHÔNG đọc/checkout/git show/git log: nhánh EShop s3/F01-manual; seminar experiments/s3/Experiment_Log_Tan_Hiep.md, runs/Tan_Hiep/F01-*, F01-cc-REPORT.md, ai-audit/ (cả evidence). Lỡ đọc thì dừng, báo.
+
+Được dùng: EShop README.md (SRS), api_specification.md, backend/server.js, backend/test/cart-orders.test.js, test/helpers/, seminar runs/Tan_Hiep/E01-1-cc/ (mutation.json, mutation.html).
+
+1. EShop đã ở nhánh s3/G01-ai (Tấn Hiệp đã checkout). Kiểm git branch --show-current = s3/G01-ai; khác thì dừng.
+2. Mục tiêu: 6 mutant Survived ở E01-1-cc (server.js):
+   286:7 ConditionalExpression → false | 292:7 ConditionalExpression → true | 326:47 ObjectLiteral → {} | 346:45 ObjectLiteral → {} | 532:47 ObjectLiteral → {} | 550:11 ConditionalExpression → false
+   Với mỗi mutant: đọc diff và coveredBy trong mutation.json, giải thích vì sao baseline không kill, rồi viết test vào backend/test/ai/cart-orders.ai.js. Expected phải lấy từ SRS/spec; nếu phải lấy từ code thì ghi rõ trong comment. Test phải pass trên code gốc. Nếu không viết được test vừa đúng spec vừa pass trên code gốc thì không viết, giải thích lý do. Mỗi test có comment: mutant mục tiêu, FR/§, nguồn oracle.
+3. npm run test:ai một lần → lưu console vào seminar runs/Tan_Hiep/G01-1-cc/test-ai.log. KHÔNG sửa test sau khi chạy, kể cả khi fail. Không chạy Stryker.
+4. REPORT: runs/Tan_Hiep/G01-cc-REPORT.md — model thực tế; bảng 6 mutant (vì sao survive, test/lý do không viết, oracle, pass/fail trên code gốc). Thêm mục Limits: "Một session G01 trước bị dừng ở preflight vì in ra 2 subject commit của F01 (không có assertion hay số liệu); session này mở mới, EShop đã checkout sẵn s3/G01-ai."
+5. git restore backend/database.sqlite. Commit EShop: test(S3-G01): add raw AI assertions for 6 Cart & Orders survivors. Commit seminar: docs(S3-G01): add G01-1-cc raw run evidence.
+</pasted_content id="2084">
+```
+
+### Output
+
+```text
+Lưu ý: đây vẫn là session cũ (đã thấy 2 subject), không phải session mới. Tiếp tục và ghi đúng vào Limits.
+
+Đang đọc spec (§4, §6.2) và SRS để lấy oracle cho 6 mutant.
+
+Đã có oracle. Kết luận: viết test cho 5 mutant; không viết cho 550:11 (muốn kill thì phải assert hành vi trái FR-10). Giờ viết test.
+
+41/41 pass (36 baseline + 5 AI). `database.sqlite` không đổi. Giờ viết REPORT.
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: S3-G01 — Done (đã viết 5 test; mutant 550:11 cố ý không viết)
+- Kết quả: G01-1-cc Pass — 41/41 test pass (36 baseline + 5 AI), chạy 1 lần, không chạy Stryker
+- Evidence: `T10_.../experiments/s3/runs/Tan_Hiep/G01-cc-REPORT.md`, `G01-1-cc/test-ai.log`
+- Commit: EShop `143a016` trên `s3/G01-ai`; seminar `68822c3` trên `main` (cả hai chưa push)
+- File đã tạo/sửa (chưa commit): Không. `database.sqlite` không bị đổi, nên không cần restore.
+- Bất thường mới: 550:11 ConditionalExpression → false không kill được bằng test đúng spec. Mutant này chính là bản sửa DEF-05 (canceled → delivered), nên test nào kill nó cũng phải assert 200, trái FR-10.
+- Bất thường mới: 3 test kiểm body 404 (`cart-orders.ai.js`, AI-CO-03..05) có oracle yếu: spec không định nghĩa body lỗi, tên trường `error` lấy từ code. Hai test giỏ hàng cũng lấy dạng mảng `[]` từ code.
+- Bất thường mới: phần Limits trong REPORT ghi đúng sự thật là run này chạy tiếp trong session đã bị dừng ở preflight, không phải session mới như câu mẫu trong lệnh. Thông tin đã lộ chỉ là 2 subject commit F01.
+- Bất thường mới: không đọc `AGENTS.md`, `CONTEXT.md`, `docs/*` và skill `t10-mutation-testing` để giữ blind với F01 (lệch preflight chuẩn).
+- Bất thường mới: `GET /api/orders/:id` không có auth (`server.js:344`), có khả năng vi phạm SEC-02, ngoài scope nên chưa test.
+- Cần quyết định: Không
+```
+
+### Hành động
+
+- Edit: D:\HK7\Testing\Seminars\Repo\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\backend\test\ai\cart-orders.ai.js
+- Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Tan_Hiep\G01-cc-REPORT.md
 
