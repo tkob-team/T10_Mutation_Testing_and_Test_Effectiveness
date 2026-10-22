@@ -1,10 +1,10 @@
 # AI Prompt Log — claude.ai Seminar Testing Software
 
-Nguồn: 9ffbcb5b-f74a-59c0-99f6-d4383af57bf4.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-22 20:18 (Asia/Saigon).
-Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV và email cá nhân được thay bằng `[MSSV]`, `[email]`.
-Tổng: 30 lượt prompt; theo model: claude-sonnet-4-6 2 lượt; claude-opus-5-5 29 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Nguồn: 9ffbcb5b-f74a-59c0-99f6-d4383af57bf4.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-22 20:29 (Asia/Saigon).
+Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
+Tổng: 32 lượt prompt; theo model: claude-sonnet-4-6 2 lượt; claude-opus-5-5 31 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
-## #1 — 2026-10-16 18:54 — model: claude-sonnet-4-6
+## #1 — 2026-10-16 18:54 — model: claude-sonnet-4-6 — session 2586dd77
 
 ### Prompt
 
@@ -40,7 +40,7 @@ Cả nhóm phải chờ đủ ba suite mới chốt được baseline, nên **D0
 Bạn muốn bắt đầu từ đâu? Mình đề xuất làm song song S3-C01 (setup) và S3-A01 (research notes). Nếu bạn gửi `Research_Notes_TEMPLATE.md` và `Experiment_Log_TEMPLATE.md`, mình sẽ bám đúng mẫu của nhóm. Repo EShop cũng nên có (link GitHub hoặc file `server.js` cùng `api_specification.md`) để mình xem routes Cart & Orders.
 ```
 
-## #2 — 2026-10-16 18:59 — model: claude-sonnet-4-6, claude-opus-5-5
+## #2 — 2026-10-16 18:59 — model: claude-sonnet-4-6, claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -82,7 +82,7 @@ Bạn gửi mấy file này khi tiện, trong lúc đó mình làm tiếp S3-B01
 - Edit: /home/claude/Research_Notes_Tan_Hiep.md
 - Gửi file: /home/claude/Research_Notes_Tan_Hiep.md
 
-## #3 — 2026-10-16 19:23 — model: claude-opus-5-5
+## #3 — 2026-10-16 19:23 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -138,7 +138,7 @@ Mình nghiêng về cách thứ hai. Notes vẫn đang ở dạng AI draft chờ
 - Write: /home/claude/repos/seminar/ai-audit/AI_Record_Tan_Hiep.md
 - Gửi file: /home/claude/repos/seminar/research/s3/Research_Notes_Tan_Hiep.md, /home/claude/repos/seminar/ai-audit/AI_Record_Tan_Hiep.md
 
-## #4 — 2026-10-16 19:33 — model: claude-opus-5-5
+## #4 — 2026-10-16 19:33 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -171,7 +171,7 @@ Có hai cách:
 
 - Gửi file: /home/claude/repos/seminar/ai-audit/AI_Record_Tan_Hiep.md
 
-## #5 — 2026-10-16 19:35 — model: claude-opus-5-5
+## #5 — 2026-10-16 19:35 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -246,7 +246,7 @@ Chạy xong, bạn dán output (hoặc lỗi nếu có) vào đây, mình giúp 
 - Write: /home/claude/repos/seminar/experiments/s3/Experiment_Log_Tan_Hiep.md
 - Gửi file: /home/claude/repos/seminar/ai-audit/AI_Record_Tan_Hiep.md, /home/claude/repos/seminar/experiments/s3/Experiment_Log_Tan_Hiep.md, /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/mt-demo.zip
 
-## #6 — 2026-10-16 19:42 — model: claude-opus-5-5
+## #6 — 2026-10-16 19:42 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -311,7 +311,7 @@ npm run mutate:weak
 Có một điểm cần kiểm tra: link Sheet bạn gửi mình (`1vuIX…`) khác với link Team Sheet ghi trong `CONTEXT.md` của repo (`1XgWd…`). Bạn nhớ cập nhật trạng thái trên bản mà Thái Hòa đang theo dõi, không thì leader sẽ không thấy.
 ````
 
-## #7 — 2026-10-16 19:45 — model: claude-opus-5-5
+## #7 — 2026-10-16 19:45 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -349,7 +349,7 @@ Mình đã commit các thay đổi vào bản sao repo trên máy làm việc c�
 
 - Gửi file: /home/claude/repos/seminar/experiments/s3/Experiment_Log_Tan_Hiep.md, /home/claude/repos/seminar/experiments/s3/runs/Tan_Hiep/C01-weak/console.log
 
-## #8 — 2026-10-16 19:49 — model: claude-opus-5-5
+## #8 — 2026-10-16 19:49 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -481,7 +481,7 @@ Vẫn chưa push được, lý do như trước: tài khoản GitHub chưa đư�
 
 - Gửi file: /home/claude/repos/seminar/experiments/s3/Experiment_Log_Tan_Hiep.md, /home/claude/repos/seminar/experiments/s3/runs/Tan_Hiep/C01-coverage/console.log, /home/claude/repos/seminar/experiments/s3/runs/Tan_Hiep/C01-strong/console.log
 
-## #9 — 2026-10-16 19:56 — model: claude-opus-5-5
+## #9 — 2026-10-16 19:56 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -617,7 +617,7 @@ Gửi mình hai output. Mình sẽ cho bạn nội dung dòng C01-5 và block `A
 Mình không push: bạn đã bảo sẽ tự commit/push, và phiên này cũng không có quyền ghi vào repo nhóm. Bốn commit đó chỉ nằm trong bản sao trên máy làm việc của mình. Bản mới nhất của mọi file đã gửi bạn trong chat.
 ````
 
-## #10 — 2026-10-16 20:00 — model: claude-opus-5-5
+## #10 — 2026-10-16 20:00 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -711,7 +711,7 @@ Gửi mình output của script. Mình sẽ đưa bạn nội dung dòng C01-5 c
 
 - Gửi file: /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/show-mutants.js
 
-## #11 — 2026-10-16 20:05 — model: claude-opus-5-5
+## #11 — 2026-10-16 20:05 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -803,7 +803,7 @@ Mình không commit hay push: bạn đã dặn sẽ tự làm. Hai file thay đ�
 
 - Gửi file: /home/claude/repos/seminar/experiments/s3/Experiment_Log_Tan_Hiep.md, /home/claude/repos/seminar/ai-audit/AI_Record_Tan_Hiep.md
 
-## #12 — 2026-10-16 20:07 — model: claude-opus-5-5
+## #12 — 2026-10-16 20:07 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -832,7 +832,7 @@ Lúc nãy bạn nói đã "đưa folder strong và weak vào". Nếu bây giờ 
 Vẫn như trước: mình không commit hay push, vì bạn đã dặn sẽ tự làm. Các thay đổi chỉ nằm trong bản sao làm việc của mình, và đã gửi đủ cho bạn trong chat.
 ````
 
-## #13 — 2026-10-16 20:08 — model: claude-opus-5-5
+## #13 — 2026-10-16 20:08 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -859,7 +859,7 @@ Mình vẫn không commit hay push. Bạn đã dặn sẽ tự làm, nên các t
 
 - Gửi file: /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/C01-ai/console.log, /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/C01-ai/killedBy.log
 
-## #14 — 2026-10-16 20:10 — model: claude-opus-5-5
+## #14 — 2026-10-16 20:10 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -931,7 +931,7 @@ docs(S3-C01): record hello-world runs and first Claude assertion check
 Mình không commit hay push. Bạn đang tự commit từ máy bạn, còn các thay đổi kia chỉ nằm trong bản sao làm việc của mình và đã được gửi đủ cho bạn.
 ````
 
-## #15 — 2026-10-16 20:14 — model: claude-opus-5-5
+## #15 — 2026-10-16 20:14 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -968,7 +968,7 @@ docs(S3-C01): fill model and disclosure inputs in AI record
 
 - Gửi file: /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/AI_Record_Tan_Hiep.md
 
-## #16 — 2026-10-16 20:16 — model: claude-opus-5-5
+## #16 — 2026-10-16 20:16 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -981,7 +981,7 @@ npm error errno -4058
 npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open 'D:\HK7\Testing\Seminars\Repo\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\package.json'
 npm error enoent This is related to npm not being able to find a file.
 npm error enoent
-npm error A complete log of this run can be found in: C:\Users\tanhi\AppData\Local\npm-cache\_logs\2026-10-16T13_16_06_782Z-debug-0.log
+npm error A complete log of this run can be found in: C:\Users\[user]\AppData\Local\npm-cache\_logs\2026-10-16T13_16_06_782Z-debug-0.log
 PS D:\HK7\Testing\Seminars\Repo\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness> node server.js
 node:internal/modules/cjs/loader:1479
   throw err;
@@ -1027,7 +1027,7 @@ Lệnh này trả về JSON danh sách 5 sản phẩm seed (iPhone 15 Pro Max, �
 Gửi mình output của cả ba lệnh, nhất là khi `npm install` báo lỗi build `sqlite3`.
 ````
 
-## #17 — 2026-10-16 20:17 — model: claude-opus-5-5
+## #17 — 2026-10-16 20:17 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -1070,7 +1070,7 @@ curl.exe http://localhost:3000/api/products
 Gửi mình output. Có kết quả này thì mình ghi trọn dòng C01-6 vào log.
 ````
 
-## #18 — 2026-10-16 20:17 — model: claude-opus-5-5
+## #18 — 2026-10-16 20:17 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -1121,7 +1121,7 @@ Mình không commit hay push, vì bạn tự commit từ máy bạn. Các thay �
 
 - Gửi file: /home/claude/repos/seminar/experiments/s3/Experiment_Log_Tan_Hiep.md, /home/claude/repos/seminar/experiments/s3/runs/Tan_Hiep/C01-eshop/console.log
 
-## #19 — 2026-10-16 20:20 — model: claude-opus-5-5
+## #19 — 2026-10-16 20:20 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -1188,7 +1188,7 @@ Từ giờ, mỗi lần chạy server xong thì chạy `git restore backend/data
 - Write: /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/eshop-gitignore/.gitignore
 - Gửi file: /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/eshop-gitignore/.gitignore
 
-## #20 — 2026-10-16 20:23 — model: claude-opus-5-5
+## #20 — 2026-10-16 20:23 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -1225,7 +1225,7 @@ Mình cũng đã đồng bộ bản sao làm việc của mình về đúng tr�
 Việc nên làm tiếp là gỡ chặn cho S3-D01. Bạn muốn mình soạn tin nhắn gửi Thái Hòa không? Tin nhắn sẽ gồm: đề xuất seams cụ thể (export `app`, DB path cho test), 3 câu hỏi scope có phương án trả lời kèm theo, và quan sát `database.sqlite` bị sửa mỗi lần chạy server.
 ```
 
-## #21 — 2026-10-16 20:27 — model: claude-opus-5-5
+## #21 — 2026-10-16 20:27 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -1263,7 +1263,7 @@ S3-C01 chưa chuyển Review được. Tiêu chí "Xong khi" của task có ph�
 Sau khi làm xong hai việc trên, bước tiếp theo là gửi tin nhắn cho Thái Hòa để gỡ chặn D01 và C01-7. Bạn cần thì mình soạn.
 ````
 
-## #22 — 2026-10-16 20:28 — model: claude-opus-5-5
+## #22 — 2026-10-16 20:28 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -1294,7 +1294,7 @@ Tin nhắn trên đọc mất khoảng 45 giây. Mỗi câu hỏi đều kèm s�
 Khi Hòa trả lời, bạn gửi lại cho mình. Mình sẽ ghi quyết định vào Experiment Log và bắt đầu S3-D01.
 ```
 
-## #23 — 2026-10-18 13:02 — model: claude-opus-5-5
+## #23 — 2026-10-18 13:02 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -1390,7 +1390,7 @@ Mình không commit hay push: bạn tự commit từ máy bạn. Ba file docs đ
 - Write: /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/spike/backend/test/cart-orders.test.js
 - Gửi file: /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/S3-D01_cart-orders_tests.zip, /home/claude/repos/seminar/experiments/s3/Experiment_Log_Tan_Hiep.md, /home/claude/repos/seminar/research/s3/Research_Notes_Tan_Hiep.md, /home/claude/repos/seminar/ai-audit/AI_Record_Tan_Hiep.md
 
-## #24 — 2026-10-22 19:34 — model: claude-opus-5-5
+## #24 — 2026-10-22 19:34 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -1422,7 +1422,7 @@ Trên là ý kiến của mình để nâng cao hiệu suất. Bạn thấy sao,
 **Bước tiếp theo:** S3-D01 (bản mình gửi hôm trước) là việc thử đầu tiên hợp lý cho quy trình này: giải nén, chạy, lưu evidence, báo cáo. Bạn muốn mình soạn luôn skill và prompt ngắn cho Claude Code không? Clone vào thư mục ngày hôm nay, ví dụ `22102026`.
 ```
 
-## #25 — 2026-10-22 19:40 — model: claude-opus-5-5
+## #25 — 2026-10-22 19:40 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -1444,7 +1444,7 @@ Mình soạn xong 3 thứ. Hai skill nằm trên thẻ đề xuất để bạn 
 | **`CLAUDE.md`** | Thư mục cha của các thư mục ngày | Phân vai, lệnh clone vào thư mục ngày, các việc cấm, lưu ý Windows |
 
 **Cài đặt:**
-1. Lưu hai skill từ thẻ đề xuất. Chúng sẽ đồng bộ sang Claude Code nếu bạn đăng nhập Claude Code bằng tài khoản claude.ai và dùng bản v2.1.273 trở lên. Để kiểm tra, mở Claude Code và xem thư mục `C:\Users\tanhi\.claude\skills\synced\` có hai skill này chưa. Nếu chưa có thì báo mình, mình hướng dẫn cách đặt file thủ công.
+1. Lưu hai skill từ thẻ đề xuất. Chúng sẽ đồng bộ sang Claude Code nếu bạn đăng nhập Claude Code bằng tài khoản claude.ai và dùng bản v2.1.273 trở lên. Để kiểm tra, mở Claude Code và xem thư mục `C:\Users\[user]\.claude\skills\synced\` có hai skill này chưa. Nếu chưa có thì báo mình, mình hướng dẫn cách đặt file thủ công.
 2. Đặt `CLAUDE.md` vào **thư mục chứa các thư mục ngày**. Ví dụ bạn mở Claude Code ở `D:\…\ClaudeCode\22102026` thì đặt file ở `D:\…\ClaudeCode\`. Claude Code sẽ tự đọc CLAUDE.md ở thư mục cha, nên ngày nào cũng dùng được mà không cần copy lại.
 
 Có một tác dụng phụ: vì có `CLAUDE.md` ở thư mục cha, Claude Code sẽ không tự đọc `AGENTS.md` của repo seminar khi mở session. Mình đã ghi trong `CLAUDE.md` yêu cầu nó đọc `AGENTS.md` → `CONTEXT.md` trước, nên không mất ngữ cảnh.
@@ -1460,7 +1460,7 @@ Bước tiếp theo nên là dùng quy trình mới cho **S3-D01**: Claude Code 
 - Đề xuất skill: t10-mutation-testing, t10-run-report
 - Gửi file: /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/claude-code/CLAUDE.md
 
-## #26 — 2026-10-22 19:47 — model: claude-opus-5-5
+## #26 — 2026-10-22 19:47 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -1491,7 +1491,7 @@ Không commit, không push, không sửa server.js/database.js. Kết quả khá
 Khi Claude Code chạy xong, bạn gửi mình báo cáo ngắn và nội dung `D01-cc-REPORT.md`. Mình sẽ điền vào Experiment Log, đánh dấu các run này là do Claude Code chạy, rồi đưa bạn danh sách lệnh để bạn tự chạy lại.
 ````
 
-## #27 — 2026-10-22 19:48 — model: claude-opus-5-5
+## #27 — 2026-10-22 19:48 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -1534,7 +1534,7 @@ Bạn vừa push nên hai repo trên máy bạn đang ở trạng thái sạch. 
 - Đề xuất skill: t10-run-report
 - Gửi file: /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/claude-code/CLAUDE.md
 
-## #28 — 2026-10-22 19:55 — model: claude-opus-5-5
+## #28 — 2026-10-22 19:55 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -1609,7 +1609,7 @@ Mình không commit hay push: bạn tự commit từ máy bạn. Ba file docs đ
 - Đề xuất skill: t10-run-report
 - Gửi file: /home/claude/repos/seminar/experiments/s3/Experiment_Log_Tan_Hiep.md, /home/claude/repos/seminar/research/s3/Research_Notes_Tan_Hiep.md, /home/claude/repos/seminar/ai-audit/AI_Record_Tan_Hiep.md, /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/claude-code/CLAUDE.md
 
-## #29 — 2026-10-22 20:04 — model: claude-opus-5-5
+## #29 — 2026-10-22 20:04 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -1666,7 +1666,7 @@ Mình không commit hay push. Các thay đổi chỉ nằm trong bản sao làm 
 - Edit: /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/claude-code/CLAUDE.md
 - Gửi file: /home/claude/repos/seminar/experiments/s3/Experiment_Log_Tan_Hiep.md, /home/claude/repos/seminar/ai-audit/AI_Record_Tan_Hiep.md, /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/claude-code/CLAUDE.md
 
-## #30 — 2026-10-22 20:16 — model: claude-opus-5-5
+## #30 — 2026-10-22 20:16 — model: claude-opus-5-5 — session 9ffbcb5b
 
 ### Prompt
 
@@ -1691,7 +1691,108 @@ Báo cáo cho phiên thảo luận
 - Cần quyết định: Không
 ```
 
+### Output
+
+````text
+Đã chuyển sang Claude Code được commit (không push) từ giờ. Chỗ sửa nằm trong `CLAUDE.md` mới và skill `t10-run-report` ở thẻ đề xuất phía trên.
+
+**Về AI log:** mình làm theo cách giống dự án HW02 của bạn.
+- **Phiên claude.ai này:** mình đã trích nguyên văn từ transcript, gồm 30 lượt, giờ Asia/Saigon, có ghi model từng lượt. MSSV và email đã được che. File nằm trong zip.
+- **Claude Code:** dùng hook **Stop**. Sau mỗi lượt, hook chạy `tools/extract_ai_log.py` để ghi log vào `ai-audit/evidence/s3/Tan_Hiep/`. Transcript gốc `.jsonl` không commit.
+
+**Phát hiện cần sửa trong AI Record:** theo transcript, hai lượt đầu do **Claude Sonnet 4.6** trả lời (lượt #1 đọc workbook, và phần đầu của #2 gồm tra docs, papers và lập task list). Từ đó trở đi là Claude Opus 5.5. Vì vậy artifact AI-S3-A01-01 đang ghi "Claude Opus 5.5" là chưa đúng. Mình sẽ sửa sau khi bạn push, vì Claude Code vừa commit chồng lên file đó.
+
+**Prompt cho Claude Code** (bạn đặt `Repo-setup.zip` vào thư mục `Repo` trước):
+
+```text
+Setup AI log. Dùng skill t10-run-report. Được commit, không push.
+
+1. Giải nén Repo-setup.zip vào thư mục này:
+   - CLAUDE.md: thay file hiện có.
+   - tools/extract_ai_log.py; .claude/settings.json (nếu đã có file này thì chỉ gộp thêm hooks.Stop, không xóa cấu hình cũ).
+   - claude-ai_2026-10-16_9ffbcb5b.md: chuyển vào T10_Mutation_Testing_and_Test_Effectiveness/ai-audit/evidence/s3/Tan_Hiep/.
+2. Kiểm tra python --version. Tìm các transcript .jsonl của project Repo trong ~/.claude/projects/ (khớp trường cwd). Với mỗi file: python tools/extract_ai_log.py <file> --out-dir T10_Mutation_Testing_and_Test_Effectiveness/ai-audit/evidence/s3/Tan_Hiep
+3. Kiểm tra: log có prompt S3-D01; grep không còn MSSV hay email cá nhân.
+4. Thử hook: chuyển JSON {"transcript_path": "<transcript phiên hiện tại>"} qua stdin cho python tools/extract_ai_log.py --hook --out-dir <thư mục trên>.
+5. Commit seminar: "chore(ai-log): add claude.ai and Claude Code prompt logs (S3)".
+6. Báo cáo theo CLAUDE.md, kèm tên từng file log và số lượt.
+```
+
+**Sau đó:** bạn push cả 2 commit trước (EShop nhánh `s3/D01-cart-orders`, seminar `main`) và commit log này, rồi báo mình. Mình sẽ pull về để sửa AI Record:
+- Sửa model của A01.
+- Trỏ phần "Verbatim AI Output" tới số lượt trong log.
+- Thêm artifact cho lần chạy follow-up (D01-4/5-cc).
+- Thêm các việc phụ AI đã làm, như ghi log C01 và soạn tin nhắn cho Hòa.
+
+Hai điểm trong báo cáo vừa rồi:
+- **DEF-08b chỉ kiểm status:** không chặn tiến độ. Status 200 cho người không phải chủ đơn đã vi phạm FR-11, nên test hiện tại đủ làm bằng chứng lỗi.
+- **Junction `node_modules`:** sandbox của Stryker trỏ junction tới `node_modules` thật. Nếu `rm -rf` sandbox mà bước gỡ junction bị lỗi, có nguy cơ xóa luôn thư viện thật. Từ giờ cứ để Stryker tự dọn sandbox (`cleanTempDir` mặc định là bật), đừng xóa tay. Mình sẽ thêm lưu ý này vào skill `t10-mutation-testing` ở lần cập nhật tới.
+````
+
 ### Hành động
 
 - Write: /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/tools/extract_ai_log.py
+- Đề xuất skill: t10-run-report
+- Gửi file: /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/Repo-setup.zip
+
+## #31 — 2026-10-22 20:23 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Khoan đã, mấy tools mà bạn nói ở đâu vậy? Mình có thấy đâu? Nhầm với CLAUDE.md của HW02 à
+```
+
+### Output
+
+```text
+Mình không nhầm, nhưng lẽ ra phải nói rõ hơn. Các tool này chưa có trên máy bạn. Đây là **file mới mình vừa viết trong lượt trước**, nằm sẵn trong `Repo-setup.zip`. Script cũng không lấy từ HW02: mình không có `on_stop.py` hay `extract_prompt_log.py` của HW02. Mình chỉ mượn ý tưởng từ CLAUDE.md của HW02 (hook Stop tự trích prompt log) rồi viết lại từ đầu cho seminar.
+
+Trong `Repo-setup.zip` có:
+
+| File | Đặt vào | Tác dụng |
+|---|---|---|
+| `tools/extract_ai_log.py` | `Repo\tools\` | Đọc transcript `.jsonl` và xuất prompt + output nguyên văn từng lượt ra Markdown, kèm giờ Asia/Saigon và model. Lọc bỏ system-reminder, kết quả tool, lệnh shell; che MSSV và email |
+| `.claude/settings.json` | `Repo\.claude\` | Hook Stop: chạy script trên sau mỗi lượt của Claude Code |
+| `CLAUDE.md` | `Repo\` (thay file cũ) | Cho phép commit, thêm mục AI log |
+| `claude-ai_2026-10-16_9ffbcb5b.md` | `T10_…/ai-audit/evidence/s3/Tan_Hiep/` | Log của phiên claude.ai này, 30 lượt, mình đã chạy script để xuất |
+
+Mình gửi kèm riêng hai file script và hook để bạn đọc trước khi cho Claude Code cài.
+
+Đã kiểm tra:
+- Script đã chạy thật trên transcript của phiên này, cả chế độ thường lẫn chế độ `--hook`.
+
+Chưa kiểm tra được trên máy bạn:
+- Lệnh `python` có gọi được không.
+- Hook có chạy khi `Repo` không phải git repo không.
+
+Hai việc này là bước 2 và bước 4 trong prompt. Nếu hỏng, Claude Code sẽ báo trong mục "Bất thường mới".
+```
+
+### Hành động
+
+- Gửi file: /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/Repo-setup/tools/extract_ai_log.py, /tmp/claude-0/-home-claude/9ffbcb5b-f74a-59c0-99f6-d4383af57bf4/scratchpad/Repo-setup/.claude/settings.json
+
+## #32 — 2026-10-22 20:28 — model: claude-opus-5-5 — session 9ffbcb5b
+
+### Prompt
+
+```text
+Báo cáo cho phiên thảo luận
+
+- Nhiệm vụ: Setup AI log — Partial: log đã trích và đã commit, nhưng hook Stop chưa thấy chạy thật trong Claude Code.
+- Kết quả: Python 3.14.3 (msys) và 3.12 (Windows) đều chạy được script; tìm thấy 4 transcript có cwd là Repo.
+- Log claude-ai_2026-10-16_9ffbcb5b.md: 30 lượt (opus-5-5 29, sonnet-4-6 2, có lượt đếm cả hai model).
+- Log claude-code_2026-10-22_4a560803.md: 5 lượt, nhưng chỉ 3 là prompt thật; 2 lượt còn lại là /exit và local-command-stdout. Đây là transcript phiên hiện tại, dùng để thử hook (exit 0).
+- Log claude-code_2026-10-22_ece200c2.md: 1 lượt, chính là prompt D01 đầu tiên, nên trùng với lượt #1 của 4a560803.
+- Hai transcript 56351756 và d1bb546b chỉ có metadata, ra 0 lượt. Cả hai cùng ghi đè một file claude-code_unknown_session.md; file này rỗng nên tôi đã xóa, không commit.
+- Kiểm tra: prompt S3-D01 có trong log. Không còn MSSV hay email; các số 8 chữ số còn lại là giá 28000000 và ngày 22102026. Đường dẫn vẫn chứa username Windows tanhi.
+- Evidence: ai-audit/evidence/s3/Tan_Hiep/. Chưa tạo file REPORT vì task này không có Task ID nên không có đường dẫn theo skill.
+- Commit seminar: b1674c8 trên main (ahead 2, chưa push).
+- Ngoài repo: Repo/CLAUDE.md đã thay; tạo mới Repo/tools/extract_ai_log.py và Repo/.claude/settings.json (trước đó chưa có file này, nên không cần gộp).
+- Bất thường mới: Repo-setup.zip nằm ở T10..ông ở Repo/. Tôi dùng file đó; nó vẫnuntracked, chưa commit.
+- Bất thường mới: script đếm lệnh local (/exai_log.py:94).
+- Bất thường mới: tôi chưa kiểm tra Claude Code có nhận trường args trong hook command không                           (.claude/settings.json:8). Nếu không nhận,
+- Cần quyết định: A1 – sửa script để bỏ lệnh local và transcript rỗng? – sửa / để nguyên. A2 – xử lý Repo-setup.zip? – xóa / thêm vào .gitignore. A3 – giữ log ec
+```
 
