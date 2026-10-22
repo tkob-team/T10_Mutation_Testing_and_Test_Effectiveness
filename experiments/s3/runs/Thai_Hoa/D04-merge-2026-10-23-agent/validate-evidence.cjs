@@ -7,7 +7,7 @@ const read=file=>JSON.parse(fs.readFileSync(file,'utf8').replace(/^\uFEFF/,''));
 function check(name,ok){checks.push({name,pass:!!ok});if(!ok)errors.push(name);}
 let jsonCount=0;
 function walk(dir,callback){for(const item of fs.readdirSync(dir,{withFileTypes:true})){const file=path.join(dir,item.name);if(item.isDirectory())walk(file,callback);else callback(file);}}
-walk(__dirname,file=>{if(file.endsWith('.json')){try{read(file);jsonCount++;}catch(e){errors.push('Invalid JSON: '+path.relative(root,file)+': '+e.message);}}});
+walk(__dirname,file=>{if(file.endsWith('.json')&&file!==path.join(__dirname,'final-review.json')){try{read(file);jsonCount++;}catch(e){errors.push('Invalid JSON: '+path.relative(root,file)+': '+e.message);}}});
 check('Final frozen baseline: 88 pass',read(path.join(__dirname,'frozen-commit-final-tests.json')).numPassedTests===88);
 check('Fresh install succeeds; final tests pass',read(path.join(__dirname,'frozen-clean-install.meta.json')).exitCode===0&&read(path.join(__dirname,'clean-install-baseline.json')).numPassedTests===88);
 const defects=read(path.join(__dirname,'d04-defects-final.json'));

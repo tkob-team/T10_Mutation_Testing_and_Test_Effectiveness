@@ -1,6 +1,6 @@
 {
   "executor": "OpenAI Codex AI Agent",
-  "checkedUtc": "2026-10-22T20:11:30.561Z",
+  "checkedUtc": "2026-10-22T20:13:07.090Z",
   "checks": [
     {
       "name": "Final frozen baseline: 88 pass",
@@ -64,6 +64,6 @@
     }
   ],
   "jsonFilesParsed": 80,
-  "localLinksChecked": 106,
+  "localLinksChecked": 108,
   "errors": []
 }

@@ -18,7 +18,7 @@
 - [x] G02 raw file/provenance, original run, mutation run and per-mutant comparison; same-context constraint disclosed.
 - [x] Reproduce available teammate baseline experiments and unedited Cart manual/AI (23/13 new assertion kills). Missing Auth manual/AI remain Pending.
 - [x] Update logs/audit and prepare gate evaluation; actual Sheet write blocked by 403, with readback and pending payload retained.
-- [x] Final standards/spec and evidence review: 15 checks pass, 80 JSON files parse, 106 maintained local links resolve; changes prepared for evidence commit.
+- [x] Final standards/spec and evidence review: 15 checks pass, 80 JSON files parse, 108 maintained local links resolve; evidence committed at `128be24` with a validation follow-up.
 
 ## Remaining Completion Boundaries
 
