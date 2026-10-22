@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 01:59 (Asia/Saigon).
+Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 02:07 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 12 lượt prompt; theo model: claude-opus-5-5 12 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 13 lượt prompt; theo model: claude-opus-5-5 13 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-22 19:50 — model: claude-opus-5-5 — session 4a560803
 
@@ -572,4 +572,58 @@ Lưu ý: đây vẫn là session cũ (đã thấy 2 subject), không phải sess
 
 - Edit: D:\HK7\Testing\Seminars\Repo\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\backend\test\ai\cart-orders.ai.js
 - Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Tan_Hiep\G01-cc-REPORT.md
+
+## #13 — 2026-10-23 02:04 — model: claude-opus-5-5 — session 4a560803
+
+### Prompt
+
+```text
+<pasted_content id="3d1a">
+Task S3-G01 — spec review xong, run G01-2-cc (skill t10-run-report). Hết yêu cầu blind.
+1. EShop s3/G01-ai, backend/test/ai/cart-orders.ai.js: CHỈ sửa comment, không đụng assertion.
+   - Dòng 1: bỏ "(đã review)". Dòng 2 → "Sinh bởi Claude Code (claude-opus-5-5) ở G01-1-cc; session blind một phần (lộ 2 subject commit F01, xem G01-cc-REPORT.md)."
+   - "// AI assertions đã review đặt ở đây." và khối "CHƯA review" → "Spec review 2026-10-23 (Tấn Hiệp + phiên thảo luận): giữ 5/5 test, không sửa assertion; oracle một phần lấy từ code (dạng [], trường error) đã ghi ở từng test; 550:11 không viết (defect-fixing)."
+   Commit: test(S3-G01): mark AI assertions as reviewed and fix provenance header
+2. npm run test:ai (phải pass) → npm run mutate:cart-orders:ai → lưu console.log, mutation.html, mutation.json vào runs/Tan_Hiep/G01-2-cc/.
+3. G01-cc-REPORT.md, thêm mục G01-2-cc: số Killed/Timeout/Survived/NoCoverage/RuntimeError/score; mutant Survived/NoCoverage ở E01-1-cc → Killed ở G01-2-cc kèm killedBy; bảng 6 mutant mục tiêu: trạng thái ở F01-2-cc vs G01-2-cc, killedBy mỗi bên.
+4. Experiment_Log_Tan_Hiep.md:
+   - AI Runs: 1 dòng artifact G01-01 (raw 5 test, assertion không sửa; spec review như bước 1; kết quả code gốc; kết quả mutant; evidence).
+   - Comparison: điền dòng AI-assisted (G01-2-cc). Ghi chú: AI = baseline 36 + AI 5; Manual có 8 test, 3 test ngoài 6 mutant mục tiêu, nên so sánh công bằng là trên 6 mutant mục tiêu (xem G01-cc-REPORT.md).
+   - Thêm dòng G01-1-cc, G01-2-cc vào bảng Runs.
+5. git restore backend/database.sqlite. Commit seminar: docs(S3-G01): add G01-2-cc mutation run and comparison
+</pasted_content id="3d1a">
+```
+
+### Output
+
+```text
+Chỉ dòng comment đổi. Commit rồi chạy:
+
+Run xong: 83.92%. Timeout 23, cao hơn baseline (19). Viết script so sánh tổng quát cho E01, F01-2 và G01-2:
+
+Có 4 mutant Killed ở E01 nhưng Timeout ở G01 (347:5, 510:63, 519:22, 520:7). Sẽ ghi lại làm bất thường. Xem G01 REPORT và mục AI Runs:
+
+Cập nhật Experiment Log (AI Runs, Comparison, bảng Runs):
+
+Nối mục G01-2-cc vào G01-cc-REPORT.md:
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: S3-G01 run G01-2-cc — Done
+- Kết quả: `test:ai` Pass, 41/41 (36 baseline + 5 AI). Commit `f4696c6` chỉ sửa comment; tôi đã kiểm `git diff`, không có dòng code nào đổi.
+- Kết quả: G01-2-cc Pass, 150 mutants. Killed 97, Timeout 23, Survived 21, NoCoverage 2, RuntimeError 7; score 83.92%.
+- So sánh: E01-1-cc 74.65% → F01-2-cc 90.91%. Từ E01 sang G01, 13 mutant chuyển từ Survived sang Killed (F01 là 23).
+- Killed chung giữa hai nhánh: 97. Có 15 mutant chỉ nhánh manual kill, không mutant nào chỉ nhánh AI kill.
+- 6 mutant mục tiêu: cả manual và AI đều kill 5/6 (286:7, 292:7, 326:47, 346:45, 532:47), mỗi bên bởi đúng test tương ứng. 550:11 Survived ở cả hai.
+- Evidence: `T10_.../experiments/s3/runs/Tan_Hiep/G01-cc-REPORT.md` (mục G01-2-cc). Bảng so sánh ở `G01-2-cc/compare_runs.md`.
+- Commit EShop: `f4696c6` trên `s3/G01-ai`, chưa push.
+- Commit seminar: `cd9a1c5` trên `main`, chưa push. Trước task có thêm `3dc7ae1` (`chore(ai-log)`) cho log do hook ghi.
+- Experiment Log: thêm dòng AI-S3-G01-01 vào AI Runs, điền dòng AI-assisted trong Comparison kèm ghi chú so sánh trên 6 mutant, thêm G01-1-cc và G01-2-cc vào bảng Runs.
+- `database.sqlite` sạch, đã `git restore` như yêu cầu.
+- Bất thường mới: 4 mutant Killed ở E01 và F01 nhưng Timeout ở G01-2-cc: 347:5, 510:63, 519:22, 520:7 (`G01-2-cc/compare_runs.md`). Giả thuyết là Timeout phụ thuộc môi trường, chưa kiểm chứng và chưa chạy lại.
+- Cần quyết định: Không
+```
+
+### Hành động
+
+- Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Tan_Hiep\G01-2-cc\compare_runs.py
 
