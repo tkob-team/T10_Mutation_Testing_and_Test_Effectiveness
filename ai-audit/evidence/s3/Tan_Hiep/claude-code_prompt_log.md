@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-22 20:36 (Asia/Saigon).
+Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-22 20:46 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 5 lượt prompt; theo model: claude-opus-5-5 5 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 6 lượt prompt; theo model: claude-opus-5-5 6 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-22 19:50 — model: claude-opus-5-5 — session 4a560803
 
@@ -223,5 +223,42 @@ Tiếp AI log. Được commit, không push.
 4. Commit seminar: "chore(ai-log): redact Windows username in prompt logs".
 5. Báo cáo theo CLAUDE.md.
 </pasted_content id="3d1a">
+```
+
+### Output
+
+```text
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: Redact AI log — Done
+- Kết quả: đã trích lại `claude-code_prompt_log.md` bằng `--hook`, exit 0. Log có 5 lượt prompt, đều của session 4a560803, model opus-5-5; lượt #5 là task này.
+- Kiểm tra `claude-code_prompt_log.md`: `[user]` 0 (kể cả không phân biệt hoa thường), MSSV 0, email 0.
+- Kiểm tra `claude-ai_2026-10-16_9ffbcb5b.md`: `[user]` 0, MSSV 0, email 0.
+- Evidence: `T10_.../ai-audit/evidence/s3/Tan_Hiep/`. Không có REPORT riêng vì task không có Task ID.
+- Commit seminar: `78642bd` trên `main` (ahead 4, chưa push).
+- Ngoài repo: `Repo/Repo-setup.zip` đã xóa; `tools/extract_ai_log.py` đã thay bằng bản mới, thêm `WIN_USER_RE`.
+- Sau lượt này hook Stop sẽ ghi lại `claude-code_prompt_log.md`, nên working tree seminar sẽ bẩn ở file đó. Theo CLAUDE.md thì không tính là bẩn.
+- Bất thường mới: `WIN_USER_RE` phân biệt hoa thường (`tools/extract_ai_log.py:33`), nên `[user]` hay `[user]` sẽ không bị che. Lần này kiểm tra ra 0 nên chưa gây lỗi.
+- Cần quyết định: Không
+```
+
+## #6 — 2026-10-22 20:45 — model: claude-opus-5-5 — session 4a560803
+
+### Prompt
+
+```text
+<pasted_content id="3d1a">
+Cập nhật AI Record. Được commit, không push.
+
+1. Từ Repo: AI_Record_Tan_Hiep.md → thay T10_.../ai-audit/; Experiment_Log_Tan_Hiep.md → thay T10_.../experiments/s3/; extract_ai_log.py → thay tools/ (thêm re.I cho WIN_USER_RE). Xóa 3 file này khỏi Repo sau khi chép.
+2. Trích lại claude-code_prompt_log.md (--hook). Kiểm tra grep "[user]" (không phân biệt hoa thường), MSSV, email = 0.
+3. Commit seminar: "docs(S3-D01): map AI Record artifacts to prompt logs; add C01-02, C01-03, D01-03, D01-04, WF-02".
+4. Báo cáo theo CLAUDE.md.
+</pasted_content id="3d1a">
+```
+
+### Output
+
+```text
+AI_Record và Experiment_Log không có ở `Repo/`; trong seminar repo hai file này đã ở trạng thái `M` → có vẻ đã được chép sẵn. Kiểm tra:
 ```
 

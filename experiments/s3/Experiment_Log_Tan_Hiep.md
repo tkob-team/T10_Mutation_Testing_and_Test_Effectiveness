@@ -3,7 +3,7 @@
 **Document Role:** Working log cá nhân S3; chỉ ghi kết quả chạy thật trên máy Tấn Hiệp. Run do AI Agent chạy có hậu tố `-cc` (Claude Code) và ghi executor; Tấn Hiệp chạy lại các run chính thức bằng ID không hậu tố.  
 **Stage:** S3  
 **Member:** Lê Tấn Hiệp  
-**Task IDs:** S3-C01 (In Progress); S3-D01 (In Progress); S3-E01, S3-F01, S3-G01, S3-H01, S3-I01 (chưa bắt đầu)  
+**Task IDs:** S3-C01 (Review, 2026-10-22 — C01-7 giải quyết bằng harness D01); S3-D01 (Review, 2026-10-22); S3-E01, S3-F01, S3-G01, S3-H01, S3-I01 (chưa bắt đầu)  
 **Domain / Section:** Cart & Orders  
 **Evidence Status:** Partial — C01-1 → C01-6 đã chạy; D01-1-cc, D01-2-cc đúng kỳ vọng; D01-3-cc fail (Stryker dry run trên Windows) → quyết định D01-Q7, chạy lại ở D01-5-cc; member runs D01 chưa chạy
 
