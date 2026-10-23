@@ -140,4 +140,30 @@ Claude Code (`claude-opus-5-5`), không chạy lại Jest/Stryker. Chi tiết: `
 
 - I01-1: `I01-1/git-reflog.txt` (`git reflog --date=iso -20`). EShop HEAD = `806ba19` từ `10:42:08` đến `10:56:05` (+07:00); report I01-1 ghi `10:54:17`–`10:56:05` (console.log, mtime `I01-1/mutation.json` 10:56:05.015), nằm trong cửa sổ này. Cửa sổ `10:26:57`–`10:29:21` là I01-1-cc.
 - I01-2 / I01-3: SHA-256 của `server.js`, `database.js`, `package-lock.json` và 7 file overlay trong `Repo/_tmp/I01-coupons/backend`, **lấy sau khi chạy** (~11:05). Sau chuẩn hóa CRLF→LF: 3 file khớp `git show 806ba19:backend/<file>`, 7 file khớp `Thai_Hoa/Coupons-extensions-2026-10-23-agent/sources/backend/`. Script: `I01-cc-compare/i01_member_provenance.py`.
-- Lệnh nguyên văn Tấn Hiệp đã chạy: **Pending** — prompt còn placeholder `[dán 2 khối PowerShell]`, chưa nhận nội dung; chưa ghi vào REPORT/Experiment Log.
+- Lệnh nguyên văn Tấn Hiệp đã chạy cho I01-1/2/3. Nguồn: phiên thảo luận claude.ai 2026-10-23 10:52, Tấn Hiệp xác nhận đã chạy đúng (chuyển qua prompt Claude Code, Q1 chọn (a)). Chép nguyên văn:
+
+```powershell
+$R = "D:\HK7\Testing\Seminars\Repo"
+$E = "$R\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Tan_Hiep"
+mkdir "$E\I01-1","$E\I01-2","$E\I01-3" -Force | Out-Null
+
+# I01-1 baseline
+cd "$R\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness"; git checkout --detach 806ba19; cd backend
+npm run test:coupons 2>&1 | Tee-Object -FilePath "$E\I01-1\console.log"
+npm run mutate:coupons 2>&1 | Tee-Object -FilePath "$E\I01-1\console.log" -Append
+Copy-Item reports\coupons\mutation.* "$E\I01-1\"
+git status --short; git checkout -    # restore database.sqlite nếu status báo đổi
+```
+
+```powershell
+# I01-2 manual, I01-3 AI (thư mục Claude Code đã giải nén, overlay và npm ci sẵn)
+cd "$R\_tmp\I01-coupons\backend"
+node node_modules/jest/bin/jest.js --config jest.coupons.manual.config.cjs --runInBand 2>&1 | Tee-Object -FilePath "$E\I01-2\console.log"
+node node_modules/@stryker-mutator/core/bin/stryker.js run stryker.coupons.manual.config.json 2>&1 | Tee-Object -FilePath "$E\I01-2\console.log" -Append
+Copy-Item reports\coupons-manual\mutation.* "$E\I01-2\"
+node node_modules/jest/bin/jest.js --config jest.coupons.ai.config.cjs --runInBand 2>&1 | Tee-Object -FilePath "$E\I01-3\console.log"
+node node_modules/@stryker-mutator/core/bin/stryker.js run stryker.coupons.ai.config.json 2>&1 | Tee-Object -FilePath "$E\I01-3\console.log" -Append
+Copy-Item reports\coupons-ai\mutation.* "$E\I01-3\"
+```
+
+  Đối chiếu với evidence (sự kiện): I01-1 không có `npm ci` (dùng `node_modules` còn từ I01-1-cc); `git checkout --detach 806ba19` và `git checkout -` khớp hai dòng reflog 10:42:08 và 10:56:05; `Copy-Item` giữ mtime nên `I01-1/mutation.json` cùng mtime với `backend/reports/coupons/mutation.json` (10:56:05.015). Dòng lệnh không xuất hiện trong console.log vì `Tee-Object` chỉ ghi output.
