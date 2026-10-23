@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 12:27 (Asia/Saigon).
+Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 12:36 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 11 lượt prompt; theo model: claude-opus-5-5 11 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 12 lượt prompt; theo model: claude-opus-5-5 12 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-23 02:41 — model: claude-opus-5-5 — session 4a560803
 
@@ -489,4 +489,46 @@ Không đổi gì khác. Kiểm git diff. Commit, không push. Khối báo cáo.
 - Bất thường mới: tôi không kiểm được lượt #27 vì tìm heading `## #26`/`## #27` trong `ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-23_5aa8b0cf.md` không ra kết quả nào. Có thể file log phiên này ở repo chưa có các lượt đó, hoặc heading có định dạng khác.
 - Cần quyết định: Không
 ```
+
+## #12 — 2026-10-23 12:35 — model: claude-opus-5-5 — session ad369217
+
+### Prompt
+
+```text
+<pasted_content id="5c88">
+WF chuyển S3 → S4, không chạy run. Cập nhật Repo/CLAUDE.md:
+1. Preflight: git fetch trước; nếu chỉ AI log bẩn → commit chore(ai-log) rồi git pull --rebase (chỉ commit local chưa push của mình); không rebase/cherry-pick commit người khác.
+2. Lệnh chạy (của mình và lệnh soạn cho Tấn Hiệp): mỗi lệnh ghi header "### <giờ> | <commit> <nhánh> | > <lệnh>" vào console.log; đặt UTF-8 cho console PowerShell trước khi chạy; truyền cờ Stryker bằng "npx stryker run <config> --cờ", không dùng "npm run … -- --cờ".
+3. Trước khi commit file tài liệu đã có: git diff cả file, báo kết quả kiểm trong khối báo cáo.
+4. Stage hiện tại: S4 (S3 đã đóng 2026-10-23); hook vẫn ghi ai-audit/evidence/s4/Tan_Hiep/.
+Nếu memory của Claude Code đang ghi điều trái với các quy tắc trên, hoặc trạng thái cũ (S3 chưa xong, E01 pending, I01 chờ H02), sửa cho khớp và liệt kê đã sửa gì. Repo/CLAUDE.md nằm ngoài repo nhóm nên không commit; AI log commit như thường, không push. Khối báo cáo.
+</pasted_content id="5c88">
+```
+
+### Output
+
+```text
+Memory dir trống → không có gì cần sửa. Đọc CLAUDE.md để sửa.
+
+Kiểm diff CLAUDE.md so bản backup, rồi commit AI log.
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: chuyển quy trình S3 → S4 — Done. Không chạy run nào.
+- `Repo/CLAUDE.md`, mục "Trước mỗi task": thêm `git fetch` trước `git status`. Nếu chỉ bẩn ở AI log thì commit chore(ai-log) rồi `git pull --rebase`, chỉ áp cho commit local chưa push của mình. Preflight của session blind sửa theo cho khớp.
+- `Repo/CLAUDE.md`, mục "Quy tắc": thêm quy tắc chạy `git diff` cả file trước khi commit tài liệu đã có, và báo kết quả kiểm trong khối báo cáo.
+- `Repo/CLAUDE.md`, mục "Môi trường": mỗi lệnh ghi header `###` vào console.log; đặt UTF-8 cho console PowerShell trước khi chạy; truyền cờ Stryker bằng `npx stryker run <config> --cờ`.
+- `Repo/CLAUDE.md`, mục "Trạng thái": thay 3 dòng cũ (S3 Review, I01 chờ H02, E01 pending, member re-run chưa làm) bằng "Stage S4, S3 đóng 2026-10-23; hook ghi `ai-audit/evidence/s4/Tan_Hiep/`".
+- Kiểm diff `CLAUDE.md` so với bản sao trước khi sửa: thêm 17 dòng, bỏ 5 dòng. 5 dòng bỏ đều có chủ đích: 1 dòng preflight, 1 dòng blind, 3 dòng Trạng thái. `CLAUDE.md` không commit vì nằm ngoài repo.
+- Memory Claude Code: thư mục `memory/` trống, không có gì để sửa.
+- Commit seminar `main`: `7988acf` chore(ai-log), chưa push. Đã `git fetch` + `git pull --rebase`, nhánh đã cập nhật.
+- Bất thường mới: skill `t10-run-report` mục 1 vẫn ghi preflight theo cách cũ: chỉ `git pull --ff-only`, không có `git fetch`, không có `pull --rebase`. `CLAUDE.md` sẽ được ưu tiên hơn, nhưng skill nằm ngoài phạm vi task nên tôi không sửa.
+- Cần quyết định: Không
+```
+
+### Hành động
+
+- Edit: D:\HK7\Testing\Seminars\Repo\CLAUDE.md
+- Edit: D:\HK7\Testing\Seminars\Repo\CLAUDE.md
+- Edit: D:\HK7\Testing\Seminars\Repo\CLAUDE.md
+- Edit: D:\HK7\Testing\Seminars\Repo\CLAUDE.md
 
