@@ -3,6 +3,8 @@
 
 Dùng (từ experiments/s3/runs/Tan_Hiep):
   python -I I01-cc-compare/i01_compare.py -o I01-cc-compare/i01_comparison.md
+  python -I I01-cc-compare/i01_compare.py -o I01-cc-compare/i01_comparison.md --member
+--member: thêm run của Tấn Hiệp I01-{1,2,3}, so với report tương ứng của Hòa và với I01-{1,2,3}-cc.
 Mutant nhận diện bằng vị trí đầu–cuối + mutatorName + replacement. Chỉ đếm và liệt kê; không nhận định.
 """
 import argparse
@@ -21,6 +23,7 @@ PAIRS = [
 ]
 STATUSES = ["Killed", "Timeout", "Survived", "NoCoverage", "RuntimeError", "CompileError", "Ignored"]
 DETECTED = {"Killed", "Timeout"}
+MEMBER = ["I01-1", "I01-2", "I01-3"]
 
 
 def load(path):
@@ -51,9 +54,33 @@ def fmt(k):
     return f"L{k[0]}:{k[1]}–L{k[2]}:{k[3]} {k[4]} `{cell(k[5])}`"
 
 
+def transitions(mine, m, ref, r):
+    only_m, only_r = set(m) - set(r), set(r) - set(m)
+    common = set(m) & set(r)
+    changed = sorted(k for k in common if m[k] != r[k])
+    kt = [k for k in changed if {m[k], r[k]} <= DETECTED]
+    other = [k for k in changed if k not in kt]
+    surv_m = sorted(k for k in m if m[k] == "Survived")
+    surv_r = sorted(k for k in r if r[k] == "Survived")
+    out = [f"### {mine} vs {ref}", "",
+           f"- Mutant: {len(m)} vs {len(r)}; chung {len(common)}; chỉ ở {mine}: {len(only_m)}; chỉ ở {ref}: {len(only_r)}.",
+           f"- Survived tuyệt đối: {mine} {len(surv_m)}, {ref} {len(surv_r)}; tập Survived trùng khớp: {'có' if surv_m == surv_r else 'không'}.",
+           f"- Mutant đổi trạng thái: {len(changed)} (Killed↔Timeout: {len(kt)}; chuyển đổi khác: {len(other)}).", ""]
+    for title, ks in [("Killed↔Timeout", kt), ("Chuyển đổi khác", other)]:
+        if ks:
+            out += [f"{title}:", "", f"| Mutant | {ref} | {mine} |", "|---|---|---|"]
+            out += [f"| {fmt(k)} | {r[k]} | {m[k]} |" for k in ks]
+            out.append("")
+    for title, ks in [(f"Chỉ ở {mine}", only_m), (f"Chỉ ở {ref}", only_r)]:
+        if ks:
+            out += [f"{title}: " + "; ".join(fmt(k) for k in sorted(ks)), ""]
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("-o", "--out", required=True)
+    ap.add_argument("--member", action="store_true", help="thêm I01-{1,2,3} (Tấn Hiệp tự chạy)")
     a = ap.parse_args()
     out = ["# S3-I01 — Mutant comparison (cross-run Coupons)", "",
            "Sinh bằng `I01-cc-compare/i01_compare.py`. Khóa mutant: vị trí đầu–cuối + mutatorName + replacement. "
@@ -64,37 +91,27 @@ def main():
     data = {}
     for mine, mp, ref, rp in PAIRS:
         data[mine] = (load(mp), load(rp), ref)
-    for name, ms in [(x, data[x][0]) for x in data] + [(data[x][2], data[x][1]) for x in data]:
+    member = {x: load(f"{x}/mutation.json") for x in MEMBER} if a.member else {}
+    rows = [(x, data[x][0]) for x in data] + [(x + " (Tấn Hiệp)", member[x]) for x in member]
+    for name, ms in rows + [(data[x][2], data[x][1]) for x in data]:
         c, valid, score = counts(ms)
         out.append(f"| {name} | " + " | ".join(str(c[s]) for s in STATUSES) + f" | {len(ms)} | {score:.2f}% |")
 
     out += ["", "## Per-mutant transitions (run -cc so với report của Hòa)", ""]
     for mine, (m, r, ref) in data.items():
-        only_m, only_r = set(m) - set(r), set(r) - set(m)
-        common = set(m) & set(r)
-        changed = sorted(k for k in common if m[k] != r[k])
-        kt = [k for k in changed if {m[k], r[k]} <= DETECTED]
-        other = [k for k in changed if k not in kt]
-        surv_m = sorted(k for k in m if m[k] == "Survived")
-        surv_r = sorted(k for k in r if r[k] == "Survived")
-        out += [f"### {mine} vs {ref}", "",
-                f"- Mutant: {len(m)} vs {len(r)}; chung {len(common)}; chỉ ở {mine}: {len(only_m)}; chỉ ở {ref}: {len(only_r)}.",
-                f"- Survived tuyệt đối: {mine} {len(surv_m)}, {ref} {len(surv_r)}; tập Survived trùng khớp: {'có' if surv_m == surv_r else 'không'}.",
-                f"- Mutant đổi trạng thái: {len(changed)} (Killed↔Timeout: {len(kt)}; chuyển đổi khác: {len(other)}).", ""]
-        for title, ks in [("Killed↔Timeout", kt), ("Chuyển đổi khác", other)]:
-            if ks:
-                out += [f"{title}:", "", f"| Mutant | {ref} | {mine} |", "|---|---|---|"]
-                out += [f"| {fmt(k)} | {r[k]} | {m[k]} |" for k in ks]
-                out.append("")
-        for title, ks in [(f"Chỉ ở {mine}", only_m), (f"Chỉ ở {ref}", only_r)]:
-            if ks:
-                out += [f"{title}: " + "; ".join(fmt(k) for k in sorted(ks)), ""]
+        out += transitions(mine, m, ref, r)
 
     out += ["## Survived set giữa các run -cc", ""]
     s = {x: {k for k, v in data[x][0].items() if v == "Survived"} for x in data}
     out.append(f"- I01-1-cc → I01-2-cc: Survived→khác: {', '.join(fmt(k) + ' → ' + data['I01-2-cc'][0][k] for k in sorted(s['I01-1-cc'] - s['I01-2-cc'])) or 'none'}; mới Survived: {len(s['I01-2-cc'] - s['I01-1-cc'])}.")
     out.append(f"- I01-1-cc → I01-3-cc: Survived→khác: {', '.join(fmt(k) + ' → ' + data['I01-3-cc'][0][k] for k in sorted(s['I01-1-cc'] - s['I01-3-cc'])) or 'none'}; mới Survived: {len(s['I01-3-cc'] - s['I01-1-cc'])}.")
     out.append(f"- I01-2-cc vs I01-3-cc: tập Survived trùng khớp: {'có' if s['I01-2-cc'] == s['I01-3-cc'] else 'không'}.")
+    if member:
+        out += ["", "## Run của Tấn Hiệp (I01-1/2/3) so với Hòa và với run -cc", ""]
+        for x, cc in zip(MEMBER, data):
+            m_cc, r, ref = data[cc]
+            out += transitions(x, member[x], ref, r)
+            out += transitions(x, member[x], cc, m_cc)
     with open(a.out, "w", encoding="utf-8", newline="\n") as fh:
         fh.write("\n".join(out) + "\n")
 
