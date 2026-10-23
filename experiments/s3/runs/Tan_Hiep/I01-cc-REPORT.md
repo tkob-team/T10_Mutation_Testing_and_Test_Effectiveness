@@ -89,3 +89,47 @@ Giữa các run -cc: baseline → manual và baseline → AI đều chỉ có 2 
 ## AI usage
 
 Log phiên: `ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md` (hook Stop ghi sau lượt này).
+
+## Update 2026-10-23 — member runs I01-1/2/3 (executor: Tấn Hiệp)
+
+Task: kiểm evidence Tấn Hiệp tự chạy, mở rộng script so sánh, ghi Experiment Log. Claude Code (`claude-opus-5-5`) không chạy lại Jest/Stryker trong mục này.
+
+### Evidence check
+
+| Run | Thư mục | Files | Tests (console) | Killed | Timeout | Survived | NoCoverage | RuntimeError | Ignored | Total | Score | Done in |
+|---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| I01-1 (baseline) | `I01-1/` | console.log, mutation.html, mutation.json | 26/26 pass | 39 | 21 | 30 | 25 | 5 | 0 | 120 | 52.17% | 1 min 47 s |
+| I01-2 (manual) | `I01-2/` | console.log, mutation.html, mutation.json | 35/35 pass | 41 | 21 | 28 | 25 | 5 | 0 | 120 | 53.91% | 2 min 2 s |
+| I01-3 (AI) | `I01-3/` | console.log, mutation.html, mutation.json | 40/40 pass | 41 | 21 | 28 | 25 | 5 | 0 | 120 | 53.91% | 1 min 54 s |
+
+Số đếm từ `mutation.json` (script). Score = (Killed + Timeout) / (Killed + Timeout + Survived + NoCoverage).
+
+Theo console.log: I01-1 chạy `npm run test:coupons` và `npm run mutate:coupons` trong `eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend` (report ở `reports/coupons/`); I01-2 / I01-3 chạy trong `Repo/_tmp/I01-coupons/backend` (runtime đã dựng ở I01-2-cc, gồm `node_modules` từ `npm ci`), report ở `reports/coupons-manual/`, `reports/coupons-ai/`. console.log chỉ có output, không ghi dòng lệnh nên không xác nhận được lệnh nguyên văn; commit EShop lúc chạy I01-1 không có trong log. Dry run: `Ran 52 tests`, `Ran 70 tests`, `Ran 80 tests` (đếm 2 lần, như các run -cc). Mỗi run có 10 dòng `WARN ChildProcessProxy ... exit code 3221225477`.
+
+### Comparison
+
+`I01-cc-compare/i01_compare.py` thêm cờ `--member` (đọc `I01-{1,2,3}/mutation.json`, so mỗi run với report tương ứng của Hòa và với `I01-{1,2,3}-cc`); cách gọi cũ không cờ cho output giống hệt bản trước (đã kiểm bằng `diff`). Sinh lại: `python -I I01-cc-compare/i01_compare.py -o I01-cc-compare/i01_comparison.md --member`.
+
+| Cặp | Mutant chung | Survived | Đổi trạng thái | Killed↔Timeout |
+|---|---:|---|---:|---:|
+| I01-1 vs Hòa frozen baseline | 120/120 | 30 / 30, tập trùng | 0 | 0 |
+| I01-1 vs I01-1-cc | 120/120 | 30 / 30, tập trùng | 0 | 0 |
+| I01-2 vs Hòa manual | 120/120 | 28 / 28, tập trùng | 0 | 0 |
+| I01-2 vs I01-2-cc | 120/120 | 28 / 28, tập trùng | 0 | 0 |
+| I01-3 vs Hòa AI | 120/120 | 28 / 28, tập trùng | 0 | 0 |
+| I01-3 vs I01-3-cc | 120/120 | 28 / 28, tập trùng | 0 | 0 |
+
+### Files created / modified
+
+- `I01-1/`, `I01-2/`, `I01-3/` (do Tấn Hiệp đặt, commit nguyên trạng)
+- `I01-cc-compare/i01_compare.py` (cờ `--member`), `I01-cc-compare/i01_comparison.md` (sinh lại)
+- `experiments/s3/Experiment_Log_Tan_Hiep.md`: thêm dòng I01-1/2/3 ở Cross Reproduction
+- `I01-cc-REPORT.md`: mục này
+
+### Presentation notes
+
+1. Ba lần chạy độc lập (Hòa/Codex, Claude Code, Tấn Hiệp) cho cùng trạng thái trên 120/120 mutant ở cả baseline, manual, AI; trên Coupons không thấy dao động Killed↔Timeout như Cart.
+
+### AI usage
+
+`ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md`.
