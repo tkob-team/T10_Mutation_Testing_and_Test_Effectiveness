@@ -684,6 +684,19 @@ Claude Code: ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md, session ad
 | Reasoning & Source | Chỉ dựa trên evidence trong repo: `experiments/s4/runs/D01-1-cc`, `Tan_Hiep/D01-1`, `C01-rehearsal-cc`, `F01c-1-cc`, `Guide_Reproduction_*`, `Experiment_Log_Phuc_Hoang.md` (commit F03 `eea3ed4`, G03 `b27fce2`), `frozen-auth-baseline.meta.json` (executor Codex). Đã kiểm trên SUT: `eea3ed4` và `b27fce2` tách từ `806ba19`, không đổi `package-lock.json`; `b27fce2` không chứa manual tests; đầu nhánh `s3/G03-auth` có `package.json` lỗi JSON. URL repo seminar lấy từ các link trong repo |
 | Verification | Link tương đối phân giải đủ; `git diff` chỉ thay các dòng có chủ đích (+57/−25). Chưa ai chạy lại các bước mới thêm: lệnh clone seminar ở thư mục ngắn, checkout `eea3ed4`/`b27fce2`, câu `prompt.txt`. Còn lại (chưa có evidence): nhãn Observed/Suggested cho các dòng Troubleshooting cũ của Coupons (cần Hòa); mục AI Agent của Cart chưa chạy, chưa có reproduction của người khác |
 | Student Fix | (điền sau review) |
+ 
+### Artifact AI-S4-F01-02
+ 
+| Field | Value |
+|---|---|
+| Stage / Task ID | S4 / S4-F01 (kiểm User Guide bản ghép) |
+| Tool / Model | Claude Code, Claude Opus 5.5 (`claude-opus-5-5`) |
+| Recorded Time & Provenance | 2026-10-23 (UTC+7): Claude Code session `3058f82a`; log `ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md`; commit `6d73a0b`, `cdbedaf` |
+| Output Artifact / Section | `materials/s4/Verification_Notes_Tan_Hiep.md` (mở rộng cho toàn bộ `User_Guide.md`, giữ bảng Cart cũ); `experiments/s4/runs/F01-verify-cc/verify_user_guide.js` và `verify_output.txt` |
+| Verdict | ĐỀ XUẤT: VALID (phạm vi: kiểm tài liệu và số liệu; không thay cho việc người chạy lại guide) |
+| Reasoning & Source | Script kiểm: 8 section (đủ 6 của REQ-17); Failure Modes 8 mục, 6 có evidence; Troubleshooting 24 dòng, 11 "Đã gặp", 5 chưa gắn nhãn; 36/36 claim số liệu khớp `mutation.json`/log của S3 và S4; 31/31 code block nguyên văn; 51 link tương đối không hỏng; 0 placeholder. Bảng domain × mục đối chiếu từng bước với F01c-1-cc, D01-1-cc, D01-1, D02, run S3 của Phúc |
+| Verification | Chạy lại script sau khi sửa ra cùng kết quả. Lỗi AI khi làm: (1) lần đầu script trỏ nguồn sai cho 73.45% và toy 60% (báo MISMATCH), sau đó tìm đúng nguồn (`E03-provisional`, `C02-D02-…/tutorial-weak`) và khớp; (2) sửa script bằng lệnh shell làm hỏng escaping, phải viết lại đoạn đó; (3) bản đầu của notes làm rơi 2 mục checklist cũ (`tempDirName`, người khác chạy lại guide), đã thêm lại trước khi commit. Chưa kiểm: các bước mới thêm ở AI-S4-E01-02, Auth Advanced Usage theo guide, AI Agent của Cart, bản dịch |
+| Student Fix | (điền sau review) |
 
 ## 3. Accuracy Summary & Audit Conclusion
 
