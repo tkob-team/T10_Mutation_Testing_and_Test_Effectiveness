@@ -645,6 +645,19 @@ Claude Code: ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md, session ad
 | Reasoning & Source | F01a: kiểm `backend/package.json` trên SUT main (lỗi JSON dòng 24) và dry run baseline `806ba19` (36 tests Jest, 150 mutants); thời gian full mutate Cart lấy từ console.log S3. F01c: làm đúng `draft/User_Guide.md` mục 2.2–4.1 trên workshop `6d2e790`; số Stryker đếm từ `mutation.json` |
 | Verification | F01c-1-cc khớp 4 mốc của guide: 88 tests; 7 mutants, 7 Survived; sau CO-02 3 Killed; sau 3 assertion 7 Killed, 0 Survived. Lỗi AI: script áp snippet sai 2 lần (CRLF ở CO-02, escaping backtick ở CO-12); run 14:11:33–14:11:40 bị loại và chạy lại |
 | Student Fix | (điền sau review) |
+ 
+### Artifact AI-S4-D01-01
+ 
+| Field | Value |
+|---|---|
+| Stage / Task ID | S4 / S4-D01 (D01-1-cc; chuẩn bị khối lệnh cho D01-1) |
+| Tool / Model | Claude Code, Claude Opus 5.5 (`claude-opus-5-5`) |
+| Recorded Time & Provenance | 2026-10-23 14:40–14:48 (D01-1-cc) và 14:53–15:50 (chuẩn bị khối lệnh, thu kết quả D01-1) (UTC+7): Claude Code session `3058f82a`; log `ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md` |
+| Output Artifact / Section | `experiments/s4/runs/D01-1-cc/` (REPORT, console.log, 3 bộ report, `guide-tested.md` + SHA-256); `materials/s4/Guide_Reproduction_Tan_Hiep.md`; khối lệnh PowerShell 0–4 và `experiments/s4/runs/Tan_Hiep/D01-1/NOTES.md` (mẫu), `REPORT.md`, `count_d01.md` |
+| Verdict | ĐỀ XUẤT: INCOMPLETE |
+| Reasoning & Source | D01-1-cc chỉ làm theo `Guide_Contribution_Thai_Hoa.md`; số Stryker đếm từ `mutation.json`. Khối lệnh D01-1 lấy nguyên văn lệnh của guide, chỉ thêm khối chuẩn bị, hàm `Step`, `BẠN LÀM` / `XONG KHOI n`, và đổi dòng `$docsRoot` (ghi trong "Khác guide") |
+| Verification | D01-1-cc: mọi số khớp guide (120 mutants, 39/21/30/25/5, 52.17%; manual và AI 41/21/28/25/5, 53.91%). D01-1 (Tấn Hiệp tự chạy): 0 mutant khác trạng thái so với D01-1-cc. Lỗi AI: (1) khối lệnh chạy qua hàm `Step` không ghi output native của npm/Jest/Stryker vào transcript, nên số tests của D01-1 chỉ có trong NOTES; (2) khối overlay khi chạy lần 1 bị cắt thành `-Destination $des` (bản in trong chat đầy đủ; nguyên nhân bị cắt chưa xác định), 3 file bị copy lạc, phải chạy lại khối 0–3. Khối 4 (review candidate G02): Pending |
+| Student Fix | (điền sau review) |
 
 ## 3. Accuracy Summary & Audit Conclusion
 
