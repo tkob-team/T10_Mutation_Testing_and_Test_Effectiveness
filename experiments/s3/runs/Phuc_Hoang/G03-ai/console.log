@@ -1,0 +1,366 @@
+start 2026-10-23 11:27:46 +0700
+
+> backend@1.0.0 mutate:auth:ai
+> stryker run stryker.auth.ai.config.json
+
+[32m11:27:46 (13823) INFO ProjectReader[39m Found 1 of 45 file(s) to be mutated.
+[32m11:27:46 (13823) INFO Instrumenter[39m Instrumented 1 source file(s) with 125 mutant(s)
+[32m11:27:46 (13823) INFO ConcurrencyTokenProvider[39m Creating 2 test runner process(es).
+[32m11:27:47 (13823) INFO DryRunExecutor[39m Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+[32m11:27:47 (13823) INFO DryRunExecutor[39m Initial test run succeeded. Ran 37 tests in 0 seconds (net 94 ms, overhead 255 ms).
+[33m11:27:47 (13823) WARN ChildProcessProxy[39m Child process [pid 13826] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 13826] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb3196656d/scratchpad/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:514:20)
+    at maybeClose (node:internal/child_process:1156:16)
+    at Socket.<anonymous> (node:internal/child_process:526:11)
+    at Socket.emit (node:events:514:20)
+    at Pipe.<anonymous> (node:net:362:12) {
+  innerError: undefined,
+  pid: 13826,
+  exitCode: null,
+  signal: 'SIGSEGV'
+}
+[33m11:27:48 (13823) WARN ChildProcessProxy[39m Child process [pid 13849] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 13849] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb3196656d/scratchpad/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:514:20)
+    at maybeClose (node:internal/child_process:1156:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:334:5) {
+  innerError: undefined,
+  pid: 13849,
+  exitCode: null,
+  signal: 'SIGSEGV'
+}
+[33m11:27:58 (13823) WARN ChildProcessProxy[39m Child process [pid 13946] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 13946] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb3196656d/scratchpad/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:514:20)
+    at maybeClose (node:internal/child_process:1156:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:334:5) {
+  innerError: undefined,
+  pid: 13946,
+  exitCode: null,
+  signal: 'SIGSEGV'
+}
+[33m11:27:59 (13823) WARN ChildProcessProxy[39m Child process [pid 13948] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 13948] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb3196656d/scratchpad/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:514:20)
+    at maybeClose (node:internal/child_process:1156:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:334:5) {
+  innerError: undefined,
+  pid: 13948,
+  exitCode: null,
+  signal: 'SIGSEGV'
+}
+[33m11:28:12 (13823) WARN ChildProcessProxy[39m Child process [pid 14068] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 14068] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb3196656d/scratchpad/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:514:20)
+    at maybeClose (node:internal/child_process:1156:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:334:5) {
+  innerError: undefined,
+  pid: 14068,
+  exitCode: null,
+  signal: 'SIGSEGV'
+}
+[33m11:28:13 (13823) WARN ChildProcessProxy[39m Child process [pid 14092] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 14092] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb3196656d/scratchpad/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:514:20)
+    at maybeClose (node:internal/child_process:1156:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:334:5) {
+  innerError: undefined,
+  pid: 14092,
+  exitCode: null,
+  signal: 'SIGSEGV'
+}
+[33m11:28:18 (13823) WARN ChildProcessProxy[39m Child process [pid 14142] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 14142] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb3196656d/scratchpad/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:514:20)
+    at maybeClose (node:internal/child_process:1156:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:334:5) {
+  innerError: undefined,
+  pid: 14142,
+  exitCode: null,
+  signal: 'SIGSEGV'
+}
+[33m11:28:19 (13823) WARN ChildProcessProxy[39m Child process [pid 14144] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 14144] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb3196656d/scratchpad/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:514:20)
+    at maybeClose (node:internal/child_process:1156:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:334:5) {
+  innerError: undefined,
+  pid: 14144,
+  exitCode: null,
+  signal: 'SIGSEGV'
+}
+[33m11:28:20 (13823) WARN ChildProcessProxy[39m Child process [pid 14190] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 14190] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb3196656d/scratchpad/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:514:20)
+    at maybeClose (node:internal/child_process:1156:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:334:5) {
+  innerError: undefined,
+  pid: 14190,
+  exitCode: null,
+  signal: 'SIGSEGV'
+}
+[33m11:28:20 (13823) WARN ChildProcessProxy[39m Child process [pid 14194] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 14194] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb3196656d/scratchpad/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:514:20)
+    at maybeClose (node:internal/child_process:1156:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:334:5) {
+  innerError: undefined,
+  pid: 14194,
+  exitCode: null,
+  signal: 'SIGSEGV'
+}
+[33m11:28:31 (13823) WARN ChildProcessProxy[39m Child process [pid 14288] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 14288] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb3196656d/scratchpad/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:514:20)
+    at maybeClose (node:internal/child_process:1156:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:334:5) {
+  innerError: undefined,
+  pid: 14288,
+  exitCode: null,
+  signal: 'SIGSEGV'
+}
+[33m11:28:31 (13823) WARN ChildProcessProxy[39m Child process [pid 14290] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 14290] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb3196656d/scratchpad/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:514:20)
+    at maybeClose (node:internal/child_process:1156:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:334:5) {
+  innerError: undefined,
+  pid: 14290,
+  exitCode: null,
+  signal: 'SIGSEGV'
+}
+[33m11:28:38 (13823) WARN ChildProcessProxy[39m Child process [pid 14360] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 14360] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb3196656d/scratchpad/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:514:20)
+    at maybeClose (node:internal/child_process:1156:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:334:5) {
+  innerError: undefined,
+  pid: 14360,
+  exitCode: null,
+  signal: 'SIGSEGV'
+}
+[33m11:28:38 (13823) WARN ChildProcessProxy[39m Child process [pid 14384] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 14384] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb3196656d/scratchpad/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:514:20)
+    at maybeClose (node:internal/child_process:1156:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:334:5) {
+  innerError: undefined,
+  pid: 14384,
+  exitCode: null,
+  signal: 'SIGSEGV'
+}
+[33m11:28:56 (13823) WARN ChildProcessProxy[39m Child process [pid 14526] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 14526] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb3196656d/scratchpad/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:514:20)
+    at maybeClose (node:internal/child_process:1156:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:334:5) {
+  innerError: undefined,
+  pid: 14526,
+  exitCode: null,
+  signal: 'SIGSEGV'
+}
+[33m11:28:56 (13823) WARN ChildProcessProxy[39m Child process [pid 14528] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 14528] exited unexpectedly with exit code null (SIGSEGV). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb3196656d/scratchpad/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:514:20)
+    at maybeClose (node:internal/child_process:1156:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:334:5) {
+  innerError: undefined,
+  pid: 14528,
+  exitCode: null,
+  signal: 'SIGSEGV'
+}
+
+All tests
+  auth.ai.test.js
+    ✓ Registration failure (API 1.1; 500 and error shape are conventions) AI-R01 a failed insert is not reported as a successful registration [line 47] (killed 1)
+    ✓ Registration failure (API 1.1; 500 and error shape are conventions) AI-R02 a failed insert returns a non-empty error message [line 55] (killed 1)
+    ✓ Login failure and lock (API 1.2, README FR-02) AI-L01 a database failure during login is a 500 (convention), not "invalid credentials" [line 63] (killed 1)
+    ✓ Login failure and lock (API 1.2, README FR-02) AI-L02 a database failure during login returns a non-empty error message [line 70] (killed 1)
+    ✓ Login failure and lock (API 1.2, README FR-02) AI-L03 (interpretation, spec silent) at the exact instant the lock ends the account can log in; 1 ms earlier it cannot [line 77] (killed 5)
+    ✓ Login failure and lock (API 1.2, README FR-02) AI-L04 a locked account gets a non-empty error message [line 86] (killed 3)
+    ✓ Forgot password (API 1.3, README FR-03) AI-P01 the reset code is all digits and depends on the random source [line 106] (killed 3)
+    ✓ Forgot password (API 1.3, README FR-03) AI-P02 if the token cannot be stored, no reset token is handed out [line 115] (killed 2)
+    ✓ Forgot password (API 1.3, README FR-03) AI-P03 if the token cannot be stored, a non-empty error message is returned [line 122] (killed 1)
+    ✓ Profile update (API 2.2, README FR-04, SEC-06) AI-U01 updating the profile without a role leaves the role unchanged [line 133] (killed 3)
+    ✓ Profile update (API 2.2, README FR-04, SEC-06) AI-U02 a failed profile update is a 500 with a non-empty error message [line 140] (killed 3)
+  auth.spec.test.js
+    ✓ Registration (API 1.1) AU-R01 valid registration returns 200, the success message and a numeric id [line 18] (killed 3)
+    ✓ Registration (API 1.1) AU-R02 a registered user can log in with the same credentials (API 1.2) [line 26] (killed 5)
+    ~ Login and lock (API 1.2, README FR-02) AU-L01 correct credentials return 200, a JWT and the user [line 35] (covered 21)
+    ✓ Login and lock (API 1.2, README FR-02) AU-L02 the JWT carries the user id and role (FR-02, SEC-03) [line 43] (killed 1)
+    ~ Login and lock (API 1.2, README FR-02) AU-L03 wrong password is refused with 401 (convention) and no token [line 50] (covered 25)
+    ✓ Login and lock (API 1.2, README FR-02) AU-L04 unknown email gets the same status and body as a wrong password (FR-02: no cause leaked) [line 56] (killed 4)
+    ✓ Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02) [line 63] (killed 7)
+    ~ Login and lock (API 1.2, README FR-02) AU-L06 the lock still holds 29 seconds after the third wrong attempt (FR-02: 30 s) [line 70] (covered 33)
+    ✓ Login and lock (API 1.2, README FR-02) AU-L07 a lock whose time has passed no longer blocks login [line 77] (killed 2)
+    ✓ Login and lock (API 1.2, README FR-02) AU-L08 a successful login resets the failure counter: wrong, ok, wrong, ok never locks (FR-02 "consecutive") [line 84] (killed 3)
+    ~ Login and lock (API 1.2, README FR-02) AU-L09 failures of one account do not lock another account [line 91] (covered 39)
+    ✓ Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P01 forgot-password for a registered email returns 200, the message and a reset token (API 1.3) [line 102] (killed 4)
+    ~ Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P02 forgot-password for an unknown email gives no token [line 110] (covered 9)
+    ✓ Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4) [line 116] (killed 4)
+    ✓ Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P04 reset with a wrong token is refused with 400 (convention) and the password is unchanged [line 124] (killed 1)
+    ~ Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P05 a token issued to one email cannot reset another account (FR-03) [line 132] (covered 46)
+    ~ Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P06 a token is invalidated after use (SEC-07): the second reset with it is refused [line 139] (covered 48)
+    ✓ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U01 GET /me without a token is refused with 401 (SEC-02) [line 153] (killed 6)
+    ✓ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U02 GET /me with an invalid token is refused (SEC-02) [line 157] (killed 1)
+    ✓ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U03 GET /me returns the profile of the token owner only (API 2.1) [line 162] (killed 4)
+    ✓ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2) [line 169] (killed 5)
+    ~ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U05 updating one user's profile leaves other users unchanged (FR-04: own profile only) [line 180] (covered 46)
+    ~ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U06 the email cannot be changed through PUT /me (FR-04) [line 187] (covered 51)
+    ~ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U07 PUT /me without a token is refused with 401 (SEC-02) [line 193] (covered 10)
+    ~ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U08 a valid phone is accepted (FR-04: starts with 0, 10-11 digits): 10 digits [line 197] (covered 51)
+    ~ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U08 a valid phone is accepted (FR-04: starts with 0, 10-11 digits): 11 digits [line 197] (covered 51)
+
+[NoCoverage] BlockStatement
+server.js:124:13
+-     if (role) {
+-       query += ", role = ?";
+-       params.push(role);
+-     }
++     if (role) {}
+
+[NoCoverage] StringLiteral
+server.js:125:14
+-       query += ", role = ?";
++       query += "";
+
+[NoCoverage] CallExpression
+server.js:126:5
+-       params.push(role);
++       ;
+
+[Survived] StringLiteral
+server.js:52:27
+-         res.json({ message: "Login successful", token, user });
++         res.json({ message: "", token, user });
+Tests ran:
+    Registration (API 1.1) AU-R02 a registered user can log in with the same credentials (API 1.2)
+    Login and lock (API 1.2, README FR-02) AU-L01 correct credentials return 200, a JWT and the user
+    Login and lock (API 1.2, README FR-02) AU-L02 the JWT carries the user id and role (FR-02, SEC-03)
+  and 16 more tests!
+
+
+[Survived] EqualityOperator
+server.js:56:11
+-         if (newAttempts >= 3) {
++         if (newAttempts > 3) {
+Tests ran:
+    Login and lock (API 1.2, README FR-02) AU-L03 wrong password is refused with 401 (convention) and no token
+    Login and lock (API 1.2, README FR-02) AU-L04 unknown email gets the same status and body as a wrong password (FR-02: no cause leaked)
+    Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)
+  and 6 more tests!
+
+
+[Survived] ObjectLiteral
+server.js:71:44
+-       if (!user) return res.status(404).json({ error: "User not found" });
++       if (!user) return res.status(404).json({});
+Tests ran:
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P02 forgot-password for an unknown email gives no token
+
+
+[Survived] StringLiteral
+server.js:71:53
+-       if (!user) return res.status(404).json({ error: "User not found" });
++       if (!user) return res.status(404).json({ error: "" });
+Tests ran:
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P02 forgot-password for an unknown email gives no token
+
+
+[Survived] ObjectLiteral
+server.js:94:37
+-           return res.status(400).json({ error: "Invalid token or email" });
++           return res.status(400).json({});
+Tests ran:
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P04 reset with a wrong token is refused with 400 (convention) and the password is unchanged
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P05 a token issued to one email cannot reset another account (FR-03)
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P06 a token is invalidated after use (SEC-07): the second reset with it is refused
+
+
+[Survived] StringLiteral
+server.js:94:46
+-           return res.status(400).json({ error: "Invalid token or email" });
++           return res.status(400).json({ error: "" });
+Tests ran:
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P04 reset with a wrong token is refused with 400 (convention) and the password is unchanged
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P05 a token issued to one email cannot reset another account (FR-03)
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P06 a token is invalidated after use (SEC-07): the second reset with it is refused
+
+
+[Survived] ObjectLiteral
+server.js:95:16
+-         res.json({ message: "Password reset successfully" });
++         res.json({});
+Tests ran:
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4)
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P06 a token is invalidated after use (SEC-07): the second reset with it is refused
+
+
+[Survived] StringLiteral
+server.js:95:27
+-         res.json({ message: "Password reset successfully" });
++         res.json({ message: "" });
+Tests ran:
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4)
+    Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P06 a token is invalidated after use (SEC-07): the second reset with it is refused
+
+
+[Survived] ObjectLiteral
+server.js:103:50
+-     if (token == null) return res.status(401).json({ error: "Unauthorized" });
++     if (token == null) return res.status(401).json({});
+Tests ran:
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U01 GET /me without a token is refused with 401 (SEC-02)
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U07 PUT /me without a token is refused with 401 (SEC-02)
+
+
+[Survived] StringLiteral
+server.js:103:59
+-     if (token == null) return res.status(401).json({ error: "Unauthorized" });
++     if (token == null) return res.status(401).json({ error: "" });
+Tests ran:
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U01 GET /me without a token is refused with 401 (SEC-02)
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U07 PUT /me without a token is refused with 401 (SEC-02)
+
+
+[Survived] ObjectLiteral
+server.js:106:42
+-       if (err) return res.status(403).json({ error: "Forbidden" });
++       if (err) return res.status(403).json({});
+Tests ran:
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U02 GET /me with an invalid token is refused (SEC-02)
+
+
+[Survived] StringLiteral
+server.js:106:51
+-       if (err) return res.status(403).json({ error: "Forbidden" });
++       if (err) return res.status(403).json({ error: "" });
+Tests ran:
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U02 GET /me with an invalid token is refused (SEC-02)
+
+
+[Survived] ConditionalExpression
+server.js:124:7
+-     if (role) {
++     if (false) {
+Tests ran:
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2)
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U05 updating one user's profile leaves other users unchanged (FR-04: own profile only)
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U06 the email cannot be changed through PUT /me (FR-04)
+  and 4 more tests!
+
+
+Ran 7.38 tests per mutant on average.
+-----------|------------------|----------|-----------|------------|----------|----------|
+           | % Mutation score |          |           |            |          |          |
+File       |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+All files  |  86.32 |   88.60 |       74 |        27 |         13 |        3 |        8 |
+ server.js |  86.32 |   88.60 |       74 |        27 |         13 |        3 |        8 |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+[32m11:29:13 (13823) INFO JsonReporter[39m Your report can be found at: file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb3196656d/scratchpad/sut/backend/reports/auth-ai/mutation.json
+[32m11:29:13 (13823) INFO HtmlReporter[39m Your report can be found at: file:///private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb3196656d/scratchpad/sut/backend/reports/auth-ai/mutation.html
+[32m11:29:13 (13823) INFO MutationTestExecutor[39m Done in 1 minute and 26 seconds.
+exit=0
+end 2026-10-23 11:29:13 +0700

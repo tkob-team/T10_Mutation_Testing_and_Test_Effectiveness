@@ -1,0 +1,581 @@
+<role>You propose Jest assertions that kill specific StrykerJS mutants. A human will review every test and run them.</role>
+<context>
+  <code file="backend/server.js" commit="806ba19" lines="20-135">
+20: app.post("/api/register", (req, res) => {
+21:   const { name, email, password } = req.body;
+22:   db.run(
+23:     "INSERT INTO users (name, email, password) VALUES (?, ?, ?)",
+24:     [name, email, password],
+25:     function (err) {
+26:       if (err) return res.status(500).json({ error: err.message });
+27:       res.json({ message: "User registered successfully", id: this.lastID });
+28:     },
+29:   );
+30: });
+31: 
+32: app.post("/api/login", (req, res) => {
+33:   const { email, password } = req.body;
+34: 
+35:   db.get("SELECT * FROM users WHERE email = ?", [email], (err, user) => {
+36:     if (err) return res.status(500).json({ error: err.message });
+37:     if (!user)
+38:       return res.status(401).json({ error: "Invalid email or password" });
+39: 
+40:     if (user.locked_until && new Date() < new Date(user.locked_until)) {
+41:       return res
+42:         .status(403)
+43:         .json({ error: "Tài khoản đã bị khóa. Vui lòng thử lại sau." });
+44:     }
+45: 
+46:     if (user.password === password) {
+47:       db.run(
+48:         "UPDATE users SET login_attempts = 0, locked_until = NULL WHERE id = ?",
+49:         [user.id],
+50:       );
+51:       const token = jwt.sign({ id: user.id, role: user.role }, SECRET_KEY);
+52:       res.json({ message: "Login successful", token, user });
+53:     } else {
+54:       const newAttempts = user.login_attempts + 2;
+55:       let lockedUntil = null;
+56:       if (newAttempts >= 3) {
+57:         lockedUntil = new Date(Date.now() + 180000).toISOString();
+58:       }
+59:       db.run(
+60:         "UPDATE users SET login_attempts = ?, locked_until = ? WHERE id = ?",
+61:         [newAttempts, lockedUntil, user.id],
+62:       );
+63:       res.status(401).json({ error: "Invalid email or password" });
+64:     }
+65:   });
+66: });
+67: 
+68: app.post("/api/forgot-password", (req, res) => {
+69:   const { email } = req.body;
+70:   db.get("SELECT * FROM users WHERE email = ?", [email], (err, user) => {
+71:     if (!user) return res.status(404).json({ error: "User not found" });
+72:     const resetToken = Math.floor(1000 + Math.random() * 9000).toString();
+73:     db.run(
+74:       "UPDATE users SET reset_token = ? WHERE id = ?",
+75:       [resetToken, user.id],
+76:       (err) => {
+77:         if (err) return res.status(500).json({ error: err.message });
+78:         res.json({
+79:           message: "Mã đặt lại mật khẩu đã được tạo",
+80:           resetToken: resetToken,
+81:         });
+82:       },
+83:     );
+84:   });
+85: });
+86: 
+87: app.post("/api/reset-password", (req, res) => {
+88:   const { email, resetToken, newPassword } = req.body;
+89:   db.run(
+90:     "UPDATE users SET password = ?, reset_token = NULL WHERE email = ? AND reset_token = ?",
+91:     [newPassword, email, resetToken],
+92:     function (err) {
+93:       if (this.changes === 0)
+94:         return res.status(400).json({ error: "Invalid token or email" });
+95:       res.json({ message: "Password reset successfully" });
+96:     },
+97:   );
+98: });
+99: 
+100: const authenticateToken = (req, res, next) => {
+101:   const authHeader = req.headers["authorization"];
+102:   const token = authHeader && authHeader.split(" ")[1];
+103:   if (token == null) return res.status(401).json({ error: "Unauthorized" });
+104: 
+105:   jwt.verify(token, SECRET_KEY, (err, user) => {
+106:     if (err) return res.status(403).json({ error: "Forbidden" });
+107:     req.user = user;
+108:     next();
+109:   });
+110: };
+111: 
+112: app.get("/api/users/me", authenticateToken, (req, res) => {
+113:   db.get("SELECT * FROM users WHERE id = ?", [req.user.id], (err, user) => {
+114:     res.json(user);
+115:   });
+116: });
+117: 
+118: app.put("/api/users/me", authenticateToken, (req, res) => {
+119:   const { name, shipping_address, phone, role } = req.body;
+120: 
+121:   let query = "UPDATE users SET name = ?, shipping_address = ?, phone = ?";
+122:   let params = [name, shipping_address, phone];
+123: 
+124:   if (role) {
+125:     query += ", role = ?";
+126:     params.push(role);
+127:   }
+128:   query += " WHERE id = ?";
+129:   params.push(req.user.id);
+130: 
+131:   db.run(query, params, function (err) {
+132:     if (err) return res.status(500).json({ error: err.message });
+133:     res.json({ message: "Profile updated" });
+134:   });
+135: });
+  </code>
+  <spec source="api_specification.md sections 1-2 (API)">
+## 1. Authentication (Xác thực)
+
+### 1.1 Đăng ký tài khoản
+- **Endpoint:** `POST /api/register`
+- **Body (JSON):**
+  ```json
+  {
+    "name": "Nguyen Van A",
+    "email": "test@domain.com",
+    "password": "Password123!"
+  }
+  ```
+- **Phản hồi thành công (200 OK):** `{"message": "User registered successfully", "id": 1}`
+
+### 1.2 Đăng nhập
+- **Endpoint:** `POST /api/login`
+- **Body (JSON):**
+  ```json
+  {
+    "email": "test@domain.com",
+    "password": "Password123!"
+  }
+  ```
+- **Phản hồi thành công (200 OK):** Trả về chuỗi JWT `token` và thông tin `user`.
+
+### 1.3 Quên mật khẩu (Lấy OTP)
+- **Endpoint:** `POST /api/forgot-password`
+- **Body (JSON):**
+  ```json
+  {
+    "email": "test@domain.com"
+  }
+  ```
+- **Phản hồi thành công (200 OK):** `{"message": "Mã đặt lại mật khẩu đã được tạo", "resetToken": "123456"}`
+
+### 1.4 Đặt lại mật khẩu
+- **Endpoint:** `POST /api/reset-password`
+- **Body (JSON):**
+  ```json
+  {
+    "email": "test@domain.com",
+    "resetToken": "123456",
+    "newPassword": "NewPassword123!"
+  }
+  ```
+
+---
+
+## 2. Người dùng (Users)
+
+*Lưu ý: Các API dưới đây yêu cầu truyền Token ở Header: `Authorization: Bearer <token>`*
+
+### 2.1 Lấy thông tin cá nhân
+- **Endpoint:** `GET /api/users/me`
+
+### 2.2 Cập nhật hồ sơ cá nhân
+- **Endpoint:** `PUT /api/users/me`
+- **Mô tả:** Chỉ cho phép cập nhật thông tin cá nhân cơ bản.
+- **Body (JSON):**
+  ```json
+  {
+    "name": "Nguyen Van A",
+    "shipping_address": "123 Le Loi, Q1, TP.HCM",
+    "phone": "0912345678"
+  }
+  ```
+
+---
+  </spec>
+  <spec source="README.md FR-01..FR-04 (README)">
+### FR-01: Đăng ký tài khoản
+
+- Người dùng phải cung cấp: **Họ Tên**, **Email**, **Mật khẩu**.
+- Email phải có định dạng hợp lệ (`user@domain.com`) và là duy nhất trong hệ thống.
+- **Yêu cầu mật khẩu mạnh**: Tối thiểu 8 ký tự, có ít nhất 1 chữ hoa, 1 chữ thường, 1 chữ số và 1 ký tự đặc biệt (`@`, `$`, `!`, `%`, `*`, `?`, `&`).
+- Phải có trường **Xác nhận mật khẩu** — hệ thống từ chối nếu hai trường không khớp.
+- Sau khi đăng ký thành công, người dùng được chuyển tới trang Đăng nhập.
+
+### FR-02: Đăng nhập & Khóa tài khoản
+
+- Người dùng nhập Email và Mật khẩu.
+- Sau mỗi lần đăng nhập sai, hệ thống tăng bộ đếm lên **đúng 1 đơn vị**.
+- Nếu đăng nhập sai từ **3 lần trở lên** liên tiếp, tài khoản bị tạm khóa **30 giây** (môi trường demo). Hệ thống trả về thông báo lỗi phù hợp; không để lộ chi tiết nguyên nhân.
+- Đăng nhập thành công trả về JWT Token. Token được lưu phía client và gửi kèm tất cả các yêu cầu có xác thực qua header `Authorization: Bearer <token>`.
+- Trường email phải dùng `type="email"` (có validate HTML5 format).
+
+### FR-03: Quên mật khẩu & Đặt lại mật khẩu (2 bước)
+
+**Bước 1 — Lấy mã OTP:**
+
+- Người dùng nhập địa chỉ Email đã đăng ký.
+- Hệ thống sinh mã OTP **6 chữ số ngẫu nhiên** và gửi qua Email (trong môi trường demo: hiển thị trực tiếp trên màn hình).
+- Giao diện phải hiển thị **chỉ báo bước (Step Indicator)** — ví dụ: "Bước 1 / 2".
+- Có nút **Quay lại đăng nhập**.
+
+**Bước 2 — Đặt lại mật khẩu:**
+
+- Người dùng nhập OTP, Mật khẩu mới, và **Xác nhận mật khẩu mới**.
+- Mật khẩu mới phải tuân thủ điều kiện như FR-01.
+- Hai trường mật khẩu phải khớp nhau.
+- OTP chỉ hợp lệ cho email đã yêu cầu, không thể dùng cho email khác.
+
+### FR-04: Quản lý hồ sơ cá nhân
+
+- Người dùng đã đăng nhập có thể cập nhật: **Họ Tên**, **Số điện thoại**, **Địa chỉ giao hàng mặc định**.
+- **Số điện thoại hợp lệ**: bắt đầu bằng số `0`, từ 10–11 chữ số.
+- Email không được phép thay đổi qua giao diện.
+- Người dùng chỉ có thể cập nhật hồ sơ của chính mình; không thể tự thay đổi thuộc tính `role`.
+
+---
+  </spec>
+  <spec source="README.md security requirements (README)">
+| SEC-01 | Mật khẩu **không** được lưu dưới dạng plaintext.                                                                |
+| SEC-02 | Các API có tính bảo mật phải yêu cầu JWT Token hợp lệ.                                                          |
+| SEC-03 | API Admin phải kiểm tra `role = 'admin'` trong Token, không chỉ kiểm tra sự tồn tại của Token.                  |
+| SEC-04 | Mọi dữ liệu từ user nhập vào khi hiển thị trên UI phải được escape đúng cách, không dùng `innerHTML` trực tiếp. |
+| SEC-05 | Truy vấn CSDL phải dùng Parameterized Query, không nối chuỗi trực tiếp.                                         |
+| SEC-06 | API cập nhật hồ sơ không được cho phép thay đổi trường `role` từ client.                                        |
+| SEC-07 | OTP đặt lại mật khẩu phải đủ entropy (tối thiểu 6 chữ số), có thời hạn và vô hiệu hóa sau khi dùng.             |
+  </spec>
+  <harness>
+Tests are Jest + supertest. The database module is replaced by an in-memory SQLite with the real users schema. Files in backend/test/:
+
+--- fixtures.js ---
+const request = require('supertest');
+
+const ALICE = { name: 'Alice', email: 'alice@test.local', password: 'Password123!' };
+const BOB = { name: 'Bob', email: 'bob@test.local', password: 'Bobpass123!' };
+const NEW_USER = { name: 'Carol', email: 'carol@test.local', password: 'Carol123!x' };
+const STRONG_PASSWORD = 'NewPassw0rd!';
+
+const login = (app, email, password) => request(app).post('/api/login').send({ email, password });
+const loginOk = async (app, user) => (await login(app, user.email, user.password)).body.token;
+const bearer = (token) => ({ Authorization: `Bearer ${token}` });
+
+module.exports = { ALICE, BOB, NEW_USER, STRONG_PASSWORD, login, loginOk, bearer };
+
+--- harness.js ---
+// Load server.js without opening a port: capture the Express app passed to listen().
+const express = require('express');
+
+function loadApp() {
+  let captured;
+  const spy = jest.spyOn(express.application, 'listen').mockImplementation(function () {
+    captured = this;
+    return { close() {} };
+  });
+  const log = jest.spyOn(console, 'log').mockImplementation(() => {});
+  require('../server');
+  spy.mockRestore();
+  log.mockRestore();
+  return captured;
+}
+
+// Fake only Date (not timers) so supertest/sqlite callbacks keep running.
+const DONT_FAKE = ['nextTick', 'setImmediate', 'setTimeout', 'clearTimeout', 'setInterval', 'clearInterval', 'queueMicrotask'];
+const freezeClock = (iso) => jest.useFakeTimers({ now: Date.parse(iso), doNotFake: DONT_FAKE });
+const advanceClock = (ms) => jest.setSystemTime(Date.now() + ms);
+
+module.exports = { loadApp, freezeClock, advanceClock };
+
+--- testDb.js ---
+// Test-only replacement for ./database: a real in-memory SQLite with the same `users` schema,
+// so server.js runs its real SQL. Production database.js and server.js are not modified.
+const sqlite3 = require('sqlite3');
+
+const db = new sqlite3.Database(':memory:');
+
+const ready = new Promise((resolve, reject) => {
+  db.run(
+    `CREATE TABLE users (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT,
+      email TEXT,
+      password TEXT,
+      role TEXT DEFAULT 'user',
+      login_attempts INTEGER DEFAULT 0,
+      locked_until DATETIME,
+      reset_token TEXT,
+      shipping_address TEXT,
+      phone TEXT
+    )`,
+    (err) => (err ? reject(err) : resolve()),
+  );
+});
+
+const exec = (sql, params = []) =>
+  new Promise((resolve, reject) => db.run(sql, params, (err) => (err ? reject(err) : resolve())));
+const first = (sql, params = []) =>
+  new Promise((resolve, reject) => db.get(sql, params, (err, row) => (err ? reject(err) : resolve(row))));
+
+// Seed users (same shape as database.js seed rows); ids are restarted so tests can rely on them.
+async function resetUsers(users) {
+  await ready;
+  await exec('DELETE FROM users');
+  await exec("DELETE FROM sqlite_sequence WHERE name = 'users'");
+  for (const u of users) {
+    await exec('INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)', [
+      u.name, u.email, u.password, u.role || 'user',
+    ]);
+  }
+}
+
+const userByEmail = (email) => first('SELECT * FROM users WHERE email = ?', [email]);
+const countByEmail = async (email) => (await first('SELECT COUNT(*) AS n FROM users WHERE email = ?', [email])).n;
+
+module.exports = db;
+module.exports.testApi = { resetUsers, userByEmail, countByEmail };
+  </harness>
+  <scope>Authentication & Users routes and authenticateToken only (server.js lines 20-135). Tests must pass on the ORIGINAL code shown above. Do not modify server.js or any harness file.</scope>
+  <existing_tests file="backend/test/auth.spec.test.js">
+// S3-D03 Authentication & Users: tests whose expected results come from the spec and that PASS on the
+// original code (this is the candidate baseline suite for S3-D04).
+// Spec sources: api_specification.md §1-2 ("API"), README.md FR-01..FR-04 and SEC-01..SEC-07 ("README").
+// Where the spec gives no status code, the test uses the HTTP convention and says so ("convention").
+jest.mock('../database', () => require('./testDb'));
+const request = require('supertest');
+const jwt = require('jsonwebtoken');
+const { testApi } = require('./testDb');
+const { loadApp, freezeClock, advanceClock } = require('./harness');
+const { ALICE, BOB, NEW_USER, STRONG_PASSWORD, login, loginOk, bearer } = require('./fixtures');
+
+let app;
+beforeAll(() => { app = loadApp(); });
+beforeEach(async () => { await testApi.resetUsers([ALICE, BOB]); });
+afterEach(() => { jest.useRealTimers(); });
+
+describe('Registration (API 1.1)', () => {
+  test('AU-R01 valid registration returns 200, the success message and a numeric id', async () => {
+    const res = await request(app).post('/api/register').send(NEW_USER);
+    expect(res.status).toBe(200);
+    expect(res.body.message).toBe('User registered successfully');
+    expect(typeof res.body.id).toBe('number');
+    expect(res.body.id).toBe(3);
+  });
+
+  test('AU-R02 a registered user can log in with the same credentials (API 1.2)', async () => {
+    await request(app).post('/api/register').send(NEW_USER);
+    const res = await login(app, NEW_USER.email, NEW_USER.password);
+    expect(res.status).toBe(200);
+    expect(res.body.user.email).toBe(NEW_USER.email);
+  });
+});
+
+describe('Login and lock (API 1.2, README FR-02)', () => {
+  test('AU-L01 correct credentials return 200, a JWT and the user', async () => {
+    const res = await login(app, ALICE.email, ALICE.password);
+    expect(res.status).toBe(200);
+    expect(typeof res.body.token).toBe('string');
+    expect(res.body.user.email).toBe(ALICE.email);
+    expect(res.body.user.id).toBe(1);
+  });
+
+  test('AU-L02 the JWT carries the user id and role (FR-02, SEC-03)', async () => {
+    const { token } = (await login(app, ALICE.email, ALICE.password)).body;
+    const claims = jwt.decode(token);
+    expect(claims.id).toBe(1);
+    expect(claims.role).toBe('user');
+  });
+
+  test('AU-L03 wrong password is refused with 401 (convention) and no token', async () => {
+    const res = await login(app, ALICE.email, 'Wrong123!');
+    expect(res.status).toBe(401);
+    expect(res.body.token).toBeUndefined();
+  });
+
+  test('AU-L04 unknown email gets the same status and body as a wrong password (FR-02: no cause leaked)', async () => {
+    const wrongPassword = await login(app, ALICE.email, 'Wrong123!');
+    const unknownEmail = await login(app, 'nobody@test.local', 'Wrong123!');
+    expect(unknownEmail.status).toBe(wrongPassword.status);
+    expect(unknownEmail.body).toEqual(wrongPassword.body);
+  });
+
+  test('AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)', async () => {
+    for (let i = 0; i < 3; i += 1) await login(app, ALICE.email, 'Wrong123!');
+    const res = await login(app, ALICE.email, ALICE.password);
+    expect(res.status).toBe(403);
+    expect(res.body.token).toBeUndefined();
+  });
+
+  test('AU-L06 the lock still holds 29 seconds after the third wrong attempt (FR-02: 30 s)', async () => {
+    freezeClock('2026-10-22T08:00:00.000Z');
+    for (let i = 0; i < 3; i += 1) await login(app, ALICE.email, 'Wrong123!');
+    advanceClock(29000);
+    expect((await login(app, ALICE.email, ALICE.password)).status).toBe(403);
+  });
+
+  test('AU-L07 a lock whose time has passed no longer blocks login', async () => {
+    freezeClock('2026-10-22T08:00:00.000Z');
+    for (let i = 0; i < 3; i += 1) await login(app, ALICE.email, 'Wrong123!');
+    advanceClock(24 * 60 * 60 * 1000);
+    expect((await login(app, ALICE.email, ALICE.password)).status).toBe(200);
+  });
+
+  test('AU-L08 a successful login resets the failure counter: wrong, ok, wrong, ok never locks (FR-02 "consecutive")', async () => {
+    await login(app, ALICE.email, 'Wrong123!');
+    expect((await login(app, ALICE.email, ALICE.password)).status).toBe(200);
+    await login(app, ALICE.email, 'Wrong123!');
+    expect((await login(app, ALICE.email, ALICE.password)).status).toBe(200);
+  });
+
+  test('AU-L09 failures of one account do not lock another account', async () => {
+    for (let i = 0; i < 3; i += 1) await login(app, ALICE.email, 'Wrong123!');
+    expect((await login(app, BOB.email, BOB.password)).status).toBe(200);
+  });
+});
+
+describe('Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07)', () => {
+  const forgot = (email) => request(app).post('/api/forgot-password').send({ email });
+  const reset = (email, resetToken, newPassword) =>
+    request(app).post('/api/reset-password').send({ email, resetToken, newPassword });
+
+  test('AU-P01 forgot-password for a registered email returns 200, the message and a reset token (API 1.3)', async () => {
+    const res = await forgot(ALICE.email);
+    expect(res.status).toBe(200);
+    expect(res.body.message).toBe('Mã đặt lại mật khẩu đã được tạo');
+    expect(typeof res.body.resetToken).toBe('string');
+    expect(res.body.resetToken.length).toBeGreaterThan(0);
+  });
+
+  test('AU-P02 forgot-password for an unknown email gives no token', async () => {
+    const res = await forgot('nobody@test.local');
+    expect(res.status).toBeGreaterThanOrEqual(400);
+    expect(res.body.resetToken).toBeUndefined();
+  });
+
+  test('AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4)', async () => {
+    const { resetToken } = (await forgot(ALICE.email)).body;
+    const res = await reset(ALICE.email, resetToken, STRONG_PASSWORD);
+    expect(res.status).toBe(200);
+    expect((await login(app, ALICE.email, STRONG_PASSWORD)).status).toBe(200);
+    expect((await login(app, ALICE.email, ALICE.password)).status).toBe(401);
+  });
+
+  test('AU-P04 reset with a wrong token is refused with 400 (convention) and the password is unchanged', async () => {
+    const { resetToken } = (await forgot(ALICE.email)).body;
+    const wrong = resetToken === '000000' ? '111111' : '000000';
+    const res = await reset(ALICE.email, wrong, STRONG_PASSWORD);
+    expect(res.status).toBe(400);
+    expect((await login(app, ALICE.email, ALICE.password)).status).toBe(200);
+  });
+
+  test("AU-P05 a token issued to one email cannot reset another account (FR-03)", async () => {
+    const { resetToken } = (await forgot(ALICE.email)).body;
+    const res = await reset(BOB.email, resetToken, STRONG_PASSWORD);
+    expect(res.status).toBe(400);
+    expect((await login(app, BOB.email, BOB.password)).status).toBe(200);
+  });
+
+  test('AU-P06 a token is invalidated after use (SEC-07): the second reset with it is refused', async () => {
+    const { resetToken } = (await forgot(ALICE.email)).body;
+    await reset(ALICE.email, resetToken, STRONG_PASSWORD);
+    const again = await reset(ALICE.email, resetToken, 'Another1Pass!');
+    expect(again.status).toBe(400);
+    expect((await login(app, ALICE.email, STRONG_PASSWORD)).status).toBe(200);
+  });
+});
+
+describe('Profile (API 2.1-2.2, README FR-04, SEC-02)', () => {
+  const me = (token) => request(app).get('/api/users/me').set(bearer(token));
+  const update = (token, body) => request(app).put('/api/users/me').set(bearer(token)).send(body);
+  const PROFILE = { name: 'Alice Nguyen', shipping_address: '123 Le Loi, Q1, TP.HCM', phone: '0912345678' };
+
+  test('AU-U01 GET /me without a token is refused with 401 (SEC-02)', async () => {
+    expect((await request(app).get('/api/users/me')).status).toBe(401);
+  });
+
+  test('AU-U02 GET /me with an invalid token is refused (SEC-02)', async () => {
+    const res = await me('not.a.jwt');
+    expect([401, 403]).toContain(res.status);
+  });
+
+  test('AU-U03 GET /me returns the profile of the token owner only (API 2.1)', async () => {
+    const res = await me(await loginOk(app, BOB));
+    expect(res.status).toBe(200);
+    expect(res.body.email).toBe(BOB.email);
+    expect(res.body.name).toBe(BOB.name);
+  });
+
+  test('AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2)', async () => {
+    const token = await loginOk(app, ALICE);
+    const res = await update(token, PROFILE);
+    expect(res.status).toBe(200);
+    expect(res.body.message).toBe('Profile updated');
+    const after = (await me(token)).body;
+    expect(after.name).toBe(PROFILE.name);
+    expect(after.shipping_address).toBe(PROFILE.shipping_address);
+    expect(after.phone).toBe(PROFILE.phone);
+  });
+
+  test("AU-U05 updating one user's profile leaves other users unchanged (FR-04: own profile only)", async () => {
+    await update(await loginOk(app, ALICE), PROFILE);
+    const bob = await testApi.userByEmail(BOB.email);
+    expect(bob.name).toBe(BOB.name);
+    expect(bob.phone).toBeNull();
+  });
+
+  test('AU-U06 the email cannot be changed through PUT /me (FR-04)', async () => {
+    const token = await loginOk(app, ALICE);
+    await update(token, { ...PROFILE, email: 'hacker@test.local' });
+    expect((await me(token)).body.email).toBe(ALICE.email);
+  });
+
+  test('AU-U07 PUT /me without a token is refused with 401 (SEC-02)', async () => {
+    expect((await request(app).put('/api/users/me').send(PROFILE)).status).toBe(401);
+  });
+
+  test.each([['10 digits', '0912345678'], ['11 digits', '09123456789']])(
+    'AU-U08 a valid phone is accepted (FR-04: starts with 0, 10-11 digits): %s',
+    async (_label, phone) => {
+      const token = await loginOk(app, ALICE);
+      expect((await update(token, { ...PROFILE, phone })).status).toBe(200);
+      expect((await me(token)).body.phone).toBe(phone);
+    },
+  );
+});
+  </existing_tests>
+</context>
+<mutants>
+These mutants survived (Survived) or were never executed (NoCoverage) against the existing tests:
+  <mutant id="8">line 26, col 11: `err` -> `false` (ConditionalExpression, Survived)</mutant>
+  <mutant id="9">line 26, col 44: `{ error: err.message }` -> `{}` (ObjectLiteral, NoCoverage)</mutant>
+  <mutant id="21">line 36, col 9: `err` -> `false` (ConditionalExpression, Survived)</mutant>
+  <mutant id="22">line 36, col 42: `{ error: err.message }` -> `{}` (ObjectLiteral, NoCoverage)</mutant>
+  <mutant id="32">line 40, col 30: `new Date() < new Date(user.locked_until)` -> `new Date() <= new Date(user.locked_until)` (EqualityOperator, Survived)</mutant>
+  <mutant id="35">line 43, col 15: `{ error: "Tài khoản đã bị khóa. Vui lòng thử lại sau." }` -> `{}` (ObjectLiteral, Survived)</mutant>
+  <mutant id="36">line 43, col 24: `"Tài khoản đã bị khóa. Vui lòng thử lại sau."` -> `""` (StringLiteral, Survived)</mutant>
+  <mutant id="47">line 52, col 27: `"Login successful"` -> `""` (StringLiteral, Survived)</mutant>
+  <mutant id="52">line 56, col 11: `newAttempts >= 3` -> `newAttempts > 3` (EqualityOperator, Survived)</mutant>
+  <mutant id="72">line 71, col 44: `{ error: "User not found" }` -> `{}` (ObjectLiteral, Survived)</mutant>
+  <mutant id="73">line 71, col 53: `"User not found"` -> `""` (StringLiteral, Survived)</mutant>
+  <mutant id="74">line 72, col 35: `1000 + Math.random() * 9000` -> `1000 - Math.random() * 9000` (ArithmeticOperator, Survived)</mutant>
+  <mutant id="75">line 72, col 42: `Math.random() * 9000` -> `Math.random() / 9000` (ArithmeticOperator, Survived)</mutant>
+  <mutant id="81">line 77, col 13: `err` -> `false` (ConditionalExpression, Survived)</mutant>
+  <mutant id="82">line 77, col 46: `{ error: err.message }` -> `{}` (ObjectLiteral, NoCoverage)</mutant>
+  <mutant id="96">line 94, col 37: `{ error: "Invalid token or email" }` -> `{}` (ObjectLiteral, Survived)</mutant>
+  <mutant id="97">line 94, col 46: `"Invalid token or email"` -> `""` (StringLiteral, Survived)</mutant>
+  <mutant id="99">line 95, col 16: `{ message: "Password reset successfully" }` -> `{}` (ObjectLiteral, Survived)</mutant>
+  <mutant id="100">line 95, col 27: `"Password reset successfully"` -> `""` (StringLiteral, Survived)</mutant>
+  <mutant id="110">line 103, col 50: `{ error: "Unauthorized" }` -> `{}` (ObjectLiteral, Survived)</mutant>
+  <mutant id="111">line 103, col 59: `"Unauthorized"` -> `""` (StringLiteral, Survived)</mutant>
+  <mutant id="116">line 106, col 42: `{ error: "Forbidden" }` -> `{}` (ObjectLiteral, Survived)</mutant>
+  <mutant id="117">line 106, col 51: `"Forbidden"` -> `""` (StringLiteral, Survived)</mutant>
+  <mutant id="132">line 124, col 7: `role` -> `true` (ConditionalExpression, Survived)</mutant>
+  <mutant id="133">line 124, col 7: `role` -> `false` (ConditionalExpression, Survived)</mutant>
+  <mutant id="134">line 124, col 13: `{ ...` -> `{}` (BlockStatement, NoCoverage)</mutant>
+  <mutant id="135">line 125, col 14: `", role = ?"` -> `""` (StringLiteral, NoCoverage)</mutant>
+  <mutant id="136">line 126, col 5: `params.push(role);` -> `;` (CallExpression, NoCoverage)</mutant>
+  <mutant id="142">line 132, col 9: `err` -> `false` (ConditionalExpression, Survived)</mutant>
+  <mutant id="143">line 132, col 42: `{ error: err.message }` -> `{}` (ObjectLiteral, NoCoverage)</mutant>
+</mutants>
+<task>
+For each mutant:
+1. Quote the exact code lines that decide the behavior.
+2. Give the input/state that makes original and mutant behave differently, or say why none exists in this scope.
+3. State the expected result from the spec. If the spec is silent, write "spec silent" and do not invent one. If you rely on a convention instead of the spec (for example an HTTP status), say so.
+4. Write one runnable Jest test using only the harness above.
+Then output ONE complete test file, backend/test/auth.ai.test.js, that contains the tests and starts with the same jest.mock('../database', ...) line and imports as auth.spec.test.js. Put it in a single fenced js code block at the end.
+If context is insufficient for a mutant, answer "insufficient context" for that mutant.
+</task>

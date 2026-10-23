@@ -1,0 +1,10 @@
+
+> backend@1.0.0 test
+> jest --runInBand
+
+
+Test Suites: 4 passed, 4 total
+Tests:       88 passed, 88 total
+Snapshots:   0 total
+Time:        0.68 s
+Ran all test suites in 2 projects.

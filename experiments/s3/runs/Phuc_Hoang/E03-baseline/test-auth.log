@@ -1,0 +1,9 @@
+
+> backend@1.0.0 test:auth
+> jest --config jest.auth.config.cjs --runInBand
+
+Test Suites: 1 passed, 1 total
+Tests:       26 passed, 26 total
+Snapshots:   0 total
+Time:        0.242 s
+Ran all test suites.
