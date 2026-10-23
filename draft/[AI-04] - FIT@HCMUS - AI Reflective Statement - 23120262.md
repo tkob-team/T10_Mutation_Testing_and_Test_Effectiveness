@@ -1,89 +1,98 @@
-**Faculty of Information Technology (FIT) – Ho Chi Minh City University of Science (HCMUS)**
+**Khoa Công nghệ Thông tin (FIT) – Trường Đại học Khoa học Tự nhiên (HCMUS)**
 
-**CS423 / CSC13003 – Software Testing (AI-augmented · 2026\)**
+**CS423 / CSC15003 – Kiểm chứng Phần mềm (AI-augmented · 2026)**
 
-**AI POLICY · TEMPLATES — 2026 v1.0**
+**CHÍNH SÁCH AI · BIỂU MẪU — 2026 v1.0**
 
-# **Reflective AI Use Statement**
+# Bài Suy ngẫm về Sử dụng AI
 
-*For major Seminars. Required when submitting at AI Category 4 or 5\.*
+*Bắt buộc cho Project lớn, Seminar, Đồ án Tốt nghiệp. Áp dụng khi bài nộp ở Cấp độ AI 4 hoặc 5.*
 
-*Adapted from Med Kharbach, PhD (2026) — AI Use Policy Templates for Higher Education. CC BY-NC-SA 4.0. This adaptation is prepared for FIT@HCMUS – CS423 / CSC13003 Software Testing course.*
+*Tài liệu được biên soạn lại từ Med Kharbach, PhD (2026) — Mẫu Chính sách Sử dụng AI cho Giáo dục Đại học. Giấy phép CC BY-NC-SA 4.0. Phiên bản này được FIT@HCMUS điều chỉnh cho môn CS423 / CSC13003 Kiểm chứng Phần mềm.*
 
-## **1\. Project & Author Info**
+## 1. Thông tin Project & Tác giả
 
-| Field | Value |
-| :---- | :---- |
-| **Course:** | CS423 / CSC13003 – Software Testing |
-| **Project / Capstone title:** | T10: Mutation Testing & Test Effectiveness |
-| **Team members (if group):** | Lê Tấn Hiệp; Tống Dương Thái Hòa; Nguyễn Phúc Hoàng |
-| **Student name:** | Tống Dương Thái Hòa |
-| **Student ID:** | 23120262 |
-| **Submission date:** |  |
+| Mục                            | Giá trị                                |
+|--------------------------------|----------------------------------------|
+| Môn học:                       | CS423 / CSC13003 – Kiểm chứng Phần mềm |
+| Tên Project / Đồ án:           | T10: Mutation Testing & Test Effectiveness |
+| Thành viên nhóm (nếu là nhóm): | Lê Tấn Hiệp; Tống Dương Thái Hòa; Nguyễn Phúc Hoàng |
+| Họ tên sinh viên:              | Tống Dương Thái Hòa |
+| MSSV:                          | 23120262 |
 
-## **2\. Reflection Questions**
+## 2. Câu hỏi Suy ngẫm
 
-### **1\. How did AI support your work?**
+### 1. AI đã hỗ trợ công việc của bạn như thế nào?
 
-*Describe specifically where and how AI tools contributed to this project: test design, scenario brainstorming, code generation, log analysis, defect triage, documentation, presentation prep, or other tasks.*
+*Mô tả cụ thể AI đóng góp ở đâu trong project: thiết kế test, brainstorm scenario, sinh code, phân tích log, triage defect, viết tài liệu, chuẩn bị slide, v.v.*
 
-I used Codex to support coverage/metric research, Coupons fixtures and tests, integration and mutation analysis. It also drafted the shared Stage 3 explanation, Seminar Report and User Guide. I set the quality-first direction, selected the same-context Codex fallback and defined the four-group manual and eight-group Agent extension scope.
+Tôi dùng Codex để hỗ trợ nghiên cứu coverage/metric, fixtures và tests Coupons, tích hợp và phân tích mutation. Công cụ cũng soạn phần giải thích Stage 3 chung, Seminar Report và User Guide. Tôi định hướng ưu tiên chất lượng, chọn phương án thay thế bằng Codex dùng cùng context và xác định scope mở rộng gồm bốn nhóm manual, tám nhóm Agent.
 
-### **2\. What did you accept, reject, or revise from AI outputs?**
+### 2. Bạn chấp nhận / từ chối / sửa gì từ đầu ra AI?
 
-*Identify which AI suggestions you incorporated, which you discarded, and how you adapted material to fit the spec, ISTQB principles, or your own analysis.*
+*Liệt kê đề xuất AI bạn dùng, đề xuất bạn loại bỏ, và cách bạn điều chỉnh cho phù hợp với spec, nguyên tắc ISTQB, hoặc phân tích của bạn.*
 
-I requested revisions that made the Stage 3 explanation cover all three members, simplified the report cover, kept English technical terms and removed appendix path inventories. I also requested a standalone User Guide. The retained initial and extended Coupons collections are both AI-assisted, with their generation context and shared helpers disclosed.
+Tôi yêu cầu sửa phần giải thích Stage 3 để bao quát cả ba thành viên, đơn giản hóa bìa báo cáo, giữ thuật ngữ kỹ thuật tiếng Anh và bỏ danh sách đường dẫn trong phụ lục. Tôi cũng yêu cầu User Guide độc lập. Các tập test Coupons ban đầu và mở rộng đã lưu đều có AI hỗ trợ, với context sinh và helpers dùng chung được công bố.
 
-### **3\. What errors, biases, or limitations did you notice in the AI outputs?**
+### 3. Bạn nhận ra lỗi / bias / giới hạn nào trong đầu ra AI?
 
-*Concrete examples: hallucinated functions, wrong boundary, missed security case, confused metrics (e.g., p95 vs top 5%), invented citations, etc.*
+*Ví dụ cụ thể: AI bịa hàm, sai boundary, miss security case, hiểu sai metric (p95 vs top 5%), bịa trích dẫn, v.v.*
 
-The two initial Coupons variants killed the same two usage-limit mutants. Increasing the collections to 35 and 40 tests did not add kills. Original minimum, expiry and percentage defects limit the passing test set. Shared generation context also prevents an independent human-versus-AI interpretation. These observations are retained rather than replaced by a claim of model superiority.
+Hai biến thể Coupons ban đầu kill cùng hai mutant usage-limit. Tăng các tập lên 35 và 40 test không tạo thêm kill. Các defect gốc về minimum, expiry và percentage giới hạn tập test có thể pass. Context sinh dùng chung cũng khiến không thể diễn giải đây là so sánh độc lập giữa con người và AI. Những quan sát này được giữ lại, không thay bằng claim về model vượt trội.
 
-### **4\. How did you verify information, sources, or claims provided by AI?**
+### 4. Bạn xác minh thông tin / nguồn / claim của AI như thế nào?
 
-*Describe the verification method (ran the test, checked the spec, looked up RFC, asked TA, cross-checked another tool, executed on real SUT).*
+*Mô tả phương pháp xác minh (chạy test, kiểm tra spec, tra RFC, hỏi TA, đối chiếu công cụ khác, thực thi trên SUT thật).*
 
-The retained Agent workflow verifies expected values against the SRS/API, runs original tests and separate defect profiles, checks protected source hashes and compares mutant signatures. Report statistics are recomputed from JSON. These are Agent execution records; my documented contribution includes scope choices and requests for the revisions described above.
+Quy trình Agent đã lưu kiểm tra giá trị kỳ vọng theo SRS/API, chạy test gốc và các profile defect riêng, kiểm tra hashes của source được bảo vệ và so sánh mutant signatures. Thống kê báo cáo được tính lại từ JSON. Đây là các bản ghi Agent thực thi; đóng góp đã ghi nhận của tôi gồm lựa chọn scope và các yêu cầu sửa đã mô tả ở trên.
 
-### **5\. What did you learn through this project that you could not have learned by simply accepting AI output?**
+### 5. Bạn học được điều gì qua project này mà nếu chỉ chấp nhận đầu ra AI thì sẽ không học được?
 
-*Reflect on your own intellectual contribution. How did AI shape (or fail to shape) your understanding of testing? What is one principle you will keep for future work?*
+*Suy ngẫm về đóng góp trí tuệ của chính bạn. AI đã định hình (hay không) sự hiểu của bạn về testing như thế nào? Một nguyên tắc bạn sẽ giữ cho tương lai?*
 
-The comparison supports a practical principle: define the explicitly documented business oracle and distinguishing observation before interpreting a mutant result. Persisting a limit of three exposes changes that an input of one cannot distinguish. More scenarios do not necessarily add kills, and shared context does not establish independent generation. The useful contribution is therefore the explicit connection between requirement, input, persisted state and verified outcome. Keeping the original source fixed also makes the comparison interpretable. These principles are grounded in the documented Coupons cases rather than a claim that one model or author is universally better.
+Bản so sánh hỗ trợ một nguyên tắc thực tế: xác định oracle nghiệp vụ được tài liệu nêu rõ và quan sát giúp phân biệt hành vi trước khi diễn giải kết quả mutant. Lưu giới hạn ba vào dữ liệu làm lộ các thay đổi mà input một không phân biệt được. Nhiều kịch bản hơn không nhất thiết tạo thêm kill, và context dùng chung không chứng minh quá trình sinh độc lập. Đóng góp hữu ích vì vậy là mối liên hệ rõ ràng giữa requirement, input, trạng thái được lưu và kết quả đã xác minh. Giữ source gốc cố định cũng giúp diễn giải phép so sánh. Các nguyên tắc này dựa trên những case Coupons đã ghi nhận, thay vì claim rằng một model hoặc tác giả luôn tốt hơn.
 
-## **3\. AI Categories Used**
+## 3. Các Cấp độ AI đã dùng
 
-Mark all that applied at any stage of the project:
+Đánh dấu mọi cấp độ đã áp dụng ở bất kỳ giai đoạn nào:
 
-* \[ \] Cat. 1 – No AI  
-* \[x\] Cat. 2 – AI for preparation only  
-* \[x\] Cat. 3 – AI for feedback / revision  
-* \[x\] Cat. 4 – AI-assisted production  
-* \[x\] Cat. 5 – AI-integrated work
+- [ ] Cấp 1 – Không AI
 
-## **4\. Author Signature**
+- [x] Cấp 2 – AI cho chuẩn bị
 
-*By signing below, I confirm that this reflective statement is honest and accurately represents how AI was used in this project. I take full intellectual responsibility for the final submission.*
+- [x] Cấp 3 – AI cho phản hồi / chỉnh sửa
 
-## **Signature**
+- [x] Cấp 4 – AI hỗ trợ sản xuất
 
-| Student name (printed): | TỐNG DƯƠNG THÁI HÒA |
-| :---- | :---- |
-| **Student ID:** | 23120262 |
-| **Class / Cohort:** |  |
-| **Course:** | CS423 / CSC13003 – Software Testing |
-| **Instructor:** |  |
-| **Date:** |  |
-| **Signature:** |  |
+- [x] Cấp 5 – AI là phương pháp cốt lõi
 
-## **References**
+## 4. Chữ ký Tác giả
 
-* Kharbach, M. (2026). AI Use Policy Templates for Higher Education. CC BY-NC-SA 4.0.  
-* ISTQB Foundation Level Syllabus (latest version).  
-* Hardman, P. (2025). A Post-AI Learning Taxonomy.  
-* Fuster Rabella, M. (2025). OECD Education Working Paper No. 338\.  
-* Perkins, M., Roe, J., & Furze, L. (2025). AI Assessment Scale.  
-* Anthropic (2025). Building reliable AI test agents — engineering blog.  
-* DeepEval & Promptfoo documentation — testing frameworks for LLM systems.
+*Bằng việc ký dưới đây, tôi cam đoan bài suy ngẫm này trung thực và phản ánh chính xác cách AI được dùng trong project. Tôi chịu hoàn toàn trách nhiệm trí tuệ cho sản phẩm cuối.*
+
+## Chữ ký
+
+| Họ tên sinh viên (in hoa): |                                        |
+|----------------------------|----------------------------------------|
+| MSSV:                      |                                        |
+| Lớp / Khoá:                |                                        |
+| Môn học:                   | CS423 / CSC13003 – Kiểm chứng Phần mềm |
+| Giảng viên:                |                                        |
+| Ngày:                      |                                        |
+| Chữ ký:                    |                                        |
+
+## Tham khảo
+
+- Kharbach, M. (2026). AI Use Policy Templates for Higher Education. CC BY-NC-SA 4.0.
+
+- ISTQB Foundation Level Syllabus (latest version).
+
+- Hardman, P. (2025). A Post-AI Learning Taxonomy.
+
+- Fuster Rabella, M. (2025). OECD Education Working Paper No. 338.
+
+- Perkins, M., Roe, J., & Furze, L. (2025). AI Assessment Scale.
+
+- Anthropic (2025). Building reliable AI test agents — engineering blog.
+
+- DeepEval & Promptfoo documentation — testing frameworks for LLM systems.

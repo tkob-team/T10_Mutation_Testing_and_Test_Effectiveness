@@ -1,54 +1,53 @@
-**Faculty of Information Technology (FIT) – Ho Chi Minh City University of Science (HCMUS)**
+**Khoa Công nghệ Thông tin (FIT) – Trường Đại học Khoa học Tự nhiên (HCMUS)**
 
-**CS423 / CSC13003 – Software Testing (AI-augmented · 2026\)**
+**CS423 / CSC15003 – Kiểm chứng Phần mềm (AI-augmented · 2026)**
 
-**AI POLICY · TEMPLATES — 2026 v1.0**
+**CHÍNH SÁCH AI · BIỂU MẪU — 2026 v1.0**
 
-# **AI Use Disclosure Form**
+# Biểu mẫu Khai báo Sử dụng AI
 
-*Attach to assignments where AI was used in any permitted capacity.*
+*Đính kèm cho mọi bài tập có dùng AI ở bất kỳ mức nào.*
 
-*Adapted from Med Kharbach, PhD (2026) — AI Use Policy Templates for Higher Education. CC BY-NC-SA 4.0. This adaptation is prepared for FIT@HCMUS – CS423 / CSC15003 Software Testing course.*
+*Tài liệu được biên soạn lại từ Med Kharbach, PhD (2026) — Mẫu Chính sách Sử dụng AI cho Giáo dục Đại học. Giấy phép CC BY-NC-SA 4.0. Phiên bản này được FIT@HCMUS điều chỉnh cho môn CS423 / CSC15003 Kiểm chứng Phần mềm.*
 
-## **1\. Course & Student Info**
+## 1. Thông tin Môn học & Sinh viên
 
-| Field | Value |
-| :---- | :---- |
-| **Course:** | CS423 / CSC13003 – Software Testing |
-| **Assignment ID:** | Seminar T10, Group 12 |
-| **Assignment Title:** | T10: Mutation Testing & Test Effectiveness |
-| **AI Use Category (1–5):** | Category 5 |
-| **Date:** |  |
-| **Student name:** | Lê Tấn Hiệp |
-| **Student ID:** | 23120255 |
+| Mục               | Giá trị                                |
+|-------------------|----------------------------------------|
+| Môn học:          | CS423 / CSC13003 – Kiểm chứng Phần mềm |
+| Mã bài tập:       | Seminar T10, Nhóm 12 |
+| Tên bài tập:      | T10: Mutation Testing & Test Effectiveness |
+| Cấp độ AI (1–5):  | Cấp 5 |
+| Họ tên sinh viên: | Lê Tấn Hiệp |
+| MSSV:             | 23120255 |
 
-## **2\. Disclosure Questions**
+## 2. Câu hỏi Khai báo
 
-### **1\. AI tool(s) used:**
+### 1. Công cụ AI đã dùng:
 
-*List every AI tool used for this assignment (e.g., AI Tool (e.g., ChatGPT, Claude, Gemini), ChatGPT, GitHub Copilot, Cursor, Gemini).*
+*Liệt kê mọi công cụ AI dùng cho bài tập này (ví dụ AI Tool (e.g., ChatGPT, Claude, Gemini), ChatGPT, GitHub Copilot, Cursor, Gemini).*
 
-I used Claude on claude.ai with Claude Sonnet 4.6 for the early research turns and Claude Opus 5.5 for later research and analysis. I also used Claude Code with Claude Opus 5.5 for scripted repository and test tasks. [Individual AI record](../ai-audit/AI_Record_Tan_Hiep.md).
+Tôi đã dùng Claude trên claude.ai với Claude Sonnet 4.6 cho các lượt nghiên cứu ban đầu và Claude Opus 5.5 cho các lượt nghiên cứu, phân tích sau đó. Tôi cũng dùng Claude Code với Claude Opus 5.5 cho các tác vụ repository và test bằng script. [Phiếu AI cá nhân](../ai-audit/AI_Record_Tan_Hiep.md).
 
-### **2\. Stage(s) of the assignment where AI was used:**
+### 2. Giai đoạn nào của bài tập có dùng AI:
 
-*Tick all that apply: \[ \] brainstorming  \[ \] outlining  \[ \] drafting  \[ \] feedback  \[ \] revision  \[ \] coding  \[ \] data analysis  \[ \] visual design  \[ \] other (specify).*
+*Tick tất cả: [ ] brainstorm [ ] outline [ ] viết nháp [ ] phản hồi [ ] sửa chữa [ ] code [ ] phân tích dữ liệu [ ] thiết kế đồ hoạ [ ] khác (ghi rõ).*
 
-S3: research, outlining, drafting, feedback, revision, coding and data analysis. Claude helped prepare tool notes, tutorial assertions, Cart test/harness work, run instructions and result interpretation. The C01 tutorial commands were personally executed; the later -cc command records identify Claude Code as executor.
+S3: nghiên cứu, lập dàn ý, viết nháp, phản hồi, chỉnh sửa, lập trình và phân tích dữ liệu. Claude hỗ trợ chuẩn bị ghi chú công cụ, assertion cho tutorial, test/harness Cart, hướng dẫn chạy và diễn giải kết quả. Tôi đã tự thực thi các lệnh tutorial C01; các bản ghi lệnh -cc về sau xác định Claude Code là bên thực thi.
 
-### **3\. Main prompts or tasks given to the AI:**
+### 3. Prompt / nhiệm vụ chính cho AI:
 
-*Paste the 2–3 most impactful prompts verbatim. For the full transcript, attach Appendix A (prompt\_log.md).*
+*Dán nguyên văn 2–3 prompt quan trọng nhất. Để xem đầy đủ, đính kèm Phụ lục A (prompt_log.md).*
 
-Full verbatim prompts and outputs: [Verbatim claude.ai transcript](../ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-16_9ffbcb5b.md); [Verbatim Claude Code transcript](../ai-audit/evidence/s3/Tan_Hiep/claude-code_prompt_log.md).
+Prompt và output đầy đủ, nguyên văn: [Transcript claude.ai nguyên văn](../ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-16_9ffbcb5b.md); [Transcript Claude Code nguyên văn](../ai-audit/evidence/s3/Tan_Hiep/claude-code_prompt_log.md).
 
-Verbatim prompt for the workspace correction:
+Prompt nguyên văn yêu cầu sửa workspace:
 
 ~~~text
 Có gì đó sai sai ở đây, mình không hề sử dụng ở thư mục ngày. Mình đặt hết vào thư mục cha là: "Repo". Không biết cần thay đổi gì không
 ~~~
 
-Verbatim prompt for the AI-workflow arrangement:
+Prompt nguyên văn về tổ chức quy trình AI:
 
 ~~~text
 hiện tại 2 skill test-design-istqb và qa-evidence-review có vẻ không liên quan nhiều về mutation testing lắm nhỉ, nên mình muốn viết thêm 1 skill để dùng cho cả claude.ai và Claude Code. Còn vì giờ sử dụng thêm Claude Code, nên sẽ viết các skills, CLAUDE.md cần thiết nhé.
@@ -56,49 +55,55 @@ hiện tại 2 skill test-design-istqb và qa-evidence-review có vẻ không li
 Đúng là không coi run của Claude Code là mình tự chạy, vì sau cùng mình cũng sẽ chạy lại hết. Để còn hiểu sâu hơn và demo thuyết trình trên lớp nữa
 ~~~
 
-The tutorial survivor prompt and generated assertions are preserved verbatim in [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-c01-01).
+Prompt về survivor trong tutorial và các assertion được sinh được giữ nguyên văn tại [Prompt/output nguyên văn và audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-c01-01).
 
-### **4\. Specific parts of the work AI contributed to:**
+### 4. Phần cụ thể AI đóng góp:
 
-*Be specific. Example: 'AI generated TC01–TC15 in Section 3.2; I rewrote TC04 and TC11; AI did NOT contribute to Sections 1, 2, 4, or the AI Critique.'*
+*Càng cụ thể càng tốt. Ví dụ: 'AI sinh TC01–TC15 ở Mục 3.2; tôi viết lại TC04 và TC11; AI KHÔNG đóng góp vào Mục 1, 2, 4, hoặc AI Critique.'*
 
-AI contributed the research-note drafts, tutorial Jest candidates, Cart harness/baseline/defect work, run-report instructions, Git ignore proposal and prompt-log tooling. It generated five Cart AI tests. The manual suite and the five-test AI suite are different collections; 44 versus 41 total tests is not an equal test budget. The source record lists each artifact and its changes.
+AI đóng góp các bản nháp ghi chú nghiên cứu, các test Jest đề xuất cho tutorial, harness/baseline/test defect của Cart, hướng dẫn báo cáo run, đề xuất Git ignore và công cụ ghi prompt log. AI sinh năm test AI cho Cart. Bộ test manual và bộ năm test AI là hai tập khác nhau; tổng số 44 so với 41 test không phải cùng ngân sách test. Phiếu nguồn liệt kê từng artifact và các thay đổi của nó.
 
-### **5\. How I reviewed, revised, or verified the AI output:**
+### 5. Cách tôi rà soát / chỉnh sửa / xác minh đầu ra AI:
 
-*Describe your verification method (ran the test, checked the spec, asked the TA, looked up RFC, cross-checked with the ISTQB syllabus, etc.).*
+*Mô tả phương pháp xác minh (chạy test, kiểm tra spec, hỏi TA, tra RFC, đối chiếu ISTQB syllabus, v.v.).*
 
-I checked the research sources, calculated tutorial expected values and ran the C01 weak/strong/AI commands on my machine. I corrected the missing SRS interpretation and workspace assumptions. Later Claude Code runs were checked through their reports and mutant attribution; they are recorded as Agent execution. G01 assertions were retained, while misleading review/clean-session comments were corrected. The final six-target interpretation separates implementation-derived oracles from SRS rules.
+Tôi kiểm tra các nguồn nghiên cứu, tính giá trị kỳ vọng cho tutorial và chạy các lệnh C01 weak/strong/AI trên máy của mình. Tôi sửa phần diễn giải SRS bị thiếu và các giả định về workspace. Các run Claude Code về sau được kiểm tra qua báo cáo và thông tin quy kết mutant; chúng được ghi nhận là Agent thực thi. Các assertion G01 được giữ lại, còn những chú thích gây hiểu nhầm về review/phiên làm việc sạch được sửa. Phần diễn giải cuối cho sáu target tách oracle suy ra từ implementation khỏi các quy tắc SRS.
 
-### **6\. Citation (if required by course style guide):**
+### 6. Trích dẫn (nếu môn yêu cầu):
 
-*Software Testing uses the IEEE style. Example: Anthropic. (2026). AI Tool (e.g., ChatGPT, Claude, Gemini) \[Large language model\]. https\://claude.ai*
+*Môn Kiểm chứng Phần mềm dùng phong cách IEEE. Ví dụ: Anthropic. (2026). AI Tool (e.g., ChatGPT, Claude, Gemini) \[Large language model\]. https://claude.ai*
 
-[1] Anthropic, "Claude," Claude Sonnet 4.6 and Claude Opus 5.5, claude.ai, used 2026-10-16 to 2026-10-23. [Claude](https://claude.ai).
+[1] Anthropic, "Claude," Claude Sonnet 4.6 và Claude Opus 5.5, claude.ai, sử dụng từ 2026-10-16 đến 2026-10-23. [Claude](https://claude.ai).
 
-[2] Anthropic, "Claude Code," Claude Opus 5.5, CLI. [Documentation](https://code.claude.com/docs/en/overview).
+[2] Anthropic, "Claude Code," Claude Opus 5.5, CLI. [Tài liệu](https://code.claude.com/docs/en/overview).
 
-## **3\. Statement of Honesty**
+## 3. Cam đoan Trung thực
 
-*By signing below, I confirm that the disclosure above is accurate and complete. I understand that undisclosed or false disclosure of AI use is treated as academic misconduct and may result in a 0 grade for the assignment and disciplinary referral.*
+*Bằng việc ký tên dưới đây, tôi cam đoan thông tin khai báo ở trên là chính xác và đầy đủ. Tôi hiểu rằng việc không khai báo hoặc khai báo sai lệch về việc dùng AI sẽ bị coi là vi phạm liêm chính học thuật và có thể dẫn đến điểm 0 cho bài tập cùng việc bị chuyển lên hội đồng kỷ luật.*
 
-## **Signature**
+## Chữ ký
 
-| Student name (printed): | LÊ TẤN HIỆP |
-| :---- | :---- |
-| **Student ID:** | 23120255 |
-| **Class / Cohort:** |  |
-| **Course:** | CS423 / CSC13003 – Software Testing |
-| **Instructor:** |  |
-| **Date:** |  |
-| **Signature:** |  |
+| Họ tên sinh viên (in hoa): |                                        |
+|----------------------------|----------------------------------------|
+| MSSV:                      |                                        |
+| Lớp / Khoá:                |                                        |
+| Môn học:                   | CS423 / CSC13003 – Kiểm chứng Phần mềm |
+| Giảng viên:                |                                        |
+| Ngày:                      |                                        |
+| Chữ ký:                    |                                        |
 
-## **References**
+## Tham khảo
 
-* Kharbach, M. (2026). AI Use Policy Templates for Higher Education. CC BY-NC-SA 4.0.  
-* ISTQB Foundation Level Syllabus (latest version).  
-* Hardman, P. (2025). A Post-AI Learning Taxonomy.  
-* Fuster Rabella, M. (2025). OECD Education Working Paper No. 338\.  
-* Perkins, M., Roe, J., & Furze, L. (2025). AI Assessment Scale.  
-* Anthropic (2025). Building reliable AI test agents — engineering blog.  
-* DeepEval & Promptfoo documentation — testing frameworks for LLM systems.
+- Kharbach, M. (2026). AI Use Policy Templates for Higher Education. CC BY-NC-SA 4.0.
+
+- ISTQB Foundation Level Syllabus (latest version).
+
+- Hardman, P. (2025). A Post-AI Learning Taxonomy.
+
+- Fuster Rabella, M. (2025). OECD Education Working Paper No. 338.
+
+- Perkins, M., Roe, J., & Furze, L. (2025). AI Assessment Scale.
+
+- Anthropic (2025). Building reliable AI test agents — engineering blog.
+
+- DeepEval & Promptfoo documentation — testing frameworks for LLM systems.

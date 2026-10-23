@@ -1,8 +1,8 @@
 # PH-S3-E03-BASELINE — Chat Transcript
 
 **Member:** Nguyễn Phúc Hoàng  
-**Stage / Task ID:** S3 / S3-E03, S3-F03, S3-G03, S3-H03 và S3-I03 (kèm cập nhật C03-5, C03-6, D03 trong Experiment Log; AI-02/03/04 draft)  
-**Tool / Model:** Claude Code 2.1.308 (CLI); model(s) ghi trong phiên: `claude-sonnet-5-5` (278 lượt)  
+**Stage / Task ID:** S3 / S3-E03, S3-F03, S3-G03, S3-H03, S3-I03 và S4-A03, S4-B03, S4-C03, S4-D03, S4-F03 (kèm cập nhật C03-5, C03-6, D03 trong Experiment Log; AI-02/03/04 draft)  
+**Tool / Model:** Claude Code 2.1.308 (CLI); model(s) ghi trong phiên: `claude-sonnet-5-5` (335 lượt)  
 **Date:** 2026-10-23 (giờ Asia/Saigon, lấy từ timestamp của phiên)  
 **Session file:** `60b90dce-0d5e-4502-920f-a2eb3196656d.jsonl` của Claude Code, trích tự động bằng script; transcript được trích tới lượt yêu cầu tạo transcript này.
 
@@ -945,7 +945,98 @@ The messages after this summary are the most recent messages from before compact
 2. `Bash: sed -n 158,200p experiments/s3/Experiment_Log_Phuc_Hoang.md; ls experiments/s3/runs/Phuc_Hoang/I03-cart-repro/*; du -sh experiments/s3/runs/Phuc_Hoang/I03-cart-`
 3. `Bash: cat > experiments/s3/runs/Phuc_Hoang/I03-cart-repro/feedback_for_Tan_Hiep.md <<'EOF' # Góp ý hướng dẫn Cart & Orders cho Tấn Hiệp (S3-I03)  **Người chạy:** Nguy`
 4. `Bash: python3 - <<'EOF' p='ai-audit/AI_Record_Phuc_Hoang.md' L=open(p).read().split('\n') i=next(k for k,l in enumerate(L) if '| S3-H03 |' in l) L.insert(i+1,"| Claud`
+5. `Bash: S=/private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb319665`
+6. `Bash: O=ai-audit/evidence/s3/Phuc_Hoang/PH-S3-E03-BASELINE_Transcript.md python3 - <<'EOF' p='ai-audit/evidence/s3/Phuc_Hoang/PH-S3-E03-BASELINE_Transcript.md' s=open`
 
 ### Output (verbatim)
 
-(không có text output)
+````markdown
+Mình đang hoàn tất S3-I03: sửa dòng Task ID trong transcript, rồi commit và push.
+````
+
+````markdown
+S3-I03 xong và đã push lên `s3/A03-B03-phuc-hoang` (commit `831e7b5`). Mình chạy lại được cả ba run của Cart & Orders bằng đúng lệnh trong hướng dẫn của Hiệp.
+
+| Run | Test | Killed | Timeout | Survived | NoCov | RuntimeErr | Score |
+|---|---|---|---|---|---|---|---|
+| Baseline `806ba19` | 88 | 82 | 25 | 34 | 2 | 7 | 74,83% |
+| Manual `s3/F01-manual` | 44 | 112 | 18 | 11 | 2 | 7 | 90,91% |
+| Claude `s3/G01-ai` | 41 | 102 | 18 | 21 | 2 | 7 | 83,92% |
+
+- **Khớp với Hiệp:** 150/150 mutant có trạng thái giống E01-1, F01-2 và G01-2, 0 khác biệt.
+- **Lệnh khác nhau:** lệnh Stryker có cờ và `npm run mutate:cart-orders:manual|ai` cho kết quả giống nhau.
+- **Khác Hòa:** Hòa chạy lại thì baseline khớp, nhưng manual và AI lệch 7 mutant Timeout→Killed. Nguyên nhân mình chưa xác minh được. Giả thuyết là config manual/AI không có chính sách timeout/concurrency, nên mình ghi là Pending.
+
+**Ba mutant case chung (id 6, 15, 68):**
+- Baseline bỏ sót cả ba vì CO-02, CO-03, CO-04, CO-12 chỉ assert status code. CO-02 có tên "gets an empty cart" nhưng không đọc body.
+- Manual giết được cả ba.
+- Claude giết id 6 và 15, nhưng id 68 (`"canceled"`→`""`) vẫn sống sót. Lý do là danh sách mục tiêu của Claude chỉ có 5 mutant và không có trạng thái DB sau khi hủy đơn, không phải Claude không làm được.
+
+**Góp ý G1–G7 gửi Hiệp** (chi tiết trong `feedback_for_Tan_Hiep.md`):
+- **G2:** số kỳ vọng 36 pass / 9 fail / `Ran 36` là của commit `8d60e9b`. Trên `806ba19` cùng lệnh cho 88 / 54 / 72.
+- **G1:** `D01-tests/` được dẫn làm evidence nhưng không có trong repo.
+- **G3:** chưa rõ lệnh mutation nào là chuẩn, và config manual/AI thiếu `concurrency`/`timeoutMS`/`timeoutFactor`.
+- **G4:** nên dùng `npm ci` thay `npm install`.
+- **G5:** oracle "user mới có giỏ trống" được viết như sự thật nghiệp vụ, trong khi spec chỉ suy ra được.
+- **G6:** tên test baseline hứa nhiều hơn những gì chúng assert.
+- **G7:** case 3 nên nói rõ AI sống sót do chọn mục tiêu.
+
+Evidence ở `experiments/s3/runs/Phuc_Hoang/I03-cart-repro/`: log gốc, `mutation.json`/`mutation.html`, hash file production trước khi chạy, `compare_cart.py`, `comparison.md`. Mình cũng điền bảng Cross Reproduction trong `Experiment_Log_Phuc_Hoang.md`, thêm một dòng cho I03 vào AI Record và tạo lại transcript.
+
+**Còn mở:**
+- Góp ý cho Hiệp mới là Proposed: bạn cần gửi cho Hiệp qua kênh nhóm.
+- I03 chưa có artifact audit riêng trong AI-02/AI-LOG.
+- Ngày, lớp, chữ ký và việc xác nhận verdict vẫn để bạn điền.
+````
+
+## Turn 13 — 2026-10-23 12:14:50
+
+### Prompt (verbatim)
+
+````text
+Bây giờ gen hết docs trong task ở stage 4 cho tôi
+````
+
+### Tool Log
+
+1. `Bash: git pull -q --rebase origin main 2>&1 | tail -2; ls; ls docs; grep -rn "S4-" docs/Task_Output_Map.md | head -40`
+2. `Bash: grep -rln "S4-A\|S4-B" --include=*.md . 2>/dev/null | grep -v node_modules | head -20`
+3. `Bash: ls materials materials/s4 experiments/s4 2>&1; grep -n "S4" CONTEXT.md docs/Working_Guide.md README.md | head -60; ls docs/templates docs/requirements`
+4. `Bash: cat materials/s4/*TEMPLATE.md docs/templates/Task_Notes_TEMPLATE.md; cat docs/Working_Guide.md; sed -n 1,200p docs/Task_Output_Map.md | sed -n 1,30p; ls ai-audi`
+5. `Bash: git fetch -q --all; git branch -r | head -20; git log --oneline origin/main -5; ls ai-audit/evidence/s4 research/s3 docs; cat docs/Stage3-Sumary.md | head -60; `
+6. `Bash: sed -n 12,160p experiments/s3/Experiment_Log_Phuc_Hoang.md`
+7. `Bash: wc -l research/s3/Research_Notes_Phuc_Hoang.md docs/Demo_Script.md; sed -n 36,200p research/s3/Research_Notes_Phuc_Hoang.md`
+8. `Bash: sed -n 200,343p research/s3/Research_Notes_Phuc_Hoang.md`
+9. `Bash: cat docs/Demo_Script.md | head -123; grep -n "^## \|^### " experiments/s3/Experiment_Log_Phuc_Hoang.md`
+10. `Bash: sed -n 51,157p experiments/s3/Experiment_Log_Phuc_Hoang.md | cut -c1-1800`
+11. `Bash: grep -n "REQ-0[7-9]\|REQ-1[0-9]\|REQ-2[0-9]\|Guide\|Report\|Demo" docs/requirements/Seminar_Requirements_Consolidated.md | cut -c1-260 | head -70`
+12. `Bash: ls ai-audit/evidence/s4/Tan_Hiep; cd experiments/s3/runs/Phuc_Hoang; ls G03-ai F03-manual E03-baseline H03-comparison; cat G03-ai/command.txt; sed -n 1,40p E03-`
+13. `Bash: cd /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness/experiments/s3/runs/Phuc_Hoang && grep -n "AM-01\|AM-02\|`
+14. `Bash: ls; ls A03-S1-* 2>/dev/null | head -30; ls C03-* | head; cd ../../../..; sed -n 1,30p ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md | cut -c1-300; gre`
+15. `Write: /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness/materials/s4/Guide_Contribution_Phuc_Hoang.md`
+16. `Bash: python3 - <<'EOF' p='materials/s4/Guide_Contribution_Phuc_Hoang.md' s=open(p).read() s=s.replace("In this domain: 10 candidate groups, 8 accepted, 1 edited (ren`
+17. `Write: /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness/materials/s4/Report_Contribution_Phuc_Hoang.md`
+18. `Bash: python3 - <<'EOF' p='materials/s4/Report_Contribution_Phuc_Hoang.md' s=open(p).read() a="8 convention kills for database failures and body messages" assert a in`
+19. `Write: /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness/materials/s4/Demo_Contribution_Phuc_Hoang.md`
+20. `Bash: cd /private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb31966`
+21. `Bash: mkdir -p experiments/s4/runs/Phuc_Hoang/S4-F03-verify && cat > experiments/s4/runs/Phuc_Hoang/S4-F03-verify/verify_s4_docs.py <<'EOF' """S4-F03: recompute the n`
+22. `Bash: git fetch -q origin && git ls-tree -r --name-only origin/main materials/s4 | head; cat > materials/s4/Guide_Reproduction_Phuc_Hoang.md <<'EOF' # Task Notes  **D`
+23. `Bash: python3 -I experiments/s4/runs/Phuc_Hoang/S4-F03-verify/verify_s4_docs.py 2>&1 | tail -40`
+24. `Bash: cd /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness/experiments/s3/runs/Phuc_Hoang && for f in E03-baseline/t`
+25. `Bash: python3 - <<'EOF' p='materials/s4/Demo_Contribution_Phuc_Hoang.md' s=open(p).read() a="Version verified: 2.1.308 in the G03 run ([`command.txt`](../../experimen`
+26. `Bash: sed -n 12,24p ai-audit/AI_Record_Phuc_Hoang.md | cut -c1-400; sed -n 97,125p ai-audit/AI_Record_Phuc_Hoang.md | cut -c1-500; sed -n 259,310p ai-audit/AI_Record_`
+27. `Bash: python3 - <<'EOF' p='ai-audit/AI_Record_Phuc_Hoang.md' s=open(p).read() # §1 row anchor="| `claude -p` (Claude Code CLI 2.1.308)" row=("| Claude Code, model Cla`
+
+### Output (verbatim)
+
+````markdown
+Mình đang đọc notes S3, log và Demo_Script để viết các tài liệu S4 từ evidence thật. Chưa tạo file nào.
+````
+
+````markdown
+Mình đã xong Guide (S4-A03). Mình sửa hai chỗ số liệu chưa chính xác trong đó, rồi viết tiếp Report (S4-B03).
+````
+
+````markdown
+Mình đang viết D03 (Guide Reproduction) và F03 (Verification Notes). D03 phụ thuộc guide của Hiệp/Hòa chưa có trong repo, nên sẽ ghi Pending rõ ràng.
+````

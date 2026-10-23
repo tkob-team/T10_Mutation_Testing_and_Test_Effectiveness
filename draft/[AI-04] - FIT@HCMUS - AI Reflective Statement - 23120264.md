@@ -1,90 +1,99 @@
 <!-- AI-drafted update 2026-10-23 (Claude Code): E03-BASELINE entries and verdicts are proposals for member review; Date, Class/Cohort, Instructor and Signature are left for the member. -->
-**Faculty of Information Technology (FIT) – Ho Chi Minh City University of Science (HCMUS)**
+**Khoa Công nghệ Thông tin (FIT) – Trường Đại học Khoa học Tự nhiên (HCMUS)**
 
-**CS423 / CSC13003 – Software Testing (AI-augmented · 2026\)**
+**CS423 / CSC15003 – Kiểm chứng Phần mềm (AI-augmented · 2026)**
 
-**AI POLICY · TEMPLATES — 2026 v1.0**
+**CHÍNH SÁCH AI · BIỂU MẪU — 2026 v1.0**
 
-# **Reflective AI Use Statement**
+# Bài Suy ngẫm về Sử dụng AI
 
-*For major Seminars. Required when submitting at AI Category 4 or 5\.*
+*Bắt buộc cho Project lớn, Seminar, Đồ án Tốt nghiệp. Áp dụng khi bài nộp ở Cấp độ AI 4 hoặc 5.*
 
-*Adapted from Med Kharbach, PhD (2026) — AI Use Policy Templates for Higher Education. CC BY-NC-SA 4.0. This adaptation is prepared for FIT@HCMUS – CS423 / CSC13003 Software Testing course.*
+*Tài liệu được biên soạn lại từ Med Kharbach, PhD (2026) — Mẫu Chính sách Sử dụng AI cho Giáo dục Đại học. Giấy phép CC BY-NC-SA 4.0. Phiên bản này được FIT@HCMUS điều chỉnh cho môn CS423 / CSC13003 Kiểm chứng Phần mềm.*
 
-## **1\. Project & Author Info**
+## 1. Thông tin Project & Tác giả
 
-| Field | Value |
-| :---- | :---- |
-| **Course:** | CS423 / CSC13003 – Software Testing |
-| **Project / Capstone title:** | T10: Mutation Testing & Test Effectiveness |
-| **Team members (if group):** | Lê Tấn Hiệp; Tống Dương Thái Hòa; Nguyễn Phúc Hoàng |
-| **Student name:** | Nguyễn Phúc Hoàng |
-| **Student ID:** | 23120264 |
-| **Submission date:** |  |
+| Mục                            | Giá trị                                |
+|--------------------------------|----------------------------------------|
+| Môn học:                       | CS423 / CSC13003 – Kiểm chứng Phần mềm |
+| Tên Project / Đồ án:           | T10: Mutation Testing & Test Effectiveness |
+| Thành viên nhóm (nếu là nhóm): | Lê Tấn Hiệp; Tống Dương Thái Hòa; Nguyễn Phúc Hoàng |
+| Họ tên sinh viên:              | Nguyễn Phúc Hoàng |
+| MSSV:                          | 23120264 |
 
-## **2\. Reflection Questions**
+## 2. Câu hỏi Suy ngẫm
 
-### **1\. How did AI support your work?**
+### 1. AI đã hỗ trợ công việc của bạn như thế nào?
 
-*Describe specifically where and how AI tools contributed to this project: test design, scenario brainstorming, code generation, log analysis, defect triage, documentation, presentation prep, or other tasks.*
+*Mô tả cụ thể AI đóng góp ở đâu trong project: thiết kế test, brainstorm scenario, sinh code, phân tích log, triage defect, viết tài liệu, chuẩn bị slide, v.v.*
 
-I asked Claude Code to support research on equivalent mutants, limitations and AI approaches, then combined the related tool-study task with that work. I supplied the SUT location and requested sandbox execution and verbatim audit records. AI produced notes, examples, test/harness code and mutation analysis; a later Claude CLI request produced the age-boundary candidate. After the common baseline was frozen, I asked Claude Code to check out that commit, run the Auth mutation analysis myself and map each mutant to its route.
+Tôi yêu cầu Claude Code hỗ trợ nghiên cứu equivalent mutants, giới hạn và các cách tiếp cận AI, sau đó gộp task tìm hiểu công cụ liên quan vào công việc này. Tôi cung cấp vị trí SUT, yêu cầu thực thi sandbox và lưu bản ghi audit nguyên văn. AI tạo ghi chú, ví dụ, code test/harness và phân tích mutation; một yêu cầu Claude CLI về sau tạo bộ test đề xuất cho biên tuổi. Sau khi freeze baseline chung, tôi yêu cầu Claude Code checkout commit đó, tự chạy phân tích mutation Auth và ánh xạ từng mutant tới route tương ứng.
 
-### **2\. What did you accept, reject, or revise from AI outputs?**
+### 2. Bạn chấp nhận / từ chối / sửa gì từ đầu ra AI?
 
-*Identify which AI suggestions you incorporated, which you discarded, and how you adapted material to fit the spec, ISTQB principles, or your own analysis.*
+*Liệt kê đề xuất AI bạn dùng, đề xuất bạn loại bỏ, và cách bạn điều chỉnh cho phù hợp với spec, nguyên tắc ISTQB, hoặc phân tích của bạn.*
 
-I selected the combined research scope and the sandbox/SUT workflow. The retained notes contain revisions to mutant accounting and the FR-02 lock rule, with Agent edits identified as such. The C03 assertion was executed against original code and the selected mutant. For the baseline run I accepted the mutant counts only after the second run and the Windows run matched them, and I did not accept the rise from 73.45% to 74.36% as evidence of better assertions. Its optional explanation about a numeric-constant mutation was not used as proof of an actual generated mutant.
+Tôi chọn scope nghiên cứu kết hợp và quy trình sandbox/SUT. Các ghi chú đã lưu có bản sửa thống kê mutant và quy tắc khóa FR-02, trong đó các chỉnh sửa của Agent được xác định rõ. Assertion C03 được thực thi trên code gốc và mutant được chọn. Với run baseline, tôi chỉ chấp nhận số đếm mutant sau khi run thứ hai và run Windows khớp nhau, đồng thời không xem mức tăng từ 73.45% lên 74.36% là evidence cho assertion tốt hơn. Phần giải thích tùy chọn về mutation hằng số số học không được dùng làm bằng chứng cho mutant thực tế đã sinh.
 
-### **3\. What errors, biases, or limitations did you notice in the AI outputs?**
+### 3. Bạn nhận ra lỗi / bias / giới hạn nào trong đầu ra AI?
 
-*Concrete examples: hallucinated functions, wrong boundary, missed security case, confused metrics (e.g., p95 vs top 5%), invented citations, etc.*
+*Ví dụ cụ thể: AI bịa hàm, sai boundary, miss security case, hiểu sai metric (p95 vs top 5%), bịa trích dẫn, v.v.*
 
-The original notes omitted a lock rule already present in the SRS and undercounted a Killed-to-Timeout change. Some papers were consulted through abstracts, which limits the supported claims. An equivalent candidate requires a declared domain and a defensible argument; a survivor by itself does not prove equivalence.
+Ghi chú ban đầu bỏ sót quy tắc khóa đã có trong SRS và đếm thiếu một lần chuyển Killed-to-Timeout. Một số bài báo được tham khảo qua abstract, nên giới hạn những claim có thể hỗ trợ. Equivalent candidate cần miền đầu vào được công bố và lập luận có thể bảo vệ; chỉ riêng survivor không chứng minh tính tương đương.
 
-### **4\. How did you verify information, sources, or claims provided by AI?**
+### 4. Bạn xác minh thông tin / nguồn / claim của AI như thế nào?
 
-*Describe the verification method (ran the test, checked the spec, looked up RFC, asked TA, cross-checked another tool, executed on real SUT).*
+*Mô tả phương pháp xác minh (chạy test, kiểm tra spec, tra RFC, hỏi TA, đối chiếu công cụ khác, thực thi trên SUT thật).*
 
-The documented verification workflow checks source references, runs Jest/Stryker, compares mutant signatures and retains command outputs. The provisional Auth run reports Killed, Timeout and RuntimeError separately. A later Windows rerun changes some error/timeout classifications without adding assertion kills, so those changes cannot be credited to stronger assertions. When I reran the frozen commit on macOS, twice, it reproduced the same 125 mutant states as that Windows run, which shows the classification change comes from the common baseline setup and not from the machine.
+Quy trình xác minh đã ghi nhận kiểm tra nguồn tham chiếu, chạy Jest/Stryker, so sánh mutant signatures và giữ output lệnh. Run Auth tạm thời báo Killed, Timeout và RuntimeError riêng. Một run Windows chạy lại về sau thay đổi một số phân loại lỗi/timeout mà không thêm kill do assertion, nên không thể quy các thay đổi đó cho assertion mạnh hơn. Khi tôi chạy lại commit đã freeze trên macOS hai lần, cả hai đều tái lập cùng 125 trạng thái mutant như run Windows đó, cho thấy thay đổi phân loại đến từ cách thiết lập baseline chung thay vì máy chạy.
 
-### **5\. What did you learn through this project that you could not have learned by simply accepting AI output?**
+### 5. Bạn học được điều gì qua project này mà nếu chỉ chấp nhận đầu ra AI thì sẽ không học được?
 
-*Reflect on your own intellectual contribution. How did AI shape (or fail to shape) your understanding of testing? What is one principle you will keep for future work?*
+*Suy ngẫm về đóng góp trí tuệ của chính bạn. AI đã định hình (hay không) sự hiểu của bạn về testing như thế nào? Một nguyên tắc bạn sẽ giữ cho tương lai?*
 
-The retained work supports an important distinction between a surviving mutant, an equivalent candidate and an original implementation defect. Each needs a different argument. A boundary input can refute an equivalence claim, while a corrected requirement can change the interpretation of the entire example. The test oracle, declared input domain and actual execution evidence must therefore come before a numerical score for each specific test condition. This principle connects the equivalent-mutant research with the Auth cases and explains why source reading, traceability and status-by-status comparison remain necessary even when the generated code runs successfully.
+Công việc đã lưu hỗ trợ một phân biệt quan trọng giữa surviving mutant, equivalent candidate và defect của implementation gốc. Mỗi loại cần một lập luận khác nhau. Input biên có thể bác bỏ claim về tính tương đương, còn requirement được sửa lại có thể thay đổi cách diễn giải toàn bộ ví dụ. Vì vậy, test oracle, miền đầu vào đã công bố và evidence thực thi thực tế cần được xem xét trước điểm số của từng điều kiện test cụ thể. Nguyên tắc này kết nối nghiên cứu equivalent mutant với các case Auth và giải thích vì sao việc đọc nguồn, truy vết và so sánh từng trạng thái vẫn cần thiết ngay cả khi code được sinh chạy thành công.
 
-## **3\. AI Categories Used**
+## 3. Các Cấp độ AI đã dùng
 
-Mark all that applied at any stage of the project:
+Đánh dấu mọi cấp độ đã áp dụng ở bất kỳ giai đoạn nào:
 
-* \[ \] Cat. 1 – No AI  
-* \[x\] Cat. 2 – AI for preparation only  
-* \[x\] Cat. 3 – AI for feedback / revision  
-* \[x\] Cat. 4 – AI-assisted production  
-* \[x\] Cat. 5 – AI-integrated work
+- [ ] Cấp 1 – Không AI
 
-## **4\. Author Signature**
+- [x] Cấp 2 – AI cho chuẩn bị
 
-*By signing below, I confirm that this reflective statement is honest and accurately represents how AI was used in this project. I take full intellectual responsibility for the final submission.*
+- [x] Cấp 3 – AI cho phản hồi / chỉnh sửa
 
-## **Signature**
+- [x] Cấp 4 – AI hỗ trợ sản xuất
 
-| Student name (printed): | NGUYỄN PHÚC HOÀNG |
-| :---- | :---- |
-| **Student ID:** | 23120264 |
-| **Class / Cohort:** |  |
-| **Course:** | CS423 / CSC13003 – Software Testing |
-| **Instructor:** |  |
-| **Date:** |  |
-| **Signature:** |  |
+- [x] Cấp 5 – AI là phương pháp cốt lõi
 
-## **References**
+## 4. Chữ ký Tác giả
 
-* Kharbach, M. (2026). AI Use Policy Templates for Higher Education. CC BY-NC-SA 4.0.  
-* ISTQB Foundation Level Syllabus (latest version).  
-* Hardman, P. (2025). A Post-AI Learning Taxonomy.  
-* Fuster Rabella, M. (2025). OECD Education Working Paper No. 338\.  
-* Perkins, M., Roe, J., & Furze, L. (2025). AI Assessment Scale.  
-* Anthropic (2025). Building reliable AI test agents — engineering blog.  
-* DeepEval & Promptfoo documentation — testing frameworks for LLM systems.
+*Bằng việc ký dưới đây, tôi cam đoan bài suy ngẫm này trung thực và phản ánh chính xác cách AI được dùng trong project. Tôi chịu hoàn toàn trách nhiệm trí tuệ cho sản phẩm cuối.*
+
+## Chữ ký
+
+| Họ tên sinh viên (in hoa): |                                        |
+|----------------------------|----------------------------------------|
+| MSSV:                      |                                        |
+| Lớp / Khoá:                |                                        |
+| Môn học:                   | CS423 / CSC13003 – Kiểm chứng Phần mềm |
+| Giảng viên:                |                                        |
+| Ngày:                      |                                        |
+| Chữ ký:                    |                                        |
+
+## Tham khảo
+
+- Kharbach, M. (2026). AI Use Policy Templates for Higher Education. CC BY-NC-SA 4.0.
+
+- ISTQB Foundation Level Syllabus (latest version).
+
+- Hardman, P. (2025). A Post-AI Learning Taxonomy.
+
+- Fuster Rabella, M. (2025). OECD Education Working Paper No. 338.
+
+- Perkins, M., Roe, J., & Furze, L. (2025). AI Assessment Scale.
+
+- Anthropic (2025). Building reliable AI test agents — engineering blog.
+
+- DeepEval & Promptfoo documentation — testing frameworks for LLM systems.
