@@ -15,6 +15,7 @@ Phiếu này ghi usage của Phúc Hoàng xuyên suốt S1–S8. Mỗi artifact 
 |---|---|---|---|---|---|---|---|
 | Claude Code 2.1.292 (CLI), model Claude Opus 5.5 (`claude-opus-5-5`) | S3 | S3-A03, S3-B03 | brainstorming / data analysis / coding / drafting | [Research Notes](../research/s3/Research_Notes_Phuc_Hoang.md); [run evidence](../experiments/s3/runs/Phuc_Hoang/) | Lập plan; đọc repo/SUT; tra và đối chiếu nguồn; viết sandbox code/tests/harness; chạy Stryker; phân tích mutants; viết draft notes và phiếu này | Giao task và đầu vào; quyết định gộp B03, chạy sandbox, dùng SUT local, yêu cầu ghi audit nguyên văn. Review/sửa nội dung: Pending | PH-S3-A03B03-01 |
 | Claude Code, model Claude Sonnet 5.5 (`claude-sonnet-5-5`) | S3 | S3-E03 | coding / data analysis / drafting | [Experiment Log](../experiments/s3/Experiment_Log_Phuc_Hoang.md) (Baseline, E03-baseline); [run evidence](../experiments/s3/runs/Phuc_Hoang/E03-baseline/) | Clone SUT frozen commit, chạy `npm ci`/test/Stryker 2 lần, so khớp từng mutant với provisional và run của Thái Hòa, mapping route, viết log | Giao task và đầu vào (task note S3-E03). Review kết quả: Pending | PH-S3-E03-BASELINE ([transcript](evidence/s3/Phuc_Hoang/PH-S3-E03-BASELINE_Transcript.md)) |
+| Claude Code, model Claude Sonnet 5.5 (`claude-sonnet-5-5`) | S3 | S3-F03 | coding / data analysis | [Experiment Log F03](../experiments/s3/Experiment_Log_Phuc_Hoang.md); [run evidence](../experiments/s3/runs/Phuc_Hoang/F03-manual/) | Phân tích 30 survivor/NoCoverage, viết 13 manual assertions, chạy Stryker và probe | Giao task và đầu vào (task note S3-F03). Review assertions: Pending | PH-S3-F03-MANUAL ([transcript](evidence/s3/Phuc_Hoang/PH-S3-E03-BASELINE_Transcript.md)) |
 | Claude Code CLI (`claude -p`), model Claude Sonnet 5.5 (`claude-sonnet-5-5`) | S3 | S3-C03 | coding (đề xuất assertion) | [Experiment Log C03-3](../experiments/s3/Experiment_Log_Phuc_Hoang.md); [run evidence](../experiments/s3/runs/Phuc_Hoang/C03-claude/) | Đề xuất test `canRegister(18)` cho mutant `age > 18` | Viết spec demo, bỏ comment lộ đáp án, chọn mutant, chạy test và Stryker. Review: Pending | PH-S3-C03-CLAUDE |
 | Claude Code 2.1.292 (CLI), model Claude Opus 5.5 (`claude-opus-5-5`) | S3 | tooling cho S3-C03…I03 | coding / drafting | [Skill draft `s3-experiment`](evidence/s3/Phuc_Hoang/PH-S3-TOOLING-01_s3-experiment_AI_Draft/SKILL.md) | Soạn skill hỗ trợ chạy các task experiment S3 (SKILL.md, references, scripts) | Giao yêu cầu và quyết định dùng skill. Review/chỉnh nội dung: Pending | PH-S3-TOOLING-01 |
 
@@ -102,6 +103,19 @@ Chưa có sửa đổi của thành viên tại thời điểm tạo phiếu.
 | Reasoning & Source | Task note S3-E03, [Baseline_Manifest](../experiments/s3/Baseline_Manifest.md), SUT `806ba19`, Stryker 10.0.0 |
 | Verification | Do AI thực hiện, chưa phải xác nhận của thành viên: chạy `npm ci`, `npm test` (88 pass), `test:auth` (26 pass), dry run, hai run Stryker giống hệt từng mutant (125/125); so khớp từng mutant theo dòng/cột/mutator/replacement với run provisional (4 mutant đổi RuntimeError sang Timeout) và với run Windows của Thái Hòa (0 chênh lệch); SHA-256 `server.js`/`database.js`/`database.sqlite` trước = sau; `cmp` 5 file test D03 với SUT chung |
 | Student Fix | Không sửa số liệu. Dùng clone sạch của SUT chung thay cho fork cá nhân có thay đổi chưa commit; giữ run provisional thành record riêng |
+
+### Artifact PH-S3-F03-MANUAL
+
+| Field | Value |
+|---|---|
+| Stage / Task ID | S3 / S3-F03 (Authentication & Users: phân tích survivors, manual assertions) |
+| Tool / Model | Claude Code, Claude Sonnet 5.5 (`claude-sonnet-5-5`), cùng phiên với PH-S3-E03-BASELINE |
+| Recorded Time & Provenance | 2026-10-23, Asia/Saigon; run Stryker 11:13–11:16. Transcript: [PH-S3-E03-BASELINE_Transcript.md](evidence/s3/Phuc_Hoang/PH-S3-E03-BASELINE_Transcript.md) (turn yêu cầu S3-F03 trở đi) |
+| Output Artifact / Section | `backend/test/auth.manual.test.js` (13 test AM-01…AM-13) trong SUT branch cục bộ `s3/F03-auth`, bản lưu ở [`runs/Phuc_Hoang/F03-manual/`](../experiments/s3/runs/Phuc_Hoang/F03-manual/); [Experiment Log](../experiments/s3/Experiment_Log_Phuc_Hoang.md) mục Survivors và Comparison |
+| Verdict | **INCOMPLETE (proposed, AI-drafted, chờ member xác nhận)**: 23/30 mutant bị giết và test pass trên code gốc, nhưng 18/23 dựa trên convention (body lỗi, HTTP 500) chứ không phải spec, và 7 mutant còn lại không có case spec-đúng |
+| Reasoning & Source | Expected result từ `api_specification.md` §1–2 và README FR-02, FR-03, FR-04, SEC-06, SEC-07 của SUT `806ba19`; phần không có trong spec được ghi là convention ngay trong test. ISTQB: chưa gắn số mục (member bổ sung) |
+| Verification | 39/39 pass trên code gốc (3 lần), `npm test` vẫn 88 pass; Stryker 2 lần giống hệt từng mutant; so với E03-baseline: 23 mutant sang Killed, 0 tụt; production hash không đổi; probe trên bản vá `+1`/30 s: 39/39 pass và mutant #52 bị 3 test giết; DF-12 pass trên mutant #133 |
+| Student Fix | Pending (member review từng assertion, đặc biệt các test convention AM-05…AM-13) |
 
 ### Artifact PH-S3-C03-CLAUDE
 
@@ -245,7 +259,7 @@ Reflection chính thức nằm ở `draft/[AI-04] … - 23120264.md` mục 2 (AI
 
 ## 6. Member Review & Handoff
 
-- Missing artifacts / pending verification: member review và verdict cho PH-S3-A03B03-01, PH-S3-TOOLING-01, PH-S3-E03-BASELINE; artifact PH-S3-C03-CLAUDE đã có (verdict đề xuất, chờ xác nhận); transcript phiên C03/D03 (2026-10-22) và artifact audit D03/E03-provisional đầy đủ chưa có; transcript PH-S3-E03-BASELINE đã xuất (không che, theo yêu cầu thành viên; thành viên đối chiếu với lịch sử phiên); đọc full text P03, P07–P09; nguồn course slide/ISTQB cho AI-02.
+- Missing artifacts / pending verification: member review và verdict cho PH-S3-A03B03-01, PH-S3-TOOLING-01, PH-S3-E03-BASELINE; artifact PH-S3-C03-CLAUDE đã có (verdict đề xuất, chờ xác nhận); artifact PH-S3-F03-MANUAL đã có (verdict đề xuất, chờ xác nhận); transcript phiên C03/D03 (2026-10-22) và artifact audit D03/E03-provisional đầy đủ chưa có; transcript PH-S3-E03-BASELINE đã xuất (không che, theo yêu cầu thành viên; thành viên đối chiếu với lịch sử phiên); đọc full text P03, P07–P09; nguồn course slide/ISTQB cho AI-02.
 - Member confirmation of accuracy: Pending. Verdict và reflection hiện là bản AI soạn để member đọc và sửa
 - Official AI-03 disclosure/signature: Pending; mỗi người kiểm tra và tự ký PDF khi leader chuẩn bị bản chính thức.
 - Official AI-04 signature when required: Pending; tác giả kiểm tra bản tổng hợp trước khi ký.

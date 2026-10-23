@@ -1,10 +1,10 @@
 # PH-S3-E03-BASELINE — Chat Transcript
 
 **Member:** Nguyễn Phúc Hoàng  
-**Stage / Task ID:** S3 / S3-E03 (kèm cập nhật C03-5, C03-6, D03 trong Experiment Log; AI-02/03/04 draft)  
-**Tool / Model:** Claude Code 2.1.308 (CLI); model(s) ghi trong phiên: `claude-sonnet-5-5` (116 lượt)  
+**Stage / Task ID:** S3 / S3-E03 và S3-F03 (kèm cập nhật C03-5, C03-6, D03, AI-02/03/04 draft, AI Record)  
+**Tool / Model:** Claude Code 2.1.308 (CLI); model(s) ghi trong phiên: `claude-sonnet-5-5` (178 lượt)  
 **Date:** 2026-10-23 (giờ Asia/Saigon, lấy từ timestamp của phiên)  
-**Session file:** `60b90dce-0d5e-4502-920f-a2eb3196656d.jsonl` của Claude Code, trích tự động bằng script; transcript được trích tới lượt yêu cầu tạo transcript này.
+**Session file:** `60b90dce-0d5e-4502-920f-a2eb3196656d.jsonl` của Claude Code, trích tự động bằng script; transcript được trích tới lượt gần nhất tại thời điểm tạo file.
 
 Quy ước: prompt và text output của AI chép nguyên văn từ file phiên. Các khối `<system-reminder>` do Claude Code chèn tự động (không phải lời của thành viên) được lược bỏ. Kết quả tool và reasoning nội bộ không có trong record; mỗi tool call được tóm tắt một dòng trong **Tool Log** (lệnh hoặc mô tả, cắt tối đa 160 ký tự). Theo yêu cầu của thành viên, MSSV, email và username **không được che** trong file này.
 
@@ -354,7 +354,150 @@ không cần che MSSV, email và username, hãy thêm transcript phiên này và
 ### Tool Log
 
 1. `Bash: cd ~/.claude/projects/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness && python3 -I - <<'EOF' import json,co`
+2. `Bash: S=/private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb319665`
+3. `Bash: python3 -I - <<'EOF' T="evidence/s3/Phuc_Hoang/PH-S3-E03-BASELINE_Transcript.md" def edit(p,pairs):     s=open(p).read()     for a,b in pairs:         assert a `
+4. `Bash: git add -A ai-audit experiments draft && git commit -q -m "docs(S3-E03): fill C03-5/C03-6, add E03-baseline to AI forms and AI Record, add session transcript  C`
 
 ### Output (verbatim)
 
-(không có text output)
+````markdown
+Đã thêm transcript phiên này và push lên nhánh `s3/A03-B03-phuc-hoang` (commit `b527358`).
+
+**Transcript:** `ai-audit/evidence/s3/Phuc_Hoang/PH-S3-E03-BASELINE_Transcript.md`
+- **Cách trích:** tôi trích bằng script từ file phiên của Claude Code, nên không phải tôi tự chép lại. File gồm 6 lượt. Mỗi lượt có prompt nguyên văn, một dòng tóm tắt cho mỗi lệnh đã chạy, và câu trả lời nguyên văn của tôi.
+- **Không che:** MSSV, email và username đều để nguyên theo yêu cầu của bạn. Các khối `<system-reminder>` mà Claude Code tự chèn vào thì tôi lược bỏ, vì đó không phải lời của bạn.
+- **Giới hạn:** transcript dừng ở lượt yêu cầu tạo chính nó (lượt 6), nên lượt này chỉ có prompt. Kết quả của từng lệnh và phần suy luận nội bộ không nằm trong file, chỉ có tên lệnh.
+- **Model:** file ghi `claude-sonnet-5-5`, Claude Code 2.1.308. Trong `AI_Record_Phuc_Hoang.md`, ô phiên bản CLI của phiên E03 hiện vẫn ghi "Pending member input". Bạn có thể điền 2.1.308.
+
+**Đã đổi theo:**
+- `AI_Record_Phuc_Hoang.md` và dòng E03-baseline trong AI-02 giờ dẫn tới transcript này, không còn ghi "Pending".
+- Cùng commit còn các thay đổi chưa push từ lượt trước: `Experiment_Log_Phuc_Hoang.md` (C03-5, C03-6), các form AI-02/03/04 và `AI-LOG`.
+
+**Còn lại:**
+- Phiên C03/D03 (2026-10-22) vẫn chưa có transcript. File phiên có trên máy bạn (`2ceadd35-….jsonl`, 4,6 MB), tôi trích được tương tự nếu bạn muốn. File này lớn, và có thể chứa cả các phần không liên quan đến Phúc Hoàng, nên bạn nên xem trước khi push.
+- Ngày, lớp/khoá, giảng viên và chữ ký trong 3 form vẫn để trống cho bạn tự điền.
+- Q5 của AI-04 là bản của Codex. Bạn cần viết lại bằng trải nghiệm của bạn.
+````
+
+## Turn 7 — 2026-10-23 11:04:09
+
+### Prompt (verbatim)
+
+````text
+kiểm tra xem nội dung phần này đã có chưa, nếu chưa thì làm cho tôi: 
+
+<pasted_content id="8139">
+Commit và bàn giao tests/harness/config vào repo SUT, kèm lockfile và commands. Hiện log vẫn ghi chưa commit, các bản sao trong evidence chưa thay được một checkout tái lập đầy đủ.
+Cập nhật log cho nhất quán: C03-5 vẫn ghi chờ harness dù D03 đã có resetUsers(); phần bàn giao ghi chưa chạy Stryker dù đã có E03-provisional.
+Giữ test OTP sau 24 giờ là giả định cần chốt, chưa dùng riêng kết quả đó để kết luận vi phạm thời hạn trong spec.
+Bổ sung artifact AI Record cho workflow C03-3; raw output đã có nhưng log còn ghi chưa tạo artifact.
+</pasted_content id="8139">
+````
+
+### Tool Log
+
+1. `Bash: cd /private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb31966`
+2. `Bash: R=experiments/s3/runs/Phuc_Hoang; ls $R/C03-claude $R/C03-claude-run $R/C03-claude-probe; cat $R/C03-claude/prompt.txt | head -50; echo ---; cat $R/C03-claude/c`
+3. `Bash: R=experiments/s3/runs/Phuc_Hoang; python3 -I -c " import json;d=json.load(open('$R/C03-claude/raw.json'));print(d['result'])"; cat $R/C03-claude-probe/C03-claud`
+4. `Bash: python3 -I - <<'EOF' import json R='experiments/s3/runs/Phuc_Hoang' prompt=open(f'{R}/C03-claude/prompt.txt').read().rstrip() result=json.load(open(f'{R}/C03-cl`
+5. `Bash: python3 -I - <<'EOF' p='ai-audit/AI_Record_Phuc_Hoang.md' s=open(p).read() a="bỏ phần test tùy chọn `canRegister(17)` khỏi bộ chấm điểm vì không giết mutant mục`
+
+### Output (verbatim)
+
+````markdown
+Tôi kiểm tra từng mục trong 4 mục này, bắt đầu từ trạng thái repo SUT và các chỗ log còn mâu thuẫn.
+````
+
+````markdown
+Trong 4 mục, mục 1 đã có sẵn trong repo SUT chung. Ba mục còn lại chưa có hoặc chưa nhất quán, tôi đã sửa và push (commit `2ca0f7f`).
+
+**1. Tests/harness/config trong repo SUT: đã có, không phải bạn commit**
+- Thái Hòa đã đưa vào repo SUT chung: commit `958fca3` import Auth, `806ba19` freeze, hiện nằm trên `origin/main`.
+- Repo SUT có `package.json` và `package-lock.json` đã commit, kèm các script `test:auth`, `test:defects:auth`, `mutate:auth`.
+- Tôi đã chạy lại từ checkout sạch (`npm ci`, test, Stryker) và cho kết quả đúng.
+- Tôi thêm vào log các lệnh tái lập cụ thể. Log cũng nói rõ commit này là của Thái Hòa và các bản sao trong `runs/` chỉ là evidence.
+- Fork cá nhân `eshop-sut-fithcmus` vẫn có thay đổi chưa commit. Tôi không đụng vào, vì phần giá trị đã nằm trong repo chung.
+
+**2. Log nhất quán: đã sửa trước đó**
+- C03-5 và đoạn bàn giao D04 đã cập nhật ở lượt trước (harness `resetUsers()`, Stryker đã chạy).
+- Hai chỗ còn nhắc "D03 chưa commit" nằm trong dòng E03-provisional và ghi chú so sánh. Đó là điều kiện lịch sử của run đó nên tôi giữ nguyên.
+
+**3. OTP 24 giờ: đã sửa, vì log trước đó chưa đúng**
+- Trước đây log ghi "OTP không hết hạn (FR-03, SEC-07)" như một lỗi đã xác nhận.
+- Spec chỉ nói OTP "có thời hạn", không nêu thời gian, nên DF-10 chỉ cho thấy token vẫn dùng được sau 24 giờ.
+- Tôi sửa 3 chỗ trong log để ghi DF-10 là giả định cần chốt, chưa kết luận vi phạm.
+- OTP 4 chữ số thì vẫn là lỗi rõ ràng, vì trái "6 chữ số".
+- Tôi không sửa file test của SUT, vì tên test DF-10 đã nêu đúng giả định này.
+
+**4. Artifact AI Record cho C03-3: đã thêm**
+- Mục `PH-S3-C03-CLAUDE` trong `AI_Record_Phuc_Hoang.md` có prompt nguyên văn, output nguyên văn của Claude từ `raw.json`, test cuối cùng và phần kiểm chứng.
+- Log C03-3 giờ dẫn tới mục này.
+- Verdict VALID là đề xuất, chờ bạn xác nhận.
+- Lần probe `--bare` bị lỗi đăng nhập được ghi riêng.
+- Phiên bản CLI của lần chạy đó tôi ghi là unknown vì output không có.
+
+Số mục ISTQB 4.2.2 trong artifact này tôi chưa kiểm lại với syllabus.
+````
+
+## Turn 8 — 2026-10-23 11:11:22
+
+### Prompt (verbatim)
+
+````text
+Thực hiện S3-F03 - Phân tích survivors và thêm manual assertions: Authentication & Users: 
+
+<pasted_content id="8139">
+"Làm: Đọc mutant diff, giải thích test bỏ sót và viết assertion theo spec; chạy tests/mutation từ baseline. Nếu thiếu case phù hợp, báo nhóm đổi case.
+Đầu vào: Baseline report của mình (S3-E03); API Specification §1–2.
+Xong khi: Case của mình có analysis, assertion diff và actual kill evidence; giao để nhóm ghép bộ chung.
+Chờ: Baseline report của mình đã có.
+Mẫu: experiments/s3/Experiment_Log_TEMPLATE.md; tạo file khi bắt đầu, giữ nguyên TEMPLATE."
+</pasted_content id="8139">
+````
+
+### Tool Log
+
+1. `Bash: cd /private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb31966`
+2. `Bash: cd /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness/experiments/s3/runs/Phuc_Hoang/E03-baseline && python3 -I`
+3. `Bash: cd /private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb31966`
+4. `Bash: cd /private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb31966`
+5. `Bash: cd /private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb31966`
+6. `Bash: cd /private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb31966`
+7. `Bash: cd /private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb31966`
+8. `Bash: cd /private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb31966`
+9. `Bash: cd /private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb31966`
+10. `Bash: S=/private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb319665`
+11. `Bash: S=/private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb319665`
+12. `Bash: S=/private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb319665`
+13. `Bash: cd /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness/experiments/s3/runs/Phuc_Hoang/F03-manual && python3 -I -`
+14. `Bash: python3 -I - <<'EOF' import re s=open('mutant_mapping.md').read() import json d=json.load(open('../E03-baseline/mutation.json')); fl=d['files']['server.js']; sr`
+15. `Bash: python3 -I - <<'EOF' import re,json s=open('mutant_mapping.md').read() d=json.load(open('../E03-baseline/mutation.json')); fl=d['files']['server.js']; src=fl['s`
+16. `Bash: cd /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness && python3 -I - <<'EOF' p='experiments/s3/Experiment_Log_`
+17. `Bash: python3 -I - <<'EOF' p='experiments/s3/Experiment_Log_Phuc_Hoang.md' s=open(p).read() def r(a,b):     global s     assert s.count(a)==1,(a[:60],s.count(a)); s=s`
+18. `Bash: python3 -I - <<'EOF' p='ai-audit/AI_Record_Phuc_Hoang.md' s=open(p).read() T="evidence/s3/Phuc_Hoang/PH-S3-E03-BASELINE_Transcript.md" anchor="### Artifact PH-S`
+
+### Output (verbatim)
+
+````markdown
+Tôi bắt đầu từ danh sách survivor và NoCoverage của E03-baseline, cùng source và spec tương ứng.
+````
+
+````markdown
+Đang làm F03: 13 manual assertion mới đã pass trên code gốc (26 baseline + 13 = 39). Tôi chạy Stryker cho bộ này rồi so từng mutant với baseline.
+````
+
+````markdown
+Kết quả: Survived 23 → 4, NoCoverage 7 → 3, Killed 60 → 83, Timeout vẫn 27. Tôi chạy lại lần 2 và so từng mutant với baseline.
+````
+
+````markdown
+`sed -i` trên macOS lỗi nên các lần thử vá chưa có hiệu lực. Tôi làm lại bằng Python.
+````
+
+````markdown
+Cột "Mutation" bị trống phần code gốc. Tôi sửa lại việc cắt đoạn gốc từ vị trí kết thúc.
+````
+
+````markdown
+Giờ cập nhật Experiment Log: bảng Survivors, Comparison (hàng Baseline và Manual) và Limits.
+````
