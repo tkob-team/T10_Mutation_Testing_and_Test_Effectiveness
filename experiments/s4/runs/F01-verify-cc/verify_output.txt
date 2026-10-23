@@ -1,0 +1,76 @@
+== 1. Structure
+H2 headings (8): Ghi chú bản ghép (đọc trước) | Introduction | Installation | First Test | Advanced Usage | Troubleshooting | Failure Modes | References
+  REQ-17 section "Introduction": present
+  REQ-17 section "Installation": present
+  REQ-17 section "First Test": present
+  REQ-17 section "Advanced Usage": present
+  REQ-17 section "Troubleshooting": present
+  REQ-17 section "References": present
+  Failure Modes section: present
+  Failure Modes items: 8
+    - 1. Tests pass hoặc coverage cao vẫn có thể che giấu việc thiếu kiểm tra | evidence mention: yes | links to experiments: 0
+    - 2. Mutation score có thể phóng đại hiệu quả của assertion (Timeout được tính là detected) | evidence mention: yes | links to experiments: 2
+    - 3. Mutant còn sống không phải lúc nào cũng là test yếu | evidence mention: yes | links to experiments: 1
+    - 4. Disable comment có thể che các mutant kill được (Auth, Phúc Hoàng) | evidence mention: yes | links to experiments: 2
+    - 5. AI có thể viết test pass nhưng vô ích, mã hóa lỗi, hoặc giải thích/tóm tắt sai | evidence mention: yes | links to experiments: 3
+    - 6. Thêm case không đảm bảo thêm kill (Coupons, Thái Hòa) | evidence mention: yes | links to experiments: 0
+    - 7. Output trên console có thể ghi nhận kill sai test (Cart, Tấn Hiệp) | evidence mention: no | links to experiments: 0
+    - 8. Context và helper dùng chung ngăn diễn giải người-với-AI độc lập (Coupons, Thái Hòa) | evidence mention: no | links to experiments: 0
+  Troubleshooting rows: 24; with "Đã gặp" (Observed): 11; only "Đề xuất": 8; unlabeled: 5
+    Observed: `npm install` hoặc `node server.js` lỗi `ENOENT ... package.json` hay `MODULE_NOT_FOUND 
+    Observed: `Cannot find module '...\node_modules\jest\bin\jest.js'` (`MODULE_NOT_FOUND`)
+    Observed: Stryker báo `No tests were found` dù `npm test` pass
+    Observed: Chạy chậm, nhiều Timeout, hoặc số Timeout khác giữa các máy
+    Observed: 8 mutant kết thúc là **RuntimeError**; log có `exited unexpectedly with exit code null (
+    Observed: 4 mutant `if (!user)` → `false` là RuntimeError ở harness này và Timeout ở harness khác
+    Observed: `git clone` repo seminar báo `fatal: cannot create directory at '...': Filename too long
+    Observed: Stryker in nhiều cảnh báo `ChildProcessCrashedError: Child process [pid ...] exited unex
+    Observed: `claude --bare` lỗi "Not logged in"
+    Observed: `npm ci` hiện `ERESOLVE overriding peer dependency`, `deprecated glob`, "21 moderate sev
+    Observed: Node được Homebrew nâng cấp giữa hai phiên (v26.12.0 → v26.12.1)
+
+== 2. Numbers (guide claim vs source)
+[MATCH] Cart-WS baseline | source: experiments/s4/runs/F01c-1-cc/baseline.json | total 7, K 0, T 0, S 7, NC 0, RE 0, Ign 0, score 0.00%, assertion kill 0.00%
+[MATCH] Cart-WS after CO-02 | source: experiments/s4/runs/F01c-1-cc/first-test.json | total 7, K 3, T 0, S 4, NC 0, RE 0, Ign 0, score 42.86%, assertion kill 42.86%
+[MATCH] Cart-WS after 3 assertions | source: experiments/s4/runs/F01c-1-cc/manual.json | total 7, K 7, T 0, S 0, NC 0, RE 0, Ign 0, score 100.00%, assertion kill 100.00%
+[MATCH] Cart-SUT baseline Timeout 25/107 | source: experiments/s3/runs/Tan_Hiep/E01-1/mutation.json | total 150, K 82, T 25, S 34, NC 2, RE 7, Ign 0, score 74.83%, assertion kill 57.34%
+[MATCH] Cart-SUT Timeout 25 (frozen config, Hòa) | source: experiments/s3/runs/Thai_Hoa/D04-merge-2026-10-23-agent/cart-reproduced-manual/mutation.json | cart-reproduced-manual: total 150, K 105, T 25, S 11, NC 2, RE 7, Ign 0, score 90.91%, assertion kill 73.43%
+[MATCH] Cart-SUT Timeout 18 (branch config) | source: experiments/s3/runs/Tan_Hiep/F01-2/mutation.json | F01-2: total 150, K 112, T 18, S 11, NC 2, RE 7, Ign 0, score 90.91%, assertion kill 78.32% || G01-2: total 150, K 102, T 18, S 21, NC 2, RE 7, Ign 0, score 83.92%, assertion kill 71.33%
+[MATCH] Coupons baseline [S3 frozen (Hòa)] | source: experiments/s3/runs/Thai_Hoa/D04-merge-2026-10-23-agent/frozen-coupons-baseline/mutation.json | total 120, K 39, T 21, S 30, NC 25, RE 5, Ign 0, score 52.17%, assertion kill 33.91%
+[MATCH] Coupons baseline [D01-1-cc] | source: experiments/s4/runs/D01-1-cc/coupons/mutation.json | total 120, K 39, T 21, S 30, NC 25, RE 5, Ign 0, score 52.17%, assertion kill 33.91%
+[MATCH] Coupons baseline [D01-1] | source: experiments/s4/runs/Tan_Hiep/D01-1/coupons/mutation.json | total 120, K 39, T 21, S 30, NC 25, RE 5, Ign 0, score 52.17%, assertion kill 33.91%
+[MATCH] Coupons valid 115 / 33.91% | source: experiments/s4/runs/D01-1-cc/coupons/mutation.json | total 120, K 39, T 21, S 30, NC 25, RE 5, Ign 0, score 52.17%, assertion kill 33.91%
+[MATCH] Coupons extended manual [S3 extensions (Hòa)] | source: experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/manual-mutation.json | total 120, K 41, T 21, S 28, NC 25, RE 5, Ign 0, score 53.91%, assertion kill 35.65%
+[MATCH] Coupons extended AI [S3 extensions (Hòa)] | source: experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/ai-mutation.json | total 120, K 41, T 21, S 28, NC 25, RE 5, Ign 0, score 53.91%, assertion kill 35.65%
+[MATCH] Coupons extended manual [D01-1-cc] | source: experiments/s4/runs/D01-1-cc/coupons-manual/mutation.json | total 120, K 41, T 21, S 28, NC 25, RE 5, Ign 0, score 53.91%, assertion kill 35.65%
+[MATCH] Coupons extended AI [D01-1-cc] | source: experiments/s4/runs/D01-1-cc/coupons-ai/mutation.json | total 120, K 41, T 21, S 28, NC 25, RE 5, Ign 0, score 53.91%, assertion kill 35.65%
+[MATCH] Coupons extended manual [D01-1] | source: experiments/s4/runs/Tan_Hiep/D01-1/coupons-manual/mutation.json | total 120, K 41, T 21, S 28, NC 25, RE 5, Ign 0, score 53.91%, assertion kill 35.65%
+[MATCH] Coupons extended AI [D01-1] | source: experiments/s4/runs/Tan_Hiep/D01-1/coupons-ai/mutation.json | total 120, K 41, T 21, S 28, NC 25, RE 5, Ign 0, score 53.91%, assertion kill 35.65%
+[MATCH] Auth baseline | source: experiments/s3/runs/Phuc_Hoang/E03-baseline/mutation.json | total 125, K 60, T 27, S 23, NC 7, RE 8, Ign 0, score 74.36%, assertion kill 51.28%
+[MATCH] Auth manual | source: experiments/s3/runs/Phuc_Hoang/F03-manual/mutation.json | total 125, K 83, T 27, S 4, NC 3, RE 8, Ign 0, score 94.02%, assertion kill 70.94%
+[MATCH] Auth AI reviewed | source: experiments/s3/runs/Phuc_Hoang/G03-ai/mutation.json | total 125, K 74, T 27, S 13, NC 3, RE 8, Ign 0, score 86.32%, assertion kill 63.25%
+[MATCH] Auth AI raw 89.74% | source: experiments/s3/runs/Phuc_Hoang/G03-ai/raw-candidate-run/mutation.json | total 125, K 78, T 27, S 12, NC 0, RE 8, Ign 0, score 89.74%, assertion kill 66.67%
+[MATCH] Auth 27/87 Timeout (31%), 23.1 points | source: experiments/s3/runs/Phuc_Hoang/E03-baseline/mutation.json | Timeout 27/87 = 31%, gap 23.1
+[MATCH] Auth same 27 Timeout in baseline/manual/AI | source: experiments/s3/runs/Phuc_Hoang/G03-ai/mutation.json | identical Timeout sets: true
+[MATCH] Auth kill mapping 14/23/13/1/10/6 | source: experiments/s3/runs/Phuc_Hoang/G03-ai/mutation.json | {"analysed":30,"manual":23,"ai":14,"both":13,"onlyAI":1,"onlyManual":10,"neither":6,"manualRegressions":0}
+[MATCH] Auth Windows reproduction 0 differences | source: experiments/s3/runs/Thai_Hoa/D04-merge-2026-10-23-agent/frozen-auth-baseline/mutation.json | 125 mutants, 0 differences
+[MATCH] Auth sandbox weak 66.67% | source: experiments/s3/runs/Phuc_Hoang/C03-weak/mutation.json | total 18, K 12, T 0, S 6, NC 0, RE 0, Ign 0, score 66.67%, assertion kill 66.67%
+[MATCH] Auth sandbox strong 88.89% | source: experiments/s3/runs/Phuc_Hoang/C03-strong/mutation.json | total 18, K 16, T 0, S 2, NC 0, RE 0, Ign 0, score 88.89%, assertion kill 88.89%
+[MATCH] Auth disable comment 88.89% -> 100% | source: experiments/s3/runs/Phuc_Hoang/A03-S1-ignored/mutation.json | strong: total 18, K 16, T 0, S 2, NC 0, RE 0, Ign 0, score 88.89%, assertion kill 88.89% || ignored: total 18, K 14, T 0, S 0, NC 0, RE 0, Ign 4, score 100.00%, assertion kill 100.00%
+[MATCH] Auth provisional 73.45% | source: experiments/s3/runs/Phuc_Hoang/E03-provisional/mutation.json | provisional: total 125, K 60, T 23, S 23, NC 7, RE 12, Ign 0, score 73.45%, assertion kill 53.10% | RuntimeError->Timeout vs baseline: 4
+[MATCH] Coupons toy example 60% | source: experiments/s3/runs/Thai_Hoa/C02-D02-2026-10-22-agent/tutorial-weak/mutation.json | total 5, K 3, T 0, S 2, NC 0, RE 0, Ign 0, score 60.00%, assertion kill 60.00%
+[MATCH] Tests: 88 tests (Coupons checkout) | source: experiments/s4/runs/D01-1-cc/console.log
+[MATCH] Tests: 26 Coupons tests | source: experiments/s4/runs/D01-1-cc/console.log
+[MATCH] Tests: 35 manual / 40 AI Coupons | source: experiments/s4/runs/D01-1-cc/console.log
+[MATCH] Tests: 36 Cart tests (workshop) | source: experiments/s4/runs/F01c-1-cc/console.log
+[MATCH] Tests: 88 tests (workshop) | source: experiments/s4/runs/F01c-1-cc/console.log
+[MATCH] Tests: 39 Auth manual tests | source: experiments/s3/runs/Phuc_Hoang/F03-manual/test-auth-manual.log
+[MATCH] Tests: 37 Auth AI tests | source: experiments/s3/runs/Phuc_Hoang/G03-ai/test-auth-ai.log
+
+== 3. Mechanical
+  Guide_Contribution_Tan_Hiep.md: 20 code blocks, missing in guide: 0
+  Guide_Contribution_Thai_Hoa.md: 6 code blocks, missing in guide: 0
+  Guide_Contribution_Phuc_Hoang.md: 5 code blocks, missing in guide: 0
+  Relative links: 51, broken: 0
+  In-page anchors: 1, unresolved: none
+  Placeholder tokens: 0
