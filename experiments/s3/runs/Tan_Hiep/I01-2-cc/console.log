@@ -1,0 +1,2098 @@
+$ node node_modules/jest/bin/jest.js --config jest.coupons.manual.config.cjs --runInBand
+node:internal/modules/cjs/loader:1479
+  throw err;
+  ^
+
+Error: Cannot find module 'D:\HK7\Testing\Seminars\Repo\_tmp\I01-coupons\backend\node_modules\jest\bin\jest.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1476:15)
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1049:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1073:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1094:12)
+    at Module._load (node:internal/modules/cjs/loader:1262:25)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v24.15.0
+exit=1
+$ npm ci   # handling for MODULE_NOT_FOUND above (archive has no node_modules)
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-async-generators@7.8.4
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-async-generators@7.8.4
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-async-generators
+npm warn   @babel/plugin-syntax-async-generators@"^7.8.4" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-async-generators@7.8.4
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-async-generators
+npm warn     @babel/plugin-syntax-async-generators@"^7.8.4" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-bigint@7.8.3
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-bigint@7.8.3
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-bigint
+npm warn   @babel/plugin-syntax-bigint@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-bigint@7.8.3
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-bigint
+npm warn     @babel/plugin-syntax-bigint@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-class-properties@7.12.13
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-class-properties@7.12.13
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-class-properties
+npm warn   @babel/plugin-syntax-class-properties@"^7.12.13" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-class-properties@7.12.13
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-class-properties
+npm warn     @babel/plugin-syntax-class-properties@"^7.12.13" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-class-static-block@7.14.5
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-class-static-block@7.14.5
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-class-static-block
+npm warn   @babel/plugin-syntax-class-static-block@"^7.14.5" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-class-static-block@7.14.5
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-class-static-block
+npm warn     @babel/plugin-syntax-class-static-block@"^7.14.5" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-import-attributes@7.29.7
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-import-attributes@7.29.7
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-import-attributes
+npm warn   @babel/plugin-syntax-import-attributes@"^7.24.7" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-import-attributes@7.29.7
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-import-attributes
+npm warn     @babel/plugin-syntax-import-attributes@"^7.24.7" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-import-meta@7.10.4
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-import-meta@7.10.4
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-import-meta
+npm warn   @babel/plugin-syntax-import-meta@"^7.10.4" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-import-meta@7.10.4
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-import-meta
+npm warn     @babel/plugin-syntax-import-meta@"^7.10.4" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-json-strings@7.8.3
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-json-strings@7.8.3
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-json-strings
+npm warn   @babel/plugin-syntax-json-strings@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-json-strings@7.8.3
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-json-strings
+npm warn     @babel/plugin-syntax-json-strings@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-logical-assignment-operators@7.10.4
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-logical-assignment-operators@7.10.4
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-logical-assignment-operators
+npm warn   @babel/plugin-syntax-logical-assignment-operators@"^7.10.4" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-logical-assignment-operators@7.10.4
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-logical-assignment-operators
+npm warn     @babel/plugin-syntax-logical-assignment-operators@"^7.10.4" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-nullish-coalescing-operator@7.8.3
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-nullish-coalescing-operator@7.8.3
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-nullish-coalescing-operator
+npm warn   @babel/plugin-syntax-nullish-coalescing-operator@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-nullish-coalescing-operator@7.8.3
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-nullish-coalescing-operator
+npm warn     @babel/plugin-syntax-nullish-coalescing-operator@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-numeric-separator@7.10.4
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-numeric-separator@7.10.4
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-numeric-separator
+npm warn   @babel/plugin-syntax-numeric-separator@"^7.10.4" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-numeric-separator@7.10.4
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-numeric-separator
+npm warn     @babel/plugin-syntax-numeric-separator@"^7.10.4" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-object-rest-spread@7.8.3
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-object-rest-spread@7.8.3
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-object-rest-spread
+npm warn   @babel/plugin-syntax-object-rest-spread@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-object-rest-spread@7.8.3
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-object-rest-spread
+npm warn     @babel/plugin-syntax-object-rest-spread@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-optional-catch-binding@7.8.3
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-optional-catch-binding@7.8.3
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-optional-catch-binding
+npm warn   @babel/plugin-syntax-optional-catch-binding@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-optional-catch-binding@7.8.3
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-optional-catch-binding
+npm warn     @babel/plugin-syntax-optional-catch-binding@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-optional-chaining@7.8.3
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-optional-chaining@7.8.3
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-optional-chaining
+npm warn   @babel/plugin-syntax-optional-chaining@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-optional-chaining@7.8.3
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-optional-chaining
+npm warn     @babel/plugin-syntax-optional-chaining@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-private-property-in-object@7.14.5
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-private-property-in-object@7.14.5
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-private-property-in-object
+npm warn   @babel/plugin-syntax-private-property-in-object@"^7.14.5" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-private-property-in-object@7.14.5
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-private-property-in-object
+npm warn     @babel/plugin-syntax-private-property-in-object@"^7.14.5" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-top-level-await@7.14.5
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-top-level-await@7.14.5
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-top-level-await
+npm warn   @babel/plugin-syntax-top-level-await@"^7.14.5" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-top-level-await@7.14.5
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-top-level-await
+npm warn     @babel/plugin-syntax-top-level-await@"^7.14.5" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn deprecated prebuild-install@7.1.3: No longer maintained. Please contact the author of the relevant native addon; alternatives are available.
+npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+
+added 672 packages, and audited 673 packages in 5s
+
+109 packages are looking for funding
+  run `npm fund` for details
+
+6 vulnerabilities (1 low, 2 moderate, 1 high, 2 critical)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+exit=0
+$ node node_modules/jest/bin/jest.js --config jest.coupons.manual.config.cjs --runInBand
+
+Test Suites: 3 passed, 3 total
+Tests:       35 passed, 35 total
+Snapshots:   0 total
+Time:        1.063 s
+Ran all test suites.
+exit=0
+$ node node_modules/@stryker-mutator/core/bin/stryker.js run stryker.coupons.manual.config.json
+[32m10:29:52 (19936) INFO ProjectReader[39m Found 1 of 45 file(s) to be mutated.
+[32m10:29:52 (19936) INFO Instrumenter[39m Instrumented 1 source file(s) with 120 mutant(s)
+[32m10:29:52 (19936) INFO ConcurrencyTokenProvider[39m Creating 2 test runner process(es).
+[32m10:29:53 (19936) INFO DryRunExecutor[39m Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+[32m10:29:55 (19936) INFO DryRunExecutor[39m Initial test run succeeded. Ran 70 tests in 1 second (net 876 ms, overhead 1027 ms).
+[33m10:30:12 (19936) WARN ChildProcessProxy[39m Child process [pid 12192] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 12192] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/_tmp/I01-coupons/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 12192,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m10:30:13 (19936) WARN ChildProcessProxy[39m Child process [pid 9744] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 9744] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/_tmp/I01-coupons/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 9744,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m10:30:39 (19936) WARN ChildProcessProxy[39m Child process [pid 3744] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 3744] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/_tmp/I01-coupons/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 3744,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m10:30:40 (19936) WARN ChildProcessProxy[39m Child process [pid 12468] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 12468] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/_tmp/I01-coupons/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 12468,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m10:31:04 (19936) WARN ChildProcessProxy[39m Child process [pid 9800] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 9800] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/_tmp/I01-coupons/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 9800,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m10:31:05 (19936) WARN ChildProcessProxy[39m Child process [pid 4072] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 4072] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/_tmp/I01-coupons/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 4072,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m10:31:15 (19936) WARN ChildProcessProxy[39m Child process [pid 7592] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 7592] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/_tmp/I01-coupons/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 7592,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m10:31:15 (19936) WARN ChildProcessProxy[39m Child process [pid 15056] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 15056] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/_tmp/I01-coupons/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 15056,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m10:31:29 (19936) WARN ChildProcessProxy[39m Child process [pid 9044] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 9044] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/_tmp/I01-coupons/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 9044,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m10:31:29 (19936) WARN ChildProcessProxy[39m Child process [pid 22168] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 22168] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/_tmp/I01-coupons/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 22168,
+  exitCode: 3221225477,
+  signal: null
+}
+
+All tests
+  manual/coupons.manual.js
+    ✓ MF-01 Admin input limit 3 is persisted as 3 (FR-17; mutants 111/113) [line 22] (killed 2)
+    ~ MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113) [line 29] (covered 62)
+    ~ MF-03 usage 3 meets configured limit 3 and is refused (FR-09 C5) [line 37] (covered 51)
+    ~ MF-04 the requested code selects its own coupon and discount (FR-09 C1) [line 46] (covered 54)
+    ~ MF-05 admin-created minimum 400000 controls total 399999 (FR-17, FR-09 C3) [line 50] (covered 33)
+    ~ MF-05 admin-created minimum 400000 controls total 400001 (FR-17, FR-09 C3) [line 50] (covered 59)
+    ~ MF-06 admin-created expiry controls quote at 2026-10-24T08:59:59.999Z (FR-17, FR-09 C2) [line 58] (covered 59)
+    ~ MF-06 admin-created expiry controls quote at 2026-10-24T09:00:00.001Z (FR-17, FR-09 C2) [line 58] (covered 38)
+    ~ MF-07 recording usage affects only that user and coupon (FR-09 C5) [line 62] (covered 65)
+  coupons-flow.test.js
+    ~ CP-FLOW fixed quote -> checkout -> explicit usage recording -> limit enforced [line 7] (covered 54)
+  coupons.test.js
+    ✓ CP-01 fixed coupon: total 500001 gives final 450001 (FR-09) [line 18] (killed 17)
+    ~ CP-01 fixed coupon: total 700000 gives final 650000 (FR-09) [line 18] (covered 43)
+    ✓ CP-02 one currency unit below minimum is refused (FR-09 C3) [line 27] (killed 2)
+    ✓ CP-03 missing/empty code is refused: undefined [line 36] (killed 1)
+    ~ CP-03 missing/empty code is refused:  [line 36] (covered 6)
+    ~ CP-04 unknown code is unavailable (FR-09 C1) [line 42] (covered 13)
+    ~ CP-04 inactive code is unavailable (FR-09 C1) [line 42] (covered 13)
+    ~ CP-05 one millisecond before expiry is valid (FR-09 C2) [line 48] (covered 43)
+    ✓ CP-06 one millisecond after expiry is refused (FR-09 C2) [line 56] (killed 2)
+    ~ CP-07 usage 0 is below limit 2 (FR-09 C5) [line 64] (covered 43)
+    ~ CP-07 usage 1 is below limit 2 (FR-09 C5) [line 64] (covered 43)
+    ✓ CP-08 usage 2 meets/exceeds limit 2 (FR-09 C5) [line 72] (killed 5)
+    ~ CP-08 usage 3 meets/exceeds limit 2 (FR-09 C5) [line 72] (covered 32)
+    ~ CP-09 another user usage does not consume my per-user allowance [line 80] (covered 43)
+    ~ CP-10 another coupon usage does not consume this coupon allowance [line 85] (covered 43)
+    ✓ CP-11 quoting repeatedly does not consume allowance; recording usage does [line 94] (killed 2)
+    ✘ CP-12 usage recording with absent JWT is refused (SEC-02; code is convention) [line 108] (covered 0)
+    ✘ CP-12 usage recording with invalid JWT is refused (SEC-02; code is convention) [line 108] (covered 0)
+    ✓ CP-13 admin lists the current fixture; reset removed original coupons [line 116] (killed 3)
+    ✘ CP-14 list without JWT is refused (API 5.2) [line 123] (covered 0)
+    ✓ CP-15 admin creates minimum=0 and max_uses=1; resulting coupon is usable [line 126] (killed 4)
+    ✓ CP-16 admin deletes only the addressed coupon (FR-17) [line 136] (killed 2)
+    ✘ CP-17 create without JWT has no side effects (FR-12) [line 144] (covered 0)
+    ✘ CP-17 delete without JWT has no side effects (FR-12) [line 144] (covered 0)
+    ✓ CP-18 duplicate code cannot create a second coupon (FR-17) [line 152] (killed 1)
+
+[NoCoverage] BlockStatement
+server.js:398:46
+-                 if (coupon.type === "percent") {
+-                   discount_amount = Math.floor(
+-                     total_amount * (1 - coupon.discount_value),
+-                   );
+-                 } else {
++                 if (coupon.type === "percent") {} else {
+
+[NoCoverage] ArithmeticOperator
+server.js:400:19
+-                     total_amount * (1 - coupon.discount_value),
++                     total_amount / (1 - coupon.discount_value),
+
+[NoCoverage] ArithmeticOperator
+server.js:400:35
+-                     total_amount * (1 - coupon.discount_value),
++                     total_amount * (1 + coupon.discount_value),
+
+[NoCoverage] StringLiteral
+server.js:412:106
+-                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "" : coupon.discount_value.toLocaleString() + " ₫"}`,
+
+[NoCoverage] BlockStatement
+server.js:416:16
+-           } else {
+-             let discount_amount = 0;
+-             if (coupon.type === "percent") {
+-               discount_amount = Math.floor(
+-                 total_amount * (1 - coupon.discount_value),
+-               );
+-             } else {
+-               discount_amount = coupon.discount_value;
+-             }
+-             const final_amount = total_amount - discount_amount;
+-             return res.json({
+-               success: true,
+-               coupon_id: coupon.id,
+-               discount_amount,
+-               final_amount,
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+-             });
+-           }
++           } else {}
+
+[NoCoverage] ConditionalExpression
+server.js:418:15
+-             if (coupon.type === "percent") {
++             if (true) {
+
+[NoCoverage] ConditionalExpression
+server.js:418:15
+-             if (coupon.type === "percent") {
++             if (false) {
+
+[NoCoverage] EqualityOperator
+server.js:418:15
+-             if (coupon.type === "percent") {
++             if (coupon.type !== "percent") {
+
+[NoCoverage] StringLiteral
+server.js:418:31
+-             if (coupon.type === "percent") {
++             if (coupon.type === "") {
+
+[NoCoverage] BlockStatement
+server.js:418:42
+-             if (coupon.type === "percent") {
+-               discount_amount = Math.floor(
+-                 total_amount * (1 - coupon.discount_value),
+-               );
+-             } else {
++             if (coupon.type === "percent") {} else {
+
+[NoCoverage] ArithmeticOperator
+server.js:420:15
+-                 total_amount * (1 - coupon.discount_value),
++                 total_amount / (1 - coupon.discount_value),
+
+[NoCoverage] ArithmeticOperator
+server.js:420:31
+-                 total_amount * (1 - coupon.discount_value),
++                 total_amount * (1 + coupon.discount_value),
+
+[NoCoverage] BlockStatement
+server.js:422:18
+-             } else {
+-               discount_amount = coupon.discount_value;
+-             }
++             } else {}
+
+[NoCoverage] ArithmeticOperator
+server.js:425:32
+-             const final_amount = total_amount - discount_amount;
++             const final_amount = total_amount + discount_amount;
+
+[NoCoverage] ObjectLiteral
+server.js:426:27
+-             return res.json({
+-               success: true,
+-               coupon_id: coupon.id,
+-               discount_amount,
+-               final_amount,
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+-             });
++             return res.json({});
+
+[NoCoverage] BooleanLiteral
+server.js:427:22
+-               success: true,
++               success: false,
+
+[NoCoverage] StringLiteral
+server.js:431:22
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++               message: ``,
+
+[NoCoverage] ConditionalExpression
+server.js:431:50
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++               message: `Áp dụng thành công! Giảm ${true ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+
+[NoCoverage] ConditionalExpression
+server.js:431:50
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++               message: `Áp dụng thành công! Giảm ${false ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+
+[NoCoverage] EqualityOperator
+server.js:431:50
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++               message: `Áp dụng thành công! Giảm ${coupon.type !== "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+
+[NoCoverage] StringLiteral
+server.js:431:66
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++               message: `Áp dụng thành công! Giảm ${coupon.type === "" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+
+[NoCoverage] StringLiteral
+server.js:431:102
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "" : coupon.discount_value.toLocaleString() + " ₫"}`,
+
+[NoCoverage] StringLiteral
+server.js:431:149
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + ""}`,
+
+[NoCoverage] ObjectLiteral
+server.js:450:44
+-         if (err) return res.status(500).json({ error: err.message });
++         if (err) return res.status(500).json({});
+
+[NoCoverage] ObjectLiteral
+server.js:485:42
+-       if (err) return res.status(500).json({ error: err.message });
++       if (err) return res.status(500).json({});
+
+[Survived] ObjectLiteral
+server.js:367:33
+-       return res.status(400).json({ error: "Vui lòng nhập mã giảm giá" });
++       return res.status(400).json({});
+Tests ran:
+    CP-03 missing/empty code is refused: undefined
+    CP-03 missing/empty code is refused: 
+
+
+[Survived] StringLiteral
+server.js:367:42
+-       return res.status(400).json({ error: "Vui lòng nhập mã giảm giá" });
++       return res.status(400).json({ error: "" });
+Tests ran:
+    CP-03 missing/empty code is refused: undefined
+    CP-03 missing/empty code is refused: 
+
+
+[Survived] ObjectLiteral
+server.js:376:17
+-             .json({ error: "Mã giảm giá không tồn tại hoặc đã bị vô hiệu hóa" });
++             .json({});
+Tests ran:
+    CP-04 unknown code is unavailable (FR-09 C1)
+    CP-04 inactive code is unavailable (FR-09 C1)
+
+
+[Survived] StringLiteral
+server.js:376:26
+-             .json({ error: "Mã giảm giá không tồn tại hoặc đã bị vô hiệu hóa" });
++             .json({ error: "" });
+Tests ran:
+    CP-04 unknown code is unavailable (FR-09 C1)
+    CP-04 inactive code is unavailable (FR-09 C1)
+
+
+[Survived] EqualityOperator
+server.js:379:11
+-         if (total_amount > coupon.min_order_amount) {
++         if (total_amount >= coupon.min_order_amount) {
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-02 one currency unit below minimum is refused (FR-09 C3)
+  and 19 more tests!
+
+
+[Survived] EqualityOperator
+server.js:382:13
+-           if (expiry < now) {
++           if (expiry <= now) {
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 17 more tests!
+
+
+[Survived] ObjectLiteral
+server.js:383:39
+-             return res.status(400).json({ error: "Mã giảm giá đã hết hạn" });
++             return res.status(400).json({});
+Tests ran:
+    CP-06 one millisecond after expiry is refused (FR-09 C2)
+    MF-06 admin-created expiry controls quote at 2026-10-24T09:00:00.001Z (FR-17, FR-09 C2)
+
+
+[Survived] StringLiteral
+server.js:383:48
+-             return res.status(400).json({ error: "Mã giảm giá đã hết hạn" });
++             return res.status(400).json({ error: "" });
+Tests ran:
+    CP-06 one millisecond after expiry is refused (FR-09 C2)
+    MF-06 admin-created expiry controls quote at 2026-10-24T09:00:00.001Z (FR-17, FR-09 C2)
+
+
+[Survived] ConditionalExpression
+server.js:386:13
+-           if (user_id) {
++           if (true) {
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 15 more tests!
+
+
+[Survived] ObjectLiteral
+server.js:392:45
+-                   return res.status(400).json({
+-                     error: `Bạn đã sử dụng mã này ${coupon.max_uses_per_user} lần (đã đạt giới hạn)`,
+-                   });
++                   return res.status(400).json({});
+Tests ran:
+    CP-08 usage 2 meets/exceeds limit 2 (FR-09 C5)
+    CP-08 usage 3 meets/exceeds limit 2 (FR-09 C5)
+    CP-11 quoting repeatedly does not consume allowance; recording usage does
+  and 3 more tests!
+
+
+[Survived] StringLiteral
+server.js:393:26
+-                     error: `Bạn đã sử dụng mã này ${coupon.max_uses_per_user} lần (đã đạt giới hạn)`,
++                     error: ``,
+Tests ran:
+    CP-08 usage 2 meets/exceeds limit 2 (FR-09 C5)
+    CP-08 usage 3 meets/exceeds limit 2 (FR-09 C5)
+    CP-11 quoting repeatedly does not consume allowance; recording usage does
+  and 3 more tests!
+
+
+[Survived] ConditionalExpression
+server.js:398:19
+-                 if (coupon.type === "percent") {
++                 if (false) {
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 12 more tests!
+
+
+[Survived] StringLiteral
+server.js:398:35
+-                 if (coupon.type === "percent") {
++                 if (coupon.type === "") {
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 12 more tests!
+
+
+[Survived] StringLiteral
+server.js:412:26
+-                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++                   message: ``,
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 12 more tests!
+
+
+[Survived] ConditionalExpression
+server.js:412:54
+-                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++                   message: `Áp dụng thành công! Giảm ${true ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 12 more tests!
+
+
+[Survived] ConditionalExpression
+server.js:412:54
+-                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++                   message: `Áp dụng thành công! Giảm ${false ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 12 more tests!
+
+
+[Survived] EqualityOperator
+server.js:412:54
+-                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++                   message: `Áp dụng thành công! Giảm ${coupon.type !== "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 12 more tests!
+
+
+[Survived] StringLiteral
+server.js:412:70
+-                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++                   message: `Áp dụng thành công! Giảm ${coupon.type === "" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 12 more tests!
+
+
+[Survived] StringLiteral
+server.js:412:153
+-                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + ""}`,
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 12 more tests!
+
+
+[Survived] StringLiteral
+server.js:436:18
+-             error: `Đơn hàng chưa đủ giá trị tối thiểu ${coupon.min_order_amount.toLocaleString()} ₫ để áp dụng mã này`,
++             error: ``,
+Tests ran:
+    CP-02 one currency unit below minimum is refused (FR-09 C3)
+    MF-05 admin-created minimum 400000 controls total 399999 (FR-17, FR-09 C3)
+
+
+[Survived] ConditionalExpression
+server.js:450:11
+-         if (err) return res.status(500).json({ error: err.message });
++         if (false) return res.status(500).json({ error: err.message });
+Tests ran:
+    CP-11 quoting repeatedly does not consume allowance; recording usage does
+    MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)
+    MF-03 usage 3 meets configured limit 3 and is refused (FR-09 C5)
+  and 2 more tests!
+
+
+[Survived] ObjectLiteral
+server.js:451:16
+-         res.json({ message: "Usage recorded" });
++         res.json({});
+Tests ran:
+    CP-11 quoting repeatedly does not consume allowance; recording usage does
+    MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)
+    MF-03 usage 3 meets configured limit 3 and is refused (FR-09 C5)
+  and 2 more tests!
+
+
+[Survived] StringLiteral
+server.js:451:27
+-         res.json({ message: "Usage recorded" });
++         res.json({ message: "" });
+Tests ran:
+    CP-11 quoting repeatedly does not consume allowance; recording usage does
+    MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)
+    MF-03 usage 3 meets configured limit 3 and is refused (FR-09 C5)
+  and 2 more tests!
+
+
+[Survived] ObjectLiteral
+server.js:477:44
+-         if (err) return res.status(500).json({ error: err.message });
++         if (err) return res.status(500).json({});
+Tests ran:
+    CP-18 duplicate code cannot create a second coupon (FR-17)
+
+
+[Survived] StringLiteral
+server.js:478:27
+-         res.json({ message: "Coupon created", id: this.lastID });
++         res.json({ message: "", id: this.lastID });
+Tests ran:
+    CP-15 admin creates minimum=0 and max_uses=1; resulting coupon is usable
+    MF-01 Admin input limit 3 is persisted as 3 (FR-17; mutants 111/113)
+    MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)
+  and 7 more tests!
+
+
+[Survived] ConditionalExpression
+server.js:485:9
+-       if (err) return res.status(500).json({ error: err.message });
++       if (false) return res.status(500).json({ error: err.message });
+Tests ran:
+    CP-16 admin deletes only the addressed coupon (FR-17)
+
+
+[Survived] ObjectLiteral
+server.js:486:14
+-       res.json({ message: "Coupon deleted" });
++       res.json({});
+Tests ran:
+    CP-16 admin deletes only the addressed coupon (FR-17)
+
+
+[Survived] StringLiteral
+server.js:486:25
+-       res.json({ message: "Coupon deleted" });
++       res.json({ message: "" });
+Tests ran:
+    CP-16 admin deletes only the addressed coupon (FR-17)
+
+
+Ran 15.95 tests per mutant on average.
+-----------|------------------|----------|-----------|------------|----------|----------|
+           | % Mutation score |          |           |            |          |          |
+File       |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+All files  |  53.91 |   68.89 |       41 |        21 |         28 |       25 |        5 |
+ server.js |  53.91 |   68.89 |       41 |        21 |         28 |       25 |        5 |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+[32m10:31:50 (19936) INFO JsonReporter[39m Your report can be found at: file:///D:/HK7/Testing/Seminars/Repo/_tmp/I01-coupons/backend/reports/coupons-manual/mutation.json
+[32m10:31:50 (19936) INFO HtmlReporter[39m Your report can be found at: file:///D:/HK7/Testing/Seminars/Repo/_tmp/I01-coupons/backend/reports/coupons-manual/mutation.html
+[32m10:31:50 (19936) INFO MutationTestExecutor[39m Done in 1 minute and 57 seconds.
+exit=0
