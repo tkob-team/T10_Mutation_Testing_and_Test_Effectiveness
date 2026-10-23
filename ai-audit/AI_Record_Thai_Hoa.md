@@ -151,6 +151,21 @@ Personal learning/run walkthrough is outside both team repos by explicit user re
 | Boundaries | Actual workshop working tree preserved clean; no source changes there, no push, no macOS execution, no fresh Claude/Codex candidate experiment and no independent manual-vs-AI comparison claimed |
 | Raw Output / Verdict | Assisted draft and this conversation retained; no immutable full transcript export claimed. Human review and verdict Pending. |
 
+### Artifact TH-S4-DEMO-ACTIVITY-LOG-20261023
+
+| Field | Value |
+|---|---|
+| Stage / Task | S4 demo preparation and S5 activity preparation; existing ownership unchanged |
+| Authorization | User approved rewriting the demo script, exporting Git logs and preparing Kill the Mutant; Not_submit flags preserved |
+| Tool / Model | OpenAI Codex AI Agent; exact serving revision unavailable |
+| Outputs | draft/[Not_submit] Demo_Script.md; draft/Activity_Worksheet.md; draft/Git_Commit_Log.md; private facilitator guide and activity sandbox |
+| Contribution | Shared three-presenter recording flow, theory/principles, install/basic/advanced operations, reusable AI prompt, limits; five real mutant cards, peer review and tally rules; automated original-test/mutation validation and case-specific scoring |
+| Evidence | draft/[Not_submit] Activity_Sandbox/verification includes raw JSON reports, config, tallies and validation summary |
+| Execution | Windows Node 24.16.0; 36 Cart baseline tests and 8 Survived in activity scope. Reference candidates: 5 original tests pass, 5/5 own-case kills. Weak candidates: 5 original tests pass, 0/5 kills. Empty candidates: rejected before scoring. Full baseline suite: 88 pass. |
+| Git Export | Available local refs via git log --all: docs HEAD 77ddedc, 64 commits; research SUT HEAD 52ed6ac, 26 commits. Export snapshot precedes the commit containing these outputs. |
+| Review | Sequential review against user spec and repository standards; no subagents or computer use. Fixes include disableBail for complete killedBy mapping and removal of stale tally before a new run. |
+| Boundaries | Existing unrelated slides rename preserved. Actual workshop source unchanged; disposable clone used. No push, actual video, audience pilot, member self-run or fresh AI candidate scene claimed. Human acceptance/verdict Pending. |
+
 ## 3. Accuracy Summary & Audit Conclusion
 
 | Metric | Count | Percentage |

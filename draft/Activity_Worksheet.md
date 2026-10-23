@@ -1,112 +1,141 @@
-# Kill the Mutant — Audience Worksheet
+# Kill the Mutant: Audience Worksheet
 
-**Stage:** S5→S6. **Submission:** Activity Worksheet. **Requirements:** REQ-22–23.  
-**Draft status:** Instructions and case structure prepared; actual five mutants await verified EShop evidence.
+## 1. Goal
 
-## Learning Goal
+Viết 5 candidate assertions để phát hiện 5 surviving mutants của EShop, đổi bài review và thi xem đội nào kill được nhiều nhất. Phạm vi là luồng mua hàng trong module Cart & Checkout APIs: giỏ hàng, checkout, lịch sử và hủy đơn.
 
-Write an assertion that checks a business expectation and distinguishes original behavior from a changed program. Explain why the data and observation reveal the mutation.
+**Duration:** tối đa 20 phút. Làm theo đội. Có thể dùng Jest hoặc pseudocode đủ rõ để facilitator chuyển thành Jest mà không thay đổi ý nghĩa. Không cần cài phần mềm trong giờ hoạt động; sandbox được chuẩn bị trước.
 
-## Materials
+## 2. Rules and Workflow
 
-The facilitator supplies five mutant diffs, reviewed business expectations, baseline test context and an accepted sandbox. The audience version contains hints, not the answer key. Assertions may be written in the agreed test notation or clear pseudocode and are reviewed before execution.
+| Step | Duration | Việc cần làm |
+|---|---|---|
+| Show mutant diffs | 2 phút | Đọc 5 diffs, business rules và dữ liệu được cung cấp |
+| Write assertions | 8 phút | Mỗi đội viết một candidate cho mỗi K1 đến K5 |
+| Swap and review | 4 phút | Đổi bài với đội bên cạnh, ghi nhận xét và trả lại |
+| Run and tally | 4 phút | Facilitator chạy candidates đã review, chiếu kết quả và ghi điểm |
+| Explain the design | 2 phút | Đội thắng giải thích dữ liệu và assertion của một case |
 
-## Instructions
+Mỗi mutant mục tiêu tối đa 1 điểm, tổng 5 điểm. Assertion phải pass trên code gốc và làm test fail khi mutant mục tiêu hoạt động. Lỗi cú pháp, exception do setup hoặc Timeout không được tính điểm kill. Một assertion phát hiện nhiều mutants không tự cộng điểm cho các ô chưa làm. Hòa điểm thì đồng hạng.
 
-1. Read each original/mutated snippet and its specification excerpt.
-2. Choose data that makes their behavior differ.
-3. State the expected observation for original production code.
-4. Write an assertion and explain the detection mechanism.
-5. Swap with another team. Check whether the proposed test obeys the requirement and avoids fixture-dependent failures.
-6. Submit the candidate. The facilitator runs accepted assertions in the prepared sandbox and records actual outcomes.
-7. Explain one design choice or remaining uncertainty.
+Không sửa production code, fixture hoặc bỏ tests để tạo kết quả mong muốn. Trong vòng thi viết assertion, không dùng AI; sau khi chốt điểm có thể thảo luận AI như một cách đề xuất candidate.
 
-## Five Case Cards
+## 3. Shared Context
 
-Each accepted card must include a real report/mutant ID, source diff, business context, available fixture/input and the response/state observable. The following allocation follows the team case ownership; concrete mutants may change after evidence review.
+Starter: [eshop-sut-workshop, commit 6d2e790](https://github.com/tkob-team/eshop-sut-workshop/tree/6d2e790be54193d44f7e401c59dbdf8283a3f42d). Các mutants dưới đây đã Survived khi chạy 36 baseline tests Cart & Orders với StrykerJS 10.0.0.
 
-| Case | Domain / Contributor | Required Actual Input | Audience Prompt |
+Oracle lấy từ [EShop SRS](https://github.com/tkob-team/eshop-sut-workshop/blob/6d2e790be54193d44f7e401c59dbdf8283a3f42d/docs/EShop_SRS.md) và [API Specification, phần 4](https://github.com/tkob-team/eshop-sut-workshop/blob/6d2e790be54193d44f7e401c59dbdf8283a3f42d/api_specification.md). Các business rules cần dùng được ghi ngay trong từng case.
+
+Mỗi test có user U mới, token hợp lệ và SQLite riêng theo test file. Các bước fixture đều được await:
+
+1. GET giỏ U chưa thêm hàng, response đặt tên **empty**.
+2. POST lần lượt **itemA**, **itemB**, rồi GET giỏ, response đặt tên **cart**.
+3. GET lại giỏ không sửa dữ liệu, response đặt tên **reread**.
+4. U checkout một đơn, ID đặt tên **ownId**; một user V cũng có đơn riêng.
+5. GET lịch sử của U, response đặt tên **history**.
+6. U hủy đơn pending của mình; đọc lại row database, đặt tên **canceled**.
+
+Hai sản phẩm có dữ liệu khác nhau:
+
+~~~js
+const itemA = { id: 1, name: 'A', price: 100000, quantity: 1 };
+const itemB = { id: 2, name: 'B', price: 200000, quantity: 2 };
+~~~
+
+Các response có thuộc tính **status** và **body**. Row **canceled** có thuộc tính **status**. Jest cung cấp expect, toEqual, toBe và các matchers thường dùng. Mọi biến trong từng assertion đều phải lấy từ context trên.
+
+## 4. Five Mutant Cards
+
+### K1. Empty Cart
+
+**Rule:** giỏ hàng mới phải rỗng. **Observe:** empty.body.
+**Source:** server.js line 286, ArrayDeclaration. Baseline mutant ID 3.
+
+~~~diff
+- if (!userCarts[userId]) userCarts[userId] = [];
++ if (!userCarts[userId]) userCarts[userId] = ["Stryker was here"];
+~~~
+
+**Question:** status 200 có chứng minh giỏ rỗng không? Viết assertion kiểm tra kết quả của người dùng mới.
+
+### K2. Add Items
+
+**Rule:** hai sản phẩm được thêm thành công phải xuất hiện trong giỏ. **Observe:** cart.body, itemA, itemB.
+**Source:** server.js line 293, CallExpression. Baseline mutant ID 4.
+
+~~~diff
+- userCarts[userId].push(req.body);
++ ;
+~~~
+
+**Question:** POST vẫn trả 200. Cần quan sát gì sau hai lần thêm để phát hiện thao tác lưu bị mất?
+
+### K3. Read without Losing Data
+
+**Rule:** đọc giỏ không được xóa các sản phẩm đã thêm. **Observe:** reread.body, itemA, itemB.
+**Source:** server.js line 286, ConditionalExpression. Baseline mutant ID 1.
+
+~~~diff
+- if (!userCarts[userId]) userCarts[userId] = [];
++ if (true) userCarts[userId] = [];
+~~~
+
+**Question:** nếu chỉ thử một user chưa có hàng, hai chương trình khác nhau không? Dữ liệu nào làm sai khác lộ ra?
+
+### K4. Own Order History
+
+**Rule:** lịch sử của U phải chứa đơn ownId vừa checkout của U. **Observe:** history.body, ownId.
+**Source:** server.js line 314, ArrayDeclaration. Baseline mutant ID 5.
+
+~~~diff
+  "SELECT * FROM orders WHERE user_id = ? ORDER BY id DESC",
+- [req.user.id],
++ [],
+~~~
+
+**Question:** request vẫn có thể trả 200 với danh sách thiếu dữ liệu. Viết assertion tìm đúng đơn, không chỉ kiểm tra response là array.
+
+### K5. Persisted Cancellation
+
+**Rule:** hủy một đơn pending hợp lệ phải lưu trạng thái canceled. **Observe:** canceled.status.
+**Source:** server.js line 335, StringLiteral. Baseline mutant ID 7.
+
+~~~diff
+- ["canceled", req.params.id],
++ ["", req.params.id],
+~~~
+
+**Question:** thông báo thành công có đủ để xác nhận cập nhật database đúng không?
+
+## 5. Response Sheet
+
+**Team:**
+**Peer team:**
+
+| Case | Candidate assertion hoặc pseudocode | Vì sao pass trên original và fail trên mutant? | Peer comment |
 |---|---|---|---|
-| K1 | Cart & Orders — Tấn Hiệp | Verified survivor, oracle, baseline context | Which cart/order observation exposes this change? |
-| K2 | Cart & Orders — Tấn Hiệp | A second distinct verified survivor | Which data avoids duplicating K1's reasoning? |
-| K3 | Coupons — Thái Hòa | Verified expiry survivor and controlled fixture clock | How do you isolate expiry from other rejection paths? |
-| K4 | Coupons — Thái Hòa | A distinct verified discount/eligibility survivor | Which computed or persisted value must be checked? |
-| K5 | Authentication & Users — Phúc Hoàng | Verified survivor with valid fixtures | How do you distinguish intended denial/success from setup failure? |
+| K1 | | | |
+| K2 | | | |
+| K3 | | | |
+| K4 | | | |
+| K5 | | | |
 
-These are selection slots, not generated mutant diffs or claims that these cases exist.
+Peer review kiểm tra: biến có tồn tại không, expected result có đúng rule không, có quan sát phần code bị đổi không và test có thể fail vì setup thay vì mutation không.
 
-## Detailed Case Designs
+## 6. Submission and Results
 
-These are AI-assisted teaching designs derived from the inspected source and API. They are not generated mutant records or member-written assertions. For each design, the contributor must supply a real surviving mutant from the accepted baseline. If the baseline already kills it or the generator does not produce it, choose another real survivor rather than labelling the design as experimental evidence.
+Nộp 5 candidates cùng peer comments. Nếu dùng pseudocode, facilitator chiếu bản chuyển sang Jest cho đội xác nhận trước khi chạy.
 
-### K1 — Delivered Order Cancellation
+| Case | Original pass? | Target mutant status | Candidate của đúng case phát hiện? | Point |
+|---|---|---|---|---|
+| K1 | | | | |
+| K2 | | | | |
+| K3 | | | | |
+| K4 | | | | |
+| K5 | | | | |
 
-**Business context:** API §4.6 permits cancellation only before delivery. Use an order owned by the authenticated fixture user and already delivered.  
-**Observed source candidate:** the cancellation guard rejects delivered OR canceled. A logical-connector change can alter that guard.  
-**Audience input:** valid own-order identity, delivered state, cancellation request, and the exact accepted diff.  
-**Question:** which response/state observation demonstrates that a delivered order cannot be canceled?  
-**Hint:** check the rejection and the order after the request. A success-message presence check says little about the persisted state.  
-**Evidence needed:** member-approved oracle, original pass, actual survivor ID/diff and test-to-mutant result.
+**Total:** /5
+**Design to explain:**
+**Remaining question:**
 
-### K2 — Repeated Cancellation Policy
-
-**Business context:** an already canceled order must follow a defined transition/idempotency policy. The inspected source rejects it, but the API text does not fully define repeated-cancel semantics.  
-**Proposed oracle for review:** repeated cancellation is rejected and the order remains canceled. Confirm this policy before using the case; an idempotent-success policy needs a different expected response.  
-**Distinct candidate family:** a change to the canceled-status equality check can differ from K1's logical connector change. Confirm that the accepted report supplies a distinct mutant; two inputs for the same mutant do not supply two activity mutants.  
-**Audience input:** own canceled order, reviewed policy statement, request, and accepted mutant.  
-**Question:** how can you distinguish the policy from an incidental implementation behavior?  
-**Hint:** the persisted status and allowed response both matter; do not invent a rule from a success/error code.  
-**Evidence needed:** explicit policy decision, distinct real survivor and original/manual/AI verification.
-
-### K3 — Expired Coupon
-
-**Business context:** coupon metadata supplies expiry; an expired active coupon must not yield an accepted discount under the reviewed rule.  
-**Observed source candidate:** expiry is compared with the current clock. A condition mutation can bypass or reverse rejection.  
-**Audience input:** an active known coupon whose expiry is strictly before the fixed fixture clock, an eligible order amount and valid user state when required.  
-**Question:** what proves rejection is caused by expiry rather than an unknown code or insufficient order amount?  
-**Hint:** satisfy the other preconditions and inspect the expiry-specific outcome.  
-**Evidence needed:** actual clock/fixture policy, accepted oracle and a real surviving mutation.
-
-### K4 — Fixed Discount Final Amount
-
-**Business context:** with a valid fixed coupon, the final amount reflects the agreed fixed reduction.  
-**Illustrative fixture proposal:** amount 1000 and fixed discount 100, with all eligibility conditions satisfied; expected final amount 900 under the reviewed rule. These are design values, not measured EShop results.  
-**Observed source candidate:** the final-amount subtraction can be affected by an arithmetic mutation.  
-**Question:** which observation prevents a test from passing merely because both amount fields exist?  
-**Hint:** check both discount and final amount, and explain their relationship.  
-**Evidence needed:** approved fixture/units, exact survivor and result mapping.
-
-### K5 — Valid Authenticated Profile
-
-**Business context:** API §2 requires a token to retrieve the caller's personal information.  
-**Observed source candidate:** the token-presence guard can be changed by an equality/condition mutation.  
-**Audience input:** a valid fixture token for user U, initialized user U, and the exact selected diff.  
-**Question:** what observation shows that valid authenticated access returns U rather than merely rejecting every request?  
-**Hint:** include identity in the observation; avoid relying only on an error-code difference between two denied requests.  
-**Evidence needed:** accepted account/token fixture and a real survivor whose behavior is distinguished.
-
-## Case Admission
-
-A design becomes an audience case only when its oracle is settled, the original test passes, the real baseline report marks the selected mutant survived, the reference answer detects the intended change, and fixtures/reset can be reproduced. Keep five distinct admitted mutants, identifying production revision, location, operator and replacement. Two inputs for one mutant remain one mutation. Replace unavailable designs without fabricating IDs or weakening valid baseline assertions to create survivors.
-
-## Response Sheet
-
-| Case | Input / Preconditions | Expected Result / Source | Candidate Assertion | Why It Distinguishes | Peer Comment |
-|---|---|---|---|---|---|
-| K1 | | | | | |
-| K2 | | | | | |
-| K3 | | | | | |
-| K4 | | | | | |
-| K5 | | | | | |
-
-## Hints
-
-Look for equality boundaries, computed totals, state transitions and authorization outcomes where the actual diff makes them relevant. Checking “a response exists” may not observe the changed value. A test must pass for the expected original behavior before it can demonstrate a useful mutant detection.
-
-## Completion
-
-Submit the response sheet and peer comments. The facilitator records actual verification outcomes separately. Independent pilot and final case selection must confirm the activity fits the agreed product limit.
-
-## Reference
-
-[T10 activity and grading notes](../docs/requirements/03_T10_Mutation_Testing_and_Test_Effectiveness_Description.md).
+Các ô kết quả chỉ điền sau khi chạy. Mutant ID phụ thuộc cấu hình; khi kiểm tra lại phải khớp cả vị trí, mutator và replacement. Killed chỉ chứng minh khả năng phát hiện mutant được chọn, chưa chứng minh EShop đúng toàn bộ requirements.
