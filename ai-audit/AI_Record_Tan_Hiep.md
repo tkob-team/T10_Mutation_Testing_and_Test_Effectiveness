@@ -617,7 +617,7 @@ Claude Code: ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md, session ad
 | Output Artifact / Section | `materials/s4/Demo_Contribution_Tan_Hiep.md` (kịch bản phần Cart & Orders). Hòa đã viết lại `docs/Demo_Script.md` (case Coupons) nên phần Cart nộp ở dạng kịch bản trong file này, chưa quay |
 | Verdict | ĐỀ XUẤT: VALID sau sửa (chờ bạn xác nhận) |
 | Reasoning & Source | Lệnh cài đặt dùng tài liệu chính thức |
-| Verification | Chưa quay screencast (ngoài khung 1 giờ); lệnh chưa chạy trên Windows |
+| Verification | Lệnh và số liệu lấy từ run S3 của Tấn Hiệp trên Windows 11 (E01-1, F01-2, G01-2); lệnh install chạy lại ở F01a-1-cc. Chưa chạy theo kịch bản và chưa quay. |
 | Student Fix | Lỗi AI: python edit lần đầu sai chuỗi "Mở" (đã sửa). Ngôn ngữ: bạn yêu cầu chuyển bản English sang tiếng Việt (AI dịch lại) |
  
 ### Artifact AI-S4-WF-01
@@ -625,7 +625,7 @@ Claude Code: ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md, session ad
 | Field | Value |
 |---|---|
 | Stage / Task ID | S4 / — (workflow, handoff cuối phiên `5aa8b0cf`, lượt #31) |
-| Tool / Model | Claude (claude.ai), Claude Sonnet 5.5 — handoff viết ở phiên `5aa8b0cf`; kiểm chứng ở phiên `51fe5d1c` |
+| Tool / Model | Claude (claude.ai), Opus 5.5 — viết handoff, phiên 5aa8b0cf (theo AI Record S3); Claude (claude.ai), Sonnet 5.5 — kiểm chứng handoff, phiên 51fe5d1c |
 | Recorded Time & Provenance | Handoff: phiên `5aa8b0cf` lượt #31. Kiểm chứng: 2026-10-23 12:38–12:52, phiên `51fe5d1c` lượt #2 |
 | Output Artifact / Section | `claude/Handoff_T10_Tan_Hiep.md` |
 | Verdict | ĐỀ XUẤT: INCOMPLETE (chờ bạn xác nhận) |
