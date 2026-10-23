@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 12:27 (Asia/Saigon).
+Nguồn: 3058f82a-a124-4cce-853c-9bab797d6360.jsonl, 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 14:13 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 11 lượt prompt; theo model: claude-opus-5-5 11 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 16 lượt prompt; theo model: claude-opus-5-5 16 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-23 02:41 — model: claude-opus-5-5 — session 4a560803
 
@@ -489,4 +489,184 @@ Không đổi gì khác. Kiểm git diff. Commit, không push. Khối báo cáo.
 - Bất thường mới: tôi không kiểm được lượt #27 vì tìm heading `## #26`/`## #27` trong `ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-23_5aa8b0cf.md` không ra kết quả nào. Có thể file log phiên này ở repo chưa có các lượt đó, hoặc heading có định dạng khác.
 - Cần quyết định: Không
 ```
+
+## #12 — 2026-10-23 12:35 — model: claude-opus-5-5 — session ad369217
+
+### Prompt
+
+```text
+<pasted_content id="5c88">
+WF chuyển S3 → S4, không chạy run. Cập nhật Repo/CLAUDE.md:
+1. Preflight: git fetch trước; nếu chỉ AI log bẩn → commit chore(ai-log) rồi git pull --rebase (chỉ commit local chưa push của mình); không rebase/cherry-pick commit người khác.
+2. Lệnh chạy (của mình và lệnh soạn cho Tấn Hiệp): mỗi lệnh ghi header "### <giờ> | <commit> <nhánh> | > <lệnh>" vào console.log; đặt UTF-8 cho console PowerShell trước khi chạy; truyền cờ Stryker bằng "npx stryker run <config> --cờ", không dùng "npm run … -- --cờ".
+3. Trước khi commit file tài liệu đã có: git diff cả file, báo kết quả kiểm trong khối báo cáo.
+4. Stage hiện tại: S4 (S3 đã đóng 2026-10-23); hook vẫn ghi ai-audit/evidence/s4/Tan_Hiep/.
+Nếu memory của Claude Code đang ghi điều trái với các quy tắc trên, hoặc trạng thái cũ (S3 chưa xong, E01 pending, I01 chờ H02), sửa cho khớp và liệt kê đã sửa gì. Repo/CLAUDE.md nằm ngoài repo nhóm nên không commit; AI log commit như thường, không push. Khối báo cáo.
+</pasted_content id="5c88">
+```
+
+### Output
+
+```text
+Memory dir trống → không có gì cần sửa. Đọc CLAUDE.md để sửa.
+
+Kiểm diff CLAUDE.md so bản backup, rồi commit AI log.
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: chuyển quy trình S3 → S4 — Done. Không chạy run nào.
+- `Repo/CLAUDE.md`, mục "Trước mỗi task": thêm `git fetch` trước `git status`. Nếu chỉ bẩn ở AI log thì commit chore(ai-log) rồi `git pull --rebase`, chỉ áp cho commit local chưa push của mình. Preflight của session blind sửa theo cho khớp.
+- `Repo/CLAUDE.md`, mục "Quy tắc": thêm quy tắc chạy `git diff` cả file trước khi commit tài liệu đã có, và báo kết quả kiểm trong khối báo cáo.
+- `Repo/CLAUDE.md`, mục "Môi trường": mỗi lệnh ghi header `###` vào console.log; đặt UTF-8 cho console PowerShell trước khi chạy; truyền cờ Stryker bằng `npx stryker run <config> --cờ`.
+- `Repo/CLAUDE.md`, mục "Trạng thái": thay 3 dòng cũ (S3 Review, I01 chờ H02, E01 pending, member re-run chưa làm) bằng "Stage S4, S3 đóng 2026-10-23; hook ghi `ai-audit/evidence/s4/Tan_Hiep/`".
+- Kiểm diff `CLAUDE.md` so với bản sao trước khi sửa: thêm 17 dòng, bỏ 5 dòng. 5 dòng bỏ đều có chủ đích: 1 dòng preflight, 1 dòng blind, 3 dòng Trạng thái. `CLAUDE.md` không commit vì nằm ngoài repo.
+- Memory Claude Code: thư mục `memory/` trống, không có gì để sửa.
+- Commit seminar `main`: `7988acf` chore(ai-log), chưa push. Đã `git fetch` + `git pull --rebase`, nhánh đã cập nhật.
+- Bất thường mới: skill `t10-run-report` mục 1 vẫn ghi preflight theo cách cũ: chỉ `git pull --ff-only`, không có `git fetch`, không có `pull --rebase`. `CLAUDE.md` sẽ được ưu tiên hơn, nhưng skill nằm ngoài phạm vi task nên tôi không sửa.
+- Cần quyết định: Không
+```
+
+### Hành động
+
+- Edit: D:\HK7\Testing\Seminars\Repo\CLAUDE.md
+- Edit: D:\HK7\Testing\Seminars\Repo\CLAUDE.md
+- Edit: D:\HK7\Testing\Seminars\Repo\CLAUDE.md
+- Edit: D:\HK7\Testing\Seminars\Repo\CLAUDE.md
+
+## #13 — 2026-10-23 12:49 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+<pasted_content id="cce9">
+Task S4-F01a (dùng skill t10-run-report). Không sửa production code, commit không push.
+1) git fetch cả 2 repo; ghi hash main. Kiểm SUT main: node -e "JSON.parse(require('fs').readFileSync('backend/package.json','utf8'))" và ghi kết quả.
+2) Trên baseline 806ba19 (worktree riêng): npm ci; npm run test:cart-orders; npx stryker run stryker.cart-orders.config.json --dryRunOnly. Ghi giờ bắt đầu/kết thúc từng lệnh.
+3) Từ runs S3 của Cart, lấy thời gian chạy full mutate (nếu có log).
+Run ID F01a-1-cc. Evidence vào thư mục s4. Báo cáo ≤ 15 dòng.
+</pasted_content id="cce9">
+```
+
+### Output
+
+```text
+Giờ kiểm docs để biết thư mục evidence s4.
+
+Chạy 3 lệnh, mỗi lệnh có header + giờ bắt đầu/kết thúc.
+
+Lọc riêng các run Cart của Tan_Hiep và Thai_Hoa D04.
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: S4-F01a — Done. Seminar main @ `1f93af0`, SUT origin/main @ `69b845a`.
+- Kết quả: kiểm `package.json` trên SUT main **Fail**, JSON không hợp lệ: thiếu dấu phẩy ở `backend/package.json:24` (`mutate:auth:ai`), parser báo lỗi ở dòng 25 cột 5. Ở `806ba19` file parse OK.
+- Kết quả: F01a-1-cc **Pass**, chạy trên `806ba19`: `npm ci` 12:50:11–12:50:33 (22 s); `test:cart-orders` 12:50:33–12:50:35 (2 s), 36/36 pass; dry run Stryker 12:50:35–12:50:40 (5 s), 150 mutants.
+- Thời gian full mutate Cart của S3: E01-1 (`806ba19`, Tấn Hiệp) 2 phút 33 giây; F01-2 2 phút 5 giây; G01-2 2 phút 3 giây; các run `-cc` 26–30 giây; Thái Hòa D04 khoảng 2,5 phút. Bảng đủ nằm trong REPORT.
+- Evidence: `experiments/s4/runs/F01a-cc-REPORT.md`, `experiments/s4/runs/F01a-1-cc/console.log`
+- Commit seminar `main`: `1f93af0` chore(ai-log), `4f4efb5` docs(S4-F01a). Chưa push. Không sửa file nào trong EShop.
+- Bất thường mới: dry run Stryker báo "Ran 72 tests" trong khi Jest chạy 36 (E01-1 cũng vậy). Nguyên nhân chưa kiểm chứng; ghi trong `F01a-cc-REPORT.md` mục 2.
+- Bất thường mới: worktree `806ba19` còn để lại ở scratchpad (`C:/Users/[user]/AppData/Local/Temp/claude/D--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/wt-806ba19`) và đang đăng ký trong `git worktree list` của EShop.
+- Bất thường mới: tự chọn thư mục evidence `experiments/s4/runs/` theo mẫu của S4-E02, vì `Task_Output_Map.md` không ghi chỗ lưu evidence cho F01.
+- Cần quyết định: F01a-P1 – Sửa thế nào lỗi `package.json` trên main – (a) báo người merge PR #3 sửa / (b) giao Claude Code sửa trên nhánh riêng / (c) guide tạm dùng `806ba19`.
+```
+
+### Hành động
+
+- Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s4\runs\F01a-cc-REPORT.md
+
+## #14 — 2026-10-23 13:54 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+Thêm vào Repo/CLAUDE.md một quy tắc: mọi deliverable của Tấn Hiệp (guide, report, narration, script, form AI, AI Record, báo cáo) viết bằng tiếng Việt, giữ nguyên English technical terms, lệnh, tên file; không dịch sang English dù requirements ghi English. Commit, không push. Báo cáo ≤ 5 dòng.
+```
+
+### Output
+
+```text
+I đã thêm quy tắc vào `Repo/CLAUDE.md` nhưng **chưa commit được**: thư mục `Repo` không phải git repo (`fatal: not a git repository`), và file này không nằm trong repo nào.
+- Quy tắc mới nằm ở `CLAUDE.md:42`, trong mục "Quy tắc".
+- Sửa thêm `CLAUDE.md:23`: dòng cũ "deliverable S4 viết tiếng Anh" mâu thuẫn với quy tắc mới, nay đổi thành "ngôn ngữ deliverable theo mục 'Quy tắc'".
+- Kiểm bằng `diff` với bản sao lưu: chỉ khác đúng 2 chỗ trên, không mất dòng nào. Bản sao lưu ở `C:\Users\[user]\AppData\Local\Temp\claude\D--HK7-Testing-Seminars-Repo\3058f82a-a124-4cce-853c-9bab797d6360\scratchpad\CLAUDE.md.bak`.
+- Cần quyết định: muốn lưu vết thay đổi thì `git init` cho `Repo`, hay chép file vào repo seminar, hay để không commit?
+```
+
+## #15 — 2026-10-23 14:03 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+Đọc claude/Handoff_T10_Tan_Hiep_S4_Update.md trong Project (hoặc mình dán nếu không đọc được). Làm 2 việc, commit, không push, báo cáo ≤ 8 dòng:
+1) Thêm vào Repo/CLAUDE.md: mọi deliverable của Tấn Hiệp viết tiếng Việt (giữ English technical terms, lệnh, tên file); và Claude Code là nơi soạn nháp/chạy/sửa/commit.
+2) Trong clone SUT: tạo nhánh s4/fix-package-json từ main, thêm dấu phẩy thiếu sau mutate:auth:ai (backend/package.json dòng 24), kiểm `node -e "JSON.parse(require('fs').readFileSync('backend/package.json'))"` và `npm ci` trong backend, rồi commit.
+```
+
+### Output
+
+```text
+Now CLAUDE.md role rule.
+
+- **Việc 1 (CLAUDE.md):** đã thêm quy tắc "Claude Code là nơi soạn nháp, chạy, sửa và commit deliverable" vào mục "Vai trò". Quy tắc deliverable viết tiếng Việt đã có từ lượt trước (dòng 42). **Chưa commit được** vì `Repo` không phải git repo.
+- **Việc 2 (SUT):** đã sửa và commit `2a8f0fd` `chore(S4-F01a): add missing comma after mutate:auth:ai in backend/package.json` trên nhánh `s4/fix-package-json`, tách từ `origin/main` `69b845a`. Chưa push.
+- **Kiểm tra:** lệnh `JSON.parse` chạy được, `npm ci` trong `backend` exit 0. Diff chỉ thêm đúng 1 dấu phẩy, working tree sạch.
+- **Upstream:** tôi đã gỡ upstream của nhánh (lúc tạo nó tự trỏ tới `origin/main`) để tránh push nhầm lên main. Lần push đầu dùng `git push -u origin s4/fix-package-json`.
+- **Clone SUT:** clone chính giờ đang ở nhánh `s4/fix-package-json`, không còn ở `s3/G01-ai`.
+- **Handoff:** không đọc được `claude/Handoff_T10_Tan_Hiep_S4_Update.md` vì file nằm trong Project claude.ai, máy local không có. Hai việc trên làm theo prompt; nếu handoff có yêu cầu khác thì dán vào đây.
+- **Cần quyết định:** để lưu vết `CLAUDE.md`, chọn `git init` cho `Repo`, chép file vào repo seminar, hay để không commit?
+```
+
+### Hành động
+
+- Edit: D:\HK7\Testing\Seminars\Repo\CLAUDE.md
+
+## #16 — 2026-10-23 14:08 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+<pasted_content id="cce9">
+Đọc `git status` trong Repo seminar và clone SUT, liệt kê file chưa commit. Làm tiếp S4, commit (không push), báo cáo ≤ 12 dòng:
+1) SUT: bỏ nhánh s4/fix-package-json (Hòa đã sửa package.json trên main lúc 14:05), checkout main, git pull.
+2) Seminar: nếu docs/Demo_Script.md đang bị patch của mình, `git restore` nó (Hòa viết lại cả file, lấy bản của Hòa). Rồi commit các file chưa commit theo nhóm: materials/s4/*Tan_Hiep*, draft/User_Guide.md, draft/Seminar_Report.md. Sau đó `git pull --rebase`; nếu conflict thì dừng và báo.
+3) F01c: trên Windows, trong thư mục tạm mới, clone eshop-sut-workshop @ 6d2e790 và làm đúng từng bước draft/User_Guide.md mục 2.2 đến 4.1 (không dùng bản sửa tay). Lưu console.log từng lệnh và REPORT vào experiments/s4/runs/F01c-1-cc/. So số liệu: 88 tests; 7 mutant, 7 Survived; sau CO-02 là 3 Killed; sau 3 assertion 7 Killed/0 Survived. Ghi cả `npm --version`, `node --version` và việc `tempDirName` có cần không. Nếu lệnh hoặc số liệu lệch, sửa đúng chỗ đó trong draft/User_Guide.md và nêu rõ trong báo cáo; không sửa gì khác.
+4) Viết tiếng Việt, giữ English technical terms và tiêu đề mục.
+</pasted_content id="cce9">
+```
+
+### Output
+
+```text
+Now step 1 (SUT) and step 2 commits.
+
+Đang chạy F01c: clone xong (main = 6d2e790), giờ `npm ci` + `npm test` theo mục 2.2.
+
+Bước 3.3 lần đầu không áp được do lỗi script của tôi (file test dùng CRLF), nên kết quả vẫn 7 Survived. Tôi đang sửa cách áp snippet rồi chạy lại 3.3.
+
+3.3 khớp guide: 3 Killed, 4 Survived. Tiếp mục 4.1.
+
+Case 3 chưa áp do escaping backtick trong PowerShell (lỗi script của tôi). Áp lại bằng node, chỉ trong khối CO-12.
+
+Cả 3 mốc số liệu đều khớp. Giờ chạy chẩn đoán: bỏ `tempDirName` xem có cần không.
+
+### Báo cáo cho phiên thảo luận
+- File chưa commit lúc bắt đầu, repo seminar: 3 file `materials/s4/*Tan_Hiep*`, `draft/Seminar_Report.md`, `ai-audit/AI_Record_Tan_Hiep.md`, 3 file `*.patch` ở gốc repo, AI log. `docs/Demo_Script.md` không bị sửa nên không cần restore. Clone SUT sạch.
+- Việc 1 (SUT): `origin/main` `4b28756` đã có bản sửa của Hòa, `package.json` parse OK. Đã checkout main, pull, và xóa nhánh `s4/fix-package-json` (bỏ commit `2a8f0fd` chưa push).
+- Việc 2 (seminar `main`, chưa push): `d713737` thêm 3 file materials, `d7c1b05` thêm `Seminar_Report.md`, `8068e4f` AI log, `5d556f2` evidence F01c.
+- `git pull --rebase` bị git từ chối vì index còn file staged. Repo đang ahead 4, behind 0 so với `origin/main`, nên không có gì cần kéo về.
+- Việc 3: F01c-1-cc Pass, chạy trên workshop `6d2e790`, Node v24.15.0, npm 11.12.1, Stryker 10.0.0. Cả 4 mốc khớp guide:
+  - 88/88 tests pass.
+  - Baseline 7 mutant, 7 Survived.
+  - Sau CO-02: 3 Killed, 4 Survived.
+  - Sau 3 assertion: 7 Killed, 0 Survived, 0 Timeout.
+- Không có lệch nào về lệnh hay số liệu, nên tôi không sửa `draft/User_Guide.md`.
+- `tempDirName`: run chẩn đoán (không chính thức) bỏ key này vẫn ra 7 Killed. Với config tối giản của guide thì không bắt buộc, giữ lại cũng không sao.
+- Evidence: `experiments/s4/runs/F01c-1-cc/REPORT.md`, `console.log`, `diag-tempDirName.log`, 3 file json, report html, file diff.
+- Bất thường: script áp snippet của tôi lỗi 2 lần (file CRLF ở CO-02, escaping backtick ở CO-12). Run 14:11:33–14:11:40 vì thế không hợp lệ; đã ghi NOTE trong `console.log` và chạy lại. Mọi số trong REPORT lấy từ các run sau khi áp đúng.
+- Bất thường: PowerShell ở đây chạy với policy `Process = Bypass`, nên chưa tái hiện được lỗi `npm.ps1` bị chặn mà guide nhắc.
+- Cần quyết định: còn staged, chưa commit: 3 file `.patch` ở gốc repo và `ai-audit/AI_Record_Tan_Hiep.md`. Commit chúng, unstage, hay xóa các patch? Đây cũng là chỗ chặn `git pull --rebase`.
+```
+
+### Hành động
+
+- Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s4\runs\F01c-1-cc\REPORT.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s4\runs\F01c-1-cc\REPORT.md
 

@@ -582,6 +582,70 @@ claude.ai: ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-23_5aa8b0cf.md, lư�
 Claude Code: ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md, session ad369217, lượt #6.
 ```
 
+### Artifact AI-S4-A01-01
+ 
+| Field | Value |
+|---|---|
+| Stage / Task ID | S4 / S4-A01 |
+| Tool / Model | Claude (claude.ai), Claude Sonnet 5.5 |
+| Recorded Time & Provenance | 2026-10-23 12:38–13:20 (UTC+7): phiên `51fe5d1c` lượt #2–#4 |
+| Output Artifact / Section | `materials/s4/Guide_Contribution_Tan_Hiep.md`; `draft/User_Guide.md` (bản tiếng Việt) |
+| Verdict | ĐỀ XUẤT: VALID sau sửa (chờ bạn xác nhận) |
+| Reasoning & Source | Lệnh cài đặt lấy từ tài liệu chính thức; số liệu đã chạy lại trong sandbox Linux/Node 22 |
+| Verification | Chạy lại trên Windows 11, Node v24.15.0, npm 11.12.1 (F01c-1-cc): 4 mốc khớp; chưa tái hiện lỗi npm.ps1 |
+| Student Fix | Lỗi AI tự phát hiện: (1) dẫn FR-07 làm căn cứ "giỏ hàng mới rỗng" — sửa thành oracle suy luận; (2) câu "phiên AI từng thấy bài manual" nói quá — viết lại. Ngôn ngữ: bạn yêu cầu chuyển bản English sang tiếng Việt (AI dịch lại) |
+ 
+### Artifact AI-S4-B01-01
+ 
+| Field | Value |
+|---|---|
+| Stage / Task ID | S4 / S4-B01 |
+| Tool / Model | Claude (claude.ai), Claude Sonnet 5.5 |
+| Recorded Time & Provenance | 2026-10-23 12:38–13:20 (UTC+7): phiên `51fe5d1c` |
+| Output Artifact / Section | `materials/s4/Report_Contribution_Tan_Hiep.md`; sửa trực tiếp `draft/Seminar_Report.md` |
+| Verdict | ĐỀ XUẤT: VALID (chờ bạn xác nhận) |
+| Reasoning & Source | Bảng 6.2/6.5/6.6 đối chiếu với `experiments/s3/Experiment_Log_Tan_Hiep.md`; mutant 550:11 là mutant sửa lỗi (DEF-05) nên cả manual và AI đều để Survived |
+| Verification | Đối chiếu số liệu với log S3; mức review B (đọc diff, chạy lại lệnh)|
+ 
+### Artifact AI-S4-C01-01
+ 
+| Field | Value |
+|---|---|
+| Stage / Task ID | S4 / S4-C01 |
+| Tool / Model | Claude (claude.ai), Claude Sonnet 5.5 |
+| Recorded Time & Provenance | 2026-10-23 12:38–13:20 (UTC+7): phiên `51fe5d1c` |
+| Output Artifact / Section | `materials/s4/Demo_Contribution_Tan_Hiep.md` (kịch bản phần Cart & Orders). Hòa đã viết lại `docs/Demo_Script.md` (case Coupons) nên phần Cart nộp ở dạng kịch bản trong file này, chưa quay |
+| Verdict | ĐỀ XUẤT: VALID sau sửa (chờ bạn xác nhận) |
+| Reasoning & Source | Lệnh cài đặt dùng tài liệu chính thức |
+| Verification | Lệnh và số liệu lấy từ run S3 của Tấn Hiệp trên Windows 11 (E01-1, F01-2, G01-2); lệnh install chạy lại ở F01a-1-cc. Chưa chạy theo kịch bản và chưa quay. |
+| Student Fix | Lỗi AI: python edit lần đầu sai chuỗi "Mở" (đã sửa). Ngôn ngữ: bạn yêu cầu chuyển bản English sang tiếng Việt (AI dịch lại) |
+ 
+### Artifact AI-S4-WF-01
+ 
+| Field | Value |
+|---|---|
+| Stage / Task ID | S4 / — (workflow, handoff cuối phiên `5aa8b0cf`, lượt #31) |
+| Tool / Model | Claude (claude.ai), Opus 5.5 — viết handoff, phiên 5aa8b0cf (theo AI Record S3); Claude (claude.ai), Sonnet 5.5 — kiểm chứng handoff, phiên 51fe5d1c |
+| Recorded Time & Provenance | Handoff: phiên `5aa8b0cf` lượt #31. Kiểm chứng: 2026-10-23 12:38–12:52, phiên `51fe5d1c` lượt #2 |
+| Output Artifact / Section | `claude/Handoff_T10_Tan_Hiep.md` |
+| Verdict | ĐỀ XUẤT: INCOMPLETE (chờ bạn xác nhận) |
+| Reasoning & Source | Clone 2 repo và đối chiếu với handoff |
+| Verification | Sai: (1) hash `main` của SUT cũ; (2) "User_Guide ~880 dòng" thực tế 334; (3) `main` seminar đã tiến lên; (4) không phát hiện lỗi thiếu dấu phẩy `backend/package.json` dòng 24 trên SUT `main` |
+| Student Fix | Dùng trạng thái repo thật thay cho handoff; Hòa đã sửa package.json trên SUT main (4b28756, 14:05); nhánh đề xuất đã xóa, không dùng. **Verbatim Prompt/Output lượt #31: PENDING** — cần transcript `5aa8b0cf` |
+ 
+### Artifact AI-S4-F01-01
+ 
+| Field | Value |
+|---|---|
+| Stage / Task ID | S4 / S4-F01 (F01a, F01c) |
+| Tool / Model | Claude Code, Claude Opus 5.5 (`claude-opus-5-5`) |
+| Recorded Time & Provenance | 2026-10-23 12:49–12:51 (F01a) và 14:09–14:13 (F01c) (UTC+7): Claude Code session `3058f82a`; log `ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md` |
+| Output Artifact / Section | `experiments/s4/runs/F01a-1-cc/`, `experiments/s4/runs/F01a-cc-REPORT.md`; `experiments/s4/runs/F01c-1-cc/` (REPORT, console.log, json, html, diff, log chẩn đoán `tempDirName`) |
+| Verdict | ĐỀ XUẤT: VALID |
+| Reasoning & Source | F01a: kiểm `backend/package.json` trên SUT main (lỗi JSON dòng 24) và dry run baseline `806ba19` (36 tests Jest, 150 mutants); thời gian full mutate Cart lấy từ console.log S3. F01c: làm đúng `draft/User_Guide.md` mục 2.2–4.1 trên workshop `6d2e790`; số Stryker đếm từ `mutation.json` |
+| Verification | F01c-1-cc khớp 4 mốc của guide: 88 tests; 7 mutants, 7 Survived; sau CO-02 3 Killed; sau 3 assertion 7 Killed, 0 Survived. Lỗi AI: script áp snippet sai 2 lần (CRLF ở CO-02, escaping backtick ở CO-12); run 14:11:33–14:11:40 bị loại và chạy lại |
+| Student Fix | (điền sau review) |
+
 ## 3. Accuracy Summary & Audit Conclusion
 
 | Metric | Count | Percentage |

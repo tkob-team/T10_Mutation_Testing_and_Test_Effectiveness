@@ -1,0 +1,36 @@
+# Demo Script Contribution
+
+**Document Role:** Contribution cá nhân S4 cho leader ghép `Demo_Script.md`. Bản nháp do Claude soạn (AI-S4-C01-01), chờ Tấn Hiệp review và tập đọc; chưa phải bản đã duyệt, chưa quay.  
+**Stage:** S4  
+**Member:** Lê Tấn Hiệp  
+**Task IDs:** S4-C01  
+**Domain / Section:** Introduction, Installation và segment Cart & Orders  
+**Evidence Status:** Draft — lệnh và số liệu lấy từ run S3 đã có evidence; chưa quay; blocker: `backend/package.json` trên SUT `main` còn lỗi JSON (thiếu dấu phẩy sau `mutate:auth:ai`)
+
+Chỉ điền việc đã thực hiện; thiếu đầu vào ghi Pending và blocker. Giữ prompt, số liệu và evidence nguyên gốc. Đọc `docs/Working_Guide.md` để biết nơi bàn giao.
+
+**Demo case:** mutant `292:7` (`if (!userCarts[userId])` thành `if (true)`) trong `POST /api/cart`. Baseline CO-04 thêm hai sản phẩm nhưng chỉ assert status 200, nên mutant này xóa giỏ ở mỗi lần thêm mà không test nào fail. Manual kill bằng `toHaveLength(2)` sau `GET /api/cart`; AI kill bằng AI-CO-02. Giới hạn nêu trong video: `550:11` vẫn Survived ở cả hai vì mutant sửa lỗi cài sẵn (DEF-05).
+
+## Setup, Basic & Advanced Steps
+
+| Tool / Level | Lời dẫn (tiếng Việt) | Action / Command | Expected Screen / Output | Verified Evidence | Backup |
+|---|---|---|---|---|---|
+| Stryker / Setup | "Tests pass chưa chắc đã kiểm tra đúng hành vi. Mutation testing tạo những thay đổi nhỏ trong code, gọi là mutants, rồi chạy lại tests. Nếu có test fail thì mutant bị Killed; nếu mọi test vẫn pass thì mutant Survived. StrykerJS tự sinh mutants và chạy Jest giúp chúng ta. Đầu tiên, mình cài đặt project." | `git clone https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness.git eshop-demo`; `cd eshop-demo/backend`; `node --version`; `npm ci`; `npm run test:cart-orders` | Node 24.x; `npm ci` completes; Jest: 1 suite, 36 tests passed | Pending trên `main` (blocker package.json). Trên `806ba19`: F01a-1-cc `npm ci` 22 s; `test:cart-orders` 36/36 pass, 2 s (Claude Code, local commit `4f4efb5`, chưa push) | Quay trên checkout `806ba19`; hoặc dùng console.log của F01a-1-cc |
+| Stryker / Basic | "36 tests này đều pass, nhưng phần lớn chỉ kiểm tra HTTP status. Bây giờ mình chạy mutation baseline trên code Cart và Orders. Stryker tạo 150 mutants và có 34 survivors. Điểm là 74,83 phần trăm. Killed và Timeout đều được tính là đã phát hiện, và mình báo cáo hai loại này riêng." | `npm run mutate:cart-orders`; mở `reports/cart-orders/mutation.html`; lọc Survived; chọn `server.js:292` | Console: 150 mutants, Killed 82, Timeout 25, Survived 34, NoCoverage 2, RuntimeError 7, score 74.83%. HTML: mutant 292:7 màu Survived | E01-1 (Tấn Hiệp, `806ba19`): `experiments/s3/runs/Tan_Hiep/E01-1/`; thời gian chạy khoảng 2 phút 33 giây (F01a-cc-REPORT) | Mở `E01-1/mutation.html` đã lưu; tăng tốc đoạn chờ và ghi rõ trên video |
+| Stryker / Advanced (manual) | "Ở đây mutant xóa giỏ hàng mỗi lần thêm sản phẩm. Test CO-04 thêm hai sản phẩm nhưng chỉ kiểm tra status 200 nên không có gì fail. Quy tắc là sản phẩm đã thêm phải còn trong giỏ. Test manual của mình đọc lại giỏ sau hai lần thêm và kỳ vọng có hai sản phẩm. Test này pass trên code gốc và kill được mutant." | `git checkout s3/F01-manual`; mở `test/manual/cart-orders.manual.js`, test "Kill Mutant 292:7"; `npm run test:manual`; `npx stryker run stryker.cart-orders.manual.config.json --concurrency 2 --timeoutMS 5000 --timeoutFactor 1.5` | 44 tests pass; 150 mutants, Killed 112, Timeout 18, Survived 11, NoCoverage 2, RuntimeError 7, score 90.91%; 292:7 Killed by "Kill Mutant 292:7 - POST /api/cart preserves existing cart items across multiple additions" | F01-2 (Tấn Hiệp, `b77f5d6`): `experiments/s3/runs/Tan_Hiep/F01-2/`; killedBy xác nhận ở F01-2-cc, `H01` (`experiments/s3/runs/Tan_Hiep/H01-cc/`) | Mở `F01-2/mutation.html` đã lưu |
+| Claude / Setup | "Phần AI mình dùng Claude Code. Nó bắt đầu từ cùng baseline tests và mutation report, không có đáp án manual của mình." | Mở terminal ở thư mục repo; `claude --version`; chạy `claude`, hiện trạng đã đăng nhập (cài theo quickstart chính thức nếu chưa có) | Phiên Claude Code mới, đã đăng nhập, repo ở baseline | Lệnh theo Claude Code Quickstart (đọc 2026-10-23, chưa chạy trên máy Tấn Hiệp): macOS `curl -fsSL https://claude.ai/install.sh \| bash`, Windows `winget install Anthropic.ClaudeCode`, kiểm bằng `claude --version`. Model ghi trong run: claude-opus-5-5 | Quay trước, ghép vào |
+| Claude / Basic | "Mình đưa survivor cho Claude Code và yêu cầu viết assertion dựa trên đặc tả. Nó trả về một test cho mutant này. Đây là candidate gốc, trước khi mình chỉnh sửa." | Hiện prompt gốc và output gốc của G01-1-cc; hiện test AI-CO-02 trong `test/ai/cart-orders.ai.js` | Prompt, candidate "add two different products, GET /api/cart returns both" | G01-1-cc: `experiments/s3/runs/Tan_Hiep/G01-1-cc/`, `G01-cc-REPORT.md`; AI Record AI-S3-G01-01. Raw candidate: 5 test, giữ nguyên sau review, chỉ sửa comment header (`f4696c6`) | Dùng output đã lưu; không cần chạy live |
+| Claude / Advanced | "Mình review candidate theo đặc tả trước khi tin nó. Test pass trên code gốc và kill được mutant 292:7. Bộ test AI còn kill bốn mutant mục tiêu khác, điểm là 83,92 phần trăm. Một mutant mục tiêu, 550:11, vẫn Survived ở cả hai bộ test. Mutant đó sửa một lỗi của code gốc, nên test kill được nó sẽ phải kỳ vọng hành vi sai. Kết quả này chỉ áp dụng cho sáu mutant này trong code Cart." | `git checkout s3/G01-ai`; `npm run test:ai`; `npx stryker run stryker.cart-orders.ai.config.json --concurrency 2 --timeoutMS 5000 --timeoutFactor 1.5`; mở report, chỉ 292:7 Killed và 550:11 Survived | 41 tests pass; 150 mutants, Killed 102, Timeout 18, Survived 21, NoCoverage 2, RuntimeError 7, score 83.92%; 292:7 Killed by AI-CO-02 | G01-2 (Tấn Hiệp, `f4696c6`): `experiments/s3/runs/Tan_Hiep/G01-2/`; 292:7 Killed by AI-CO-02 và 550:11 Survived xác nhận ở G01-2-cc (`H01`) | Mở `G01-2/mutation.html` đã lưu |
+
+## Recording Handoff
+
+- **Clip:** `materials/s4/Demo_Segment_Tan_Hiep.mp4` hoặc link Drive/Moodle — Pending, chưa quay. Quay bằng giọng Tấn Hiệp, lời dẫn tiếng Việt (giữ English technical terms), không nhạc; thời lượng mục tiêu cho segment này khoảng 3–4 phút trong video chung 5–8 phút (ước lượng, chưa đo).
+- **Versions đã ghi ở S3:** Windows 11, Node v24.15.0, StrykerJS 10.0.0, Jest 30.5.2. Claude Code model: claude-opus-5-5.
+- **Backup reports:** `E01-1`, `F01-2`, `G01-2` (`mutation.html`) trong `experiments/s3/runs/Tan_Hiep/`.
+- **Lưu ý khi quay:**
+  - Dry run của Stryker trên `806ba19` in "Ran 72 tests" trong khi Jest chạy 36 (cũng thấy ở E01-1; nguyên nhân chưa kiểm chứng, ghi trong F01a-cc-REPORT). Nói "36 tests", không đọc số 72.
+  - Config manual và AI chỉ có trên nhánh `s3/F01-manual` và `s3/G01-ai`, chưa có trên `main`; cần checkout hai nhánh này (hoặc team quyết định merge). Các nhánh này không đặt `concurrency`, `timeoutMS`, `timeoutFactor` nên lệnh truyền cờ trực tiếp.
+  - Quay sau khi `package.json` trên SUT `main` được sửa, hoặc quay trên `806ba19`.
+  - Mỗi Stryker run mất khoảng 2 phút trên máy Tấn Hiệp; tăng tốc đoạn chờ và ghi rõ trên video.
+- **Pending:** Tấn Hiệp review/chỉnh lời dẫn theo giọng mình và tập đọc; chạy lại `claude --version` và đăng nhập trên máy trước khi quay.
+- **AI_Record:** AI-S4-C01-01 (claude.ai), ghi vào AI Record sau khi Tấn Hiệp review.
