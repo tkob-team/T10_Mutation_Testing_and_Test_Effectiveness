@@ -1,0 +1,8 @@
+--- stdout ---
+
+--- stderr ---
+Test Suites: 1 passed, 1 total
+Tests:       23 skipped, 2 passed, 25 total
+Snapshots:   0 total
+Time:        0.581 s, estimated 1 s
+Ran all test suites within paths "test/coupons.test.js".

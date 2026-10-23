@@ -1,0 +1,336 @@
+2026-10-23T01:31:54+07:00
+
+> backend@1.0.0 mutate:cart-orders:manual
+> stryker run stryker.cart-orders.manual.config.json
+
+[32m01:31:55 (22056) INFO ProjectReader[39m Found 1 of 16 file(s) to be mutated.
+[32m01:31:55 (22056) INFO Instrumenter[39m Instrumented 1 source file(s) with 150 mutant(s)
+[32m01:31:55 (22056) INFO ConcurrencyTokenProvider[39m Creating 15 test runner process(es).
+[32m01:31:55 (22056) INFO BroadcastReporter[39m Detected that current console does not support the "progress" reporter, downgrading to "progress-append-only" reporter
+[32m01:31:56 (22056) INFO DryRunExecutor[39m Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+[32m01:31:57 (22056) INFO DryRunExecutor[39m Initial test run succeeded. Ran 44 tests in 1 second (net 628 ms, overhead 735 ms).
+[33m01:31:59 (22056) WARN ChildProcessProxy[39m Child process [pid 21212] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 21212] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 21212,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m01:32:00 (22056) WARN ChildProcessProxy[39m Child process [pid 22676] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 22676] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 22676,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m01:32:01 (22056) WARN ChildProcessProxy[39m Child process [pid 14644] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 14644] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 14644,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m01:32:01 (22056) WARN ChildProcessProxy[39m Child process [pid 3864] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 3864] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 3864,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m01:32:01 (22056) WARN ChildProcessProxy[39m Child process [pid 15972] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 15972] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 15972,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m01:32:02 (22056) WARN ChildProcessProxy[39m Child process [pid 18592] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 18592] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 18592,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m01:32:05 (22056) WARN ChildProcessProxy[39m Child process [pid 24032] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 24032] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 24032,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m01:32:05 (22056) WARN ChildProcessProxy[39m Child process [pid 1628] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 1628] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 1628,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m01:32:06 (22056) WARN ChildProcessProxy[39m Child process [pid 4312] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 4312] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 4312,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m01:32:06 (22056) WARN ChildProcessProxy[39m Child process [pid 10252] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 10252] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 10252,
+  exitCode: 3221225477,
+  signal: null
+}
+Mutation testing 30% (elapsed: <1m, remaining: <1m) 56/150 tested (4 survived, 6 timed out)
+[33m01:32:07 (22056) WARN ChildProcessProxy[39m Child process [pid 22536] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 22536] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 22536,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m01:32:08 (22056) WARN ChildProcessProxy[39m Child process [pid 21348] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 21348] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 21348,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m01:32:16 (22056) WARN ChildProcessProxy[39m Child process [pid 15604] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 15604] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 15604,
+  exitCode: 3221225477,
+  signal: null
+}
+Mutation testing 72% (elapsed: <1m, remaining: <1m) 133/150 tested (9 survived, 17 timed out)
+[33m01:32:17 (22056) WARN ChildProcessProxy[39m Child process [pid 21580] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 21580] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 21580,
+  exitCode: 3221225477,
+  signal: null
+}
+
+All tests
+  manual/cart-orders.manual.js
+    ✓ Cart & Orders Manual Tests - Tấn Hiệp Survivor 3: PUT /api/orders/:id/cancel - Verify pending order is cancelled and DB updated to canceled [line 25] (killed 9)
+    ✓ Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 286:7 - GET /api/cart initializes empty cart array for new user [line 51] (killed 4)
+    ✓ Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 292:7 - POST /api/cart preserves existing cart items across multiple additions [line 71] (killed 6)
+    ✓ Cart & Orders Manual Tests - Tấn Hiệp POST /api/checkout - Verify successful order creation and DB pending status [line 111] (killed 2)
+    ✓ Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 326:47 - PUT /api/orders/:id/cancel returns error body when order not found [line 145] (killed 2)
+    ✓ Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 346:45 - GET /api/orders/:id returns error body when order not found [line 165] (killed 2)
+    ✓ Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 532:47 - PUT /api/admin/orders/:id/status returns error body when order not found [line 185] (killed 2)
+    ✓ Cart & Orders Manual Tests - Tấn Hiệp PUT /api/admin/orders/:id/status - Verify state transition rules and status update [line 204] (killed 6)
+  cart-orders.test.js
+    ✘ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-01 [invalid] get cart without token → 401 [line 21] (covered 0)
+    ~ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-02 [normal] new user gets an empty cart [line 26] (covered 6)
+    ✓ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-03 [normal] add one item, then read the cart [line 32] (killed 3)
+    ~ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-04 [normal] add two different products [line 40] (covered 8)
+    ~ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item [line 48] (covered 14)
+    ✘ Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-06 [invalid] checkout without token → 401 [line 58] (covered 0)
+    ~ Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-07 [normal] checkout with cart total and address [line 63] (covered 17)
+    ✓ Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order) [line 73] (killed 4)
+    ✓ Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id [line 85] (killed 6)
+    ✓ Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-10 [invalid] order detail of non-existent id → 404 [line 92] (killed 1)
+    ✓ Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users [line 98] (killed 4)
+    ✓ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200 [line 109] (killed 3)
+    ~ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order → 200 [line 109] (covered 31)
+    ✓ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400 [line 116] (killed 5)
+    ✓ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) → 400 [line 116] (killed 2)
+    ~ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-14 [invalid] cancel another user's order → 404 [line 123] (covered 18)
+    ~ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-15 [invalid] cancel a non-existent order → 404 [line 131] (covered 9)
+    ✘ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-16 [invalid] cancel without token → 401 [line 137] (covered 0)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200 [line 154] (killed 10)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200 [line 154] (killed 8)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200 [line 154] (killed 6)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → canceled → 200 [line 154] (killed 3)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → canceled → 200 [line 154] (killed 3)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400 [line 177] (killed 11)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400 [line 177] (killed 5)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] confirmed → delivered → 400 [line 177] (killed 1)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] confirmed → pending → 400 [line 177] (covered 55)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] shipping → pending → 400 [line 177] (killed 1)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] shipping → confirmed → 400 [line 177] (killed 1)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → pending → 400 [line 177] (covered 47)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → shipping → 400 [line 177] (covered 47)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → canceled → 400 [line 177] (covered 47)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → pending → 400 [line 177] (killed 2)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → confirmed → 400 [line 177] (covered 50)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → unknown_status → 400 [line 177] (covered 55)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-19 [invalid] change status of a non-existent order → 404 [line 184] (covered 9)
+
+[NoCoverage] ObjectLiteral
+server.js:305:44
+-         if (err) return res.status(500).json({ error: err.message });
++         if (err) return res.status(500).json({});
+
+[NoCoverage] BooleanLiteral
+server.js:551:29
+-           isValidTransition = true;
++           isValidTransition = false;
+
+[Survived] ConditionalExpression
+server.js:305:11
+-         if (err) return res.status(500).json({ error: err.message });
++         if (false) return res.status(500).json({ error: err.message });
+Tests ran:
+    Cart & Orders Manual Tests - Tấn Hiệp Survivor 3: PUT /api/orders/:id/cancel - Verify pending order is cancelled and DB updated to canceled
+    Cart & Orders Manual Tests - Tấn Hiệp POST /api/checkout - Verify successful order creation and DB pending status
+    Cart & Orders Manual Tests - Tấn Hiệp PUT /api/admin/orders/:id/status - Verify state transition rules and status update
+  and 26 more tests!
+
+
+[Survived] ArrayDeclaration
+server.js:314:5
+-       [req.user.id],
++       [],
+Tests ran:
+    Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order)
+
+
+[Survived] ObjectLiteral
+server.js:330:37
+-           return res.status(400).json({ error: "Cannot cancel this order." });
++           return res.status(400).json({});
+Tests ran:
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) → 400
+
+
+[Survived] StringLiteral
+server.js:330:46
+-           return res.status(400).json({ error: "Cannot cancel this order." });
++           return res.status(400).json({ error: "" });
+Tests ran:
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) → 400
+
+
+[Survived] StringLiteral
+server.js:512:5
+-       `
+-           SELECT orders.*, users.name as user_name 
+-           FROM orders 
+-           LEFT JOIN users ON orders.user_id = users.id
+-           ORDER BY orders.id DESC
+-       `,
++       ``,
+Tests ran:
+    Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users
+
+
+[Survived] ArrayDeclaration
+server.js:518:5
+-       [],
++       ["Stryker was here"],
+Tests ran:
+    Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users
+
+
+[Survived] ObjectLiteral
+server.js:554:37
+-           return res.status(400).json({
+-             error: `Invalid state transition from ${currentStatus} to ${status}`,
+-           });
++           return res.status(400).json({});
+Tests ran:
+    Cart & Orders Manual Tests - Tấn Hiệp PUT /api/admin/orders/:id/status - Verify state transition rules and status update
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400
+  and 10 more tests!
+
+
+[Survived] StringLiteral
+server.js:550:54
+-         if (currentStatus === "canceled" && status === "delivered")
++         if (currentStatus === "canceled" && status === "")
+Tests ran:
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → pending → 400
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → confirmed → 400
+
+
+[Survived] StringLiteral
+server.js:555:18
+-             error: `Invalid state transition from ${currentStatus} to ${status}`,
++             error: ``,
+Tests ran:
+    Cart & Orders Manual Tests - Tấn Hiệp PUT /api/admin/orders/:id/status - Verify state transition rules and status update
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400
+  and 10 more tests!
+
+
+[Survived] ConditionalExpression
+server.js:550:11
+-         if (currentStatus === "canceled" && status === "delivered")
++         if (false)
+Tests ran:
+    Cart & Orders Manual Tests - Tấn Hiệp PUT /api/admin/orders/:id/status - Verify state transition rules and status update
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200
+  and 15 more tests!
+
+
+[Survived] StringLiteral
+server.js:550:29
+-         if (currentStatus === "canceled" && status === "delivered")
++         if (currentStatus === "" && status === "delivered")
+Tests ran:
+    Cart & Orders Manual Tests - Tấn Hiệp PUT /api/admin/orders/:id/status - Verify state transition rules and status update
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200
+  and 15 more tests!
+
+
+Ran 9.05 tests per mutant on average.
+-----------|------------------|----------|-----------|------------|----------|----------|
+           | % Mutation score |          |           |            |          |          |
+File       |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+All files  |  90.91 |   92.20 |      112 |        18 |         11 |        2 |        7 |
+ server.js |  90.91 |   92.20 |      112 |        18 |         11 |        2 |        7 |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+[32m01:32:23 (22056) INFO JsonReporter[39m Your report can be found at: file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/reports/cart-orders-manual/mutation.json
+[32m01:32:23 (22056) INFO HtmlReporter[39m Your report can be found at: file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/reports/cart-orders-manual/mutation.html
+[32m01:32:23 (22056) INFO MutationTestExecutor[39m Done in 27 seconds.

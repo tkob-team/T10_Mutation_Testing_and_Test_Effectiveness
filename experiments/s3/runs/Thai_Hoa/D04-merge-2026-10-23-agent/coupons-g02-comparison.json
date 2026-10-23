@@ -1,0 +1,1363 @@
+{
+  "summary": {
+    "label": "coupons-g02-comparison",
+    "sameSource": true,
+    "sameSourceIgnoringCR": true,
+    "matched": 120,
+    "totalBaseline": 120,
+    "sameUniverse": true,
+    "baseline": {
+      "Killed": 39,
+      "Timeout": 21,
+      "Survived": 30,
+      "NoCoverage": 25,
+      "RuntimeError": 5,
+      "CompileError": 0,
+      "Ignored": 0,
+      "Pending": 0,
+      "total": 120,
+      "valid": 115,
+      "score": 52.17391304347826,
+      "assertionKillPercent": 33.91304347826087
+    },
+    "variant": {
+      "Killed": 41,
+      "Timeout": 21,
+      "Survived": 28,
+      "NoCoverage": 25,
+      "RuntimeError": 5,
+      "CompileError": 0,
+      "Ignored": 0,
+      "Pending": 0,
+      "total": 120,
+      "valid": 115,
+      "score": 53.91304347826087,
+      "assertionKillPercent": 35.65217391304348
+    },
+    "transitions": {
+      "NoCoverage -> NoCoverage": 25,
+      "Killed -> Killed": 39,
+      "Timeout -> Timeout": 21,
+      "Survived -> Survived": 28,
+      "RuntimeError -> RuntimeError": 5,
+      "Survived -> Killed": 2
+    },
+    "newAssertionKills": [
+      {
+        "file": "server.js",
+        "signature": "474|7|474|29|ConditionalExpression|true",
+        "baselineId": "111",
+        "variantId": "111",
+        "baseline": "Survived",
+        "variant": "Killed",
+        "killedBy": [
+          {
+            "id": "25",
+            "name": "AI: admin limit 2 persists and controls the per-user boundary (FR-17, FR-09 C5)"
+          }
+        ]
+      },
+      {
+        "file": "server.js",
+        "signature": "474|7|474|29|LogicalOperator|max_uses_per_user && 1",
+        "baselineId": "113",
+        "variantId": "113",
+        "baseline": "Survived",
+        "variant": "Killed",
+        "killedBy": [
+          {
+            "id": "25",
+            "name": "AI: admin limit 2 persists and controls the per-user boundary (FR-17, FR-09 C5)"
+          }
+        ]
+      }
+    ]
+  },
+  "mutants": [
+    {
+      "file": "server.js",
+      "signature": "398|46|402|16|BlockStatement|{}",
+      "baselineId": "56",
+      "variantId": "56",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "400|19|400|61|ArithmeticOperator|total_amount / (1 - coupon.discount_value)",
+      "baselineId": "57",
+      "variantId": "57",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "400|35|400|60|ArithmeticOperator|1 + coupon.discount_value",
+      "baselineId": "58",
+      "variantId": "58",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "412|106|412|109|StringLiteral|\"\"",
+      "baselineId": "68",
+      "variantId": "68",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "416|16|433|10|BlockStatement|{}",
+      "baselineId": "70",
+      "variantId": "70",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "418|15|418|40|ConditionalExpression|true",
+      "baselineId": "71",
+      "variantId": "71",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "418|15|418|40|ConditionalExpression|false",
+      "baselineId": "72",
+      "variantId": "72",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "418|15|418|40|EqualityOperator|coupon.type !== \"percent\"",
+      "baselineId": "73",
+      "variantId": "73",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "418|31|418|40|StringLiteral|\"\"",
+      "baselineId": "74",
+      "variantId": "74",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "418|42|422|12|BlockStatement|{}",
+      "baselineId": "75",
+      "variantId": "75",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "420|15|420|57|ArithmeticOperator|total_amount / (1 - coupon.discount_value)",
+      "baselineId": "76",
+      "variantId": "76",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "420|31|420|56|ArithmeticOperator|1 + coupon.discount_value",
+      "baselineId": "77",
+      "variantId": "77",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "422|18|424|12|BlockStatement|{}",
+      "baselineId": "78",
+      "variantId": "78",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "425|32|425|62|ArithmeticOperator|total_amount + discount_amount",
+      "baselineId": "79",
+      "variantId": "79",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "426|27|432|12|ObjectLiteral|{}",
+      "baselineId": "80",
+      "variantId": "80",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "427|22|427|26|BooleanLiteral|false",
+      "baselineId": "81",
+      "variantId": "81",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "431|22|431|155|StringLiteral|``",
+      "baselineId": "82",
+      "variantId": "82",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "431|50|431|75|ConditionalExpression|true",
+      "baselineId": "83",
+      "variantId": "83",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "431|50|431|75|ConditionalExpression|false",
+      "baselineId": "84",
+      "variantId": "84",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "431|50|431|75|EqualityOperator|coupon.type !== \"percent\"",
+      "baselineId": "85",
+      "variantId": "85",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "431|66|431|75|StringLiteral|\"\"",
+      "baselineId": "86",
+      "variantId": "86",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "431|102|431|105|StringLiteral|\"\"",
+      "baselineId": "87",
+      "variantId": "87",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "431|149|431|153|StringLiteral|\"\"",
+      "baselineId": "88",
+      "variantId": "88",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "450|44|450|66|ObjectLiteral|{}",
+      "baselineId": "101",
+      "variantId": "101",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "485|42|485|64|ObjectLiteral|{}",
+      "baselineId": "130",
+      "variantId": "130",
+      "baseline": "NoCoverage",
+      "variant": "NoCoverage",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "357|10|357|33|StringLiteral|\"\"",
+      "baselineId": "4",
+      "variantId": "4",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "18",
+          "name": "CP-13 admin lists the current fixture; reset removed original coupons"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "357|35|357|37|ArrayDeclaration|[\"Stryker was here\"]",
+      "baselineId": "5",
+      "variantId": "5",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "18",
+          "name": "CP-13 admin lists the current fixture; reset removed original coupons"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "356|58|360|2|BlockStatement|{}",
+      "baselineId": "2",
+      "variantId": "2",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "357|54|359|4|BlockStatement|{}",
+      "baselineId": "6",
+      "variantId": "6",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "358|5|358|20|CallExpression|;",
+      "baselineId": "7",
+      "variantId": "7",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "366|7|366|12|BooleanLiteral|code",
+      "baselineId": "11",
+      "variantId": "11",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "0",
+          "name": "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "363|45|441|2|BlockStatement|{}",
+      "baselineId": "10",
+      "variantId": "10",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "366|7|366|12|ConditionalExpression|true",
+      "baselineId": "12",
+      "variantId": "12",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "0",
+          "name": "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "367|33|367|71|ObjectLiteral|{}",
+      "baselineId": "14",
+      "variantId": "14",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "366|7|366|12|ConditionalExpression|false",
+      "baselineId": "13",
+      "variantId": "13",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "3",
+          "name": "CP-03 missing/empty code is refused: undefined"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "367|42|367|69|StringLiteral|\"\"",
+      "baselineId": "15",
+      "variantId": "15",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "371|5|371|11|ArrayDeclaration|[]",
+      "baselineId": "18",
+      "variantId": "18",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "0",
+          "name": "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "370|5|370|61|StringLiteral|\"\"",
+      "baselineId": "17",
+      "variantId": "17",
+      "baseline": "RuntimeError",
+      "variant": "RuntimeError",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "372|22|439|6|BlockStatement|{}",
+      "baselineId": "19",
+      "variantId": "19",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "373|11|373|18|BooleanLiteral|coupon",
+      "baselineId": "20",
+      "variantId": "20",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "373|11|373|18|ConditionalExpression|true",
+      "baselineId": "21",
+      "variantId": "21",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "0",
+          "name": "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "373|11|373|18|ConditionalExpression|false",
+      "baselineId": "22",
+      "variantId": "22",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "373|20|377|8|BlockStatement|{}",
+      "baselineId": "23",
+      "variantId": "23",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "376|17|376|78|ObjectLiteral|{}",
+      "baselineId": "24",
+      "variantId": "24",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "379|11|379|49|ConditionalExpression|true",
+      "baselineId": "26",
+      "variantId": "26",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "2",
+          "name": "CP-02 one currency unit below minimum is refused (FR-09 C3)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "376|26|376|76|StringLiteral|\"\"",
+      "baselineId": "25",
+      "variantId": "25",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "379|11|379|49|ConditionalExpression|false",
+      "baselineId": "27",
+      "variantId": "27",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "0",
+          "name": "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "379|11|379|49|EqualityOperator|total_amount >= coupon.min_order_amount",
+      "baselineId": "28",
+      "variantId": "28",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "379|11|379|49|EqualityOperator|total_amount <= coupon.min_order_amount",
+      "baselineId": "29",
+      "variantId": "29",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "0",
+          "name": "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "382|13|382|25|ConditionalExpression|true",
+      "baselineId": "31",
+      "variantId": "31",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "0",
+          "name": "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "382|13|382|25|ConditionalExpression|false",
+      "baselineId": "32",
+      "variantId": "32",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "8",
+          "name": "CP-06 one millisecond after expiry is refused (FR-09 C2)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "382|13|382|25|EqualityOperator|expiry <= now",
+      "baselineId": "33",
+      "variantId": "33",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "382|13|382|25|EqualityOperator|expiry >= now",
+      "baselineId": "34",
+      "variantId": "34",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "0",
+          "name": "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "382|27|384|10|BlockStatement|{}",
+      "baselineId": "35",
+      "variantId": "35",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "8",
+          "name": "CP-06 one millisecond after expiry is refused (FR-09 C2)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "379|51|434|8|BlockStatement|{}",
+      "baselineId": "30",
+      "variantId": "30",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "383|39|383|74|ObjectLiteral|{}",
+      "baselineId": "36",
+      "variantId": "36",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "383|48|383|72|StringLiteral|\"\"",
+      "baselineId": "37",
+      "variantId": "37",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "386|13|386|20|ConditionalExpression|true",
+      "baselineId": "38",
+      "variantId": "38",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "386|13|386|20|ConditionalExpression|false",
+      "baselineId": "39",
+      "variantId": "39",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "11",
+          "name": "CP-08 usage 2 meets/exceeds limit 2 (FR-09 C5)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "388|13|388|99|StringLiteral|\"\"",
+      "baselineId": "42",
+      "variantId": "42",
+      "baseline": "RuntimeError",
+      "variant": "RuntimeError",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "389|13|389|33|ArrayDeclaration|[]",
+      "baselineId": "43",
+      "variantId": "43",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "11",
+          "name": "CP-08 usage 2 meets/exceeds limit 2 (FR-09 C5)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "386|22|416|10|BlockStatement|{}",
+      "baselineId": "40",
+      "variantId": "40",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "391|19|391|65|ConditionalExpression|true",
+      "baselineId": "45",
+      "variantId": "45",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "0",
+          "name": "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "391|19|391|65|ConditionalExpression|false",
+      "baselineId": "46",
+      "variantId": "46",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "11",
+          "name": "CP-08 usage 2 meets/exceeds limit 2 (FR-09 C5)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "391|19|391|65|EqualityOperator|result.usage_count > coupon.max_uses_per_user",
+      "baselineId": "47",
+      "variantId": "47",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "11",
+          "name": "CP-08 usage 2 meets/exceeds limit 2 (FR-09 C5)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "391|19|391|65|EqualityOperator|result.usage_count < coupon.max_uses_per_user",
+      "baselineId": "48",
+      "variantId": "48",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "0",
+          "name": "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "391|67|395|16|BlockStatement|{}",
+      "baselineId": "49",
+      "variantId": "49",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "11",
+          "name": "CP-08 usage 2 meets/exceeds limit 2 (FR-09 C5)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "390|30|414|14|BlockStatement|{}",
+      "baselineId": "44",
+      "variantId": "44",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "392|45|394|18|ObjectLiteral|{}",
+      "baselineId": "50",
+      "variantId": "50",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "393|26|393|99|StringLiteral|``",
+      "baselineId": "51",
+      "variantId": "51",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "398|19|398|44|ConditionalExpression|true",
+      "baselineId": "52",
+      "variantId": "52",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "0",
+          "name": "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "398|19|398|44|ConditionalExpression|false",
+      "baselineId": "53",
+      "variantId": "53",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "398|19|398|44|EqualityOperator|coupon.type !== \"percent\"",
+      "baselineId": "54",
+      "variantId": "54",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "0",
+          "name": "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "398|35|398|44|StringLiteral|\"\"",
+      "baselineId": "55",
+      "variantId": "55",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "402|22|404|16|BlockStatement|{}",
+      "baselineId": "59",
+      "variantId": "59",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "0",
+          "name": "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "406|36|406|66|ArithmeticOperator|total_amount + discount_amount",
+      "baselineId": "60",
+      "variantId": "60",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "0",
+          "name": "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "407|31|413|16|ObjectLiteral|{}",
+      "baselineId": "61",
+      "variantId": "61",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "0",
+          "name": "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "408|26|408|30|BooleanLiteral|false",
+      "baselineId": "62",
+      "variantId": "62",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "0",
+          "name": "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "412|26|412|159|StringLiteral|``",
+      "baselineId": "63",
+      "variantId": "63",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "412|54|412|79|ConditionalExpression|false",
+      "baselineId": "65",
+      "variantId": "65",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "412|54|412|79|ConditionalExpression|true",
+      "baselineId": "64",
+      "variantId": "64",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "412|54|412|79|EqualityOperator|coupon.type !== \"percent\"",
+      "baselineId": "66",
+      "variantId": "66",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "412|70|412|79|StringLiteral|\"\"",
+      "baselineId": "67",
+      "variantId": "67",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "412|153|412|157|StringLiteral|\"\"",
+      "baselineId": "69",
+      "variantId": "69",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "435|37|437|10|ObjectLiteral|{}",
+      "baselineId": "90",
+      "variantId": "90",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "2",
+          "name": "CP-02 one currency unit below minimum is refused (FR-09 C3)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "436|18|436|118|StringLiteral|``",
+      "baselineId": "91",
+      "variantId": "91",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "434|14|438|8|BlockStatement|{}",
+      "baselineId": "89",
+      "variantId": "89",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "444|64|454|2|BlockStatement|{}",
+      "baselineId": "94",
+      "variantId": "94",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "447|5|447|66|StringLiteral|\"\"",
+      "baselineId": "96",
+      "variantId": "96",
+      "baseline": "RuntimeError",
+      "variant": "RuntimeError",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "448|5|448|29|ArrayDeclaration|[]",
+      "baselineId": "97",
+      "variantId": "97",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "15",
+          "name": "CP-11 quoting repeatedly does not consume allowance; recording usage does"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "449|20|452|6|BlockStatement|{}",
+      "baselineId": "98",
+      "variantId": "98",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "450|11|450|14|ConditionalExpression|true",
+      "baselineId": "99",
+      "variantId": "99",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "450|11|450|14|ConditionalExpression|false",
+      "baselineId": "100",
+      "variantId": "100",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "451|27|451|43|StringLiteral|\"\"",
+      "baselineId": "104",
+      "variantId": "104",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "451|16|451|45|ObjectLiteral|{}",
+      "baselineId": "103",
+      "variantId": "103",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "467|5|467|130|StringLiteral|\"\"",
+      "baselineId": "109",
+      "variantId": "109",
+      "baseline": "RuntimeError",
+      "variant": "RuntimeError",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "468|5|475|6|ArrayDeclaration|[]",
+      "baselineId": "110",
+      "variantId": "110",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "20",
+          "name": "CP-15 admin creates minimum=0 and max_uses=1; resulting coupon is usable"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "474|7|474|29|ConditionalExpression|true",
+      "baselineId": "111",
+      "variantId": "111",
+      "baseline": "Survived",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "25",
+          "name": "AI: admin limit 2 persists and controls the per-user boundary (FR-17, FR-09 C5)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "474|7|474|29|ConditionalExpression|false",
+      "baselineId": "112",
+      "variantId": "112",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "20",
+          "name": "CP-15 admin creates minimum=0 and max_uses=1; resulting coupon is usable"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "474|7|474|29|LogicalOperator|max_uses_per_user && 1",
+      "baselineId": "113",
+      "variantId": "113",
+      "baseline": "Survived",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "25",
+          "name": "AI: admin limit 2 persists and controls the per-user boundary (FR-17, FR-09 C5)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "457|65|481|2|BlockStatement|{}",
+      "baselineId": "107",
+      "variantId": "107",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "476|20|479|6|BlockStatement|{}",
+      "baselineId": "114",
+      "variantId": "114",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "477|11|477|14|ConditionalExpression|false",
+      "baselineId": "116",
+      "variantId": "116",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "24",
+          "name": "CP-18 duplicate code cannot create a second coupon (FR-17)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "477|44|477|66|ObjectLiteral|{}",
+      "baselineId": "117",
+      "variantId": "117",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "478|16|478|62|ObjectLiteral|{}",
+      "baselineId": "119",
+      "variantId": "119",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "20",
+          "name": "CP-15 admin creates minimum=0 and max_uses=1; resulting coupon is usable"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "478|27|478|43|StringLiteral|\"\"",
+      "baselineId": "120",
+      "variantId": "120",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "477|11|477|14|ConditionalExpression|true",
+      "baselineId": "115",
+      "variantId": "115",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "484|10|484|44|StringLiteral|\"\"",
+      "baselineId": "125",
+      "variantId": "125",
+      "baseline": "RuntimeError",
+      "variant": "RuntimeError",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "484|46|484|61|ArrayDeclaration|[]",
+      "baselineId": "126",
+      "variantId": "126",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "21",
+          "name": "CP-16 admin deletes only the addressed coupon (FR-17)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "483|71|488|2|BlockStatement|{}",
+      "baselineId": "123",
+      "variantId": "123",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "484|78|487|4|BlockStatement|{}",
+      "baselineId": "127",
+      "variantId": "127",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "485|9|485|12|ConditionalExpression|false",
+      "baselineId": "129",
+      "variantId": "129",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "486|14|486|43|ObjectLiteral|{}",
+      "baselineId": "132",
+      "variantId": "132",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "486|25|486|41|StringLiteral|\"\"",
+      "baselineId": "133",
+      "variantId": "133",
+      "baseline": "Survived",
+      "variant": "Survived",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "356|9|356|23|StringLiteral|\"\"",
+      "baselineId": "1",
+      "variantId": "1",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "18",
+          "name": "CP-13 admin lists the current fixture; reset removed original coupons"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "485|9|485|12|ConditionalExpression|true",
+      "baselineId": "128",
+      "variantId": "128",
+      "baseline": "Timeout",
+      "variant": "Timeout",
+      "killedBy": []
+    },
+    {
+      "file": "server.js",
+      "signature": "363|10|363|29|StringLiteral|\"\"",
+      "baselineId": "9",
+      "variantId": "9",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "0",
+          "name": "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "444|10|444|29|StringLiteral|\"\"",
+      "baselineId": "93",
+      "variantId": "93",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "15",
+          "name": "CP-11 quoting repeatedly does not consume allowance; recording usage does"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "457|10|457|30|StringLiteral|\"\"",
+      "baselineId": "106",
+      "variantId": "106",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "20",
+          "name": "CP-15 admin creates minimum=0 and max_uses=1; resulting coupon is usable"
+        }
+      ]
+    },
+    {
+      "file": "server.js",
+      "signature": "483|12|483|36|StringLiteral|\"\"",
+      "baselineId": "122",
+      "variantId": "122",
+      "baseline": "Killed",
+      "variant": "Killed",
+      "killedBy": [
+        {
+          "id": "21",
+          "name": "CP-16 admin deletes only the addressed coupon (FR-17)"
+        }
+      ]
+    }
+  ]
+}

@@ -5,7 +5,7 @@
 **Member:** Lê Tấn Hiệp  
 **Task IDs:** S3-A01, S3-B01  
 **Domain / Section:** Theory — Definitions, Operators & Workflow (A01); Stryker + Claude — Architecture & Workflow (B01). Domain SUT: Cart & Orders.  
-**Evidence Status:** Draft — literature/docs đã đối chiếu; ví dụ F-A01-04 chạy trong sandbox AI, **chưa có run của chính Tấn Hiệp** (làm ở S3-C01).
+**Evidence Status:** Draft — literature/docs đã đối chiếu; ví dụ F-A01-04 đã được Tấn Hiệp chạy lại ở S3-C01 (C01-2, C01-4), kết quả khớp. **Sửa 2026-10-18:** F-A01-02 (nhận xét), Q9, F-B01-04 và Open questions — trước đó bỏ sót `README.md` là đặc tả yêu cầu (SRS) của SUT.
 
 Ranh giới với notes teammate: coverage vs mutation score và chi tiết mutant states thuộc S3-A02 (Thái Hòa); equivalent mutants, limits và AI approaches thuộc S3-A03 (Phúc Hoàng). Notes này chỉ nhắc ngắn khi cần để giải thích.
 
@@ -21,7 +21,7 @@ Ranh giới với notes teammate: coverage vs mutation score và chi tiết muta
 | Q6. Industry áp dụng thế nào? | Reading list T10; [SRC-03], [SRC-04] | F-A01-05 | Literature only |
 | Q7. Kiến trúc StrykerJS: các thành phần và luồng chạy? | [SRC-07], [SRC-08], [SRC-09], [SRC-10] | F-B01-01 | Docs; chưa debug nội bộ |
 | Q8. Claude tham gia ở đâu, cần input gì, human verification thế nào? | Proposal S2 §3.2, §4.3; [SRC-11] | F-B01-02, F-B01-03 | Workflow **Proposed** — chưa chạy trên EShop (S3-G01) |
-| Q9. EShop backend có sẵn sàng cho Stryker chưa? | `SUT/backend/server.js`, `database.js`, `package.json` @ `85af3ba` | F-B01-04: cần seams | Source inspection, chưa chạy; quyết định thuộc S3-D04 |
+| Q9. EShop backend có sẵn sàng cho Stryker chưa? | `SUT/backend/server.js`, `database.js`, `package.json`, `README.md` (SRS) @ `85af3ba` | F-B01-04: cần cô lập app/DB; làm được bằng test-only mocks, không sửa production code | Kiểm chứng bằng run trong S3-D01 (Experiment Log) |
 
 ## Findings & Examples
 
@@ -61,7 +61,7 @@ Mỗi operator mô phỏng một kiểu lỗi thường gặp: sai phép tính, 
 | BooleanLiteral | `true`↔`false` | `isValidTransition = true` (541…) | Test transition hợp lệ được chấp nhận |
 | ArithmeticOperator, AssignmentOperator, UpdateOperator, MethodExpression, OptionalChaining, ArrayDeclaration, Regex, UnaryOperator | Xem [SRC-06] | Không thấy vị trí rõ trong routes Cart & Orders | — |
 
-**Nhận xét quan trọng:** `POST /api/cart` và `POST /api/checkout` gần như không có logic (push nguyên body; total lấy từ client). Phần lớn mutants của domain sẽ nằm ở **cancel** và **admin status transition**, không ở "cart quantity / checkout total". Xem Open questions.
+**Nhận xét quan trọng (sửa 2026-10-18):** `api_specification.md` không nêu rule cho cart/checkout, nhưng `README.md` (SRS) có: FR-07 thêm cùng sản phẩm phải tăng số lượng; FR-08 backend phải tự tính lại tổng tiền, không nhận `total_amount` từ client, và xóa giỏ sau checkout. Code `POST /api/cart`, `POST /api/checkout` **không triển khai** các rule này, nên chúng là lỗi gốc (DEF-01…03 trong Experiment Log), không phải "không có gì để test". Mutants của domain vẫn tập trung ở cancel và admin status transition vì đó là nơi code có logic điều kiện.
 
 ### F-A01-03 — Workflow
 
@@ -166,7 +166,7 @@ Bản strong: đổi `weak` → `strong` trong `fileName` và `testMatch`. Số 
 - Chọn mutants theo xác suất dựa trên hiệu quả lịch sử của operator.
 - Hiển thị kết quả ngay trong code review.
 
-Quy mô: 6.000 kỹ sư, khoảng 30% diff có coverage (2018); hơn 24.000 developer (2021).
+Quy mô: năm 2018, hệ thống được 6.000 kỹ sư dùng khi viết hoặc review code change, và xử lý khoảng 30% số diff của Google **đã có statement coverage được tính** (mẫu số là các diff có coverage, không phải toàn bộ diff; abstract [SRC-03]: "processes about 30% of all diffs across Google that have statement coverage calculated"). Năm 2021: hơn 24.000 developer trên hơn 1.000 project [SRC-04].
 
 Áp dụng cho EShop: giới hạn `mutate` theo domain bằng mutation range dòng (`"server.js:321-349"`) vì backend gom routes trong một file; khi chọn survivor, bỏ qua mutants trong `console.log`/message không quan trọng — tương tự ý tưởng arid nodes.
 
@@ -270,20 +270,23 @@ Lý do thiết kế: câu 3 chống failure mode "assertion học theo bug hiệ
 
 Claude nói "assertion này sẽ kill mutant" **không phải evidence**; chỉ G2 + G3 là evidence.
 
-### F-B01-04 — EShop Fit (source inspection @ `85af3ba`, not run)
+### F-B01-04 — EShop Fit (source inspection @ `85af3ba`; sửa 2026-10-18)
 
-| Observation | File:line | Ảnh hưởng tới Stryker/tests | Đề xuất (Proposed — quyết định ở S3-D04) |
+**Bản trước (2026-10-16) bỏ sót `README.md`.** File này là SRS của SUT: *"Mô tả yêu cầu nghiệp vụ đúng của hệ thống EShop. Sinh viên sử dụng tài liệu này làm cơ sở thiết kế test case, sau đó kiểm thử hệ thống thực để tìm ra các điểm triển khai không tuân thủ đặc tả"* (README §Phạm vi tài liệu). Repo gốc `ttbhanh/eshop-sut` và fork của nhóm giống hệt nhau (trừ `.gitignore`). Các sai khác code/spec dưới đây vì vậy là **lỗi cài sẵn có chủ đích**, được giữ nguyên trong SUT và ghi là lỗi gốc.
+
+| Observation | File:line | Requirement | Xử lý trong S3-D01 |
 |---|---|---|---|
-| `npm test` là placeholder báo lỗi | `package.json` | Chưa có runner | Thêm `jest`, `supertest`, `@stryker-mutator/*` (devDependencies) |
-| `server.js` gọi `app.listen` và không export `app` | 570–572 | Test không `require` được app; port 3000 xung đột giữa workers | Seam: `module.exports = app` + chỉ listen khi `require.main === module` |
-| `database.js` tự `DROP`/seed khi được require, dùng file `database.sqlite` cố định | 4, 13–117 | Test chạm DB file thật; workers song song ghi cùng file; seed bất đồng bộ có thể chưa xong khi test gửi request | Seam: chọn DB path qua env (`:memory:` cho test) + export promise/hàm init để test chờ seed xong |
-| Cart lưu trong biến global `userCarts` | 14 | State rò giữa các test | Reset trong `beforeEach` hoặc export hàm reset |
-| `POST /api/cart` push nguyên body, không validate | 290–295 | Rất ít mutants; spec §4.2 không nêu rule quantity | Cần GV/nhóm xác nhận expected behavior trước khi viết case "cart quantity" |
-| `POST /api/checkout` dùng `total_amount` từ client, không tính lại | 297–309 | Không có logic "checkout total" để mutate | Như trên |
-| Cancel chặn chỉ `delivered`/`canceled`; comment trong code nói lẽ ra chỉ cho `pending`/`confirmed` | 328–329 | Spec §4.6 "chưa giao" mơ hồ với `shipping` | Câu hỏi cho nhóm/GV — ảnh hưởng expected result |
-| Admin transition cho phép `canceled → delivered` | 550–551 | Test theo spec sẽ fail trên code gốc → baseline không pass | Phải chọn: sửa SUT trước freeze, hoặc loại case, hoặc ghi known defect |
-| Admin routes chỉ `authenticateToken`, không kiểm role admin | 510, 525 | Spec §6 yêu cầu admin | Như trên; phần auth chung với domain Phúc Hoàng |
-| `GET /api/orders/:id` không yêu cầu token | 344 | Lộ đơn hàng người khác | Như trên |
+| `npm test` là placeholder báo lỗi | `package.json` | — | Thêm `jest`, `supertest`, `@stryker-mutator/*` (devDependencies, pin version) |
+| `server.js` gọi `app.listen`, không export `app` | 570–572 | — | Test-only: mock `express` để lấy instance `app` và thay `listen` bằng no-op. **Không sửa production code** |
+| `database.js` DROP + seed file `database.sqlite` mỗi lần được require; seed bất đồng bộ | 4, 13–117 | — | Test-only: mock `sqlite3` để mọi `Database` mở `:memory:` (mỗi test file một DB riêng, file đang track không bị sửa); helper đợi seed xong |
+| Cart lưu trong biến global `userCarts` | 14 | — | Mỗi test dùng user mới đăng ký |
+| `POST /api/cart` push nguyên body | 290–295 | FR-07: thêm cùng sản phẩm phải tăng số lượng | Lỗi gốc DEF-01 |
+| `POST /api/checkout` lưu `total_amount` của client, không xóa giỏ | 297–309 | FR-08: backend tự tính tổng, xóa giỏ sau checkout | Lỗi gốc DEF-02, DEF-03 |
+| Cancel chỉ chặn `delivered`/`canceled` (comment: lẽ ra chỉ cho `pending`/`confirmed`) | 328–329 | FR-10, FR-20: chỉ hủy khi `pending` hoặc `confirmed` | Lỗi gốc DEF-04 |
+| Admin cho phép `canceled → delivered` | 550–551 | FR-10: `delivered`, `canceled` là trạng thái kết thúc | Lỗi gốc DEF-05 |
+| Admin routes chỉ `authenticateToken`, không kiểm role | 510, 525 | FR-12, SEC-03 | Lỗi gốc DEF-06, DEF-07 |
+| `GET /api/orders/:id` không yêu cầu token, không kiểm chủ đơn | 344 | spec §4 (header), FR-11 | Lỗi gốc DEF-08 |
+| FR-10: "Khi `shipping`… chỉ Admin mới có thể thao tác" | README FR-10 | Sơ đồ không có cạnh `shipping → canceled` | Chưa rõ admin có được hủy đơn `shipping` không → loại khỏi cả hai suite, ghi open point |
 
 ## Source Register
 
@@ -291,7 +294,7 @@ Claude nói "assertion này sẽ kill mutant" **không phải evidence**; chỉ 
 |---|---|---|---|---|
 | SRC-01 | Y. Jia, M. Harman, "An Analysis and Survey of the Development of Mutation Testing," IEEE TSE 37(5):649–678, 2011 | https://doi.org/10.1109/TSE.2010.62 | Định nghĩa, CPH, Coupling Effect, quy trình, strong/weak, HOM | 2026-10-16 |
 | SRC-02 | R. A. DeMillo, R. J. Lipton, F. G. Sayward, "Hints on Test Data Selection," Computer 11(4), 1978 (dẫn qua SRC-01) | — | Nguồn gốc Coupling Effect | Not accessed directly |
-| SRC-03 | G. Petrović, M. Ivanković, "State of Mutation Testing at Google," ICSE-SEIP 2018 | https://research.google/pubs/pub46584/ | Diff-based, arid lines, 6.000 kỹ sư, ~30% diffs | 2026-10-16 |
+| SRC-03 | G. Petrović, M. Ivanković, "State of Mutation Testing at Google," ICSE-SEIP 2018 | https://research.google/pubs/pub46584/ | Diff-based, arid lines, 6.000 kỹ sư, ~30% các diff đã có statement coverage | 2026-10-16 |
 | SRC-04 | G. Petrović et al., "Practical Mutation Testing at Scale: A view from Google," IEEE TSE 2021 | https://research.google/pubs/pub50658/ | Mutation testing vs analysis; >24.000 developers | 2026-10-16 |
 | SRC-05 | Stryker — Mutant states and metrics | https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/ | States, công thức score | 2026-10-16 |
 | SRC-06 | Stryker — Supported mutators | https://stryker-mutator.io/docs/mutation-testing-elements/supported-mutators/ | Danh sách mutators StrykerJS | 2026-10-16 |
@@ -302,6 +305,7 @@ Claude nói "assertion này sẽ kill mutant" **không phải evidence**; chỉ 
 | SRC-11 | T10 Seminar Proposal (S2), §3.2, §4.3; Tool Survey Proposal Table 6 | `proposal/s2/T10_Seminar_Proposal.md`, `proposal/s2/Tool_Survey_Proposal.md` | Vai trò Claude, thiết kế so sánh, failure modes | 2026-10-16 |
 | SRC-12 | StrykerJS — Disable mutants | https://stryker-mutator.io/docs/stryker-js/disable-mutants/ | Comment syntax, trạng thái Ignored | 2026-10-16 |
 | SRC-13 | EShop backend source, commit `85af3ba` | `SUT/backend/server.js`, `database.js`, `package.json`; `SUT/api_specification.md` §4, §6.2 | F-A01-02 cột EShop, F-B01-04 | 2026-10-16 |
+| SRC-14 | EShop System Requirements Specification v2.0 (2026-05-14), `README.md` | `SUT/README.md` FR-07, FR-08, FR-10, FR-11, FR-12, FR-18, FR-20, SEC-03; repo gốc https://github.com/ttbhanh/eshop-sut | Expected results Cart & Orders, lỗi gốc DEF-01…08 | 2026-10-18 |
 
 ## Handoff
 
@@ -311,11 +315,12 @@ Claude nói "assertion này sẽ kill mutant" **không phải evidence**; chỉ 
   - StrykerJS + jest-runner + `perTest` là cấu hình phù hợp; cần seams ở `server.js`/`database.js` trước khi chạy trên EShop.
   - Claude chỉ là nguồn candidates; kill phải được xác nhận bằng run (G2 + G3).
 - Open questions:
-  1. "cart quantity / checkout total" không có logic trong code → giữ case, đổi trọng tâm sang cancel + status transition, hay thêm logic? (cần nhóm/GV xác nhận trước S3-D01)
-  2. Cancel có được khi `shipping` không (spec §4.6 vs comment code)?
-  3. Defects `canceled → delivered`, thiếu kiểm role admin: sửa trước baseline hay ghi known defect?
-  4. Seams production code (export app, DB path) do ai làm, commit nào? (S3-D04 — Thái Hòa)
-  5. `docs/s2/Scope_and_Decisions.md` chưa có trong repo; S3 đang dựa vào proposal S2.
+  1. ~~Cart/checkout không có logic~~ → Đã giải quyết 2026-10-18: SRS FR-07/FR-08 có rule; code không triển khai → lỗi gốc.
+  2. ~~Cancel khi `shipping`~~ → FR-10, FR-20: không được hủy → lỗi gốc DEF-04.
+  3. ~~Sửa lỗi gốc hay ghi known defect~~ → Hòa: viết theo task được giao và ghi rõ; nhóm giữ nguyên SUT, test lỗi gốc để ở `test/defects/`, ngoài baseline.
+  4. ~~Seams production code~~ → Không cần: cô lập bằng test-only mocks trong S3-D01.
+  5. `docs/s2/Scope_and_Decisions.md` vẫn chưa có trong repo; S3 dựa vào proposal S2 và SRS.
+  6. Admin có được hủy đơn `shipping` không (FR-10 câu "chỉ Admin mới có thể thao tác")? Chưa rõ, chưa test.
 - AI record: `ai-audit/AI_Record_Tan_Hiep.md` — Artifact AI-S3-A01-01, AI-S3-B01-01.
 
 ## Report Outline Input
@@ -328,4 +333,4 @@ Claude nói "assertion này sẽ kill mutant" **không phải evidence**; chỉ 
 | Related work — Industry | F-A01-05 |
 | Tools — StrykerJS architecture | F-B01-01 |
 | Method — AI-assisted assertion workflow | F-B01-02, F-B01-03 |
-| Threats / Limits — SUT preparation | F-B01-04 (sau khi S3-D04 quyết định) |
+| Threats / Limits — SUT preparation | F-B01-04 (harness test-only, lỗi gốc giữ nguyên) |

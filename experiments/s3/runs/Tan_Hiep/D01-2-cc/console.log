@@ -1,0 +1,172 @@
+
+> backend@1.0.0 test:defects
+> jest --testMatch "**/test/defects/*.defects.js"
+
+FAIL test/defects/cart-orders.defects.js
+  ● DEF-01 FR-07: adding the same product again increases quantity, no new line
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 7
+
+      Array [
+        Object {
+          "id": 4,
+          "name": "Tai nghe AirPods Pro 2",
+          "price": 6000000,
+    -     "quantity": 3,
+    +     "quantity": 2,
+    +   },
+    +   Object {
+    +     "id": 4,
+    +     "name": "Tai nghe AirPods Pro 2",
+    +     "price": 6000000,
+    +     "quantity": 1,
+        },
+      ]
+
+    [0m [90m 20 |[39m   [36mawait[39m request(app)[33m.[39mpost([32m'/api/cart'[39m)[33m.[39m[36mset[39m(bearer(token))[33m.[39msend({ [33m...[39mitem[33m,[39m quantity[33m:[39m [35m1[39m })[33m;[39m
+     [90m 21 |[39m   [36mconst[39m cart [33m=[39m [36mawait[39m request(app)[33m.[39m[36mget[39m([32m'/api/cart'[39m)[33m.[39m[36mset[39m(bearer(token))[33m;[39m
+    [31m[1m>[22m[39m[90m 22 |[39m   expect(cart[33m.[39mbody)[33m.[39mtoEqual([{ [33m...[39mitem[33m,[39m quantity[33m:[39m [35m3[39m }])[33m;[39m
+     [90m    |[39m                     [31m[1m^[22m[39m
+     [90m 23 |[39m })[33m;[39m
+     [90m 24 |[39m
+     [90m 25 |[39m test([32m'DEF-02 FR-08: backend recomputes total from the cart, ignores client total_amount'[39m[33m,[39m [36masync[39m () [33m=>[39m {[0m
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:22:21)
+
+  ● DEF-02 FR-08: backend recomputes total from the cart, ignores client total_amount
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 12000000
+    Received: 1
+
+    [0m [90m 31 |[39m     [33m.[39msend({ total_amount[33m:[39m [35m1[39m[33m,[39m shipping_address[33m:[39m [32m'HCM'[39m })[33m;[39m
+     [90m 32 |[39m   [36mconst[39m order [33m=[39m [36mawait[39m [36mget[39m(db[33m,[39m [32m'SELECT total_amount FROM orders WHERE id = ?'[39m[33m,[39m [res[33m.[39mbody[33m.[39morderId])[33m;[39m
+    [31m[1m>[22m[39m[90m 33 |[39m   expect(order[33m.[39mtotal_amount)[33m.[39mtoBe([35m12000000[39m)[33m;[39m
+     [90m    |[39m                              [31m[1m^[22m[39m
+     [90m 34 |[39m })[33m;[39m
+     [90m 35 |[39m
+     [90m 36 |[39m test([32m'DEF-03 FR-08: cart is cleared after a successful checkout'[39m[33m,[39m [36masync[39m () [33m=>[39m {[0m
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:33:30)
+
+  ● DEF-03 FR-08: cart is cleared after a successful checkout
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 8
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "id": 4,
+    +     "name": "Tai nghe AirPods Pro 2",
+    +     "price": 6000000,
+    +     "quantity": 2,
+    +   },
+    + ]
+
+    [0m [90m 39 |[39m   [36mawait[39m request(app)[33m.[39mpost([32m'/api/checkout'[39m)[33m.[39m[36mset[39m(bearer(user[33m.[39mtoken))[33m.[39msend({ total_amount[33m:[39m [35m12000000[39m[33m,[39m shipping_address[33m:[39m [32m'HCM'[39m })[33m;[39m
+     [90m 40 |[39m   [36mconst[39m cart [33m=[39m [36mawait[39m request(app)[33m.[39m[36mget[39m([32m'/api/cart'[39m)[33m.[39m[36mset[39m(bearer(user[33m.[39mtoken))[33m;[39m
+    [31m[1m>[22m[39m[90m 41 |[39m   expect(cart[33m.[39mbody)[33m.[39mtoEqual([])[33m;[39m
+     [90m    |[39m                     [31m[1m^[22m[39m
+     [90m 42 |[39m })[33m;[39m
+     [90m 43 |[39m
+     [90m 44 |[39m test([32m'DEF-04 FR-10/FR-20: user cannot cancel a shipping order'[39m[33m,[39m [36masync[39m () [33m=>[39m {[0m
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:41:21)
+
+  ● DEF-04 FR-10/FR-20: user cannot cancel a shipping order
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 200
+
+    [0m [90m 46 |[39m   [36mconst[39m id [33m=[39m [36mawait[39m createOrder(app[33m,[39m db[33m,[39m token[33m,[39m [32m'shipping'[39m)[33m;[39m
+     [90m 47 |[39m   [36mconst[39m res [33m=[39m [36mawait[39m request(app)[33m.[39mput([32m`/api/orders/${id}/cancel`[39m)[33m.[39m[36mset[39m(bearer(token))[33m;[39m
+    [31m[1m>[22m[39m[90m 48 |[39m   expect(res[33m.[39mstatus)[33m.[39mtoBe([35m400[39m)[33m;[39m
+     [90m    |[39m                      [31m[1m^[22m[39m
+     [90m 49 |[39m   expect([36mawait[39m orderStatus(db[33m,[39m id))[33m.[39mtoBe([32m'shipping'[39m)[33m;[39m
+     [90m 50 |[39m })[33m;[39m
+     [90m 51 |[39m[0m
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:48:22)
+
+  ● DEF-05 FR-10: canceled is a final state, canceled → delivered is rejected
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 200
+
+    [0m [90m 57 |[39m     [33m.[39m[36mset[39m(bearer(adminToken))
+     [90m 58 |[39m     [33m.[39msend({ status[33m:[39m [32m'delivered'[39m })[33m;[39m
+    [31m[1m>[22m[39m[90m 59 |[39m   expect(res[33m.[39mstatus)[33m.[39mtoBe([35m400[39m)[33m;[39m
+     [90m    |[39m                      [31m[1m^[22m[39m
+     [90m 60 |[39m   expect([36mawait[39m orderStatus(db[33m,[39m id))[33m.[39mtoBe([32m'canceled'[39m)[33m;[39m
+     [90m 61 |[39m })[33m;[39m
+     [90m 62 |[39m[0m
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:59:22)
+
+  ● DEF-06 FR-12/SEC-03: non-admin cannot change order status
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected value: 200
+    Received array: [401, 403]
+
+    [0m [90m 68 |[39m     [33m.[39m[36mset[39m(bearer(user[33m.[39mtoken))
+     [90m 69 |[39m     [33m.[39msend({ status[33m:[39m [32m'confirmed'[39m })[33m;[39m
+    [31m[1m>[22m[39m[90m 70 |[39m   expect([[35m401[39m[33m,[39m [35m403[39m])[33m.[39mtoContain(res[33m.[39mstatus)[33m;[39m
+     [90m    |[39m                      [31m[1m^[22m[39m
+     [90m 71 |[39m   expect([36mawait[39m orderStatus(db[33m,[39m id))[33m.[39mtoBe([32m'pending'[39m)[33m;[39m
+     [90m 72 |[39m })[33m;[39m
+     [90m 73 |[39m[0m
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:70:22)
+
+  ● DEF-07 FR-12/SEC-03: non-admin cannot list all orders
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected value: 200
+    Received array: [401, 403]
+
+    [0m [90m 75 |[39m   [36mconst[39m { token } [33m=[39m [36mawait[39m newUser(app)[33m;[39m
+     [90m 76 |[39m   [36mconst[39m res [33m=[39m [36mawait[39m request(app)[33m.[39m[36mget[39m([32m'/api/admin/orders'[39m)[33m.[39m[36mset[39m(bearer(token))[33m;[39m
+    [31m[1m>[22m[39m[90m 77 |[39m   expect([[35m401[39m[33m,[39m [35m403[39m])[33m.[39mtoContain(res[33m.[39mstatus)[33m;[39m
+     [90m    |[39m                      [31m[1m^[22m[39m
+     [90m 78 |[39m })[33m;[39m
+     [90m 79 |[39m
+     [90m 80 |[39m test([32m'DEF-08 spec §4 header, FR-11: order detail requires token and ownership'[39m[33m,[39m [36masync[39m () [33m=>[39m {[0m
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:77:22)
+
+  ● DEF-08 spec §4 header, FR-11: order detail requires token and ownership
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 401
+    Received: 200
+
+    [0m [90m 84 |[39m
+     [90m 85 |[39m   [36mconst[39m anonymous [33m=[39m [36mawait[39m request(app)[33m.[39m[36mget[39m([32m`/api/orders/${id}`[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 86 |[39m   expect(anonymous[33m.[39mstatus)[33m.[39mtoBe([35m401[39m)[33m;[39m
+     [90m    |[39m                            [31m[1m^[22m[39m
+     [90m 87 |[39m
+     [90m 88 |[39m   [36mconst[39m notOwner [33m=[39m [36mawait[39m request(app)[33m.[39m[36mget[39m([32m`/api/orders/${id}`[39m)[33m.[39m[36mset[39m(bearer(other[33m.[39mtoken))[33m;[39m
+     [90m 89 |[39m   expect([[35m403[39m[33m,[39m [35m404[39m])[33m.[39mtoContain(notOwner[33m.[39mstatus)[33m;[39m[0m
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:86:28)
+
+Test Suites: 1 failed, 1 total
+Tests:       8 failed, 8 total
+Snapshots:   0 total
+Time:        0.606 s
+Ran all test suites.

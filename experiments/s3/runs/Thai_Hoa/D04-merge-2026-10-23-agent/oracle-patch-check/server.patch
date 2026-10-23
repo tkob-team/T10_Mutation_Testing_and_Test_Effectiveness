@@ -1,0 +1,35 @@
+diff --git "a/D:\\Workspace\\1. Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\\backend\\server.js" "b/C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-coupon-oracle-v8LNqu\\server.js"
+index 34f55a2..e92382a 100644
+--- "a/D:\\Workspace\\1. Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\\backend\\server.js"	
++++ "b/C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-coupon-oracle-v8LNqu\\server.js"
+@@ -376,10 +376,10 @@ app.post("/api/apply-coupon", (req, res) => {
+           .json({ error: "Mã giảm giá không tồn tại hoặc đã bị vô hiệu hóa" });
+       }
+ 
+-      if (total_amount > coupon.min_order_amount) {
++      if (total_amount >= coupon.min_order_amount) {
+         const now = new Date();
+         const expiry = new Date(coupon.expired_at);
+-        if (expiry < now) {
++        if (expiry <= now) {
+           return res.status(400).json({ error: "Mã giảm giá đã hết hạn" });
+         }
+ 
+@@ -397,7 +397,7 @@ app.post("/api/apply-coupon", (req, res) => {
+               let discount_amount = 0;
+               if (coupon.type === "percent") {
+                 discount_amount = Math.floor(
+-                  total_amount * (1 - coupon.discount_value),
++                  total_amount * coupon.discount_value / 100,
+                 );
+               } else {
+                 discount_amount = coupon.discount_value;
+@@ -417,7 +417,7 @@ app.post("/api/apply-coupon", (req, res) => {
+           let discount_amount = 0;
+           if (coupon.type === "percent") {
+             discount_amount = Math.floor(
+-              total_amount * (1 - coupon.discount_value),
++              total_amount * coupon.discount_value / 100,
+             );
+           } else {
+             discount_amount = coupon.discount_value;

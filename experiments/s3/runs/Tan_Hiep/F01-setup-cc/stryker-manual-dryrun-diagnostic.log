@@ -1,0 +1,34 @@
+[32m21:08:02 (19348) INFO ProjectReader[39m Found 1 of 16 file(s) to be mutated.
+[32m21:08:02 (19348) INFO Instrumenter[39m Instrumented 1 source file(s) with 150 mutant(s)
+[32m21:08:02 (19348) INFO ConcurrencyTokenProvider[39m Creating 15 test runner process(es).
+[32m21:08:02 (19348) INFO BroadcastReporter[39m Detected that current console does not support the "progress" reporter, downgrading to "progress-append-only" reporter
+[32m21:08:02 (19348) INFO DryRunExecutor[39m Note: running the dry-run only. No mutations will be tested.
+[32m21:08:02 (19348) INFO DryRunExecutor[39m Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+[91m21:08:03 (19348) ERROR DryRunExecutor[39m One or more tests resulted in an error:
+	Your test suite must contain at least one test. Error: Your test suite must contain at least one test.
+    at onResult (D:\HK7\Testing\Seminars\Repo\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\backend\node_modules\@jest\core\build\index.js:1054:18)
+    at D:\HK7\Testing\Seminars\Repo\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\backend\node_modules\@jest\core\build\index.js:1125:165
+    at D:\HK7\Testing\Seminars\Repo\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\backend\node_modules\emittery\index.js:363:13
+    at Array.map (<anonymous>)
+    at Emittery.emit (D:\HK7\Testing\Seminars\Repo\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\backend\node_modules\emittery\index.js:361:23)
+[91m21:08:03 (19348) ERROR Stryker[39m Unexpected error occurred while running Stryker Error: Something went wrong in the initial test run
+    at DryRunExecutor.validateResultCompleted (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/process/3-dry-run-executor.js:76:15)
+    at DryRunExecutor.executeDryRun (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/process/3-dry-run-executor.js:100:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async WorkItem.execute (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/concurrent/pool.js:32:28)
+    at async file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/concurrent/pool.js:69:13
+[32m21:08:03 (19348) INFO Stryker[39m This might be a known problem with a solution documented in our troubleshooting guide.
+[32m21:08:03 (19348) INFO Stryker[39m You can find it at https://stryker-mutator.io/docs/stryker-js/troubleshooting/
+[32m21:08:03 (19348) INFO Stryker[39m Still having trouble figuring out what went wrong? Try `npx stryker run --fileLogLevel trace --logLevel debug` to get some more info.
+node:internal/process/promises:394
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+Error: Something went wrong in the initial test run
+    at DryRunExecutor.validateResultCompleted (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/process/3-dry-run-executor.js:76:15)
+    at DryRunExecutor.executeDryRun (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/process/3-dry-run-executor.js:100:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async WorkItem.execute (file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/concurrent/pool.js:32:28)
+    at async file:///D:/HK7/Testing/Seminars/Repo/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/backend/node_modules/@stryker-mutator/core/dist/src/concurrent/pool.js:69:13
+
+Node.js v24.15.0

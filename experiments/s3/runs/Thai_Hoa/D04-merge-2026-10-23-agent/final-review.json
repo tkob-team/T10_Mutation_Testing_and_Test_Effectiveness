@@ -1,0 +1,69 @@
+{
+  "executor": "OpenAI Codex AI Agent",
+  "checkedUtc": "2026-10-22T20:13:07.090Z",
+  "checks": [
+    {
+      "name": "Final frozen baseline: 88 pass",
+      "pass": true
+    },
+    {
+      "name": "Fresh install succeeds; final tests pass",
+      "pass": true
+    },
+    {
+      "name": "54 separate assertion failures, no runtime suite failure",
+      "pass": true
+    },
+    {
+      "name": "All original Auth source hashes identical",
+      "pass": true
+    },
+    {
+      "name": "G02 raw candidate bytes equal executed candidate",
+      "pass": true
+    },
+    {
+      "name": "coupons-f02-comparison: source/universe/new assertion kills",
+      "pass": true
+    },
+    {
+      "name": "coupons-g02-comparison: source/universe/new assertion kills",
+      "pass": true
+    },
+    {
+      "name": "cart-manual-frozen-comparison: source/universe/new assertion kills",
+      "pass": true
+    },
+    {
+      "name": "cart-ai-frozen-comparison: source/universe/new assertion kills",
+      "pass": true
+    },
+    {
+      "name": "SUT returned to frozen baseline branch",
+      "pass": true
+    },
+    {
+      "name": "SUT working tree clean",
+      "pass": true
+    },
+    {
+      "name": "Production unchanged from original",
+      "pass": true
+    },
+    {
+      "name": "Variant branches share frozen base",
+      "pass": true
+    },
+    {
+      "name": "Maintained local Markdown links resolve",
+      "pass": true
+    },
+    {
+      "name": "Sheet write not falsely claimed successful",
+      "pass": true
+    }
+  ],
+  "jsonFilesParsed": 80,
+  "localLinksChecked": 108,
+  "errors": []
+}

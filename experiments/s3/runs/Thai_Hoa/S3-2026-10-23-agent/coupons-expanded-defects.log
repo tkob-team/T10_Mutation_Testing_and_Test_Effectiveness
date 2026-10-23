@@ -1,0 +1,515 @@
+--- stdout ---
+
+--- stderr ---
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log "Connected to database".
+
+       7 |         console.error('Could not connect to database', err);
+       8 |     } else {
+    >  9 |         console.log('Connected to database');
+         |                 ^
+      10 |     }
+      11 | });
+      12 |
+
+      at console.log (node_modules/@jest/console/build/index.js:324:10)
+      at MemoryDatabase.<anonymous> (database.js:9:17)
+
+FAIL test/defects/coupons.defects.js (10.563 s)
+  ● CD-01 exact minimum must be accepted (FR-09 C3 >=)
+
+    thrown: "Exceeded timeout of 5000 ms for a hook.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      at _getError (node_modules/jest-circus/build/jestAdapterInit.js:1985:12)
+          at Array.map (<anonymous>)
+
+    Cause:
+        thrown: "Exceeded timeout of 5000 ms for a hook.
+        Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+          3 | const h = require('../helpers/coupons');
+          4 | let app,db,token,admin;
+        > 5 | beforeAll(async () => { ({app,db} = await h.loadApp()); });
+            | ^
+          6 | beforeEach(async () => {
+          7 |   h.freeze(); await h.resetCoupons(db);
+          8 |   token = await h.login(app,h.USER); admin = await h.login(app,h.ADMIN);
+
+          at Object.<anonymous> (test/defects/coupons.defects.js:5:1)
+
+  ● CD-02 10 percent means divide by 100 (FR-09 formula)
+
+    thrown: "Exceeded timeout of 5000 ms for a hook.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      at _getError (node_modules/jest-circus/build/jestAdapterInit.js:1985:12)
+          at Array.map (<anonymous>)
+
+    Cause:
+        thrown: "Exceeded timeout of 5000 ms for a hook.
+        Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+          3 | const h = require('../helpers/coupons');
+          4 | let app,db,token,admin;
+        > 5 | beforeAll(async () => { ({app,db} = await h.loadApp()); });
+            | ^
+          6 | beforeEach(async () => {
+          7 |   h.freeze(); await h.resetCoupons(db);
+          8 |   token = await h.login(app,h.USER); admin = await h.login(app,h.ADMIN);
+
+          at Object.<anonymous> (test/defects/coupons.defects.js:5:1)
+
+  ● CD-03 exactly at expiry is invalid (FR-09 C2 now < expiry)
+
+    thrown: "Exceeded timeout of 5000 ms for a hook.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      at _getError (node_modules/jest-circus/build/jestAdapterInit.js:1985:12)
+          at Array.map (<anonymous>)
+
+    Cause:
+        thrown: "Exceeded timeout of 5000 ms for a hook.
+        Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+          3 | const h = require('../helpers/coupons');
+          4 | let app,db,token,admin;
+        > 5 | beforeAll(async () => { ({app,db} = await h.loadApp()); });
+            | ^
+          6 | beforeEach(async () => {
+          7 |   h.freeze(); await h.resetCoupons(db);
+          8 |   token = await h.login(app,h.USER); admin = await h.login(app,h.ADMIN);
+
+          at Object.<anonymous> (test/defects/coupons.defects.js:5:1)
+
+  ● CD-04 absent JWT cannot apply a valid coupon (FR-09 C4)
+
+    thrown: "Exceeded timeout of 5000 ms for a hook.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      at _getError (node_modules/jest-circus/build/jestAdapterInit.js:1985:12)
+          at Array.map (<anonymous>)
+
+    Cause:
+        thrown: "Exceeded timeout of 5000 ms for a hook.
+        Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+          3 | const h = require('../helpers/coupons');
+          4 | let app,db,token,admin;
+        > 5 | beforeAll(async () => { ({app,db} = await h.loadApp()); });
+            | ^
+          6 | beforeEach(async () => {
+          7 |   h.freeze(); await h.resetCoupons(db);
+          8 |   token = await h.login(app,h.USER); admin = await h.login(app,h.ADMIN);
+
+          at Object.<anonymous> (test/defects/coupons.defects.js:5:1)
+
+  ● CD-04 invalid JWT cannot apply a valid coupon (FR-09 C4)
+
+    thrown: "Exceeded timeout of 5000 ms for a hook.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      at _getError (node_modules/jest-circus/build/jestAdapterInit.js:1985:12)
+          at Array.map (<anonymous>)
+
+    Cause:
+        thrown: "Exceeded timeout of 5000 ms for a hook.
+        Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+          3 | const h = require('../helpers/coupons');
+          4 | let app,db,token,admin;
+        > 5 | beforeAll(async () => { ({app,db} = await h.loadApp()); });
+            | ^
+          6 | beforeEach(async () => {
+          7 |   h.freeze(); await h.resetCoupons(db);
+          8 |   token = await h.login(app,h.USER); admin = await h.login(app,h.ADMIN);
+
+          at Object.<anonymous> (test/defects/coupons.defects.js:5:1)
+
+  ● CD-05 body user_id omitted cannot bypass my limit (FR-09 C4/C5)
+
+    thrown: "Exceeded timeout of 5000 ms for a hook.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      at _getError (node_modules/jest-circus/build/jestAdapterInit.js:1985:12)
+          at Array.map (<anonymous>)
+
+    Cause:
+        thrown: "Exceeded timeout of 5000 ms for a hook.
+        Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+          3 | const h = require('../helpers/coupons');
+          4 | let app,db,token,admin;
+        > 5 | beforeAll(async () => { ({app,db} = await h.loadApp()); });
+            | ^
+          6 | beforeEach(async () => {
+          7 |   h.freeze(); await h.resetCoupons(db);
+          8 |   token = await h.login(app,h.USER); admin = await h.login(app,h.ADMIN);
+
+          at Object.<anonymous> (test/defects/coupons.defects.js:5:1)
+
+  ● CD-05 body user_id another-user cannot bypass my limit (FR-09 C4/C5)
+
+    thrown: "Exceeded timeout of 5000 ms for a hook.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      at _getError (node_modules/jest-circus/build/jestAdapterInit.js:1985:12)
+          at Array.map (<anonymous>)
+
+    Cause:
+        thrown: "Exceeded timeout of 5000 ms for a hook.
+        Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+          3 | const h = require('../helpers/coupons');
+          4 | let app,db,token,admin;
+        > 5 | beforeAll(async () => { ({app,db} = await h.loadApp()); });
+            | ^
+          6 | beforeEach(async () => {
+          7 |   h.freeze(); await h.resetCoupons(db);
+          8 |   token = await h.login(app,h.USER); admin = await h.login(app,h.ADMIN);
+
+          at Object.<anonymous> (test/defects/coupons.defects.js:5:1)
+
+  ● CD-06 ordinary user cannot list coupons (FR-12, SEC-03; API 5.2)
+
+    thrown: "Exceeded timeout of 5000 ms for a hook.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      at _getError (node_modules/jest-circus/build/jestAdapterInit.js:1985:12)
+          at Array.map (<anonymous>)
+
+    Cause:
+        thrown: "Exceeded timeout of 5000 ms for a hook.
+        Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+          3 | const h = require('../helpers/coupons');
+          4 | let app,db,token,admin;
+        > 5 | beforeAll(async () => { ({app,db} = await h.loadApp()); });
+            | ^
+          6 | beforeEach(async () => {
+          7 |   h.freeze(); await h.resetCoupons(db);
+          8 |   token = await h.login(app,h.USER); admin = await h.login(app,h.ADMIN);
+
+          at Object.<anonymous> (test/defects/coupons.defects.js:5:1)
+
+  ● CD-06 ordinary user cannot create coupons (FR-12, SEC-03; API 5.2)
+
+    thrown: "Exceeded timeout of 5000 ms for a hook.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      at _getError (node_modules/jest-circus/build/jestAdapterInit.js:1985:12)
+          at Array.map (<anonymous>)
+
+    Cause:
+        thrown: "Exceeded timeout of 5000 ms for a hook.
+        Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+          3 | const h = require('../helpers/coupons');
+          4 | let app,db,token,admin;
+        > 5 | beforeAll(async () => { ({app,db} = await h.loadApp()); });
+            | ^
+          6 | beforeEach(async () => {
+          7 |   h.freeze(); await h.resetCoupons(db);
+          8 |   token = await h.login(app,h.USER); admin = await h.login(app,h.ADMIN);
+
+          at Object.<anonymous> (test/defects/coupons.defects.js:5:1)
+
+  ● CD-06 ordinary user cannot delete coupons (FR-12, SEC-03; API 5.2)
+
+    thrown: "Exceeded timeout of 5000 ms for a hook.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      at _getError (node_modules/jest-circus/build/jestAdapterInit.js:1985:12)
+          at Array.map (<anonymous>)
+
+    Cause:
+        thrown: "Exceeded timeout of 5000 ms for a hook.
+        Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+          3 | const h = require('../helpers/coupons');
+          4 | let app,db,token,admin;
+        > 5 | beforeAll(async () => { ({app,db} = await h.loadApp()); });
+            | ^
+          6 | beforeEach(async () => {
+          7 |   h.freeze(); await h.resetCoupons(db);
+          8 |   token = await h.login(app,h.USER); admin = await h.login(app,h.ADMIN);
+
+          at Object.<anonymous> (test/defects/coupons.defects.js:5:1)
+
+  ● CD-07 admin validation: missing-code is refused without insertion (FR-17)
+
+    thrown: "Exceeded timeout of 5000 ms for a hook.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      at _getError (node_modules/jest-circus/build/jestAdapterInit.js:1985:12)
+          at Array.map (<anonymous>)
+
+    Cause:
+        thrown: "Exceeded timeout of 5000 ms for a hook.
+        Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+          3 | const h = require('../helpers/coupons');
+          4 | let app,db,token,admin;
+        > 5 | beforeAll(async () => { ({app,db} = await h.loadApp()); });
+            | ^
+          6 | beforeEach(async () => {
+          7 |   h.freeze(); await h.resetCoupons(db);
+          8 |   token = await h.login(app,h.USER); admin = await h.login(app,h.ADMIN);
+
+          at Object.<anonymous> (test/defects/coupons.defects.js:5:1)
+
+  ● CD-07 admin validation: missing-type is refused without insertion (FR-17)
+
+    thrown: "Exceeded timeout of 5000 ms for a hook.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      at _getError (node_modules/jest-circus/build/jestAdapterInit.js:1985:12)
+          at Array.map (<anonymous>)
+
+    Cause:
+        thrown: "Exceeded timeout of 5000 ms for a hook.
+        Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+          3 | const h = require('../helpers/coupons');
+          4 | let app,db,token,admin;
+        > 5 | beforeAll(async () => { ({app,db} = await h.loadApp()); });
+            | ^
+          6 | beforeEach(async () => {
+          7 |   h.freeze(); await h.resetCoupons(db);
+          8 |   token = await h.login(app,h.USER); admin = await h.login(app,h.ADMIN);
+
+          at Object.<anonymous> (test/defects/coupons.defects.js:5:1)
+
+  ● CD-07 admin validation: missing-discount is refused without insertion (FR-17)
+
+    thrown: "Exceeded timeout of 5000 ms for a hook.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      at _getError (node_modules/jest-circus/build/jestAdapterInit.js:1985:12)
+          at Array.map (<anonymous>)
+
+    Cause:
+        thrown: "Exceeded timeout of 5000 ms for a hook.
+        Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+          3 | const h = require('../helpers/coupons');
+          4 | let app,db,token,admin;
+        > 5 | beforeAll(async () => { ({app,db} = await h.loadApp()); });
+            | ^
+          6 | beforeEach(async () => {
+          7 |   h.freeze(); await h.resetCoupons(db);
+          8 |   token = await h.login(app,h.USER); admin = await h.login(app,h.ADMIN);
+
+          at Object.<anonymous> (test/defects/coupons.defects.js:5:1)
+
+  ● CD-07 admin validation: missing-minimum is refused without insertion (FR-17)
+
+    thrown: "Exceeded timeout of 5000 ms for a hook.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      at _getError (node_modules/jest-circus/build/jestAdapterInit.js:1985:12)
+          at Array.map (<anonymous>)
+
+    Cause:
+        thrown: "Exceeded timeout of 5000 ms for a hook.
+        Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+          3 | const h = require('../helpers/coupons');
+          4 | let app,db,token,admin;
+        > 5 | beforeAll(async () => { ({app,db} = await h.loadApp()); });
+            | ^
+          6 | beforeEach(async () => {
+          7 |   h.freeze(); await h.resetCoupons(db);
+          8 |   token = await h.login(app,h.USER); admin = await h.login(app,h.ADMIN);
+
+          at Object.<anonymous> (test/defects/coupons.defects.js:5:1)
+
+  ● CD-07 admin validation: missing-uses is refused without insertion (FR-17)
+
+    thrown: "Exceeded timeout of 5000 ms for a hook.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      at _getError (node_modules/jest-circus/build/jestAdapterInit.js:1985:12)
+          at Array.map (<anonymous>)
+
+    Cause:
+        thrown: "Exceeded timeout of 5000 ms for a hook.
+        Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+          3 | const h = require('../helpers/coupons');
+          4 | let app,db,token,admin;
+        > 5 | beforeAll(async () => { ({app,db} = await h.loadApp()); });
+            | ^
+          6 | beforeEach(async () => {
+          7 |   h.freeze(); await h.resetCoupons(db);
+          8 |   token = await h.login(app,h.USER); admin = await h.login(app,h.ADMIN);
+
+          at Object.<anonymous> (test/defects/coupons.defects.js:5:1)
+
+  ● CD-07 admin validation: unknown-type is refused without insertion (FR-17)
+
+    thrown: "Exceeded timeout of 5000 ms for a hook.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      at _getError (node_modules/jest-circus/build/jestAdapterInit.js:1985:12)
+          at Array.map (<anonymous>)
+
+    Cause:
+        thrown: "Exceeded timeout of 5000 ms for a hook.
+        Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+          3 | const h = require('../helpers/coupons');
+          4 | let app,db,token,admin;
+        > 5 | beforeAll(async () => { ({app,db} = await h.loadApp()); });
+            | ^
+          6 | beforeEach(async () => {
+          7 |   h.freeze(); await h.resetCoupons(db);
+          8 |   token = await h.login(app,h.USER); admin = await h.login(app,h.ADMIN);
+
+          at Object.<anonymous> (test/defects/coupons.defects.js:5:1)
+
+  ● CD-07 admin validation: zero-discount is refused without insertion (FR-17)
+
+    thrown: "Exceeded timeout of 5000 ms for a hook.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      at _getError (node_modules/jest-circus/build/jestAdapterInit.js:1985:12)
+          at Array.map (<anonymous>)
+
+    Cause:
+        thrown: "Exceeded timeout of 5000 ms for a hook.
+        Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+          3 | const h = require('../helpers/coupons');
+          4 | let app,db,token,admin;
+        > 5 | beforeAll(async () => { ({app,db} = await h.loadApp()); });
+            | ^
+          6 | beforeEach(async () => {
+          7 |   h.freeze(); await h.resetCoupons(db);
+          8 |   token = await h.login(app,h.USER); admin = await h.login(app,h.ADMIN);
+
+          at Object.<anonymous> (test/defects/coupons.defects.js:5:1)
+
+  ● CD-07 admin validation: negative-discount is refused without insertion (FR-17)
+
+    thrown: "Exceeded timeout of 5000 ms for a hook.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      at _getError (node_modules/jest-circus/build/jestAdapterInit.js:1985:12)
+          at Array.map (<anonymous>)
+
+    Cause:
+        thrown: "Exceeded timeout of 5000 ms for a hook.
+        Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+          3 | const h = require('../helpers/coupons');
+          4 | let app,db,token,admin;
+        > 5 | beforeAll(async () => { ({app,db} = await h.loadApp()); });
+            | ^
+          6 | beforeEach(async () => {
+          7 |   h.freeze(); await h.resetCoupons(db);
+          8 |   token = await h.login(app,h.USER); admin = await h.login(app,h.ADMIN);
+
+          at Object.<anonymous> (test/defects/coupons.defects.js:5:1)
+
+  ● CD-07 admin validation: negative-minimum is refused without insertion (FR-17)
+
+    thrown: "Exceeded timeout of 5000 ms for a hook.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      at _getError (node_modules/jest-circus/build/jestAdapterInit.js:1985:12)
+          at Array.map (<anonymous>)
+
+    Cause:
+        thrown: "Exceeded timeout of 5000 ms for a hook.
+        Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+          3 | const h = require('../helpers/coupons');
+          4 | let app,db,token,admin;
+        > 5 | beforeAll(async () => { ({app,db} = await h.loadApp()); });
+            | ^
+          6 | beforeEach(async () => {
+          7 |   h.freeze(); await h.resetCoupons(db);
+          8 |   token = await h.login(app,h.USER); admin = await h.login(app,h.ADMIN);
+
+          at Object.<anonymous> (test/defects/coupons.defects.js:5:1)
+
+  ● CD-07 admin validation: zero-uses is refused without insertion (FR-17)
+
+    thrown: "Exceeded timeout of 5000 ms for a hook.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      at _getError (node_modules/jest-circus/build/jestAdapterInit.js:1985:12)
+          at Array.map (<anonymous>)
+
+    Cause:
+        thrown: "Exceeded timeout of 5000 ms for a hook.
+        Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+          3 | const h = require('../helpers/coupons');
+          4 | let app,db,token,admin;
+        > 5 | beforeAll(async () => { ({app,db} = await h.loadApp()); });
+            | ^
+          6 | beforeEach(async () => {
+          7 |   h.freeze(); await h.resetCoupons(db);
+          8 |   token = await h.login(app,h.USER); admin = await h.login(app,h.ADMIN);
+
+          at Object.<anonymous> (test/defects/coupons.defects.js:5:1)
+
+  ● CD-07 admin validation: negative-uses is refused without insertion (FR-17)
+
+    thrown: "Exceeded timeout of 5000 ms for a hook.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      at _getError (node_modules/jest-circus/build/jestAdapterInit.js:1985:12)
+          at Array.map (<anonymous>)
+
+    Cause:
+        thrown: "Exceeded timeout of 5000 ms for a hook.
+        Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+          3 | const h = require('../helpers/coupons');
+          4 | let app,db,token,admin;
+        > 5 | beforeAll(async () => { ({app,db} = await h.loadApp()); });
+            | ^
+          6 | beforeEach(async () => {
+          7 |   h.freeze(); await h.resetCoupons(db);
+          8 |   token = await h.login(app,h.USER); admin = await h.login(app,h.ADMIN);
+
+          at Object.<anonymous> (test/defects/coupons.defects.js:5:1)
+
+  ● CD-07 admin validation: missing-expiry is refused without insertion (FR-17)
+
+    thrown: "Exceeded timeout of 5000 ms for a hook.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      at _getError (node_modules/jest-circus/build/jestAdapterInit.js:1985:12)
+          at Array.map (<anonymous>)
+
+    Cause:
+        thrown: "Exceeded timeout of 5000 ms for a hook.
+        Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+          3 | const h = require('../helpers/coupons');
+          4 | let app,db,token,admin;
+        > 5 | beforeAll(async () => { ({app,db} = await h.loadApp()); });
+            | ^
+          6 | beforeEach(async () => {
+          7 |   h.freeze(); await h.resetCoupons(db);
+          8 |   token = await h.login(app,h.USER); admin = await h.login(app,h.ADMIN);
+
+          at Object.<anonymous> (test/defects/coupons.defects.js:5:1)
+
+Test Suites: 1 failed, 1 total
+Tests:       22 failed, 22 total
+Snapshots:   0 total
+Time:        15.579 s
+Ran all test suites.
+Error: ENOENT: no such file or directory, open 'D:\Workspace\1. Study\courses-fit-hcmus\2026-2027\csc13003-testing\seminar\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\T10_Mutation_Testing_and_Test_Effectiveness\unused.json'
+    at Object.writeFileSync (node:fs:2422:20)
+    at processResults (D:\Workspace\1. Study\courses-fit-hcmus\2026-2027\csc13003-testing\seminar\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\backend\node_modules\@jest\core\build\index.js:3408:12)
+    at runJest (D:\Workspace\1. Study\courses-fit-hcmus\2026-2027\csc13003-testing\seminar\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\backend\node_modules\@jest\core\build\index.js:3595:9)
+    at _run10000 (D:\Workspace\1. Study\courses-fit-hcmus\2026-2027\csc13003-testing\seminar\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\backend\node_modules\@jest\core\build\index.js:1556:5)
+    at runCLI (D:\Workspace\1. Study\courses-fit-hcmus\2026-2027\csc13003-testing\seminar\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\backend\node_modules\@jest\core\build\index.js:1457:3)
+    at Object.run (D:\Workspace\1. Study\courses-fit-hcmus\2026-2027\csc13003-testing\seminar\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness\backend\node_modules\jest-cli\build\index.js:665:9)

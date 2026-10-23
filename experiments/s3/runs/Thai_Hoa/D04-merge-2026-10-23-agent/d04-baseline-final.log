@@ -1,0 +1,11 @@
+--- stdout ---
+
+--- stderr ---
+
+Seed:        421023
+Test Suites: 4 passed, 4 total
+Tests:       88 passed, 88 total
+Snapshots:   0 total
+Time:        1.524 s, estimated 2 s
+Ran all test suites in 2 projects.
+Test results written to: ..\..\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Thai_Hoa\D04-merge-2026-10-23-agent\d04-baseline-final.json
