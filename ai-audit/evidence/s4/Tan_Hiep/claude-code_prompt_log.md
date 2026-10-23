@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 3058f82a-a124-4cce-853c-9bab797d6360.jsonl, 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 15:48 (Asia/Saigon).
+Nguồn: 3058f82a-a124-4cce-853c-9bab797d6360.jsonl, 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 15:59 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 26 lượt prompt; theo model: claude-opus-5-5 26 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 29 lượt prompt; theo model: claude-opus-5-5 29 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-23 02:41 — model: claude-opus-5-5 — session 4a560803
 
@@ -1129,5 +1129,93 @@ Ghi kết quả vào `Guide_Reproduction_Tan_Hiep.md`.
 ### Hành động
 
 - Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s4\runs\Tan_Hiep\D01-1\REPORT.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\ai-audit\AI_Record_Tan_Hiep.md
+
+## #27 — 2026-10-23 15:49 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+<pasted_content id="cce9">
+S4-E01: ghép materials/s4/User_Guide.md (thay bản copy hiện có) từ Guide_Contribution_Tan_Hiep.md, Guide_Contribution_Thai_Hoa.md (English) và Guide_Contribution_Phuc_Hoang.md (English). Ngôn ngữ chung: TIẾNG VIỆT, giữ nguyên English technical terms, lệnh, tên file, tiêu đề mục chuẩn (Introduction, Installation, First Test, Advanced Usage, Troubleshooting, Failure Modes, References).
+Quy tắc: (a) chỉ dịch phần văn xuôi; KHÔNG đổi lệnh, số liệu, đường dẫn, mã mutant; (b) giữ nguyên trạng thái Observed/Suggested; (c) trước khi ghép, so base repo/commit/Node/npm và cách Install của ba guide, rồi viết 1 phần Install chung + "Setup riêng" cho domain nào khác; nếu ba guide mâu thuẫn mà không tự dung hòa được thì KHÔNG đoán, ghi vào mục "Cần quyết định" ở đầu file; (d) gộp Troubleshooting và Failure Modes, bỏ trùng, giữ mọi lỗi có evidence; (e) đưa các feedback từ Guide_Reproduction_Tan_Hiep.md/Thai_Hoa.md vào danh sách "Việc tác giả cần sửa" trong ghi chú đầu file, không tự sửa nội dung của tác giả khác; (f) ghi chú đầu file nêu: bản ghép bằng Claude Code (Opus 5.5), cần Tấn Hiệp review, và phần nào do ai viết.
+Thêm khối AI-S4-E01-01 vào ai-audit/AI_Record_Tan_Hiep.md (verdict "ĐỀ XUẤT: ..." và Student Fix "(điền sau review)"). Báo: số section, các điểm mâu thuẫn, các chỗ dịch thấy mơ hồ.
+</pasted_content id="cce9">
+```
+
+### Output
+
+```text
+Rebase bị conflict. Kiểm trạng thái trước khi làm gì tiếp.
+
+Tôi đã dừng việc ghép User Guide, vì `git pull --rebase` của repo seminar đang bị kẹt giữa chừng. Chưa ghép guide, chưa sửa file nào.
+
+**Nguyên nhân:** file `experiments/s4/runs/Tan_Hiep/D01-1/console.log` vẫn đang bị khóa. Tôi kiểm thì được "being used by another process", tức transcript PowerShell của lần chạy D01-1 vẫn đang mở. Lệnh `Stop-Transcript` bạn chạy chưa có tác dụng ở đúng cửa sổ đó, nên git không xóa hay ghi đè được file này khi rebase.
+
+**Trạng thái hiện tại (chưa mất gì):**
+- Đã fetch về 2 commit mới trên origin: `a52081d`, `e72becf` "docs: No need more".
+- Rebase dừng ở commit `0526f97`. Tôi chạy `git rebase --abort` nhưng thất bại với lỗi `could not move back`, cũng vì file bị khóa.
+- Nhánh `main` vẫn nằm nguyên ở `3a9cfce`, đủ mọi commit của tôi. Repo đang ở trạng thái `HEAD (no branch)`, rebase còn dở.
+- Bản `console.log` đang nằm trên đĩa có nội dung giống hệt bản đã commit, chỉ khác CRLF/LF.
+
+**Bạn làm:** tìm cửa sổ PowerShell đã chạy D01-1, có prompt `PS C:\w\D01-1\eshop-coupons-s4\backend>`, rồi chạy `Stop-Transcript` trong đó hoặc đóng hẳn cửa sổ. Xong gõ "đã đóng".
+
+**Sau đó tôi sẽ:** chạy `git rebase --abort` để về lại `main` `3a9cfce`, chạy lại `git pull --rebase`, kiểm không có conflict nội dung, rồi mới làm S4-E01. Nếu lúc đó có conflict thật thì tôi dừng và báo bạn tiếp.
+```
+
+## #28 — 2026-10-23 15:51 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+PS C:\w\D01-1\eshop-coupons-s4\backend> Stop-Transcript
+Transcript stopped, output file is D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s4\runs\Tan_Hiep\D01-1\console.log
+Xem đúng chưa
+```
+
+### Output
+
+````text
+Đúng. Lần này transcript đã dừng và ghi dòng kết thúc vào `console.log`. Giờ gỡ rebase, giữ lại bản `console.log` mới.
+
+Chưa xong hẳn. Trong log có **2 lần `Transcript started`**, vì khối 0 được dán 2 lần, nhưng mới có 1 lần `Transcript stopped`. Hai transcript lồng nhau trên cùng một file, nên file vẫn đang bị khóa và tôi chưa xóa hay di chuyển được nó.
+
+Tôi đã lưu một bản sao của `console.log` hiện tại vào `C:\Users\[user]\AppData\Local\Temp\claude\D--HK7-Testing-Seminars-Repo\3058f82a-a124-4cce-853c-9bab797d6360\scratchpad\D01-1-console.log.final`. Repo vẫn như trước: rebase còn dở, `main` nằm nguyên ở `3a9cfce`.
+
+**Bạn làm:** trong cùng cửa sổ đó, chạy thêm một lần nữa:
+```powershell
+Stop-Transcript
+```
+Nếu lệnh báo "transcript ... stopped" thì gõ "xong". Nếu báo lỗi không có transcript nào đang chạy thì đóng hẳn cửa sổ PowerShell đó rồi gõ "xong".
+````
+
+## #29 — 2026-10-23 15:52 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+xong
+```
+
+### Output
+
+```text
+Repo đã ổn (rebase xong, ahead 17, không conflict). Kiểm 2 commit mới của origin rồi làm S4-E01.
+
+Không đụng file guide. Đọc 2 contribution còn lại.
+
+Đọc xong 3 contribution. Kiểm `engines` của 2 repo (để biết mâu thuẫn Node có tự dung hòa được không) và phạm vi Guide_Reproduction_Phuc_Hoang.
+
+Kiểm lại: ở Failure Mode 6, tôi lỡ thêm một câu "Cách tránh" mà Hòa không viết. Bỏ câu đó.
+
+Code block giữ nguyên văn 100%, link không thiếu. Kiểm thêm: mọi số liệu trong 3 nguồn đều có mặt trong bản ghép.
+
+Số liệu đủ (chỉ thiếu số thứ tự heading của Tấn Hiệp, vì heading được đánh lại). Thêm khối AI Record rồi commit.
+```
+
+### Hành động
+
+- Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\User_Guide.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\User_Guide.md
 - Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\ai-audit\AI_Record_Tan_Hiep.md
 
