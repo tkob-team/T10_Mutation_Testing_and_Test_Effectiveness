@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 3058f82a-a124-4cce-853c-9bab797d6360.jsonl, 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 15:39 (Asia/Saigon).
+Nguồn: 3058f82a-a124-4cce-853c-9bab797d6360.jsonl, 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 15:46 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 24 lượt prompt; theo model: claude-opus-5-5 24 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 25 lượt prompt; theo model: claude-opus-5-5 25 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-23 02:41 — model: claude-opus-5-5 — session 4a560803
 
@@ -1064,4 +1064,26 @@ Vì đây là phần bạn tự chạy, tôi không viết nhận xét review th
 
 Nếu thấy chỗ mơ hồ, ví dụ guide không nói file overlay khác candidate, ghi vào mục "Bước mơ hồ". Xong thì gõ "xong" để tôi thu kết quả và commit.
 ````
+
+## #25 — 2026-10-23 15:44 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+xong
+```
+
+### Output
+
+```text
+Số liệu khớp D01-1-cc, 0 mutant khác. Còn 3 file overlay nằm lạc ở `backend/` gốc, đang kiểm.
+
+Ghi kết quả vào `Guide_Reproduction_Tan_Hiep.md`.
+```
+
+### Hành động
+
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\Guide_Reproduction_Tan_Hiep.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\Guide_Reproduction_Tan_Hiep.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\Guide_Reproduction_Tan_Hiep.md
 
