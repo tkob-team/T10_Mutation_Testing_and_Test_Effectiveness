@@ -141,7 +141,7 @@ Không tự sửa guide trong lượt này; danh sách để tác giả xử lý
 
 - Deliverable and destination: `materials/s4/Verification_Notes_Tan_Hiep.md`; script và đầu ra ở `experiments/s4/runs/F01-verify-cc/`; evidence chạy ở `experiments/s4/runs/F01a-1-cc/`, `F01c-1-cc/`, `D01-1-cc/`, `Tan_Hiep/D01-1/`.
 - **Việc cần người:**
-  1. Review bản dịch Coupons và Auth trong `User_Guide.md` — Tấn Hiệp, **chưa làm**.
+  1. Review bản dịch Coupons và Auth trong `User_Guide.md` — Tấn Hiệp, **đã làm** (đọc toàn bộ bản ghép, kể cả phần dịch; không sửa — AI-S4-E01-01).
   2. Chạy lại các bước mới thêm ở AI-S4-E01-02: checkout `eea3ed4` / `b27fce2` và bước `prompt.txt` (Phúc); clone repo seminar ở thư mục ngắn (Hòa).
   3. Chạy mục "Thử với AI Agent" của Cart — Tấn Hiệp.
   4. Review candidate G02 theo 5 điểm ở phần PROVENANCE (khối 4 của D01-1 đang Pending) — Tấn Hiệp.
@@ -161,7 +161,7 @@ Không tự sửa guide trong lượt này; danh sách để tác giả xử lý
 - [ ] Auth Advanced Usage theo guide — chưa kiểm chứng (bước checkout mới thêm).
 - [ ] Các bước mới thêm ở AI-S4-E01-02 — chưa kiểm chứng.
 - [ ] Mục AI Agent của Cart — Not run.
-- [ ] Review bản dịch Coupons/Auth — chưa làm.
+- [x] Review bản dịch Coupons/Auth — Tấn Hiệp đã đọc, không sửa (AI-S4-E01-01).
 - [ ] Guide English theo chữ REQ-17 — không; tiếng Việt theo quyết định của Tấn Hiệp, Hòa đã đồng ý (theo Tấn Hiệp).
 - [ ] macOS, lỗi `npm.ps1`, link URL ngoài — Not checked.
 - [ ] Nguyên nhân cần `tempDirName` ở S3 — chưa kiểm chứng.
