@@ -1,8 +1,8 @@
 # PH-S3-E03-BASELINE — Chat Transcript
 
 **Member:** Nguyễn Phúc Hoàng  
-**Stage / Task ID:** S3 / S3-E03, S3-F03 và S3-G03  
-**Tool / Model:** Claude Code 2.1.308 (CLI); model(s) ghi trong phiên: `claude-sonnet-5-5` (211 lượt)  
+**Stage / Task ID:** S3 / S3-E03, S3-F03, S3-G03 và S3-H03  
+**Tool / Model:** Claude Code 2.1.308 (CLI); model(s) ghi trong phiên: `claude-sonnet-5-5` (225 lượt)  
 **Date:** 2026-10-23 (giờ Asia/Saigon, lấy từ timestamp của phiên)  
 **Session file:** `60b90dce-0d5e-4502-920f-a2eb3196656d.jsonl` của Claude Code, trích tự động bằng script; transcript được trích tới lượt gần nhất tại thời điểm tạo file.
 
@@ -597,4 +597,83 @@ Bản đã review: Killed 74, Survived 13, NoCoverage 3, score 86,32%. Hai run g
 
 ````markdown
 Giờ cập nhật AI Record, AI-02/AI-LOG, rồi commit và push cả hai repo.
+````
+
+````markdown
+Đã push nhánh F03 và làm xong G03. Nhánh SUT nằm trong repo `tkob-team/eshop-sut_…`, evidence nằm trong repo seminar (commit `734e29d`).
+
+**Nhánh SUT**
+- `s3/F03-auth`: nhánh manual, đã push theo yêu cầu của bạn.
+- `s3/G03-auth`: nhánh AI, tách từ baseline `806ba19`, không chứa F03. Nhánh có hai commit: `0c57bf2` là file Claude chưa sửa, `b27fce2` là phần bạn chỉnh. Nhờ đó git tự có diff cho phần human edits.
+
+**Phần Claude làm**
+- **Cách chạy:** một request `claude -p` ở thư mục trống, không tools, không session, giống cách làm ở C03-3. Model là `claude-sonnet-5-5`.
+- **Prompt:** 27 KB, gồm `server.js`, spec, harness, test baseline và đúng 30 mutant của F03. Prompt không chứa test F03.
+- **Kết quả:** Claude phân tích 30 mutant và viết 12 test. Prompt, output nguyên văn và file test chưa sửa đều đã lưu.
+
+**Quyết định review** (đề xuất của tôi, bạn xác nhận)
+- **Accepted (10 test):** các test về lỗi DB trả 500, thông báo khóa tài khoản, OTP, role không bị đổi, và PUT `/me` lỗi.
+- **Edited (1 test):** AI-L03 (thời điểm khóa hết hạn). Spec không nói gì về đúng thời điểm này, nên tôi đổi tên và ghi rõ đây là cách đọc của Claude. Test này giết được mutant #32 mà F03 không viết được. Nhóm cần chốt có coi đó là yêu cầu không.
+- **Rejected (1 test):** AI-U03, dùng `test.failing`. Test pass trên code gốc vì chính nó fail ở đó, và nó "giết" mutant #133–136 chỉ vì các mutant này xoá mất lỗi role. Đó là mã hoá defect chứ không phát hiện lỗi mới.
+- **Claude từ chối 12 mutant:** #47, #52, và 10 mutant về body/message, vì spec không nêu. Phần phân tích #52 khớp với probe của F03.
+
+**Kết quả kiểm chứng**
+
+| | Killed | Timeout | Survived | NoCov | Score | Assertion kill |
+|---|---|---|---|---|---|---|
+| AI raw, chưa review (1 run) | 78 | 27 | 12 | 0 | 89,74% | 66,67% |
+| AI đã review (2 run giống hệt) | 74 | 27 | 13 | 3 | 86,32% | 63,25% |
+| Manual F03 | 83 | 27 | 4 | 3 | 94,02% | 70,94% |
+
+- **Số liệu raw bị thổi phồng:** điểm 89,74% có được nhờ AI-U03, nên không dùng khi so sánh.
+- **Sau review:** 37/37 test pass trên code gốc, `npm test` vẫn 88 pass, production hash không đổi.
+
+**Kill mapping trên cùng 30 mutant** (`G03-ai/kill_mapping.md`)
+- AI giết 14 mutant, manual giết 23.
+- 13 mutant bị cả hai giết, 1 mutant (#32) chỉ AI giết, 10 mutant chỉ manual giết (đều là body/message).
+- Không bên nào giết được 6 mutant: #47, #52, #133–136.
+- **Khác biệt chính:** Claude chỉ viết test cho những gì spec nói. Manual chấp nhận thêm các test dựa trên convention. Đây là khác biệt về mức chấp nhận convention, không phải về khả năng viết test.
+
+**Lỗi của Claude:** phần tóm tắt báo "17 mutant có test, 13 không", nhưng thực tế là 18 và 12. File còn có header sai và import thừa.
+
+**Giới hạn cần bạn biết**
+- **Không phải so sánh mù:** request của Claude chạy trong ngữ cảnh mới và không thấy F03. Nhưng người viết prompt và người review là cùng agent đã viết F03, nên không phải đối chứng mù hoàn toàn. Log ghi rõ điều này.
+- **H03 và I03 chưa bắt đầu.** Bảng Comparison đã có đủ ba hàng số liệu để H03 dùng.
+
+**Tôi cũng cập nhật**
+- **Hồ sơ AI:** AI Record, AI-02 (thêm artifact `PH-S3-G03-AI`, verdict đề xuất INCOMPLETE), AI-LOG và transcript (9 lượt).
+- **Số liệu AI-02:** thành 7 artifact, gồm 4 VALID (57,14%) và 3 INCOMPLETE (42,86%).
+
+Bạn cần review lại quyết định ở AI-L03 và AI-U03, rồi tự điền ngày và chữ ký như trước.
+````
+
+## Turn 10 — 2026-10-23 11:39:02
+
+### Prompt (verbatim)
+
+````text
+Tiếp S3-H03 - So sánh baseline/manual/Claude: Authentication & Users: 
+
+<pasted_content id="8139">
+"Làm: Đối chiếu ba kết quả trên cùng source/config; giải thích Killed/Timeout/errors, equivalent candidates và failure-mode case. S4-B dùng notes này để viết report.
+Đầu vào: Baseline/manual/AI reports của domain mình; Theory Notes.
+Xong khi: Comparison có raw counts/evidence; không cộng hay lấy trung bình score domain.
+Chờ: Ba nhánh chạy của mình có kết quả (S3-E03/F03/G03).
+Mẫu: experiments/s3/Experiment_Log_TEMPLATE.md; tạo file khi bắt đầu, giữ nguyên TEMPLATE."
+</pasted_content id="8139">
+````
+
+### Tool Log
+
+1. `Bash: grep -n "S3-H03" docs/Task_Output_Map.md; ls experiments/s3 | head -30; grep -n "^#\|^##" research/s3/Research_Notes_Phuc_Hoang.md | head -50`
+2. `Bash: cd /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness/experiments/s3/runs/Phuc_Hoang && python3 -I - <<'EOF' im`
+3. `Bash: python3 -I - <<'EOF' import json,collections runs={'baseline':'E03-baseline/mutation.json','manual':'F03-manual/mutation.json','ai':'G03-ai/mutation.json'} D={k`
+4. `Bash: cd /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness && awk '/^## Comparison/,0' experiments/s3/Experiment_Log`
+5. `Bash: cd /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness/experiments/s3/runs/Phuc_Hoang && mkdir -p H03-comparison`
+6. `Bash: cd /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness && cat >> experiments/s3/runs/Phuc_Hoang/H03-comparison/c`
+
+### Output (verbatim)
+
+````markdown
+Ba bộ cùng source (SHA-256 giống) và cùng 125 mutant. Tôi kiểm tra tập Timeout/RuntimeError có giống nhau không, và so config thực tế của ba run.
 ````

@@ -3,9 +3,9 @@
 **Document Role:** Working log cá nhân S3; chỉ ghi kết quả đã chạy thật trên máy Phúc Hoàng.  
 **Stage:** S3  
 **Member:** Nguyễn Phúc Hoàng  
-**Task IDs:** S3-C03 (xong; C03-5 và C03-6 điền sau khi D04 chốt); S3-D03 (tests đã viết và chạy, chờ review); S3-E03 (đã chạy trên baseline chung `806ba19`, chờ review); S3-F03 (đã chạy trên baseline chung, 13 manual assertions, chờ review); S3-G03 (đã chạy trên baseline chung, 1 request Claude, chờ review); S3-H03, S3-I03 (chưa bắt đầu)  
+**Task IDs:** S3-C03 (xong; C03-5 và C03-6 điền sau khi D04 chốt); S3-D03 (tests đã viết và chạy, chờ review); S3-E03 (đã chạy trên baseline chung `806ba19`, chờ review); S3-F03 (đã chạy trên baseline chung, 13 manual assertions, chờ review); S3-G03 (đã chạy trên baseline chung, 1 request Claude, chờ review); S3-H03 (đã đối chiếu ba run, chờ review); S3-I03 (chưa bắt đầu)  
 **Domain / Section:** Authentication & Users  
-**Evidence Status:** Partial — C03-1 → C03-4 đã chạy (C03-3: `--bare` lỗi "Not logged in", chạy lại bằng `claude -p` không `--bare`); C03-5 và C03-6 (harness reset Auth và setup baseline chung `806ba19`) đã điền sau S3-D04; D03 đã chạy (26 pass; 23 defect tests fail trên code gốc, trong đó DF-10 về OTP 24 h là giả định cần chốt, không phải vi phạm đã chứng minh); E03 provisional đã chạy (73,45%); E03-baseline trên frozen commit đã chạy 2 lần (74,36%); F03 manual đã chạy 2 lần trên cùng baseline (94,02%); G03 Claude: bản raw 1 lần (89,74%), bản đã review 2 lần (86,32%)
+**Evidence Status:** Partial — C03-1 → C03-4 đã chạy (C03-3: `--bare` lỗi "Not logged in", chạy lại bằng `claude -p` không `--bare`); C03-5 và C03-6 (harness reset Auth và setup baseline chung `806ba19`) đã điền sau S3-D04; D03 đã chạy (26 pass; 23 defect tests fail trên code gốc, trong đó DF-10 về OTP 24 h là giả định cần chốt, không phải vi phạm đã chứng minh); E03 provisional đã chạy (73,45%); E03-baseline trên frozen commit đã chạy 2 lần (74,36%); F03 manual đã chạy 2 lần trên cùng baseline (94,02%); G03 Claude: bản raw 1 lần (89,74%), bản đã review 2 lần (86,32%); H03 đã đối chiếu
 
 Chỉ điền việc đã thực hiện; thiếu đầu vào ghi Pending và blocker. Giữ prompt, số liệu và evidence nguyên gốc. Đọc `docs/Working_Guide.md` để biết nơi bàn giao.
 
@@ -117,17 +117,47 @@ Kết quả: 125 mutants, **Killed 83, Timeout 27, Survived 4, NoCoverage 3, Run
 
 ## Comparison
 
+Cùng một `server.js` (SHA-256 `47573ce5…`, SUT `806ba19`), cùng 125 mutant (khớp theo dòng/cột/mutator/replacement), cùng cấu hình Stryker 10.0.0 (`perTest`, concurrency 2, `timeoutMS` 5000, `timeoutFactor` 1.5, `mutate server.js:20-135`); chỉ khác file Jest/tên report và bộ test. Kiểm bằng `compare_three.py`; dữ liệu: [comparison.md](runs/Phuc_Hoang/H03-comparison/comparison.md), `comparison.json`. Mỗi dòng là một domain-run riêng; không cộng hay lấy trung bình score giữa các run hoặc giữa các domain.
+
 | Run / Test Set | Killed | Timeout | Survived | NoCoverage | Tool Score & Definition | Evidence |
 |---|---|---|---|---|---|---|
-| Baseline (`auth.spec.test.js`, 26 test) | 60 | 27 | 23 | 7 | Stryker 10.0.0: (Killed+Timeout)/(Killed+Timeout+Survived+NoCoverage) = 87/117 = **74,36%**; RuntimeError 8 loại khỏi mẫu số; assertion kill 60/117 = 51,28% | `runs/Phuc_Hoang/E03-baseline/` |
-| Manual (baseline + `auth.manual.test.js`, 39 test) | 83 | 27 | 4 | 3 | Cùng định nghĩa: 110/117 = **94,02%**; RuntimeError 8 loại; assertion kill 83/117 = 70,94%. Score tăng chưa đủ chứng minh assertion tốt hơn: 18/23 mutant mới bị giết dựa trên convention (xem Survivors) | `runs/Phuc_Hoang/F03-manual/` |
-| AI-assisted (baseline + `auth.ai.test.js` đã review, 37 test) | 74 | 27 | 13 | 3 | Cùng định nghĩa: 101/117 = **86,32%**; RuntimeError 8 loại; assertion kill 74/117 = 63,25%. Bản raw chưa review: 78 / 27 / 12 / 0, 89,74% (bị thổi phồng bởi `test.failing` AI-U03) | `runs/Phuc_Hoang/G03-ai/` |
+| Baseline (`auth.spec.test.js`, 26 test) | 60 | 27 | 23 | 7 | Stryker 10.0.0: (Killed+Timeout)/(Killed+Timeout+Survived+NoCoverage) = 87/117 = **74,36%**; assertion kill 60/117 = 51,28%; RuntimeError 8 loại khỏi mẫu số | `runs/Phuc_Hoang/E03-baseline/` |
+| Manual (baseline + `auth.manual.test.js`, 39 test) | 83 | 27 | 4 | 3 | 110/117 = **94,02%**; assertion kill 83/117 = 70,94%; RuntimeError 8 loại | `runs/Phuc_Hoang/F03-manual/` |
+| AI-assisted, đã review (baseline + `auth.ai.test.js`, 37 test) | 74 | 27 | 13 | 3 | 101/117 = **86,32%**; assertion kill 74/117 = 63,25%; RuntimeError 8 loại | `runs/Phuc_Hoang/G03-ai/` |
+| AI-assisted, bản raw chưa review (38 test; 1 run) | 78 | 27 | 12 | 0 | 105/117 = 89,74%; assertion kill 78/117 = 66,67%. Bị thổi phồng bởi `test.failing` AI-U03; **không dùng khi so sánh** | `runs/Phuc_Hoang/G03-ai/raw-candidate-run/` |
+
+Cả bốn run có RuntimeError = 8. Nếu giữ RuntimeError trong mẫu số (Killed/125): baseline 48,00%, manual 66,40%, AI 59,20%. Thứ hạng không đổi theo định nghĩa nào.
+
+### Notes cho S4-B (giải thích kết quả)
+
+**1. Killed, Timeout, error không cùng loại.**
+- *Killed* là một assertion cụ thể fail khi chạy mutant (có `killedBy`). Đây là thứ phản ánh chất lượng assertion.
+- *Timeout* (27, **cùng đúng 27 mutant** ở cả bốn run) đến từ mutant làm handler/callback không trả lời: `BlockStatement {}` 17, `ConditionalExpression` 6, `BooleanLiteral` 2, `CallExpression` 2. Request treo đến `timeoutMS` nên Stryker tính là phát hiện, nhưng không assertion nào quyết định kết quả; thêm assertion không đổi con số này. Vì thế khoảng cách giữa score và assertion kill: baseline 23,1 điểm, manual 23,1, AI 23,1 (27/117 mỗi run); Timeout chiếm 31,0% / 24,5% / 26,7% số mutant "bị phát hiện".
+- *RuntimeError* (8, cũng cùng 8 mutant): `StringLiteral ""` ở câu SQL có bind parameter làm `sqlite3` 6.0.1 SIGSEGV. Stryker loại khỏi mẫu số, nên không thể cải thiện bằng assertion; nếu bỏ qua, người đọc tưởng domain có 117 mutant "hợp lệ" trong khi thực ra 125.
+- *Hệ quả cho báo cáo:* luôn đưa raw counts đủ năm trạng thái và ít nhất hai công thức (Stryker score và assertion kill). Score của manual cao hơn baseline 19,66 điểm (74,36% → 94,02%) nhưng chỉ có 23 mutant mới bị giết bằng assertion; 27 Timeout nằm sẵn trong cả hai con số.
+
+**2. Ai giết gì trên cùng 30 mutant Survived/NoCoverage của baseline.** Manual 23, AI 14, cả hai 13, chỉ AI 1 (#32), chỉ manual 10, không bên nào 6; hợp của hai bên là 24 (suy ra từ hai run riêng, **chưa chạy bộ gộp**). Không có mutant nào tụt trạng thái ở bất kỳ run nào. Phân loại căn cứ (nhãn của reviewer, `comparison.md` mục 5): kill dựa trực tiếp trên spec là 5 mutant ở cả hai bên; khác biệt 23 so với 14 nằm gần như hoàn toàn ở 10 mutant body/message mà manual giết bằng convention và Claude từ chối vì spec không nêu. Kết luận cẩn trọng: trên phần có căn cứ spec, manual và AI ngang nhau; điểm cao hơn của manual đến từ chấp nhận convention, chưa phải từ phát hiện lỗi tốt hơn.
+
+**3. Equivalent candidates (6 mutant không bên nào giết).** Chưa có mutant nào được chứng minh equivalent.
+- #52 (`>= 3` → `> 3`): *equivalent candidate* trong phạm vi trạng thái đạt được từ seed `login_attempts = 0` vì bộ đếm luôn chẵn (L54 `+2`, L48 reset 0). Lập luận: hai phép so sánh chỉ khác nhau khi `newAttempts == 3`. Phản ví dụ khi đổi phạm vi: khi vá `+1`/30 s thì 3 test baseline giết nó (probe P2); gắn state `login_attempts = 1` cũng phân biệt được nhưng test đó mã hóa lỗi. Đây là *masked by defect*, khớp nhận xét L56 trong Theory Notes (F-A03-06, Handoff).
+- #47 (`"Login successful"` → `""`): không equivalent về output; **spec silent** (API 1.2 chỉ nêu `token` và `user`).
+- #133–#136 (nhánh `role`): không equivalent. #133 (`if (false)`) là chính hành vi đúng của SEC-06/FR-04; DF-12 pass trên nó (probe P4). Chỉ bị phát hiện bởi defect suite, không thuộc bộ pass.
+- #32 (`<` → `<=`) không còn là survivor đối với AI nhưng vẫn survivor đối với manual: killable khi chấp nhận cách đọc "hết khóa đúng tại `locked_until`"; đây là quyết định spec cần nhóm chốt, không phải equivalent.
+
+**4. Failure-mode cases (có evidence).**
+- *FM-H1 Timeout như phát hiện:* xem mục 1; 27 Timeout cố định ở mọi run.
+- *FM-H2 `test.failing` thổi phồng điểm:* bản raw của Claude có AI-U03 làm #133–#136 "Killed" vì mutant xóa lỗ hổng; score raw 89,74% so với 86,32% sau khi bỏ (cùng bộ còn lại). Evidence: `runs/Phuc_Hoang/G03-ai/raw-candidate-run/`, `G03-ai/human-edits.diff`.
+- *FM-H3 Score đổi do phân loại, không do assertion:* run provisional (SUT `bd31bbf`, 73,45%) so với baseline (74,36%): 4 mutant `if (!user)` chuyển RuntimeError → Timeout khi đổi harness D04, không thêm assertion nào (`E03-baseline/compare_vs_provisional.txt`). So sánh score giữa hai điều kiện chạy khác nhau là sai.
+- *FM-H4 Convention làm tăng kill:* 18/23 kill của manual và 8/14 của AI dựa trên convention; assertion "chuỗi không rỗng" giết `{}` và `""` nhưng không giết một mutant đổi sang chuỗi khác.
+- *FM-H5 Số tự báo của AI không đáng tin:* Claude ghi "17 mutant có test, 13 không" khi thực tế là 18 và 12. Luôn đếm lại từ report.
+- *FM-H6 Lỗi riêng của tool/môi trường:* `sqlite3` SIGSEGV (8 RuntimeError); Node/Homebrew đổi phiên bản giữa phiên làm provisional (xem ghi chú E03).
+- *FM-H7 Test phụ thuộc cách mock:* AM-02/03, AM-10…13 và AI-R/L/P/U02 phụ thuộc `Math.random`/trigger/`db.run` kiểu callback.
+
+**5. Không được khẳng định.** (a) Manual "tốt hơn" AI; run này là một lần, một domain, một prompt, cùng agent ra prompt và review. (b) Bộ gộp manual+AI đạt 24/30; chưa chạy. (c) Score 94,02% nghĩa là assertion phát hiện lỗi tốt: 27 Timeout và 18 kill dựa convention. (d) Bất kỳ mutant nào là equivalent đã được chứng minh. (e) OTP không hết hạn là vi phạm SEC-07: DF-10 dùng giả định 24 h.
 
 ## Limits & Failure Modes
 
-- **Equivalent / masked candidates (chưa kết luận equivalent):** #52 (`>= 3` → `> 3`) chỉ tương đương trong phạm vi trạng thái đạt được qua API từ seed `login_attempts = 0`, vì bộ đếm luôn chẵn do defect `+2`; khi vá `+1` thì bị giết (probe P2, `F03-manual/probes.md`), nên đây là *masked by defect*, không phải equivalent chung. #133 (`if (false)`) là hành vi đúng spec (SEC-06), không phải equivalent: DF-12 phân biệt được nó (probe P4). #32 và #47 là spec-silent.
-- **AI (G03):** AI-U03 cho thấy một failure mode khác của điểm mutation: test được thiết kế để "fail đúng chỗ" làm mutant sửa lỗi bị tính Killed. Claude cũng không giết 10 mutant body/message mà manual giết bằng convention test, vì tự giới hạn ở những gì spec nói; hai cách tiếp cận khác nhau về mức chấp nhận convention, không phải về khả năng viết test.
-- **Failure mode:** (1) Timeout không tính là assertion kill: 27 Timeout giữ nguyên, không có thêm Timeout nào chuyển thành Killed. (2) 8 RuntimeError (`StringLiteral ""` làm `sqlite3` SIGSEGV) không đổi và không thể giết bằng assertion. (3) AM-02/03 dùng `jest.spyOn(Math, 'random')` và AM-10…13 dùng `jest.spyOn(db, …)` để chen vào DB; chúng phụ thuộc cách `server.js` gọi `db.run/get` (callback cuối) nên sẽ vỡ nếu đổi sang Promise API. (4) Giá trị 500 và nội dung `error`/`message` là convention, không phải spec.
+Các mục (equivalent candidates, failure-mode) đã gom thành đủ ở **Notes cho S4-B** mục 3–4 trong phần Comparison phía trên, nên không lặp lại ở đây. Các giới hạn riêng của từng bước giữ ở phần Survivors và AI Runs. Giới hạn chung của H03: (1) một máy (macOS arm64, Node v26.12.1), một lần chạy cho baseline-raw AI, hai lần cho các run còn lại; (2) chỉ domain Auth; (3) cross-reproduction (S3-I03) chưa chạy; (4) nhãn spec/convention là phán đoán của reviewer và chờ thành viên xác nhận.
 
 ## Cross Reproduction
 
