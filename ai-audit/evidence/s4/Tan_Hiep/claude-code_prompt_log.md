@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 11:03 (Asia/Saigon).
+Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 11:06 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 4 lượt prompt; theo model: claude-opus-5-5 4 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 5 lượt prompt; theo model: claude-opus-5-5 5 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-23 02:41 — model: claude-opus-5-5 — session 4a560803
 
@@ -156,5 +156,41 @@ Old call output identical; all 0 transitions. Now Experiment Log + REPORT.
 - Bất thường mới: các `console.log` của I01-1/2/3 chỉ có output, không có dòng lệnh, và log I01-1 không ghi commit EShop đã chạy. Vì vậy không xác nhận được lệnh nguyên văn và commit của I01-1.
 - Bất thường mới: I01-2 và I01-3 chạy trong `Repo/_tmp/I01-coupons/backend`, dùng lại `node_modules` cài khi tôi chạy I01-2-cc. Dry run vẫn đếm test 2 lần (52, 70, 80); mỗi lượt Stryker có 10 cảnh báo crash `exit code 3221225477`.
 - Cần quyết định: Không
+```
+
+## #5 — 2026-10-23 11:05 — model: claude-opus-5-5 — session ad369217
+
+### Prompt
+
+```text
+<pasted_content id="5c88">
+S3-I01 bổ sung provenance cho run của Tấn Hiệp. Không chạy lại Jest/Stryker.
+1. EShop: git reflog --date=iso -20 → experiments/s3/runs/Tan_Hiep/I01-1/git-reflog.txt. Xác định lần checkout 806ba19 và khớp với giờ chạy I01-1 (timestamp file mutation.json).
+2. Repo/_tmp/I01-coupons/backend: SHA-256 của server.js, database.js, package-lock.json và 7 file overlay; so với `git show 806ba19:<file>` và Thai_Hoa/.../sources/backend/ (chuẩn hóa CRLF). Lưu I01-cc-compare/i01_member_provenance.md, ghi rõ hash lấy sau khi chạy.
+3. Lệnh nguyên văn Tấn Hiệp đã chạy (từ phiên thảo luận, Tấn Hiệp xác nhận): [dán 2 khối PowerShell]. Ghi vào REPORT và Experiment Log với đúng nguồn đó.
+4. Commit, không push. Khối báo cáo.
+</pasted_content id="5c88">
+```
+
+### Output
+
+```text
+Step 3 có placeholder `[dán 2 khối PowerShell]` chưa điền → làm bước 1–2, bước 3 chờ lệnh nguyên văn.
+
+Reflog: 10:26:57–10:29:21 = I01-1-cc; 10:42:08–10:56:05 = window for I01-1. Save + get file timestamps.
+
+Timestamps fit window (mutation.json 10:56:05.016, checkout back 10:56:05). Now hashes.
+
+All 10 match. Save script + provenance md.
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: S3-I01 provenance — Partial. Xong bước 1 và 2; bước 3 chưa làm vì còn placeholder. Không chạy lại Jest/Stryker.
+- I01-1: EShop đứng ở HEAD `806ba19` từ 10:42:08 đến 10:56:05. Report của I01-1 được ghi từ 10:54:17 đến 10:56:05 nên nằm trong khoảng đó. Khoảng 10:26–10:29 là I01-1-cc.
+- I01-2/3: lấy hash 10 file sau khi chạy (~11:05), chuẩn hóa CRLF thành LF rồi so. Khớp 10/10: 3 file khớp `806ba19`, 7 file overlay khớp `sources/backend/` của Hòa.
+- Evidence: `experiments/s3/runs/Tan_Hiep/I01-1/git-reflog.txt`, `I01-cc-compare/i01_member_provenance.{md,py}`; REPORT có mục "provenance for member runs".
+- Commit seminar `main`: `ae7416a` chore(ai-log), `8ba51ab` test(S3-I01), chưa push; tổng cộng 4 commit chưa push.
+- Bất thường mới: report và lần checkout về `s3/G01-ai` cùng rơi vào giây 10:56:05, mà reflog chỉ chính xác đến giây.
+- Bất thường mới: hash I01-2/3 lấy sau khi chạy, nên chỉ chứng minh trạng thái file hiện tại. Overlay có mtime 10:29:27, chưa thấy bị sửa từ đó.
+- Cần quyết định: Q1 – Bước 3 trong prompt chỉ còn chỗ `[dán 2 khối PowerShell]`, chưa có lệnh Tấn Hiệp đã chạy. Phương án: (a) dán 2 khối lệnh đã được Tấn Hiệp xác nhận để tôi ghi vào REPORT và Experiment Log; (b) ghi "Not recorded".
 ```
 
