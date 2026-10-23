@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 12:22 (Asia/Saigon).
+Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 12:24 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 9 lượt prompt; theo model: claude-opus-5-5 9 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 10 lượt prompt; theo model: claude-opus-5-5 10 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-23 02:41 — model: claude-opus-5-5 — session 4a560803
 
@@ -411,4 +411,51 @@ Chỉ 2 dòng bị thay (C01-7, 286:7), đều có chủ đích. Commit.
 ### Hành động
 
 - Write: C:\Users\[user]\AppData\Local\Temp\claude\D--HK7-Testing-Seminars-Repo\ad369217-4378-464e-a313-7cbcb8377eba\scratchpad\i03_fb.py
+
+## #10 — 2026-10-23 12:23 — model: claude-opus-5-5 — session ad369217
+
+### Prompt
+
+```text
+<pasted_content id="5c88">
+AI Record (ai-audit/AI_Record_Tan_Hiep.md), không chạy run:
+- AI-S3-E01-01: Output Artifact thêm "bullet 'Tổng hợp Killed ↔ Timeout' cuối mục Limits của Experiment_Log_Tan_Hiep.md — claude.ai soạn, Tấn Hiệp dùng nguyên văn (commit fef88f7)". Student Fix thêm: "claude.ai đưa giả thuyết Jest testTimeout 5 s chạy đua với timeout Stryker (phiên 5aa8b0cf lượt #22); dữ liệu 3 máy bác bỏ (cả hai config dùng testTimeout mặc định, kết quả lặp lại trên Windows/macOS) — claude.ai tự rút lại ở lượt #26". Provenance thêm lượt #26.
+- AI-S3-I01-01: Output Artifact thêm "bảng đề xuất xử lý góp ý G1–G7 của Phúc (S3-I03), Tấn Hiệp duyệt, Claude Code ghi vào feedback_for_Tan_Hiep.md và Experiment Log (fef88f7)".
+Verdict không đổi. Kiểm git diff. Commit, không push. Khối báo cáo.
+</pasted_content id="5c88">
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- Prompt ghi commit fef88f7, nhưng fef88f7 chỉ là 'chore(ai-log): update prompt logs'. Bullet Limits và phản hồi G1–G7 nằm ở 6a82fe7 (docs(S3-I03)). Ghi hash nào vào AI Record?
+
+Trả lời:
+Your questions have been answered: "Prompt ghi commit fef88f7, nhưng fef88f7 chỉ là 'chore(ai-log): update prompt logs'. Bullet Limits và phản hồi G1–G7 nằm ở 6a82fe7 (docs(S3-I03)). Ghi hash nào vào AI Record?"="6a82fe7". You can now continue with these answers in mind.
+```
+
+### Output
+
+```text
+Hash trong prompt (`fef88f7`) là commit AI log; commit sửa Log/feedback là `6a82fe7`. Hỏi trước khi ghi.
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: AI Record (`ai-audit/AI_Record_Tan_Hiep.md`) — Done. Không chạy run nào.
+- AI-S3-E01-01:
+  - Output Artifact: thêm bullet "Tổng hợp Killed ↔ Timeout".
+  - Student Fix: thêm đoạn về giả thuyết testTimeout (đưa ra ở lượt #22, rút lại ở #26).
+  - Provenance: thêm lượt #26.
+- AI-S3-I01-01: Output Artifact thêm bảng đề xuất xử lý G1–G7.
+- Commit hash ghi là `6a82fe7`, không phải `fef88f7` như prompt: `fef88f7` chỉ là commit AI log. Đã hỏi trước khi ghi và chọn `6a82fe7`.
+- Verdict không đổi. Kiểm diff: 4 dòng sửa, chỉ thêm nội dung; 4 từ báo bị xóa chỉ là từ cũ bị ghi lại vì thêm dấu câu ngay sau.
+- Evidence: `ai-audit/AI_Record_Tan_Hiep.md` (hai artifact AI-S3-I01-01 và AI-S3-E01-01)
+- Commit seminar `main`: `9a51adc` chore(ai-log), `2ca9698` docs(S3-I01), chưa push.
+- Bất thường mới: E01-01 vẫn ghi giờ "11:30–11:50" và khối Verbatim vẫn trỏ "lượt #21–#22". Tôi không sửa hai chỗ này vì prompt không yêu cầu và tôi không biết giờ của lượt #26.
+- Cần quyết định: Không
+```
+
+### Hành động
+
+- Write: C:\Users\[user]\AppData\Local\Temp\claude\D--HK7-Testing-Seminars-Repo\ad369217-4378-464e-a313-7cbcb8377eba\scratchpad\airec.py
 
