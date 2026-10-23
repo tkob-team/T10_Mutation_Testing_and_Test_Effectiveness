@@ -951,8 +951,6 @@ Mức đóng góp được xác định theo contribution records của từng t
 
 ### D.2. Công bố AI support
 
-Codex hỗ trợ cấu trúc và biên soạn báo cáo, đối chiếu source/configuration, tổng hợp counts từ JSON reports và trình bày limitations. Cart AI tests có provenance Claude Code theo record gốc; Coupons sử dụng Codex theo điều kiện mô tả tại mục 4.5. Việc AI hỗ trợ report không thay thế trách nhiệm của nhóm đối với oracle, statistics, references và conclusions.
-
 AI audit, disclosure, reflection và signatures được trình bày trong forms AI-02, AI-03, AI-04 của từng thành viên. Các task-level verdicts đánh giá AI artifacts theo records tương ứng; chúng không thay thế việc kiểm tra oracle, dữ liệu và conclusions của báo cáo.
 
 <!-- Reference links for numbered in-text citations. -->
