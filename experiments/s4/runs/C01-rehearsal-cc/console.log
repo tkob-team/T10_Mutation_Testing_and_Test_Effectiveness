@@ -1,0 +1,4082 @@
+### 2026-10-23T14:28:17+07:00 |   | > git clone https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness.git eshop-demo
+Cloning into 'eshop-demo'...
+--- START 2026-10-23T14:28:17+07:00 | END 2026-10-23T14:28:18+07:00 | 1792740498-1792740497 = 1 s | exit 0
+### 2026-10-23T14:28:18+07:00 | 4b28756 main | > node --version
+v24.15.0
+--- START 2026-10-23T14:28:18+07:00 | END 2026-10-23T14:28:19+07:00 | 1792740499-1792740498 = 1 s | exit 0
+### 2026-10-23T14:28:19+07:00 | 4b28756 main | > npm --version
+11.12.1
+--- START 2026-10-23T14:28:19+07:00 | END 2026-10-23T14:28:19+07:00 | 1792740499-1792740499 = 0 s | exit 0
+### 2026-10-23T14:28:19+07:00 | 4b28756 main | > npm ci
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-async-generators@7.8.4
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-async-generators@7.8.4
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-async-generators
+npm warn   @babel/plugin-syntax-async-generators@"^7.8.4" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-async-generators@7.8.4
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-async-generators
+npm warn     @babel/plugin-syntax-async-generators@"^7.8.4" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-bigint@7.8.3
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-bigint@7.8.3
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-bigint
+npm warn   @babel/plugin-syntax-bigint@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-bigint@7.8.3
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-bigint
+npm warn     @babel/plugin-syntax-bigint@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-class-properties@7.12.13
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-class-properties@7.12.13
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-class-properties
+npm warn   @babel/plugin-syntax-class-properties@"^7.12.13" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-class-properties@7.12.13
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-class-properties
+npm warn     @babel/plugin-syntax-class-properties@"^7.12.13" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-class-static-block@7.14.5
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-class-static-block@7.14.5
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-class-static-block
+npm warn   @babel/plugin-syntax-class-static-block@"^7.14.5" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-class-static-block@7.14.5
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-class-static-block
+npm warn     @babel/plugin-syntax-class-static-block@"^7.14.5" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-import-attributes@7.29.7
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-import-attributes@7.29.7
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-import-attributes
+npm warn   @babel/plugin-syntax-import-attributes@"^7.24.7" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-import-attributes@7.29.7
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-import-attributes
+npm warn     @babel/plugin-syntax-import-attributes@"^7.24.7" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-import-meta@7.10.4
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-import-meta@7.10.4
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-import-meta
+npm warn   @babel/plugin-syntax-import-meta@"^7.10.4" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-import-meta@7.10.4
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-import-meta
+npm warn     @babel/plugin-syntax-import-meta@"^7.10.4" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-json-strings@7.8.3
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-json-strings@7.8.3
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-json-strings
+npm warn   @babel/plugin-syntax-json-strings@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-json-strings@7.8.3
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-json-strings
+npm warn     @babel/plugin-syntax-json-strings@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-logical-assignment-operators@7.10.4
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-logical-assignment-operators@7.10.4
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-logical-assignment-operators
+npm warn   @babel/plugin-syntax-logical-assignment-operators@"^7.10.4" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-logical-assignment-operators@7.10.4
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-logical-assignment-operators
+npm warn     @babel/plugin-syntax-logical-assignment-operators@"^7.10.4" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-nullish-coalescing-operator@7.8.3
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-nullish-coalescing-operator@7.8.3
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-nullish-coalescing-operator
+npm warn   @babel/plugin-syntax-nullish-coalescing-operator@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-nullish-coalescing-operator@7.8.3
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-nullish-coalescing-operator
+npm warn     @babel/plugin-syntax-nullish-coalescing-operator@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-numeric-separator@7.10.4
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-numeric-separator@7.10.4
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-numeric-separator
+npm warn   @babel/plugin-syntax-numeric-separator@"^7.10.4" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-numeric-separator@7.10.4
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-numeric-separator
+npm warn     @babel/plugin-syntax-numeric-separator@"^7.10.4" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-object-rest-spread@7.8.3
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-object-rest-spread@7.8.3
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-object-rest-spread
+npm warn   @babel/plugin-syntax-object-rest-spread@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-object-rest-spread@7.8.3
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-object-rest-spread
+npm warn     @babel/plugin-syntax-object-rest-spread@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-optional-catch-binding@7.8.3
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-optional-catch-binding@7.8.3
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-optional-catch-binding
+npm warn   @babel/plugin-syntax-optional-catch-binding@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-optional-catch-binding@7.8.3
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-optional-catch-binding
+npm warn     @babel/plugin-syntax-optional-catch-binding@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-optional-chaining@7.8.3
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-optional-chaining@7.8.3
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-optional-chaining
+npm warn   @babel/plugin-syntax-optional-chaining@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-optional-chaining@7.8.3
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-optional-chaining
+npm warn     @babel/plugin-syntax-optional-chaining@"^7.8.3" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-private-property-in-object@7.14.5
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-private-property-in-object@7.14.5
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-private-property-in-object
+npm warn   @babel/plugin-syntax-private-property-in-object@"^7.14.5" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-private-property-in-object@7.14.5
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-private-property-in-object
+npm warn     @babel/plugin-syntax-private-property-in-object@"^7.14.5" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @babel/plugin-syntax-top-level-await@7.14.5
+npm warn Found: @babel/core@8.0.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^8.0.0" from @babel/helper-create-class-features-plugin@8.0.7
+npm warn   node_modules/@babel/helper-create-class-features-plugin
+npm warn     @babel/helper-create-class-features-plugin@"^8.0.1" from @babel/plugin-proposal-decorators@8.0.2
+npm warn     node_modules/@babel/plugin-proposal-decorators
+npm warn     1 more (@babel/plugin-transform-typescript)
+npm warn   21 more (@babel/helper-module-transforms, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-top-level-await@7.14.5
+npm warn node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-top-level-await
+npm warn   @babel/plugin-syntax-top-level-await@"^7.14.5" from babel-preset-current-node-syntax@1.2.0
+npm warn   node_modules/babel-preset-current-node-syntax
+npm warn
+npm warn Conflicting peer dependency: @babel/core@7.29.7
+npm warn node_modules/@babel/core
+npm warn   peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-top-level-await@7.14.5
+npm warn   node_modules/babel-preset-current-node-syntax/node_modules/@babel/plugin-syntax-top-level-await
+npm warn     @babel/plugin-syntax-top-level-await@"^7.14.5" from babel-preset-current-node-syntax@1.2.0
+npm warn     node_modules/babel-preset-current-node-syntax
+npm warn deprecated prebuild-install@7.1.3: No longer maintained. Please contact the author of the relevant native addon; alternatives are available.
+npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+
+added 672 packages, and audited 673 packages in 20s
+
+109 packages are looking for funding
+  run `npm fund` for details
+
+6 vulnerabilities (1 low, 2 moderate, 1 high, 2 critical)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+--- START 2026-10-23T14:28:19+07:00 | END 2026-10-23T14:28:40+07:00 | 1792740520-1792740499 = 21 s | exit 0
+### 2026-10-23T14:28:40+07:00 | 4b28756 main | > npm run test:cart-orders
+
+> backend@1.0.0 test:cart-orders
+> jest --selectProjects cart-coupons --runInBand --runTestsByPath test/cart-orders.test.js
+
+Running one project: cart-coupons
+Test Suites: 1 passed, 1 total
+Tests:       36 passed, 36 total
+Snapshots:   0 total
+Time:        0.825 s
+Ran all test suites within paths "test/cart-orders.test.js".
+--- START 2026-10-23T14:28:40+07:00 | END 2026-10-23T14:28:42+07:00 | 1792740522-1792740520 = 2 s | exit 0
+### 2026-10-23T14:28:42+07:00 | 4b28756 main | > npm run mutate:cart-orders
+
+> backend@1.0.0 mutate:cart-orders
+> stryker run stryker.cart-orders.config.json
+
+14:28:43 (10092) INFO ProjectReader Found 1 of 51 file(s) to be mutated.
+14:28:43 (10092) INFO Instrumenter Instrumented 1 source file(s) with 150 mutant(s)
+14:28:43 (10092) INFO ConcurrencyTokenProvider Creating 2 test runner process(es).
+14:28:44 (10092) INFO DryRunExecutor Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+14:28:46 (10092) INFO DryRunExecutor Initial test run succeeded. Ran 72 tests in 1 second (net 713 ms, overhead 861 ms).
+14:29:01 (10092) WARN ChildProcessProxy Child process [pid 17956] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 17956] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 17956,
+  exitCode: 3221225477,
+  signal: null
+}
+14:29:02 (10092) WARN ChildProcessProxy Child process [pid 11352] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 11352] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 11352,
+  exitCode: 3221225477,
+  signal: null
+}
+14:29:14 (10092) WARN ChildProcessProxy Child process [pid 5844] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 5844] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 5844,
+  exitCode: 3221225477,
+  signal: null
+}
+14:29:15 (10092) WARN ChildProcessProxy Child process [pid 16544] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 16544] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 16544,
+  exitCode: 3221225477,
+  signal: null
+}
+14:29:27 (10092) WARN ChildProcessProxy Child process [pid 24400] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 24400] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 24400,
+  exitCode: 3221225477,
+  signal: null
+}
+14:29:28 (10092) WARN ChildProcessProxy Child process [pid 22744] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 22744] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 22744,
+  exitCode: 3221225477,
+  signal: null
+}
+14:29:46 (10092) WARN ChildProcessProxy Child process [pid 6360] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 6360] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 6360,
+  exitCode: 3221225477,
+  signal: null
+}
+14:29:46 (10092) WARN ChildProcessProxy Child process [pid 11664] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 11664] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 11664,
+  exitCode: 3221225477,
+  signal: null
+}
+14:29:55 (10092) WARN ChildProcessProxy Child process [pid 7648] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 7648] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 7648,
+  exitCode: 3221225477,
+  signal: null
+}
+14:29:55 (10092) WARN ChildProcessProxy Child process [pid 20272] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 20272] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 20272,
+  exitCode: 3221225477,
+  signal: null
+}
+14:30:18 (10092) WARN ChildProcessProxy Child process [pid 6268] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 6268] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 6268,
+  exitCode: 3221225477,
+  signal: null
+}
+14:30:19 (10092) WARN ChildProcessProxy Child process [pid 9548] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 9548] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 9548,
+  exitCode: 3221225477,
+  signal: null
+}
+14:31:17 (10092) WARN ChildProcessProxy Child process [pid 9648] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 9648] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 9648,
+  exitCode: 3221225477,
+  signal: null
+}
+14:31:18 (10092) WARN ChildProcessProxy Child process [pid 24260] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	 ChildProcessCrashedError: Child process [pid 24260] exited unexpectedly with exit code 3221225477 (without signal). Last part of stdout and stderr was:
+	● Validation Warning:
+	
+	  Option "projects" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "notify" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "bail" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	● Validation Warning:
+	
+	  Option "reporters" is not supported in an individual project configuration.
+	  Move it to the root configuration.
+	
+	  Configuration Documentation:
+	  https://jestjs.io/docs/configuration
+	
+	
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 24260,
+  exitCode: 3221225477,
+  signal: null
+}
+
+All tests/cart-orders.test.js
+  ✓ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-01 [invalid] get cart without token → 401 [line 21] (killed 1)
+  ~ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-02 [normal] new user gets an empty cart [line 26] (covered 6)
+  ✓ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-03 [normal] add one item, then read the cart [line 32] (killed 3)
+  ~ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-04 [normal] add two different products [line 40] (covered 8)
+  ~ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item [line 48] (covered 14)
+  ✓ Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-06 [invalid] checkout without token → 401 [line 58] (killed 1)
+  ~ Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-07 [normal] checkout with cart total and address [line 63] (covered 17)
+  ✓ Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order) [line 73] (killed 1)
+  ✓ Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id [line 85] (killed 5)
+  ✓ Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-10 [invalid] order detail of non-existent id → 404 [line 92] (killed 1)
+  ✓ Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users [line 98] (killed 1)
+  ✓ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200 [line 109] (killed 7)
+  ~ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order → 200 [line 109] (covered 31)
+  ✓ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400 [line 116] (killed 5)
+  ✓ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) → 400 [line 116] (killed 2)
+  ~ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-14 [invalid] cancel another user's order → 404 [line 123] (covered 18)
+  ~ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-15 [invalid] cancel a non-existent order → 404 [line 131] (covered 9)
+  ✘ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-16 [invalid] cancel without token → 401 [line 137] (covered 0)
+  ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200 [line 154] (killed 14)
+  ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200 [line 154] (killed 8)
+  ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200 [line 154] (killed 6)
+  ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → canceled → 200 [line 154] (killed 3)
+  ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → canceled → 200 [line 154] (killed 3)
+  ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400 [line 177] (killed 11)
+  ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400 [line 177] (killed 5)
+  ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] confirmed → delivered → 400 [line 177] (killed 1)
+  ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] confirmed → pending → 400 [line 177] (covered 55)
+  ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] shipping → pending → 400 [line 177] (killed 1)
+  ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] shipping → confirmed → 400 [line 177] (killed 1)
+  ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → pending → 400 [line 177] (covered 47)
+  ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → shipping → 400 [line 177] (covered 47)
+  ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → canceled → 400 [line 177] (covered 47)
+  ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → pending → 400 [line 177] (killed 2)
+  ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → confirmed → 400 [line 177] (covered 50)
+  ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → unknown_status → 400 [line 177] (covered 55)
+  ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-19 [invalid] change status of a non-existent order → 404 [line 184] (covered 9)
+
+[NoCoverage] ObjectLiteral
+server.js:305:44
+-         if (err) return res.status(500).json({ error: err.message });
++         if (err) return res.status(500).json({});
+
+[NoCoverage] BooleanLiteral
+server.js:551:29
+-           isValidTransition = true;
++           isValidTransition = false;
+
+[Survived] BooleanLiteral
+server.js:286:7
+-     if (!userCarts[userId]) userCarts[userId] = [];
++     if (userCarts[userId]) userCarts[userId] = [];
+Tests ran:
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-02 [normal] new user gets an empty cart
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-03 [normal] add one item, then read the cart
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+
+
+[Survived] ConditionalExpression
+server.js:286:7
+-     if (!userCarts[userId]) userCarts[userId] = [];
++     if (true) userCarts[userId] = [];
+Tests ran:
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-02 [normal] new user gets an empty cart
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-03 [normal] add one item, then read the cart
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+
+
+[Survived] ConditionalExpression
+server.js:286:7
+-     if (!userCarts[userId]) userCarts[userId] = [];
++     if (false) userCarts[userId] = [];
+Tests ran:
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-02 [normal] new user gets an empty cart
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-03 [normal] add one item, then read the cart
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+
+
+[Survived] ArrayDeclaration
+server.js:286:47
+-     if (!userCarts[userId]) userCarts[userId] = [];
++     if (!userCarts[userId]) userCarts[userId] = ["Stryker was here"];
+Tests ran:
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-02 [normal] new user gets an empty cart
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+
+
+[Survived] ConditionalExpression
+server.js:292:7
+-     if (!userCarts[userId]) userCarts[userId] = [];
++     if (true) userCarts[userId] = [];
+Tests ran:
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-03 [normal] add one item, then read the cart
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-04 [normal] add two different products
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+  and 1 more test!
+
+
+[Survived] ArrayDeclaration
+server.js:292:47
+-     if (!userCarts[userId]) userCarts[userId] = [];
++     if (!userCarts[userId]) userCarts[userId] = ["Stryker was here"];
+Tests ran:
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-03 [normal] add one item, then read the cart
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-04 [normal] add two different products
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+  and 1 more test!
+
+
+[Survived] CallExpression
+server.js:293:3
+-     userCarts[userId].push(req.body);
++     ;
+Tests ran:
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-03 [normal] add one item, then read the cart
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-04 [normal] add two different products
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+  and 1 more test!
+
+
+[Survived] StringLiteral
+server.js:294:23
+-     res.json({ message: "Added to cart" });
++     res.json({ message: "" });
+Tests ran:
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-03 [normal] add one item, then read the cart
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-04 [normal] add two different products
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+  and 1 more test!
+
+
+[Survived] ObjectLiteral
+server.js:294:12
+-     res.json({ message: "Added to cart" });
++     res.json({});
+Tests ran:
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-03 [normal] add one item, then read the cart
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-04 [normal] add two different products
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+  and 1 more test!
+
+
+[Survived] ConditionalExpression
+server.js:305:11
+-         if (err) return res.status(500).json({ error: err.message });
++         if (false) return res.status(500).json({ error: err.message });
+Tests ran:
+    Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-07 [normal] checkout with cart total and address
+    Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order)
+    Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id
+  and 23 more tests!
+
+
+[Survived] StringLiteral
+server.js:306:27
+-         res.json({ message: "Checkout successful", orderId: this.lastID });
++         res.json({ message: "", orderId: this.lastID });
+Tests ran:
+    Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-07 [normal] checkout with cart total and address
+    Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order)
+    Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id
+  and 23 more tests!
+
+
+[Survived] ArrayDeclaration
+server.js:314:5
+-       [req.user.id],
++       [],
+Tests ran:
+    Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order)
+
+
+[Survived] ObjectLiteral
+server.js:326:47
+-         if (!order) return res.status(404).json({ error: "Order not found" });
++         if (!order) return res.status(404).json({});
+Tests ran:
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-14 [invalid] cancel another user's order → 404
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-15 [invalid] cancel a non-existent order → 404
+
+
+[Survived] StringLiteral
+server.js:326:56
+-         if (!order) return res.status(404).json({ error: "Order not found" });
++         if (!order) return res.status(404).json({ error: "" });
+Tests ran:
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-14 [invalid] cancel another user's order → 404
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-15 [invalid] cancel a non-existent order → 404
+
+
+[Survived] ObjectLiteral
+server.js:330:37
+-           return res.status(400).json({ error: "Cannot cancel this order." });
++           return res.status(400).json({});
+Tests ran:
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) → 400
+
+
+[Survived] StringLiteral
+server.js:330:46
+-           return res.status(400).json({ error: "Cannot cancel this order." });
++           return res.status(400).json({ error: "" });
+Tests ran:
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) → 400
+
+
+[Survived] ArrayDeclaration
+server.js:335:9
+-           ["canceled", req.params.id],
++           [],
+Tests ran:
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order → 200
+
+
+[Survived] StringLiteral
+server.js:335:10
+-           ["canceled", req.params.id],
++           ["", req.params.id],
+Tests ran:
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order → 200
+
+
+[Survived] ObjectLiteral
+server.js:337:20
+-             res.json({ message: "Order canceled successfully" });
++             res.json({});
+Tests ran:
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order → 200
+
+
+[Survived] StringLiteral
+server.js:337:31
+-             res.json({ message: "Order canceled successfully" });
++             res.json({ message: "" });
+Tests ran:
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order → 200
+
+
+[Survived] ObjectLiteral
+server.js:346:45
+-       if (!order) return res.status(404).json({ error: "Order not found" });
++       if (!order) return res.status(404).json({});
+Tests ran:
+    Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-10 [invalid] order detail of non-existent id → 404
+
+
+[Survived] StringLiteral
+server.js:346:54
+-       if (!order) return res.status(404).json({ error: "Order not found" });
++       if (!order) return res.status(404).json({ error: "" });
+Tests ran:
+    Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-10 [invalid] order detail of non-existent id → 404
+
+
+[Survived] StringLiteral
+server.js:512:5
+-       `
+-           SELECT orders.*, users.name as user_name 
+-           FROM orders 
+-           LEFT JOIN users ON orders.user_id = users.id
+-           ORDER BY orders.id DESC
+-       `,
++       ``,
+Tests ran:
+    Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users
+
+
+[Survived] ArrayDeclaration
+server.js:518:5
+-       [],
++       ["Stryker was here"],
+Tests ran:
+    Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users
+
+
+[Survived] ObjectLiteral
+server.js:532:47
+-         if (!order) return res.status(404).json({ error: "Order not found" });
++         if (!order) return res.status(404).json({});
+Tests ran:
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-19 [invalid] change status of a non-existent order → 404
+
+
+[Survived] StringLiteral
+server.js:532:56
+-         if (!order) return res.status(404).json({ error: "Order not found" });
++         if (!order) return res.status(404).json({ error: "" });
+Tests ran:
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-19 [invalid] change status of a non-existent order → 404
+
+
+[Survived] ConditionalExpression
+server.js:550:11
+-         if (currentStatus === "canceled" && status === "delivered")
++         if (false)
+Tests ran:
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200
+  and 14 more tests!
+
+
+[Survived] StringLiteral
+server.js:550:29
+-         if (currentStatus === "canceled" && status === "delivered")
++         if (currentStatus === "" && status === "delivered")
+Tests ran:
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200
+  and 14 more tests!
+
+
+[Survived] StringLiteral
+server.js:550:54
+-         if (currentStatus === "canceled" && status === "delivered")
++         if (currentStatus === "canceled" && status === "")
+Tests ran:
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → pending → 400
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → confirmed → 400
+
+
+[Survived] ObjectLiteral
+server.js:554:37
+-           return res.status(400).json({
+-             error: `Invalid state transition from ${currentStatus} to ${status}`,
+-           });
++           return res.status(400).json({});
+Tests ran:
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] confirmed → delivered → 400
+  and 9 more tests!
+
+
+[Survived] StringLiteral
+server.js:555:18
+-             error: `Invalid state transition from ${currentStatus} to ${status}`,
++             error: ``,
+Tests ran:
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] confirmed → delivered → 400
+  and 9 more tests!
+
+
+[Survived] ArrayDeclaration
+server.js:561:9
+-           [status, req.params.id],
++           [],
+Tests ran:
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200
+  and 2 more tests!
+
+
+[Survived] ObjectLiteral
+server.js:563:20
+-             res.json({ message: "Order status updated" });
++             res.json({});
+Tests ran:
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200
+  and 2 more tests!
+
+
+[Survived] StringLiteral
+server.js:563:31
+-             res.json({ message: "Order status updated" });
++             res.json({ message: "" });
+Tests ran:
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200
+  and 2 more tests!
+
+
+Ran 15.79 tests per mutant on average.
+-----------|------------------|----------|-----------|------------|----------|----------|
+           | % Mutation score |          |           |            |          |          |
+File       |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+All files  |  74.83 |   75.89 |       82 |        25 |         34 |        2 |        7 |
+ server.js |  74.83 |   75.89 |       82 |        25 |         34 |        2 |        7 |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+14:31:31 (10092) INFO JsonReporter Your report can be found at: file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/reports/cart-orders/mutation.json
+14:31:31 (10092) INFO HtmlReporter Your report can be found at: file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/reports/cart-orders/mutation.html
+14:31:31 (10092) INFO MutationTestExecutor Done in 2 minutes and 47 seconds.
+--- START 2026-10-23T14:28:42+07:00 | END 2026-10-23T14:31:31+07:00 | 1792740691-1792740522 = 169 s | exit 0
+### 2026-10-23T14:31:31+07:00 | 4b28756 main | > ls reports reports/cart-orders
+reports:
+cart-orders
+
+reports/cart-orders:
+mutation.html
+mutation.json
+--- START 2026-10-23T14:31:31+07:00 | END 2026-10-23T14:31:32+07:00 | 1792740692-1792740691 = 1 s | exit 0
+### 2026-10-23T14:31:32+07:00 | 4b28756 main | > git status --short
+--- START 2026-10-23T14:31:32+07:00 | END 2026-10-23T14:31:32+07:00 | 1792740692-1792740692 = 0 s | exit 0
+### 2026-10-23T14:31:32+07:00 | 4b28756 main | > git checkout s3/F01-manual
+branch 's3/F01-manual' set up to track 'origin/s3/F01-manual'.
+Switched to a new branch 's3/F01-manual'
+--- START 2026-10-23T14:31:32+07:00 | END 2026-10-23T14:31:32+07:00 | 1792740692-1792740692 = 0 s | exit 0
+### 2026-10-23T14:31:32+07:00 | b77f5d6 s3/F01-manual | > npm run test:manual
+
+> backend@1.0.0 test:manual
+> jest --config jest.manual.config.js
+
+
+Test Suites: 2 passed, 2 total
+Tests:       44 passed, 44 total
+Snapshots:   0 total
+Time:        1.132 s
+Ran all test suites.
+--- START 2026-10-23T14:31:32+07:00 | END 2026-10-23T14:31:34+07:00 | 1792740694-1792740692 = 2 s | exit 0
+### 2026-10-23T14:31:34+07:00 | b77f5d6 s3/F01-manual | > npx stryker run stryker.cart-orders.manual.config.json --concurrency 2 --timeoutMS 5000 --timeoutFactor 1.5
+14:31:36 (21148) INFO ProjectReader Found 1 of 16 file(s) to be mutated.
+14:31:36 (21148) INFO Instrumenter Instrumented 1 source file(s) with 150 mutant(s)
+14:31:36 (21148) INFO ConcurrencyTokenProvider Creating 2 test runner process(es).
+14:31:36 (21148) INFO BroadcastReporter Detected that current console does not support the "progress" reporter, downgrading to "progress-append-only" reporter
+14:31:36 (21148) INFO DryRunExecutor Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+14:31:38 (21148) INFO DryRunExecutor Initial test run succeeded. Ran 44 tests in 1 second (net 376 ms, overhead 693 ms).
+Mutation testing 4% (elapsed: <1m, remaining: ~3m) 15/150 tested (0 survived, 2 timed out)
+14:31:51 (21148) WARN ChildProcessProxy Child process [pid 4820] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 4820] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 4820,
+  exitCode: 3221225477,
+  signal: null
+}
+14:31:52 (21148) WARN ChildProcessProxy Child process [pid 14784] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 14784] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 14784,
+  exitCode: 3221225477,
+  signal: null
+}
+Mutation testing 12% (elapsed: <1m, remaining: ~2m) 20/150 tested (0 survived, 4 timed out)
+14:32:02 (21148) WARN ChildProcessProxy Child process [pid 7844] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 7844] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 7844,
+  exitCode: 3221225477,
+  signal: null
+}
+14:32:03 (21148) WARN ChildProcessProxy Child process [pid 22916] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 22916] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 22916,
+  exitCode: 3221225477,
+  signal: null
+}
+Mutation testing 22% (elapsed: <1m, remaining: ~1m) 28/150 tested (2 survived, 6 timed out)
+14:32:14 (21148) WARN ChildProcessProxy Child process [pid 24068] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 24068] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 24068,
+  exitCode: 3221225477,
+  signal: null
+}
+14:32:16 (21148) WARN ChildProcessProxy Child process [pid 18844] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 18844] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 18844,
+  exitCode: 3221225477,
+  signal: null
+}
+Mutation testing 23% (elapsed: <1m, remaining: ~2m) 33/150 tested (2 survived, 8 timed out)
+Mutation testing 29% (elapsed: <1m, remaining: ~2m) 50/150 tested (4 survived, 10 timed out)
+14:32:28 (21148) WARN ChildProcessProxy Child process [pid 6268] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 6268] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 6268,
+  exitCode: 3221225477,
+  signal: null
+}
+14:32:28 (21148) WARN ChildProcessProxy Child process [pid 7200] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 7200] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 7200,
+  exitCode: 3221225477,
+  signal: null
+}
+Mutation testing 31% (elapsed: ~1m, remaining: ~2m) 57/150 tested (4 survived, 12 timed out)
+14:32:38 (21148) WARN ChildProcessProxy Child process [pid 13984] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 13984] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 13984,
+  exitCode: 3221225477,
+  signal: null
+}
+14:32:39 (21148) WARN ChildProcessProxy Child process [pid 1540] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 1540] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 1540,
+  exitCode: 3221225477,
+  signal: null
+}
+Mutation testing 32% (elapsed: ~1m, remaining: ~2m) 68/150 tested (5 survived, 14 timed out)
+Mutation testing 32% (elapsed: ~1m, remaining: ~2m) 72/150 tested (6 survived, 16 timed out)
+14:32:58 (21148) WARN ChildProcessProxy Child process [pid 12112] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 12112] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 12112,
+  exitCode: 3221225477,
+  signal: null
+}
+14:32:59 (21148) WARN ChildProcessProxy Child process [pid 5696] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 5696] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 5696,
+  exitCode: 3221225477,
+  signal: null
+}
+Mutation testing 38% (elapsed: ~1m, remaining: ~2m) 77/150 tested (6 survived, 19 timed out)
+Mutation testing 52% (elapsed: ~1m, remaining: ~1m) 99/150 tested (6 survived, 20 timed out)
+Mutation testing 62% (elapsed: ~1m, remaining: ~1m) 116/150 tested (6 survived, 20 timed out)
+Mutation testing 74% (elapsed: ~2m, remaining: <1m) 133/150 tested (9 survived, 20 timed out)
+14:33:41 (21148) WARN ChildProcessProxy Child process [pid 22004] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 22004] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 22004,
+  exitCode: 3221225477,
+  signal: null
+}
+14:33:42 (21148) WARN ChildProcessProxy Child process [pid 18600] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 18600] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 18600,
+  exitCode: 3221225477,
+  signal: null
+}
+Mutation testing 86% (elapsed: ~2m, remaining: <1m) 144/150 tested (11 survived, 20 timed out)
+
+All tests
+  manual/cart-orders.manual.js
+    ✓ Cart & Orders Manual Tests - Tấn Hiệp Survivor 3: PUT /api/orders/:id/cancel - Verify pending order is cancelled and DB updated to canceled [line 25] (killed 6)
+    ✓ Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 286:7 - GET /api/cart initializes empty cart array for new user [line 51] (killed 4)
+    ✓ Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 292:7 - POST /api/cart preserves existing cart items across multiple additions [line 71] (killed 8)
+    ✓ Cart & Orders Manual Tests - Tấn Hiệp POST /api/checkout - Verify successful order creation and DB pending status [line 111] (killed 2)
+    ✓ Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 326:47 - PUT /api/orders/:id/cancel returns error body when order not found [line 145] (killed 2)
+    ✓ Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 346:45 - GET /api/orders/:id returns error body when order not found [line 165] (killed 2)
+    ✓ Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 532:47 - PUT /api/admin/orders/:id/status returns error body when order not found [line 185] (killed 2)
+    ✓ Cart & Orders Manual Tests - Tấn Hiệp PUT /api/admin/orders/:id/status - Verify state transition rules and status update [line 204] (killed 5)
+  cart-orders.test.js
+    ✘ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-01 [invalid] get cart without token → 401 [line 21] (covered 0)
+    ~ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-02 [normal] new user gets an empty cart [line 26] (covered 6)
+    ✓ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-03 [normal] add one item, then read the cart [line 32] (killed 1)
+    ~ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-04 [normal] add two different products [line 40] (covered 8)
+    ~ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item [line 48] (covered 14)
+    ✓ Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-06 [invalid] checkout without token → 401 [line 58] (killed 1)
+    ~ Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-07 [normal] checkout with cart total and address [line 63] (covered 17)
+    ✓ Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order) [line 73] (killed 3)
+    ✓ Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id [line 85] (killed 6)
+    ✓ Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-10 [invalid] order detail of non-existent id → 404 [line 92] (killed 1)
+    ✓ Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users [line 98] (killed 2)
+    ✓ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200 [line 109] (killed 5)
+    ~ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order → 200 [line 109] (covered 31)
+    ✓ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400 [line 116] (killed 5)
+    ✓ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) → 400 [line 116] (killed 2)
+    ~ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-14 [invalid] cancel another user's order → 404 [line 123] (covered 18)
+    ~ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-15 [invalid] cancel a non-existent order → 404 [line 131] (covered 9)
+    ✘ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-16 [invalid] cancel without token → 401 [line 137] (covered 0)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200 [line 154] (killed 12)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200 [line 154] (killed 8)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200 [line 154] (killed 6)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → canceled → 200 [line 154] (killed 3)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → canceled → 200 [line 154] (killed 3)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400 [line 177] (killed 10)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400 [line 177] (killed 5)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] confirmed → delivered → 400 [line 177] (killed 1)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] confirmed → pending → 400 [line 177] (covered 55)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] shipping → pending → 400 [line 177] (killed 1)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] shipping → confirmed → 400 [line 177] (killed 1)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → pending → 400 [line 177] (covered 47)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → shipping → 400 [line 177] (covered 47)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → canceled → 400 [line 177] (covered 47)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → pending → 400 [line 177] (killed 2)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → confirmed → 400 [line 177] (covered 50)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → unknown_status → 400 [line 177] (covered 55)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-19 [invalid] change status of a non-existent order → 404 [line 184] (covered 9)
+
+[NoCoverage] ObjectLiteral
+server.js:305:44
+-         if (err) return res.status(500).json({ error: err.message });
++         if (err) return res.status(500).json({});
+
+[NoCoverage] BooleanLiteral
+server.js:551:29
+-           isValidTransition = true;
++           isValidTransition = false;
+
+[Survived] ConditionalExpression
+server.js:305:11
+-         if (err) return res.status(500).json({ error: err.message });
++         if (false) return res.status(500).json({ error: err.message });
+Tests ran:
+    Cart & Orders Manual Tests - Tấn Hiệp Survivor 3: PUT /api/orders/:id/cancel - Verify pending order is cancelled and DB updated to canceled
+    Cart & Orders Manual Tests - Tấn Hiệp POST /api/checkout - Verify successful order creation and DB pending status
+    Cart & Orders Manual Tests - Tấn Hiệp PUT /api/admin/orders/:id/status - Verify state transition rules and status update
+  and 26 more tests!
+
+
+[Survived] ArrayDeclaration
+server.js:314:5
+-       [req.user.id],
++       [],
+Tests ran:
+    Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order)
+
+
+[Survived] ObjectLiteral
+server.js:330:37
+-           return res.status(400).json({ error: "Cannot cancel this order." });
++           return res.status(400).json({});
+Tests ran:
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) → 400
+
+
+[Survived] StringLiteral
+server.js:330:46
+-           return res.status(400).json({ error: "Cannot cancel this order." });
++           return res.status(400).json({ error: "" });
+Tests ran:
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) → 400
+
+
+[Survived] StringLiteral
+server.js:512:5
+-       `
+-           SELECT orders.*, users.name as user_name 
+-           FROM orders 
+-           LEFT JOIN users ON orders.user_id = users.id
+-           ORDER BY orders.id DESC
+-       `,
++       ``,
+Tests ran:
+    Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users
+
+
+[Survived] ArrayDeclaration
+server.js:518:5
+-       [],
++       ["Stryker was here"],
+Tests ran:
+    Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users
+
+
+[Survived] ConditionalExpression
+server.js:550:11
+-         if (currentStatus === "canceled" && status === "delivered")
++         if (false)
+Tests ran:
+    Cart & Orders Manual Tests - Tấn Hiệp PUT /api/admin/orders/:id/status - Verify state transition rules and status update
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200
+  and 15 more tests!
+
+
+[Survived] StringLiteral
+server.js:550:29
+-         if (currentStatus === "canceled" && status === "delivered")
++         if (currentStatus === "" && status === "delivered")
+Tests ran:
+    Cart & Orders Manual Tests - Tấn Hiệp PUT /api/admin/orders/:id/status - Verify state transition rules and status update
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200
+  and 15 more tests!
+
+
+[Survived] StringLiteral
+server.js:550:54
+-         if (currentStatus === "canceled" && status === "delivered")
++         if (currentStatus === "canceled" && status === "")
+Tests ran:
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → pending → 400
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → confirmed → 400
+
+
+[Survived] ObjectLiteral
+server.js:554:37
+-           return res.status(400).json({
+-             error: `Invalid state transition from ${currentStatus} to ${status}`,
+-           });
++           return res.status(400).json({});
+Tests ran:
+    Cart & Orders Manual Tests - Tấn Hiệp PUT /api/admin/orders/:id/status - Verify state transition rules and status update
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400
+  and 10 more tests!
+
+
+[Survived] StringLiteral
+server.js:555:18
+-             error: `Invalid state transition from ${currentStatus} to ${status}`,
++             error: ``,
+Tests ran:
+    Cart & Orders Manual Tests - Tấn Hiệp PUT /api/admin/orders/:id/status - Verify state transition rules and status update
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400
+  and 10 more tests!
+
+
+Ran 9.03 tests per mutant on average.
+-----------|------------------|----------|-----------|------------|----------|----------|
+           | % Mutation score |          |           |            |          |          |
+File       |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+All files  |  90.91 |   92.20 |      109 |        21 |         11 |        2 |        7 |
+ server.js |  90.91 |   92.20 |      109 |        21 |         11 |        2 |        7 |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+14:33:50 (21148) INFO JsonReporter Your report can be found at: file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/reports/cart-orders-manual/mutation.json
+14:33:50 (21148) INFO HtmlReporter Your report can be found at: file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/reports/cart-orders-manual/mutation.html
+14:33:50 (21148) INFO MutationTestExecutor Done in 2 minutes and 14 seconds.
+--- START 2026-10-23T14:31:34+07:00 | END 2026-10-23T14:33:51+07:00 | 1792740831-1792740694 = 137 s | exit 0
+### 2026-10-23T14:33:51+07:00 | b77f5d6 s3/F01-manual | > ls reports reports/*
+reports:
+cart-orders
+cart-orders-manual
+
+reports/cart-orders:
+mutation.html
+mutation.json
+
+reports/cart-orders-manual:
+mutation.html
+mutation.json
+--- START 2026-10-23T14:33:51+07:00 | END 2026-10-23T14:33:51+07:00 | 1792740831-1792740831 = 0 s | exit 0
+### 2026-10-23T14:33:51+07:00 | b77f5d6 s3/F01-manual | > claude --version
+2.1.309 (Claude Code)
+--- START 2026-10-23T14:33:51+07:00 | END 2026-10-23T14:33:51+07:00 | 1792740831-1792740831 = 0 s | exit 0
+### 2026-10-23T14:33:51+07:00 | b77f5d6 s3/F01-manual | > git status --short
+--- START 2026-10-23T14:33:51+07:00 | END 2026-10-23T14:33:51+07:00 | 1792740831-1792740831 = 0 s | exit 0
+### 2026-10-23T14:33:51+07:00 | b77f5d6 s3/F01-manual | > git checkout s3/G01-ai
+branch 's3/G01-ai' set up to track 'origin/s3/G01-ai'.
+Switched to a new branch 's3/G01-ai'
+--- START 2026-10-23T14:33:51+07:00 | END 2026-10-23T14:33:52+07:00 | 1792740832-1792740831 = 1 s | exit 0
+### 2026-10-23T14:33:52+07:00 | f4696c6 s3/G01-ai | > npm run test:ai
+
+> backend@1.0.0 test:ai
+> jest --config jest.ai.config.js
+
+
+Test Suites: 2 passed, 2 total
+Tests:       41 passed, 41 total
+Snapshots:   0 total
+Time:        1.297 s
+Ran all test suites.
+--- START 2026-10-23T14:33:52+07:00 | END 2026-10-23T14:33:54+07:00 | 1792740834-1792740832 = 2 s | exit 0
+### 2026-10-23T14:33:54+07:00 | f4696c6 s3/G01-ai | > npx stryker run stryker.cart-orders.ai.config.json --concurrency 2 --timeoutMS 5000 --timeoutFactor 1.5
+14:33:55 (3616) INFO ProjectReader Found 1 of 18 file(s) to be mutated.
+14:33:55 (3616) INFO Instrumenter Instrumented 1 source file(s) with 150 mutant(s)
+14:33:56 (3616) INFO ConcurrencyTokenProvider Creating 2 test runner process(es).
+14:33:56 (3616) INFO BroadcastReporter Detected that current console does not support the "progress" reporter, downgrading to "progress-append-only" reporter
+14:33:56 (3616) INFO DryRunExecutor Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+14:33:57 (3616) INFO DryRunExecutor Initial test run succeeded. Ran 41 tests in 0 seconds (net 308 ms, overhead 669 ms).
+Mutation testing 5% (elapsed: <1m, remaining: ~2m) 15/150 tested (2 survived, 2 timed out)
+14:34:11 (3616) WARN ChildProcessProxy Child process [pid 12684] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 12684] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 12684,
+  exitCode: 3221225477,
+  signal: null
+}
+14:34:12 (3616) WARN ChildProcessProxy Child process [pid 19692] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 19692] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 19692,
+  exitCode: 3221225477,
+  signal: null
+}
+Mutation testing 13% (elapsed: <1m, remaining: ~2m) 20/150 tested (2 survived, 4 timed out)
+14:34:22 (3616) WARN ChildProcessProxy Child process [pid 22720] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 22720] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 22720,
+  exitCode: 3221225477,
+  signal: null
+}
+14:34:23 (3616) WARN ChildProcessProxy Child process [pid 3580] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 3580] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 3580,
+  exitCode: 3221225477,
+  signal: null
+}
+Mutation testing 22% (elapsed: <1m, remaining: ~1m) 28/150 tested (5 survived, 6 timed out)
+14:34:33 (3616) WARN ChildProcessProxy Child process [pid 3828] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 3828] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 3828,
+  exitCode: 3221225477,
+  signal: null
+}
+14:34:34 (3616) WARN ChildProcessProxy Child process [pid 10932] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 10932] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 10932,
+  exitCode: 3221225477,
+  signal: null
+}
+Mutation testing 24% (elapsed: <1m, remaining: ~2m) 33/150 tested (5 survived, 7 timed out)
+Mutation testing 28% (elapsed: <1m, remaining: ~2m) 47/150 tested (5 survived, 9 timed out)
+14:34:49 (3616) WARN ChildProcessProxy Child process [pid 14064] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 14064] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 14064,
+  exitCode: 3221225477,
+  signal: null
+}
+14:34:50 (3616) WARN ChildProcessProxy Child process [pid 12156] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 12156] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 12156,
+  exitCode: 3221225477,
+  signal: null
+}
+Mutation testing 30% (elapsed: ~1m, remaining: ~2m) 57/150 tested (11 survived, 11 timed out)
+14:34:58 (3616) WARN ChildProcessProxy Child process [pid 13752] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 13752] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 13752,
+  exitCode: 3221225477,
+  signal: null
+}
+14:34:58 (3616) WARN ChildProcessProxy Child process [pid 23428] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 23428] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 23428,
+  exitCode: 3221225477,
+  signal: null
+}
+Mutation testing 31% (elapsed: ~1m, remaining: ~2m) 68/150 tested (12 survived, 13 timed out)
+Mutation testing 32% (elapsed: ~1m, remaining: ~2m) 72/150 tested (13 survived, 15 timed out)
+14:35:18 (3616) WARN ChildProcessProxy Child process [pid 12900] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 12900] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 12900,
+  exitCode: 3221225477,
+  signal: null
+}
+14:35:19 (3616) WARN ChildProcessProxy Child process [pid 5836] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 5836] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 5836,
+  exitCode: 3221225477,
+  signal: null
+}
+Mutation testing 37% (elapsed: ~1m, remaining: ~2m) 77/150 tested (13 survived, 18 timed out)
+Mutation testing 53% (elapsed: ~1m, remaining: ~1m) 100/150 tested (13 survived, 19 timed out)
+Mutation testing 64% (elapsed: ~1m, remaining: ~1m) 118/150 tested (13 survived, 19 timed out)
+Mutation testing 75% (elapsed: ~2m, remaining: <1m) 134/150 tested (16 survived, 19 timed out)
+14:35:59 (3616) WARN ChildProcessProxy Child process [pid 9920] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 9920] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 9920,
+  exitCode: 3221225477,
+  signal: null
+}
+14:36:00 (3616) WARN ChildProcessProxy Child process [pid 15236] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 15236] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 15236,
+  exitCode: 3221225477,
+  signal: null
+}
+Mutation testing 94% (elapsed: ~2m, remaining: <1m) 148/150 tested (21 survived, 20 timed out)
+
+All tests
+  ai/cart-orders.ai.js
+    ✓ AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-01 new user GET /api/cart → 200 with an empty array [line 26] (killed 4)
+    ✓ AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-02 add two different products → GET /api/cart returns both [line 38] (killed 6)
+    ✓ AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-03 cancel a non-existent order → 404 with an error message [line 61] (killed 2)
+    ✓ AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-04 order detail of non-existent id → 404 with an error message [line 71] (killed 2)
+    ✓ AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-05 admin changes status of a non-existent order → 404 with an error message [line 81] (killed 2)
+  cart-orders.test.js
+    ✘ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-01 [invalid] get cart without token → 401 [line 21] (covered 0)
+    ~ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-02 [normal] new user gets an empty cart [line 26] (covered 6)
+    ✓ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-03 [normal] add one item, then read the cart [line 32] (killed 1)
+    ~ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-04 [normal] add two different products [line 40] (covered 8)
+    ~ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item [line 48] (covered 14)
+    ✓ Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-06 [invalid] checkout without token → 401 [line 58] (killed 1)
+    ~ Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-07 [normal] checkout with cart total and address [line 63] (covered 17)
+    ✓ Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order) [line 73] (killed 4)
+    ✓ Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id [line 85] (killed 6)
+    ✓ Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-10 [invalid] order detail of non-existent id → 404 [line 92] (killed 1)
+    ✓ Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users [line 98] (killed 2)
+    ✓ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200 [line 109] (killed 7)
+    ~ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order → 200 [line 109] (covered 31)
+    ✓ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400 [line 116] (killed 5)
+    ✓ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) → 400 [line 116] (killed 2)
+    ~ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-14 [invalid] cancel another user's order → 404 [line 123] (covered 18)
+    ~ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-15 [invalid] cancel a non-existent order → 404 [line 131] (covered 9)
+    ✘ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-16 [invalid] cancel without token → 401 [line 137] (covered 0)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200 [line 154] (killed 14)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200 [line 154] (killed 8)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200 [line 154] (killed 6)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → canceled → 200 [line 154] (killed 3)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → canceled → 200 [line 154] (killed 3)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400 [line 177] (killed 11)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400 [line 177] (killed 5)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] confirmed → delivered → 400 [line 177] (killed 1)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] confirmed → pending → 400 [line 177] (covered 55)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] shipping → pending → 400 [line 177] (killed 1)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] shipping → confirmed → 400 [line 177] (killed 1)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → pending → 400 [line 177] (covered 47)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → shipping → 400 [line 177] (covered 47)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → canceled → 400 [line 177] (covered 47)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → pending → 400 [line 177] (killed 2)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → confirmed → 400 [line 177] (covered 50)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → unknown_status → 400 [line 177] (covered 55)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-19 [invalid] change status of a non-existent order → 404 [line 184] (covered 9)
+
+[NoCoverage] ObjectLiteral
+server.js:305:44
+-         if (err) return res.status(500).json({ error: err.message });
++         if (err) return res.status(500).json({});
+
+[NoCoverage] BooleanLiteral
+server.js:551:29
+-           isValidTransition = true;
++           isValidTransition = false;
+
+[Survived] ObjectLiteral
+server.js:294:12
+-     res.json({ message: "Added to cart" });
++     res.json({});
+Tests ran:
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-03 [normal] add one item, then read the cart
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-04 [normal] add two different products
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+  and 2 more tests!
+
+
+[Survived] StringLiteral
+server.js:294:23
+-     res.json({ message: "Added to cart" });
++     res.json({ message: "" });
+Tests ran:
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-03 [normal] add one item, then read the cart
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-04 [normal] add two different products
+    Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+  and 2 more tests!
+
+
+[Survived] ConditionalExpression
+server.js:305:11
+-         if (err) return res.status(500).json({ error: err.message });
++         if (false) return res.status(500).json({ error: err.message });
+Tests ran:
+    Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-07 [normal] checkout with cart total and address
+    Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order)
+    Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id
+  and 23 more tests!
+
+
+[Survived] StringLiteral
+server.js:306:27
+-         res.json({ message: "Checkout successful", orderId: this.lastID });
++         res.json({ message: "", orderId: this.lastID });
+Tests ran:
+    Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-07 [normal] checkout with cart total and address
+    Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order)
+    Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id
+  and 23 more tests!
+
+
+[Survived] ArrayDeclaration
+server.js:314:5
+-       [req.user.id],
++       [],
+Tests ran:
+    Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order)
+
+
+[Survived] ObjectLiteral
+server.js:330:37
+-           return res.status(400).json({ error: "Cannot cancel this order." });
++           return res.status(400).json({});
+Tests ran:
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) → 400
+
+
+[Survived] StringLiteral
+server.js:330:46
+-           return res.status(400).json({ error: "Cannot cancel this order." });
++           return res.status(400).json({ error: "" });
+Tests ran:
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) → 400
+
+
+[Survived] ArrayDeclaration
+server.js:335:9
+-           ["canceled", req.params.id],
++           [],
+Tests ran:
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order → 200
+
+
+[Survived] StringLiteral
+server.js:335:10
+-           ["canceled", req.params.id],
++           ["", req.params.id],
+Tests ran:
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order → 200
+
+
+[Survived] ObjectLiteral
+server.js:337:20
+-             res.json({ message: "Order canceled successfully" });
++             res.json({});
+Tests ran:
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order → 200
+
+
+[Survived] StringLiteral
+server.js:337:31
+-             res.json({ message: "Order canceled successfully" });
++             res.json({ message: "" });
+Tests ran:
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order → 200
+
+
+[Survived] StringLiteral
+server.js:512:5
+-       `
+-           SELECT orders.*, users.name as user_name 
+-           FROM orders 
+-           LEFT JOIN users ON orders.user_id = users.id
+-           ORDER BY orders.id DESC
+-       `,
++       ``,
+Tests ran:
+    Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users
+
+
+[Survived] ArrayDeclaration
+server.js:518:5
+-       [],
++       ["Stryker was here"],
+Tests ran:
+    Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users
+
+
+[Survived] ConditionalExpression
+server.js:550:11
+-         if (currentStatus === "canceled" && status === "delivered")
++         if (false)
+Tests ran:
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200
+  and 14 more tests!
+
+
+[Survived] StringLiteral
+server.js:550:29
+-         if (currentStatus === "canceled" && status === "delivered")
++         if (currentStatus === "" && status === "delivered")
+Tests ran:
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200
+  and 14 more tests!
+
+
+[Survived] StringLiteral
+server.js:550:54
+-         if (currentStatus === "canceled" && status === "delivered")
++         if (currentStatus === "canceled" && status === "")
+Tests ran:
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → pending → 400
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → confirmed → 400
+
+
+[Survived] ObjectLiteral
+server.js:554:37
+-           return res.status(400).json({
+-             error: `Invalid state transition from ${currentStatus} to ${status}`,
+-           });
++           return res.status(400).json({});
+Tests ran:
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] confirmed → delivered → 400
+  and 9 more tests!
+
+
+[Survived] StringLiteral
+server.js:555:18
+-             error: `Invalid state transition from ${currentStatus} to ${status}`,
++             error: ``,
+Tests ran:
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] confirmed → delivered → 400
+  and 9 more tests!
+
+
+[Survived] ArrayDeclaration
+server.js:561:9
+-           [status, req.params.id],
++           [],
+Tests ran:
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200
+  and 2 more tests!
+
+
+[Survived] ObjectLiteral
+server.js:563:20
+-             res.json({ message: "Order status updated" });
++             res.json({});
+Tests ran:
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200
+  and 2 more tests!
+
+
+[Survived] StringLiteral
+server.js:563:31
+-             res.json({ message: "Order status updated" });
++             res.json({ message: "" });
+Tests ran:
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200
+  and 2 more tests!
+
+
+Ran 8.38 tests per mutant on average.
+-----------|------------------|----------|-----------|------------|----------|----------|
+           | % Mutation score |          |           |            |          |          |
+File       |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+All files  |  83.92 |   85.11 |      100 |        20 |         21 |        2 |        7 |
+ server.js |  83.92 |   85.11 |      100 |        20 |         21 |        2 |        7 |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+14:36:08 (3616) INFO JsonReporter Your report can be found at: file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/reports/cart-orders-ai/mutation.json
+14:36:08 (3616) INFO HtmlReporter Your report can be found at: file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/c01/eshop-demo/backend/reports/cart-orders-ai/mutation.html
+14:36:08 (3616) INFO MutationTestExecutor Done in 2 minutes and 12 seconds.
+--- START 2026-10-23T14:33:54+07:00 | END 2026-10-23T14:36:08+07:00 | 1792740968-1792740834 = 134 s | exit 0
+### 2026-10-23T14:36:08+07:00 | f4696c6 s3/G01-ai | > ls reports reports/*
+reports:
+cart-orders
+cart-orders-ai
+cart-orders-manual
+
+reports/cart-orders:
+mutation.html
+mutation.json
+
+reports/cart-orders-ai:
+mutation.html
+mutation.json
+
+reports/cart-orders-manual:
+mutation.html
+mutation.json
+--- START 2026-10-23T14:36:08+07:00 | END 2026-10-23T14:36:09+07:00 | 1792740969-1792740969 = 0 s | exit 0
+### 2026-10-23T14:36:09+07:00 | f4696c6 s3/G01-ai | > git status --short
+--- START 2026-10-23T14:36:09+07:00 | END 2026-10-23T14:36:09+07:00 | 1792740969-1792740969 = 0 s | exit 0
+### DONE 2026-10-23T14:36:09+07:00
