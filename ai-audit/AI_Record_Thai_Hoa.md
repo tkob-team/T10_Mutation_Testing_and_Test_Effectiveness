@@ -160,11 +160,30 @@ Personal learning/run walkthrough is outside both team repos by explicit user re
 | Tool / Model | OpenAI Codex AI Agent; exact serving revision unavailable |
 | Outputs | draft/[Not_submit] Demo_Script.md; draft/Activity_Worksheet.md; draft/Git_Commit_Log.md; private facilitator guide and activity sandbox |
 | Contribution | Shared three-presenter recording flow, theory/principles, install/basic/advanced operations, reusable AI prompt, limits; five real mutant cards, peer review and tally rules; automated original-test/mutation validation and case-specific scoring |
-| Evidence | draft/[Not_submit] Activity_Sandbox/verification includes raw JSON reports, config, tallies and validation summary |
+| Evidence | [Not_submit] Activity_Support/Activity_Sandbox/verification includes raw JSON reports, config, tallies and validation summary |
 | Execution | Windows Node 24.16.0; 36 Cart baseline tests and 8 Survived in activity scope. Reference candidates: 5 original tests pass, 5/5 own-case kills. Weak candidates: 5 original tests pass, 0/5 kills. Empty candidates: rejected before scoring. Full baseline suite: 88 pass. |
 | Git Export | Available local refs via git log --all: docs HEAD 77ddedc, 64 commits; research SUT HEAD 52ed6ac, 26 commits. Export snapshot precedes the commit containing these outputs. |
 | Review | Sequential review against user spec and repository standards; no subagents or computer use. Fixes include disableBail for complete killedBy mapping and removal of stale tally before a new run. |
 | Boundaries | Existing unrelated slides rename preserved. Actual workshop source unchanged; disposable clone used. No push, actual video, audience pilot, member self-run or fresh AI candidate scene claimed. Human acceptance/verdict Pending. |
+
+### Artifact TH-S4-DEMO-DOMAIN-REVISION-20261023
+
+- **Authorization:** User requested shortening docs/Demo_Script.md and reorganizing recording as shared introduction/setup followed by each member demonstrating their own domain tests, manual additions and AI verification.
+- **Tool:** OpenAI Codex AI Agent; exact serving revision unavailable.
+- **Output:** docs/Demo_Script.md, 123 lines; Vietnamese narration, English headings/terms; Cart & Orders for Tan Hiep, Coupons for Thai Hoa, Authentication & Users for Phuc Hoang.
+- **Verification:** Compared commands and report destinations with current SUT package.json and mutation configs; seven npm script references exist, both additional Coupons configs exist, code fences balance and prohibited punctuation is absent. No new SUT/mutation/AI execution or video recording performed.
+- **Scope:** Activity_Support, contribution workbook, slides and unrelated user changes preserved. Existing audit contents retained. Human review/acceptance Pending.
+
+### Artifact TH-S8-CONTRIBUTION-WORKBOOK-20261023
+
+- **Authorization:** User requested filling the existing Contribution workbook without formatting changes. User explicitly chose tracker assignees and Done statuses when S1/S2 differed from CONTEXT/Git authorship.
+- **Tool:** OpenAI Codex AI Agent with Spreadsheets skill and bundled artifact-tool. No subagents or computer use.
+- **Output:** draft/2026-2027-HK2-Group12-Project Contribution.xlsx, edited in place.
+- **Inputs:** documents/T10_Seminar_Workspace.xlsx; repository task artifacts; unique commits across available refs of docs, research SUT and workshop repos. Git aliases consolidated, original SUT authors excluded; merge commits included.
+- **Filled:** Three member names/IDs, course/group metadata, 44 Done-task descriptions and source references. Summary task counts: Hiep 13, Hoa 21, Hoang 10; Git counts: 45, 40, 10. Personal hours, final contribution percentages, class and project grade remain blank because not supplied. Template sample data for unused members removed.
+- **Verification:** Artifact-tool used to populate and inspect cells, followed by lossless value-only OOXML transfer into original template package. All 22 formula nodes, styles, merges, dimensions, row metadata and other ZIP parts preserved. Counts reconciled; no duplicate task IDs or stored formula errors; ZIP integrity passed. Preview reviewed. Native Excel execution not performed.
+- **Technical boundary:** Existing shared formulas were preserved and their caches reconciled independently; the rendering engine required a preview-only workaround for its blank-score handling. Saved workbook formulas were not changed.
+- **Review:** Human confirmation supplied for source-priority choice only; final contribution percentages, hours, grading and signatures are not inferred.
 
 ## 3. Accuracy Summary & Audit Conclusion
 
