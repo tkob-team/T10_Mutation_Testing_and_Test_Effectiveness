@@ -5,7 +5,7 @@
 **Member:** Lê Tấn Hiệp  
 **Task IDs:** S4-D01  
 **Domain / Section:** Coupons walkthrough của Thái Hòa (`Guide_Contribution_Thai_Hoa.md`)  
-**Evidence Status:** Claude Code (run `D01-1-cc`) chạy hết Installation, First Test và Advanced Usage (trừ phần gửi AI request mới); mọi số liệu khớp guide. Có 1 lỗi thật ở bước lấy overlay. **Tấn Hiệp tự chạy: Pending.**
+**Evidence Status:** Claude Code (run `D01-1-cc`) chạy hết Installation, First Test và Advanced Usage (trừ phần gửi AI request mới); mọi số liệu khớp guide. Có 1 lỗi thật ở bước lấy overlay. **Tấn Hiệp tự chạy (D01-1):** đã chạy Installation, First Test và Advanced Usage, số liệu khớp guide và D01-1-cc; chưa làm phần Review or Request an AI Candidate.
 
 ## Assigned Work & Inputs
 
@@ -36,10 +36,31 @@ Môi trường thực tế: Windows 11, PowerShell 7, Node v24.15.0, npm 11.12.1
 | Link tương đối trong guide | 9/9 tồn tại (chỉ kiểm có file) | [REPORT](../../experiments/s4/runs/D01-1-cc/REPORT.md) | Link URL ngoài: Not checked |
 | File SUT sau run | `server.js`, `database.js`, `database.sqlite`, `package.json`, lockfile không đổi; chỉ có 7 file untracked của overlay | REPORT | Pass |
 
+### Tấn Hiệp tự chạy (D01-1)
+
+Executor: Lê Tấn Hiệp, 2026-10-23, Windows 11, Node v24.15.0, npm 11.12.1, thư mục `C:\w\D01-1`. Tấn Hiệp dán các khối PowerShell do Claude Code soạn sẵn (lệnh nguyên văn từ guide, bọc trong hàm `Step` để in header). Evidence: [console.log](../../experiments/s4/runs/Tan_Hiep/D01-1/console.log) (Start-Transcript), [NOTES.md](../../experiments/s4/runs/Tan_Hiep/D01-1/NOTES.md), report `coupons/`, `coupons-manual/`, `coupons-ai/` và [count_d01.md](../../experiments/s4/runs/Tan_Hiep/D01-1/count_d01.md) trong cùng thư mục.
+
+Khác guide (theo NOTES): (1) chạy trong thư mục ngắn `C:\w\D01-1`, không chứa clone seminar; (2) dòng `$docsRoot` trỏ tới clone seminar có sẵn; (3) thêm khối chuẩn bị, hàm `Step`, dòng `XONG KHOI n` / `BẠN LÀM`.
+
+| Item / Action | Observation / Result | Evidence | Issue / Next Action |
+|---|---|---|---|
+| Lần chạy 1 (14:56–15:19), khối 0–3 | Trong log, hai lệnh bị cắt: khối overlay kết thúc bằng `-Destination $des`, và lệnh Stryker manual thành `node node_modules/@stryker-mutstryker.coupons.manual.config.json` (exit 1). Ba file overlay bị copy lạc vào `backend/` gốc (`coupons.ai.js`, `coupons.manual.js`, `coupons-scenarios.js`) | console.log 15:18:09–15:18:12 | Giả thuyết: lệnh bị cắt khi dán. Ba file lạc không khớp `testMatch` của config overlay nên không ảnh hưởng lần 2 |
+| Lần chạy 2 (15:23–15:35), chạy lại khối 0–3 trong cùng thư mục | `New-Item` báo thư mục đã tồn tại, `git clone` exit 128 (thư mục có sẵn); các lệnh sau chạy trên clone đã checkout `806ba19`; mọi lệnh khác exit 0 | console.log từ 15:23 | Report cuối lấy từ lần 2 |
+| `npm.cmd test`, `npm.cmd run test:coupons` | 88 và 26 tests pass (Tấn Hiệp ghi trong NOTES) | NOTES | Khớp guide |
+| `mutate:coupons` | 120 mutants: 39 / 21 / 30 / 25 / 5; 52.17% (đếm từ `mutation.json`) | `coupons/mutation.json` | Khớp guide |
+| Dòng 474, mutant 111 / 113 | Tấn Hiệp thấy `true` và `max_uses_per_user && 1` | NOTES | Khớp guide |
+| Jest manual / AI | 35 / 40 pass (NOTES) | NOTES | Khớp guide |
+| Stryker manual / AI | Cả hai 41 / 21 / 28 / 25 / 5; 53.91%; chỉ kill thêm 111 và 113 | `count_d01.md` | Khớp guide; 0 mutant khác trạng thái so với D01-1-cc ở cả 3 report |
+| Review or Request an AI Candidate | NOTES ghi "không làm"; request AI mới: không làm. Cuối log có lệnh kiểm SHA-256 của `candidate.raw.js`, kết quả `7B51…1E81` trùng `executed-sha256.json` | NOTES; cuối console.log | Pending nếu cần review candidate |
+| Bước mơ hồ (NOTES) | "Provenance, không hiểu làm gì" | NOTES | Feedback cho tác giả: guide chưa nói rõ người đọc phải làm gì với PROVENANCE |
+| File SUT sau run | `server.js`, `database.js`, `database.sqlite`, `package.json`, lockfile không đổi | `git diff --quiet HEAD` | Pass |
+
+Hạn chế của evidence: `console.log` chỉ có header, mô tả và exit code của từng lệnh; output của các lệnh native (Jest, Stryker, npm) không vào transcript khi chạy qua hàm `Step`. Số liệu trên lấy từ `mutation.json` và NOTES của Tấn Hiệp. Lúc ghi mục này, transcript chưa được `Stop-Transcript`.
+
 ## Handoff & Review
 
 - Deliverable and destination: `materials/s4/Guide_Reproduction_Tan_Hiep.md`; evidence ở `experiments/s4/runs/D01-1-cc/`.
-- Pending / blockers: (1) **Tấn Hiệp tự chạy guide** trên máy mình và ghi kết quả; (2) tác giả xem feedback D01-01 đến D01-05 và quyết định sửa; (3) retest bước overlay sau khi sửa.
+- Pending / blockers: (1) Tấn Hiệp tự chạy: đã xong Installation, First Test, Advanced Usage (D01-1); còn phần Review or Request an AI Candidate; (2) tác giả xem feedback D01-01 đến D01-05 và quyết định sửa; (3) retest bước overlay sau khi sửa.
 - Checks performed: Claude Code chạy toàn bộ lệnh trong guide trừ phần AI request mới; đếm số liệu từ `mutation.json`; kiểm file SUT không đổi; kiểm link tương đối. Đây không phải member self-run.
 - Leader review: Pending.
 
