@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 10:36 (Asia/Saigon).
+Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 11:03 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 3 lượt prompt; theo model: claude-opus-5-5 3 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 4 lượt prompt; theo model: claude-opus-5-5 4 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-23 02:41 — model: claude-opus-5-5 — session 4a560803
 
@@ -121,4 +121,40 @@ S3-I01 xong: cả 3 run khớp expected, mỗi mutant cũng trùng với report 
 - Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\Experiment_Log_Tan_Hiep.md
 - Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\Experiment_Log_Tan_Hiep.md
 - Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Tan_Hiep\I01-cc-REPORT.md
+
+## #4 — 2026-10-23 11:02 — model: claude-opus-5-5 — session ad369217
+
+### Prompt
+
+```text
+<pasted_content id="5c88">
+S3-I01: Tấn Hiệp đã tự chạy I01-1 (baseline), I01-2 (manual), I01-3 (AI); console/mutation.json/html đã nằm trong experiments/s3/runs/Tan_Hiep/I01-{1,2,3}/. Executor: Tấn Hiệp.
+1. Kiểm 3 thư mục đủ file; đếm số từ mutation.json.
+2. Mở rộng i01_compare.py (thêm tham số, giữ cách gọi cũ) để so từng run với report tương ứng của Hòa và với I01-{1,2,3}-cc; sinh lại i01_comparison.md.
+3. Ghi I01-1/2/3 vào mục Cross Reproduction (Experiment Log) và thêm mục mới vào I01-cc-REPORT.md. Commit, không push. Khối báo cáo.
+</pasted_content id="5c88">
+```
+
+### Output
+
+```text
+Dirty only AI log + member dirs. Commit log, then inspect consoles.
+
+Logs contain output only (no command echo); I01-2/3 ran in `_tmp/I01-coupons`. Now extend script.
+
+Old call output identical; all 0 transitions. Now Experiment Log + REPORT.
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: S3-I01 (run của Tấn Hiệp) — Done. Đủ 3 file ở cả 3 thư mục; Claude Code không chạy lại Jest/Stryker.
+- Kết quả: I01-1 Pass — 26/26 test; Killed/Timeout/Survived/NoCoverage/RuntimeError = 39/21/30/25/5, 120 mutant, 52.17%
+- Kết quả: I01-2 (manual) Pass — 35/35 test; 41/21/28/25/5, 53.91%
+- Kết quả: I01-3 (AI) Pass — 40/40 test; 41/21/28/25/5, 53.91%
+- So từng mutant với report của Hòa và với I01-{1,2,3}-cc (6 cặp): khóa khớp 120/120, 0 mutant đổi trạng thái (Killed↔Timeout 0), tập Survived trùng hết.
+- Script: thêm cờ `--member`; gọi theo cách cũ (không cờ) vẫn ra file y hệt bản trước, đã kiểm bằng `diff`. Đã sinh lại `i01_comparison.md`.
+- Evidence: `experiments/s3/runs/Tan_Hiep/I01-cc-REPORT.md`, mục "Update 2026-10-23 — member runs"
+- Commit seminar `main`: `acbd479` chore(ai-log), `133f782` test(S3-I01), chưa push.
+- Bất thường mới: các `console.log` của I01-1/2/3 chỉ có output, không có dòng lệnh, và log I01-1 không ghi commit EShop đã chạy. Vì vậy không xác nhận được lệnh nguyên văn và commit của I01-1.
+- Bất thường mới: I01-2 và I01-3 chạy trong `Repo/_tmp/I01-coupons/backend`, dùng lại `node_modules` cài khi tôi chạy I01-2-cc. Dry run vẫn đếm test 2 lần (52, 70, 80); mỗi lượt Stryker có 10 cảnh báo crash `exit code 3221225477`.
+- Cần quyết định: Không
+```
 
