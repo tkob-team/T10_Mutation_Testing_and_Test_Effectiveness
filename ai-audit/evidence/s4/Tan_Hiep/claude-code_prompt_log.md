@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 12:36 (Asia/Saigon).
+Nguồn: 3058f82a-a124-4cce-853c-9bab797d6360.jsonl, 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 14:04 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 12 lượt prompt; theo model: claude-opus-5-5 12 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 15 lượt prompt; theo model: claude-opus-5-5 15 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-23 02:41 — model: claude-opus-5-5 — session 4a560803
 
@@ -530,5 +530,83 @@ Kiểm diff CLAUDE.md so bản backup, rồi commit AI log.
 - Edit: D:\HK7\Testing\Seminars\Repo\CLAUDE.md
 - Edit: D:\HK7\Testing\Seminars\Repo\CLAUDE.md
 - Edit: D:\HK7\Testing\Seminars\Repo\CLAUDE.md
+- Edit: D:\HK7\Testing\Seminars\Repo\CLAUDE.md
+
+## #13 — 2026-10-23 12:49 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+<pasted_content id="cce9">
+Task S4-F01a (dùng skill t10-run-report). Không sửa production code, commit không push.
+1) git fetch cả 2 repo; ghi hash main. Kiểm SUT main: node -e "JSON.parse(require('fs').readFileSync('backend/package.json','utf8'))" và ghi kết quả.
+2) Trên baseline 806ba19 (worktree riêng): npm ci; npm run test:cart-orders; npx stryker run stryker.cart-orders.config.json --dryRunOnly. Ghi giờ bắt đầu/kết thúc từng lệnh.
+3) Từ runs S3 của Cart, lấy thời gian chạy full mutate (nếu có log).
+Run ID F01a-1-cc. Evidence vào thư mục s4. Báo cáo ≤ 15 dòng.
+</pasted_content id="cce9">
+```
+
+### Output
+
+```text
+Giờ kiểm docs để biết thư mục evidence s4.
+
+Chạy 3 lệnh, mỗi lệnh có header + giờ bắt đầu/kết thúc.
+
+Lọc riêng các run Cart của Tan_Hiep và Thai_Hoa D04.
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: S4-F01a — Done. Seminar main @ `1f93af0`, SUT origin/main @ `69b845a`.
+- Kết quả: kiểm `package.json` trên SUT main **Fail**, JSON không hợp lệ: thiếu dấu phẩy ở `backend/package.json:24` (`mutate:auth:ai`), parser báo lỗi ở dòng 25 cột 5. Ở `806ba19` file parse OK.
+- Kết quả: F01a-1-cc **Pass**, chạy trên `806ba19`: `npm ci` 12:50:11–12:50:33 (22 s); `test:cart-orders` 12:50:33–12:50:35 (2 s), 36/36 pass; dry run Stryker 12:50:35–12:50:40 (5 s), 150 mutants.
+- Thời gian full mutate Cart của S3: E01-1 (`806ba19`, Tấn Hiệp) 2 phút 33 giây; F01-2 2 phút 5 giây; G01-2 2 phút 3 giây; các run `-cc` 26–30 giây; Thái Hòa D04 khoảng 2,5 phút. Bảng đủ nằm trong REPORT.
+- Evidence: `experiments/s4/runs/F01a-cc-REPORT.md`, `experiments/s4/runs/F01a-1-cc/console.log`
+- Commit seminar `main`: `1f93af0` chore(ai-log), `4f4efb5` docs(S4-F01a). Chưa push. Không sửa file nào trong EShop.
+- Bất thường mới: dry run Stryker báo "Ran 72 tests" trong khi Jest chạy 36 (E01-1 cũng vậy). Nguyên nhân chưa kiểm chứng; ghi trong `F01a-cc-REPORT.md` mục 2.
+- Bất thường mới: worktree `806ba19` còn để lại ở scratchpad (`C:/Users/[user]/AppData/Local/Temp/claude/D--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/wt-806ba19`) và đang đăng ký trong `git worktree list` của EShop.
+- Bất thường mới: tự chọn thư mục evidence `experiments/s4/runs/` theo mẫu của S4-E02, vì `Task_Output_Map.md` không ghi chỗ lưu evidence cho F01.
+- Cần quyết định: F01a-P1 – Sửa thế nào lỗi `package.json` trên main – (a) báo người merge PR #3 sửa / (b) giao Claude Code sửa trên nhánh riêng / (c) guide tạm dùng `806ba19`.
+```
+
+### Hành động
+
+- Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s4\runs\F01a-cc-REPORT.md
+
+## #14 — 2026-10-23 13:54 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+Thêm vào Repo/CLAUDE.md một quy tắc: mọi deliverable của Tấn Hiệp (guide, report, narration, script, form AI, AI Record, báo cáo) viết bằng tiếng Việt, giữ nguyên English technical terms, lệnh, tên file; không dịch sang English dù requirements ghi English. Commit, không push. Báo cáo ≤ 5 dòng.
+```
+
+### Output
+
+```text
+I đã thêm quy tắc vào `Repo/CLAUDE.md` nhưng **chưa commit được**: thư mục `Repo` không phải git repo (`fatal: not a git repository`), và file này không nằm trong repo nào.
+- Quy tắc mới nằm ở `CLAUDE.md:42`, trong mục "Quy tắc".
+- Sửa thêm `CLAUDE.md:23`: dòng cũ "deliverable S4 viết tiếng Anh" mâu thuẫn với quy tắc mới, nay đổi thành "ngôn ngữ deliverable theo mục 'Quy tắc'".
+- Kiểm bằng `diff` với bản sao lưu: chỉ khác đúng 2 chỗ trên, không mất dòng nào. Bản sao lưu ở `C:\Users\[user]\AppData\Local\Temp\claude\D--HK7-Testing-Seminars-Repo\3058f82a-a124-4cce-853c-9bab797d6360\scratchpad\CLAUDE.md.bak`.
+- Cần quyết định: muốn lưu vết thay đổi thì `git init` cho `Repo`, hay chép file vào repo seminar, hay để không commit?
+```
+
+## #15 — 2026-10-23 14:03 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+Đọc claude/Handoff_T10_Tan_Hiep_S4_Update.md trong Project (hoặc mình dán nếu không đọc được). Làm 2 việc, commit, không push, báo cáo ≤ 8 dòng:
+1) Thêm vào Repo/CLAUDE.md: mọi deliverable của Tấn Hiệp viết tiếng Việt (giữ English technical terms, lệnh, tên file); và Claude Code là nơi soạn nháp/chạy/sửa/commit.
+2) Trong clone SUT: tạo nhánh s4/fix-package-json từ main, thêm dấu phẩy thiếu sau mutate:auth:ai (backend/package.json dòng 24), kiểm `node -e "JSON.parse(require('fs').readFileSync('backend/package.json'))"` và `npm ci` trong backend, rồi commit.
+```
+
+### Output
+
+```text
+Now CLAUDE.md role rule.
+```
+
+### Hành động
+
 - Edit: D:\HK7\Testing\Seminars\Repo\CLAUDE.md
 
