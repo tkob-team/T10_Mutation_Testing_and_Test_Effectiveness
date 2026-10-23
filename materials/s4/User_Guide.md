@@ -12,7 +12,7 @@
   - Troubleshooting, Failure Modes, References: gộp từ ba tác giả, mỗi dòng/mục ghi nguồn.
 - **Quy tắc ghép:** chỉ dịch văn xuôi; lệnh, code, số liệu, đường dẫn, mã mutant, tên test và prompt giữ nguyên văn. Nhãn Đã gặp (Observed) / Đề xuất (Suggested) giữ đúng như tác giả ghi. Ngôn ngữ: tiếng Việt theo quyết định của Tấn Hiệp, khác REQ-17 (English); cần nhóm và giảng viên biết.
 
-- **Quyết định đã chốt (Hòa, leader):** giữ hai repo: Cart & Orders là bài mở đầu trên workshop `6d2e790`, còn Coupons và Authentication dùng baseline đóng băng `806ba19`. Dùng tên "Assertion kill" như định nghĩa ở Introduction. Hòa cho phép bản ghép sửa trực tiếp các mục trong danh sách dưới đây, chỉ dựa trên evidence có trong repo.
+- **Quyết định của bản ghép (Hòa, leader):** giữ hai repo: Cart & Orders là bài mở đầu trên workshop `6d2e790`, còn Coupons và Authentication dùng baseline đóng băng `806ba19`. Dùng tên "Assertion kill" như định nghĩa ở Introduction. Hòa cho phép bản ghép sửa trực tiếp các mục trong danh sách dưới đây, chỉ dựa trên evidence có trong repo.
 - **Phiên bản Node (bản ghép tự dung hòa):** workshop yêu cầu `node >=24 <25`, `npm >=11 <13`; SUT `806ba19` không khai `engines`. Cả ba domain đã chạy trên Windows với Node 24.x (Cart và Coupons 24.15.0; Coupons và Auth 24.16.0), nên Installation chung ghi Node 24.x. Câu "Node.js 22 trở lên (đã thử với v26.12.1)" của phần Auth giữ nguyên trong Setup riêng của Auth.
 
 ### Việc tác giả cần sửa
