@@ -1,8 +1,8 @@
 # AI Prompt Log — claude.ai (Seminar Testing Software)
 
-Nguồn: 5aa8b0cf-37ac-50db-b594-9654d0408e0a.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 11:57 (Asia/Saigon).
+Nguồn: 5aa8b0cf-37ac-50db-b594-9654d0408e0a.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 12:28 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 24 lượt prompt; theo model: claude-sonnet-4-6 1 lượt; claude-sonnet-5-5 5 lượt; claude-opus-5-5 16 lượt; unknown 2 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 30 lượt prompt; theo model: claude-sonnet-4-6 1 lượt; claude-sonnet-5-5 5 lượt; claude-opus-5-5 22 lượt; unknown 2 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-23 02:47 — model: claude-sonnet-4-6 — session 779d3557
 
@@ -1134,5 +1134,322 @@ Báo cáo ổn, và bước kiểm `git diff 5d5bf16^ HEAD` đã đối chiếu 
 Trong lúc chờ, mình chuẩn bị phần AI Record. Mình đọc cấu trúc phiếu hiện tại để soạn đúng mẫu.
 
 Mình xuất lại log phiên để có số lượt chính xác cho các artifact (bản lúc 03:00 chỉ có 6 lượt).
+
+Mình soạn sẵn 4 mục AI Record theo đúng mẫu đang dùng trong phiếu: AI-S3-WF-03 (còn nợ), AI-S3-I01-01 (claude.ai), AI-S3-I01-02 (Claude Code), AI-S3-E01-01 (self-run).
+
+Mình chưa kiểm được Q2 vì còn **4 commit chưa push**. Bạn push đi, mình sẽ đọc lại diff của cả file Experiment Log (không chỉ đoạn vừa sửa).
+
+Trong lúc chờ, mình đã chuẩn bị hai file cho các việc S3 còn lại:
+
+**1. `AI_Record_S3_additions_draft.md`.** Nháp 4 artifact theo đúng mẫu đang dùng trong phiếu: WF-03 (còn nợ), I01-01 (claude.ai), I01-02 (Claude Code), E01-01 (self-run). Có hai câu hỏi bạn cần trả lời trước khi dán vào phiếu:
+- **Verdict** đều mới là đề xuất. I01-01 mình đề xuất **INCOMPLETE**, vì phía mình có 5 lỗi phải sửa qua review, trong đó có lần bỏ sót việc mục Cross Reproduction bị xóa.
+- Ba lỗi trong bản bạn sửa (dòng code L474 không tồn tại, dẫn sai §5.1, mốc `±1000 ms`): **bạn tự viết, hay nhờ một công cụ AI khác?** Nếu là AI khác thì phải ghi vào AI Record. Nếu bạn tự viết thì không thuộc artifact nào. Mình để chỗ `[?]` cho bạn điền.
+
+**2. `claude-ai_2026-10-23_5aa8b0cf.md`.** Log phiên này với 24 lượt, đặt vào `ai-audit/evidence/s4/Tan_Hiep/` và ghi đè bản lúc 03:00 nếu đã đặt. Các artifact trỏ tới lượt cụ thể trong file này. Lượt #14–#15 có model "unknown" vì đó là tin nhắn bạn đã ngắt giữa chừng; script ghi lại đúng như thật, không phải lỗi.
+
+**S3 còn lại sau khi push:**
+1. Bạn viết đoạn Limits về Killed ↔ Timeout.
+2. Chốt và dán AI Record.
+3. Cập nhật Sheet: I01 → Done, điền Evidence cho D01–I01, quyết H01.
+
+Xong 3 việc này là S3 khép lại, và mình sang S4.
+```
+
+### Hành động
+
+- Write: /tmp/claude-0/-home-claude/5aa8b0cf-37ac-50db-b594-9654d0408e0a/scratchpad/AI_Record_S3_additions_draft.md
+- Gửi file: /tmp/claude-0/-home-claude/5aa8b0cf-37ac-50db-b594-9654d0408e0a/scratchpad/AI_Record_S3_additions_draft.md, /tmp/claude-0/-home-claude/5aa8b0cf-37ac-50db-b594-9654d0408e0a/scratchpad/claude-ai_2026-10-23_5aa8b0cf.md
+
+## #25 — 2026-10-23 12:06 — model: claude-opus-5-5 — session 5aa8b0cf
+
+### Prompt
+
+```text
+Mình đã push rồi nhé.
+Còn "claude-ai_2026-10-23_5aa8b0cf.md". Phiên này mình chưa hề làm về s04. Chỉ toàn làm s03. Tại sao lại đặt vào s04 nhỉ. Và AI_Record_S3_additions_draft.md đó sẽ đặt ở đâu
+```
+
+### Output
+
+```text
+Bạn nói đúng, mình đặt sai chỗ. Mình kiểm repo vừa push trước, rồi sửa cả hai file.
+
+## Hai file đặt ở đâu
+**Log phiên → `ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-23_5aa8b0cf.md`.** Bạn đúng: mình đặt nhầm vào s4. Lý do mình nghĩ lúc đó là phiên mở ra cho S4, và lượt #1–#7 có lập kế hoạch S4 cùng nháp S4-A01. Nhưng quy tắc là theo stage của công việc, và công việc thật trong phiên đều là S3 (I01, self-run, AI Record). Bản nháp S4-A01 chưa được dùng. Nếu sau này bạn dùng nó cho S4-A01, artifact S4 chỉ cần trỏ về lượt #6 của file s3 này.
+- Lưu ý: log của **Claude Code** cho các việc I01 vẫn nằm ở `evidence/s4/`, vì hook đã chuyển sang s4 từ cuối S3. Đừng sửa tay hay di chuyển file hook ghi. Artifact chỉ cần trỏ đúng đường dẫn đó.
+
+**`AI_Record_S3_additions_draft.md` → không đặt vào repo.** Đây là nháp nội dung để chèn vào `ai-audit/AI_Record_Tan_Hiep.md`: dòng mới vào bảng mục 1, artifact mới vào cuối mục 2, cập nhật mục 3. Mình đã gửi bản sửa đường dẫn sang s3. Cần bạn trả lời 2 câu, rồi mình đưa prompt để Claude Code chèn:
+1. Verdict đề xuất: WF-03, I01-02, E01-01 là VALID; I01-01 là INCOMPLETE. Bạn đồng ý không?
+2. Ba lỗi trong bản bạn sửa (code L474, §5.1, ±1000 ms): bạn tự viết hay dùng AI khác?
+
+## Kết quả kiểm repo
+- **Q2 ổn.** `## Cross Reproduction` đã về dòng 236, mục `###` nằm dưới nó. So với `5d5bf16^`, các dòng mất đều có chủ đích.
+- **Lịch sử bị nhân đôi.** Nhánh của Phúc mang theo **bản sao các commit của bạn** với hash mới (`46e2864`…`93a9ca6`, cùng tác giả TonKnight), rồi Hòa merge vào `main` (`ce7d817`). Mình đã kiểm: **file của bạn không bị đổi** (diff `95b7d7e` → `ce7d817` trên mọi đường dẫn Tan_Hiep đều rỗng). Không mất gì, chỉ là lịch sử bị lặp. Có thể nhắc Phúc lần sau đừng rebase commit của người khác vào nhánh mình.
+
+## Việc S3 mới: Phúc đã làm S3-I03 và góp ý cho bạn
+Phúc chạy lại Cart trên macOS: **150/150 mutant khớp** E01-1/F01-2/G01-2 của bạn. File `experiments/s3/runs/Phuc_Hoang/I03-cart-repro/feedback_for_Tan_Hiep.md` có 7 góp ý (G1–G7), đang **chờ bạn phản hồi**. Mình đã kiểm lại G1 (thư mục `D01-tests/` thật sự không có) và G6 (CO-02 tên là "gets an empty cart" nhưng chỉ assert status). Cả hai đúng. Đề xuất xử lý:
+
+| # | Đề xuất | Lý do |
+|---|---|---|
+| G1 | Nhận: sửa link C01-7 sang `D01-1-cc/` hoặc file test trong SUT | Link chết |
+| G2 | Nhận: ghi rõ số D01 là của `8d60e9b`, trên `806ba19` là 88/54/72 | Tránh hiểu nhầm |
+| G3 | Nhận một phần: ghi lệnh chuẩn là `npx stryker … --concurrency 2 …` (policy chung); **không sửa config** trên nhánh F01/G01 | Nhánh thí nghiệm đã cố định; giải pháp cho S4 guide |
+| G4 | Nhận cho guide; **không sửa** dòng C01-6 | Log ghi đúng lệnh đã chạy lúc đó (`npm install`) |
+| G5 | Nhận: ghi "inferred" trong Experiment Log và AI Record; **không sửa** header test trên `s3/G01-ai` | Sửa nhánh thì đổi commit đã dùng cho run |
+| G6 | Nhận: ghi chú tên test hứa nhiều hơn assert; **không đổi tên** CO-02 | Baseline `806ba19` đã đóng băng |
+| G7 | Nhận: thêm câu giới hạn (5 mutant mục tiêu không có trạng thái DB sau cancel) | Tránh kết luận sai ở S4-B |
+
+Bạn đồng ý bảng này thì mình gửi một prompt Claude Code làm luôn ba việc: chèn AI Record, sửa Experiment Log theo G1–G7, và ghi phản hồi vào file feedback của Phúc. Sau đó S3 chỉ còn đoạn Limits về Killed ↔ Timeout (bạn viết) và cập nhật Sheet.
+```
+
+### Hành động
+
+- Gửi file: /tmp/claude-0/-home-claude/5aa8b0cf-37ac-50db-b594-9654d0408e0a/scratchpad/AI_Record_S3_additions_draft.md
+
+## #26 — 2026-10-23 12:10 — model: claude-opus-5-5 — session 5aa8b0cf
+
+### Prompt
+
+```text
+1. Đồng ý
+2. Tự viết
+
+Hỗ trợ mình hoàn thành AI_Record kia cũng như viết commit sau khi xong hết nhé, hiện đã đưa claude-ai-10-23 vào s03 rồi.
+```
+
+### Output
+
+````text
+Mình hoàn thiện AI Record ngay trên clone cloud theo 2 câu bạn vừa trả lời, rồi gửi file hoàn chỉnh kèm commit message. Trước hết mình lấy số lượt và giờ chính xác từ các log thật.
+
+AI Record đã hoàn chỉnh, có 2 file:
+- **`AI_Record_Tan_Hiep.md`**: ghi đè lên `ai-audit/AI_Record_Tan_Hiep.md`.
+- **`AI_Record_Tan_Hiep.diff`**: chỉ để bạn xem đã đổi gì, không đặt vào repo.
+
+**Thay đổi trong AI Record** (+88/−6 dòng, phần cũ giữ nguyên):
+- **Mục 1:** thêm 4 dòng vào bảng, cho WF-03, I01-01, I01-02, E01-01.
+- **Mục 2:** thêm 4 artifact sau G01-01, theo verdict bạn đã chốt.
+  - Các lượt dẫn chứng đều lấy từ log thật: WF-03 là claude.ai `9ffbcb5b` #71–#75; Claude Code session `ad369217` là #3–#7.
+  - WF-03 có thêm lượt #75 (10:14, cập nhật handoff mục 8), kèm ghi chú: câu "xác nhận giả thuyết Timeout" ở lượt đó nói quá.
+  - I01-01 ghi 6 lỗi của AI, kể cả lỗi đặt log vào s4. Vì bạn tự viết bản sửa 3 cases, các lỗi trong bản đó ghi là không thuộc artifact này.
+- **Mục 3:** tổng 16, VALID 10 (62.50%), INCOMPLETE 6 (37.50%), INVALID 0.
+- **Header và Disclosure:** sửa "12 artifacts" thành "16". Dòng "Full prompt log" thêm 2 đường dẫn log mới. Các mục Disclosure khác của bạn mình không đụng.
+
+Clone trên cloud đã `git restore`, sạch.
+
+**Commit message**
+
+Lần này có 2 việc, nên tách thành 2 commit:
+
+```text
+chore(ai-log): add claude.ai session log 5aa8b0cf for S3-I01 and member self-runs
+```
+
+```text
+docs(S3): add AI Record artifacts WF-03, I01-01, I01-02, E01-01
+
+- WF-03: S3→S4 handoff, skill updates, CLAUDE.md, hook moved to evidence/s4 (VALID)
+- I01-01: claude.ai planning, prompts, zip provenance, three-cases draft, README fix for Hòa (INCOMPLETE, 6 AI errors fixed in review)
+- I01-02: Claude Code I01-cc runs, mutant comparison, member-run provenance (VALID)
+- E01-01: member self-runs D01/E01/F01/G01 commands and comparison (VALID)
+- Accuracy summary: 16 audited, VALID 10, INCOMPLETE 6, INVALID 0
+```
+
+Commit 1 chứa `ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-23_5aa8b0cf.md`. Remote hiện vẫn chưa có file này, nên mình đoán bạn chưa push. Commit 2 chứa `ai-audit/AI_Record_Tan_Hiep.md`. Hai commit này chỉ có chữ, không có phần do AI viết code, nên không cần dòng `Co-Authored-By`. Nếu nhóm có quy ước khác thì làm theo quy ước nhóm.
+
+**Còn lại trước khi đóng S3:**
+1. **Phản hồi G1–G7 của Phúc.** Bạn chưa xác nhận bảng đề xuất ở lượt trước. Đồng ý thì mình gửi prompt Claude Code sửa Experiment Log và ghi phản hồi vào file feedback.
+2. Bạn viết đoạn Limits về Killed ↔ Timeout.
+3. Cập nhật Sheet.
+4. Xuất log phiên lần cuối khi kết thúc. Bản bạn vừa đặt có 24 lượt; các lượt sau sẽ được bổ sung ở lần xuất đó.
+````
+
+### Hành động
+
+- Gửi file: /tmp/claude-0/-home-claude/5aa8b0cf-37ac-50db-b594-9654d0408e0a/scratchpad/ai_record/AI_Record_Tan_Hiep.md, /tmp/claude-0/-home-claude/5aa8b0cf-37ac-50db-b594-9654d0408e0a/scratchpad/ai_record/AI_Record_Tan_Hiep.diff
+
+## #27 — 2026-10-23 12:16 — model: claude-opus-5-5 — session 5aa8b0cf
+
+### Prompt
+
+```text
+1. Đồng ý.
+2. Hỗ trợ mình viết với nhé.
+3. Đã cập nhật.
+4. Xong hết mình sẽ xuất log phiên
+
+Mình push bản mới nhất lên rồi nhé. Bạn check nhé
+```
+
+### Output
+
+````text
+Kết quả này buộc mình **rút lại giả thuyết vừa đưa ra** (Jest 5 s chạy đua với timeout của Stryker). Cả hai loại config đều không đặt `testTimeout`, nên Jest dùng cùng mặc định 5 s ở mọi nơi. Thêm nữa, kết quả lặp lại y hệt trên 3 máy. Nếu là chạy đua về thời gian thì kết quả phải dao động giữa các máy. Dữ liệu tổng hợp như sau (mình đã đếm từ `mutation.json` của từng run):
+
+| Bộ test | Cách Stryker gọi Jest | Run | Killed / Timeout | Survived |
+|---|---|---|---|---|
+| Baseline | `jest.config` inline (config đóng băng `806ba19`) | E01-1 (bạn, Win), Hòa (Win), Phúc (macOS) | 82 / 25 ×3 | 34 |
+| Baseline | `jest` trong `package.json` (`8d60e9b`) | E01-1-cc (concurrency 15) | 87 / 19 (RuntimeError 8) | 34 |
+| Manual | `configFile` của nhánh | F01-2-cc (c15), F01-2 (bạn, c2), Phúc (cờ CLI + npm script) | 112 / 18 ×4 | 11 |
+| Manual | inline kiểu đóng băng (Hòa overlay) | Hòa | 105 / 25 | 11 |
+| AI | `configFile` của nhánh | G01-2 (bạn), Phúc ×2 | 102 / 18 ×3 | 21 |
+| AI | `configFile` của nhánh | G01-2-cc (c15) | 97 / 23 | 21 |
+| AI | inline kiểu đóng băng (Hòa) | Hòa | 95 / 25 | 21 |
+
+**Đoạn Limits (nháp để bạn sửa).** Thêm vào cuối mục `## Limits & Failure Modes`, sau bullet "Cart chạy lại trên frozen baseline". Các bullet cũ giữ nguyên làm lịch sử.
+
+> - **Tổng hợp Killed ↔ Timeout (sau member run và cross-run, 2026-10-23):** cùng một bộ test, Survived giống hệt nhau ở mọi run (baseline 34, manual 11, AI 21) trên 3 máy và 2 hệ điều hành (Windows của mình và của Hòa, macOS của Phúc). Chỉ số Killed/Timeout thay đổi, và nó đi theo **cách Stryker gọi Jest**, không theo máy: config đóng băng (`jest.config` inline) cho 25 Timeout ở cả 3 máy (baseline 82/25; bản overlay manual/AI của Hòa 105/25, 95/25), còn config nhánh (`configFile`) cho 18 Timeout (manual 112/18 ở 4 run, AI 102/18 ở 3 run, kể cả khi concurrency khác nhau: 2 so với 15, và cả `npm run` lẫn `npx` có cờ). Ngoại lệ duy nhất là G01-2-cc (97/23, concurrency 15). Các mutant đổi trạng thái đều thuộc loại xóa thân handler hoặc lời gọi trả response (311:67, 315:22, 316:7, 347:5, 510:63, 519:22, 520:7), làm request treo; config quyết định Stryker ghi Killed hay Timeout. **Cơ chế chưa kiểm chứng.** Các giả thuyết trước ("máy chậm hơn", "thứ tự test và tải máy", "concurrency") không được dữ liệu này ủng hộ. Hệ quả: Timeout vẫn tính là detected nên score gần như không đổi (chênh 74.65% → 74.83% ở baseline đến từ 5 mutant Killed→Timeout và 532:11 RuntimeError→Timeout); khi so run phải so Survived tuyệt đối và ghi rõ config Stryker/Jest kèm số Killed/Timeout.
+
+**Prompt cho Claude Code** (G1–G7 cộng đoạn Limits). Sửa đoạn trên xong thì dán vào chỗ chỉ định:
+
+```text
+S3-I03 feedback từ Phúc (experiments/s3/runs/Phuc_Hoang/I03-cart-repro/feedback_for_Tan_Hiep.md). Tấn Hiệp đã duyệt cách xử lý. Không chạy run nào.
+Experiment_Log_Tan_Hiep.md:
+- G1: link C01-7 `runs/Tan_Hiep/D01-tests/` không tồn tại → đổi sang `runs/Tan_Hiep/D01-1-cc/` và file harness trong SUT.
+- G2: ghi rõ số D01 (36/9/36) là của `8d60e9b`; trên `806ba19` cùng lệnh cho 88/54/72 (nguồn: log baseline của Phúc).
+- G3: ghi lệnh mutation chuẩn cho member run là `npx stryker run <config> --concurrency 2 --timeoutMS 5000 --timeoutFactor 1.5`; config nhánh F01/G01 không đặt 3 tham số này; không sửa config nhánh.
+- G4: thêm ghi chú: setup nên dùng `npm ci`; dòng C01-6 giữ nguyên vì ghi đúng lệnh đã chạy.
+- G5: chỗ dẫn oracle "giỏ mới rỗng" ghi rõ là suy luận từ §4.1 (inferred), không phải yêu cầu; không sửa header test trên nhánh s3/G01-ai.
+- G6: ghi chú tên CO-02/CO-04 hứa nhiều hơn assert (chỉ status); không đổi tên test vì baseline đã đóng băng.
+- G7: thêm câu giới hạn: AI không kill 335:10 ("canceled"→"") vì danh sách 6 mutant mục tiêu không có trạng thái DB sau cancel, không phải do Claude không làm được.
+- Limits: thêm nguyên văn bullet dưới đây vào cuối mục ## Limits & Failure Modes:
+  [dán đoạn Limits]
+feedback_for_Tan_Hiep.md: thêm mục "## Phản hồi của tác giả (Tấn Hiệp, 2026-10-23)" ở cuối, mỗi G một dòng: Nhận / Nhận một phần + đã sửa ở đâu; không sửa nội dung của Phúc.
+Kiểm git diff cả 2 file: ngoài chỗ có chủ đích không mất dòng nào. Commit, không push. Khối báo cáo.
+```
+
+Sheet đã cập nhật xong. Khi bạn push lượt này, mình kiểm diff cả 2 file. Sau đó S3 đóng, chỉ còn bạn xuất log phiên.
+````
+
+## #28 — 2026-10-23 12:23 — model: claude-opus-5-5 — session 5aa8b0cf
+
+### Prompt
+
+```text
+Báo cáo cho phiên thảo luận
+
+- Nhiệm vụ: S3-I03, xử lý góp ý của Phúc — Done. Không chạy run nào.
+- Kết quả trong Experiment_Log_Tan_Hiep.md:
+  - G1: link C01-7 đổi sang D01-1-cc/ và file harness trong SUT
+  - G2: ghi chú 36/9/36 là số của 8d60e9b; trên 806ba19 là 88/54/72, đã kiểm trong log của Phúc
+  - G3: ghi lệnh mutation chuẩn ở mục Comparison
+  - G4: ghi chú dùng npm ci ở Setup, dòng C01-6 giữ nguyên
+  - G5, G6: ghi chú "inferred" và ghi chú tên CO-02/CO-04, đặt sau bảng Survivors
+  - G7: thêm bullet giới hạn về 335:10 vào Limits
+- Limits: bullet Killed ↔ Timeout nguyên văn nằm cuối mục; thay dòng nháp chưa commit "Killed và Timeout" theo lựa chọn "Dùng bản prompt".
+- feedback_for_Tan_Hiep.md: thêm mục "## Phản hồi của tác giả (Tấn Hiệp, 2026-10-23)", mỗi G một dòng; nội dung của Phúc không đổ
+- Kiểm diff: ngoài phần thêm chỉ có 2 dòng bị thay, đều có chủ đích (dòng C01-7 cho G1, dòng 286:7 cho G5).
+- Evidence: experiments/s3/Experiment_Log_Tan_Hiep.md,                                              experiments/s3/runs/Phuc_Hoang/In_Hiep.md. Không có REPORT riêng vìtask chỉ sửa tài liệu.                                                                            Commit seminar main: fef88f7 cho03), chưa push.
+- Bất thường mới: lúc preflight, Experiment_Log_Tan_Hiep.md còn một bullet nháp chưa commit của Tấn Hiệp; đã hỏi trước khi sửa.
+- Cần quyết định: Không
+```
+
+### Output
+
+````text
+Báo cáo ổn, nhưng commit `fef88f7` **chưa push**, nên mình chưa kiểm được diff. Bạn push đi rồi mình kiểm cả 2 file.
+
+Có một điểm cần ghi trước khi đóng S3: bạn chọn "Dùng bản prompt", nên **đoạn Limits về Killed ↔ Timeout là nguyên văn nháp của mình** và đã thay luôn bullet nháp của bạn. Theo AI-01 thì đây là output AI dùng không sửa, nên phải ghi vào AI Record. Mình đề xuất bổ sung vào artifact **AI-S3-E01-01** (đúng chủ đề), không tạo artifact mới:
+- **Output Artifact:** thêm "bullet *Tổng hợp Killed ↔ Timeout* trong Limits (Tấn Hiệp dùng nguyên văn)".
+- **Student Fix:** thêm "AI đưa giả thuyết Jest 5 s chạy đua với timeout Stryker (lượt #22), dữ liệu 3 máy bác bỏ (cả hai config đều dùng `testTimeout` mặc định, kết quả lặp lại trên 3 máy); AI tự rút lại ở lượt #26." Lượt #26 là lượt mình viết đoạn Limits. Nó chưa có trong log 24 lượt, sẽ có khi bạn xuất log cuối phiên.
+- Verdict vẫn là VALID.
+
+Phần phản hồi G1–G7 cho Phúc do Claude Code ghi theo bảng đề xuất của mình. Gộp vào AI-S3-I01-01 là đủ: claude.ai đề xuất, bạn duyệt, Claude Code ghi.
+
+Prompt bổ sung, chạy sau khi push:
+
+```text
+AI Record (ai-audit/AI_Record_Tan_Hiep.md), không chạy run:
+- AI-S3-E01-01: Output Artifact thêm "bullet 'Tổng hợp Killed ↔ Timeout' cuối mục Limits của Experiment_Log_Tan_Hiep.md — claude.ai soạn, Tấn Hiệp dùng nguyên văn (commit fef88f7)". Student Fix thêm: "claude.ai đưa giả thuyết Jest testTimeout 5 s chạy đua với timeout Stryker (phiên 5aa8b0cf lượt #22); dữ liệu 3 máy bác bỏ (cả hai config dùng testTimeout mặc định, kết quả lặp lại trên Windows/macOS) — claude.ai tự rút lại ở lượt #26". Provenance thêm lượt #26.
+- AI-S3-I01-01: Output Artifact thêm "bảng đề xuất xử lý góp ý G1–G7 của Phúc (S3-I03), Tấn Hiệp duyệt, Claude Code ghi vào feedback_for_Tan_Hiep.md và Experiment Log (fef88f7)".
+Verdict không đổi. Kiểm git diff. Commit, không push. Khối báo cáo.
+```
+
+Sau đó S3 chỉ còn:
+1. Push.
+2. Mình kiểm diff.
+3. Bạn xuất log phiên cuối, ghi đè `claude-ai_2026-10-23_5aa8b0cf.md` trong `evidence/s3`. Bản mới sẽ có cả lượt #25–#27.
+````
+
+## #29 — 2026-10-23 12:25 — model: claude-opus-5-5 — session 5aa8b0cf
+
+### Prompt
+
+```text
+1. Push rồi nhé
+2. Kiểm tra giúp mình nhé.
+3. Oke
+
+Báo cáo cho phiên thảo luận
+
+- Nhiệm vụ: AI Record (ai-audit/AI_Record_Tan_Hiep.md) — Done. Không chạy run nào.
+- AI-S3-E01-01:
+  - Output Artifact: thêm bullet "Tổng hợp Killed ↔ Timeout".
+  - Student Fix: thêm đoạn về giả thuyết testTimeout (đưa ra ở lượt #22, rút lại ở #26).
+  - Provenance: thêm lượt #26.
+- AI-S3-I01-01: Output Artifact thêm bảng đề xuất xử lý G1–G7.
+- Commit hash ghi là 6a82fe7, không phải fef88f7 như prompt: fef88f7 chỉ là commit AI log. Đã hỏi trước khi ghi và chọn 6a82fe7.
+- Verdict không đổi. Kiểm diff: 4 dòng sửa, chỉ thêm nội dung; 4 từ báo bị xóa chỉ là từ cũ bị ghi lại vì thêm dấu câu ngay sau.
+- Evidence: ai-audit/AI_Record_Tan_Hiep.md (hai artifact AI-S3-I01-01 và AI-S3-E01-01)
+- Commit seminar main: 9a51adc chore(ai-log), 2ca9698 docs(S3-I01), chưa push.
+- Bất thường mới: E01-01 vẫn ghi giờ "11:30–11:50" và khối Verbatim vẫn trỏ "lượt #21–#22". Tôi không sửa hai chỗ này vì prompt ết giờ của lượt #26.
+- Cần quyết định: Không
+```
+
+### Output
+
+````text
+Mình kiểm phần đã push, và xuất lại log để xác minh số lượt mình đã dẫn (#22, #26).
+
+Đã kiểm phần đã push (`6a82fe7`, `2ca9698`) trên cả 3 file: `Experiment_Log_Tan_Hiep.md`, `feedback_for_Tan_Hiep.md` và AI Record. Mọi dòng bị thay chỉ được **thêm nội dung**. Từ "bị mất" duy nhất là `D01-tests/`, và việc bỏ nó là có chủ đích (G1). Các từ khác chỉ đổi dấu câu. Không mất dòng nào ngoài ý muốn.
+
+**Có một lỗi của mình: số lượt.** Mình vừa xuất lại log để đối chiếu:
+- Giả thuyết "Jest 5 s chạy đua" nằm ở lượt **#22** (11:46). Chỗ này đúng.
+- Lượt rút lại giả thuyết và viết đoạn Limits là **#27** (12:16), **không phải #26**. Lượt #26 (12:10) là lượt soạn AI Record.
+
+Claude Code nêu đúng hai chỗ còn cũ (khung giờ và khối Verbatim). Prompt sửa:
+
+```text
+AI Record AI-S3-E01-01 (ai-audit/AI_Record_Tan_Hiep.md), sửa số lượt claude.ai (claude.ai đã đếm lại trên log, lượt rút lại giả thuyết là #27, không phải #26):
+- Student Fix: "rút lại ở lượt #26" → "#27".
+- Recorded Time & Provenance: "11:30–11:50" → "11:30–12:16"; "lượt #21–#22, #26" → "lượt #21–#22, #27".
+- Verbatim: "lượt #21–#22." → "lượt #21–#22, #27."
+Không đổi gì khác. Kiểm git diff. Commit, không push. Khối báo cáo.
+```
+
+**Sau lượt này, S3 khép lại:**
+- **I01:** run `-cc` + self-run, khớp 120/120, có provenance, có 3 mutant cases, đã gửi góp ý cho Hòa (README đã sửa).
+- **Self-run D01/E01/F01/G01:** xong trên baseline đóng băng, Survived trùng với Hòa và Phúc.
+- **I03 (Phúc):** đã phản hồi G1–G7.
+- **AI Record:** 16 artifact, sau prompt trên là đủ.
+- **Sheet:** bạn đã cập nhật.
+
+Khi bạn push và gửi khối báo cáo, mình kiểm lần cuối, rồi xuất log phiên đầy đủ (đến lượt cuối) để bạn ghi đè `ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-23_5aa8b0cf.md`. Script chạy trên transcript ở phía mình, nên chỉ mình xuất được. Xong việc đó thì sang S4.
+````
+
+## #30 — 2026-10-23 12:27 — model: claude-opus-5-5 — session 5aa8b0cf
+
+### Prompt
+
+```text
+Báo cáo cho phiên thảo luận
+
+- Nhiệm vụ: AI Record AI-S3-E01-01, sửa số lượt claude.ai — Done. Không chạy run nào.
+- Đã sửa đúng 4 chỗ như yêu cầu:
+  - Student Fix: lượt #26 → #27
+  - Recorded Time: 11:30–11:50 → 11:30–12:16
+  - Provenance: "lượt #21–#22, #26" → "lượt #21–#22, #27"
+  - Verbatim: "lượt #21–#22." → "lượt #21–#22, #27."
+- Kiểm diff: 3 dòng thay, chỉ 4 chỗ trên đổi, ngoài ra không có gì khác.
+- Evidence: ai-audit/AI_Record_Tan_Hiep.md
+- Commit seminar main: de069a8 chore(ai-log), aeea993 docs(S3-E01), chưa push.
+- Bất thường mới: tôi không kiểm được lượt #27 vì tìm heading ## #26/## #27 trong ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-23_5aa8b0cf.md không ra kết quả nào. Có thể file log phiên này ở repo chưa có các lượt đó, hoặc heading có định dạng khác.
+- Cần quyết định: Không
+```
+
+### Output
+
+```text
+Claude Code nói đúng. File log trong repo là bản **24 lượt**, xuất lúc 11:56, nên chưa có lượt #25 trở đi. Mình xuất bản đầy đủ ngay bây giờ.
 ```
 
