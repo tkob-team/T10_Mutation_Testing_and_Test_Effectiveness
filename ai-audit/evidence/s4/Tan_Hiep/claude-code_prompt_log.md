@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 11:52 (Asia/Saigon).
+Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 12:22 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 8 lượt prompt; theo model: claude-opus-5-5 8 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 9 lượt prompt; theo model: claude-opus-5-5 9 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-23 02:41 — model: claude-opus-5-5 — session 4a560803
 
@@ -338,4 +338,77 @@ Diff vs `5d5bf16^`: mọi dòng mất đều có chủ đích. Kiểm mục ### 
 ### Hành động
 
 - Write: C:\Users\[user]\AppData\Local\Temp\claude\D--HK7-Testing-Seminars-Repo\ad369217-4378-464e-a313-7cbcb8377eba\scratchpad\restore_cr.py
+
+## #9 — 2026-10-23 12:19 — model: claude-opus-5-5 — session ad369217
+
+### Prompt
+
+```text
+<pasted_content id="5c88">
+S3-I03 feedback từ Phúc (experiments/s3/runs/Phuc_Hoang/I03-cart-repro/feedback_for_Tan_Hiep.md). Tấn Hiệp đã duyệt cách xử lý. Không chạy run nào.
+Experiment_Log_Tan_Hiep.md:
+- G1: link C01-7 `runs/Tan_Hiep/D01-tests/` không tồn tại → đổi sang `runs/Tan_Hiep/D01-1-cc/` và file harness trong SUT.
+- G2: ghi rõ số D01 (36/9/36) là của `8d60e9b`; trên `806ba19` cùng lệnh cho 88/54/72 (nguồn: log baseline của Phúc).
+- G3: ghi lệnh mutation chuẩn cho member run là `npx stryker run <config> --concurrency 2 --timeoutMS 5000 --timeoutFactor 1.5`; config nhánh F01/G01 không đặt 3 tham số này; không sửa config nhánh.
+- G4: thêm ghi chú: setup nên dùng `npm ci`; dòng C01-6 giữ nguyên vì ghi đúng lệnh đã chạy.
+- G5: chỗ dẫn oracle "giỏ mới rỗng" ghi rõ là suy luận từ §4.1 (inferred), không phải yêu cầu; không sửa header test trên nhánh s3/G01-ai.
+- G6: ghi chú tên CO-02/CO-04 hứa nhiều hơn assert (chỉ status); không đổi tên test vì baseline đã đóng băng.
+- G7: thêm câu giới hạn: AI không kill 335:10 ("canceled"→"") vì danh sách 6 mutant mục tiêu không có trạng thái DB sau cancel, không phải do Claude không làm được.
+- Limits: thêm nguyên văn bullet dưới đây vào cuối mục ## Limits & Failure Modes:
+Tổng hợp Killed ↔ Timeout (sau member run và cross-run, 2026-10-23): cùng một bộ test, Survived giống hệt nhau ở mọi run (baseline 34, manual 11, AI 21) trên 3 máy và 2 hệ điều hành (Windows của mình và của Hòa, macOS của Phúc). Chỉ số Killed/Timeout thay đổi, và nó đi theo cách Stryker gọi Jest, không theo máy: config đóng băng (jest.config inline) cho 25 Timeout ở cả 3 máy (baseline 82/25; bản overlay manual/AI của Hòa 105/25, 95/25), còn config nhánh (configFile) cho 18 Timeout (manual 112/18 ở 4 run, AI 102/18 ở 3 run, kể cả khi concurrency khác nhau: 2 so với 15, và cả npm run lẫn npx có cờ). Ngoại lệ duy nhất là G01-2-cc (97/23, concurrency 15). Các mutant đổi trạng thái đều thuộc loại xóa thân handler hoặc lời gọi trả response (311:67, 315:22, 316:7, 347:5, 510:63, 519:22, 520:7), làm request treo; config quyết định Stryker ghi Killed hay Timeout. Cơ chế chưa kiểm chứng. Các giả thuyết trước (“máy chậm hơn”, “thứ tự test và tải máy”, “concurrency”) không được dữ liệu này ủng hộ. Hệ quả: Timeout vẫn tính là detected nên score gần như không đổi (chênh 74.65% → 74.83% ở baseline đến từ 5 mutant Killed→Timeout và 532:11 RuntimeError→Timeout); khi so run phải so Survived tuyệt đối và ghi rõ config Stryker/Jest kèm số Killed/Timeout.
+feedback_for_Tan_Hiep.md: thêm mục "## Phản hồi của tác giả (Tấn Hiệp, 2026-10-23)" ở cuối, mỗi G một dòng: Nhận / Nhận một phần + đã sửa ở đâu; không sửa nội dung của Phúc.
+Kiểm git diff cả 2 file: ngoài chỗ có chủ đích không mất dòng nào. Commit, không push. Khối báo cáo.
+</pasted_content id="5c88">
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- Experiment_Log_Tan_Hiep.md đang có 1 dòng chưa commit (cuối Limits): bullet 'Tổng hợp Killed và Timeout …', nội dung trùng bullet trong prompt, chỉ khác 'Killed và Timeout' vs 'Killed ↔ Timeout'. Xử lý thế nào?
+
+Trả lời:
+Your questions have been answered: "Experiment_Log_Tan_Hiep.md đang có 1 dòng chưa commit (cuối Limits): bullet 'Tổng hợp Killed và Timeout …', nội dung trùng bullet trong prompt, chỉ khác 'Killed và Timeout' vs 'Killed ↔ Timeout'. Xử lý thế nào?"="Dùng bản prompt". You can now continue with these answers in mind.
+```
+
+### Output
+
+```text
+Experiment Log đang bẩn (chưa commit). Xem diff trước.
+
+Working tree có dòng chưa commit của Tấn Hiệp, gần trùng bullet trong prompt nhưng khác heading ("Killed và Timeout" vs "Killed ↔ Timeout"). Không tự quyết.
+
+Dùng bản prompt. Commit AI log, rồi tìm vị trí G1–G7.
+
+Kiểm số G2 từ log của Phúc.
+
+Đủ thông tin. Viết script sửa Log.
+
+Now feedback file response section.
+
+Verify no lost lines in both files.
+
+Chỉ 2 dòng bị thay (C01-7, 286:7), đều có chủ đích. Commit.
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: S3-I03, xử lý góp ý của Phúc — Done. Không chạy run nào.
+- Kết quả trong `Experiment_Log_Tan_Hiep.md`:
+  - G1: link C01-7 đổi sang `D01-1-cc/` và file harness trong SUT
+  - G2: ghi chú 36/9/36 là số của `8d60e9b`; trên `806ba19` là 88/54/72, đã kiểm trong log của Phúc
+  - G3: ghi lệnh mutation chuẩn ở mục Comparison
+  - G4: ghi chú dùng `npm ci` ở Setup, dòng C01-6 giữ nguyên
+  - G5, G6: ghi chú "inferred" và ghi chú tên CO-02/CO-04, đặt sau bảng Survivors
+  - G7: thêm bullet giới hạn về 335:10 vào Limits
+- Limits: bullet Killed ↔ Timeout nguyên văn nằm cuối mục; thay dòng nháp chưa commit "Killed và Timeout" theo lựa chọn "Dùng bản prompt".
+- `feedback_for_Tan_Hiep.md`: thêm mục "## Phản hồi của tác giả (Tấn Hiệp, 2026-10-23)", mỗi G một dòng; nội dung của Phúc không đổi (0 dòng bị xóa).
+- Kiểm diff: ngoài phần thêm chỉ có 2 dòng bị thay, đều có chủ đích (dòng C01-7 cho G1, dòng 286:7 cho G5).
+- Evidence: `experiments/s3/Experiment_Log_Tan_Hiep.md`, `experiments/s3/runs/Phuc_Hoang/I03-cart-repro/feedback_for_Tan_Hiep.md`. Không có REPORT riêng vì task chỉ sửa tài liệu.
+- Commit seminar `main`: `fef88f7` chore(ai-log), `6a82fe7` docs(S3-I03), chưa push.
+- Bất thường mới: lúc preflight, `Experiment_Log_Tan_Hiep.md` còn một bullet nháp chưa commit của Tấn Hiệp; đã hỏi trước khi sửa.
+- Cần quyết định: Không
+```
+
+### Hành động
+
+- Write: C:\Users\[user]\AppData\Local\Temp\claude\D--HK7-Testing-Seminars-Repo\ad369217-4378-464e-a313-7cbcb8377eba\scratchpad\i03_fb.py
 
