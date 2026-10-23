@@ -1,0 +1,126 @@
+id,route,status,mutator,location,replacement,killedBy_count
+9,POST /api/register,NoCoverage,ObjectLiteral,26:44-26:66,{},
+22,POST /api/login,NoCoverage,ObjectLiteral,36:42-36:64,{},
+82,POST /api/forgot-password,NoCoverage,ObjectLiteral,77:46-77:68,{},
+134,PUT /api/users/me,NoCoverage,BlockStatement,124:13-127:4,{},
+135,PUT /api/users/me,NoCoverage,StringLiteral,125:14-125:26,"""""",
+136,PUT /api/users/me,NoCoverage,CallExpression,126:5-126:23,;,
+143,PUT /api/users/me,NoCoverage,ObjectLiteral,132:42-132:64,{},
+4,POST /api/register,RuntimeError,StringLiteral,23:5-23:65,"""""",
+5,POST /api/register,Killed,ArrayDeclaration,24:5-24:28,[],1
+2,POST /api/register,Timeout,BlockStatement,20:41-30:2,{},
+6,POST /api/register,Timeout,BlockStatement,25:20-28:6,{},
+8,POST /api/register,Survived,ConditionalExpression,26:11-26:14,false,
+11,POST /api/register,Killed,ObjectLiteral,27:16-27:76,{},1
+12,POST /api/register,Killed,StringLiteral,27:27-27:57,"""""",1
+7,POST /api/register,Timeout,ConditionalExpression,26:11-26:14,true,
+17,POST /api/login,RuntimeError,StringLiteral,35:10-35:47,"""""",
+18,POST /api/login,Killed,ArrayDeclaration,35:49-35:56,[],1
+15,POST /api/login,Timeout,BlockStatement,32:38-66:2,{},
+19,POST /api/login,Timeout,BlockStatement,35:73-65:4,{},
+20,POST /api/login,Timeout,ConditionalExpression,36:9-36:12,true,
+21,POST /api/login,Survived,ConditionalExpression,36:9-36:12,false,
+24,POST /api/login,Killed,ConditionalExpression,37:9-37:14,true,1
+23,POST /api/login,Timeout,BooleanLiteral,37:9-37:14,user,
+25,POST /api/login,Timeout,ConditionalExpression,37:9-37:14,false,
+26,POST /api/login,Killed,ObjectLiteral,38:35-38:73,{},1
+28,POST /api/login,Killed,ConditionalExpression,40:9-40:70,true,1
+27,POST /api/login,Killed,StringLiteral,38:44-38:71,"""""",1
+29,POST /api/login,Killed,ConditionalExpression,40:9-40:70,false,1
+31,POST /api/login,Killed,ConditionalExpression,40:30-40:70,true,1
+30,POST /api/login,Killed,LogicalOperator,40:9-40:70,user.locked_until || new Date() < new Date(user.locked_until),1
+32,POST /api/login,Survived,EqualityOperator,40:30-40:70,new Date() <= new Date(user.locked_until),
+33,POST /api/login,Killed,EqualityOperator,40:30-40:70,new Date() >= new Date(user.locked_until),1
+34,POST /api/login,Killed,BlockStatement,40:72-44:6,{},1
+35,POST /api/login,Survived,ObjectLiteral,43:15-43:71,{},
+36,POST /api/login,Survived,StringLiteral,43:24-43:69,"""""",
+37,POST /api/login,Killed,ConditionalExpression,46:9-46:35,true,1
+38,POST /api/login,Killed,ConditionalExpression,46:9-46:35,false,1
+39,POST /api/login,Killed,EqualityOperator,46:9-46:35,user.password !== password,1
+42,POST /api/login,RuntimeError,StringLiteral,48:9-48:80,"""""",
+43,POST /api/login,Killed,ArrayDeclaration,49:9-49:18,[],1
+44,POST /api/login,Killed,ObjectLiteral,51:30-51:62,{},1
+46,POST /api/login,Killed,ObjectLiteral,52:16-52:60,{},1
+47,POST /api/login,Survived,StringLiteral,52:27-52:45,"""""",
+40,POST /api/login,Timeout,BlockStatement,46:37-53:6,{},
+49,POST /api/login,Killed,ArithmeticOperator,54:27-54:50,user.login_attempts - 2,1
+50,POST /api/login,Killed,ConditionalExpression,56:11-56:27,true,1
+51,POST /api/login,Killed,ConditionalExpression,56:11-56:27,false,1
+52,POST /api/login,Survived,EqualityOperator,56:11-56:27,newAttempts > 3,
+53,POST /api/login,Killed,EqualityOperator,56:11-56:27,newAttempts < 3,1
+54,POST /api/login,Killed,BlockStatement,56:29-58:8,{},1
+55,POST /api/login,Killed,ArithmeticOperator,57:32-57:51,Date.now() - 180000,1
+48,POST /api/login,Timeout,BlockStatement,53:12-64:6,{},
+57,POST /api/login,RuntimeError,StringLiteral,60:9-60:77,"""""",
+58,POST /api/login,Killed,ArrayDeclaration,61:9-61:44,[],1
+61,POST /api/login,Killed,StringLiteral,63:37-63:64,"""""",1
+60,POST /api/login,Killed,ObjectLiteral,63:28-63:66,{},1
+66,POST /api/forgot-password,RuntimeError,StringLiteral,70:10-70:47,"""""",
+67,POST /api/forgot-password,Killed,ArrayDeclaration,70:49-70:56,[],1
+64,POST /api/forgot-password,Timeout,BlockStatement,68:48-85:2,{},
+68,POST /api/forgot-password,Timeout,BlockStatement,70:73-84:4,{},
+70,POST /api/forgot-password,Killed,ConditionalExpression,71:9-71:14,true,1
+69,POST /api/forgot-password,Timeout,BooleanLiteral,71:9-71:14,user,
+72,POST /api/forgot-password,Survived,ObjectLiteral,71:44-71:71,{},
+73,POST /api/forgot-password,Survived,StringLiteral,71:53-71:69,"""""",
+74,POST /api/forgot-password,Survived,ArithmeticOperator,72:35-72:62,1000 - Math.random() * 9000,
+75,POST /api/forgot-password,Survived,ArithmeticOperator,72:42-72:62,Math.random() / 9000,
+77,POST /api/forgot-password,RuntimeError,StringLiteral,74:7-74:54,"""""",
+71,POST /api/forgot-password,Timeout,ConditionalExpression,71:9-71:14,false,
+78,POST /api/forgot-password,Killed,ArrayDeclaration,75:7-75:28,[],1
+79,POST /api/forgot-password,Timeout,BlockStatement,76:16-82:8,{},
+80,POST /api/forgot-password,Timeout,ConditionalExpression,77:13-77:16,true,
+81,POST /api/forgot-password,Survived,ConditionalExpression,77:13-77:16,false,
+85,POST /api/forgot-password,Killed,StringLiteral,79:20-79:53,"""""",1
+84,POST /api/forgot-password,Killed,ObjectLiteral,78:18-81:10,{},1
+90,POST /api/reset-password,RuntimeError,StringLiteral,90:5-90:92,"""""",
+91,POST /api/reset-password,Killed,ArrayDeclaration,91:5-91:37,[],1
+88,POST /api/reset-password,Timeout,BlockStatement,87:47-98:2,{},
+93,POST /api/reset-password,Killed,ConditionalExpression,93:11-93:29,true,1
+94,POST /api/reset-password,Killed,ConditionalExpression,93:11-93:29,false,1
+95,POST /api/reset-password,Killed,EqualityOperator,93:11-93:29,this.changes !== 0,1
+96,POST /api/reset-password,Survived,ObjectLiteral,94:37-94:72,{},
+97,POST /api/reset-password,Survived,StringLiteral,94:46-94:70,"""""",
+99,POST /api/reset-password,Survived,ObjectLiteral,95:16-95:58,{},
+100,POST /api/reset-password,Survived,StringLiteral,95:27-95:56,"""""",
+92,POST /api/reset-password,Timeout,BlockStatement,92:20-96:6,{},
+102,"authenticateToken (middleware, shared)",Killed,StringLiteral,101:34-101:49,"""""",1
+103,"authenticateToken (middleware, shared)",Killed,ConditionalExpression,102:17-102:55,true,1
+104,"authenticateToken (middleware, shared)",Killed,ConditionalExpression,102:17-102:55,false,1
+105,"authenticateToken (middleware, shared)",Killed,LogicalOperator,102:17-102:55,"authHeader || authHeader.split("" "")[1]",1
+106,"authenticateToken (middleware, shared)",Killed,StringLiteral,102:48-102:51,"""""",1
+107,"authenticateToken (middleware, shared)",Killed,ConditionalExpression,103:7-103:20,true,1
+108,"authenticateToken (middleware, shared)",Killed,ConditionalExpression,103:7-103:20,false,1
+109,"authenticateToken (middleware, shared)",Killed,EqualityOperator,103:7-103:20,token != null,1
+110,"authenticateToken (middleware, shared)",Survived,ObjectLiteral,103:50-103:75,{},
+111,"authenticateToken (middleware, shared)",Survived,StringLiteral,103:59-103:73,"""""",
+101,"authenticateToken (middleware, shared)",Timeout,BlockStatement,100:47-110:2,{},
+114,"authenticateToken (middleware, shared)",Killed,ConditionalExpression,106:9-106:12,true,1
+115,"authenticateToken (middleware, shared)",Killed,ConditionalExpression,106:9-106:12,false,1
+116,"authenticateToken (middleware, shared)",Survived,ObjectLiteral,106:42-106:64,{},
+117,"authenticateToken (middleware, shared)",Survived,StringLiteral,106:51-106:62,"""""",
+113,"authenticateToken (middleware, shared)",Timeout,BlockStatement,105:48-109:4,{},
+118,"authenticateToken (middleware, shared)",Timeout,CallExpression,108:5-108:12,;,
+123,GET /api/users/me,RuntimeError,StringLiteral,113:10-113:44,"""""",
+121,GET /api/users/me,Timeout,BlockStatement,112:59-116:2,{},
+124,GET /api/users/me,Killed,ArrayDeclaration,113:46-113:59,[],1
+125,GET /api/users/me,Timeout,BlockStatement,113:76-115:4,{},
+126,GET /api/users/me,Timeout,CallExpression,114:5-114:20,;,
+130,PUT /api/users/me,Killed,StringLiteral,121:15-121:75,"""""",1
+131,PUT /api/users/me,Killed,ArrayDeclaration,122:16-122:47,[],1
+132,PUT /api/users/me,Survived,ConditionalExpression,124:7-124:11,true,
+133,PUT /api/users/me,Survived,ConditionalExpression,124:7-124:11,false,
+137,PUT /api/users/me,Killed,StringLiteral,128:12-128:27,"""""",1
+138,PUT /api/users/me,Killed,CallExpression,129:3-129:28,;,1
+129,PUT /api/users/me,Timeout,BlockStatement,118:59-135:2,{},
+140,PUT /api/users/me,Timeout,BlockStatement,131:40-134:4,{},
+142,PUT /api/users/me,Survived,ConditionalExpression,132:9-132:12,false,
+145,PUT /api/users/me,Killed,ObjectLiteral,133:14-133:44,{},1
+146,PUT /api/users/me,Killed,StringLiteral,133:25-133:42,"""""",1
+1,POST /api/register,Killed,StringLiteral,20:10-20:25,"""""",1
+14,POST /api/login,Killed,StringLiteral,32:10-32:22,"""""",1
+63,POST /api/forgot-password,Killed,StringLiteral,68:10-68:32,"""""",1
+87,POST /api/reset-password,Killed,StringLiteral,87:10-87:31,"""""",1
+120,GET /api/users/me,Killed,StringLiteral,112:9-112:24,"""""",1
+128,PUT /api/users/me,Killed,StringLiteral,118:9-118:24,"""""",1
+141,PUT /api/users/me,Timeout,ConditionalExpression,132:9-132:12,true,

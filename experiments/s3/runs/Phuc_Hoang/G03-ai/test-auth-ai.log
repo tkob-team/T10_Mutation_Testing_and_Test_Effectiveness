@@ -1,0 +1,10 @@
+
+> backend@1.0.0 test:auth:ai
+> jest --config jest.auth.ai.config.cjs --runInBand
+
+
+Test Suites: 2 passed, 2 total
+Tests:       37 passed, 37 total
+Snapshots:   0 total
+Time:        0.26 s, estimated 1 s
+Ran all test suites.

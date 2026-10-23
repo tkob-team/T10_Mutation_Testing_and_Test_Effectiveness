@@ -1,0 +1,68 @@
+{
+  "same_universe": true,
+  "counts": {
+    "baseline": {
+      "Killed": 60,
+      "Timeout": 27,
+      "Survived": 23,
+      "NoCoverage": 7,
+      "RuntimeError": 8,
+      "valid": 117,
+      "stryker_score": 74.36,
+      "assertion_kill": 51.28
+    },
+    "manual": {
+      "Killed": 83,
+      "Timeout": 27,
+      "Survived": 4,
+      "NoCoverage": 3,
+      "RuntimeError": 8,
+      "valid": 117,
+      "stryker_score": 94.02,
+      "assertion_kill": 70.94
+    },
+    "ai_reviewed": {
+      "Killed": 74,
+      "Timeout": 27,
+      "Survived": 13,
+      "NoCoverage": 3,
+      "RuntimeError": 8,
+      "valid": 117,
+      "stryker_score": 86.32,
+      "assertion_kill": 63.25
+    },
+    "ai_raw": {
+      "Killed": 78,
+      "Timeout": 27,
+      "Survived": 12,
+      "NoCoverage": 0,
+      "RuntimeError": 8,
+      "valid": 117,
+      "stryker_score": 89.74,
+      "assertion_kill": 66.67
+    }
+  },
+  "Timeout_same_set": true,
+  "RuntimeError_same_set": true,
+  "transitions_manual": {
+    "NoCoverage->Killed": 4,
+    "Survived->Killed": 19
+  },
+  "transitions_ai_reviewed": {
+    "NoCoverage->Killed": 4,
+    "Survived->Killed": 10
+  },
+  "transitions_ai_raw": {
+    "NoCoverage->Killed": 7,
+    "Survived->Killed": 11
+  },
+  "overlap": {
+    "manual": 23,
+    "ai": 14,
+    "both": 13,
+    "ai_only": 1,
+    "manual_only": 10,
+    "neither": 6,
+    "union": 24
+  }
+}

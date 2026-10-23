@@ -1,0 +1,14 @@
+2026-10-23 11:48:10 +0700
+$ npm test
+
+> backend@1.0.0 test
+> jest --runInBand
+
+
+Test Suites: 4 passed, 4 total
+Tests:       88 passed, 88 total
+Snapshots:   0 total
+Time:        0.706 s
+Ran all test suites in 2 projects.
+exit=0
+end 2026-10-23 11:48:12 +0700

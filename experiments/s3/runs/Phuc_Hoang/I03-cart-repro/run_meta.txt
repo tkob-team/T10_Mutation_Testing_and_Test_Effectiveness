@@ -1,0 +1,13 @@
+task: S3-I03 (reproduce Cart & Orders of Tan Hiep)
+executor: Phuc Hoang (commands run by Claude Code, Claude Sonnet 5.5; outputs unedited)
+date: 2026-10-23, Asia/Saigon
+os: Darwin 27.0.0 arm64
+node: v26.12.1
+npm: 11.20.0
+stryker core / jest-runner: 10.0.0 / 10.0.0; jest 30.5.2 (npx --version in each worktree)
+sut_repo: https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness
+baseline: 806ba19ee4e09eafe9b2696ccf117a2b1ab841ef (detached; log row E01-1)
+manual:   origin/s3/F01-manual @ b77f5d6 (detached; log row F01-2)
+ai:       origin/s3/G01-ai @ f4696c6 (detached; log row G01-2)
+install: npm ci --no-audit --no-fund (672 packages each; lockfile as committed)
+production files (server.js, database.js, database.sqlite): sha-before.txt per directory; unchanged after the runs (diff empty)

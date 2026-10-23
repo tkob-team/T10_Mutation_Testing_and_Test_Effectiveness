@@ -1,3 +1,4 @@
+<!-- AI-drafted update 2026-10-23 (Claude Code): E03-BASELINE entries and verdicts are proposals for member review; Date, Class/Cohort, Instructor and Signature are left for the member. -->
 **Faculty of Information Technology (FIT) – Ho Chi Minh City University of Science (HCMUS)**
 
 **CS423 / CSC13003 – Software Testing (AI-augmented · 2026\)**
@@ -28,13 +29,13 @@
 
 *List every AI tool used for this assignment (e.g., AI Tool (e.g., ChatGPT, Claude, Gemini), ChatGPT, GitHub Copilot, Cursor, Gemini).*
 
-I used Claude Code 2.1.292 with Claude Opus 5.5 for research, sandbox code and documentation. The successful C03 assertion request used the Claude CLI model claude-sonnet-5-5. Authentication probes and successful model requests are distinguished in the experiment log. [Individual AI record](../ai-audit/AI_Record_Phuc_Hoang.md).
+I used Claude Code 2.1.292 with Claude Opus 5.5 for research, sandbox code and documentation. The successful C03 assertion request used the Claude CLI model claude-sonnet-5-5. The S3-E03 baseline run on the common commit used Claude Code with Claude Sonnet 5.5. An S3 helper-skill draft (`s3-experiment`) was also produced with Claude Code and Claude Opus 5.5; it is kept as evidence and was not used for any submitted result. Authentication probes and successful model requests are distinguished in the experiment log. [Individual AI record](../ai-audit/AI_Record_Phuc_Hoang.md).
 
 ### **2\. Stage(s) of the assignment where AI was used:**
 
 *Tick all that apply: \[ \] brainstorming  \[ \] outlining  \[ \] drafting  \[ \] feedback  \[ \] revision  \[ \] coding  \[ \] data analysis  \[ \] visual design  \[ \] other (specify).*
 
-S3: research, brainstorming, outlining, coding, drafting, revision and data analysis. The work covers equivalent mutants, tool limits, sandbox examples, the age-boundary AI candidate, Auth tests and a provisional Auth mutation run. I supplied the task scope, chose to combine A03/B03 and requested source and transcript preservation.
+S3: research, brainstorming, outlining, coding, drafting, revision and data analysis. The work covers equivalent mutants, tool limits, sandbox examples, the age-boundary AI candidate, Auth tests, a provisional Auth mutation run and the Auth mutation run on the common baseline commit. I supplied the task scope, chose to combine A03/B03 and requested source and transcript preservation.
 
 ### **3\. Main prompts or tasks given to the AI:**
 
@@ -60,7 +61,7 @@ AI contributed the research-note draft, source register, sandbox examples/tests/
 
 *Describe your verification method (ran the test, checked the spec, asked the TA, looked up RFC, cross-checked with the ISTQB syllabus, etc.).*
 
-The recorded workflow compares sources, executes Jest/Stryker, matches individual mutants and preserves raw outputs. Those checks include the correction from two to three Killed-to-Timeout transitions and the SRS FR-02 lock rule. The C03 candidate passes on original code and kills the selected age boundary mutant. The optional numeric-mutation explanation is not evidence of an actual configured Stryker mutant. The OTP 24-hour test condition is treated as an assumption.
+The recorded workflow compares sources, executes Jest/Stryker, matches individual mutants and preserves raw outputs. Those checks include the correction from two to three Killed-to-Timeout transitions and the SRS FR-02 lock rule. The C03 candidate passes on original code and kills the selected age boundary mutant. The optional numeric-mutation explanation is not evidence of an actual configured Stryker mutant. The OTP 24-hour test condition is treated as an assumption. For the common-baseline run, I compared the two Stryker runs and the common-baseline Windows run mutant by mutant and checked that the production files were unchanged.
 
 ### **6\. Citation (if required by course style guide):**
 
@@ -69,6 +70,8 @@ The recorded workflow compares sources, executes Jest/Stryker, matches individua
 [1] Anthropic, "Claude Code," v2.1.292, Claude Opus 5.5, used 2026-10-19. [Documentation](https://code.claude.com/docs/en/overview).
 
 [2] Anthropic, "Claude," CLI model claude-sonnet-5-5, used 2026-10-22. [Claude](https://claude.ai).
+
+[3] Anthropic, "Claude Code," Claude Sonnet 5.5 (claude-sonnet-5-5), used 2026-10-23. [Documentation](https://code.claude.com/docs/en/overview).
 
 ## **3\. Statement of Honesty**
 
