@@ -3,9 +3,9 @@
 **Document Role:** Working log cá nhân S3; chỉ ghi kết quả đã chạy thật trên máy Phúc Hoàng.  
 **Stage:** S3  
 **Member:** Nguyễn Phúc Hoàng  
-**Task IDs:** S3-C03 (xong; C03-5 và C03-6 điền sau khi D04 chốt); S3-D03 (tests đã viết và chạy, chờ review); S3-E03 (đã chạy trên baseline chung `806ba19`, chờ review); S3-F03 (đã chạy trên baseline chung, 13 manual assertions, chờ review); S3-G03 (đã chạy trên baseline chung, 1 request Claude, chờ review); S3-H03 (đã đối chiếu ba run, chờ review); S3-I03 (chưa bắt đầu)  
+**Task IDs:** S3-C03 (xong; C03-5 và C03-6 điền sau khi D04 chốt); S3-D03 (tests đã viết và chạy, chờ review); S3-E03 (đã chạy trên baseline chung `806ba19`, chờ review); S3-F03 (đã chạy trên baseline chung, 13 manual assertions, chờ review); S3-G03 (đã chạy trên baseline chung, 1 request Claude, chờ review); S3-H03 (đã đối chiếu ba run, chờ review); S3-I03 (đã chạy lại Cart & Orders, chờ review)  
 **Domain / Section:** Authentication & Users  
-**Evidence Status:** Partial — C03-1 → C03-4 đã chạy (C03-3: `--bare` lỗi "Not logged in", chạy lại bằng `claude -p` không `--bare`); C03-5 và C03-6 (harness reset Auth và setup baseline chung `806ba19`) đã điền sau S3-D04; D03 đã chạy (26 pass; 23 defect tests fail trên code gốc, trong đó DF-10 về OTP 24 h là giả định cần chốt, không phải vi phạm đã chứng minh); E03 provisional đã chạy (73,45%); E03-baseline trên frozen commit đã chạy 2 lần (74,36%); F03 manual đã chạy 2 lần trên cùng baseline (94,02%); G03 Claude: bản raw 1 lần (89,74%), bản đã review 2 lần (86,32%); H03 đã đối chiếu
+**Evidence Status:** Partial — C03-1 → C03-4 đã chạy (C03-3: `--bare` lỗi "Not logged in", chạy lại bằng `claude -p` không `--bare`); C03-5 và C03-6 (harness reset Auth và setup baseline chung `806ba19`) đã điền sau S3-D04; D03 đã chạy (26 pass; 23 defect tests fail trên code gốc, trong đó DF-10 về OTP 24 h là giả định cần chốt, không phải vi phạm đã chứng minh); E03 provisional đã chạy (73,45%); E03-baseline trên frozen commit đã chạy 2 lần (74,36%); F03 manual đã chạy 2 lần trên cùng baseline (94,02%); G03 Claude: bản raw 1 lần (89,74%), bản đã review 2 lần (86,32%); H03 đã đối chiếu; I03 đã chạy lại Cart & Orders baseline/manual/Claude (74,83% / 90,91% / 83,92%, khớp report của Hiệp)
 
 Chỉ điền việc đã thực hiện; thiếu đầu vào ghi Pending và blocker. Giữ prompt, số liệu và evidence nguyên gốc. Đọc `docs/Working_Guide.md` để biết nơi bàn giao.
 
@@ -157,10 +157,32 @@ Cả bốn run có RuntimeError = 8. Nếu giữ RuntimeError trong mẫu số (
 
 ## Limits & Failure Modes
 
-Các mục (equivalent candidates, failure-mode) đã gom thành đủ ở **Notes cho S4-B** mục 3–4 trong phần Comparison phía trên, nên không lặp lại ở đây. Các giới hạn riêng của từng bước giữ ở phần Survivors và AI Runs. Giới hạn chung của H03: (1) một máy (macOS arm64, Node v26.12.1), một lần chạy cho baseline-raw AI, hai lần cho các run còn lại; (2) chỉ domain Auth; (3) cross-reproduction (S3-I03) chưa chạy; (4) nhãn spec/convention là phán đoán của reviewer và chờ thành viên xác nhận.
+Các mục (equivalent candidates, failure-mode) đã gom thành đủ ở **Notes cho S4-B** mục 3–4 trong phần Comparison phía trên, nên không lặp lại ở đây. Các giới hạn riêng của từng bước giữ ở phần Survivors và AI Runs. Giới hạn chung của H03: (1) một máy (macOS arm64, Node v26.12.1), một lần chạy cho baseline-raw AI, hai lần cho các run còn lại; (2) chỉ domain Auth; (3) cross-reproduction xem phần Cross Reproduction; (4) nhãn spec/convention là phán đoán của reviewer và chờ thành viên xác nhận.
 
 ## Cross Reproduction
 
+**Nguồn chạy:** `experiments/s3/Experiment_Log_Tan_Hiep.md` (E01-1, F01-2, G01-2) và `Cross_Reproduction_Notes_Thai_Hoa.md`.  
+**Môi trường:** macOS arm64, Node v26.12.1, `npm ci` (672 package, lockfile như commit), Stryker 10.0.0, Jest 30.5.2; ngày 2026-10-23; lệnh do Claude Code (Sonnet 5.5) chạy, log không chỉnh sửa. Evidence: [`runs/Phuc_Hoang/I03-cart-repro/`](runs/Phuc_Hoang/I03-cart-repro/) (`run_meta.txt`, `comparison.md`, `compare_cart.py`).
+
 | Teammate Domain / Guide | Commands | Result | Missing Step / Issue | Evidence |
 |---|---|---|---|---|
-| [ ] | [ ] | Not run | [ ] | [ ] |
+| Cart & Orders / baseline `806ba19` (Hiệp E01-1) | `npm ci`; `npm test`; `npm run test:defects`; `npx stryker run stryker.cart-orders.config.json --concurrency 2 --timeoutMS 5000 --timeoutFactor 1.5` | `npm test` 88 pass; `test:defects` 54 fail (kỳ vọng của code gốc); dry run `Ran 72 tests`. 150 mutant: K82/T25/S34/NC2/RE7, **107/143 = 74,83%**. 0 khác biệt so với E01-1 | G2 (số 36/9/36 là của `8d60e9b`), G1 (thiếu `D01-tests/`), G4 | [baseline/](runs/Phuc_Hoang/I03-cart-repro/baseline/) |
+| Cart & Orders / manual `s3/F01-manual` @ `b77f5d6` (F01-2) | `npm ci`; `npm run test:manual`; `npx stryker run stryker.cart-orders.manual.config.json` + cờ như trên; và `npm run mutate:cart-orders:manual` | 44 test pass. K112/T18/S11/NC2/RE7, **130/143 = 90,91%**. 0 khác biệt so với F01-2; 0/150 khác giữa lệnh cờ và npm script. Khác Hòa: 7 mutant Timeout→Killed | G3 (lệnh chuẩn không rõ, config thiếu timeout/concurrency; ~1 phút 21 giây so với ~23 s) | [manual/](runs/Phuc_Hoang/I03-cart-repro/manual/) |
+| Cart & Orders / Claude `s3/G01-ai` @ `f4696c6` (G01-2) | `npm ci`; `npm run test:ai`; stryker + cờ; `npm run mutate:cart-orders:ai` | 41 test pass. K102/T18/S21/NC2/RE7, **120/143 = 83,92%**. 0 khác biệt so với G01-2; 0/150 giữa hai lệnh. Khác Hòa: 7 mutant Timeout→Killed | G3, G5 (oracle "giỏ trống" ghi như sự thật nghiệp vụ) | [ai/](runs/Phuc_Hoang/I03-cart-repro/ai/) |
+
+Hash `server.js`/`database.js`/`database.sqlite` giữ nguyên ở cả ba worktree (`*-sha-before.txt`); nhánh manual/AI rẽ từ `8d60e9b` nhưng file production giống baseline. Ghép mutant theo vị trí/mutator/replacement, không theo id. Con số của Hòa khớp với Hiệp ở baseline; sai khác 7 Timeout/Killed ở manual và AI cần Hiệp hoặc Hòa xác nhận nguyên nhân (Pending, chưa có bằng chứng; giả thuyết: thiếu chính sách timeout trong config).
+
+### Ba mutant case chung (id lấy từ notes của Hòa, đã khớp trong report baseline của tôi)
+
+| Mutant | Vị trí / thay đổi | Baseline | Manual | Claude |
+|---|---|---|---|---|
+| 6 | `server.js` L286:47 `[]` → `["Stryker was here"]` (giỏ khởi tạo của user mới) | Survived | Killed bởi `Kill Mutant 286:7 - GET /api/cart initializes empty cart array for new user` | Killed bởi `AI-CO-01` |
+| 15 | L293 `userCarts[userId].push(req.body)` → `;` (bỏ push) | Survived | Killed bởi `Kill Mutant 292:7 - POST /api/cart preserves existing cart items across multiple additions` | Killed bởi `AI-CO-02` |
+| 68 | L335:10 `"canceled"` → `""` (trạng thái sau cancel) | Survived | Killed bởi `Survivor 3: PUT /api/orders/:id/cancel … DB updated to canceled` | **Survived** |
+
+**Giải thích:** baseline có CO-02, CO-03, CO-04, CO-12 nhưng chỉ assert status code; CO-02 tên "gets an empty cart" nhưng không đọc body, nên mutant đổi nội dung giỏ mới (id 6) hay bỏ `push` (id 15) và đổi trạng thái đơn đã hủy (id 68) đều không làm test fail. Test manual thêm assert vào body/DB. Claude giết id 6 và 15 bằng assert trên body GET /api/cart; không giết id 68 vì danh sách target AI chỉ có 5 mutant và không đề cập trạng thái DB sau cancel (lỗi chọn mục tiêu, không phải chứng minh Claude không làm được). Oracle "giỏ mới rỗng" là suy luận từ §4.1/FR-07, không phải câu nguyên văn trong spec.
+
+### Góp ý gửi tác giả (Tấn Hiệp)
+Chi tiết, bằng chứng và đề xuất sửa: [`feedback_for_Tan_Hiep.md`](runs/Phuc_Hoang/I03-cart-repro/feedback_for_Tan_Hiep.md). Tóm tắt: G2 số kỳ vọng D01 không gắn commit (36/9/36 vs 88/54/72 trên `806ba19`); G1 thiếu `D01-tests/`; G3 lệnh mutation chuẩn không rõ, config manual/AI thiếu timeout/concurrency; G4 dùng `npm ci`; G5 oracle giỏ trống ghi như sự thật; G6 tên test baseline hứa hơn assert; G7 case 3 nêu rõ do chọn target. **Trạng thái:** Proposed; chưa gửi qua kênh nhóm và chưa có phản hồi của Hiệp.
+
+Giới hạn I03: một máy, một lần chạy mỗi lệnh (hai lệnh khác nhau cho manual/AI), chưa so với máy Windows của Hiệp ngoài report có sẵn.

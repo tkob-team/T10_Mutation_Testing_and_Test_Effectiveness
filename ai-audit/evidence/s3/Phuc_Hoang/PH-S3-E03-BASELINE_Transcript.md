@@ -1,10 +1,10 @@
 # PH-S3-E03-BASELINE — Chat Transcript
 
 **Member:** Nguyễn Phúc Hoàng  
-**Stage / Task ID:** S3 / S3-E03, S3-F03, S3-G03 và S3-H03  
-**Tool / Model:** Claude Code 2.1.308 (CLI); model(s) ghi trong phiên: `claude-sonnet-5-5` (225 lượt)  
+**Stage / Task ID:** S3 / S3-E03, S3-F03, S3-G03, S3-H03 và S3-I03 (kèm cập nhật C03-5, C03-6, D03 trong Experiment Log; AI-02/03/04 draft)  
+**Tool / Model:** Claude Code 2.1.308 (CLI); model(s) ghi trong phiên: `claude-sonnet-5-5` (278 lượt)  
 **Date:** 2026-10-23 (giờ Asia/Saigon, lấy từ timestamp của phiên)  
-**Session file:** `60b90dce-0d5e-4502-920f-a2eb3196656d.jsonl` của Claude Code, trích tự động bằng script; transcript được trích tới lượt gần nhất tại thời điểm tạo file.
+**Session file:** `60b90dce-0d5e-4502-920f-a2eb3196656d.jsonl` của Claude Code, trích tự động bằng script; transcript được trích tới lượt yêu cầu tạo transcript này.
 
 Quy ước: prompt và text output của AI chép nguyên văn từ file phiên. Các khối `<system-reminder>` do Claude Code chèn tự động (không phải lời của thành viên) được lược bỏ. Kết quả tool và reasoning nội bộ không có trong record; mỗi tool call được tóm tắt một dòng trong **Tool Log** (lệnh hoặc mô tả, cắt tối đa 160 ký tự). Theo yêu cầu của thành viên, MSSV, email và username **không được che** trong file này.
 
@@ -671,9 +671,281 @@ Mẫu: experiments/s3/Experiment_Log_TEMPLATE.md; tạo file khi bắt đầu, g
 4. `Bash: cd /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness && awk '/^## Comparison/,0' experiments/s3/Experiment_Log`
 5. `Bash: cd /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness/experiments/s3/runs/Phuc_Hoang && mkdir -p H03-comparison`
 6. `Bash: cd /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness && cat >> experiments/s3/runs/Phuc_Hoang/H03-comparison/c`
+7. `Bash: python3 -I - <<'EOF' p='experiments/s3/Experiment_Log_Phuc_Hoang.md'; s=open(p).read() a="Tăng score từ 74,36% lên 94,02% là +20 điểm nhưng chỉ có 23 mutant mới`
 
 ### Output (verbatim)
 
 ````markdown
 Ba bộ cùng source (SHA-256 giống) và cùng 125 mutant. Tôi kiểm tra tập Timeout/RuntimeError có giống nhau không, và so config thực tế của ba run.
 ````
+
+````markdown
+S3-H03 xong và đã push (commit `7aed1de`). Phần đối chiếu nằm ở mục Comparison trong `Experiment_Log_Phuc_Hoang.md`; script và dữ liệu nằm ở `runs/Phuc_Hoang/H03-comparison/`.
+
+**Cùng source và config.** Cả bốn run dùng cùng `server.js` (SHA-256 `47573ce5…`) và 125 mutant khớp từng cái. Config Stryker giống nhau; chỉ khác file Jest và tên report. Script `compare_three.py` kiểm tra điều này và in số liệu.
+
+**Raw counts** (mỗi run riêng, không cộng hay lấy trung bình)
+
+| Run | Killed | Timeout | Survived | NoCov | Score | Assertion kill |
+|---|---|---|---|---|---|---|
+| Baseline | 60 | 27 | 23 | 7 | 74,36% | 51,28% |
+| Manual | 83 | 27 | 4 | 3 | 94,02% | 70,94% |
+| AI đã review | 74 | 27 | 13 | 3 | 86,32% | 63,25% |
+| AI raw | 78 | 27 | 12 | 0 | 89,74% | 66,67% |
+
+AI raw bị thổi phồng bởi test `test.failing` nên không dùng để so sánh. RuntimeError luôn là 8.
+
+**Ghi chú cho S4-B**
+- **Killed, Timeout, RuntimeError là ba loại khác nhau:** 27 Timeout và 8 RuntimeError là cùng đúng những mutant đó ở cả bốn run.
+  - Timeout đến từ mutant làm handler không trả lời, nên thêm assertion không đổi được con số này. Nó khiến score cao hơn assertion kill đúng 23,1 điểm ở mọi run.
+  - RuntimeError là `sqlite3` crash SIGSEGV, ngoài tầm assertion.
+- **Ai giết gì trên 30 mutant của baseline:** manual 23, AI 14, cả hai 13, chỉ AI 1 (#32), chỉ manual 10, không bên nào 6. Hợp của hai bên là 24, suy ra từ hai run riêng; bộ gộp chưa chạy.
+- **Phần có căn cứ spec thì ngang nhau:** kill dựa trực tiếp trên spec là 5 mutant ở cả hai bên. Khác biệt 23 so với 14 nằm gần như hết ở 10 mutant body/message, mà manual giết bằng convention còn Claude từ chối vì spec không nêu. Nhãn "spec" và "convention" là phán đoán của tôi (reviewer), không phải kết quả của Stryker; log ghi rõ điều này.
+- **Equivalent candidate:** chưa có mutant nào được chứng minh equivalent, và chỉ #52 gọi là candidate, vì chỉ trong phạm vi trạng thái đạt được từ seed 0 nó mới tương đương.
+  - Khi vá defect `+2` thì 3 test baseline giết được nó.
+  - #47 là spec-silent. #133–136 không equivalent: #133 chính là hành vi đúng spec. #32 phụ thuộc cách đọc spec cần nhóm chốt.
+- **Failure-mode có evidence:**
+  - Timeout được tính như phát hiện.
+  - `test.failing` làm mutant sửa lỗi thành "Killed".
+  - Score tăng 73,45% lên 74,36% chỉ do 4 mutant đổi phân loại khi đổi harness.
+  - Kill dựa convention làm score cao hơn bằng chứng thực.
+  - Số tự báo của AI sai (17/13 so với 18/12 thực tế).
+- **Không được khẳng định:** manual tốt hơn AI, bộ gộp đạt 24/30, 94% nghĩa là assertion tốt, có mutant equivalent đã chứng minh, hay OTP không hết hạn vi phạm SEC-07.
+
+**Những gì tôi chưa làm**
+- Tôi thêm một dòng AI usage cho H03 vào AI Record, nhưng chưa tạo artifact audit riêng. AI-02 và AI-LOG vẫn là 7 artifact. Bạn có muốn tôi thêm H03 vào hai file đó không?
+- Mục Limits tôi rút gọn vì nội dung đã gom vào ghi chú S4-B. Bạn cần xác nhận lại nhãn spec/convention, vì mọi con số "5 so với 18 và 8" đều dựa vào nhãn đó.
+- S3-I03 (cross-reproduction) chưa bắt đầu.
+````
+
+## Turn 11 — 2026-10-23 11:47:06
+
+### Prompt (verbatim)
+
+````text
+tiếp S3-I03 - Chạy lại case teammate: Cart & Orders: 
+
+<pasted_content id="8139">
+"Làm: Chạy baseline/manual/Claude của Cart & Orders theo notes teammate; đọc và giải thích ba mutant cases chung; gửi lỗi hướng dẫn cho tác giả.
+Đầu vào: experiments/s3/Experiment_Log_Tan_Hiep.md; reports và commands teammate cung cấp.
+Xong khi: Mình tự chạy được case teammate, có actual log và góp ý cụ thể.
+Chờ: Case teammate đã có comparison (S3-H01); không chờ domain thứ ba.
+Mẫu: experiments/s3/Experiment_Log_TEMPLATE.md; tạo file khi bắt đầu, giữ nguyên TEMPLATE."
+</pasted_content id="8139">
+````
+
+### Tool Log
+
+1. `Bash: git fetch --all --prune 2>&1 | tail -3; git log --oneline HEAD..origin/main | head; git merge origin/main 2>&1 | tail -2; git status -sb | head -3; cd /private/`
+2. `Bash: wc -l experiments/s3/Experiment_Log_Tan_Hiep.md && sed -n 1,200p experiments/s3/Experiment_Log_Tan_Hiep.md | cut -c1-1800`
+3. `Bash: grep -n "^## \|^### " experiments/s3/Experiment_Log_Tan_Hiep.md; ls experiments/s3 experiments/s3/runs/Tan_Hiep | head -60; git log -3 --format='%h %an %s' -- e`
+4. `Bash: awk '/^## Baseline/,/^## Cross Reproduction/' experiments/s3/Experiment_Log_Tan_Hiep.md | cut -c1-3500 | head -80`
+5. `Bash: sed -n 221,261p experiments/s3/Experiment_Log_Tan_Hiep.md | cut -c1-2500; sed -n 12,25p experiments/s3/Experiment_Log_Tan_Hiep.md | cut -c1-500`
+6. `Bash: grep -rn -i "three shared\|shared mutant\|ba mutant\|3 mutant cases\|mutant cases chung" --include='*.md' . | grep -v "ai-audit/evidence" | cut -c1-220 | head -`
+7. `Bash: sed -n 92,115p experiments/s3/Experiment_Log_Tan_Hiep.md | cut -c1-900; cd experiments/s3/runs/Tan_Hiep; ls F01-2 G01-2 E01-1 S3-member-compare I01-cc-compare; `
+8. `Bash: S=/private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb319665`
+9. `Bash: S=/private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb319665`
+10. `Bash: S=/private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb319665`
+11. `Bash: S=/private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb319665`
+12. `Bash: S=/private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb319665`
+13. `Bash: S=/private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb319665`
+14. `Bash: cd /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness/experiments/s3/runs && S=/private/tmp/claude-501/-Users-n`
+15. `Bash: cd /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness && S=/private/tmp/claude-501/-Users-nphoang-Developer-hcm`
+16. `Bash: python3 -I - <<'EOF' import re,os for f in ['experiments/s3/Experiment_Log_Tan_Hiep.md','experiments/s3/Cross_Reproduction_Notes_Thai_Hoa.md']:     t=open(f).re`
+17. `Bash: S=/private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb319665`
+18. `Bash: S=/private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb319665`
+19. `Bash: S=/private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb319665`
+20. `Bash: cd /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness/experiments/s3/runs/Phuc_Hoang && S=/private/tmp/claude-5`
+
+### Output (verbatim)
+
+````markdown
+Tôi pull trước để lấy log và branch mới nhất của Tấn Hiệp.
+````
+
+````markdown
+Cài đặt xong cả ba. Chạy baseline Cart theo lệnh của Hiệp: `npm test`, `test:defects`, dry run, rồi `mutate:cart-orders`.
+````
+
+````markdown
+Cả ba run khớp con số của Hiệp ở các lệnh có flags: manual 112/18/11/2/7, AI 102/18/21/2/7. Giờ so từng mutant với report của Hiệp và Hòa, rồi đọc ba case chung.
+````
+
+````markdown
+Đang lưu evidence reproduction Cart và viết góp ý cho tác giả; số liệu cả ba run đã khớp với run của Hiệp.
+````
+
+## Turn 12 — 2026-10-23 11:56:15
+
+### Prompt (verbatim)
+
+````text
+This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+
+<tools-used-before-summary>AskUserQuestion, Bash, ExitPlanMode, Read, Write</tools-used-before-summary>
+Summary:
+## 1. Primary Request and Intent
+
+The user is **Nguyễn Phúc Hoàng** (student ID 23120264, group 12, seminar T10 "Mutation Testing & Test Effectiveness", HCMUS Software Testing). The user works in Vietnamese. The domain is **Authentication & Users**. The project instructions come from `AGENTS.md` and `CONTEXT.md`.
+
+Requests in order (all done except the last):
+1. Pull, push existing changes, then do **S3-E03** (Stryker baseline on the common baseline commit). Done.
+2. Check what is missing in the user's S3 work. The user chose to have MSSV **not written into the repo**. Done.
+3. The user later said "đừng quan tâm những ràng buộc…", asked me to write verdicts, reflection, and AI-02/03/04 for them, and to pull teammates' changes first. I did this by extending the forms Thái Hòa had already created.
+4. The user said "không cần che MSSV, email và username" and asked for the transcript of this session to be added and pushed. Done (no redaction).
+5. Check whether the 4-item review feedback was addressed (SUT handover, log consistency, OTP 24h as an assumption, C03-3 AI Record artifact). Done.
+6. **S3-F03** (survivor analysis plus manual assertions). Done.
+7. Push the SUT branch for F03, then **S3-G03** (Claude assertions). Done, both branches pushed.
+8. **S3-H03** (three-way comparison). Done and pushed.
+9. **S3-I03 (current, unfinished)**: "Chạy baseline/manual/Claude của Cart & Orders theo notes teammate; đọc và giải thích ba mutant cases chung; gửi lỗi hướng dẫn cho tác giả." Input is `experiments/s3/Experiment_Log_Tan_Hiep.md` plus teammate reports and commands. Done when: "Mình tự chạy được case teammate, có actual log và góp ý cụ thể." The template is `experiments/s3/Experiment_Log_TEMPLATE.md`, left untouched. The log file is the existing `Experiment_Log_Phuc_Hoang.md`, whose Cross Reproduction table is still a placeholder.
+
+## 2. Key Technical Concepts
+
+- StrykerJS 10.0.0, Jest 30.5.2, supertest, `sqlite3` 6.0.1 (SIGSEGV on a `StringLiteral ""` SQL mutant), `coverageAnalysis: perTest`, concurrency 2, `timeoutMS` 5000, `timeoutFactor` 1.5.
+- Stryker states: Killed, Timeout (not an assertion kill), Survived, NoCoverage, RuntimeError (excluded from the denominator).
+- Score definitions:
+  - Stryker score = (K+T)/(K+T+S+N)
+  - assertion kill = K/(K+T+S+N)
+  - K/all
+- Frozen SUT baseline `806ba19ee4e09eafe9b2696ccf117a2b1ab841ef` (branch `s3/D04-baseline`, also on `main`).
+  - Shared SUT repo: `tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness`.
+  - Seminar repo: `tkob-team/T10_Mutation_Testing_and_Test_Effectiveness`.
+  - Working branch: `s3/A03-B03-phuc-hoang`.
+- Equivalent-mutant concepts (candidate vs proven), masked-by-defect, spec-silent, "convention" assertions, `test.failing` inflating kills.
+- Mutants matched across runs by line/column/mutator/replacement, never by numeric id.
+- Claude CLI blind workflow: `claude -p … --tools "" --disable-slash-commands --strict-mcp-config --no-session-persistence --setting-sources local` in an empty directory.
+
+## 3. Files and Code Sections
+
+Seminar repo (`/Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness`):
+- `experiments/s3/Experiment_Log_Phuc_Hoang.md`: the main log.
+  - Filled Setup C03-5/C03-6, D03 commit column, the Baseline run `E03-baseline`, the Survivors table (F03), the AI Runs table (G03), and the Comparison section with "Notes cho S4-B" (H03).
+  - OTP 24h wording fixed so DF-10 is an assumption, not a proven violation.
+  - Cross Reproduction table is still the placeholder `| [ ] | [ ] | Not run | [ ] | [ ] |` (S3-I03 target).
+- `experiments/s3/runs/Phuc_Hoang/`: `E03-baseline/`, `F03-manual/`, `G03-ai/` (with `raw-candidate-run/`, `repeat/`, `human-edits.diff`, `kill_mapping.md`), and `H03-comparison/` (`compare_three.py`, `comparison.md`, `comparison.json`).
+- `ai-audit/AI_Record_Phuc_Hoang.md`: artifacts PH-S3-C03-CLAUDE, PH-S3-F03-MANUAL, PH-S3-G03-AI, PH-S3-E03-BASELINE, PH-S3-TOOLING-01, plus a §1 row for H03. Accuracy table shows 7 audited, 4 VALID, 3 INCOMPLETE (all verdicts are proposals).
+- `ai-audit/evidence/s3/Phuc_Hoang/PH-S3-E03-BASELINE_Transcript.md`: regenerated by script after each task; current header lists S3-E03, F03, G03 and H03. It will need regeneration for I03.
+- `draft/[AI-02|03|04] … - 23120264.md` and `draft/AI-LOG-23120264.md`: Thái Hòa's drafts that I extended. The AI-02 table has 7 artifacts. These carry an HTML comment "AI-drafted…". Date/class/instructor/signature are left blank for the user.
+- `experiments/s3/Baseline_Manifest.md`, `experiments/s3/Cross_Reproduction_Notes_Thai_Hoa.md`, `experiments/s3/Experiment_Log_Tan_Hiep.md`: read-only inputs for I03.
+
+Scratchpad (`/private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb3196656d/scratchpad/`; the user wants the scratchpad used for temp files):
+- `sut/`: clone of the shared SUT.
+  - Local branches `s3/F03-auth` (commit `eea3ed4`) and `s3/G03-auth` (`0c57bf2` raw, `b27fce2` edited). Both are pushed to origin.
+  - Test files: `backend/test/auth.manual.test.js` (AM-01…13) and `auth.ai.test.js`, with configs `jest.auth.manual.config.cjs`, `stryker.auth.manual.config.json`, `jest.auth.ai.config.cjs`, `stryker.auth.ai.config.json`.
+- `out/`: Stryker run outputs and helper scripts (`cmp.py`, `map.py`).
+- `extract.py`: transcript extractor from `~/.claude/projects/-Users-nphoang-…/60b90dce-0d5e-4502-920f-a2eb3196656d.jsonl`.
+- `i03/`: current work.
+  - Three git worktrees of `sut`: `baseline` (806ba19), `manual` (origin/s3/F01-manual @ b77f5d6), `ai` (origin/s3/G01-ai @ f4696c6). `npm ci` done in each.
+  - `i03/logs/` holds all actual logs and reports (`*-npm-ci.log`, `*-npm-test.log`, `baseline-test-defects.log`, `*-dry.log`, `*-mutate*.log`, `baseline-report/`, `manual-report-flags/`, `manual-report-npm/`, `ai-report-flags/`, `ai-report-npm/`, `*-sha-before.txt`).
+
+Key results already recorded:
+- E03 baseline: 125 mutants, K60/T27/S23/NC7/RE8, 74.36%.
+- F03 manual: K83/T27/S4/NC3/RE8, 94.02%; kills 23 of 30.
+- G03 AI reviewed: K74/T27/S13/NC3/RE8, 86.32%; kills 14 of 30. AI raw: K78/S12/NC0, 89.74%.
+- H03: manual and AI each have 5 spec-based kills.
+
+## 4. Errors and Fixes
+
+- `zsh: no matches found: --include=*.md`: quoted the globs.
+- `sed -i` on macOS failed twice: used `sed -i ''` or Python for edits.
+- First probe run for the +1/30s patch silently did nothing because of the `sed` failure: redid it with a Python replace and got correct probe results.
+- The mutant mapping "Mutation" column came out empty (wrong slice) and a later fix hit a `KeyError` because ids are strings: fixed by slicing the original from start/end and using `str(id)`.
+- Stray `**` in the AI Runs table cells: fixed by string replace.
+- Wrong claim risk: Claude's own summary said "17 with tests, 13 none"; the real split is 18 and 12. Recorded as an AI error.
+- OTP 24h was initially written as "không hết hạn" violation: corrected to assumption (spec only says "có thời hạn").
+- Personal fork `eshop-sut-fithcmus` has uncommitted D03 work: deliberately not touched; work done in a clean clone.
+- Plan-mode and user steering earlier led to the "no MSSV in repo" decision, later overridden by the user ("không cần che…").
+
+## 5. Problem Solving
+
+- Reproduced the Cart & Orders runs on macOS (Node v26.12.1) and compared to Hiệp's own Windows member runs.
+- Cart results from my runs:
+
+| Run | Tests | Killed | Timeout | Survived | NoCov | RuntimeError | Score |
+|---|---|---|---|---|---|---|---|
+| Baseline @806ba19 (`npm run mutate:cart-orders`) | 88 in `npm test` | 82 | 25 | 34 | 2 | 7 | 74.83% |
+| Manual @b77f5d6 (`npm run test:manual`) | 44 | 112 | 18 | 11 | 2 | 7 | 90.91% |
+| AI @f4696c6 (`npm run test:ai`) | 41 | 102 | 18 | 21 | 2 | 7 | 83.92% |
+
+- Both the `npx stryker … --concurrency 2 --timeoutMS 5000 --timeoutFactor 1.5` form and the plain `npm run mutate:cart-orders:manual|ai` form gave identical results.
+  - The plain script takes about 23 s versus 1m21s with flags.
+  - The manual/AI Stryker configs lack `concurrency`/`timeoutMS`/`timeoutFactor`; only the baseline config has them.
+- All 150 mutant states match Hiệp's E01-1/F01-2/G01-2 with 0 differences. Versus Hòa's Codex reproduction, the manual and AI runs differ in 7 Timeout/Killed states; the baseline has 0 differences.
+- Production hashes (`server.js`, `database.js`, `database.sqlite`) are unchanged in all three worktrees. Manual and AI branches fork from `8d60e9b`, not 806ba19, but their production files are identical to the baseline's.
+- Dry-run and test counts on 806ba19: `npm test` 88 pass, `npm run test:defects` 54 fail, dry run "Ran 72 tests". Hiệp's D01 rows expect 36 / 9 / 36, which are for `8d60e9b`.
+- The "ba mutant cases chung" are in `Cross_Reproduction_Notes_Thai_Hoa.md` ("Three Concrete Business Cases"). All three ids (6, 15, 68) matched my baseline report:
+
+| Mutant | Location and change | Baseline | Manual | AI |
+|---|---|---|---|---|
+| id 6 | L286:47 `[]`→`["Stryker was here"]` | Survived | Killed by "Kill Mutant 286:7 …" | Killed by AI-CO-01 |
+| id 15 | L293 `userCarts[userId].push(req.body)`→`;` | Survived | Killed by "Kill Mutant 292:7 …" | Killed by AI-CO-02 |
+| id 68 | L335:10 `"canceled"`→`""` | Survived | Killed by "Survivor 3 … DB updated to canceled" | Survived |
+
+- Why the baseline misses them: CO-02, CO-03, CO-04 and CO-12 assert status only, even though CO-02's name says "gets an empty cart". The AI branch missed id 68 because its target list had only 5 mutants (cancel-DB state was not targeted).
+- Candidate guide errors to send to the author (Hiệp), observed from the reproduction:
+  - G1: `experiments/s3/runs/Tan_Hiep/D01-tests/` (cited as C01-7 evidence) is missing from the repo; it is the only missing path among 28 checked.
+  - G2: expected numbers in the D01-1/2/3 rows (36 pass / 9 fail / Ran 36) are for `8d60e9b` and are not labelled with a commit; on frozen 806ba19 the same commands give 88 / 54 / 72.
+  - G3: it is unclear which mutation command is canonical (F01-2 with flags versus F01-2-cc npm script). The manual/AI configs lack the shared timeout/concurrency policy (confirmed by config inspection).
+  - G4: setup uses `npm install`; `npm ci` works (672 packages) and is more reproducible.
+  - G5: the spec citations for the "empty cart" oracle are weak. api_specification §4.1 only names the endpoint, and FR-07 does not say a new cart is empty. The AI test header cites "FR-07 / §4.1: user mới có giỏ hàng trống"; Hòa's notes state it as a business fact, while Hiệp's survivor table correctly calls it inferred.
+  - G6: baseline test names overpromise (CO-02 and CO-04 assert only status).
+  - G7: case 3 should note that the AI missing id 68 is due to target selection, not capability.
+
+## 6. All User Messages
+
+1. "Thực hiện pull code về và push những thay đổi đang có, sau đó thực hiện task S3-E03 - Chạy Stryker baseline: Authentication & Users: [pasted task note: Làm: Checkout baseline chung, tự chạy Stryker và map mutants thuộc Authentication & Users; lưu reports gốc. Đầu vào: Baseline_Manifest.md và baseline commit (S3-D04). Xong khi: Có reports/commands/commit/config thực tế; mutant mapping đúng domain. Chờ: Baseline chung đã chốt (S3-D04). Mẫu: experiments/s3/Experiment_Log_TEMPLATE.md; tạo file khi bắt đầu, giữ nguyên TEMPLATE.]"
+2. "đọc MSSV của tôi là 23120264, thực hiện kiểm tra xem còn thiếu gì ko? nếu có thì bổ sung thêm cho tôi"
+3. (Answers via AskUserQuestion: scope = "Toàn bộ phần của Phúc Hoàng ở S3"; MSSV = "Không ghi vào repo (Recommended)")
+4. "Bây giờ tôi là bạn và tôi sẽ kiểm tra những gì bạn viết nên đó cũng là phần của tôi viết, đừng quan tâm những ràng buộc mà tôi đã yêu cầu hoặc trong context: [pasted: the list 'Còn thiếu mà chỉ bạn làm được (giữ Pending)…']"
+5. "Chữ ký và ngày ký thì để tôi; tuy nhiên verdict bạn cũng có thể làm mà, hãy thực hiện cho tôi luôn và tôi sẽ đọc kết quả verdict của bạn để review và sửa đổi nếu có, cả các phần reflection và AI-04 và các AI-02, 03 04 hãy tạo cho tôi luôn (thực hiện pull code về để coi những thay đổi bạn tôi mới thêm rồi làm)"
+6. "transcript là gì?"
+7. "không cần che MSSV, email và username, hãy thêm transcript phiên này và push lên cho tôi"
+8. "kiểm tra xem nội dung phần này đã có chưa, nếu chưa thì làm cho tôi: [pasted: Commit và bàn giao tests/harness/config vào repo SUT, kèm lockfile và commands…; Cập nhật log cho nhất quán…; Giữ test OTP sau 24 giờ là giả định cần chốt…; Bổ sung artifact AI Record cho workflow C03-3…]"
+9. "Thực hiện S3-F03 - Phân tích survivors và thêm manual assertions: Authentication & Users: [pasted task note: Làm: Đọc mutant diff, giải thích test bỏ sót và viết assertion theo spec; chạy tests/mutation từ baseline. Nếu thiếu case phù hợp, báo nhóm đổi case. Đầu vào: Baseline report của mình (S3-E03); API Specification §1–2. Xong khi: Case của mình có analysis, assertion diff và actual kill evidence; giao để nhóm ghép bộ chung. Chờ: Baseline report của mình đã có. Mẫu: experiments/s3/Experiment_Log_TEMPLATE.md…]"
+10. "Có push lên cho tôi branch riêng và thực hiện tiếp S3-G03 - Dùng Claude và kiểm chứng assertions: Authentication & Users: [pasted: Làm: Dùng cùng mutants đã phân tích; lưu Claude candidates, đối chiếu spec, ghi accepted/edited/rejected rồi chạy kiểm chứng. Nhánh AI bắt đầu từ baseline, tách nhánh manual. Đầu vào: Mutant analysis S3-F03; spec, code và baseline chung. Xong khi: Mình có prompt/raw output, human edits và actual kill mapping cho cùng mutants. Chờ: …]"
+11. "Tiếp S3-H03 - So sánh baseline/manual/Claude: Authentication & Users: [pasted: Làm: Đối chiếu ba kết quả trên cùng source/config; giải thích Killed/Timeout/errors, equivalent candidates và failure-mode case. S4-B dùng notes này để viết report. Đầu vào: Baseline/manual/AI reports của domain mình; Theory Notes. Xong khi: Comparison có raw counts/evidence; không cộng hay lấy trung bình score domain. Chờ: Ba nhánh chạy của mình có kết quả (S3-E03/F03/G03).]"
+12. "tiếp S3-I03 - Chạy lại case teammate: Cart & Orders: [pasted: Làm: Chạy baseline/manual/Claude của Cart & Orders theo notes teammate; đọc và giải thích ba mutant cases chung; gửi lỗi hướng dẫn cho tác giả. Đầu vào: experiments/s3/Experiment_Log_Tan_Hiep.md; reports và commands teammate cung cấp. Xong khi: Mình tự chạy được case teammate, có actual log và góp ý cụ thể. Chờ: Case teammate đã có comparison (S3-H01); không chờ domain thứ ba. Mẫu: experiments/s3/Experiment_Log_TEMPLATE.md; tạo file khi bắt đầu, giữ nguyên TEMPLATE.]"
+
+Standing constraints from `AGENTS.md` (quoted):
+- "DO NOT SPAWN SUBAGENT WITHOUT ASKING."
+- "giữ student IDs/private keys/course secrets ngoài prompts". The user has since explicitly lifted the redaction for the transcript and gave their MSSV, but chose "Không ghi vào repo" for MSSV in new files.
+- "English headings, identifiers, filenames và status codes; prose nội bộ bằng tiếng Việt."
+- "Claims cần sources; execution… phải có evidence thật. Ghi rõ Proposed, Pending hoặc Not run khi chưa xác minh."
+- The repo has a git commit attribution rule: end commits with "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>".
+
+## 7. Pending Tasks
+
+- **Finish S3-I03**:
+  - Write the Cross Reproduction section of `Experiment_Log_Phuc_Hoang.md`:
+    - the table (teammate domain = Cart & Orders; commands; result; missing step/issue; evidence);
+    - the three shared-case explanation (ids 6, 15, 68);
+    - the concrete guide-error feedback for Hiệp (G1–G7);
+    - update the header Task IDs / Evidence Status.
+  - Save evidence under `experiments/s3/runs/Phuc_Hoang/I03-cart-orders/` (copy from `i03/logs/`: actual logs, `mutation.json`/`mutation.html` per run, `sha-before.txt`, a small compare script/output vs Hiệp's and Hòa's reports, and the feedback text).
+  - Add an AI Record row (and optionally artifact) for S3-I03, then regenerate the transcript with `extract.py` (and fix its header Task ID line to include S3-I03), commit, and push `s3/A03-B03-phuc-hoang`.
+- Open items that belong to the user: date/class/instructor/signature in the AI forms, Q5 of AI-04, confirming the proposed verdicts, and the decision on whether H03 should get an AI-02/AI-LOG artifact.
+
+## 8. Current Work
+
+I was in the middle of S3-I03. All three Cart runs were completed and compared to Hiệp's and Hòa's reports (results in section 5). I had just finished checking the configs: the manual and AI Stryker configs have `concurrency`, `timeoutMS` and `timeoutFactor` all `None`, while the baseline config sets 2 / 5000 / 1.5. The next action would have been writing the evidence directory and log section. No files in the seminar repo have been modified yet for I03; only scratchpad logs exist.
+
+## 9. Optional Next Step
+
+Write the S3-I03 results into `Experiment_Log_Phuc_Hoang.md` (Cross Reproduction table plus notes and the specific feedback to Hiệp), copy evidence to `experiments/s3/runs/Phuc_Hoang/I03-cart-orders/`, add the AI Record row, regenerate the transcript, then commit and push `s3/A03-B03-phuc-hoang`. This follows directly from the user's request: "tiếp S3-I03 - Chạy lại case teammate: Cart & Orders… Xong khi: Mình tự chạy được case teammate, có actual log và góp ý cụ thể."
+
+If you need specific details from before compaction (like exact code snippets, error messages, or content you generated), read the full transcript at: /Users/nphoang/.claude/projects/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb3196656d.jsonl
+Continue the conversation from where it left off without asking the user any further questions. Resume directly — do not acknowledge the summary, do not recap what was happening, do not preface with "I'll continue" or similar. Pick up the last task as if the break never happened.
+
+The messages after this summary are the most recent messages from before compaction, kept verbatim. The summary was written without seeing them, so something it says has not happened yet may already have happened in them.
+````
+
+### Tool Log
+
+1. `Bash: cd /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness && git status --short | head; grep -n "Cross Reproduction`
+2. `Bash: sed -n 158,200p experiments/s3/Experiment_Log_Phuc_Hoang.md; ls experiments/s3/runs/Phuc_Hoang/I03-cart-repro/*; du -sh experiments/s3/runs/Phuc_Hoang/I03-cart-`
+3. `Bash: cat > experiments/s3/runs/Phuc_Hoang/I03-cart-repro/feedback_for_Tan_Hiep.md <<'EOF' # Góp ý hướng dẫn Cart & Orders cho Tấn Hiệp (S3-I03)  **Người chạy:** Nguy`
+4. `Bash: python3 - <<'EOF' p='ai-audit/AI_Record_Phuc_Hoang.md' L=open(p).read().split('\n') i=next(k for k,l in enumerate(L) if '| S3-H03 |' in l) L.insert(i+1,"| Claud`
+
+### Output (verbatim)
+
+(không có text output)
