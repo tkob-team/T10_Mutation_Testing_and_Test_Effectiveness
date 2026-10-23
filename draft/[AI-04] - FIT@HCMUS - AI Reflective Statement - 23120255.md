@@ -28,11 +28,15 @@
 
 Tôi dùng Claude cho ghi chú nghiên cứu, assertion tutorial và quy trình test Cart. Claude Code hỗ trợ thực thi trong repository, báo cáo và công cụ ghi prompt log. Các run tutorial C01 của tôi cung cấp output thực tế trên máy cá nhân, còn các run Agent về sau được ghi riêng. Sự hỗ trợ này kết nối câu hỏi về đặc tả với các test cụ thể và báo cáo mutant, thay vì chỉ tạo phần diễn giải.
 
+Ở S4, Claude soạn bản nháp guide, report và kịch bản demo phần Cart, còn Claude Code chạy lại guide Cart và Coupons, ghép ba phần thành User Guide và viết script kiểm số liệu.
+
 ### 2. Bạn chấp nhận / từ chối / sửa gì từ đầu ra AI?
 
 *Liệt kê đề xuất AI bạn dùng, đề xuất bạn loại bỏ, và cách bạn điều chỉnh cho phù hợp với spec, nguyên tắc ISTQB, hoặc phân tích của bạn.*
 
 Tôi chấp nhận code assertion tutorial và năm assertion AI cho Cart. Tôi từ chối phần giải thích dự đoán một mutant hằng số số học mà Stryker không sinh ra. Tôi sửa phần diễn giải SRS bị thiếu, giả định workspace theo ngày và các claim gây hiểu nhầm trong header G01. Công cụ trích xuất log cũng cần sửa để xử lý lệnh local, phiên trống và prompt lặp.
+
+Ở S4, tôi chấp nhận phần lớn tài liệu AI soạn, nhưng yêu cầu chuyển sang tiếng Việt và đổi nhãn "Quyết định đã chốt" thành "Quyết định của bản ghép" vì Hòa chưa xác nhận từng điểm. Tôi không dùng handoff đầu phiên vì nó sai 4 điểm so với repo, và loại một run bị lỗi do script áp snippet sai.
 
 ### 3. Bạn nhận ra lỗi / bias / giới hạn nào trong đầu ra AI?
 
@@ -40,17 +44,21 @@ Tôi chấp nhận code assertion tutorial và năm assertion AI cho Cart. Tôi 
 
 Giới hạn chính là suy luận tự tin khi thiếu context. Việc bỏ sót README.md dẫn đến các câu hỏi scope không đúng. Một số oracle Cart dùng mảng theo cấu trúc implementation hoặc các trường lỗi mà đặc tả không định nghĩa chính xác. Số mutant bị kill cao hơn cũng có thể phản ánh tập kịch bản test rộng hơn, thay vì một phương pháp sinh test tốt hơn.
 
+Ở S4, Claude Code áp snippet sai hai lần vì file dùng CRLF và vì escaping trong PowerShell, và khối lệnh soạn cho tôi không ghi được output của Jest/Stryker vào log. Handoff AI viết cuối S3 cũng đã lỗi thời khi sang S4: hash cũ, số dòng sai và bỏ sót lỗi package.json trên main.
+
 ### 4. Bạn xác minh thông tin / nguồn / claim của AI như thế nào?
 
 *Mô tả phương pháp xác minh (chạy test, kiểm tra spec, tra RFC, hỏi TA, đối chiếu công cụ khác, thực thi trên SUT thật).*
 
 Tôi tính các giá trị kỳ vọng cho tutorial, chạy Jest và Stryker trên máy cá nhân, rồi đối chiếu thông tin killedBy thực tế. Với các run -cc về sau, tôi dùng báo cáo thực thi và nguồn tham chiếu đã lưu. Bản so sánh tách Killed khỏi Timeout và xác định các defect gốc mà một test đúng không nên che giấu.
 
+Ở S4, tôi tự chạy lại guide Coupons trên máy mình và so với run của Claude Code: 0 mutant khác trạng thái. Tôi kiểm hash của candidate G02 trước khi tin vào provenance, đọc REPORT của từng run -cc, và dùng script so 36 con số trong User Guide với mutation.json trước khi chấp nhận.
+
 ### 5. Bạn học được điều gì qua project này mà nếu chỉ chấp nhận đầu ra AI thì sẽ không học được?
 
 *Suy ngẫm về đóng góp trí tuệ của chính bạn. AI đã định hình (hay không) sự hiểu của bạn về testing như thế nào? Một nguyên tắc bạn sẽ giữ cho tương lai?*
 
-Bản so sánh đã ghi lại của tôi chỉ ra bài học chính: oracle có thể kill nhiều mutant hơn bằng cách phụ thuộc vào chi tiết implementation hiện tại, trong khi kém bám sát đặc tả nghiệp vụ hơn. Các kịch bản manual bổ sung cũng làm thay đổi phạm vi so sánh. Tôi sẽ làm rõ requirement, input giúp phân biệt hành vi và trạng thái quan sát được trước khi xem một kill là bằng chứng về chất lượng test. Một bài học khác đã ghi nhận liên quan đến mutant sửa lỗi: survivor có thể bộc lộ defect gốc thay vì test yếu. Giữ lại defect đó và oracle đúng hữu ích hơn việc đổi expected result chỉ để tăng mutation score chính thức.
+[Tấn Hiệp tự dán đoạn Q5]
 
 ## 3. Các Cấp độ AI đã dùng
 
@@ -72,14 +80,14 @@ Bản so sánh đã ghi lại của tôi chỉ ra bài học chính: oracle có 
 
 ## Chữ ký
 
-| Họ tên sinh viên (in hoa): |                                        |
+| Họ tên sinh viên (in hoa): | LÊ TẤN HIỆP |
 |----------------------------|----------------------------------------|
-| MSSV:                      |                                        |
-| Lớp / Khoá:                |                                        |
+| MSSV:                      | 23120255 |
+| Lớp / Khoá:                | Software Testing - CQ2023/3 |
 | Môn học:                   | CS423 / CSC13003 – Kiểm chứng Phần mềm |
-| Giảng viên:                |                                        |
-| Ngày:                      |                                        |
-| Chữ ký:                    |                                        |
+| Giảng viên:                | Dr. Lam Quang Vu / Dr. Tran Duy Hoang / MSc. Tran Thi Bich Hanh / MSc. Truong Phuoc Loc / MSc. Ho Tuan Thanh |
+| Ngày:                      | 23/10/2026 |
+| Chữ ký:                    | <img src="signature_Hiep.png" alt="Chữ ký Lê Tấn Hiệp" width="160"> |
 
 ## Tham khảo
 
