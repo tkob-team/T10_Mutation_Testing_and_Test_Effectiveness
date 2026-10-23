@@ -15,6 +15,7 @@ Phiếu này ghi usage của Phúc Hoàng xuyên suốt S1–S8. Mỗi artifact 
 |---|---|---|---|---|---|---|---|
 | Claude Code 2.1.292 (CLI), model Claude Opus 5.5 (`claude-opus-5-5`) | S3 | S3-A03, S3-B03 | brainstorming / data analysis / coding / drafting | [Research Notes](../research/s3/Research_Notes_Phuc_Hoang.md); [run evidence](../experiments/s3/runs/Phuc_Hoang/) | Lập plan; đọc repo/SUT; tra và đối chiếu nguồn; viết sandbox code/tests/harness; chạy Stryker; phân tích mutants; viết draft notes và phiếu này | Giao task và đầu vào; quyết định gộp B03, chạy sandbox, dùng SUT local, yêu cầu ghi audit nguyên văn. Review/sửa nội dung: Pending | PH-S3-A03B03-01 |
 | Claude Code, model Claude Sonnet 5.5 (`claude-sonnet-5-5`) | S3 | S3-E03 | coding / data analysis / drafting | [Experiment Log](../experiments/s3/Experiment_Log_Phuc_Hoang.md) (Baseline, E03-baseline); [run evidence](../experiments/s3/runs/Phuc_Hoang/E03-baseline/) | Clone SUT frozen commit, chạy `npm ci`/test/Stryker 2 lần, so khớp từng mutant với provisional và run của Thái Hòa, mapping route, viết log | Giao task và đầu vào (task note S3-E03). Review kết quả: Pending | PH-S3-E03-BASELINE ([transcript](evidence/s3/Phuc_Hoang/PH-S3-E03-BASELINE_Transcript.md)) |
+| Claude Code CLI (`claude -p`), model Claude Sonnet 5.5 (`claude-sonnet-5-5`) | S3 | S3-C03 | coding (đề xuất assertion) | [Experiment Log C03-3](../experiments/s3/Experiment_Log_Phuc_Hoang.md); [run evidence](../experiments/s3/runs/Phuc_Hoang/C03-claude/) | Đề xuất test `canRegister(18)` cho mutant `age > 18` | Viết spec demo, bỏ comment lộ đáp án, chọn mutant, chạy test và Stryker. Review: Pending | PH-S3-C03-CLAUDE |
 | Claude Code 2.1.292 (CLI), model Claude Opus 5.5 (`claude-opus-5-5`) | S3 | tooling cho S3-C03…I03 | coding / drafting | [Skill draft `s3-experiment`](evidence/s3/Phuc_Hoang/PH-S3-TOOLING-01_s3-experiment_AI_Draft/SKILL.md) | Soạn skill hỗ trợ chạy các task experiment S3 (SKILL.md, references, scripts) | Giao yêu cầu và quyết định dùng skill. Review/chỉnh nội dung: Pending | PH-S3-TOOLING-01 |
 
 ## 2. Artifact Audit
@@ -102,13 +103,105 @@ Chưa có sửa đổi của thành viên tại thời điểm tạo phiếu.
 | Verification | Do AI thực hiện, chưa phải xác nhận của thành viên: chạy `npm ci`, `npm test` (88 pass), `test:auth` (26 pass), dry run, hai run Stryker giống hệt từng mutant (125/125); so khớp từng mutant theo dòng/cột/mutator/replacement với run provisional (4 mutant đổi RuntimeError sang Timeout) và với run Windows của Thái Hòa (0 chênh lệch); SHA-256 `server.js`/`database.js`/`database.sqlite` trước = sau; `cmp` 5 file test D03 với SUT chung |
 | Student Fix | Không sửa số liệu. Dùng clone sạch của SUT chung thay cho fork cá nhân có thay đổi chưa commit; giữ run provisional thành record riêng |
 
-### Artifacts C03 / D03 / E03-provisional (phiên 2026-10-22)
+### Artifact PH-S3-C03-CLAUDE
 
-Chưa có transcript phiên này trong repo. Bản nháp AI-02/AI-LOG trong `draft/` (do Thái Hòa tạo, 2026-10-23) đã gán các ID và verdict đề xuất dưới đây, dựa trên log và run evidence; đối chiếu với [Experiment Log](../experiments/s3/Experiment_Log_Phuc_Hoang.md):
+| Field | Value |
+|---|---|
+| Stage / Task ID | S3 / S3-C03 (bước C03-3, Claude assertion workflow) |
+| Tool / Model | `claude -p` (Claude Code CLI) ở chế độ không tools; model `claude-sonnet-5-5` theo `modelUsage` trong `raw.json`. Phiên bản CLI: unknown (không có trong output) |
+| Recorded Time & Provenance | 2026-10-22 21:33:46 (Asia/Saigon, theo `command.txt`). Một lần chạy thành công; trước đó một probe `--bare` lỗi `Not logged in` ([probe](../experiments/s3/runs/Phuc_Hoang/C03-claude-probe/C03-claude-probe.json), `terminal_reason: api_error`, tách riêng khỏi request thành công) |
+| Output Artifact / Section | Test `equiv.ai.test.js` ([run](../experiments/s3/runs/Phuc_Hoang/C03-claude-run/)); mục C03-3 của [Experiment Log](../experiments/s3/Experiment_Log_Phuc_Hoang.md) |
+| Verdict | **VALID (proposed, AI-drafted, chờ member xác nhận)**: test chạy được, đúng spec demo, giết mutant mục tiêu |
+| Reasoning & Source | Spec demo "đủ 18 tuổi trở lên" (do member viết trong prompt) nên `canRegister(18)` phải `true`; ISTQB CTFL 4.0.1 mục 4.2.2 (boundary value analysis) là tham chiếu thiết kế biên; số mục chưa được member kiểm lại. Ghi chú về "mutant đổi 18 thành 17" không dùng làm evidence vì StrykerJS không có mutator đổi hằng số |
+| Verification | Test pass trên code gốc (1/1). Mutant id 15 (`age > 18`) chuyển Survived → Killed, so khớp từng mutant theo vị trí/mutator/replacement giữa hai `mutation.json`. 18 mutants: weak 12 Killed / 6 Survived = 66,67%; weak + test Claude 13 Killed / 5 Survived = 72,22%. Giới hạn: spec do member viết; đã bỏ comment gốc lộ đáp án; chỉ 1 lần chạy, 1 mutant, chưa đo độ lặp lại; "context sạch" chỉ là thư mục trống, không tools, chỉ nạp settings `local` |
+| Student Fix | Bỏ comment trong code trước khi đưa vào prompt (comment gốc nói thẳng "differs at exactly 18"); chỉ dùng test bắt buộc ở mục 4 của output, không thêm test tùy chọn `canRegister(17)` vì nó không giết mutant mục tiêu. Test cuối giống nguyên văn test Claude đề xuất |
+
+#### Verbatim Prompt
+
+Nguyên văn (cũng ở [`prompt.txt`](../experiments/s3/runs/Phuc_Hoang/C03-claude/prompt.txt); lệnh ở [`command.txt`](../experiments/s3/runs/Phuc_Hoang/C03-claude/command.txt)):
+
+````text
+<role>You propose Jest assertions that kill specific StrykerJS mutants. A human will review and run them.</role>
+<context>
+  <code file="src/equiv.js" commit="demo file, not under git" lines="1-3">
+function canRegister(age) {
+  return age >= 18;
+}
+module.exports = { canRegister };
+  </code>
+  <spec>Demo requirement: a person may register if and only if their age is 18 or older.</spec>
+  <harness>Tests are Jest. Import with: const { canRegister } = require('../src/equiv');</harness>
+  <scope>Pure function of one integer argument; no state, no clock.</scope>
+  <existing_tests>
+const { canRegister } = require('../src/equiv');
+test('adult can register', () => {
+  expect(canRegister(30)).toBe(true);
+});
+  </existing_tests>
+</context>
+<mutants>
+  <mutant id="15">return age >= 18; -> return age > 18; (EqualityOperator, Survived)</mutant>
+</mutants>
+<task>
+For each mutant:
+1. Quote the exact code lines that decide the behavior.
+2. Give the input/state that makes original and mutant behave differently, or say why none exists in this scope.
+3. State the expected result from the spec; if the spec is silent, say "spec silent" and do not invent one.
+4. Write one runnable Jest test using only the harness above.
+If context is insufficient, answer "insufficient context" for that mutant.
+</task>
+````
+
+#### Verbatim AI Output
+
+Trường `result` của [`raw.json`](../experiments/s3/runs/Phuc_Hoang/C03-claude/raw.json), chưa sửa:
+
+````markdown
+## Mutant 15
+
+**1. Deciding code** (`src/equiv.js:2`):
+```js
+return age >= 18;
+```
+Mutant: `return age > 18;`
+
+**2. Distinguishing input:** `age = 18`. The original returns `true` (18 >= 18), the mutant returns `false` (18 > 18). Every other integer gives the same result for both, so the boundary is the only killing input. The existing test uses 30, which both versions accept, so the mutant survives.
+
+**3. Expected result from the spec:** "a person may register if and only if their age is 18 or older." Age 18 is "18 or older," so `canRegister(18)` must be `true`.
+
+**4. Jest test:**
+```js
+const { canRegister } = require('../src/equiv');
+
+test('person aged exactly 18 can register', () => {
+  expect(canRegister(18)).toBe(true);
+});
+```
+
+This passes on the original and fails on the mutant (received `false`).
+
+Optionally, add `expect(canRegister(17)).toBe(false);` as a lower-boundary check. It doesn't kill this mutant, since both versions return `false` for 17, but it guards against the opposite mistake (for example, a mutant changing `18` to `17`).
+````
+
+#### Corrected Artifact & Highlighted Changes
+
+```diff
+ const { canRegister } = require('../src/equiv');
+
+ test('person aged exactly 18 can register', () => {
+   expect(canRegister(18)).toBe(true);
+ });
+```
+
+Không sửa nội dung test của Claude. Thay đổi của member nằm ở đầu vào (bỏ comment lộ đáp án) và ở việc không dùng gợi ý `canRegister(17)`.
+
+### Artifacts D03 / E03-provisional (phiên 2026-10-22)
+
+Chưa có transcript phiên này trong repo. Bản nháp AI-02/AI-LOG trong `draft/` (do Thái Hòa tạo, 2026-10-23) đã gán các ID và verdict đề xuất cho D03 và E03-provisional, dựa trên log và run evidence; đối chiếu với [Experiment Log](../experiments/s3/Experiment_Log_Phuc_Hoang.md):
 
 | Artifact ID | Nội dung | Verdict đề xuất | Evidence |
 |---|---|---|---|
-| PH-S3-C03-CLAUDE | Assertion `canRegister(18)` do Claude CLI (`claude-sonnet-5-5`) đề xuất | VALID | `runs/Phuc_Hoang/C03-claude/` (prompt, raw.json), `C03-claude-run/` |
+| PH-S3-C03-CLAUDE | Xem artifact đầy đủ ở trên | VALID (đề xuất) | [artifact](#artifact-ph-s3-c03-claude) |
 | PH-S3-D03-AUTH | Bộ test Auth: 26 pass + 23 defect fail | VALID | `runs/Phuc_Hoang/D03-auth/`; 5 file giống hệt SUT `806ba19` (`cmp`) |
 | PH-S3-E03-PROVISIONAL | Run Stryker provisional trên `bd31bbf`: 125 mutants, 73,45% | VALID | `runs/Phuc_Hoang/E03-provisional/` |
 
@@ -152,7 +245,7 @@ Reflection chính thức nằm ở `draft/[AI-04] … - 23120264.md` mục 2 (AI
 
 ## 6. Member Review & Handoff
 
-- Missing artifacts / pending verification: member review và verdict cho PH-S3-A03B03-01, PH-S3-TOOLING-01, PH-S3-E03-BASELINE; artifact audit và transcript cho phiên C03/D03 (2026-10-22) chưa có; transcript PH-S3-E03-BASELINE đã xuất (không che, theo yêu cầu thành viên; thành viên đối chiếu với lịch sử phiên); đọc full text P03, P07–P09; nguồn course slide/ISTQB cho AI-02.
+- Missing artifacts / pending verification: member review và verdict cho PH-S3-A03B03-01, PH-S3-TOOLING-01, PH-S3-E03-BASELINE; artifact PH-S3-C03-CLAUDE đã có (verdict đề xuất, chờ xác nhận); transcript phiên C03/D03 (2026-10-22) và artifact audit D03/E03-provisional đầy đủ chưa có; transcript PH-S3-E03-BASELINE đã xuất (không che, theo yêu cầu thành viên; thành viên đối chiếu với lịch sử phiên); đọc full text P03, P07–P09; nguồn course slide/ISTQB cho AI-02.
 - Member confirmation of accuracy: Pending. Verdict và reflection hiện là bản AI soạn để member đọc và sửa
 - Official AI-03 disclosure/signature: Pending; mỗi người kiểm tra và tự ký PDF khi leader chuẩn bị bản chính thức.
 - Official AI-04 signature when required: Pending; tác giả kiểm tra bản tổng hợp trước khi ký.
