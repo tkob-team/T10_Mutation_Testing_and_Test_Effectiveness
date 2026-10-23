@@ -671,6 +671,19 @@ Claude Code: ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md, session ad
 | Reasoning & Source | Chỉ dịch văn xuôi; lệnh, code, số liệu, đường dẫn, mã mutant, tên test, prompt giữ nguyên. Installation chung + Setup riêng theo domain. Troubleshooting gộp 27 dòng nguồn (Tấn Hiệp 12, Hòa 8, Phúc 6 + 1 untested suggestion) thành 22 dòng (bỏ trùng `No tests were found`, `npm.ps1`, SQLite binding, Timeout), Failure Modes gộp từ 15 mục (mỗi tác giả 5) thành 8. Phiên bản Node dung hòa bằng `engines` của workshop (`node >=24 <25`) và các run Windows Node 24.x của cả ba domain. "Việc tác giả cần sửa" lấy từ `Guide_Reproduction_Tan_Hiep.md` và `Guide_Reproduction_Thai_Hoa.md` |
 | Verification | Script so khớp: 31/31 code block của ba nguồn có nguyên văn trong bản ghép; mọi số liệu ngoài code block của Hòa và Phúc có mặt, của Tấn Hiệp chỉ thiếu số thứ tự heading; mọi link tương đối phân giải được. Chưa kiểm: chất lượng bản dịch (cần người đọc), link URL ngoài. Còn mở: 2 điểm "Cần quyết định" (base repo khác nhau giữa Cart và Coupons/Auth; tên tỷ lệ Killed/valid); Advanced Usage của Auth bị chặn (D02-01) chưa sửa. Lỗi AI khi viết: thêm một câu "Cách tránh" không có trong nguồn ở Failure Mode 6, đã tự phát hiện và bỏ trước khi commit |
 | Student Fix | (điền sau review) |
+ 
+### Artifact AI-S4-E01-02
+ 
+| Field | Value |
+|---|---|
+| Stage / Task ID | S4 / S4-E01 (hoàn thiện User Guide, lượt 2) |
+| Tool / Model | Claude Code, Claude Opus 5.5 (`claude-opus-5-5`) |
+| Recorded Time & Provenance | 2026-10-23 (UTC+7): Claude Code session `3058f82a`; log `ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md`; commit `e4ae989`, `5c6dc79` |
+| Output Artifact / Section | `materials/s4/User_Guide.md`: bỏ mục "Cần quyết định" theo quyết định của Hòa (giữ hai repo, giữ tên "Assertion kill"); thêm đoạn mở đầu Installation; Cart "Tested environment" đổi sang F01c; Coupons thêm lệnh clone seminar, hướng dẫn `$docsRoot`, ghi chú dry run gấp đôi số tests, đoạn giải thích PROVENANCE, 2 dòng Troubleshooting (`Filename too long`, `ChildProcessCrashedError 3221225477`); Auth thêm bước checkout `eea3ed4` (manual) và `b27fce2` (AI), câu đặt `prompt.txt` vào `ai-run`, sửa executor run Windows; cập nhật danh sách "Việc tác giả cần sửa" |
+| Verdict | ĐỀ XUẤT: INCOMPLETE |
+| Reasoning & Source | Chỉ dựa trên evidence trong repo: `experiments/s4/runs/D01-1-cc`, `Tan_Hiep/D01-1`, `C01-rehearsal-cc`, `F01c-1-cc`, `Guide_Reproduction_*`, `Experiment_Log_Phuc_Hoang.md` (commit F03 `eea3ed4`, G03 `b27fce2`), `frozen-auth-baseline.meta.json` (executor Codex). Đã kiểm trên SUT: `eea3ed4` và `b27fce2` tách từ `806ba19`, không đổi `package-lock.json`; `b27fce2` không chứa manual tests; đầu nhánh `s3/G03-auth` có `package.json` lỗi JSON. URL repo seminar lấy từ các link trong repo |
+| Verification | Link tương đối phân giải đủ; `git diff` chỉ thay các dòng có chủ đích (+57/−25). Chưa ai chạy lại các bước mới thêm: lệnh clone seminar ở thư mục ngắn, checkout `eea3ed4`/`b27fce2`, câu `prompt.txt`. Còn lại (chưa có evidence): nhãn Observed/Suggested cho các dòng Troubleshooting cũ của Coupons (cần Hòa); mục AI Agent của Cart chưa chạy, chưa có reproduction của người khác |
+| Student Fix | (điền sau review) |
 
 ## 3. Accuracy Summary & Audit Conclusion
 
