@@ -1,0 +1,16 @@
+run_id: E03-baseline
+executor: Phuc Hoang (self-run via Claude Code session; commands executed by Claude, outputs unedited)
+run1: 2026-10-23 10:09:04 -> 10:10:30 +0700 (1 min 25 s; dry run 10:09:03)
+run2 (repeat): 2026-10-23 10:10:38 -> 10:12:05 +0700 (1 min 26 s)
+os: Darwin 27.0.0 arm64
+node: v26.12.1
+npm: 11.20.0
+jest: 30.5.2
+@stryker-mutator/core: 10.0.0
+@stryker-mutator/jest-runner: 10.0.0
+sut_repo: https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness
+sut_commit: 806ba19ee4e09eafe9b2696ccf117a2b1ab841ef (branch s3/D04-baseline, detached checkout, clean tree)
+checkout_dir: scratchpad/sut (fresh clone; personal fork with uncommitted D03 work not used)
+commands (cwd backend/): npm ci --no-audit --no-fund; npm test; npm run test:auth; npx stryker run stryker.auth.config.json --dryRunOnly; npm run mutate:auth; npx stryker run stryker.auth.config.json (repeat)
+config: stryker.auth.config.json (mutate server.js:20-135, perTest, concurrency 2, timeoutMS 5000, timeoutFactor 1.5, jest.auth.config.cjs -> test/auth.spec.test.js)
+production_files_sha256: see sha-before.txt / sha-after.txt (identical)
