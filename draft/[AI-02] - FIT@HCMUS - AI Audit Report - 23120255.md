@@ -191,7 +191,7 @@
 <td><mark>Dịch sang tiếng Việt</mark>; <mark>bỏ blocker package.json đã sửa</mark>; <mark>thêm ghi chú Killed/Timeout dao động</mark>. Em quyết định <mark>lời dẫn chỉ đọc score và Survived</mark>.</td>
 </tr>
 <tr>
-<td><strong>AI-S4-WF-01</strong><br />Công cụ: Claude (claude.ai), Claude Opus 5.5 (viết handoff); Claude Sonnet 5.5 (kiểm chứng)<br />Thời gian: cuối phiên S3 và 12:38–12:52 23/10/2026<br />Prompt: lượt viết handoff cuối phiên S3. Bản nguyên văn đang Pending vì transcript phiên đó chưa được xuất đầy đủ.</td>
+<td><strong>AI-S4-WF-01</strong><br />Công cụ: Claude (claude.ai), Claude Opus 5.5 (viết handoff); Claude Sonnet 5.5 (kiểm chứng)<br />Thời gian: cuối phiên S3 và 12:38–12:52 23/10/2026<br />Prompt: lượt viết handoff cuối phiên S3.</td>
 <td>Handoff đầu S4 cho phiên thảo luận mới: trạng thái repo, hash nhánh, việc còn lại.</td>
 <td>INCOMPLETE</td>
 <td>Đối chiếu với 2 repo clone mới thấy sai 4 điểm: hash <code>main</code> của SUT cũ; "User_Guide ~880 dòng" (thực tế 334); <code>main</code> seminar đã tiến lên; bỏ sót lỗi thiếu dấu phẩy <code>backend/package.json</code> dòng 24. Tài liệu bàn giao phải được kiểm với trạng thái thật (<a href="https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf">ISTQB CTFL 4.0.1, §5.4</a>).</td>
