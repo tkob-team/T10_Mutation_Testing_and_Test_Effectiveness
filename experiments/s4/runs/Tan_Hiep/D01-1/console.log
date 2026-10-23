@@ -1,0 +1,345 @@
+**********************
+PowerShell transcript start
+Start time: 20261023145634
+Username: LAPTOP-NFIGFMR1\tanhi
+RunAs User: LAPTOP-NFIGFMR1\tanhi
+Configuration Name: 
+Machine: LAPTOP-NFIGFMR1 (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.6.7.0_x64__8wekyb3d8bbwe\pwsh.dll -noexit -command try { . "c:\Users\tanhi\AppData\Local\Programs\Microsoft VS Code\2d0b7506a3\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 6048
+PSVersion: 7.6.7
+PSEdition: Core
+GitCommitId: 7.6.7
+OS: Microsoft Windows 10.0.26200
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s4\runs\Tan_Hiep\D01-1\console.log
+XONG KHOI 0
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cw\x5cD01-1PS C:\w\D01-1> ]633;B
+PS>Step "Clone SUT" { git clone https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness.git eshop-coupons-s4 }
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+### 2026-10-23T14:57:32 | - (detached/không repo) | > git clone https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness.git eshop-coupons-s4
+# Clone SUT
+
+--- exit 0 | 1 s
+]633;D;0]633;A]633;P;Cwd=C:\x5cw\x5cD01-1PS C:\w\D01-1> ]633;B
+PS>Step "Vào repo" { Set-Location eshop-coupons-s4 }
+Step "Kiểm top-level" { git rev-parse --show-toplevel }
+Step "Kiểm working tree" { git status --short }
+Step "Checkout frozen SHA" { git switch --detach 806ba19ee4e09eafe9b2696ccf117a2b1ab841ef }
+Step "Xác nhận SHA" { git rev-parse HEAD }
+Step "Vào backend" { Set-Location backend }
+Step "Node version" { node --version }
+Step "npm version" { npm.cmd --version }
+Step "Cài dependencies" { npm.cmd ci --no-audit --no-fund }
+Step "Integration suite" { npm.cmd test }
+Step "Coupons profile" { npm.cmd run test:coupons }
+Write-Output "BẠN LÀM: ghi Node/npm version và số tests (guide: 88 và 26) vào NOTES.md, rồi dán khối 2."
+Write-Output "XONG KHOI 1"
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+### 2026-10-23T14:57:39 | - (detached/không repo) | > Set-Location eshop-coupons-s4
+# Vào repo
+--- exit 0 | 0 s
+### 2026-10-23T14:57:39 | 4b28756 main | > git rev-parse --show-toplevel
+# Kiểm top-level
+
+--- exit 0 | 0 s
+### 2026-10-23T14:57:39 | 4b28756 main | > git status --short
+# Kiểm working tree
+
+--- exit 0 | 0 s
+### 2026-10-23T14:57:39 | 4b28756 main | > git switch --detach 806ba19ee4e09eafe9b2696ccf117a2b1ab841ef
+# Checkout frozen SHA
+
+--- exit 0 | 0 s
+### 2026-10-23T14:57:40 | 806ba19 (detached/không repo) | > git rev-parse HEAD
+# Xác nhận SHA
+
+--- exit 0 | 0 s
+### 2026-10-23T14:57:40 | 806ba19 (detached/không repo) | > Set-Location backend
+# Vào backend
+--- exit 0 | 0 s
+### 2026-10-23T14:57:40 | 806ba19 (detached/không repo) | > node --version
+# Node version
+
+--- exit 0 | 0 s
+### 2026-10-23T14:57:40 | 806ba19 (detached/không repo) | > npm.cmd --version
+# npm version
+
+--- exit 0 | 0 s
+### 2026-10-23T14:57:40 | 806ba19 (detached/không repo) | > npm.cmd ci --no-audit --no-fund
+# Cài dependencies
+
+--- exit 0 | 10 s
+### 2026-10-23T14:57:50 | 806ba19 (detached/không repo) | > npm.cmd test
+# Integration suite
+
+--- exit 0 | 2 s
+### 2026-10-23T14:57:53 | 806ba19 (detached/không repo) | > npm.cmd run test:coupons
+# Coupons profile
+
+--- exit 0 | 1 s
+BẠN LÀM: ghi Node/npm version và số tests (guide: 88 và 26) vào NOTES.md, rồi dán khối 2.
+XONG KHOI 1
+]633;D;0]633;A]633;P;Cwd=C:\x5cw\x5cD01-1\x5ceshop-coupons-s4\x5cbackendPS C:\w\D01-1\eshop-coupons-s4\backend> ]633;B
+PS>Step "Coupons tests" { npm.cmd run test:coupons }
+Step "Dry run" { npm.cmd run coupons:dry }
+Step "Full mutation" { npm.cmd run mutate:coupons }
+Write-Output "BẠN LÀM: (1) mở reports/coupons/mutation.html, so với bảng guide: 120 mutants, 39/21/30/25/5, 52.17%."
+Write-Output "BẠN LÀM: (2) mở server.js dòng 474 (max_uses_per_user || 1), tìm 2 mutant Survived: true (111) và max_uses_per_user && 1 (113)."
+Write-Output "BẠN LÀM: (3) ghi kết quả + chỗ mơ hồ vào NOTES.md, rồi dán khối 3."
+Write-Output "XONG KHOI 2"
+### 2026-10-23T14:59:21 | 806ba19 (detached/không repo) | > npm.cmd run test:coupons
+# Coupons tests
+
+--- exit 0 | 1 s
+### 2026-10-23T14:59:22 | 806ba19 (detached/không repo) | > npm.cmd run coupons:dry
+# Dry run
+
+--- exit 0 | 4 s
+### 2026-10-23T14:59:26 | 806ba19 (detached/không repo) | > npm.cmd run mutate:coupons
+# Full mutation
+
+--- exit 0 | 99 s
+BẠN LÀM: (1) mở reports/coupons/mutation.html, so với bảng guide: 120 mutants, 39/21/30/25/5, 52.17%.
+BẠN LÀM: (2) mở server.js dòng 474 (max_uses_per_user || 1), tìm 2 mutant Survived: true (111) và max_uses_per_user && 1 (113).
+BẠN LÀM: (3) ghi kết quả + chỗ mơ hồ vào NOTES.md, rồi dán khối 3.
+XONG KHOI 2
+]633;D;0]633;A]633;P;Cwd=C:\x5cw\x5cD01-1\x5ceshop-coupons-s4\x5cbackendPS C:\w\D01-1\eshop-coupons-s4\backend> ]633;B
+PS>Step "Overlay 7 file (docsRoot = clone seminar có sẵn)" {
+$docsRoot = 'D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness'
+$overlayRoot = Join-Path $docsRoot 'experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/sources/backend'
+$backendRoot = (Get-Location).Path
+Get-ChildItem -LiteralPath $overlayRoot -Recurse -File | ForEach-Object {
+  $relative = $_.FullName.Substring($overlayRoot.Length + 1)
+  $destination = Join-Path $backendRoot $relative
+  New-Item -ItemType Directory -Force -Path (Split-Path -Parent $destination) | Out-Null
+  Copy-Item -LiteralPath $_.FullName -Destination $des
+}
+}
+Step "Manual tests" { node node_modules/jest/bin/jest.js --config jest.coupons.manual.config.cjs --runInBand }
+Step "AI tests" { node node_modules/jest/bin/jest.js --config jest.coupons.ai.config.cjs --runInBand }
+Step "Stryker manual" { node node_modules/@stryker-mutstryker.coupons.manual.config.json }
+Step "Stryker AI" { node node_modules/@stryker-mutator/core/bin/stryker.js run stryker.coupons.ai.config.json }
+Write-Output "BẠN LÀM: mở reports/coupons-manual/mutati/mutation.html; so với guide: tests 35 và 40; cả hai41/21/28/25/5, 53.91%, Killed/valid 35.65%. Ghi NOTES.md, rồi dán khối 4."
+Write-Output "XONG KHOI 3"
+### 2026-10-23T15:18:09 | 806ba19 (detached/không repo) | > $docsRoot = 'D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness'
+$overlayRoot = Join-Path $docsRoot 'experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/sources/backend'
+$backendRoot = (Get-Location).Path
+Get-ChildItem -LiteralPath $overlayRoot -Recurse -File | ForEach-Object {
+  $relative = $_.FullName.Substring($overlayRoot.Length + 1)
+  $destination = Join-Path $backendRoot $relative
+  New-Item -ItemType Directory -Force -Path (Split-Path -Parent $destination) | Out-Null
+  Copy-Item -LiteralPath $_.FullName -Destination $des
+}
+# Overlay 7 file (docsRoot = clone seminar có sẵn)
+--- exit 0 | 0 s
+### 2026-10-23T15:18:09 | 806ba19 (detached/không repo) | > node node_modules/jest/bin/jest.js --config jest.coupons.manual.config.cjs --runInBand
+# Manual tests
+
+--- exit 0 | 1 s
+### 2026-10-23T15:18:11 | 806ba19 (detached/không repo) | > node node_modules/jest/bin/jest.js --config jest.coupons.ai.config.cjs --runInBand
+# AI tests
+
+--- exit 0 | 1 s
+### 2026-10-23T15:18:12 | 806ba19 (detached/không repo) | > node node_modules/@stryker-mutstryker.coupons.manual.config.json
+# Stryker manual
+
+--- exit 1 | 0 s
+### 2026-10-23T15:18:12 | 806ba19 (detached/không repo) | > node node_modules/@stryker-mutator/core/bin/stryker.js run stryker.coupons.ai.config.json
+# Stryker AI
+
+--- exit 0 | 98 s
+BẠN LÀM: mở reports/coupons-manual/mutati/mutation.html; so với guide: tests 35 và 40; cả hai41/21/28/25/5, 53.91%, Killed/valid 35.65%. Ghi NOTES.md, rồi dán khối 4.
+XONG KHOI 3
+]633;D;0]633;A]633;P;Cwd=C:\x5cw\x5cD01-1\x5ceshop-coupons-s4\x5cbackendPS C:\w\D01-1\eshop-coupons-s4\backend> ]633;B
+PS>[Console]::OutputEncoding = [Text.Encoding]::UTF8; $OutputEncoding = [Text.Encoding]::UTF8
+New-Item -ItemType Directory C:\w\D01-1
+Set-Location C:\w\D01-1
+Start-Transcript -Path 'D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s4\runs\Tan_Hiep\D01-1\console.log' -Append
+function Step([string]$Desc, [scriptblock]$Block) {
+  $c = git rev-parse --short HEAD 2>$null; if (-not $c) { $c = '-' }
+  $b = git branch --show-current 2>$null; if (-not $b) { $b = '(detached/không repo)' }
+  Write-Output "### $(Get-Date -Format s) | $c $b | > $($Block.ToString().Trim())"
+  Write-Output "# $Desc"
+  $global:LASTEXITCODE = 0; $t = Get-Date
+  & $Block
+  Write-Output "--- exit $global:LASTEXITCODE | $([int]((Get-Date) - $t).TotalSeconds) s"
+}
+Write-Output "XONG KHOI 0"
+New-Item: 
+Line |
+   2 |  New-Item -ItemType Directory C:\w\D01-1
+     |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | An item with the specified name C:\w\D01-1 already exists.
+New-Item: 
+Line |
+   2 |  New-Item -ItemType Directory C:\w\D01-1
+     |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | An item with the specified name C:\w\D01-1 already exists.
+Transcript started, output file is D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s4\runs\Tan_Hiep\D01-1\console.log
+XONG KHOI 0
+]633;D;0]633;A]633;P;Cwd=C:\x5cw\x5cD01-1PS C:\w\D01-1> ]633;B
+PS>Step "Clone SUT" { git clone https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness.git eshop-coupons-s4 }
+Step "Vào repo" { Set-Location eshop-coupons-s4 }
+Step "Kiểm top-level" { git rev-parse --show-toplevel }
+Step "Kiểm working tree" { git status --short }
+Step "Checkout frozen SHA" { git switch --detach 806ba19ee4e09eafe9b2696ccf117a2b1ab841ef }
+Step "Xác nhận SHA" { git rev-parse HEAD }
+Step "Vào backend" { Set-Location backend }
+Step "Node version" { node --version }
+Step "npm version" { npm.cmd --version }
+Step "Cài dependencies" { npm.cmd ci --no-audit --no-fund }
+Step "Integration suite" { npm.cmd test }
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+### 2026-10-23T15:24:07 | - (detached/không repo) | > git clone https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness.git eshop-coupons-s4
+# Clone SUT
+
+--- exit 128 | 0 s
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+### 2026-10-23T15:24:07 | - (detached/không repo) | > Set-Location eshop-coupons-s4
+# Vào repo
+--- exit 0 | 0 s
+### 2026-10-23T15:24:07 | 806ba19 (detached/không repo) | > git rev-parse --show-toplevel
+# Kiểm top-level
+
+--- exit 0 | 0 s
+### 2026-10-23T15:24:07 | 806ba19 (detached/không repo) | > git status --short
+# Kiểm working tree
+
+--- exit 0 | 0 s
+### 2026-10-23T15:24:08 | 806ba19 (detached/không repo) | > git switch --detach 806ba19ee4e09eafe9b2696ccf117a2b1ab841ef
+# Checkout frozen SHA
+
+--- exit 0 | 0 s
+### 2026-10-23T15:24:08 | 806ba19 (detached/không repo) | > git rev-parse HEAD
+# Xác nhận SHA
+
+--- exit 0 | 0 s
+### 2026-10-23T15:24:08 | 806ba19 (detached/không repo) | > Set-Location backend
+# Vào backend
+--- exit 0 | 0 s
+### 2026-10-23T15:24:08 | 806ba19 (detached/không repo) | > node --version
+# Node version
+
+--- exit 0 | 0 s
+### 2026-10-23T15:24:08 | 806ba19 (detached/không repo) | > npm.cmd --version
+# npm version
+
+--- exit 0 | 0 s
+### 2026-10-23T15:24:08 | 806ba19 (detached/không repo) | > npm.cmd ci --no-audit --no-fund
+# Cài dependencies
+
+--- exit 0 | 10 s
+### 2026-10-23T15:24:18 | 806ba19 (detached/không repo) | > npm.cmd test
+# Integration suite
+
+--- exit 0 | 2 s
+]633;D;0]633;A]633;P;Cwd=C:\x5cw\x5cD01-1\x5ceshop-coupons-s4\x5cbackendPS C:\w\D01-1\eshop-coupons-s4\backend> ]633;B
+PS>Step "Coupons profile" { npm.cmd run test:coupons }
+Write-Output "BẠN LÀM: ghi Node/npm version và số tests (guide: 88 và 26) vào NOTES.md, rồi dán khối 2."
+Write-Output "XONG KHOI 1"
+### 2026-10-23T15:24:39 | 806ba19 (detached/không repo) | > npm.cmd run test:coupons
+# Coupons profile
+
+--- exit 0 | 1 s
+BẠN LÀM: ghi Node/npm version và số tests (guide: 88 và 26) vào NOTES.md, rồi dán khối 2.
+XONG KHOI 1
+]633;D;0]633;A]633;P;Cwd=C:\x5cw\x5cD01-1\x5ceshop-coupons-s4\x5cbackendPS C:\w\D01-1\eshop-coupons-s4\backend> ]633;B
+PS>Step "Coupons tests" { npm.cmd run test:coupons }
+Step "Dry run" { npm.cmd run coupons:dry }
+Step "Full mutation" { npm.cmd run mutate:coupons }
+Write-Output "BẠN LÀM: (1) mở reports/coupons/mutation.html, so với bảng guide: 120 mutants, 39/21/30/25/5, 52.17%."
+Write-Output "BẠN LÀM: (2) mở server.js dòng 474 (max_uses_per_user || 1), tìm 2 mutant Survived: true (111) và max_uses_per_user && 1 (113)."
+Write-Output "BẠN LÀM: (3) ghi kết quả + chỗ mơ hồ vào NOTES.md, rồi dán khối 3."
+Write-Output "XONG KHOI 2"
+### 2026-10-23T15:26:05 | 806ba19 (detached/không repo) | > npm.cmd run test:coupons
+# Coupons tests
+
+--- exit 0 | 1 s
+### 2026-10-23T15:26:06 | 806ba19 (detached/không repo) | > npm.cmd run coupons:dry
+# Dry run
+
+--- exit 0 | 4 s
+### 2026-10-23T15:26:11 | 806ba19 (detached/không repo) | > npm.cmd run mutate:coupons
+# Full mutation
+
+--- exit 0 | 103 s
+BẠN LÀM: (1) mở reports/coupons/mutation.html, so với bảng guide: 120 mutants, 39/21/30/25/5, 52.17%.
+BẠN LÀM: (2) mở server.js dòng 474 (max_uses_per_user || 1), tìm 2 mutant Survived: true (111) và max_uses_per_user && 1 (113).
+BẠN LÀM: (3) ghi kết quả + chỗ mơ hồ vào NOTES.md, rồi dán khối 3.
+XONG KHOI 2
+]633;D;0]633;A]633;P;Cwd=C:\x5cw\x5cD01-1\x5ceshop-coupons-s4\x5cbackendPS C:\w\D01-1\eshop-coupons-s4\backend> ]633;B
+PS>Step "Overlay 7 file (docsRoot = clone seminar có sẵn)" {
+$docsRoot = 'D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness'
+$overlayRoot = Join-Path $docsRoot 'experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/sources/backend'
+$backendRoot = (Get-Location).Path
+Get-ChildItem -LiteralPath $overlayRoot -Recurse -File | ForEach-Object {
+  $relative = $_.FullName.Substring($overlayRoot.Length + 1)
+  $destination = Join-Path $backendRoot $relative
+  New-Item -ItemType Directory -Force -Path (Split-Path -Parent $destination) | Out-Null
+  Copy-Item -LiteralPath $_.FullName -Destination $destination
+}
+}
+Step "Manual tests" { node node_modules/jest/bin/jest.js --config jest.coupons.manual.config.cjs --runInBand }
+### 2026-10-23T15:30:03 | 806ba19 (detached/không repo) | > $docsRoot = 'D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness'
+$overlayRoot = Join-Path $docsRoot 'experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/sources/backend'
+$backendRoot = (Get-Location).Path
+Get-ChildItem -LiteralPath $overlayRoot -Recurse -File | ForEach-Object {
+  $relative = $_.FullName.Substring($overlayRoot.Length + 1)
+  $destination = Join-Path $backendRoot $relative
+  New-Item -ItemType Directory -Force -Path (Split-Path -Parent $destination) | Out-Null
+  Copy-Item -LiteralPath $_.FullName -Destination $destination
+}
+# Overlay 7 file (docsRoot = clone seminar có sẵn)
+--- exit 0 | 0 s
+### 2026-10-23T15:30:03 | 806ba19 (detached/không repo) | > node node_modules/jest/bin/jest.js --config jest.coupons.manual.config.cjs --runInBand
+# Manual tests
+
+--- exit 0 | 1 s
+]633;D;0]633;A]633;P;Cwd=C:\x5cw\x5cD01-1\x5ceshop-coupons-s4\x5cbackendPS C:\w\D01-1\eshop-coupons-s4\backend> ]633;B
+PS>Step "AI tests" { node node_modules/jest/bin/jest.js --config jest.coupons.ai.config.cjs --runInBand }
+### 2026-10-23T15:30:23 | 806ba19 (detached/không repo) | > node node_modules/jest/bin/jest.js --config jest.coupons.ai.config.cjs --runInBand
+# AI tests
+
+--- exit 0 | 2 s
+]633;D;0]633;A]633;P;Cwd=C:\x5cw\x5cD01-1\x5ceshop-coupons-s4\x5cbackendPS C:\w\D01-1\eshop-coupons-s4\backend> ]633;B
+PS>Step "Stryker manual" { node node_modules/@stryker-mutator/core/bin/stryker.js run stryker.coupons.manual.config.json }
+### 2026-10-23T15:30:38 | 806ba19 (detached/không repo) | > node node_modules/@stryker-mutator/core/bin/stryker.js run stryker.coupons.manual.config.json
+# Stryker manual
+
+--- exit 0 | 110 s
+]633;D;0]633;A]633;P;Cwd=C:\x5cw\x5cD01-1\x5ceshop-coupons-s4\x5cbackendPS C:\w\D01-1\eshop-coupons-s4\backend> ]633;B
+PS>Step "Stryker AI" { node node_modules/@stryker-mutator/core/bin/stryker.js run stryker.coupons.ai.config.json }
+### 2026-10-23T15:32:45 | 806ba19 (detached/không repo) | > node node_modules/@stryker-mutator/core/bin/stryker.js run stryker.coupons.ai.config.json
+# Stryker AI
+
+--- exit 0 | 116 s
+]633;D;0]633;A]633;P;Cwd=C:\x5cw\x5cD01-1\x5ceshop-coupons-s4\x5cbackendPS C:\w\D01-1\eshop-coupons-s4\backend> ]633;B
+PS>Write-Output "BẠN LÀM: mở reports/coupons-manual/mutation.html và reports/coupons-ai/mutation.html; so với guide: tests 35 và 40; cả hai 41/21/28/25/5, 53.91%, Killed/valid 35.65%. Ghi NOTES.md, rồi dán khối 4."
+Write-Output "XONG KHOI 3"
+BẠN LÀM: mở reports/coupons-manual/mutation.html và reports/coupons-ai/mutation.html; so với guide: tests 35 và 40; cả hai 41/21/28/25/5, 53.91%, Killed/valid 35.65%. Ghi NOTES.md, rồi dán khối 4.
+XONG KHOI 3
+]633;D;0]633;A]633;P;Cwd=C:\x5cw\x5cD01-1\x5ceshop-coupons-s4\x5cbackendPS C:\w\D01-1\eshop-coupons-s4\backend> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cw\x5cD01-1\x5ceshop-coupons-s4\x5cbackendPS C:\w\D01-1\eshop-coupons-s4\backend> ]633;B
+PS>$p = 'D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Thai_Hoa\D04-merge-2026-10-23-agent\G02-Codex'
+$lf = [IO.File]::ReadAllText("$p\candidate.raw.js").Replace("`r`n","`n")
+[BitConverter]::ToString([Security.Cryptography.SHA256]::Create().ComputeHash([Text.Encoding]::UTF8.GetBytes($lf))).Replace('-','')
+Get-Content "$p\executed-sha256.json"
+7B51BFBD6097CA5802296E4234187829AB7F572A23FC306EF6205DCAA4FE1E81
+{
+  "rawSha256": "7B51BFBD6097CA5802296E4234187829AB7F572A23FC306EF6205DCAA4FE1E81",
+  "executedSha256": "7B51BFBD6097CA5802296E4234187829AB7F572A23FC306EF6205DCAA4FE1E81",
+  "identical": true,
+  "candidateCommit": "f12a6cc4515d7e887b84a257420dab52274bd887"
+}
+]633;D;0]633;A]633;P;Cwd=C:\x5cw\x5cD01-1\x5ceshop-coupons-s4\x5cbackendPS C:\w\D01-1\eshop-coupons-s4\backend> ]633;B
