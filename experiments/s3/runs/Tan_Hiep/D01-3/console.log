@@ -1,0 +1,9 @@
+### 2026-10-23T11:34:23 | 8d60e9b s3/D01-cart-orders | > npx stryker run stryker.cart-orders.config.json --dryRunOnly
+[32m11:34:25 (18168) INFO ProjectReader[39m Found 1 of 17 file(s) to be mutated.
+[32m11:34:25 (18168) INFO Instrumenter[39m Instrumented 1 source file(s) with 150 mutant(s)
+[32m11:34:25 (18168) INFO ConcurrencyTokenProvider[39m Creating 15 test runner process(es).
+[32m11:34:25 (18168) INFO BroadcastReporter[39m Detected that current console does not support the "progress" reporter, downgrading to "progress-append-only" reporter
+[32m11:34:26 (18168) INFO DryRunExecutor[39m Note: running the dry-run only. No mutations will be tested.
+[32m11:34:26 (18168) INFO DryRunExecutor[39m Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+[32m11:34:27 (18168) INFO DryRunExecutor[39m Initial test run succeeded. Ran 36 tests in 1 second (net 420 ms, overhead 713 ms).
+[32m11:34:27 (18168) INFO MutationTestExecutor[39m The dry-run has been completed successfully. No mutations have been executed.

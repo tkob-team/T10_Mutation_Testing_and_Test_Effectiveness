@@ -1,0 +1,199 @@
+### 2026-10-23T11:34:22 | 8d60e9b s3/D01-cart-orders | > npm run test:defects
+
+> backend@1.0.0 test:defects
+> jest --testMatch "**/test/defects/*.defects.js"
+
+FAIL test/defects/cart-orders.defects.js
+  ├ù DEF-01 FR-07: adding the same product again increases quantity, no new line (29 ms)
+  ├ù DEF-02 FR-08: backend recomputes total from the cart, ignores client total_amount (14 ms)
+  ├ù DEF-03 FR-08: cart is cleared after a successful checkout (12 ms)
+  ├ù DEF-04 FR-10/FR-20: user cannot cancel a shipping order (10 ms)
+  ├ù DEF-05 FR-10: canceled is a final state, canceled ΓåÆ delivered is rejected (9 ms)
+  ├ù DEF-06 FR-12/SEC-03: non-admin cannot change order status (11 ms)
+  ├ù DEF-07 FR-12/SEC-03: non-admin cannot list all orders (7 ms)
+  ├ù DEF-08a spec ┬º4 header, SEC-02: order detail without token is rejected (9 ms)
+  ├ù DEF-08b FR-11: user cannot view another user's order detail (11 ms)
+
+  ΓùÅ DEF-01 FR-07: adding the same product again increases quantity, no new line
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 7
+
+      Array [
+        Object {
+          "id": 4,
+          "name": "Tai nghe AirPods Pro 2",
+          "price": 6000000,
+    -     "quantity": 3,
+    +     "quantity": 2,
+    +   },
+    +   Object {
+    +     "id": 4,
+    +     "name": "Tai nghe AirPods Pro 2",
+    +     "price": 6000000,
+    +     "quantity": 1,
+        },
+      ]
+
+      20 |   await request(app).post('/api/cart').set(bearer(token)).send({ ...item, quantity: 1 });
+      21 |   const cart = await request(app).get('/api/cart').set(bearer(token));
+    > 22 |   expect(cart.body).toEqual([{ ...item, quantity: 3 }]);
+         |                     ^
+      23 | });
+      24 |
+      25 | test('DEF-02 FR-08: backend recomputes total from the cart, ignores client total_amount', async () => {
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:22:21)
+
+  ΓùÅ DEF-02 FR-08: backend recomputes total from the cart, ignores client total_amount
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 12000000
+    Received: 1
+
+      31 |     .send({ total_amount: 1, shipping_address: 'HCM' });
+      32 |   const order = await get(db, 'SELECT total_amount FROM orders WHERE id = ?', [res.body.orderId]);
+    > 33 |   expect(order.total_amount).toBe(12000000);
+         |                              ^
+      34 | });
+      35 |
+      36 | test('DEF-03 FR-08: cart is cleared after a successful checkout', async () => {
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:33:30)
+
+  ΓùÅ DEF-03 FR-08: cart is cleared after a successful checkout
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 8
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "id": 4,
+    +     "name": "Tai nghe AirPods Pro 2",
+    +     "price": 6000000,
+    +     "quantity": 2,
+    +   },
+    + ]
+
+      39 |   await request(app).post('/api/checkout').set(bearer(user.token)).send({ total_amount: 12000000, shipping_address: 'HCM' });
+      40 |   const cart = await request(app).get('/api/cart').set(bearer(user.token));
+    > 41 |   expect(cart.body).toEqual([]);
+         |                     ^
+      42 | });
+      43 |
+      44 | test('DEF-04 FR-10/FR-20: user cannot cancel a shipping order', async () => {
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:41:21)
+
+  ΓùÅ DEF-04 FR-10/FR-20: user cannot cancel a shipping order
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 200
+
+      46 |   const id = await createOrder(app, db, token, 'shipping');
+      47 |   const res = await request(app).put(`/api/orders/${id}/cancel`).set(bearer(token));
+    > 48 |   expect(res.status).toBe(400);
+         |                      ^
+      49 |   expect(await orderStatus(db, id)).toBe('shipping');
+      50 | });
+      51 |
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:48:22)
+
+  ΓùÅ DEF-05 FR-10: canceled is a final state, canceled ΓåÆ delivered is rejected
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 200
+
+      57 |     .set(bearer(adminToken))
+      58 |     .send({ status: 'delivered' });
+    > 59 |   expect(res.status).toBe(400);
+         |                      ^
+      60 |   expect(await orderStatus(db, id)).toBe('canceled');
+      61 | });
+      62 |
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:59:22)
+
+  ΓùÅ DEF-06 FR-12/SEC-03: non-admin cannot change order status
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected value: 200
+    Received array: [401, 403]
+
+      68 |     .set(bearer(user.token))
+      69 |     .send({ status: 'confirmed' });
+    > 70 |   expect([401, 403]).toContain(res.status);
+         |                      ^
+      71 |   expect(await orderStatus(db, id)).toBe('pending');
+      72 | });
+      73 |
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:70:22)
+
+  ΓùÅ DEF-07 FR-12/SEC-03: non-admin cannot list all orders
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected value: 200
+    Received array: [401, 403]
+
+      75 |   const { token } = await newUser(app);
+      76 |   const res = await request(app).get('/api/admin/orders').set(bearer(token));
+    > 77 |   expect([401, 403]).toContain(res.status);
+         |                      ^
+      78 | });
+      79 |
+      80 | test('DEF-08a spec ┬º4 header, SEC-02: order detail without token is rejected', async () => {
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:77:22)
+
+  ΓùÅ DEF-08a spec ┬º4 header, SEC-02: order detail without token is rejected
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 401
+    Received: 200
+
+      83 |
+      84 |   const anonymous = await request(app).get(`/api/orders/${id}`);
+    > 85 |   expect(anonymous.status).toBe(401);
+         |                            ^
+      86 | });
+      87 |
+      88 | test("DEF-08b FR-11: user cannot view another user's order detail", async () => {
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:85:28)
+
+  ΓùÅ DEF-08b FR-11: user cannot view another user's order detail
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected value: 200
+    Received array: [403, 404]
+
+      92 |
+      93 |   const notOwner = await request(app).get(`/api/orders/${id}`).set(bearer(other.token));
+    > 94 |   expect([403, 404]).toContain(notOwner.status);
+         |                      ^
+      95 | });
+      96 |
+
+      at Object.<anonymous> (test/defects/cart-orders.defects.js:94:22)
+
+Test Suites: 1 failed, 1 total
+Tests:       9 failed, 9 total
+Snapshots:   0 total
+Time:        0.563 s, estimated 1 s
+Ran all test suites.

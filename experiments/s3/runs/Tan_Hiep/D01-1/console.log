@@ -1,0 +1,53 @@
+### 2026-10-23T11:34:20 | 8d60e9b s3/D01-cart-orders | > npm test
+
+> backend@1.0.0 test
+> jest
+
+PASS test/cart-orders.test.js
+  Cart ΓÇö GET/POST /api/cart (spec ┬º4.1ΓÇô4.2, FR-07)
+    ΓêÜ CO-01 [invalid] get cart without token ΓåÆ 401 (6 ms)
+    ΓêÜ CO-02 [normal] new user gets an empty cart (9 ms)
+    ΓêÜ CO-03 [normal] add one item, then read the cart (11 ms)
+    ΓêÜ CO-04 [normal] add two different products (8 ms)
+    ΓêÜ CO-05 [normal] another user reads own cart after user 1 adds an item (14 ms)
+  Checkout & order history ΓÇö POST /api/checkout, GET /api/orders/my-orders (spec ┬º4.3ΓÇô4.4, FR-08, FR-11)
+    ΓêÜ CO-06 [invalid] checkout without token ΓåÆ 401 (2 ms)
+    ΓêÜ CO-07 [normal] checkout with cart total and address (10 ms)
+    ΓêÜ CO-08 [normal] user reads own order history (another user also has an order) (18 ms)
+  Order detail & admin list ΓÇö GET /api/orders/:id, GET /api/admin/orders (spec ┬º4.5, ┬º6.2, FR-18)
+    ΓêÜ CO-09 [normal] owner reads order detail by id (8 ms)
+    ΓêÜ CO-10 [invalid] order detail of non-existent id ΓåÆ 404 (7 ms)
+    ΓêÜ CO-11 [normal] admin lists orders of all users (17 ms)
+  User cancels order ΓÇö PUT /api/orders/:id/cancel (spec ┬º4.6, FR-10, FR-20)
+    ΓêÜ CO-12 [normal] cancel a pending order ΓåÆ 200 (9 ms)
+    ΓêÜ CO-12 [normal] cancel a confirmed order ΓåÆ 200 (9 ms)
+    ΓêÜ CO-13 [invalid] cancel a delivered order (final state) ΓåÆ 400 (8 ms)
+    ΓêÜ CO-13 [invalid] cancel a canceled order (final state) ΓåÆ 400 (8 ms)
+    ΓêÜ CO-14 [invalid] cancel another user's order ΓåÆ 404 (12 ms)
+    ΓêÜ CO-15 [invalid] cancel a non-existent order ΓåÆ 404 (5 ms)
+    ΓêÜ CO-16 [invalid] cancel without token ΓåÆ 401 (2 ms)
+  Admin order status ΓÇö PUT /api/admin/orders/:id/status (spec ┬º6.2, FR-10, FR-18)
+    ΓêÜ CO-17 [normal] pending ΓåÆ confirmed ΓåÆ 200 (9 ms)
+    ΓêÜ CO-17 [normal] confirmed ΓåÆ shipping ΓåÆ 200 (8 ms)
+    ΓêÜ CO-17 [normal] shipping ΓåÆ delivered ΓåÆ 200 (10 ms)
+    ΓêÜ CO-17 [normal] pending ΓåÆ canceled ΓåÆ 200 (8 ms)
+    ΓêÜ CO-17 [normal] confirmed ΓåÆ canceled ΓåÆ 200 (9 ms)
+    ΓêÜ CO-18 [invalid] pending ΓåÆ shipping ΓåÆ 400 (7 ms)
+    ΓêÜ CO-18 [invalid] pending ΓåÆ delivered ΓåÆ 400 (10 ms)
+    ΓêÜ CO-18 [invalid] confirmed ΓåÆ delivered ΓåÆ 400 (8 ms)
+    ΓêÜ CO-18 [invalid] confirmed ΓåÆ pending ΓåÆ 400 (9 ms)
+    ΓêÜ CO-18 [invalid] shipping ΓåÆ pending ΓåÆ 400 (9 ms)
+    ΓêÜ CO-18 [invalid] shipping ΓåÆ confirmed ΓåÆ 400 (8 ms)
+    ΓêÜ CO-18 [invalid] delivered ΓåÆ pending ΓåÆ 400 (7 ms)
+    ΓêÜ CO-18 [invalid] delivered ΓåÆ shipping ΓåÆ 400 (8 ms)
+    ΓêÜ CO-18 [invalid] delivered ΓåÆ canceled ΓåÆ 400 (8 ms)
+    ΓêÜ CO-18 [invalid] canceled ΓåÆ pending ΓåÆ 400 (9 ms)
+    ΓêÜ CO-18 [invalid] canceled ΓåÆ confirmed ΓåÆ 400 (8 ms)
+    ΓêÜ CO-18 [invalid] pending ΓåÆ unknown_status ΓåÆ 400 (9 ms)
+    ΓêÜ CO-19 [invalid] change status of a non-existent order ΓåÆ 404 (2 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       36 passed, 36 total
+Snapshots:   0 total
+Time:        0.773 s, estimated 1 s
+Ran all test suites.
