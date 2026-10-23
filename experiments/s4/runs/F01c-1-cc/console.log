@@ -1,0 +1,582 @@
+### 2026-10-23T14:09:58 |  workshop | > git --version
+git version 2.47.0.windows.2
+--- exit 0 | 0s
+### 2026-10-23T14:09:58 |  workshop | > node --version
+v24.15.0
+--- exit 0 | 0s
+### 2026-10-23T14:09:58 |  workshop | > npm --version
+11.12.1
+--- exit 0 | 0s
+### 2026-10-23T14:09:58 |  workshop | > git clone https://github.com/tkob-team/eshop-sut-workshop.git
+Cloning into 'eshop-sut-workshop'...
+--- exit 0 | 3s
+### 2026-10-23T14:10:01 | 6d2e790 workshop | > git checkout 6d2e790
+Note: switching to '6d2e790'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 6d2e790 chore: prepare workshop starter with isolated baseline tests
+--- exit 0 | 0s
+### 2026-10-23T14:10:01 | 6d2e790 workshop | > git log --oneline -1
+6d2e790 chore: prepare workshop starter with isolated baseline tests
+--- exit 0 | 0s
+### 2026-10-23T14:10:09 | 6d2e790 workshop | > npm ci
+npm warn deprecated prebuild-install@7.1.3: No longer maintained. Please contact the author of the relevant native addon; alternatives are available.
+npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+
+added 424 packages, and audited 425 packages in 8s
+
+87 packages are looking for funding
+  run `npm fund` for details
+
+5 vulnerabilities (1 low, 1 moderate, 1 high, 2 critical)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+--- exit 0 | 8s
+### 2026-10-23T14:10:17 | 6d2e790 workshop | > npm test
+
+> backend@1.0.0 test
+> jest --runInBand
+
+
+Test Suites: 4 passed, 4 total
+Tests:       88 passed, 88 total
+Snapshots:   0 total
+Time:        1.793 s
+Ran all test suites in 2 projects.
+--- exit 0 | 2s
+### 2026-10-23T14:10:43 | 6d2e790 workshop | > npm install --save-dev --save-exact @stryker-mutator/core@10.0.0 @stryker-mutator/jest-runner@10.0.0
+
+added 149 packages, and audited 574 packages in 22s
+
+109 packages are looking for funding
+  run `npm fund` for details
+
+6 vulnerabilities (1 low, 2 moderate, 1 high, 2 critical)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+--- exit 0 | 22s
+### 2026-10-23T14:11:05 | (editor) | > tạo stryker.config.json theo guide mục 2.3 (nội dung nguyên văn)
+### 2026-10-23T14:11:05 | 6d2e790 workshop | > npm run test:cart
+
+> backend@1.0.0 test:cart
+> jest --selectProjects cart-coupons --runInBand --runTestsByPath test/cart-orders.test.js
+
+Running one project: cart-coupons
+Test Suites: 1 passed, 1 total
+Tests:       36 passed, 36 total
+Snapshots:   0 total
+Time:        0.75 s, estimated 1 s
+Ran all test suites within paths "test/cart-orders.test.js".
+--- exit 0 | 1s
+### 2026-10-23T14:11:07 | 6d2e790 workshop | > npx stryker run
+[32m14:11:08 (17128) INFO ProjectReader[39m Found 1 of 19 file(s) to be mutated.
+[32m14:11:08 (17128) INFO Instrumenter[39m Instrumented 1 source file(s) with 7 mutant(s)
+[32m14:11:08 (17128) INFO ConcurrencyTokenProvider[39m Creating 2 test runner process(es).
+[32m14:11:09 (17128) INFO DryRunExecutor[39m Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+[32m14:11:10 (17128) INFO DryRunExecutor[39m Initial test run succeeded. Ran 36 tests in 1 second (net 366 ms, overhead 742 ms).
+
+All tests/cart-orders.test.js
+  ✘ Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-01 [invalid] get cart without token -> 401 [line 18] (covered 0)
+  ~ Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-02 [normal] new user gets an empty cart [line 23] (covered 4)
+  ~ Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-03 [normal] add one item, then read the cart [line 29] (covered 4)
+  ~ Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-04 [normal] add two different products [line 37] (covered 1)
+  ~ Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item [line 45] (covered 5)
+  ✘ Checkout & order history - POST /api/checkout, GET /api/orders/my-orders (spec API 4.3-4.4, FR-08, FR-11) CO-06 [invalid] checkout without token -> 401 [line 55] (covered 0)
+  ~ Checkout & order history - POST /api/checkout, GET /api/orders/my-orders (spec API 4.3-4.4, FR-08, FR-11) CO-07 [normal] checkout with cart total and address [line 60] (covered 1)
+  ✘ Checkout & order history - POST /api/checkout, GET /api/orders/my-orders (spec API 4.3-4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order) [line 70] (covered 0)
+  ✘ Order detail & admin list - GET /api/orders/:id, GET /api/admin/orders (spec API 4.5, API 6.2, FR-18) CO-09 [normal] owner reads order detail by id [line 82] (covered 0)
+  ✘ Order detail & admin list - GET /api/orders/:id, GET /api/admin/orders (spec API 4.5, API 6.2, FR-18) CO-10 [invalid] order detail of non-existent id -> 404 [line 89] (covered 0)
+  ✘ Order detail & admin list - GET /api/orders/:id, GET /api/admin/orders (spec API 4.5, API 6.2, FR-18) CO-11 [normal] admin lists orders of all users [line 95] (covered 0)
+  ~ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order -> 200 [line 106] (covered 2)
+  ~ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order -> 200 [line 106] (covered 2)
+  ✘ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) -> 400 [line 113] (covered 0)
+  ✘ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) -> 400 [line 113] (covered 0)
+  ✘ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-14 [invalid] cancel another user's order -> 404 [line 120] (covered 0)
+  ✘ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-15 [invalid] cancel a non-existent order -> 404 [line 128] (covered 0)
+  ✘ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-16 [invalid] cancel without token -> 401 [line 134] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200 [line 151] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200 [line 151] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200 [line 151] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-17 [normal] pending → canceled → 200 [line 151] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-17 [normal] confirmed → canceled → 200 [line 151] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] confirmed → delivered → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] confirmed → pending → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] shipping → pending → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] shipping → confirmed → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] delivered → pending → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] delivered → shipping → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] delivered → canceled → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] canceled → pending → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] canceled → confirmed → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] pending → unknown_status → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-19 [invalid] change status of a non-existent order -> 404 [line 181] (covered 0)
+
+[Survived] ConditionalExpression
+server.js:286:7
+-     if (!userCarts[userId]) userCarts[userId] = [];
+
++     if (true) userCarts[userId] = [];
+
+Tests ran:
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-02 [normal] new user gets an empty cart
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-03 [normal] add one item, then read the cart
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+
+
+[Survived] ConditionalExpression
+server.js:286:7
+-     if (!userCarts[userId]) userCarts[userId] = [];
+
++     if (false) userCarts[userId] = [];
+
+Tests ran:
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-02 [normal] new user gets an empty cart
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-03 [normal] add one item, then read the cart
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+
+
+[Survived] BooleanLiteral
+server.js:286:7
+-     if (!userCarts[userId]) userCarts[userId] = [];
+
++     if (userCarts[userId]) userCarts[userId] = [];
+
+Tests ran:
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-02 [normal] new user gets an empty cart
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-03 [normal] add one item, then read the cart
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+
+
+[Survived] ArrayDeclaration
+server.js:286:47
+-     if (!userCarts[userId]) userCarts[userId] = [];
+
++     if (!userCarts[userId]) userCarts[userId] = ["Stryker was here"];
+
+Tests ran:
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-02 [normal] new user gets an empty cart
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+
+
+[Survived] CallExpression
+server.js:293:3
+-     userCarts[userId].push(req.body);
+
++     ;
+
+Tests ran:
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-03 [normal] add one item, then read the cart
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-04 [normal] add two different products
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+  and 1 more test!
+
+
+[Survived] ArrayDeclaration
+server.js:335:9
+-           ["canceled", req.params.id],
+
++           [],
+
+Tests ran:
+    User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order -> 200
+    User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order -> 200
+
+
+[Survived] StringLiteral
+server.js:335:10
+-           ["canceled", req.params.id],
+
++           ["", req.params.id],
+
+Tests ran:
+    User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order -> 200
+    User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order -> 200
+
+
+Ran 2.71 tests per mutant on average.
+-----------|------------------|----------|-----------|------------|----------|----------|
+           | % Mutation score |          |           |            |          |          |
+File       |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+All files  |   0.00 |    0.00 |        0 |         0 |          7 |        0 |        0 |
+ server.js |   0.00 |    0.00 |        0 |         0 |          7 |        0 |        0 |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+[32m14:11:11 (17128) INFO JsonReporter[39m Your report can be found at: file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/f01c/eshop-sut-workshop/backend/reports/mutation.json
+[32m14:11:11 (17128) INFO HtmlReporter[39m Your report can be found at: file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/f01c/eshop-sut-workshop/backend/reports/mutation.html
+[32m14:11:11 (17128) INFO MutationTestExecutor[39m Done in 3 seconds.
+--- exit 0 | 5s
+### 2026-10-23T14:11:32 | 6d2e790 workshop | > cp reports/mutation.json reports/baseline.json
+--- exit 0 | 0s
+### 2026-10-23T14:11:32 | 6d2e790 workshop | > cp test/cart-orders.test.js reports/cart.baseline.test.js
+--- exit 0 | 0s
+### 2026-10-23T14:11:33 | (editor) | > guide 3.3: thay CO-02 bằng snippet trong guide
+### 2026-10-23T14:11:33 | 6d2e790 workshop | > npm run test:cart
+
+> backend@1.0.0 test:cart
+> jest --selectProjects cart-coupons --runInBand --runTestsByPath test/cart-orders.test.js
+
+Running one project: cart-coupons
+Test Suites: 1 passed, 1 total
+Tests:       36 passed, 36 total
+Snapshots:   0 total
+Time:        0.847 s, estimated 1 s
+Ran all test suites within paths "test/cart-orders.test.js".
+--- exit 0 | 2s
+### 2026-10-23T14:11:34 | 6d2e790 workshop | > npx stryker run
+[32m14:11:36 (7296) INFO ProjectReader[39m Found 1 of 21 file(s) to be mutated.
+[32m14:11:36 (7296) INFO Instrumenter[39m Instrumented 1 source file(s) with 7 mutant(s)
+[32m14:11:36 (7296) INFO ConcurrencyTokenProvider[39m Creating 2 test runner process(es).
+[32m14:11:37 (7296) INFO DryRunExecutor[39m Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+[32m14:11:38 (7296) INFO DryRunExecutor[39m Initial test run succeeded. Ran 36 tests in 1 second (net 395 ms, overhead 900 ms).
+
+All tests/cart-orders.test.js
+  ✘ Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-01 [invalid] get cart without token -> 401 [line 18] (covered 0)
+  ~ Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-02 [normal] new user gets an empty cart [line 23] (covered 4)
+  ~ Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-03 [normal] add one item, then read the cart [line 29] (covered 4)
+  ~ Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-04 [normal] add two different products [line 37] (covered 1)
+  ~ Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item [line 45] (covered 5)
+  ✘ Checkout & order history - POST /api/checkout, GET /api/orders/my-orders (spec API 4.3-4.4, FR-08, FR-11) CO-06 [invalid] checkout without token -> 401 [line 55] (covered 0)
+  ~ Checkout & order history - POST /api/checkout, GET /api/orders/my-orders (spec API 4.3-4.4, FR-08, FR-11) CO-07 [normal] checkout with cart total and address [line 60] (covered 1)
+  ✘ Checkout & order history - POST /api/checkout, GET /api/orders/my-orders (spec API 4.3-4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order) [line 70] (covered 0)
+  ✘ Order detail & admin list - GET /api/orders/:id, GET /api/admin/orders (spec API 4.5, API 6.2, FR-18) CO-09 [normal] owner reads order detail by id [line 82] (covered 0)
+  ✘ Order detail & admin list - GET /api/orders/:id, GET /api/admin/orders (spec API 4.5, API 6.2, FR-18) CO-10 [invalid] order detail of non-existent id -> 404 [line 89] (covered 0)
+  ✘ Order detail & admin list - GET /api/orders/:id, GET /api/admin/orders (spec API 4.5, API 6.2, FR-18) CO-11 [normal] admin lists orders of all users [line 95] (covered 0)
+  ~ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order -> 200 [line 106] (covered 2)
+  ~ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order -> 200 [line 106] (covered 2)
+  ✘ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) -> 400 [line 113] (covered 0)
+  ✘ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) -> 400 [line 113] (covered 0)
+  ✘ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-14 [invalid] cancel another user's order -> 404 [line 120] (covered 0)
+  ✘ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-15 [invalid] cancel a non-existent order -> 404 [line 128] (covered 0)
+  ✘ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-16 [invalid] cancel without token -> 401 [line 134] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200 [line 151] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200 [line 151] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200 [line 151] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-17 [normal] pending → canceled → 200 [line 151] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-17 [normal] confirmed → canceled → 200 [line 151] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] confirmed → delivered → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] confirmed → pending → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] shipping → pending → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] shipping → confirmed → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] delivered → pending → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] delivered → shipping → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] delivered → canceled → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] canceled → pending → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] canceled → confirmed → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] pending → unknown_status → 400 [line 174] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-19 [invalid] change status of a non-existent order -> 404 [line 181] (covered 0)
+
+[Survived] ConditionalExpression
+server.js:286:7
+-     if (!userCarts[userId]) userCarts[userId] = [];
+
++     if (true) userCarts[userId] = [];
+
+Tests ran:
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-02 [normal] new user gets an empty cart
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-03 [normal] add one item, then read the cart
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+
+
+[Survived] ConditionalExpression
+server.js:286:7
+-     if (!userCarts[userId]) userCarts[userId] = [];
+
++     if (false) userCarts[userId] = [];
+
+Tests ran:
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-02 [normal] new user gets an empty cart
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-03 [normal] add one item, then read the cart
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+
+
+[Survived] BooleanLiteral
+server.js:286:7
+-     if (!userCarts[userId]) userCarts[userId] = [];
+
++     if (userCarts[userId]) userCarts[userId] = [];
+
+Tests ran:
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-02 [normal] new user gets an empty cart
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-03 [normal] add one item, then read the cart
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+
+
+[Survived] ArrayDeclaration
+server.js:286:47
+-     if (!userCarts[userId]) userCarts[userId] = [];
+
++     if (!userCarts[userId]) userCarts[userId] = ["Stryker was here"];
+
+Tests ran:
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-02 [normal] new user gets an empty cart
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+
+
+[Survived] CallExpression
+server.js:293:3
+-     userCarts[userId].push(req.body);
+
++     ;
+
+Tests ran:
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-03 [normal] add one item, then read the cart
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-04 [normal] add two different products
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+  and 1 more test!
+
+
+[Survived] ArrayDeclaration
+server.js:335:9
+-           ["canceled", req.params.id],
+
++           [],
+
+Tests ran:
+    User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order -> 200
+    User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order -> 200
+
+
+[Survived] StringLiteral
+server.js:335:10
+-           ["canceled", req.params.id],
+
++           ["", req.params.id],
+
+Tests ran:
+    User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order -> 200
+    User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order -> 200
+
+
+Ran 2.71 tests per mutant on average.
+-----------|------------------|----------|-----------|------------|----------|----------|
+           | % Mutation score |          |           |            |          |          |
+File       |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+All files  |   0.00 |    0.00 |        0 |         0 |          7 |        0 |        0 |
+ server.js |   0.00 |    0.00 |        0 |         0 |          7 |        0 |        0 |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+[32m14:11:39 (7296) INFO JsonReporter[39m Your report can be found at: file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/f01c/eshop-sut-workshop/backend/reports/mutation.json
+[32m14:11:39 (7296) INFO HtmlReporter[39m Your report can be found at: file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/f01c/eshop-sut-workshop/backend/reports/mutation.html
+[32m14:11:39 (7296) INFO MutationTestExecutor[39m Done in 3 seconds.
+--- exit 0 | 6s
+### 2026-10-23T14:11:40 | 6d2e790 workshop | > cp reports/mutation.json reports/first-test.json
+--- exit 0 | 0s
+### NOTE: lần chạy 3.3 ở trên (14:11:33–14:11:40) KHÔNG hợp lệ: script áp snippet của Claude Code so khớp LF trên file CRLF nên CO-02 không được thay (match=False). Áp lại và chạy lại bên dưới.
+### 2026-10-23T14:11:52 | (editor) | > guide 3.3: thay CO-02 bằng snippet trong guide (thêm expect(res.body).toEqual([]))
+### 2026-10-23T14:11:52 | 6d2e790 workshop | > npm run test:cart
+
+> backend@1.0.0 test:cart
+> jest --selectProjects cart-coupons --runInBand --runTestsByPath test/cart-orders.test.js
+
+Running one project: cart-coupons
+Test Suites: 1 passed, 1 total
+Tests:       36 passed, 36 total
+Snapshots:   0 total
+Time:        0.754 s, estimated 1 s
+Ran all test suites within paths "test/cart-orders.test.js".
+--- exit 0 | 1s
+### 2026-10-23T14:11:54 | 6d2e790 workshop | > npx stryker run
+[32m14:11:55 (14392) INFO ProjectReader[39m Found 1 of 22 file(s) to be mutated.
+[32m14:11:55 (14392) INFO Instrumenter[39m Instrumented 1 source file(s) with 7 mutant(s)
+[32m14:11:55 (14392) INFO ConcurrencyTokenProvider[39m Creating 2 test runner process(es).
+[32m14:11:55 (14392) INFO DryRunExecutor[39m Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+[32m14:11:56 (14392) INFO DryRunExecutor[39m Initial test run succeeded. Ran 36 tests in 0 seconds (net 257 ms, overhead 619 ms).
+
+All tests/cart-orders.test.js
+  ✘ Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-01 [invalid] get cart without token -> 401 [line 18] (covered 0)
+  ✓ Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-02 [normal] new user gets an empty cart [line 23] (killed 3)
+  ~ Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-03 [normal] add one item, then read the cart [line 30] (covered 4)
+  ~ Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-04 [normal] add two different products [line 38] (covered 1)
+  ~ Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item [line 46] (covered 5)
+  ✘ Checkout & order history - POST /api/checkout, GET /api/orders/my-orders (spec API 4.3-4.4, FR-08, FR-11) CO-06 [invalid] checkout without token -> 401 [line 56] (covered 0)
+  ~ Checkout & order history - POST /api/checkout, GET /api/orders/my-orders (spec API 4.3-4.4, FR-08, FR-11) CO-07 [normal] checkout with cart total and address [line 61] (covered 1)
+  ✘ Checkout & order history - POST /api/checkout, GET /api/orders/my-orders (spec API 4.3-4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order) [line 71] (covered 0)
+  ✘ Order detail & admin list - GET /api/orders/:id, GET /api/admin/orders (spec API 4.5, API 6.2, FR-18) CO-09 [normal] owner reads order detail by id [line 83] (covered 0)
+  ✘ Order detail & admin list - GET /api/orders/:id, GET /api/admin/orders (spec API 4.5, API 6.2, FR-18) CO-10 [invalid] order detail of non-existent id -> 404 [line 90] (covered 0)
+  ✘ Order detail & admin list - GET /api/orders/:id, GET /api/admin/orders (spec API 4.5, API 6.2, FR-18) CO-11 [normal] admin lists orders of all users [line 96] (covered 0)
+  ~ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order -> 200 [line 107] (covered 2)
+  ~ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order -> 200 [line 107] (covered 2)
+  ✘ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) -> 400 [line 114] (covered 0)
+  ✘ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) -> 400 [line 114] (covered 0)
+  ✘ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-14 [invalid] cancel another user's order -> 404 [line 121] (covered 0)
+  ✘ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-15 [invalid] cancel a non-existent order -> 404 [line 129] (covered 0)
+  ✘ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-16 [invalid] cancel without token -> 401 [line 135] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200 [line 152] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200 [line 152] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200 [line 152] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-17 [normal] pending → canceled → 200 [line 152] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-17 [normal] confirmed → canceled → 200 [line 152] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400 [line 175] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400 [line 175] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] confirmed → delivered → 400 [line 175] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] confirmed → pending → 400 [line 175] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] shipping → pending → 400 [line 175] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] shipping → confirmed → 400 [line 175] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] delivered → pending → 400 [line 175] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] delivered → shipping → 400 [line 175] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] delivered → canceled → 400 [line 175] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] canceled → pending → 400 [line 175] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] canceled → confirmed → 400 [line 175] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] pending → unknown_status → 400 [line 175] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-19 [invalid] change status of a non-existent order -> 404 [line 182] (covered 0)
+
+[Survived] ConditionalExpression
+server.js:286:7
+-     if (!userCarts[userId]) userCarts[userId] = [];
+
++     if (true) userCarts[userId] = [];
+
+Tests ran:
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-02 [normal] new user gets an empty cart
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-03 [normal] add one item, then read the cart
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+
+
+[Survived] CallExpression
+server.js:293:3
+-     userCarts[userId].push(req.body);
+
++     ;
+
+Tests ran:
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-03 [normal] add one item, then read the cart
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-04 [normal] add two different products
+    Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item
+  and 1 more test!
+
+
+[Survived] ArrayDeclaration
+server.js:335:9
+-           ["canceled", req.params.id],
+
++           [],
+
+Tests ran:
+    User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order -> 200
+    User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order -> 200
+
+
+[Survived] StringLiteral
+server.js:335:10
+-           ["canceled", req.params.id],
+
++           ["", req.params.id],
+
+Tests ran:
+    User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order -> 200
+    User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order -> 200
+
+
+Ran 2.71 tests per mutant on average.
+-----------|------------------|----------|-----------|------------|----------|----------|
+           | % Mutation score |          |           |            |          |          |
+File       |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+All files  |  42.86 |   42.86 |        3 |         0 |          4 |        0 |        0 |
+ server.js |  42.86 |   42.86 |        3 |         0 |          4 |        0 |        0 |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+[32m14:11:57 (14392) INFO JsonReporter[39m Your report can be found at: file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/f01c/eshop-sut-workshop/backend/reports/mutation.json
+[32m14:11:57 (14392) INFO HtmlReporter[39m Your report can be found at: file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/f01c/eshop-sut-workshop/backend/reports/mutation.html
+[32m14:11:57 (14392) INFO MutationTestExecutor[39m Done in 2 seconds.
+--- exit 0 | 4s
+### 2026-10-23T14:11:58 | 6d2e790 workshop | > cp reports/mutation.json reports/first-test.json
+--- exit 0 | 0s
+### 2026-10-23T14:12:10 | (editor) | > guide 4.1: Case 2 (CO-04 thêm GET cart + toEqual([itemA, itemB])), Case 3 (import orderStatus; CO-12 thêm expect(await orderStatus(db, id)).toBe('canceled'))
+### 2026-10-23T14:12:20+07:00 | (editor) | > NOTE: Case 3 CO-12 ở mục trước chưa áp (lỗi escaping script PowerShell của Claude Code, count=0); áp lại bằng node: thêm expect(await orderStatus(db, id)).toBe('canceled') sau expect(res.status).toBe(200) trong CO-12
+### 2026-10-23T14:12:26 | 6d2e790 workshop | > npm test
+
+> backend@1.0.0 test
+> jest --runInBand
+
+
+Test Suites: 4 passed, 4 total
+Tests:       88 passed, 88 total
+Snapshots:   0 total
+Time:        1.542 s, estimated 2 s
+Ran all test suites in 2 projects.
+--- exit 0 | 2s
+### 2026-10-23T14:12:29 | 6d2e790 workshop | > npx stryker run
+[32m14:12:30 (4808) INFO ProjectReader[39m Found 1 of 22 file(s) to be mutated.
+[32m14:12:30 (4808) INFO Instrumenter[39m Instrumented 1 source file(s) with 7 mutant(s)
+[32m14:12:30 (4808) INFO ConcurrencyTokenProvider[39m Creating 2 test runner process(es).
+[32m14:12:31 (4808) INFO DryRunExecutor[39m Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+[32m14:12:32 (4808) INFO DryRunExecutor[39m Initial test run succeeded. Ran 36 tests in 0 seconds (net 291 ms, overhead 661 ms).
+
+All tests/cart-orders.test.js
+  ✘ Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-01 [invalid] get cart without token -> 401 [line 18] (covered 0)
+  ✓ Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-02 [normal] new user gets an empty cart [line 23] (killed 3)
+  ~ Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-03 [normal] add one item, then read the cart [line 30] (covered 4)
+  ✓ Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-04 [normal] add two different products [line 38] (killed 2)
+  ~ Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item [line 48] (covered 5)
+  ✘ Checkout & order history - POST /api/checkout, GET /api/orders/my-orders (spec API 4.3-4.4, FR-08, FR-11) CO-06 [invalid] checkout without token -> 401 [line 58] (covered 0)
+  ~ Checkout & order history - POST /api/checkout, GET /api/orders/my-orders (spec API 4.3-4.4, FR-08, FR-11) CO-07 [normal] checkout with cart total and address [line 63] (covered 1)
+  ✘ Checkout & order history - POST /api/checkout, GET /api/orders/my-orders (spec API 4.3-4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order) [line 73] (covered 0)
+  ✘ Order detail & admin list - GET /api/orders/:id, GET /api/admin/orders (spec API 4.5, API 6.2, FR-18) CO-09 [normal] owner reads order detail by id [line 85] (covered 0)
+  ✘ Order detail & admin list - GET /api/orders/:id, GET /api/admin/orders (spec API 4.5, API 6.2, FR-18) CO-10 [invalid] order detail of non-existent id -> 404 [line 92] (covered 0)
+  ✘ Order detail & admin list - GET /api/orders/:id, GET /api/admin/orders (spec API 4.5, API 6.2, FR-18) CO-11 [normal] admin lists orders of all users [line 98] (covered 0)
+  ✓ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order -> 200 [line 109] (killed 2)
+  ~ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order -> 200 [line 109] (covered 2)
+  ✘ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) -> 400 [line 117] (covered 0)
+  ✘ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) -> 400 [line 117] (covered 0)
+  ✘ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-14 [invalid] cancel another user's order -> 404 [line 124] (covered 0)
+  ✘ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-15 [invalid] cancel a non-existent order -> 404 [line 132] (covered 0)
+  ✘ User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10, FR-20) CO-16 [invalid] cancel without token -> 401 [line 138] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200 [line 155] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200 [line 155] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200 [line 155] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-17 [normal] pending → canceled → 200 [line 155] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-17 [normal] confirmed → canceled → 200 [line 155] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400 [line 178] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400 [line 178] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] confirmed → delivered → 400 [line 178] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] confirmed → pending → 400 [line 178] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] shipping → pending → 400 [line 178] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] shipping → confirmed → 400 [line 178] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] delivered → pending → 400 [line 178] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] delivered → shipping → 400 [line 178] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] delivered → canceled → 400 [line 178] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] canceled → pending → 400 [line 178] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] canceled → confirmed → 400 [line 178] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-18 [invalid] pending → unknown_status → 400 [line 178] (covered 0)
+  ✘ Admin order status - PUT /api/admin/orders/:id/status (spec API 6.2, FR-10, FR-18) CO-19 [invalid] change status of a non-existent order -> 404 [line 185] (covered 0)
+
+Ran 3.14 tests per mutant on average.
+-----------|------------------|----------|-----------|------------|----------|----------|
+           | % Mutation score |          |           |            |          |          |
+File       |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+All files  | 100.00 |  100.00 |        7 |         0 |          0 |        0 |        0 |
+ server.js | 100.00 |  100.00 |        7 |         0 |          0 |        0 |        0 |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+[32m14:12:33 (4808) INFO JsonReporter[39m Your report can be found at: file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/f01c/eshop-sut-workshop/backend/reports/mutation.json
+[32m14:12:33 (4808) INFO HtmlReporter[39m Your report can be found at: file:///C:/Users/tanhi/AppData/Local/Temp/claude/d--HK7-Testing-Seminars-Repo/3058f82a-a124-4cce-853c-9bab797d6360/scratchpad/f01c/eshop-sut-workshop/backend/reports/mutation.html
+[32m14:12:33 (4808) INFO MutationTestExecutor[39m Done in 2 seconds.
+--- exit 0 | 5s
+### 2026-10-23T14:12:33 | 6d2e790 workshop | > cp reports/mutation.json reports/manual.json
+--- exit 0 | 0s
+### 2026-10-23T14:12:33 | 6d2e790 workshop | > cp test/cart-orders.test.js reports/cart.manual.test.js
+--- exit 0 | 0s

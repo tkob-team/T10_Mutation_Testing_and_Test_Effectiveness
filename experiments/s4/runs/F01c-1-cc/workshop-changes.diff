@@ -1,0 +1,50 @@
+diff --git a/backend/package.json b/backend/package.json
+index 1adad6a..aa7696f 100644
+--- a/backend/package.json
++++ b/backend/package.json
+@@ -25,6 +25,8 @@
+     "npm": ">=11 <13"
+   },
+   "devDependencies": {
++    "@stryker-mutator/core": "10.0.0",
++    "@stryker-mutator/jest-runner": "10.0.0",
+     "jest": "30.5.2",
+     "supertest": "7.3.1"
+   },
+diff --git a/backend/test/cart-orders.test.js b/backend/test/cart-orders.test.js
+index a862414..2389623 100644
+--- a/backend/test/cart-orders.test.js
++++ b/backend/test/cart-orders.test.js
+@@ -1,6 +1,6 @@
+ // Cart and Orders baseline. Source: docs/EShop_SRS.md and api_specification.md.
+ // Existing status assertions are preserved; deeper observations are a workshop exercise.
+-const { ADMIN, loadApp, login, newUser, bearer, createOrder, request } = require('./helpers/app');
++const { ADMIN, loadApp, login, newUser, bearer, createOrder, orderStatus, request } = require('./helpers/app');
+ 
+ let app;
+ let db;
+@@ -24,6 +24,7 @@ describe('Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07)', () => {
+     const { token } = await newUser(app);
+     const res = await request(app).get('/api/cart').set(bearer(token));
+     expect(res.status).toBe(200);
++    expect(res.body).toEqual([]);
+   });
+ 
+   test('CO-03 [normal] add one item, then read the cart', async () => {
+@@ -40,6 +41,8 @@ describe('Cart - GET/POST /api/cart (spec API 4.1-4.2, FR-07)', () => {
+     const b = await request(app).post('/api/cart').set(bearer(token)).send(itemB);
+     expect(a.status).toBe(200);
+     expect(b.status).toBe(200);
++    const cart = await request(app).get('/api/cart').set(bearer(token));
++    expect(cart.body).toEqual([itemA, itemB]);
+   });
+ 
+   test('CO-05 [normal] another user reads own cart after user 1 adds an item', async () => {
+@@ -108,6 +111,7 @@ describe('User cancels order - PUT /api/orders/:id/cancel (spec API 4.6, FR-10,
+     const id = await createOrder(app, db, token, from);
+     const res = await request(app).put(`/api/orders/${id}/cancel`).set(bearer(token));
+     expect(res.status).toBe(200);
++    expect(await orderStatus(db, id)).toBe('canceled');
+   });
+ 
+   test.each(['delivered', 'canceled'])('CO-13 [invalid] cancel a %s order (final state) -> 400', async (from) => {
