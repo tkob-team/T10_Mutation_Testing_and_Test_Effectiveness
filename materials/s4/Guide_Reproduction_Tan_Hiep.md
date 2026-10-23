@@ -51,11 +51,11 @@ Khác guide (theo NOTES): (1) chạy trong thư mục ngắn `C:\w\D01-1`, khôn
 | Dòng 474, mutant 111 / 113 | Tấn Hiệp thấy `true` và `max_uses_per_user && 1` | NOTES | Khớp guide |
 | Jest manual / AI | 35 / 40 pass (NOTES) | NOTES | Khớp guide |
 | Stryker manual / AI | Cả hai 41 / 21 / 28 / 25 / 5; 53.91%; chỉ kill thêm 111 và 113 | `count_d01.md` | Khớp guide; 0 mutant khác trạng thái so với D01-1-cc ở cả 3 report |
-| Review or Request an AI Candidate | NOTES ghi "không làm"; request AI mới: không làm. Cuối log có lệnh kiểm SHA-256 của `candidate.raw.js`, kết quả `7B51…1E81` trùng `executed-sha256.json` | NOTES; cuối console.log | Pending nếu cần review candidate |
+| Review or Request an AI Candidate | NOTES ghi "không làm"; request AI mới: không làm. Cuối log có lệnh kiểm SHA-256 của `candidate.raw.js`, kết quả `7B51…1E81` trùng `executed-sha256.json` | NOTES; cuối console.log | **Pending** |
 | Bước mơ hồ (NOTES) | "Provenance, không hiểu làm gì" | NOTES | Feedback cho tác giả: guide chưa nói rõ người đọc phải làm gì với PROVENANCE |
 | File SUT sau run | `server.js`, `database.js`, `database.sqlite`, `package.json`, lockfile không đổi | `git diff --quiet HEAD` | Pass |
 
-Hạn chế của evidence: `console.log` chỉ có header, mô tả và exit code của từng lệnh; output của các lệnh native (Jest, Stryker, npm) không vào transcript khi chạy qua hàm `Step`. Số liệu trên lấy từ `mutation.json` và NOTES của Tấn Hiệp. Lúc ghi mục này, transcript chưa được `Stop-Transcript`.
+Hạn chế của evidence: `console.log` chỉ có header, mô tả và exit code của từng lệnh; output của các lệnh native (Jest, Stryker, npm) không vào transcript khi chạy qua hàm `Step`. Số liệu trên lấy từ `mutation.json` và NOTES của Tấn Hiệp. Tấn Hiệp báo đã chạy `Stop-Transcript`; `console.log` không đổi sau đó và không có dòng "PowerShell transcript end". Xem [REPORT.md](../../experiments/s4/runs/Tan_Hiep/D01-1/REPORT.md).
 
 ## Handoff & Review
 
