@@ -5,7 +5,7 @@
 **Assignment:** T10 Seminar  
 **Class / Cohort:** Software Testing - CQ2023/3, Nhóm 12  
 **AI Use:** Yes  
-**Evidence Status:** Partial — có prompt log claude.ai và Claude Code; verdict đã chốt cho cả 12 artifacts (2026-10-23)
+**Evidence Status:** Partial — có prompt log claude.ai và Claude Code; verdict đã chốt cho cả 16 artifacts (2026-10-23)
 
 Copy file này thành `ai-audit/AI_Record_<Member>.md` khi bắt đầu ghi usage. Mỗi người dùng một file xuyên suốt S1–S8. Điền ngay khi làm; mỗi artifact có Stage và Task ID để không lẫn các giai đoạn. Mục reflection do chính thành viên viết từ trải nghiệm thật. Student ID, ngày nộp và chữ ký điền trực tiếp vào bản nộp bởi thành viên; không đưa vào prompt AI.
 
@@ -25,6 +25,10 @@ Copy file này thành `ai-audit/AI_Record_<Member>.md` khi bắt đầu ghi usag
 | Claude Code (model Claude Opus 5.5) + Claude (claude.ai, model Claude Opus 5.5) | s3 | S3-D01 | coding / data analysis | Đổi `tempDirName`, `.gitignore` EShop, tách DEF-08; runs D01-4-cc, D01-5-cc; commit 8d60e9b, 5fc08df | claude.ai soạn prompt và docs; Claude Code sửa file, chạy, commit | Chọn phương án D01-Q7, D01-Q8; cho phép commit | AI-S3-D01-03 |
 | Claude (claude.ai, model Claude Opus 5.5) + Claude Code (model Claude Opus 5.5) | s3 | — (workflow) | coding | `Repo/tools/extract_ai_log.py`, `Repo/.claude/settings.json` (hook Stop), hai prompt log trong `ai-audit/evidence/s3/Tan_Hiep/` | Viết script trích log, cấu hình hook, trích log; Claude Code cài và kiểm tra | Yêu cầu tự xuất log; quyết định che tên user, xóa file thừa | AI-S3-WF-02 |
 | Claude Code (model Claude Opus 5.5) + Claude (claude.ai, model Claude Opus 5.5) | s3 | S3-G01 | coding / data analysis | `SUT/backend/test/ai/cart-orders.ai.js` (AI-CO-01…05, nhánh `s3/G01-ai`); runs `G01-1-cc`, `G01-2-cc`; `G01-cc-REPORT.md`; Experiment Log mục AI Runs, Comparison | Claude Code: phân tích 6 survivor, sinh 5 test, giải thích vì sao không viết test cho 550:11, chạy Jest và Stryker. claude.ai: soạn prompt, spec review | Chọn 6 mutant mục tiêu (phương án a), quyết định cách xử lý khi lộ thông tin ở preflight, duyệt kết quả spec review | AI-S3-G01-01 |
+| Claude (claude.ai, model Claude Opus 5.5) + Claude Code (model Claude Opus 5.5) | s3 | — (workflow, chuyển S3 → S4) | other / drafting | `claude/Handoff_T10_Tan_Hiep.md` (Project claude.ai, ngoài repo); cập nhật skill `t10-mutation-testing`, `t10-run-report`; `Repo/CLAUDE.md`; hook Stop chuyển sang `ai-audit/evidence/s4/Tan_Hiep/` | claude.ai đề xuất cập nhật skill, viết handoff (và cập nhật mục 8 lúc 10:14), soạn prompt WF; Claude Code sửa `CLAUDE.md`, cấu hình hook | Yêu cầu handoff, lưu skill, dán prompt | AI-S3-WF-03 |
+| Claude (claude.ai, model Claude Opus 5.5) | s3 | S3-I01 | data analysis / drafting | Prompt I01 cho Claude Code; lệnh PowerShell cho member run I01-1/2/3; phân tích nguồn `frozen-input.zip`; nháp "### S3-I01 — Three shared mutant cases"; bản sửa README Coupons-extensions của Hòa (`7ab200b`); review Experiment Log | Kiểm repo, so overlay với `main`, đối chiếu `mutation.json`/SRS, soạn prompt, nháp, review | Chọn phạm vi I01 (bản mở rộng, chạy theo guide zip), tự chạy I01-1/2/3, tự sửa nháp 3 cases, gửi góp ý cho Hòa, push | AI-S3-I01-01 |
+| Claude Code (model Claude Opus 5.5) | s3 | S3-I01 | coding / data analysis | Runs `I01-{1,2,3}-cc`; `I01-cc-compare/` (`i01_compare.py`, `i01_member_provenance.py`); `I01-1/git-reflog.txt`; `I01-cc-REPORT.md`; Experiment Log mục Cross Reproduction | Chạy baseline/manual/AI Coupons theo guide, ghi missing step, so từng mutant, provenance (reflog, hash), ghi log | Dán prompt, đọc báo cáo, trả lời Q1/Q2, tự chạy lại I01-1/2/3 | AI-S3-I01-02 |
+| Claude (claude.ai, model Claude Opus 5.5) + Claude Code (model Claude Opus 5.5) | s3 | S3-D01, S3-E01, S3-F01, S3-G01 | data analysis | Lệnh member self-run; `experiments/s3/runs/Tan_Hiep/S3-member-compare/`; Experiment Log mục D01 Runs, Baseline, Comparison, header | claude.ai kiểm `8d60e9b` vs `806ba19`, soạn lệnh có header provenance; Claude Code so từng mutant, cập nhật log | Chọn cách chạy (nhánh cũ + policy chung qua CLI), tự chạy D01-1/2/3, E01-1, F01-2, G01-2 | AI-S3-E01-01 |
 
 ## 2. Artifact Audit
 
@@ -500,16 +504,94 @@ Claude Code: ai-audit/evidence/s3/Tan_Hiep/claude-code_prompt_log.md, session 85
 claude.ai: ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-16_9ffbcb5b.md, lượt #59–#64.
 ```
 
+### Artifact AI-S3-WF-03
+
+| Field | Value |
+|---|---|
+| Stage / Task ID | S3 / — (workflow, chuyển giao S3 → S4) |
+| Tool / Model | Claude (claude.ai), Claude Opus 5.5 — đề xuất cập nhật skill, viết handoff, soạn prompt WF; Claude Code, Claude Opus 5.5 — sửa `Repo/CLAUDE.md`, chuyển hook |
+| Recorded Time & Provenance | 2026-10-23 02:31–02:46 (UTC+7): claude.ai phiên `9ffbcb5b` lượt #71–#74; Claude Code session `4a560803` lượt WF (log S3 #16, thiếu output; log S4 #1–#2, đầy đủ). Cập nhật handoff mục 8 lúc 10:14: claude.ai lượt #75 |
+| Output Artifact / Section | `claude/Handoff_T10_Tan_Hiep.md` (Project claude.ai, ngoài repo); cập nhật skill `t10-mutation-testing`, `t10-run-report` (tài khoản claude.ai); `Repo/CLAUDE.md`; hook Stop ghi vào `ai-audit/evidence/s4/Tan_Hiep/` với `--since 2026-10-22T19:38:28Z` |
+| Verdict | VALID |
+| Reasoning & Source | Handoff đối chiếu được với repo khi phiên `5aa8b0cf` bắt đầu: SHA nhánh và cấu trúc thư mục khớp |
+| Verification | Phiên `5aa8b0cf` clone 2 repo: `s3/D01-cart-orders` `8d60e9b`, `s3/F01-manual` `b77f5d6`, `s3/G01-ai` `f4696c6`, EShop main `b271c41` khớp handoff. Hook ghi đủ các lượt I01 vào `ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md`. Skill và `CLAUDE.md` không đổi sau phiên S3 (Tấn Hiệp xác nhận 2026-10-23 10:37) |
+| Student Fix | Accepted as-is. Hạn chế phát hiện sau: (1) preflight skill `t10-run-report` (commit AI log rồi `pull --ff-only`) bị từ chối khi remote có commit mới (sự cố rebase ở AI-S3-I01-02), chưa sửa skill; (2) mục 8 (lượt #75) ghi "xác nhận giả thuyết Timeout phụ thuộc môi trường" — nói quá, dữ liệu member run cho thấy concurrency không phải nguyên nhân (xem AI-S3-E01-01) |
+
+#### Verbatim Prompt / Verbatim AI Output
+
+```text
+claude.ai: ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-16_9ffbcb5b.md, lượt #71–#75.
+Claude Code: ai-audit/evidence/s3/Tan_Hiep/claude-code_prompt_log.md, lượt #16; ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md, lượt #1–#2.
+```
+
+### Artifact AI-S3-I01-01
+
+| Field | Value |
+|---|---|
+| Stage / Task ID | S3 / S3-I01 |
+| Tool / Model | Claude (claude.ai), Claude Opus 5.5 (`claude-opus-5-5`) |
+| Recorded Time & Provenance | 2026-10-23 10:18–12:10 (UTC+7), phiên `5aa8b0cf`, từ lượt #8 |
+| Output Artifact / Section | Prompt I01 (v1, v2) cho Claude Code; lệnh PowerShell member run I01-1/2/3; phân tích nguồn `frozen-input.zip`; nháp "### S3-I01 — Three shared mutant cases" (Experiment Log); bản sửa `experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/README.md` theo yêu cầu của Hòa (commit `7ab200b`); tin nhắn góp ý cho Hòa; review Experiment Log; nháp mục AI Record này |
+| Verdict | INCOMPLETE — dùng được sau khi sửa |
+| Reasoning & Source | Đối chiếu `mutation.json` của I01-1/2/3; SRS `README.md` FR-09 C2/C3/C5, FR-17; `api_specification.md` §5.1; `backend/test/coupons.test.js`, `test/defects/coupons.defects.js` @ `806ba19`; schema `@stryker-mutator/core` 10.0.0 |
+| Verification | "EShop main `52ed6ac` chứa đủ 7 file overlay" và "zip có nội dung bằng `git archive --format=zip 806ba19`" kiểm bằng so byte/hash trong sandbox. Mọi mutant, `killedBy`, `coveredBy` trong nháp 3 cases đọc từ `mutation.json`. I01-1/2/3 do Tấn Hiệp tự chạy, khớp 120/120 với report của Hòa |
+| Student Fix | Lỗi của AI phát hiện qua review: (1) prompt I01 v1 thiếu `git fetch`, expected values, thư mục tạm, đường dẫn log s4, cảnh báo dry run đếm test 2 lần — AI tự sửa khi Tấn Hiệp hỏi "đủ chưa"; (2) lệnh member run dùng `Tee-Object` không ghi dòng lệnh/commit nên thiếu provenance — bổ sung bằng reflog và hash; (3) nháp Case 3 sai 2 ý: "test baseline chỉ assert status" (thực tế còn `not.toHaveProperty('discount_amount')`) và "Hòa cố ý không dùng oracle lỗi" (CP-02 assert `body.error` kiểu String); (4) góp ý `inputs.json` cho Hòa là thừa (README đã ghi), AI rút lại; (5) review bỏ sót việc commit `5d5bf16` xóa mục `## Cross Reproduction` — Claude Code phát hiện, đã khôi phục (`95b7d7e`); (6) đặt log phiên vào `evidence/s4` dù công việc là S3 — Tấn Hiệp chỉ ra, chuyển sang `evidence/s3`. Tấn Hiệp tự viết lại nháp 3 cases (các lỗi trong bản tự viết được review và sửa ở `5d5bf16`, `970f880`, không thuộc artifact này) |
+
+#### Verbatim Prompt / Verbatim AI Output
+
+```text
+claude.ai: ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-23_5aa8b0cf.md, từ lượt #8 (lượt #1–#7: lập kế hoạch và nháp S4-A01, chưa dùng).
+```
+
+### Artifact AI-S3-I01-02
+
+| Field | Value |
+|---|---|
+| Stage / Task ID | S3 / S3-I01 |
+| Tool / Model | Claude Code, Claude Opus 5.5 (`claude-opus-5-5`) |
+| Recorded Time & Provenance | 2026-10-23 10:26–11:52 (UTC+7), Claude Code session `ad369217`: lượt #3 (I01-cc), #4 (member reruns, so sánh), #5 (provenance), #7 (Q1), lượt Q2 kế tiếp |
+| Output Artifact / Section | Runs `experiments/s3/runs/Tan_Hiep/I01-{1,2,3}-cc/`; `I01-cc-compare/i01_compare.py` (+ cờ `--member`), `i01_comparison.md`, `i01_member_provenance.py`, `i01_member_provenance.md`; `I01-1/git-reflog.txt`; `I01-cc-REPORT.md`; Experiment Log mục Cross Reproduction; commit `8d38cb4`, `133f782`, `8ba51ab`, `98407b9`, `95b7d7e` (bản sao khác hash nằm trên nhánh `s3/A03-B03-phuc-hoang`, merge `ce7d817`) |
+| Verdict | VALID |
+| Reasoning & Source | Guide `Coupons-extensions-2026-10-23-agent/README.md`; report tham chiếu của Hòa (`D04-merge-2026-10-23-agent/frozen-coupons-baseline/mutation.json`, `manual-mutation.json`, `ai-mutation.json`) |
+| Verification | I01-{1,2,3}-cc khớp report của Hòa 120/120 mutant, 0 đổi trạng thái; Tấn Hiệp tự chạy I01-1/2/3 cho cùng kết quả; claude.ai đếm lại độc lập từ `mutation.json`. Missing step thiếu `npm ci` tái hiện được, README đã sửa (`7ab200b`) |
+| Student Fix | Accepted. Hạn chế quy trình: commit AI log trước khi pull → `pull --ff-only` bị từ chối, agent rebase commit local chưa push (không xung đột; gốc lỗi ở preflight skill). Khi thiếu dữ liệu (placeholder lệnh, mục Log bị xóa) agent dừng và hỏi (Q1, Q2) thay vì tự quyết |
+
+#### Verbatim Prompt / Verbatim AI Output
+
+```text
+Claude Code: ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md, session ad369217, lượt #3–#5, #7 và lượt Q2 kế tiếp (hook chuyển sang s4 từ cuối S3).
+```
+
+### Artifact AI-S3-E01-01
+
+| Field | Value |
+|---|---|
+| Stage / Task ID | S3 / S3-D01, S3-E01, S3-F01, S3-G01 (member self-run và so sánh) |
+| Tool / Model | Claude (claude.ai), Claude Opus 5.5 — kiểm baseline, soạn lệnh; Claude Code, Claude Opus 5.5 — so sánh, ghi log |
+| Recorded Time & Provenance | 2026-10-23 11:30–11:50 (UTC+7). claude.ai phiên `5aa8b0cf` lượt #21–#22; Claude Code session `ad369217` lượt #6 |
+| Output Artifact / Section | Lệnh PowerShell (hàm `Run` ghi giờ, commit, lệnh vào đầu `console.log`); `experiments/s3/runs/Tan_Hiep/S3-member-compare/` (REPORT, `member_compare.py`, `member_comparison.md`); Experiment Log mục D01 Runs, Baseline, Comparison, header; commit `87d6b08` |
+| Verdict | VALID |
+| Reasoning & Source | `8d60e9b` vs `806ba19`: `server.js`, `database.js`, `cart-orders.test.js`, helpers Cart và `package-lock.json` giống nhau (git diff); cờ `--concurrency`, `--timeoutMS`, `--timeoutFactor` và mặc định `timeoutMS 5000`, `timeoutFactor 1.5` theo schema `@stryker-mutator/core` 10.0.0 |
+| Verification | Member run: D01-1 36 pass, D01-2 9 fail đúng lý do, D01-3 dry run 36 tests; E01-1 82/25/34/2/7 (0 khác biệt với run lại của Hòa), F01-2 112/18/11/2/7, G01-2 102/18/21/2/7. Tập Survived trùng ở cả 6 cặp; claude.ai đếm lại độc lập từ `mutation.json` |
+| Student Fix | Accepted. Hạn chế: lệnh không đặt UTF-8 cho console nên chữ tiếng Việt trong `console.log` bị lỗi mã hóa (số liệu không ảnh hưởng; giữ nguyên log thô). Giả thuyết "Killed↔Timeout do concurrency" bị dữ liệu bác: F01-2 (concurrency 2) giống hệt F01-2-cc (concurrency 15) |
+
+#### Verbatim Prompt / Verbatim AI Output
+
+```text
+claude.ai: ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-23_5aa8b0cf.md, lượt #21–#22.
+Claude Code: ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md, session ad369217, lượt #6.
+```
+
 ## 3. Accuracy Summary & Audit Conclusion
 
 | Metric | Count | Percentage |
 |---|---|---|
-| Total audited | 12 | 100% |
-| VALID: accepted as-is | 7 | 58.33% |
+| Total audited | 16 | 100% |
+| VALID: accepted as-is | 10 | 62.50% |
 | INVALID: rejected | 0 | 0% |
-| INCOMPLETE: usable after edits | 5 | 41.67% |
+| INCOMPLETE: usable after edits | 6 | 37.50% |
 
-VALID: AI-S3-A01-01, AI-S3-C01-01, AI-S3-C01-02, AI-S3-C01-03, AI-S3-D01-02, AI-S3-D01-03, AI-S3-G01-01. INCOMPLETE: AI-S3-B01-01, AI-S3-WF-01, AI-S3-D01-01, AI-S3-D01-04, AI-S3-WF-02. Không còn Pending (chốt 2026-10-23).
+VALID: AI-S3-A01-01, AI-S3-C01-01, AI-S3-C01-02, AI-S3-C01-03, AI-S3-D01-02, AI-S3-D01-03, AI-S3-G01-01, AI-S3-WF-03, AI-S3-I01-02, AI-S3-E01-01. INCOMPLETE: AI-S3-B01-01, AI-S3-WF-01, AI-S3-D01-01, AI-S3-D01-04, AI-S3-WF-02, AI-S3-I01-01. Không còn Pending (chốt 2026-10-23).
 
 Chỉ đếm artifacts đã có verdict; tổng ba verdict phải bằng Total. Total = 0 thì Percentage ghi n.a.; pending không bị tính là verdict. Leader loại trùng cùng artifact trước khi tổng hợp.
 
@@ -521,7 +603,7 @@ Chỉ đếm artifacts đã có verdict; tổng ba verdict phải bằng Total. 
 - AI categories used: Cat.5 integrated — Seminar Track thuộc AI Use Category 5 theo Seminar Guide §7; Tấn Hiệp xác nhận
 - Stages/use types: S3 — drafting, data analysis, coding (research notes, demo assertions, baseline test suite)
 - 2–3 most impactful prompts: AI-S3-C01-01 (assertion cho surviving mutant), AI-S3-A01-01 (research notes S3); prompt nguyên văn ở mục 2
-- Full prompt log: `ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-16_9ffbcb5b.md` (claude.ai, trích tự động từ transcript); `ai-audit/evidence/s3/Tan_Hiep/claude-code_prompt_log.md` (Claude Code, hook Stop). Chat riêng của AI-S3-C01-01 không có transcript; prompt/output nguyên văn ghi trực tiếp trong artifact
+- Full prompt log: `ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-16_9ffbcb5b.md` (claude.ai, trích tự động từ transcript); `ai-audit/evidence/s3/Tan_Hiep/claude-code_prompt_log.md` (Claude Code, hook Stop); `ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-23_5aa8b0cf.md` (claude.ai, S3-I01 và member self-run); `ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md` (Claude Code từ cuối S3, gồm các lượt S3-I01). Chat riêng của AI-S3-C01-01 không có transcript; prompt/output nguyên văn ghi trực tiếp trong artifact
 - Specific AI-assisted parts: `research/s3/Research_Notes_Tan_Hiep.md` (toàn bộ bản nháp); `mt-demo/test/cart.ai.test.js` (3 tests, lưu tại `experiments/s3/runs/Tan_Hiep/C01-ai/`); `SUT/backend/test/` harness, baseline và defect tests Cart & Orders (S3-D01)
 - Entirely self-authored parts: [ ]
 - Review/revision/verification methods: đọc lại notes và đối chiếu sources; tự chạy lại ví dụ F-A01-04 trên máy (C01-2, C01-4); với test AI: G1 tính tay expected theo requirement, G2 chạy Jest trên code gốc, G3 chạy Stryker và đọc `killedBy` trong `mutation.json`
