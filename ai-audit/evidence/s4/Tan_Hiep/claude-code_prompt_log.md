@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 3058f82a-a124-4cce-853c-9bab797d6360.jsonl, 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 14:37 (Asia/Saigon).
+Nguồn: 3058f82a-a124-4cce-853c-9bab797d6360.jsonl, 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 15:39 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 21 lượt prompt; theo model: claude-opus-5-5 21 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 24 lượt prompt; theo model: claude-opus-5-5 24 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-23 02:41 — model: claude-opus-5-5 — session 4a560803
 
@@ -835,4 +835,233 @@ Bước 4: cập nhật cột Verified Evidence.
 - Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\Demo_Contribution_Tan_Hiep.md
 - Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\Demo_Contribution_Tan_Hiep.md
 - Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\Demo_Contribution_Tan_Hiep.md
+
+## #22 — 2026-10-23 14:40 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+1) git pull. Trong materials/s4/Demo_Contribution_Tan_Hiep.md: bỏ chỗ ghi blocker package.json trên main (đã sửa); lời dẫn giữ nguyên (chỉ đọc score và Survived); thêm vào cột Expected/mục Lưu ý khi quay: "Killed/Timeout có thể lệch 2-3 mutant giữa các lần chạy (C01-rehearsal-cc); score và tập Survived ổn định".
+2) S4-D01-cc: trong thư mục tạm mới, làm walkthrough Coupons CHỈ theo materials/s4/Guide_Contribution_Thai_Hoa.md (không đọc nguồn khác để đoán, không sửa guide của Hòa). Ghi lại từng lệnh, kết quả và mọi bước thiếu/mơ hồ/lỗi. Lưu experiments/s4/runs/D01-1-cc/ (console.log + REPORT.md). Viết materials/s4/Guide_Reproduction_Tan_Hiep.md theo cấu trúc Guide_Reproduction_Thai_Hoa.md, ghi rõ đây là lần chạy của Claude Code (-cc), phần "Tấn Hiệp tự chạy" là Pending.
+```
+
+### Output
+
+```text
+Bước 1 xong (`db5bb3b`). Bước 2: walkthrough Coupons theo guide của Hòa, PowerShell, thư mục tạm mới.
+
+Cài đặt khớp guide (88 / 26). Tiếp First Test: dry run và full mutate Coupons.
+
+Baseline Coupons khớp (120; 39/21/30/25/5; 52.17%). Kiểm dòng 474, rồi phần overlay.
+
+Clone seminar trong thư mục tạm lỗi `Filename too long` (checkout thất bại), nên overlay không tìm thấy nguồn. Theo guide ("reuse its path"), dùng lại clone seminar có sẵn.
+
+Overlay 7 file, 35/40 tests khớp. Chạy 2 Stryker run mở rộng.
+
+Cả 2 run mở rộng khớp (41/21/28/25/5, 53.91%). Đếm từ json, kiểm 2 mutant giới hạn và các link tương đối trong guide.
+
+Mọi số liệu khớp guide; link tương đối đủ. Giờ đọc cấu trúc `Guide_Reproduction_Thai_Hoa.md`.
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: S4-C01 (sửa Demo) + S4-D01 — Done. Commit trên `main` seminar, chưa push. Đã pull (rebase lên `5c4832b`).
+- Bước 1: `db5bb3b` sửa `Demo_Contribution_Tan_Hiep.md` (+4/−4).
+  - Bỏ blocker `package.json` ở Evidence Status và ở Lưu ý khi quay.
+  - Thêm câu Killed/Timeout dao động vào ô Expected của 2 hàng Stryker manual và AI, và vào mục Lưu ý khi quay.
+  - Lời dẫn giữ nguyên.
+- Bước 2: D01-1-cc **Pass**, chạy trên `806ba19` bằng PowerShell, chỉ theo guide của Hòa:
+  - 88 / 26 tests pass.
+  - Baseline 120 mutants, 39/21/30/25/5, 52.17%.
+  - Overlay đủ 7 file; Jest 35 / 40 pass.
+  - Manual và AI cùng ra 41/21/28/25/5, 53.91%, cùng kill thêm 2 mutant ở dòng 474 (ID 111, 113).
+  - Mọi số khớp guide. Phần gửi AI request mới: Not run.
+- Lỗi thật: clone seminar vào thư mục tạm bị `Filename too long`, checkout thất bại, nên lần chạy overlay đầu lỗi. Lần hai dùng clone seminar có sẵn (guide có cho phép "reuse its path") thì chạy được.
+- Feedback cho Hòa, ghi trong `Guide_Reproduction_Tan_Hiep.md`:
+  - Thiếu lệnh/URL clone seminar repo.
+  - Khối overlay hard-code đường dẫn `$docsRoot`.
+  - Dry run in số tests gấp đôi Jest (52/70/80).
+  - Cảnh báo crash `3221225477` chưa có trong Troubleshooting.
+  - Không sửa guide của Hòa.
+- Evidence: `experiments/s4/runs/D01-1-cc/REPORT.md`, `console.log`, 3 bộ `mutation.json/html`, bản chụp guide kèm SHA-256; commit `f1027ec`.
+- Đã tạo `materials/s4/Guide_Reproduction_Tan_Hiep.md` (`11aa981`), ghi rõ đây là run `-cc`; phần Tấn Hiệp tự chạy để Pending.
+- Thứ tự đọc: chỉ đọc `Guide_Reproduction_Thai_Hoa.md` sau khi walkthrough xong, để lấy cấu trúc.
+- Cần quyết định: Không.
+```
+
+### Hành động
+
+- Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s4\runs\D01-1-cc\REPORT.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s4\runs\D01-1-cc\REPORT.md
+- Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\Guide_Reproduction_Tan_Hiep.md
+
+## #23 — 2026-10-23 14:52 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+<pasted_content id="cce9">
+Chuẩn bị S4-D01 bản Tấn Hiệp tự chạy (Run ID D01-1, không hậu tố -cc). Không tự chạy walkthrough; chỉ chuẩn bị rồi đưa mình các khối lệnh để mình dán.
+1) Đọc materials/s4/Guide_Contribution_Thai_Hoa.md và experiments/s4/runs/D01-1-cc/REPORT.md. Lấy lệnh ĐÚNG nguyên văn từ guide, chia thành các khối PowerShell theo thứ tự (mỗi khối ≈ một mục của guide). Chỉ thêm 3 thứ: (a) khối 0: [Console]::OutputEncoding/$OutputEncoding = UTF8; thư mục chạy ngắn (ví dụ C:\w\D01-1) để tránh Filename too long; Start-Transcript vào experiments/s4/runs/Tan_Hiep/D01-1/console.log; (b) hàm Step "<mô tả>" { ... } in dòng "### <giờ> | <commit> <nhánh> | > <lệnh>" trước mỗi lệnh; (c) ở cuối mỗi khối in "XONG KHOI n". Với chỗ guide yêu cầu mình tự đọc/mở report/ghi nhận gì thì in rõ "BẠN LÀM: ..." và dừng.
+2) Mọi chỗ mình khác guide (đường dẫn ngắn, reuse clone seminar) phải ghi vào danh sách "Khác guide" để cuối báo cáo.
+3) Tạo sẵn experiments/s4/runs/Tan_Hiep/D01-1/NOTES.md (mẫu trống: bước nào mơ hồ, lỗi, thời gian) để mình điền khi chạy.
+4) In ra: đường dẫn file, rồi các khối lệnh đánh số, mỗi khối trong một ô code riêng.
+5) Khi mình gõ "xong": chạy Stop-Transcript nếu cần, thu mutation.json/html, so với số liệu D01-1-cc (120 mutants, 39/21/30/25/5, 52.17%; manual và AI 41/21/28/25/5, 53.91%), cập nhật phần "Tấn Hiệp tự chạy" trong materials/s4/Guide_Reproduction_Tan_Hiep.md (chỉ ghi điều mình đã làm và NOTES của mình), commit, không push.
+</pasted_content id="cce9">
+```
+
+### Output
+
+````text
+Đã chuẩn bị xong. Tôi không chạy walkthrough.
+
+**File:**
+- Mẫu NOTES để bạn điền: `D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s4\runs\Tan_Hiep\D01-1\NOTES.md` (chưa commit; danh sách "Khác guide" đã điền sẵn trong file)
+- Log sẽ ghi vào: `...\experiments\s4\runs\Tan_Hiep\D01-1\console.log` (do Start-Transcript ở khối 0)
+- Thư mục chạy: `C:\w\D01-1` (phải chưa tồn tại)
+
+Dán lần lượt từng khối vào **cùng một cửa sổ PowerShell 7**, vì hàm `Step` định nghĩa ở khối 0 chỉ có trong cửa sổ đó. Khi một khối in `BẠN LÀM` thì làm xong việc đó, ghi vào NOTES rồi mới dán khối kế.
+
+**Khối 0 — chuẩn bị (không thuộc guide)**
+```powershell
+[Console]::OutputEncoding = [Text.Encoding]::UTF8; $OutputEncoding = [Text.Encoding]::UTF8
+New-Item -ItemType Directory C:\w\D01-1
+Set-Location C:\w\D01-1
+Start-Transcript -Path 'D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s4\runs\Tan_Hiep\D01-1\console.log' -Append
+function Step([string]$Desc, [scriptblock]$Block) {
+  $c = git rev-parse --short HEAD 2>$null; if (-not $c) { $c = '-' }
+  $b = git branch --show-current 2>$null; if (-not $b) { $b = '(detached/không repo)' }
+  Write-Output "### $(Get-Date -Format s) | $c $b | > $($Block.ToString().Trim())"
+  Write-Output "# $Desc"
+  $global:LASTEXITCODE = 0; $t = Get-Date
+  & $Block
+  Write-Output "--- exit $global:LASTEXITCODE | $([int]((Get-Date) - $t).TotalSeconds) s"
+}
+Write-Output "XONG KHOI 0"
+```
+
+**Khối 1 — Installation: Prepare the Frozen Checkout**
+```powershell
+Step "Clone SUT" { git clone https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness.git eshop-coupons-s4 }
+Step "Vào repo" { Set-Location eshop-coupons-s4 }
+Step "Kiểm top-level" { git rev-parse --show-toplevel }
+Step "Kiểm working tree" { git status --short }
+Step "Checkout frozen SHA" { git switch --detach 806ba19ee4e09eafe9b2696ccf117a2b1ab841ef }
+Step "Xác nhận SHA" { git rev-parse HEAD }
+Step "Vào backend" { Set-Location backend }
+Step "Node version" { node --version }
+Step "npm version" { npm.cmd --version }
+Step "Cài dependencies" { npm.cmd ci --no-audit --no-fund }
+Step "Integration suite" { npm.cmd test }
+Step "Coupons profile" { npm.cmd run test:coupons }
+Write-Output "BẠN LÀM: ghi Node/npm version và số tests (guide: 88 và 26) vào NOTES.md, rồi dán khối 2."
+Write-Output "XONG KHOI 1"
+```
+
+**Khối 2 — First Test: Run the Domain Baseline + Inspect the Persisted-Limit Gap**
+```powershell
+Step "Coupons tests" { npm.cmd run test:coupons }
+Step "Dry run" { npm.cmd run coupons:dry }
+Step "Full mutation" { npm.cmd run mutate:coupons }
+Write-Output "BẠN LÀM: (1) mở reports/coupons/mutation.html, so với bảng guide: 120 mutants, 39/21/30/25/5, 52.17%."
+Write-Output "BẠN LÀM: (2) mở server.js dòng 474 (max_uses_per_user || 1), tìm 2 mutant Survived: true (111) và max_uses_per_user && 1 (113)."
+Write-Output "BẠN LÀM: (3) ghi kết quả + chỗ mơ hồ vào NOTES.md, rồi dán khối 3."
+Write-Output "XONG KHOI 2"
+```
+
+**Khối 3 — Advanced Usage: Load the Retained Additional Tests** (đã đổi 1 dòng `$docsRoot`; xem Khác guide #2)
+```powershell
+Step "Overlay 7 file (docsRoot = clone seminar có sẵn)" {
+$docsRoot = 'D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness'
+$overlayRoot = Join-Path $docsRoot 'experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/sources/backend'
+$backendRoot = (Get-Location).Path
+Get-ChildItem -LiteralPath $overlayRoot -Recurse -File | ForEach-Object {
+  $relative = $_.FullName.Substring($overlayRoot.Length + 1)
+  $destination = Join-Path $backendRoot $relative
+  New-Item -ItemType Directory -Force -Path (Split-Path -Parent $destination) | Out-Null
+  Copy-Item -LiteralPath $_.FullName -Destination $destination
+}
+}
+Step "Manual tests" { node node_modules/jest/bin/jest.js --config jest.coupons.manual.config.cjs --runInBand }
+Step "AI tests" { node node_modules/jest/bin/jest.js --config jest.coupons.ai.config.cjs --runInBand }
+Step "Stryker manual" { node node_modules/@stryker-mutator/core/bin/stryker.js run stryker.coupons.manual.config.json }
+Step "Stryker AI" { node node_modules/@stryker-mutator/core/bin/stryker.js run stryker.coupons.ai.config.json }
+Write-Output "BẠN LÀM: mở reports/coupons-manual/mutation.html và reports/coupons-ai/mutation.html; so với guide: tests 35 và 40; cả hai 41/21/28/25/5, 53.91%, Killed/valid 35.65%. Ghi NOTES.md, rồi dán khối 4."
+Write-Output "XONG KHOI 3"
+```
+
+**Khối 4 — Review or Request an AI Candidate, Compare and Explain**
+```powershell
+Write-Output "BẠN LÀM: (1) mở experiments/s3/runs/Thai_Hoa/D04-merge-2026-10-23-agent/G02-Codex/PROVENANCE.md trong clone seminar (guide: dùng khi quay với evidence đã lưu)."
+Write-Output "BẠN LÀM: (2) request AI mới là tùy chọn; nếu không làm, ghi 'Not run' trong NOTES.md; nếu làm, ghi tool/model/prompt/output."
+Write-Output "BẠN LÀM: (3) Compare and Explain: trong HTML, xem killedBy của 2 mutant dòng 474 ở manual và AI; ghi NOTES.md."
+Write-Output "XONG KHOI 4"
+Stop-Transcript
+```
+
+**Khác guide** (đã ghi sẵn trong NOTES.md):
+1. Chạy trong thư mục ngắn `C:\w\D01-1` thay vì "new parent directory containing the seminar documentation clone".
+2. Dòng `$docsRoot` trỏ thẳng tới clone seminar có sẵn `D:\HK7\...\T10_Mutation_Testing_and_Test_Effectiveness`, thay cho `(Resolve-Path '../../T10_...')`.
+3. Phần thêm vào ngoài lệnh guide: khối 0, hàm `Step`, các dòng `BẠN LÀM` / `XONG KHOI n`, và `Stop-Transcript`. Mọi lệnh của guide giữ nguyên văn.
+
+Khi gõ "xong", tôi sẽ thu `mutation.json/html` từ `C:\w\D01-1\eshop-coupons-s4\backend\reports\`, so với số liệu D01-1-cc, cập nhật phần Tấn Hiệp tự chạy trong `Guide_Reproduction_Tan_Hiep.md` rồi commit, không push.
+````
+
+### Hành động
+
+- Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s4\runs\Tan_Hiep\D01-1\NOTES.md
+
+## #24 — 2026-10-23 15:38 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+d:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Thai_Hoa\D04-merge-2026-10-23-agent\G02-Codex\PROVENANCE.md Giúp tôi thực hiện provenance này
+```
+
+### Output
+
+````text
+Bước này trong guide chỉ là **mở và review một AI candidate đã lưu**, không phải chạy AI mới. Theo guide, khi quay chỉ cần nói rõ "đây là review candidate đã lưu".
+
+Vì đây là phần bạn tự chạy, tôi không viết nhận xét review thay bạn. Dưới đây là nội dung provenance, những gì tôi đã kiểm, và các việc bạn cần làm.
+
+**Nội dung thư mục**
+- Candidate do **OpenAI Codex** sinh ra, không phải Claude.
+  - Request gửi Claude CLI trước đó thất bại vì lỗi đăng nhập: `G02-request/metadata.json` ghi exit 1, `raw.json` có output 0 token.
+  - User (người chạy G02 khi đó) cho phép dùng Codex với cùng context.
+- `G02-Codex/candidate.raw.js`: 1 test duy nhất, `test.each([2,4])`, kiểm `max_uses_per_user`:
+  - giới hạn admin đặt được lưu đúng (FR-17);
+  - dưới giới hạn thì giảm 25000, còn 75000;
+  - chạm giới hạn thì bị từ chối 400, không có `discount_amount`;
+  - đếm `coupon_usage`.
+- Context có confounder (Codex thấy cả phân tích manual), nên không dùng để so người với AI.
+
+**Tôi đã kiểm (chỉ kiểm, chưa kết luận gì)**
+- SHA-256 của `candidate.raw.js`, sau khi chuẩn hóa CRLF thành LF, là `7b51bfbd…1e81`, khớp `executed-sha256.json` (`identical: true`). Hash file trên đĩa khác vì Windows checkout dùng CRLF.
+- Commit `f12a6cc` có trong SUT repo.
+- File `test/ai/coupons.ai.js` bạn vừa chạy ở khối 3 **không giống hệt** candidate:
+  - dòng 3–33 trùng candidate (bỏ 2 dòng comment đầu);
+  - có thêm `require('../helpers/coupons-scenarios')` và các test AG-01, AG-02, AG-03… Đó là lý do AI profile có 40 tests.
+
+**Bạn làm (khối 4, mục 1 và 3)**
+1. Mở 3 file: `PROVENANCE.md`, `G02-Codex/candidate.raw.js`, `G02-request/metadata.json` + `raw.json`.
+2. Tự kiểm hash (dán vào PowerShell):
+   ```powershell
+   $p = 'D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Thai_Hoa\D04-merge-2026-10-23-agent\G02-Codex'
+   $lf = [IO.File]::ReadAllText("$p\candidate.raw.js").Replace("`r`n","`n")
+   [BitConverter]::ToString([Security.Cryptography.SHA256]::Create().ComputeHash([Text.Encoding]::UTF8.GetBytes($lf))).Replace('-','')
+   Get-Content "$p\executed-sha256.json"
+   ```
+3. Review candidate theo 5 điểm guide nêu, mỗi điểm ghi một câu vào NOTES:
+   - **imports**: `require('../helpers/coupons')`;
+   - **reset logic**: `freeze`, `resetCoupons`;
+   - **expected amounts**: 25000 / 75000 có đúng với coupon helper không;
+   - **token identity**: `user_id: 2` có khớp token của `h.USER` không;
+   - **oracle provenance**: FR-17, FR-09 C5; status 400 là convention.
+4. Compare and Explain: trong `reports/coupons-ai/mutation.html`, xem test nào kill mutant 111 và 113 (dòng 474). Ghi lại đó là test của candidate (`AI: admin limit …`) hay test AG thêm sau.
+5. Điền NOTES:
+   - dòng "PROVENANCE đã mở?" ghi "Có";
+   - dòng "Request AI mới" ghi "Not run" nếu bạn không gửi request mới.
+
+Nếu thấy chỗ mơ hồ, ví dụ guide không nói file overlay khác candidate, ghi vào mục "Bước mơ hồ". Xong thì gõ "xong" để tôi thu kết quả và commit.
+````
 
