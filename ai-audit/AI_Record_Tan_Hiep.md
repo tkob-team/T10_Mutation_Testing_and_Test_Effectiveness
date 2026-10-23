@@ -658,6 +658,19 @@ Claude Code: ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md, session ad
 | Reasoning & Source | D01-1-cc chỉ làm theo `Guide_Contribution_Thai_Hoa.md`; số Stryker đếm từ `mutation.json`. Khối lệnh D01-1 lấy nguyên văn lệnh của guide, chỉ thêm khối chuẩn bị, hàm `Step`, `BẠN LÀM` / `XONG KHOI n`, và đổi dòng `$docsRoot` (ghi trong "Khác guide") |
 | Verification | D01-1-cc: mọi số khớp guide (120 mutants, 39/21/30/25/5, 52.17%; manual và AI 41/21/28/25/5, 53.91%). D01-1 (Tấn Hiệp tự chạy): 0 mutant khác trạng thái so với D01-1-cc. Lỗi AI: (1) khối lệnh chạy qua hàm `Step` không ghi output native của npm/Jest/Stryker vào transcript, nên số tests của D01-1 chỉ có trong NOTES; (2) khối overlay khi chạy lần 1 bị cắt thành `-Destination $des` (bản in trong chat đầy đủ; nguyên nhân bị cắt chưa xác định), 3 file bị copy lạc, phải chạy lại khối 0–3. Khối 4 (review candidate G02): Pending |
 | Student Fix | (điền sau review) |
+ 
+### Artifact AI-S4-E01-01
+ 
+| Field | Value |
+|---|---|
+| Stage / Task ID | S4 / S4-E01 (ghép User Guide) |
+| Tool / Model | Claude Code, Claude Opus 5.5 (`claude-opus-5-5`) |
+| Recorded Time & Provenance | 2026-10-23 (UTC+7): Claude Code session `3058f82a`; log `ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md` |
+| Output Artifact / Section | `materials/s4/User_Guide.md` (thay bản copy một phần trước đó): ghép `Guide_Contribution_Tan_Hiep.md` (giữ tiếng Việt), `Guide_Contribution_Thai_Hoa.md` và `Guide_Contribution_Phuc_Hoang.md` (dịch English sang tiếng Việt); ghi chú đầu file gồm nguồn/tác giả, "Cần quyết định", "Việc tác giả cần sửa" |
+| Verdict | ĐỀ XUẤT: INCOMPLETE |
+| Reasoning & Source | Chỉ dịch văn xuôi; lệnh, code, số liệu, đường dẫn, mã mutant, tên test, prompt giữ nguyên. Installation chung + Setup riêng theo domain. Troubleshooting gộp 27 dòng nguồn (Tấn Hiệp 12, Hòa 8, Phúc 6 + 1 untested suggestion) thành 22 dòng (bỏ trùng `No tests were found`, `npm.ps1`, SQLite binding, Timeout), Failure Modes gộp từ 15 mục (mỗi tác giả 5) thành 8. Phiên bản Node dung hòa bằng `engines` của workshop (`node >=24 <25`) và các run Windows Node 24.x của cả ba domain. "Việc tác giả cần sửa" lấy từ `Guide_Reproduction_Tan_Hiep.md` và `Guide_Reproduction_Thai_Hoa.md` |
+| Verification | Script so khớp: 31/31 code block của ba nguồn có nguyên văn trong bản ghép; mọi số liệu ngoài code block của Hòa và Phúc có mặt, của Tấn Hiệp chỉ thiếu số thứ tự heading; mọi link tương đối phân giải được. Chưa kiểm: chất lượng bản dịch (cần người đọc), link URL ngoài. Còn mở: 2 điểm "Cần quyết định" (base repo khác nhau giữa Cart và Coupons/Auth; tên tỷ lệ Killed/valid); Advanced Usage của Auth bị chặn (D02-01) chưa sửa. Lỗi AI khi viết: thêm một câu "Cách tránh" không có trong nguồn ở Failure Mode 6, đã tự phát hiện và bỏ trước khi commit |
+| Student Fix | (điền sau review) |
 
 ## 3. Accuracy Summary & Audit Conclusion
 
