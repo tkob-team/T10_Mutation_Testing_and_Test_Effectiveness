@@ -1,6 +1,6 @@
 **Khoa Công nghệ Thông tin (FIT) - Trường Đại học Khoa học Tự nhiên (HCMUS)**
 
-**CS423 / CSC15003 - Kiểm chứng Phần mềm (AI-augmented - 2026)**
+**CS423 / CSC13003 - Kiểm chứng Phần mềm (AI-augmented - 2026)**
 
 **CHÍNH SÁCH AI - BIỂU MẪU  -  2026 v1.0**
 
@@ -27,7 +27,7 @@
 
 *Liệt kê mọi công cụ AI dùng cho bài tập này (ví dụ AI Tool (e.g., ChatGPT, Claude, Gemini), ChatGPT, GitHub Copilot, Cursor, Gemini).*
 
-Tôi dùng OpenAI Codex AI Agent cho nghiên cứu, tests Coupons, tích hợp, mutation analysis, workshop starter, guide, demo/activity, report và contribution workbook. Exact serving revision không được record xác nhận. Claude Code 2.1.301 từng trả lỗi Not logged in; không có successful model output từ lần thử đó và bộ G02 thực thi do Codex sinh. Task workbook có sử dụng Spreadsheets skill và bundled artifact-tool. Đây là công cụ hỗ trợ ghi/chỉnh workbook, không phải một AI model khác. Nguồn: [Individual AI Record](../ai-audit/AI_Record_Thai_Hoa.md).
+Tôi dùng OpenAI Codex AI Agent cho nghiên cứu, tests Coupons, tích hợp, mutation analysis, workshop starter, guide, demo/activity, report và contribution workbook. Exact serving revision không được record xác nhận. Claude Code 2.1.301 từng trả lỗi Not logged in; không có successful model output từ lần thử đó và bộ G02 thực thi do Codex sinh. Task workbook có sử dụng Spreadsheets skill và bundled artifact-tool. Đây là công cụ hỗ trợ ghi/chỉnh workbook, không phải một AI model khác.
 
 ### 2. Giai đoạn nào của bài tập có dùng AI:
 
@@ -57,7 +57,7 @@ Yêu cầu mở rộng Coupons nguyên văn:
 chia ra 4 cái trên thì thêm vào phần manual của t, 8 phần dưới là phần agent đề xuất, nhớ agent gom đủ bộ luôn 4 cái trước theo yêu cầu nha.
 ~~~
 
-Nguồn: [Yêu cầu nghiên cứu](../ai-audit/AI_Record_Thai_Hoa.md#artifact-th-s3-research-01); [Nguồn gốc quá trình sinh](../experiments/s3/runs/Thai_Hoa/D04-merge-2026-10-23-agent/G02-Codex/PROVENANCE.md); [Yêu cầu mở rộng](../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/PROVENANCE.md).
+Nguồn: Yêu cầu nghiên cứu; Nguồn gốc quá trình sinh; Yêu cầu mở rộng.
 
 ### 4. Phần cụ thể AI đóng góp:
 
@@ -73,9 +73,9 @@ AI đóng góp đủ 13 artifacts trong AI-02: bảy artifacts S3/report/guide b
 
 Các kiểm tra kỹ thuật trong record do Agent thực thi: đối chiếu SRS/API, chạy original tests và defect profiles riêng, kiểm tra source hashes và mutant signatures, tính metrics từ JSON. S3 baseline giữ 88 pass và 54 defect cases riêng. Workshop tutorial có scope bảy mutants, activity có tám survivors ban đầu; hai bộ này tách khỏi nghiên cứu domain.
 
-Joint S4 có cùng source và 395 signatures, tests 88/118/118 và scores 67.56%/80.53%/75.47%; Killed và Timeout được báo riêng. Auth reproduction dừng ở Missing script: test:auth:manual. Workbook giữ 22 formula nodes, kiểm tra ZIP và counts; chưa chạy native Excel. Document checks không thay thực nghiệm mới, macOS execution, member self-run hoặc audience pilot.
+Guide workshop: baseline 7 Survived và bước đầu 3 Killed/4 Survived còn report để đối chiếu; report kết quả cuối ở nơi lưu tạm đã thành 8 Survived của activity. Claim tutorial đạt 7 Killed chỉ còn là kết quả lịch sử trong record, cần snapshot đúng phiên bản. Joint S4 có cùng source và 395 signatures, tests 88/118/118 và scores 67.56%/80.53%/75.47%; Killed và Timeout được báo riêng. Auth reproduction dừng ở Missing script: test:auth:manual. Record workbook lịch sử báo giữ 22 formula nodes; đối chiếu lại thấy snapshot HK2 có 21 và file HK1 hiện tại có 12, nên claim bảo toàn công thức được đánh dấu INCOMPLETE. ZIP integrity pass; chưa chạy native Excel. Document checks không thay thực nghiệm mới, macOS execution, member self-run hoặc audience pilot.
 
-Tôi đã đưa các chỉ đạo về scope và cách sửa được record lưu lại. Human verdict, personal reproduction và acceptance cho các artifacts mới chưa có trong nguồn; 7 verdict có sẵn trong AI-02 được ghi là nhãn nháp tạm. Lần nạp này chỉ kiểm tra tài liệu và không tự xác nhận review cá nhân. Thông tin/ngày/chữ ký có sẵn được giữ nguyên; việc giữ chúng không xác nhận phần vừa bổ sung đã được ký duyệt.
+Tôi đã đưa các chỉ đạo về scope và cách sửa được record lưu lại. AI-02 nay có đủ 13 verdict từ lượt rà soát có AI hỗ trợ theo yêu cầu của tôi: 6 VALID, 0 INVALID, 7 INCOMPLETE. Phân loại này dựa trên evidence được giữ; personal reproduction và ký duyệt cá nhân vẫn cần xác nhận riêng. Thông tin/ngày/chữ ký có sẵn được giữ nguyên; việc giữ chúng không xác nhận phần vừa bổ sung đã được ký duyệt.
 
 ### 6. Trích dẫn (nếu môn yêu cầu):
 
