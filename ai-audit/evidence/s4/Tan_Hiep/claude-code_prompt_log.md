@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 3058f82a-a124-4cce-853c-9bab797d6360.jsonl, 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 14:19 (Asia/Saigon).
+Nguồn: 3058f82a-a124-4cce-853c-9bab797d6360.jsonl, 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 14:37 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 19 lượt prompt; theo model: claude-opus-5-5 19 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 21 lượt prompt; theo model: claude-opus-5-5 21 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-23 02:41 — model: claude-opus-5-5 — session 4a560803
 
@@ -749,4 +749,90 @@ Sửa ai-audit/AI_Record_Tan_Hiep.md, commit "docs(S4): fix model and C01 verifi
 
 - Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\ai-audit\AI_Record_Tan_Hiep.md
 - Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\ai-audit\AI_Record_Tan_Hiep.md
+
+## #20 — 2026-10-23 14:27 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+<pasted_content id="cce9">
+Làm tuần tự, mỗi bước một commit, không push. Viết tiếng Việt (giữ English technical terms, lệnh, tiêu đề).
+1) F01: tạo materials/s4/Verification_Notes_Tan_Hiep.md theo cấu trúc Verification_Notes_Phuc_Hoang.md. Đối chiếu draft/User_Guide.md với REQ-17/18 (đủ section; Troubleshooting ≥3 lỗi thật; Failure Modes ≥3), với evidence F01a-1-cc và F01c-1-cc (88 tests; 7 mutant; 3 Killed sau CO-02; 7 Killed sau 3 assertion). Nêu rõ chưa kiểm chứng: macOS, mục 4.2 AI Agent, npm.ps1, nguyên nhân tempDirName. Ghi guide viết tiếng Việt theo quyết định của Tấn Hiệp, khác REQ-17.
+2) E01 (bản một phần): copy draft/User_Guide.md thành materials/s4/User_Guide.md; thêm khối ghi chú ở đầu file: còn thiếu walkthrough Coupons (S4-A02, Thái Hòa) và Auth (S4-A03, Phúc, đang tiếng English) — cần thống nhất ngôn ngữ rồi mới ghép. Không đụng nội dung khác.
+3) C01 rehearsal: trong thư mục tạm, clone SUT, chạy đúng các lệnh trong bảng materials/s4/Demo_Contribution_Tan_Hiep.md theo thứ tự (main hoặc 806ba19 cho baseline; s3/F01-manual; s3/G01-ai). So số liệu (150 mutants; 74.83% / 90.91% / 83.92%; 292:7 Killed ở manual và AI; 550:11 Survived). Lưu evidence ở experiments/s4/runs/C01-rehearsal-cc/ (console.log + REPORT.md), ghi thời gian từng lần chạy. Nếu lệch, báo cáo và không sửa số liệu.
+4) Cập nhật cột "Verified Evidence" trong Demo_Contribution_Tan_Hiep.md bằng kết quả bước 3.
+</pasted_content id="cce9">
+```
+
+### Output
+
+```text
+Đọc phần còn lại của guide và Demo_Contribution.
+
+Bắt đầu bước 3 (rehearsal) chạy nền trước vì lâu, song song soạn bước 1–2.
+
+Rehearsal đang chạy. Soạn Verification Notes.
+
+Bước 2: copy guide + khối ghi chú.
+
+Bước 1–2 xong (commit `85d6b16`, `e846ac9`). Rehearsal C01 đang chạy Stryker baseline trên `main 4b28756`; chờ kết quả.
+```
+
+### Hành động
+
+- Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\Verification_Notes_Tan_Hiep.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\Verification_Notes_Tan_Hiep.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\Verification_Notes_Tan_Hiep.md
+
+## #21 — 2026-10-23 14:36 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+<task-notification>
+<task-id>bnv8k55xn</task-id>
+<tool-use-id>toolu_018tnS9syFWdYfbP3RxrQkRq</tool-use-id>
+<output-file>C:\Users\[user]\AppData\Local\Temp\claude\D--HK7-Testing-Seminars-Repo\3058f82a-a124-4cce-853c-9bab797d6360\tasks\bnv8k55xn.output</output-file>
+<status>completed</status>
+<summary>Background command "Run C01 rehearsal in background" completed (exit code 0)</summary>
+</task-notification>
+```
+
+### Output
+
+```text
+Score khớp cả 3, nhưng Killed/Timeout manual và AI lệch so với bảng. Đếm từ `mutation.json`, kiểm 292:7 và 550:11.
+
+Bước 4: cập nhật cột Verified Evidence.
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: S4-F01 / E01 / C01 — Done. Cả 4 bước đã commit trên `main` seminar, chưa push.
+- Bước 1: `85d6b16` tạo `materials/s4/Verification_Notes_Tan_Hiep.md`.
+  - Guide đủ 6 phần của REQ-17 và 3 Failure Modes của REQ-18.
+  - Troubleshooting có 3 lỗi có evidence: script `.ps1` bị chặn (theo ghi chép S3), npm báo vulnerabilities, Stryker chạy tests trùng (72 vs 36).
+  - 4 mốc số liệu F01c đều khớp.
+  - Đã ghi rõ chưa kiểm chứng macOS, mục 4.2, `npm.ps1`, nguyên nhân `tempDirName`, và việc guide viết tiếng Việt khác REQ-17.
+- Bước 2: `e846ac9` tạo `materials/s4/User_Guide.md` = bản copy `draft/User_Guide.md` thêm 4 dòng ghi chú ngay sau tiêu đề. So bằng `diff`: chỉ khác 4 dòng đó.
+- Bước 3: C01-rehearsal-cc trên clone mới, chạy đủ 12 lệnh, tất cả exit 0.
+  - Baseline (`main 4b28756`): 150 mutants, 82/25/34/2/7, 74.83%, khớp; 2 phút 47 giây.
+  - Manual: 109/21/11/2/7, 90.91%; 2 phút 14 giây.
+  - AI: 100/20/21/2/7, 83.92%; 2 phút 12 giây.
+  - 292:7 Killed ở manual và AI; 550:11 Survived ở cả 3 run.
+- Lệch ở bước 3: Killed/Timeout của manual lệch 3, của AI lệch 2 so với F01-2/G01-2 (mutant 316:7, 519:22, 520:7 từ Killed sang Timeout). Score và tập Survived vẫn khớp.
+  - Giả thuyết chưa kiểm chứng: các mutant này nằm sát ngưỡng timeout; log có worker crash (`3221225477`), S3 cũng có.
+  - Không sửa số liệu trong bảng Demo.
+- Evidence: `experiments/s4/runs/C01-rehearsal-cc/REPORT.md` và `console.log`; commit `8a40d56`.
+- Bước 4: `1dacb9f` cập nhật 5 ô Verified Evidence (+5/−5) trong `Demo_Contribution_Tan_Hiep.md`; hàng Claude / Basic không có lệnh nên giữ nguyên. Kiểm `git diff`: không mất dòng nào.
+- Ngoài phạm vi, chưa sửa trong `Demo_Contribution_Tan_Hiep.md`: dòng Evidence Status ở đầu file và mục "Lưu ý khi quay" vẫn ghi blocker `package.json` trên main, trong khi main đã sửa.
+- Cần quyết định: C01-Q1 – Lời dẫn và cột Expected nên nói Killed/Timeout thế nào – (a) chỉ đọc score + Survived, (b) giữ số S3 và ghi chú dao động, (c) đọc số của lần quay.
+```
+
+### Hành động
+
+- Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s4\runs\C01-rehearsal-cc\REPORT.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\Demo_Contribution_Tan_Hiep.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\Demo_Contribution_Tan_Hiep.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\Demo_Contribution_Tan_Hiep.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\Demo_Contribution_Tan_Hiep.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\Demo_Contribution_Tan_Hiep.md
 
