@@ -116,8 +116,40 @@ Personal learning/run walkthrough is outside both team repos by explicit user re
 | AI Contribution | Structure, prose, instructional adaptations, commands, references and five failure-mode analyses |
 | Verification Boundary | Document structure, links, commands and historical counts checked against inputs. No fresh installation, SUT/Jest/Stryker/AI experiment, member self-run or peer reproduction claimed. |
 | Document Checks | Eight main sections, five complete failure modes, 29 local-link occurrences and eight anchors resolve; eight npm script names exist; 18 PowerShell blocks and two JavaScript snippets pass syntax checks; targeted Git diff check passes. |
+| Standalone Revision | User clarified single-file delivery and prohibited section symbols, middle dots and em dashes. Removed all sibling-file links, embedded essential project-reference summaries, left unpublished evidence URLs blank, and replaced the unavailable supplemental-package procedure with baseline-clone practice. Historical internal source records remain in the repo for audit. |
+| Standalone Checks | Zero relative-file links; all in-document targets resolve; prohibited characters absent; eight npm scripts exist; 17 PowerShell blocks and three JavaScript blocks pass syntax checks. No new SUT experiment or external access verification claimed. |
 | Verdict / Student Fix | Pending member review; no VALID/INVALID/INCOMPLETE verdict assigned |
 | Raw Output | Final assisted draft retained at the linked file; no separate immutable full transcript export created by this run |
+
+### Artifact TH-S4-WORKSHOP-STARTER-20261023
+
+| Field | Value |
+|---|---|
+| Scope | Prepare eshop-sut-workshop as a beginner starter with tests and without Stryker or manual/AI solutions |
+| Authorization | User explicitly requested immediate preparation in eshop-sut-workshop |
+| Tool / Model | OpenAI Codex AI Agent; exact serving revision unavailable |
+| Output | Workshop local commit 6d2e790; README, preserved original SRS, baseline tests, isolated harness and pinned Jest/Supertest dependencies |
+| Sources | Original EShop commit 85af3ba; frozen team baseline 806ba19; contributor credits retained in workshop provenance |
+| Verification | Fresh npm ci succeeds; Cart 36 tests pass; complete suite 4/88 passes; separate fresh local clone of committed tree also installs and passes 4/88. Windows Node v24.16.0, npm 12.0.2. macOS not executed. |
+| Preservation | Four protected source/data hashes unchanged; assertion ASTs in four imported baseline suites preserved; zero Stryker packages in lockfile |
+| Review | Sequential self-review of standards and requested scope, no subagents or computer use. Human acceptance/member self-run not inferred. |
+| Boundaries | No production fixes, no mutation run or AI assertion experiment, no push; existing changes in the seminar repo preserved |
+
+### Artifact TH-S4-USERGUIDE-WORKSHOP-20261023
+
+| Field | Value |
+|---|---|
+| Stage / Task | S4-E01 draft support; team ownership and tracker unchanged |
+| Tool / Model | OpenAI Codex AI Agent; exact serving revision unavailable |
+| Authorization | User requested rewriting the guide after preparation of eshop-sut-workshop, with Vietnamese prose, English technical headings, beginner instructions and common terminal commands |
+| Output | [Rewritten User Guide](../draft/User_Guide.md), 334 lines, eight main sections, three failure modes |
+| Sources | Workshop starter 6d2e790; original EShop specification; current official Stryker, Jest, npm, Git, Node.js, Claude Code and Codex documentation |
+| AI Contribution | Replaced research-baseline and internal evidence material with a standalone workshop tutorial; added Windows/macOS installation, first-install troubleshooting, three assertion changes and optional AI validation workflow |
+| Execution | In a separate disposable clone on Windows Node 24.16.0/npm 12.0.2, installed Stryker core/Jest runner 10.0.0 and executed the documented three-line mutation scope. Baseline: 36 tests pass, 7 Survived. First assertion: 36 tests pass, 3 Killed and 4 Survived. All three assertion changes: 88 tests pass, 7 Killed, no Timeout or other mutant states. |
+| Evidence | Raw baseline.json, first-test.json and mutation.json retained in the disposable clone backend/reports under C:/Users/tdtho/AppData/Local/Temp/eshop-workshop-check-9bb42698eb7d4344b195cc75aa6bb4f5; these are guide verification runs, separate from member research results |
+| Document Checks | Executed config and snippets match guide; eight sections and 23 HTTPS link occurrences; no relative-file links or prohibited punctuation; all referenced AI input files exist; targeted diff whitespace check passes |
+| Boundaries | Actual workshop working tree preserved clean; no source changes there, no push, no macOS execution, no fresh Claude/Codex candidate experiment and no independent manual-vs-AI comparison claimed |
+| Raw Output / Verdict | Assisted draft and this conversation retained; no immutable full transcript export claimed. Human review and verdict Pending. |
 
 ## 3. Accuracy Summary & Audit Conclusion
 
