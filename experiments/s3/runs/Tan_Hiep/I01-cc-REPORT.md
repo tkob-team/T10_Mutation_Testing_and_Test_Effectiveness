@@ -133,3 +133,11 @@ Theo console.log: I01-1 chạy `npm run test:coupons` và `npm run mutate:coupon
 ### AI usage
 
 `ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md`.
+
+## Update 2026-10-23 — provenance for member runs I01-1/2/3
+
+Claude Code (`claude-opus-5-5`), không chạy lại Jest/Stryker. Chi tiết: `I01-cc-compare/i01_member_provenance.md`.
+
+- I01-1: `I01-1/git-reflog.txt` (`git reflog --date=iso -20`). EShop HEAD = `806ba19` từ `10:42:08` đến `10:56:05` (+07:00); report I01-1 ghi `10:54:17`–`10:56:05` (console.log, mtime `I01-1/mutation.json` 10:56:05.015), nằm trong cửa sổ này. Cửa sổ `10:26:57`–`10:29:21` là I01-1-cc.
+- I01-2 / I01-3: SHA-256 của `server.js`, `database.js`, `package-lock.json` và 7 file overlay trong `Repo/_tmp/I01-coupons/backend`, **lấy sau khi chạy** (~11:05). Sau chuẩn hóa CRLF→LF: 3 file khớp `git show 806ba19:backend/<file>`, 7 file khớp `Thai_Hoa/Coupons-extensions-2026-10-23-agent/sources/backend/`. Script: `I01-cc-compare/i01_member_provenance.py`.
+- Lệnh nguyên văn Tấn Hiệp đã chạy: **Pending** — prompt còn placeholder `[dán 2 khối PowerShell]`, chưa nhận nội dung; chưa ghi vào REPORT/Experiment Log.
