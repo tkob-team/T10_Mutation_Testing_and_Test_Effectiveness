@@ -1,0 +1,226 @@
+{
+  "sameUniverse": true,
+  "sameSource": true,
+  "sourceHashes": {
+    "baseline": {
+      "server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487"
+    },
+    "manual": {
+      "server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487"
+    },
+    "ai": {
+      "server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487"
+    }
+  },
+  "profiles": {
+    "baseline": {
+      "Killed": 191,
+      "Timeout": 61,
+      "Survived": 87,
+      "NoCoverage": 34,
+      "RuntimeError": 22,
+      "CompileError": 0,
+      "Ignored": 0,
+      "Pending": 0,
+      "total": 395,
+      "valid": 373,
+      "score": 67.560322,
+      "assertionKill": 51.206434,
+      "tests": 88,
+      "suites": 4,
+      "domains": {
+        "Cart": {
+          "Killed": 89,
+          "Timeout": 16,
+          "Survived": 34,
+          "NoCoverage": 2,
+          "RuntimeError": 9,
+          "CompileError": 0,
+          "Ignored": 0,
+          "Pending": 0,
+          "total": 150,
+          "valid": 141,
+          "score": 74.468085,
+          "assertionKill": 63.120567
+        },
+        "Coupons": {
+          "Killed": 42,
+          "Timeout": 18,
+          "Survived": 30,
+          "NoCoverage": 25,
+          "RuntimeError": 5,
+          "CompileError": 0,
+          "Ignored": 0,
+          "Pending": 0,
+          "total": 120,
+          "valid": 115,
+          "score": 52.173913,
+          "assertionKill": 36.521739
+        },
+        "Auth": {
+          "Killed": 60,
+          "Timeout": 27,
+          "Survived": 23,
+          "NoCoverage": 7,
+          "RuntimeError": 8,
+          "CompileError": 0,
+          "Ignored": 0,
+          "Pending": 0,
+          "total": 125,
+          "valid": 117,
+          "score": 74.358974,
+          "assertionKill": 51.282051
+        }
+      }
+    },
+    "manual": {
+      "Killed": 238,
+      "Timeout": 64,
+      "Survived": 43,
+      "NoCoverage": 30,
+      "RuntimeError": 20,
+      "CompileError": 0,
+      "Ignored": 0,
+      "Pending": 0,
+      "total": 395,
+      "valid": 375,
+      "score": 80.533333,
+      "assertionKill": 63.466667,
+      "tests": 118,
+      "suites": 7,
+      "domains": {
+        "Cart": {
+          "Killed": 112,
+          "Timeout": 18,
+          "Survived": 11,
+          "NoCoverage": 2,
+          "RuntimeError": 7,
+          "CompileError": 0,
+          "Ignored": 0,
+          "Pending": 0,
+          "total": 150,
+          "valid": 143,
+          "score": 90.909091,
+          "assertionKill": 78.321678
+        },
+        "Coupons": {
+          "Killed": 43,
+          "Timeout": 19,
+          "Survived": 28,
+          "NoCoverage": 25,
+          "RuntimeError": 5,
+          "CompileError": 0,
+          "Ignored": 0,
+          "Pending": 0,
+          "total": 120,
+          "valid": 115,
+          "score": 53.913043,
+          "assertionKill": 37.391304
+        },
+        "Auth": {
+          "Killed": 83,
+          "Timeout": 27,
+          "Survived": 4,
+          "NoCoverage": 3,
+          "RuntimeError": 8,
+          "CompileError": 0,
+          "Ignored": 0,
+          "Pending": 0,
+          "total": 125,
+          "valid": 117,
+          "score": 94.017094,
+          "assertionKill": 70.940171
+        }
+      }
+    },
+    "ai": {
+      "Killed": 211,
+      "Timeout": 72,
+      "Survived": 62,
+      "NoCoverage": 30,
+      "RuntimeError": 20,
+      "CompileError": 0,
+      "Ignored": 0,
+      "Pending": 0,
+      "total": 395,
+      "valid": 375,
+      "score": 75.466667,
+      "assertionKill": 56.266667,
+      "tests": 118,
+      "suites": 7,
+      "domains": {
+        "Cart": {
+          "Killed": 102,
+          "Timeout": 18,
+          "Survived": 21,
+          "NoCoverage": 2,
+          "RuntimeError": 7,
+          "CompileError": 0,
+          "Ignored": 0,
+          "Pending": 0,
+          "total": 150,
+          "valid": 143,
+          "score": 83.916084,
+          "assertionKill": 71.328671
+        },
+        "Coupons": {
+          "Killed": 38,
+          "Timeout": 24,
+          "Survived": 28,
+          "NoCoverage": 25,
+          "RuntimeError": 5,
+          "CompileError": 0,
+          "Ignored": 0,
+          "Pending": 0,
+          "total": 120,
+          "valid": 115,
+          "score": 53.913043,
+          "assertionKill": 33.043478
+        },
+        "Auth": {
+          "Killed": 71,
+          "Timeout": 30,
+          "Survived": 13,
+          "NoCoverage": 3,
+          "RuntimeError": 8,
+          "CompileError": 0,
+          "Ignored": 0,
+          "Pending": 0,
+          "total": 125,
+          "valid": 117,
+          "score": 86.324786,
+          "assertionKill": 60.683761
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "manual": {
+      "transitions": {
+        "NoCoverage -> Killed": 4,
+        "Survived -> Killed": 44,
+        "Killed -> Timeout": 1,
+        "RuntimeError -> Timeout": 2
+      },
+      "newAssertionKills": 48,
+      "detectedToUndetected": 0
+    },
+    "ai": {
+      "transitions": {
+        "NoCoverage -> Killed": 4,
+        "Survived -> Timeout": 1,
+        "Killed -> Timeout": 8,
+        "Survived -> Killed": 24,
+        "RuntimeError -> Timeout": 2
+      },
+      "newAssertionKills": 28,
+      "detectedToUndetected": 0
+    }
+  },
+  "overlap": {
+    "both": 27,
+    "manualOnly": 21,
+    "aiOnly": 1,
+    "union": 49
+  }
+}

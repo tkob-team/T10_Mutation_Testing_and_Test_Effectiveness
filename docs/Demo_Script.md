@@ -1,32 +1,14 @@
-# Demo Script: Coupon Usage Limits with StrykerJS and an AI Agent
+# Demo Script: Coupon Usage Limits
 
-## 1. Demo Overview
+Kịch bản tiếng Việt để đọc và quay demo API integration test cho Coupons bằng Jest, Supertest, StrykerJS và Codex. Chỉ đọc các đoạn **Lời đọc**. Những dòng **Thao tác** và **Mở HTML** là hướng dẫn cho người quay.
 
-Video theo một case Coupons từ đầu đến cuối: Admin tạo coupon có `max_uses_per_user = 3`, hệ thống phải lưu đúng 3, cho phép áp dụng sau 2 lần sử dụng và từ chối khi đã sử dụng đủ 3 lần. Loại test là API integration test: Jest chạy tests, Supertest gửi requests qua Express và SQLite lưu dữ liệu trong bộ nhớ.
+Case xuyên suốt: tạo coupon với giới hạn 3 lần, rồi kiểm tra hệ thống có lưu đúng số 3 hay không.
 
-Hướng dẫn thao tác bằng tiếng Việt. Các đoạn **Read aloud** là lời thoại tiếng Anh để đọc khi quay. Mục tiêu video 5 đến 8 phút; bảng dưới là thời lượng dựng dự kiến, chưa phải thời gian quay thực tế.
+## 1. Preparation
 
-| Scene | Video position | Content |
-|---|---|---|
-| Introduction and first test | 00:00 to 01:40 | Giới thiệu, setup và chạy baseline tests |
-| Find the surviving mutant | 01:40 to 03:00 | Chạy Stryker, mở report và giải thích thiếu sót |
-| Add and verify assertions | 03:00 to 04:30 | Xem assertions giới hạn 3 và chạy kiểm chứng |
-| Review the AI candidate | 04:30 to 06:10 | Prompt, candidate đã lưu, review và chạy lại |
-| Compare results and close | 06:10 to 07:10 | Đối chiếu reports và kết luận |
+Làm phần này trước khi quay. Chuẩn bị Git, Node/npm, editor, trình duyệt và phần mềm quay màn hình có thu mic. Môi trường thực nghiệm đã dùng Node `24.16.0`, npm `12.0.2`.
 
-Kịch bản quay chính dùng candidate Codex đã lưu để có thể chuẩn bị và chạy thử trước. Cảnh AI nói rõ đang xem lại candidate này. Section 7.4 có cách quay một request mới nếu cần trình diễn tương tác trực tiếp với AI.
-
-## 2. Setup Before Recording
-
-### 2.1. Prepare the Tools
-
-Chuẩn bị Git, PowerShell, editor đọc được JavaScript, trình duyệt mở HTML report và phần mềm quay màn hình có thu microphone. Máy thực nghiệm đã dùng Node `24.16.0`, npm `12.0.2`; dùng cùng versions để giảm khác biệt môi trường. Jest, Supertest và Stryker đã được khai báo trong project, cài bằng lockfile.
-
-Với cảnh quay AI mới ở Section 7.4, dùng Codex desktop đã đăng nhập. Nếu quay lại candidate đã lưu, chỉ cần mở prompt, code và provenance trong editor.
-
-### 2.2. Create a Separate Demo Checkout
-
-Mở PowerShell. Đoạn sau tạo thư mục `T10-Demo` trong user folder rồi clone vào thư mục mới `eshop-demo`. Chạy một lần; nếu `eshop-demo` đã tồn tại, tiếp tục dùng bản đó hoặc chọn tên thư mục mới.
+**Tạo bản riêng để demo.** Mở PowerShell và chạy lần lượt. Thư mục `eshop-demo` phải là thư mục mới; nếu đã tạo theo bản hướng dẫn trước thì dùng lại bản đó.
 
 ```powershell
 $demoParent = Join-Path $env:USERPROFILE 'T10-Demo'
@@ -37,326 +19,185 @@ Set-Location -LiteralPath (Join-Path $demoParent 'eshop-demo')
 git rev-parse --show-toplevel
 git status --short
 git switch --detach 52ed6ac7c341b4e907ab341aaff03aeededb2f5d
-git rev-parse HEAD
 Set-Location backend
 node --version
 npm --version
 npm ci
 ```
 
-Revision `52ed6ac` chứa baseline và cả hai bộ assertions bổ sung. Production source, database, package/lock và baseline Coupons mutation config khớp frozen baseline `806ba19`; các configs chọn riêng tests cần chạy. Giữ nguyên files giữa các cảnh, chuyển bộ tests bằng lệnh tương ứng.
+Revision này có sẵn baseline, bộ assertions bổ sung và bộ AI. Các cấu hình chọn riêng bộ tests; khi quay chỉ cần chạy đúng lệnh ở từng cảnh. Production code khớp frozen baseline `806ba19`.
 
-Từ đây, tất cả lệnh test và mutation chạy trong `eshop-demo/backend`. Terminal prompt phải kết thúc bằng `backend>`.
+**Chuẩn bị màn hình.** Mở thư mục `eshop-demo/backend` trong editor, đặt terminal bên cạnh. Tests tự dùng database trong bộ nhớ, reset dữ liệu và cố định đồng hồ; không cần bật backend hay frontend riêng.
 
-Tests dùng SQLite trong bộ nhớ, reset fixtures và cố định đồng hồ. Supertest gọi Express app trực tiếp; không cần bật server riêng hoặc mở frontend. Cơ chế này nằm trong `test/helpers/isolate.js` và `test/helpers/coupons.js`.
+Mở sẵn bốn file để chuyển qua khi quay:
 
-### 2.3. Rehearse the Commands
+- `package.json`.
+- `test/coupons.test.js`.
+- `test/manual/coupons.manual.js`.
+- `test/ai/coupons.ai.js`.
 
-Chạy ba lệnh sau trước buổi quay để phát hiện lỗi môi trường:
+**Ba lần mở HTML trong kịch bản:**
+
+| Khi nào mở | File tính từ thư mục `backend` | Cần xem gì |
+|---|---|---|
+| Cuối Cảnh 3, sau baseline mutation | `reports/coupons/mutation.html` | Mutant tại dòng 474 còn `Survived` |
+| Cuối Cảnh 4, sau bộ assertions bổ sung | `reports/coupons-manual/mutation.html` | Cùng mutant chuyển thành `Killed` |
+| Cuối Cảnh 5, sau bộ AI | `reports/coupons-ai/mutation.html` | Cùng mutant được bộ AI phát hiện |
+
+Mỗi cảnh bên dưới có lệnh mở đúng HTML. Chờ lệnh mutation hoàn tất rồi mới mở report. Khi report đang mở từ lần trước, refresh tab trước khi đọc kết quả.
+
+**Trước lúc bấm quay:** tăng font để đọc rõ, tắt thông báo, thu thử mic rồi nghe lại. Bật ghi hình, chờ hai giây và bắt đầu Cảnh 1. Có thể ghi lại phần clone và `npm ci` ở trên để chèn vào cảnh giới thiệu cài đặt.
+
+## 2. Scene 1: Introduction
+
+**Thao tác:** mở `package.json`. Chỉ vào hai scripts `test:coupons` và `mutate:coupons`.
+
+**Lời đọc:**
+
+> Chào mọi người. Giả sử Admin tạo coupon cho phép mỗi khách dùng tối đa ba lần. Hệ thống cần lưu đúng số ba đó.
+>
+> Chúng tôi đã clone bản demo và chạy npm ci để cài dependencies. Bây giờ, chúng tôi chạy tests rồi dùng Stryker để xem tests có phát hiện được code bị sửa sai hay không.
+
+## 3. Scene 2: Run the Baseline Tests
+
+**Thao tác:** tại terminal trong thư mục `backend`, chạy:
 
 ```powershell
 npm run test:coupons
-npx jest --config jest.coupons.manual.config.cjs --runInBand
-npx jest --config jest.coupons.ai.config.cjs --runInBand
 ```
 
-Với revision đã chọn, số test cases dự kiến lần lượt là 26, 35 và 40. Hai bộ sau gồm baseline và các cases bổ sung; video tập trung vào nhóm usage-limit. Tests phải pass trên production code gốc trước khi quay phần diễn giải mutants.
+Chờ summary hiện ra, chỉ vào số tests pass. Mở `test/coupons.test.js`, tìm `CP-15`. Để thấy giá trị input, mở `test/helpers/coupons.js`, tìm `validAdminCoupon` và chỉ `max_uses_per_user: 1`.
 
-Tiếp tục chạy từng mutation profile, chờ lệnh trước kết thúc rồi mới chạy lệnh sau:
+**Lời đọc:**
+
+> Test tạo coupon ban đầu chỉ thử giới hạn một lần: gửi số một, đọc lại dữ liệu và kiểm tra có đúng bằng một không. Code gốc lưu đúng một nên test pass.
+>
+> Vậy nếu code bị sửa sai, test này có nhận ra không?
+
+## 4. Scene 3: Find the Surviving Mutant
+
+**Thao tác:** chạy baseline mutation tại terminal:
 
 ```powershell
 npm run mutate:coupons
-npx stryker run stryker.coupons.manual.config.json
-npx stryker run stryker.coupons.ai.config.json
 ```
 
-Các lệnh này có thể lâu hơn thời lượng video. Khi quay, ghi lại lúc bắt đầu và kết quả, cắt hoặc tăng tốc phần chờ rồi chèn nhãn `Mutation run sped up`. Giữ terminal output và HTML/JSON reports sau mỗi lần chạy. Ba profiles ghi vào ba thư mục riêng.
+**Lời đọc trong lúc bắt đầu chạy:**
 
-## 3. Prepare the Recording Screen
+> Stryker cố tình tạo các phiên bản code bị thay đổi, gọi là mutants, rồi chạy tests để xem chúng có bị phát hiện không. Các thay đổi được chạy trong thư mục tạm.
 
-### 3.1. Open These Files and Reports
+Có thể cắt hoặc tăng tốc phần chờ và ghi nhãn `Đã tăng tốc đoạn chờ` trên video.
 
-Trong editor, chọn Open Folder và mở `eshop-demo/backend`. Mở sẵn các tabs sau; paths trong bảng tính từ thư mục `backend`:
-
-| Tab | Find this text | Use in the video |
-|---|---|---|
-| `package.json` | `test:coupons`, `mutate:coupons` | Chỉ lệnh npm thực sự chạy gì |
-| `test/coupons.test.js` | `CP-15` | Baseline tạo coupon với giới hạn 1 |
-| `test/coupons-flow.test.js` | `CP-FLOW` | Biết file thứ hai được baseline script nạp; không cần trình bày riêng |
-| `test/helpers/coupons.js` | `validAdminCoupon` | Giá trị mặc định 1 trong fixture |
-| `server.js` | `max_uses_per_user || 1` | Source bị mutate, line 474 tại revision này |
-| `stryker.coupons.config.json` | `mutate`, `testMatch` | Phạm vi source và baseline tests |
-| `test/manual/coupons.manual.js` | `MF-01`, `MF-02`, `MF-03` | Các assertions giới hạn 3 |
-| `test/ai/coupons.ai.js` | `test.each([2,4])` | Candidate dùng hai giá trị giới hạn |
-| `stryker.coupons.manual.config.json` | `testMatch` | Baseline cộng file manual |
-| `stryker.coupons.ai.config.json` | `testMatch` | Baseline cộng file AI |
-
-Mở ba tabs trình duyệt sau khi rehearsal tạo reports. Có thể dùng các lệnh PowerShell tại `backend` để mở bằng trình duyệt mặc định:
+**Mở HTML 1: report baseline.** Sau khi Stryker chạy xong, chạy:
 
 ```powershell
 Start-Process '.\reports\coupons\mutation.html'
-Start-Process '.\reports\coupons-manual\mutation.html'
-Start-Process '.\reports\coupons-ai\mutation.html'
 ```
 
-Mở thêm [candidate Codex ban đầu](../experiments/s3/runs/Thai_Hoa/D04-merge-2026-10-23-agent/G02-Codex/candidate.raw.js) và [provenance](../experiments/s3/runs/Thai_Hoa/D04-merge-2026-10-23-agent/G02-Codex/PROVENANCE.md) từ repo seminar. Candidate raw có nhóm limit 2/4; file AI hiện tại còn có các cases mở rộng khác.
+Trong trình duyệt, mở `server.js` trong report, tìm dòng 474. Chọn mutant có replacement `max_uses_per_user && 1`, rồi chỉ vào trạng thái `Survived`. Trong evidence đã lưu, đây là mutant `113`.
 
-### 3.2. Start Recording
+**Lời đọc khi đã thấy mutant trên HTML:**
 
-1. Đặt màn hình ở 1920 x 1080 nếu thiết bị hỗ trợ. Tăng font editor và terminal đến mức đọc được trong bản preview.
-2. Đặt editor bên trái, terminal bên phải. Để trình duyệt ở cửa sổ riêng để chuyển sang report khi cần.
-3. Tắt thông báo, đóng tabs không dùng và kiểm tra vùng quay không chứa thông tin riêng.
-4. Thu thử một câu, nghe lại và kiểm tra mic không bị rè. Quay màn hình kèm microphone, tắt nhạc nền.
-5. Bật ghi hình, chờ khoảng hai giây rồi bắt đầu đọc Scene 1. Dừng ngắn giữa các cảnh để dễ cắt ghép.
-
-Để có đoạn installation trong video, quay riêng clip PowerShell chạy các bước clone, chọn revision và `npm ci` ở Section 2.2 trong lần setup đầu tiên. Khi dựng, chèn clip này vào Scene 1; tăng tốc phần tải packages và ghi `Installation sped up`.
-
-## 4. Scene 1: Introduction and First Test
-
-### 4.1. Introduce the Example
-
-**Screen:** mở `test/manual/coupons.manual.js`, đặt con trỏ tại `max_uses_per_user:3`. Chưa cần giải thích code test.
-
-**Read aloud:**
-
-> Passing tests can still miss a business rule. In this demo, we use mutation testing to find a gap in the EShop coupon tests. An administrator creates a coupon with a per-user limit of three. The application must store that limit, allow another quote after two uses, and refuse a quote after three uses.
+> Phiên bản này bị lỗi: Admin nhập giới hạn ba, nhưng nó lại lưu thành một.
 >
-> We use Jest and Supertest for API integration tests, StrykerJS to generate mutants, and an AI Agent to suggest additional assertions.
+> Tuy nhiên, test ban đầu chỉ gửi một. Code gốc lưu một, code bị lỗi cũng lưu một. Test đang chờ một và nhận đúng một, nên vẫn pass.
+>
+> Vì test chưa nhận ra lỗi, mutant được đánh dấu Survived, nghĩa là còn sống.
 
-### 4.2. Show the Installation
+## 5. Scene 4: Verify the Added Assertions
 
-**Screen:** chèn clip setup đã quay ở Section 2.2. Giữ rõ đoạn revision, versions và kết quả `npm ci`. Sau đó mở `package.json`, chỉ vào `test:coupons` và `mutate:coupons`.
-
-**Read aloud:**
-
-> We clone a separate demo checkout, select a fixed revision, and install the project dependencies with npm ci. The package scripts select the coupon tests and the coupon mutation configuration. The test harness uses an in-memory database, so we can repeat the example with fresh data.
-
-### 4.3. Run the Baseline Tests
-
-**Action:** chuyển terminal tại `backend`, chạy:
-
-```powershell
-npm run test:coupons
-```
-
-**Screen:** chờ summary hiện ra, chỉ vào số tests pass. Mở `test/coupons.test.js`, tìm `CP-15`, chỉ `h.validAdminCoupon()`. Mở `test/helpers/coupons.js`, tìm `validAdminCoupon` để thấy `max_uses_per_user: 1`.
-
-**Read aloud:**
-
-> The baseline coupon tests pass. This creation test uses a coupon limit of one. It checks that the returned coupon matches that input, but this case does not show whether a different limit is preserved. Mutation testing helps us find that missing distinction.
-
-## 5. Scene 2: Find the Surviving Mutant
-
-### 5.1. Run Stryker
-
-**Screen:** mở `stryker.coupons.config.json`. Chỉ `testRunner: jest`, `mutate: server.js:355-492` và hai files trong `testMatch`.
-
-**Read aloud:**
-
-> Stryker changes small parts of the coupon source and runs the selected tests. A mutant is Killed when a test fails because of that change. It Survives when the tests still pass. The production file in our checkout stays unchanged while Stryker runs the mutations in its sandbox.
-
-**Action:** chạy và ghi lại summary:
-
-```powershell
-npm run mutate:coupons
-```
-
-Mở report vừa sinh bằng `Start-Process '.\reports\coupons\mutation.html'`. Nếu tab cũ đang mở, refresh trước khi đọc kết quả.
-
-### 5.2. Inspect the Missed Behavior
-
-**Action:** trong report, chọn `server.js`, tìm line 474 và survivor có replacement `max_uses_per_user && 1`. Evidence đã lưu gắn nó với ID `113`; dùng location, replacement và status để nhận diện nếu report đổi cách đánh số. Phóng lớn source và trạng thái `Survived`.
-
-**Read aloud:**
-
-> The original expression uses the requested limit, or defaults to one. This mutant changes OR to AND. For a positive limit such as three, the mutated expression produces one. The baseline creation test supplies one, so the original and mutated versions produce the same stored value for that input. The mutant survives.
-
-**Screen:** đối chiếu hai dòng trong editor hoặc vùng source của report:
+**Thao tác:** quay về editor, mở `test/manual/coupons.manual.js`. Tìm `MF-01`, chỉ vào input `max_uses_per_user:3` và dòng:
 
 ```javascript
-// Original
-max_uses_per_user || 1
-// Mutant 113
-max_uses_per_user && 1
-```
-
-Đây là đoạn minh họa để chỉ trên màn hình; giữ `server.js` nguyên bản.
-
-## 6. Scene 3: Add and Verify Assertions
-
-### 6.1. Show the Added Checks
-
-**Action:** mở `test/manual/coupons.manual.js`. Cảnh này trình bày bộ assertions đã chuẩn bị, sau đó bật bộ đó bằng config. Dừng ở `MF-01`, chỉ lần lượt input và assertion:
-
-```javascript
-max_uses_per_user: 3
 expect(listed.body[0].max_uses_per_user).toBe(3);
 ```
 
-Chỉ tiếp `MF-02` và `MF-03`.
+Sau đó cuộn tới `MF-02` và `MF-03`.
 
-**Read aloud:**
+**Lời đọc:**
 
-> Here is the prepared assertion set. Its file is named manual, but Codex helped draft it, so we describe it as AI-assisted spec analysis. The first test creates a limit of three and reads the coupon back through the API. It asserts that the stored limit is exactly three.
+> Chúng tôi thêm test gửi giới hạn ba, rồi yêu cầu giá trị đọc lại phải bằng ba. Với code gốc, nhận ba nên pass. Với mutant, nhận một nên fail. Lỗi đã lộ ra.
 >
-> The next two tests check the boundary. Two recorded uses must still allow a quote, with a discount of twenty-five thousand and a final amount of seventy-five thousand. Three uses must cause refusal. Applying a coupon is a quote; the separate usage endpoint records a use.
+> Hai tests bên dưới kiểm tra thêm: đã dùng hai lượt thì còn lượt thứ ba, đủ ba lượt thì bị từ chối dùng tiếp. Bộ tests này có Codex hỗ trợ soạn.
 
-### 6.2. Run the Added Checks
-
-**Action:** chạy Jest trước, rồi chạy Stryker:
+**Thao tác:** chạy tests trên code gốc trước, rồi chạy mutation với bộ bổ sung. Chờ từng lệnh kết thúc:
 
 ```powershell
 npx jest --config jest.coupons.manual.config.cjs --runInBand
 npx stryker run stryker.coupons.manual.config.json
 ```
 
-**Screen:** chỉ kết quả Jest, mở `reports/coupons-manual/mutation.html`, chọn cùng location và replacement ở line 474. Chỉ status và test được ghi ở `killedBy` nếu report cung cấp.
+**Mở HTML 2: report có assertions bổ sung.** Sau khi mutation chạy xong, chạy:
 
-**Read aloud, khi report xác nhận:**
-
-> The added tests pass on the original code. In the mutation report, the target mutant is now Killed. The assertion about the stored limit distinguishes three from one. This connects the mutant result to a specific business expectation.
-
-Evidence đã lưu quy kill cho `MF-01`, không quy cho cả ba tests. Nếu lần quay không có transition này, dùng cách xử lý ở Section 9 trước khi đọc kết luận.
-
-## 7. Scene 4: Review the AI Candidate
-
-### 7.1. Show the Request and Its Context
-
-**Screen:** mở prompt ngắn dưới đây trong editor. Đây là prompt tái sử dụng cho demo, không phải transcript của run cũ. Nguồn của candidate và context lịch sử nằm trong [provenance](../experiments/s3/runs/Thai_Hoa/D04-merge-2026-10-23-agent/G02-Codex/PROVENANCE.md).
-
-```text
-Suggest Jest and Supertest API integration tests for the EShop coupon
-usage-limit rule. Use backend/test/helpers/coupons.js and the baseline
-coupon tests as references.
-
-FR-17: an administrator can create and list coupons. The configured
-max_uses_per_user must be preserved.
-FR-09 C5: a quote is allowed while uses < max_uses_per_user, and must
-be refused when uses reach that limit. Recording usage is a separate API call.
-
-The original server.js line 474 uses max_uses_per_user || 1.
-A surviving mutant replaces it with max_uses_per_user && 1.
-Another survivor at the same location replaces the expression with true.
-
-Return a complete candidate test file and explain the assertions.
-Use the existing fixture helpers, frozen clock and database cleanup.
-Only propose tests. Do not edit production code, configs or baseline tests.
-Tests must pass on original code. Derive expected values from the rules;
-avoid exact error messages or claiming a specific HTTP error is in the SRS.
+```powershell
+Start-Process '.\reports\coupons-manual\mutation.html'
 ```
 
-**Read aloud:**
+Mở `server.js`, tìm lại dòng 474 và replacement `max_uses_per_user && 1`. Chỉ trạng thái `Killed` và test `MF-01` trong thông tin test phát hiện mutant, nếu report hiển thị.
 
-> The AI needs the business rule, baseline tests, fixture helpers, and the surviving mutation. This reusable prompt asks for test candidates without changing production code. For this recording, we replay a saved Codex candidate and verify it again. The original candidate shared the earlier analysis context, so this is not an independent human-versus-AI comparison.
+**Lời đọc khi report xác nhận kết quả:**
 
-### 7.2. Review the Saved Candidate
+> Report mới cho thấy mutant đã chuyển sang Killed, nghĩa là test đã phát hiện được thay đổi sai. Test MF-01 bắt được lỗi nhờ kiểm tra số ba được lưu đúng.
 
-**Action:** mở `candidate.raw.js` từ Section 3, rồi mở `test/ai/coupons.ai.js`. Dừng ở nhóm đầu `test.each([2,4])`; không cần đọc các nhóm mở rộng `AG-01` trở đi.
+## 6. Scene 5: Review and Run the AI Candidate
 
-Chỉ lần lượt các checkpoints: giá trị `max_uses_per_user` đọc lại từ API, quote tại `limit - 1`, quote tại `limit`, và số rows usage cuối test.
+**Thao tác:** mở prompt dưới đây để giới thiệu thông tin cần đưa cho AI. Đây là prompt mẫu tiếng Việt dùng lại cho demo. Cảnh này xem lại candidate đã lưu và chạy kiểm chứng nó.
 
-**Read aloud:**
+```text
+Đọc baseline tests và helper backend/test/helpers/coupons.js.
+Đề xuất tests kiểm tra API tạo coupon lưu đúng max_uses_per_user.
+Code gốc ở server.js dòng 474 dùng max_uses_per_user || 1.
+Mutant thay bằng max_uses_per_user && 1 nhưng tests vẫn pass.
+Chỉ đề xuất tests, giữ nguyên source và config. Dùng helper có sẵn.
+Giải thích vì sao test pass trên code gốc và phát hiện được mutant.
+```
 
-> The saved candidate uses limits of two and four. This is data-driven testing: the same test runs with two inputs. We review four checkpoints: the configured value is stored, a quote is allowed below the limit, a quote is refused at the limit, and usage records match the calls made by the test.
->
-> We also check fixture cleanup and expected amounts before accepting the candidate for execution. The current file contains additional scenarios, but we focus on this usage-limit group.
+**Lời đọc:**
 
-### 7.3. Verify the Candidate
+> Với AI, chúng tôi cung cấp quy tắc và thông tin mutant để nhờ đề xuất tests. Ở đây là bộ Codex đã soạn trong cùng context phân tích trước đó; chúng tôi mở lại và chạy kiểm chứng.
 
-**Action:** chạy:
+**Thao tác:** mở `test/ai/coupons.ai.js`, tìm `test.each([2,4])`. Chỉ vào các assertions đọc lại giới hạn, cho phép tại `limit - 1` và từ chối tại `limit`.
+
+**Lời đọc:**
+
+> Bộ này thử giới hạn hai và bốn, rồi kiểm tra hệ thống lưu đúng từng giá trị. Nếu mutant vẫn lưu thành một, test sẽ nhận ra. Chúng tôi review code rồi chạy tests trước khi chạy mutation.
+
+**Thao tác:** chạy lần lượt:
 
 ```powershell
 npx jest --config jest.coupons.ai.config.cjs --runInBand
 npx stryker run stryker.coupons.ai.config.json
 ```
 
-**Screen:** mở `reports/coupons-ai/mutation.html`, refresh, tìm cùng mutant. Chỉ test dùng limit 2 ở thông tin `killedBy` nếu report hiển thị.
-
-**Read aloud, khi report xác nhận:**
-
-> The AI profile passes on the original code, and the target mutant is Killed. The report links this kill to the persisted-limit check. Generating a plausible test is only the first step. Reviewing and executing it establish what the candidate actually detects.
-
-### 7.4. Record a Fresh AI Request if Needed
-
-Nếu cần quay thao tác gửi prompt thật, thay phần replay ở Sections 7.1 và 7.2 bằng các bước sau. Chuẩn bị ngoài giờ ghi hình chính để có thời gian review output.
-
-1. Trong Codex desktop, mở chat mới tại demo checkout. Gửi prompt ở Section 7.1; lưu tên agent/model hiển thị cùng prompt và response thực tế.
-2. Giới thiệu rõ chat mới được mở trên checkout đã có các bộ assertions; không mô tả run này là blind hoặc independent. Prompt chỉ yêu cầu đề xuất, chưa yêu cầu sửa files.
-3. Review code trả về với các checkpoints ở Section 7.2. Copy `test/ai/coupons.ai.js` thành `test/ai/coupons.ai.saved.txt` trước khi thay candidate; sau đó đặt code đã review vào `test/ai/coupons.ai.js`.
-4. Chạy lại đúng hai lệnh ở Section 7.3. Giữ report của lượt mới riêng trước khi chạy tiếp. Số tests và số kills có thể khác candidate đã lưu.
-5. Dùng lời dẫn dưới đây và trình bày kết quả thật; bảng lịch sử ở Section 8 chỉ dùng tham chiếu.
-
-**Read aloud for a fresh request:**
-
-> I am sending the rule and mutant details to Codex now. This checkout already contains the prepared assertions. I will review the new response, run the tests on the original code, and check the mutation report before drawing a conclusion.
-
-Nếu AI trả code chưa pass hoặc không kill được target, thể hiện điều đó và sửa sau review. Nếu đăng nhập lỗi, quay cảnh replay đã chuẩn bị và dùng đúng lời dẫn ở Section 7.1.
-
-## 8. Scene 5: Compare Results and Close
-
-### 8.1. Put the Three Reports Side by Side
-
-**Screen:** chuyển lần lượt baseline, manual và AI reports. Chỉ line 474 và cùng replacement, sau đó chỉ summary. Dữ liệu sau là kết quả đã lưu, dùng để rehearsal và đối chiếu; đọc số trên report của lần quay nếu chạy mới.
-
-| Profile | Tests on original code | Killed | Timeout | Survived | NoCoverage | RuntimeError | Tool score |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| Frozen baseline | 26 | 39 | 21 | 30 | 25 | 5 | 52.17% |
-| Extended manual | 35 | 41 | 21 | 28 | 25 | 5 | 53.91% |
-| Extended AI | 40 | 41 | 21 | 28 | 25 | 5 | 53.91% |
-
-Cả ba reports lịch sử có cùng source và 120 mutant signatures. Hai mutants `111/113` chuyển `Survived` sang `Killed`; các nhóm mở rộng khác chưa tạo thêm kills trong universe này. Baseline không nạp file manual/AI dù chúng đã có trong checkout.
-
-**Read aloud, khi kết quả quay khớp:**
-
-> Both prepared profiles detect two additional mutants at the coupon-limit assignment. They reach the same mutation result with different test collections. This shows how checking a configured value can expose a gap left by a default-value example. It does not establish that one author or tool is better.
-
-### 8.2. Close the Video
-
-**Screen:** giữ report có target `Killed`, chuyển về assertion `toBe(3)` để kết thúc.
-
-**Read aloud:**
-
-> Mutation testing gives us concrete feedback about the behavior our tests distinguish. The workflow is semi-automated: Stryker generates mutants and reports results, while people choose the rules, review assertions, and interpret the evidence.
->
-> A higher mutation score does not prove the whole application is correct. Stryker's score here includes timeouts, which we report separately from assertion kills. A surviving mutant may need better tests or further analysis. AI suggestions need the same review and execution checks. Thank you for watching.
-
-## 9. Recording Problems and Export
-
-### 9.1. Fix Problems Before Using a Result
-
-| Problem | What to do |
-|---|---|
-| `package.json` không tìm thấy | Chuyển terminal vào `eshop-demo/backend`, chạy lại lệnh |
-| `npm ci` lỗi version hoặc native SQLite | So Node/npm với Section 2.1, giữ lockfile và đọc lỗi cài đặt. Hoàn tất setup rồi chạy lại ba Jest profiles |
-| `npx` không gọi được local binary trên Windows | Dùng các lệnh `node` bên dưới; giữ runner đã pin trong lockfile |
-| Jest fail trên code gốc | Kiểm tra revision, config và output lỗi; chưa đọc lời thoại khẳng định mutation cải thiện |
-| Report chưa có hoặc đang mở bản cũ | Chờ Stryker hoàn tất, mở đúng thư mục profile rồi refresh tab |
-| Target chưa `Killed` | Đối chiếu source/replacement, kiểm tra config nạp đúng file bổ sung và tìm assertion thật sự fail trên mutant |
-| Summary khác bảng lịch sử | Giữ log/report lượt mới, trình bày số thật và kiểm tra khác biệt môi trường trước khi so sánh |
-| AI chưa đăng nhập | Dùng replay candidate đã lưu với lời dẫn công bố rõ nguồn |
-
-Các lệnh thay thế cho `npx`, chạy tại `backend`:
+**Mở HTML 3: report bộ AI.** Sau khi mutation chạy xong, chạy:
 
 ```powershell
-node node_modules/jest/bin/jest.js --config jest.coupons.manual.config.cjs --runInBand
-node node_modules/jest/bin/jest.js --config jest.coupons.ai.config.cjs --runInBand
-node node_modules/@stryker-mutator/core/bin/stryker.js run stryker.coupons.manual.config.json
-node node_modules/@stryker-mutator/core/bin/stryker.js run stryker.coupons.ai.config.json
+Start-Process '.\reports\coupons-ai\mutation.html'
 ```
 
-### 9.2. Export and Watch the Finished Video
+Mở `server.js`, tìm cùng dòng 474 và replacement. Chỉ trạng thái `Killed` và test dùng limit 2 được report ghi nhận, nếu có.
 
-1. Ghép các cảnh theo thứ tự, giữ đủ installation, basic mutation flow và advanced assertions/AI workflow.
-2. Cắt hoặc tăng tốc phần chờ, ghi nhãn rõ. Với report/candidate lấy từ rehearsal, đọc câu `This is the saved result from our rehearsal` trước khi diễn giải.
-3. Kiểm tra tổng video từ 5 đến 8 phút, narration tiếng Anh, không nhạc nền và code/report đọc được. Xuất MP4, ưu tiên 1080p, dung lượng tối đa 100 MB theo requirements.
-4. Xem lại toàn video để kiểm tra âm thanh, số liệu, source của candidate và labels của đoạn tăng tốc.
-5. Upload video, thử mở link ở cửa sổ chưa đăng nhập, rồi điền link/file version thật vào [Demo Video Link](../draft/Demo_Video_Link.md) và slides khi ghép bộ nộp.
+**Lời đọc khi report xác nhận kết quả:**
 
-## References
+> Bộ AI pass trên code gốc và cũng đánh dấu mutant này là Killed. Kết quả được xác nhận bằng lần chạy và report.
 
-- [Seminar Requirements](requirements/Seminar_Requirements_Consolidated.md): REQ-07 to REQ-10, REQ-19 and REQ-21.
-- [Baseline Manifest](../experiments/s3/Baseline_Manifest.md): frozen source, runtime và test selection.
-- [Coupons Test Contract](../experiments/s3/Coupons_Test_Contract_Thai_Hoa.md): business rules và expected behavior.
-- [Coupons Extensions Evidence](../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/README.md): số tests, mutant transitions và reports đã lưu.
-- [Codex Candidate Provenance](../experiments/s3/runs/Thai_Hoa/D04-merge-2026-10-23-agent/G02-Codex/PROVENANCE.md): nguồn AI, shared context và giới hạn của comparison.
-- [Pinned SUT Revision](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/tree/52ed6ac7c341b4e907ab341aaff03aeededb2f5d/backend): scripts, tests và configs dùng trong kịch bản.
+## 7. Scene 6: Compare and Close
+
+**Thao tác:** chuyển lần lượt qua ba tabs HTML đã mở. Giữ cùng dòng 474 và replacement để người xem thấy baseline là `Survived`, hai bộ bổ sung là `Killed`.
+
+**Lời đọc:**
+
+> Test cũ dùng input một nên bỏ sót lỗi. Thử input ba và kiểm tra đúng giá trị được lưu mới làm lỗi lộ ra.
+>
+> Mutation testing giúp tìm những chỗ test còn bỏ sót. Killed là test phát hiện thay đổi; Timeout là vượt thời gian, cần xem riêng. Tests do AI đề xuất cũng phải được review và chạy lại. Cảm ơn mọi người đã theo dõi.
+
+## 8. Recording Notes
+
+- Chạy thử toàn bộ các cảnh trước buổi quay. Số test cases dự kiến tại revision đã chọn: baseline 26, bộ manual 35, bộ AI 40. Video chỉ phân tích nhóm usage-limit.
+- API áp dụng coupon chỉ tính thử giảm giá; lượt sử dụng được ghi qua API riêng. Test MF-01 kiểm tra giá trị được lưu mới là test phát hiện mutant mục tiêu trong evidence đã có.
+- Lời đọc kết quả ở trên dùng khi report của lần chạy xác nhận đúng trạng thái. Nếu dùng report đã lưu, nói: "Đây là report đã lưu từ lần chạy chuẩn bị trước buổi quay."
+- Với report mới chưa khớp, kiểm tra đúng config và file tests trước khi diễn giải. Các configs ghi vào ba thư mục reports riêng; giữ log và JSON để đối chiếu.
+- Nếu `npx` lỗi trên Windows, dùng `node node_modules/jest/bin/jest.js` thay cho `npx jest`, hoặc `node node_modules/@stryker-mutator/core/bin/stryker.js` thay cho `npx stryker`; giữ nguyên các tham số phía sau.
+- Khi dựng video, giữ đủ phần cài đặt, chạy tests, phân tích mutant và kiểm chứng assertions/AI. Mục tiêu 5 đến 8 phút, không nhạc nền, ưu tiên 1080p và MP4 tối đa 100 MB.
+
+Nguồn đối chiếu: [Baseline Manifest](../experiments/s3/Baseline_Manifest.md), [Coupons evidence](../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/README.md) và [Codex provenance](../experiments/s3/runs/Thai_Hoa/D04-merge-2026-10-23-agent/G02-Codex/PROVENANCE.md).

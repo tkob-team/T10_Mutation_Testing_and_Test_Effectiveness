@@ -1,0 +1,7 @@
+[32m13:49:14 (22540) INFO ProjectReader[39m Found 1 of 40 file(s) to be mutated.
+[32m13:49:14 (22540) INFO Instrumenter[39m Instrumented 1 source file(s) with 395 mutant(s)
+[32m13:49:14 (22540) INFO ConcurrencyTokenProvider[39m Creating 2 test runner process(es).
+[32m13:49:15 (22540) INFO DryRunExecutor[39m Note: running the dry-run only. No mutations will be tested.
+[32m13:49:15 (22540) INFO DryRunExecutor[39m Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+[32m13:49:17 (22540) INFO DryRunExecutor[39m Initial test run succeeded. Ran 88 tests in 2 seconds (net 861 ms, overhead 1206 ms).
+[32m13:49:17 (22540) INFO MutationTestExecutor[39m The dry-run has been completed successfully. No mutations have been executed.

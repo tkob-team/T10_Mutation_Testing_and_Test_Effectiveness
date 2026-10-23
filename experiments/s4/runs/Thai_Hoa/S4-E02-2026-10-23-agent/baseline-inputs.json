@@ -1,0 +1,15 @@
+{
+  "branch": "codex/s4-overall-baseline",
+  "commit": "582159aa174ef33854a1083f87c8d79806bed738",
+  "base": "806ba19ee4e09eafe9b2696ccf117a2b1ab841ef",
+  "overlays": [
+    {
+      "path": "backend/jest.overall.config.cjs",
+      "sha256": "25a0f230666aee6c9466c7b0c2e268317107a9f9cdc2669325fa964692ec5983"
+    },
+    {
+      "path": "backend/stryker.overall.config.json",
+      "sha256": "e5fec763b3a746a05da1d190d717c903d0617dccc9a97a2687b2e6cb7aea6b11"
+    }
+  ]
+}

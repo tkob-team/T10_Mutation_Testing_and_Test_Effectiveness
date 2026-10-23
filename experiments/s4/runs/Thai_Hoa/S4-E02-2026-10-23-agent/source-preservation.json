@@ -1,0 +1,27 @@
+{
+  "headBefore": "69b845a52df2320439917f3c0544175b36f9b4f3",
+  "headAfter": "4b28756a1d2a59cb4b74300709122180056f9f55",
+  "statusBefore": "",
+  "statusAfter": "",
+  "unchanged": false,
+  "hashBasis": "Normalized committed blobs reconstructed from recorded clean starting HEAD and final HEAD; not claimed as recovered pre-run physical byte hashes",
+  "before": {
+    "backend/server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487",
+    "backend/database.js": "3366420632bb9c982905b22e3969f69515e39e7a37a4f84eba56ead7e94afed8",
+    "backend/database.sqlite": "c63f00544180ba1fbb1427a9b9dd3f1784842698809972f33ce90482e7420ba6",
+    "backend/package.json": "9e7e0504405323ac378ab25d552db0fb4aff44ba78b417ee804a586e405a5de8",
+    "backend/package-lock.json": "10dc5c6dd2c51e08d8caf7e7425eb0918e97420519e436e5590831640fec3373"
+  },
+  "after": {
+    "backend/server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487",
+    "backend/database.js": "3366420632bb9c982905b22e3969f69515e39e7a37a4f84eba56ead7e94afed8",
+    "backend/database.sqlite": "c63f00544180ba1fbb1427a9b9dd3f1784842698809972f33ce90482e7420ba6",
+    "backend/package.json": "bc83ba080c9d7b18207625d2b8ee22958fcec5fffff3e93c755c44f35deddea2",
+    "backend/package-lock.json": "10dc5c6dd2c51e08d8caf7e7425eb0918e97420519e436e5590831640fec3373"
+  },
+  "changedFiles": [
+    "backend/package.json"
+  ],
+  "agentWritesToSourceRepository": [],
+  "note": "External commit 4b28756 fixes package.json comma; the experiment writes only to its disposable runtime and documentation evidence."
+}

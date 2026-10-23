@@ -1,0 +1,103 @@
+[
+  {
+    "label": "clone",
+    "args": [
+      "git",
+      "clone",
+      "--shared",
+      "D:\\Workspace\\1. Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness",
+      "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-auth-guide-xrqp_k7s\\eshop-sut"
+    ],
+    "cwd": "D:\\Workspace\\1. Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar",
+    "startUTC": "2026-10-23T07:09:32.270125+00:00",
+    "exitCode": 0,
+    "endUTC": "2026-10-23T07:09:32.571248+00:00"
+  },
+  {
+    "label": "checkout",
+    "args": [
+      "git",
+      "checkout",
+      "--detach",
+      "806ba19ee4e09eafe9b2696ccf117a2b1ab841ef"
+    ],
+    "cwd": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-auth-guide-xrqp_k7s\\eshop-sut",
+    "startUTC": "2026-10-23T07:09:32.683978+00:00",
+    "exitCode": 0,
+    "endUTC": "2026-10-23T07:09:32.775478+00:00"
+  },
+  {
+    "label": "install",
+    "args": [
+      "npm.cmd",
+      "ci",
+      "--no-audit",
+      "--no-fund"
+    ],
+    "cwd": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-auth-guide-xrqp_k7s\\eshop-sut\\backend",
+    "startUTC": "2026-10-23T07:09:33.210905+00:00",
+    "exitCode": 0,
+    "endUTC": "2026-10-23T07:10:06.540730+00:00"
+  },
+  {
+    "label": "integration",
+    "args": [
+      "npm.cmd",
+      "test"
+    ],
+    "cwd": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-auth-guide-xrqp_k7s\\eshop-sut\\backend",
+    "startUTC": "2026-10-23T07:10:06.541376+00:00",
+    "exitCode": 0,
+    "endUTC": "2026-10-23T07:10:10.152405+00:00"
+  },
+  {
+    "label": "auth-tests",
+    "args": [
+      "npm.cmd",
+      "run",
+      "test:auth"
+    ],
+    "cwd": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-auth-guide-xrqp_k7s\\eshop-sut\\backend",
+    "startUTC": "2026-10-23T07:10:10.153119+00:00",
+    "exitCode": 0,
+    "endUTC": "2026-10-23T07:10:11.737373+00:00"
+  },
+  {
+    "label": "auth-dry",
+    "args": [
+      "npx.cmd",
+      "stryker",
+      "run",
+      "stryker.auth.config.json",
+      "--dryRunOnly"
+    ],
+    "cwd": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-auth-guide-xrqp_k7s\\eshop-sut\\backend",
+    "startUTC": "2026-10-23T07:10:11.738276+00:00",
+    "exitCode": 0,
+    "endUTC": "2026-10-23T07:10:17.206350+00:00"
+  },
+  {
+    "label": "auth-mutation",
+    "args": [
+      "npm.cmd",
+      "run",
+      "mutate:auth"
+    ],
+    "cwd": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-auth-guide-xrqp_k7s\\eshop-sut\\backend",
+    "startUTC": "2026-10-23T07:10:17.206804+00:00",
+    "exitCode": 0,
+    "endUTC": "2026-10-23T07:12:20.438682+00:00"
+  },
+  {
+    "label": "manual-command",
+    "args": [
+      "npm.cmd",
+      "run",
+      "test:auth:manual"
+    ],
+    "cwd": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-auth-guide-xrqp_k7s\\eshop-sut\\backend",
+    "startUTC": "2026-10-23T07:12:20.440765+00:00",
+    "exitCode": 1,
+    "endUTC": "2026-10-23T07:12:20.916282+00:00"
+  }
+]

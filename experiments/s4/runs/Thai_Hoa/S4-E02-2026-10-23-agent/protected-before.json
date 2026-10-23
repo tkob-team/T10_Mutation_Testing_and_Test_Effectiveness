@@ -1,0 +1,11 @@
+{
+  "server.js": "e2263811a1690a63a7dbb4446c3fd33fb87f50d073d9f8cdfab7083a52f5e8ed",
+  "database.js": "50012f35c2cf0776dd837482d76adf701f0ee40cdcb9d80143278fccde034717",
+  "database.sqlite": "c63f00544180ba1fbb1427a9b9dd3f1784842698809972f33ce90482e7420ba6",
+  "package.json": "490d9efe41331670d7f5faa191226b48bb5fc0a9a3bb2e52dc19718131cd6238",
+  "package-lock.json": "bbe5845d320b318bb2fd9d4f4c2826d6ca5c69fa417766e45886a41dd5f9da09",
+  "test/cart-orders.test.js": "c8ca8dc84b57c8139fde10318f663b6359a6a9af7c089402445b50e642e28689",
+  "test/coupons.test.js": "6ec1a35bd23262977b9c2630af3229e71c06a1363850c83b72c09cfd109aabb2",
+  "test/coupons-flow.test.js": "d7054dc86837657e37589e26ab173e073163cf9f77b4b17e0a2c4e834795409e",
+  "test/auth.spec.test.js": "f1880e671ab50a7a5cd040449554adcaede0d3ee41489073ea027709cd45b01f"
+}

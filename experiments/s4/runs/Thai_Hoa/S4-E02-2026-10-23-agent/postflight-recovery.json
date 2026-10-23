@@ -1,0 +1,7 @@
+{
+  "originalOrchestratorExitCode": 1,
+  "failure": "Final assertion before == after_source failed after all three profile mutation commands exited 0",
+  "observedExternalCommit": "4b28756a1d2a59cb4b74300709122180056f9f55",
+  "recovery": "Inspected Git diff 69b845a..4b28756; only package.json comma changed. Preserved original runtime protected-after records, raw reports and commands; recomputed summaries without rerunning or rewriting raw reports.",
+  "atUTC": "2026-10-23T07:15:17.013274+00:00"
+}

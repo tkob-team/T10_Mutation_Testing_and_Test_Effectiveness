@@ -1,0 +1,31 @@
+{
+  "branch": "codex/s4-overall-ai",
+  "commit": "f156aa0b938585c788c0fdf84ba1e49b45abc388",
+  "base": "806ba19ee4e09eafe9b2696ccf117a2b1ab841ef",
+  "overlays": [
+    {
+      "path": "backend/test/ai/cart-orders.ai.js",
+      "sha256": "07975e21aeaf806a446daedfe2bc576b15a6746421f0f543f131a01d82455a14"
+    },
+    {
+      "path": "backend/test/ai/coupons.ai.js",
+      "sha256": "7311a1a039f9d65b6cee5b68613b19b098c6ea63c8f449855a872b8cb52dc522"
+    },
+    {
+      "path": "backend/test/helpers/coupons-scenarios.js",
+      "sha256": "31580ac123cb75f12b6d097f0d5d6adeb7cf66ec08142a0698a5b17b5c68bb95"
+    },
+    {
+      "path": "backend/test/auth.ai.test.js",
+      "sha256": "fb9977e60c4d3b7d2502fba80649668ddeb1c1767abf0f0e9c6bacc255530609"
+    },
+    {
+      "path": "backend/jest.overall.config.cjs",
+      "sha256": "38a9a8d4e26707b4bc685e5db8d48f9031db1a31ee585e1d4a4b3504f89a8df1"
+    },
+    {
+      "path": "backend/stryker.overall.config.json",
+      "sha256": "e5fec763b3a746a05da1d190d717c903d0617dccc9a97a2687b2e6cb7aea6b11"
+    }
+  ]
+}

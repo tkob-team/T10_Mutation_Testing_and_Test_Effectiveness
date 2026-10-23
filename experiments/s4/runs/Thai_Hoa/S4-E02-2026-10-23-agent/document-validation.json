@@ -1,0 +1,1086 @@
+{
+  "pass": true,
+  "checks": 268,
+  "localLinkOccurrences": 162,
+  "inventory": {
+    "materials/s4/Guide_Contribution_Phuc_Hoang.md": true,
+    "materials/s4/User_Guide.md": false,
+    "materials/s4/Report_Contribution_Tan_Hiep.md": false,
+    "materials/s4/Report_Contribution_Phuc_Hoang.md": true
+  },
+  "findings": [],
+  "details": [
+    {
+      "check": "exists materials\\s4\\Guide_Contribution_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "punctuation Guide_Contribution_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "balanced fences Guide_Contribution_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "Guide_Contribution_Thai_Hoa.md link exists ../../experiments/s3/Coupons_Test_Contract_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "Guide_Contribution_Thai_Hoa.md link exists ../../experiments/s3/Baseline_Manifest.md",
+      "pass": true
+    },
+    {
+      "check": "Guide_Contribution_Thai_Hoa.md link exists ../../experiments/s3/Experiment_Log_Thai_Hoa.md#h02--comparison--limits",
+      "pass": true
+    },
+    {
+      "check": "Guide_Contribution_Thai_Hoa.md anchor exists ../../experiments/s3/Experiment_Log_Thai_Hoa.md#h02--comparison--limits",
+      "pass": true
+    },
+    {
+      "check": "Guide_Contribution_Thai_Hoa.md link exists ../../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/sources/backend",
+      "pass": true
+    },
+    {
+      "check": "Guide_Contribution_Thai_Hoa.md link exists ../../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/README.md",
+      "pass": true
+    },
+    {
+      "check": "Guide_Contribution_Thai_Hoa.md link exists ../../experiments/s3/runs/Thai_Hoa/D04-merge-2026-10-23-agent/G02-Codex/PROVENANCE.md",
+      "pass": true
+    },
+    {
+      "check": "Guide_Contribution_Thai_Hoa.md link exists ../../research/s3/Research_Notes_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "Guide_Contribution_Thai_Hoa.md link exists ../../experiments/s3/Baseline_Manifest.md",
+      "pass": true
+    },
+    {
+      "check": "Guide_Contribution_Thai_Hoa.md link exists ../../experiments/s3/Experiment_Log_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "Guide_Contribution_Thai_Hoa.md link exists ../../experiments/s4/Overall_Comparison.md",
+      "pass": true
+    },
+    {
+      "check": "Guide_Contribution_Thai_Hoa.md link exists ../../ai-audit/AI_Record_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "filled template slots Guide_Contribution_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "exists materials\\s4\\Report_Contribution_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "punctuation Report_Contribution_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "balanced fences Report_Contribution_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "Report_Contribution_Thai_Hoa.md link exists ../../research/s3/Research_Notes_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "Report_Contribution_Thai_Hoa.md link exists ../../experiments/s3/Experiment_Log_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "Report_Contribution_Thai_Hoa.md link exists ../../experiments/s3/Baseline_Manifest.md",
+      "pass": true
+    },
+    {
+      "check": "Report_Contribution_Thai_Hoa.md link exists ../../experiments/s3/runs/Thai_Hoa/D04-merge-2026-10-23-agent/README.md",
+      "pass": true
+    },
+    {
+      "check": "Report_Contribution_Thai_Hoa.md link exists ../../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/README.md",
+      "pass": true
+    },
+    {
+      "check": "Report_Contribution_Thai_Hoa.md link exists ../../experiments/s4/Overall_Comparison.md",
+      "pass": true
+    },
+    {
+      "check": "Report_Contribution_Thai_Hoa.md link exists ../../experiments/s3/runs/Phuc_Hoang/H03-comparison/comparison.md",
+      "pass": true
+    },
+    {
+      "check": "Report_Contribution_Thai_Hoa.md link exists ../../experiments/s3/Cross_Reproduction_Notes_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "Report_Contribution_Thai_Hoa.md link exists ../../ai-audit/AI_Record_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "Report_Contribution_Thai_Hoa.md link exists Seminar_Report.md",
+      "pass": true
+    },
+    {
+      "check": "filled template slots Report_Contribution_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "exists materials\\s4\\Demo_Contribution_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "punctuation Demo_Contribution_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "balanced fences Demo_Contribution_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "Demo_Contribution_Thai_Hoa.md link exists Guide_Contribution_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "Demo_Contribution_Thai_Hoa.md link exists ../../experiments/s3/Baseline_Manifest.md",
+      "pass": true
+    },
+    {
+      "check": "Demo_Contribution_Thai_Hoa.md link exists ../../experiments/s3/runs/Thai_Hoa/D04-merge-2026-10-23-agent/README.md",
+      "pass": true
+    },
+    {
+      "check": "Demo_Contribution_Thai_Hoa.md link exists ../../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/README.md",
+      "pass": true
+    },
+    {
+      "check": "Demo_Contribution_Thai_Hoa.md link exists ../../experiments/s3/runs/Thai_Hoa/D04-merge-2026-10-23-agent/G02-Codex/PROVENANCE.md",
+      "pass": true
+    },
+    {
+      "check": "Demo_Contribution_Thai_Hoa.md link exists ../../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/sources/backend/test/ai/coupons.ai.js",
+      "pass": true
+    },
+    {
+      "check": "Demo_Contribution_Thai_Hoa.md link exists ../../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/comparison.json",
+      "pass": true
+    },
+    {
+      "check": "Demo_Contribution_Thai_Hoa.md link exists ../../docs/requirements/Seminar_Requirements_Consolidated.md",
+      "pass": true
+    },
+    {
+      "check": "Demo_Contribution_Thai_Hoa.md link exists Guide_Contribution_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "Demo_Contribution_Thai_Hoa.md link exists ../../experiments/s3/Experiment_Log_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "Demo_Contribution_Thai_Hoa.md link exists ../../ai-audit/AI_Record_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "filled template slots Demo_Contribution_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "exists materials\\s4\\Guide_Reproduction_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "punctuation Guide_Reproduction_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "balanced fences Guide_Reproduction_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "Guide_Reproduction_Thai_Hoa.md link exists Guide_Contribution_Phuc_Hoang.md",
+      "pass": true
+    },
+    {
+      "check": "Guide_Reproduction_Thai_Hoa.md link exists ../../experiments/s4/runs/Thai_Hoa/S4-D02-2026-10-23-agent/guide-tested.md",
+      "pass": true
+    },
+    {
+      "check": "Guide_Reproduction_Thai_Hoa.md link exists ../../experiments/s4/runs/Thai_Hoa/S4-D02-2026-10-23-agent/result.json",
+      "pass": true
+    },
+    {
+      "check": "Guide_Reproduction_Thai_Hoa.md link exists ../../experiments/s4/runs/Thai_Hoa/S4-D02-2026-10-23-agent/commands.json",
+      "pass": true
+    },
+    {
+      "check": "Guide_Reproduction_Thai_Hoa.md link exists ../../experiments/s4/runs/Thai_Hoa/S4-D02-2026-10-23-agent/install.log",
+      "pass": true
+    },
+    {
+      "check": "Guide_Reproduction_Thai_Hoa.md link exists ../../experiments/s4/runs/Thai_Hoa/S4-D02-2026-10-23-agent/integration.log",
+      "pass": true
+    },
+    {
+      "check": "Guide_Reproduction_Thai_Hoa.md link exists ../../experiments/s4/runs/Thai_Hoa/S4-D02-2026-10-23-agent/auth-tests.log",
+      "pass": true
+    },
+    {
+      "check": "Guide_Reproduction_Thai_Hoa.md link exists ../../experiments/s4/runs/Thai_Hoa/S4-D02-2026-10-23-agent/auth-dry.log",
+      "pass": true
+    },
+    {
+      "check": "Guide_Reproduction_Thai_Hoa.md link exists ../../experiments/s4/runs/Thai_Hoa/S4-D02-2026-10-23-agent/auth-mutation.html",
+      "pass": true
+    },
+    {
+      "check": "Guide_Reproduction_Thai_Hoa.md link exists ../../experiments/s4/runs/Thai_Hoa/S4-D02-2026-10-23-agent/auth-mutation.json",
+      "pass": true
+    },
+    {
+      "check": "Guide_Reproduction_Thai_Hoa.md link exists ../../experiments/s4/runs/Thai_Hoa/S4-D02-2026-10-23-agent/auth-mutation.log",
+      "pass": true
+    },
+    {
+      "check": "Guide_Reproduction_Thai_Hoa.md link exists ../../experiments/s4/runs/Thai_Hoa/S4-D02-2026-10-23-agent/manual-command.log",
+      "pass": true
+    },
+    {
+      "check": "Guide_Reproduction_Thai_Hoa.md link exists ../../experiments/s4/runs/Thai_Hoa/S4-D02-2026-10-23-agent/result.json",
+      "pass": true
+    },
+    {
+      "check": "Guide_Reproduction_Thai_Hoa.md link exists ../../ai-audit/AI_Record_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "filled template slots Guide_Reproduction_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "exists materials\\s4\\Seminar_Report.md",
+      "pass": true
+    },
+    {
+      "check": "punctuation Seminar_Report.md",
+      "pass": true
+    },
+    {
+      "check": "balanced fences Seminar_Report.md",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #chuong-1",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #chuong-1",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #chuong-2",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #chuong-2",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #chuong-3",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #chuong-3",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #chuong-4",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #chuong-4",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #chuong-5",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #chuong-5",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #chuong-6",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #chuong-6",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #chuong-7",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #chuong-7",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #chuong-8",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #chuong-8",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #tai-lieu-tham-khao",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #tai-lieu-tham-khao",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #phu-luc-a",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #phu-luc-a",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #phu-luc-b",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #phu-luc-b",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #phu-luc-c",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #phu-luc-c",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #phu-luc-d",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #phu-luc-d",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists ../../materials/s4/Report_Contribution_Phuc_Hoang.md",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists ../../experiments/s3/runs/Phuc_Hoang/H03-comparison/comparison.md",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists ../../experiments/s4/Overall_Comparison.md",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists ../../experiments/s4/runs/Thai_Hoa/S4-E02-2026-10-23-agent/README.md",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists ../../experiments/s3/runs/Phuc_Hoang/H03-comparison/comparison.md",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists ../../experiments/s4/Overall_Comparison.md",
+      "pass": true
+    },
+    {
+      "check": "filled template slots Seminar_Report.md",
+      "pass": true
+    },
+    {
+      "check": "exists materials\\s4\\Verification_Notes_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "punctuation Verification_Notes_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "balanced fences Verification_Notes_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "Verification_Notes_Thai_Hoa.md link exists Seminar_Report.md",
+      "pass": true
+    },
+    {
+      "check": "Verification_Notes_Thai_Hoa.md link exists ../../experiments/s4/Overall_Comparison.md",
+      "pass": true
+    },
+    {
+      "check": "Verification_Notes_Thai_Hoa.md link exists ../../experiments/s4/runs/Thai_Hoa/S4-E02-2026-10-23-agent/README.md",
+      "pass": true
+    },
+    {
+      "check": "Verification_Notes_Thai_Hoa.md link exists ../../experiments/s3/runs/Phuc_Hoang/H03-comparison/comparison.md",
+      "pass": true
+    },
+    {
+      "check": "Verification_Notes_Thai_Hoa.md link exists ../../experiments/s3/Experiment_Log_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "Verification_Notes_Thai_Hoa.md link exists ../../experiments/s4/runs/Thai_Hoa/S4-E02-2026-10-23-agent/summary.json",
+      "pass": true
+    },
+    {
+      "check": "Verification_Notes_Thai_Hoa.md link exists ../../experiments/s4/runs/Thai_Hoa/S4-E02-2026-10-23-agent/source-preservation.json",
+      "pass": true
+    },
+    {
+      "check": "Verification_Notes_Thai_Hoa.md link exists ../../experiments/s4/runs/Thai_Hoa/S4-E02-2026-10-23-agent/postflight-recovery.json",
+      "pass": true
+    },
+    {
+      "check": "Verification_Notes_Thai_Hoa.md link exists ../../experiments/s4/runs/Thai_Hoa/S4-E02-2026-10-23-agent/mutant-mapping.md",
+      "pass": true
+    },
+    {
+      "check": "Verification_Notes_Thai_Hoa.md link exists Guide_Reproduction_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "Verification_Notes_Thai_Hoa.md link exists Report_Contribution_Phuc_Hoang.md",
+      "pass": true
+    },
+    {
+      "check": "Verification_Notes_Thai_Hoa.md link exists Demo_Contribution_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "Verification_Notes_Thai_Hoa.md link exists ../../experiments/s4/runs/Thai_Hoa/S4-E02-2026-10-23-agent/assemble_report.py",
+      "pass": true
+    },
+    {
+      "check": "Verification_Notes_Thai_Hoa.md link exists ../../experiments/s4/runs/Thai_Hoa/S4-E02-2026-10-23-agent/document-validation.json",
+      "pass": true
+    },
+    {
+      "check": "Verification_Notes_Thai_Hoa.md link exists ../../experiments/s4/runs/Thai_Hoa/S4-E02-2026-10-23-agent/validate_docs.py",
+      "pass": true
+    },
+    {
+      "check": "Verification_Notes_Thai_Hoa.md link exists ../../ai-audit/AI_Record_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "filled template slots Verification_Notes_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "exists experiments\\s4\\Overall_Comparison.md",
+      "pass": true
+    },
+    {
+      "check": "punctuation Overall_Comparison.md",
+      "pass": true
+    },
+    {
+      "check": "balanced fences Overall_Comparison.md",
+      "pass": true
+    },
+    {
+      "check": "Overall_Comparison.md link exists ../s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/README.md",
+      "pass": true
+    },
+    {
+      "check": "Overall_Comparison.md link exists ../s3/runs/Phuc_Hoang/H03-comparison/comparison.md",
+      "pass": true
+    },
+    {
+      "check": "Overall_Comparison.md link exists ../s3/Cross_Reproduction_Notes_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "Overall_Comparison.md link exists ../../materials/s4/Report_Contribution_Phuc_Hoang.md",
+      "pass": true
+    },
+    {
+      "check": "Overall_Comparison.md link exists runs/Thai_Hoa/S4-E02-2026-10-23-agent/inputs.json",
+      "pass": true
+    },
+    {
+      "check": "Overall_Comparison.md link exists runs/Thai_Hoa/S4-E02-2026-10-23-agent/commands.json",
+      "pass": true
+    },
+    {
+      "check": "Overall_Comparison.md link exists runs/Thai_Hoa/S4-E02-2026-10-23-agent/source-preservation.json",
+      "pass": true
+    },
+    {
+      "check": "Overall_Comparison.md link exists runs/Thai_Hoa/S4-E02-2026-10-23-agent/postflight-recovery.json",
+      "pass": true
+    },
+    {
+      "check": "Overall_Comparison.md link exists runs/Thai_Hoa/S4-E02-2026-10-23-agent/summary.json",
+      "pass": true
+    },
+    {
+      "check": "Overall_Comparison.md link exists runs/Thai_Hoa/S4-E02-2026-10-23-agent/mutant-mapping.md",
+      "pass": true
+    },
+    {
+      "check": "Overall_Comparison.md link exists runs/Thai_Hoa/S4-E02-2026-10-23-agent/mutant-mapping.json",
+      "pass": true
+    },
+    {
+      "check": "Overall_Comparison.md link exists runs/Thai_Hoa/S4-E02-2026-10-23-agent/summarize.py",
+      "pass": true
+    },
+    {
+      "check": "Overall_Comparison.md link exists runs/Thai_Hoa/S4-E02-2026-10-23-agent/run.py",
+      "pass": true
+    },
+    {
+      "check": "Overall_Comparison.md link exists ../../materials/s4/Seminar_Report.md",
+      "pass": true
+    },
+    {
+      "check": "Overall_Comparison.md link exists ../../materials/s4/Verification_Notes_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "Overall_Comparison.md link exists ../s3/Baseline_Manifest.md",
+      "pass": true
+    },
+    {
+      "check": "Overall_Comparison.md link exists ../s3/Experiment_Log_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "Overall_Comparison.md link exists ../../ai-audit/AI_Record_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "filled template slots Overall_Comparison.md",
+      "pass": true
+    },
+    {
+      "check": "exists draft\\Seminar_Report.md",
+      "pass": true
+    },
+    {
+      "check": "punctuation Seminar_Report.md",
+      "pass": true
+    },
+    {
+      "check": "balanced fences Seminar_Report.md",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #chuong-1",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #chuong-1",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #chuong-2",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #chuong-2",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #chuong-3",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #chuong-3",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #chuong-4",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #chuong-4",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #chuong-5",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #chuong-5",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #chuong-6",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #chuong-6",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #chuong-7",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #chuong-7",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #chuong-8",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #chuong-8",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #tai-lieu-tham-khao",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #tai-lieu-tham-khao",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #phu-luc-a",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #phu-luc-a",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #phu-luc-b",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #phu-luc-b",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #phu-luc-c",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #phu-luc-c",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists #phu-luc-d",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md anchor exists #phu-luc-d",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists ../materials/s4/Report_Contribution_Phuc_Hoang.md",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists ../experiments/s3/runs/Phuc_Hoang/H03-comparison/comparison.md",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists ../experiments/s4/Overall_Comparison.md",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists ../experiments/s4/runs/Thai_Hoa/S4-E02-2026-10-23-agent/README.md",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists ../experiments/s3/runs/Phuc_Hoang/H03-comparison/comparison.md",
+      "pass": true
+    },
+    {
+      "check": "Seminar_Report.md link exists ../experiments/s4/Overall_Comparison.md",
+      "pass": true
+    },
+    {
+      "check": "filled template slots Seminar_Report.md",
+      "pass": true
+    },
+    {
+      "check": "exists experiments\\s4\\runs\\Thai_Hoa\\S4-E02-2026-10-23-agent\\README.md",
+      "pass": true
+    },
+    {
+      "check": "punctuation README.md",
+      "pass": true
+    },
+    {
+      "check": "balanced fences README.md",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists baseline-tests.json",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists baseline-mutation.html",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists baseline-mutation.json",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists baseline-mutation.log",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists manual-tests.json",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists manual-mutation.html",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists manual-mutation.json",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists manual-mutation.log",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists ai-tests.json",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists ai-mutation.html",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists ai-mutation.json",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists ai-mutation.log",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists inputs.json",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists commands.json",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists install.log",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists baseline-inputs.json",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists manual-inputs.json",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists ai-inputs.json",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists protected-before.json",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists baseline-protected-after.json",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists manual-protected-after.json",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists ai-protected-after.json",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists source-preservation.json",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists summary.json",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists mutant-mapping.md",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists mutant-mapping.json",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists run.py",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists summarize.py",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists build_comparison.py",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists assemble_report.py",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists ../../../Overall_Comparison.md",
+      "pass": true
+    },
+    {
+      "check": "filled template slots README.md",
+      "pass": true
+    },
+    {
+      "check": "exists experiments\\s4\\runs\\Thai_Hoa\\S4-D02-2026-10-23-agent\\README.md",
+      "pass": true
+    },
+    {
+      "check": "punctuation README.md",
+      "pass": true
+    },
+    {
+      "check": "balanced fences README.md",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists guide-tested.md",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists result.json",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists commands.json",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists install.log",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists integration.log",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists auth-tests.log",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists auth-dry.log",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists auth-mutation.html",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists auth-mutation.json",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists auth-mutation.log",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists manual-command.log",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists reproduce.py",
+      "pass": true
+    },
+    {
+      "check": "README.md link exists ../../../../../materials/s4/Guide_Reproduction_Thai_Hoa.md",
+      "pass": true
+    },
+    {
+      "check": "filled template slots README.md",
+      "pass": true
+    },
+    {
+      "check": "template unchanged Guide_Contribution_TEMPLATE.md",
+      "pass": true
+    },
+    {
+      "check": "template unchanged Report_Contribution_TEMPLATE.md",
+      "pass": true
+    },
+    {
+      "check": "template unchanged Demo_Contribution_TEMPLATE.md",
+      "pass": true
+    },
+    {
+      "check": "template unchanged Task_Notes_TEMPLATE.md",
+      "pass": true
+    },
+    {
+      "check": "baseline 395 raw mutants",
+      "pass": true
+    },
+    {
+      "check": "baseline summary matches raw states",
+      "pass": true
+    },
+    {
+      "check": "baseline score denominator",
+      "pass": true
+    },
+    {
+      "check": "baseline no pending mutants",
+      "pass": true
+    },
+    {
+      "check": "baseline passing tests",
+      "pass": true
+    },
+    {
+      "check": "baseline full mutation completed",
+      "pass": true
+    },
+    {
+      "check": "manual 395 raw mutants",
+      "pass": true
+    },
+    {
+      "check": "manual summary matches raw states",
+      "pass": true
+    },
+    {
+      "check": "manual score denominator",
+      "pass": true
+    },
+    {
+      "check": "manual no pending mutants",
+      "pass": true
+    },
+    {
+      "check": "manual passing tests",
+      "pass": true
+    },
+    {
+      "check": "manual full mutation completed",
+      "pass": true
+    },
+    {
+      "check": "ai 395 raw mutants",
+      "pass": true
+    },
+    {
+      "check": "ai summary matches raw states",
+      "pass": true
+    },
+    {
+      "check": "ai score denominator",
+      "pass": true
+    },
+    {
+      "check": "ai no pending mutants",
+      "pass": true
+    },
+    {
+      "check": "ai passing tests",
+      "pass": true
+    },
+    {
+      "check": "ai full mutation completed",
+      "pass": true
+    },
+    {
+      "check": "baseline protected runtime unchanged",
+      "pass": true
+    },
+    {
+      "check": "manual protected runtime unchanged",
+      "pass": true
+    },
+    {
+      "check": "ai protected runtime unchanged",
+      "pass": true
+    },
+    {
+      "check": "original SUT production and lock unchanged across external update",
+      "pass": true
+    },
+    {
+      "check": "no original SUT writes recorded for this Agent",
+      "pass": true
+    },
+    {
+      "check": "external package commit explicitly disclosed",
+      "pass": true
+    },
+    {
+      "check": "report/draft synchronized",
+      "pass": true
+    },
+    {
+      "check": "removed stale report claim chưa có dữ liệu manual/AI comparison",
+      "pass": true
+    },
+    {
+      "check": "removed stale report claim Chưa có bàn giao completed comparison",
+      "pass": true
+    },
+    {
+      "check": "removed stale report claim Auth manual/AI comparison chưa có",
+      "pass": true
+    },
+    {
+      "check": "removed stale report claim chưa có combined mutation run",
+      "pass": true
+    },
+    {
+      "check": "removed stale report claim gpt-sol-6-1",
+      "pass": true
+    },
+    {
+      "check": "Auth guide tested snapshot hash",
+      "pass": true
+    },
+    {
+      "check": "Auth guide runtime protected files unchanged",
+      "pass": true
+    },
+    {
+      "check": "Auth guide stopped at actual missing-script command",
+      "pass": true
+    },
+    {
+      "check": "Auth guide concrete missing-script evidence",
+      "pass": true
+    },
+    {
+      "check": "Auth guide raw mutation counts match documented result",
+      "pass": true
+    }
+  ]
+}

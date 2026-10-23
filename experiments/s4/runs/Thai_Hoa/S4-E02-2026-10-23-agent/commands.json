@@ -1,0 +1,279 @@
+[
+  {
+    "label": "clone",
+    "args": [
+      "git",
+      "clone",
+      "--shared",
+      "--branch",
+      "s3/D04-baseline",
+      "D:\\Workspace\\1. Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness",
+      "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-overall-f53dgj1v\\sut"
+    ],
+    "cwd": "D:\\Workspace\\1. Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar",
+    "startUTC": "2026-10-23T06:48:37.070005+00:00",
+    "endUTC": "2026-10-23T06:48:37.357422+00:00",
+    "exitCode": 0
+  },
+  {
+    "label": "install",
+    "args": [
+      "npm.cmd",
+      "ci",
+      "--no-audit",
+      "--no-fund"
+    ],
+    "cwd": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-overall-f53dgj1v\\sut\\backend",
+    "startUTC": "2026-10-23T06:48:37.771872+00:00",
+    "endUTC": "2026-10-23T06:49:09.303437+00:00",
+    "exitCode": 0
+  },
+  {
+    "gitRoot": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-overall-f53dgj1v\\sut",
+    "statusBeforeMutation": "",
+    "gitAction": [
+      "checkout",
+      "-b",
+      "codex/s4-overall-baseline",
+      "806ba19ee4e09eafe9b2696ccf117a2b1ab841ef"
+    ],
+    "atUTC": "2026-10-23T06:49:09.429255+00:00"
+  },
+  {
+    "gitRoot": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-overall-f53dgj1v\\sut",
+    "statusBeforeMutation": "?? backend/jest.overall.config.cjs\n?? backend/stryker.overall.config.json",
+    "gitAction": [
+      "add",
+      "--",
+      "backend/jest.overall.config.cjs",
+      "backend/stryker.overall.config.json"
+    ],
+    "atUTC": "2026-10-23T06:49:09.592368+00:00"
+  },
+  {
+    "gitRoot": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-overall-f53dgj1v\\sut",
+    "statusBeforeMutation": "A  backend/jest.overall.config.cjs\nA  backend/stryker.overall.config.json",
+    "gitAction": [
+      "-c",
+      "user.name=Codex AI Agent",
+      "-c",
+      "user.email=codex@local.invalid",
+      "commit",
+      "-m",
+      "S4 joint baseline experiment inputs"
+    ],
+    "atUTC": "2026-10-23T06:49:09.741960+00:00"
+  },
+  {
+    "label": "baseline-tests",
+    "args": [
+      "node",
+      "node_modules/jest/bin/jest.js",
+      "--config",
+      "jest.overall.config.cjs",
+      "--runInBand",
+      "--json",
+      "--outputFile",
+      "D:\\Workspace\\1. Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\T10_Mutation_Testing_and_Test_Effectiveness\\experiments\\s4\\runs\\Thai_Hoa\\S4-E02-2026-10-23-agent\\baseline-tests.json"
+    ],
+    "cwd": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-overall-f53dgj1v\\sut\\backend",
+    "startUTC": "2026-10-23T06:49:09.927592+00:00",
+    "endUTC": "2026-10-23T06:49:13.943820+00:00",
+    "exitCode": 0
+  },
+  {
+    "label": "baseline-dry",
+    "args": [
+      "node",
+      "node_modules/@stryker-mutator/core/bin/stryker.js",
+      "run",
+      "stryker.overall.config.json",
+      "--dryRunOnly"
+    ],
+    "cwd": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-overall-f53dgj1v\\sut\\backend",
+    "startUTC": "2026-10-23T06:49:13.944764+00:00",
+    "endUTC": "2026-10-23T06:49:18.574764+00:00",
+    "exitCode": 0
+  },
+  {
+    "label": "baseline-mutation",
+    "args": [
+      "node",
+      "node_modules/@stryker-mutator/core/bin/stryker.js",
+      "run",
+      "stryker.overall.config.json"
+    ],
+    "cwd": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-overall-f53dgj1v\\sut\\backend",
+    "startUTC": "2026-10-23T06:49:18.575663+00:00",
+    "endUTC": "2026-10-23T06:56:09.987912+00:00",
+    "exitCode": 0
+  },
+  {
+    "gitRoot": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-overall-f53dgj1v\\sut",
+    "statusBeforeMutation": "",
+    "gitAction": [
+      "checkout",
+      "-b",
+      "codex/s4-overall-manual",
+      "806ba19ee4e09eafe9b2696ccf117a2b1ab841ef"
+    ],
+    "atUTC": "2026-10-23T06:56:10.091697+00:00"
+  },
+  {
+    "gitRoot": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-overall-f53dgj1v\\sut",
+    "statusBeforeMutation": "?? backend/jest.overall.config.cjs\n?? backend/stryker.overall.config.json\n?? backend/test/auth.manual.test.js\n?? backend/test/helpers/coupons-scenarios.js\n?? backend/test/manual/",
+    "gitAction": [
+      "add",
+      "--",
+      "backend/test/manual/cart-orders.manual.js",
+      "backend/test/manual/coupons.manual.js",
+      "backend/test/helpers/coupons-scenarios.js",
+      "backend/test/auth.manual.test.js",
+      "backend/jest.overall.config.cjs",
+      "backend/stryker.overall.config.json"
+    ],
+    "atUTC": "2026-10-23T06:56:10.337705+00:00"
+  },
+  {
+    "gitRoot": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-overall-f53dgj1v\\sut",
+    "statusBeforeMutation": "A  backend/jest.overall.config.cjs\nA  backend/stryker.overall.config.json\nA  backend/test/auth.manual.test.js\nA  backend/test/helpers/coupons-scenarios.js\nA  backend/test/manual/cart-orders.manual.js\nA  backend/test/manual/coupons.manual.js",
+    "gitAction": [
+      "-c",
+      "user.name=Codex AI Agent",
+      "-c",
+      "user.email=codex@local.invalid",
+      "commit",
+      "-m",
+      "S4 joint manual experiment inputs"
+    ],
+    "atUTC": "2026-10-23T06:56:10.460859+00:00"
+  },
+  {
+    "label": "manual-tests",
+    "args": [
+      "node",
+      "node_modules/jest/bin/jest.js",
+      "--config",
+      "jest.overall.config.cjs",
+      "--runInBand",
+      "--json",
+      "--outputFile",
+      "D:\\Workspace\\1. Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\T10_Mutation_Testing_and_Test_Effectiveness\\experiments\\s4\\runs\\Thai_Hoa\\S4-E02-2026-10-23-agent\\manual-tests.json"
+    ],
+    "cwd": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-overall-f53dgj1v\\sut\\backend",
+    "startUTC": "2026-10-23T06:56:10.592836+00:00",
+    "endUTC": "2026-10-23T06:56:13.306595+00:00",
+    "exitCode": 0
+  },
+  {
+    "label": "manual-dry",
+    "args": [
+      "node",
+      "node_modules/@stryker-mutator/core/bin/stryker.js",
+      "run",
+      "stryker.overall.config.json",
+      "--dryRunOnly"
+    ],
+    "cwd": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-overall-f53dgj1v\\sut\\backend",
+    "startUTC": "2026-10-23T06:56:13.307327+00:00",
+    "endUTC": "2026-10-23T06:56:18.345252+00:00",
+    "exitCode": 0
+  },
+  {
+    "label": "manual-mutation",
+    "args": [
+      "node",
+      "node_modules/@stryker-mutator/core/bin/stryker.js",
+      "run",
+      "stryker.overall.config.json"
+    ],
+    "cwd": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-overall-f53dgj1v\\sut\\backend",
+    "startUTC": "2026-10-23T06:56:18.345824+00:00",
+    "endUTC": "2026-10-23T07:04:12.595682+00:00",
+    "exitCode": 0
+  },
+  {
+    "gitRoot": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-overall-f53dgj1v\\sut",
+    "statusBeforeMutation": "",
+    "gitAction": [
+      "checkout",
+      "-b",
+      "codex/s4-overall-ai",
+      "806ba19ee4e09eafe9b2696ccf117a2b1ab841ef"
+    ],
+    "atUTC": "2026-10-23T07:04:12.752907+00:00"
+  },
+  {
+    "gitRoot": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-overall-f53dgj1v\\sut",
+    "statusBeforeMutation": "?? backend/jest.overall.config.cjs\n?? backend/stryker.overall.config.json\n?? backend/test/ai/\n?? backend/test/auth.ai.test.js\n?? backend/test/helpers/coupons-scenarios.js",
+    "gitAction": [
+      "add",
+      "--",
+      "backend/test/ai/cart-orders.ai.js",
+      "backend/test/ai/coupons.ai.js",
+      "backend/test/helpers/coupons-scenarios.js",
+      "backend/test/auth.ai.test.js",
+      "backend/jest.overall.config.cjs",
+      "backend/stryker.overall.config.json"
+    ],
+    "atUTC": "2026-10-23T07:04:13.147276+00:00"
+  },
+  {
+    "gitRoot": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-overall-f53dgj1v\\sut",
+    "statusBeforeMutation": "A  backend/jest.overall.config.cjs\nA  backend/stryker.overall.config.json\nA  backend/test/ai/cart-orders.ai.js\nA  backend/test/ai/coupons.ai.js\nA  backend/test/auth.ai.test.js\nA  backend/test/helpers/coupons-scenarios.js",
+    "gitAction": [
+      "-c",
+      "user.name=Codex AI Agent",
+      "-c",
+      "user.email=codex@local.invalid",
+      "commit",
+      "-m",
+      "S4 joint ai experiment inputs"
+    ],
+    "atUTC": "2026-10-23T07:04:13.311701+00:00"
+  },
+  {
+    "label": "ai-tests",
+    "args": [
+      "node",
+      "node_modules/jest/bin/jest.js",
+      "--config",
+      "jest.overall.config.cjs",
+      "--runInBand",
+      "--json",
+      "--outputFile",
+      "D:\\Workspace\\1. Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\T10_Mutation_Testing_and_Test_Effectiveness\\experiments\\s4\\runs\\Thai_Hoa\\S4-E02-2026-10-23-agent\\ai-tests.json"
+    ],
+    "cwd": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-overall-f53dgj1v\\sut\\backend",
+    "startUTC": "2026-10-23T07:04:13.460143+00:00",
+    "endUTC": "2026-10-23T07:04:17.274812+00:00",
+    "exitCode": 0
+  },
+  {
+    "label": "ai-dry",
+    "args": [
+      "node",
+      "node_modules/@stryker-mutator/core/bin/stryker.js",
+      "run",
+      "stryker.overall.config.json",
+      "--dryRunOnly"
+    ],
+    "cwd": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-overall-f53dgj1v\\sut\\backend",
+    "startUTC": "2026-10-23T07:04:17.276679+00:00",
+    "endUTC": "2026-10-23T07:04:23.478734+00:00",
+    "exitCode": 0
+  },
+  {
+    "label": "ai-mutation",
+    "args": [
+      "node",
+      "node_modules/@stryker-mutator/core/bin/stryker.js",
+      "run",
+      "stryker.overall.config.json"
+    ],
+    "cwd": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-overall-f53dgj1v\\sut\\backend",
+    "startUTC": "2026-10-23T07:04:23.479502+00:00",
+    "endUTC": "2026-10-23T07:12:50.145277+00:00",
+    "exitCode": 0
+  }
+]

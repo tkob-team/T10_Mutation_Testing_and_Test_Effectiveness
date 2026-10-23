@@ -1,0 +1,1171 @@
+[32m13:56:19 (20964) INFO ProjectReader[39m Found 1 of 44 file(s) to be mutated.
+[32m13:56:19 (20964) INFO Instrumenter[39m Instrumented 1 source file(s) with 395 mutant(s)
+[32m13:56:19 (20964) INFO ConcurrencyTokenProvider[39m Creating 2 test runner process(es).
+[32m13:56:19 (20964) INFO DryRunExecutor[39m Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+[32m13:56:22 (20964) INFO DryRunExecutor[39m Initial test run succeeded. Ran 118 tests in 2 seconds (net 1494 ms, overhead 1367 ms).
+[33m13:56:22 (20964) WARN MutantTestPlanner[39m Detected 40 static mutants (10% of total) that are estimated to take 50% of the time running the tests!
+  You might want to enable "ignoreStatic" to ignore these static mutants for your next run. 
+  For more information about static mutants visit: https://stryker-mutator.io/docs/mutation-testing-elements/static-mutants
+  (disable "warnings.slow" to ignore this warning)
+[33m13:56:23 (20964) WARN ChildProcessProxy[39m Child process [pid 21960] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 21960] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 21960,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m13:56:24 (20964) WARN ChildProcessProxy[39m Child process [pid 11700] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 11700] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 11700,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m13:56:45 (20964) WARN ChildProcessProxy[39m Child process [pid 5816] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 5816] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 5816,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m13:56:46 (20964) WARN ChildProcessProxy[39m Child process [pid 17436] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 17436] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 17436,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m13:56:49 (20964) WARN ChildProcessProxy[39m Child process [pid 34212] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 34212] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 34212,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m13:56:50 (20964) WARN ChildProcessProxy[39m Child process [pid 24244] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 24244] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 24244,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m13:57:06 (20964) WARN ChildProcessProxy[39m Child process [pid 20912] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 20912] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 20912,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m13:57:07 (20964) WARN ChildProcessProxy[39m Child process [pid 22848] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 22848] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 22848,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m13:57:17 (20964) WARN ChildProcessProxy[39m Child process [pid 23332] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 23332] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 23332,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m13:57:18 (20964) WARN ChildProcessProxy[39m Child process [pid 2528] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 2528] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 2528,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m13:57:57 (20964) WARN ChildProcessProxy[39m Child process [pid 11980] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 11980] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 11980,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m13:57:58 (20964) WARN ChildProcessProxy[39m Child process [pid 9932] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 9932] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 9932,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m13:58:36 (20964) WARN ChildProcessProxy[39m Child process [pid 12432] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 12432] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 12432,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m13:58:37 (20964) WARN ChildProcessProxy[39m Child process [pid 3876] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 3876] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 3876,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m13:58:51 (20964) WARN ChildProcessProxy[39m Child process [pid 26296] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 26296] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 26296,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m13:58:52 (20964) WARN ChildProcessProxy[39m Child process [pid 29332] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 29332] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 29332,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m13:59:01 (20964) WARN ChildProcessProxy[39m Child process [pid 7420] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 7420] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 7420,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m13:59:02 (20964) WARN ChildProcessProxy[39m Child process [pid 9736] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 9736] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 9736,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m13:59:21 (20964) WARN ChildProcessProxy[39m Child process [pid 25780] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 25780] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 25780,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m13:59:23 (20964) WARN ChildProcessProxy[39m Child process [pid 2808] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 2808] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 2808,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m13:59:30 (20964) WARN ChildProcessProxy[39m Child process [pid 32484] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 32484] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 32484,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m13:59:32 (20964) WARN ChildProcessProxy[39m Child process [pid 11548] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 11548] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 11548,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m14:00:00 (20964) WARN ChildProcessProxy[39m Child process [pid 27356] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 27356] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 27356,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m14:00:01 (20964) WARN ChildProcessProxy[39m Child process [pid 14424] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 14424] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 14424,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m14:00:33 (20964) WARN ChildProcessProxy[39m Child process [pid 21344] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 21344] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 21344,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m14:00:34 (20964) WARN ChildProcessProxy[39m Child process [pid 11568] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 11568] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 11568,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m14:01:01 (20964) WARN ChildProcessProxy[39m Child process [pid 24168] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 24168] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 24168,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m14:01:03 (20964) WARN ChildProcessProxy[39m Child process [pid 13016] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 13016] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 13016,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m14:01:14 (20964) WARN ChildProcessProxy[39m Child process [pid 34408] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 34408] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 34408,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m14:01:15 (20964) WARN ChildProcessProxy[39m Child process [pid 15192] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 15192] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 15192,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m14:01:30 (20964) WARN ChildProcessProxy[39m Child process [pid 11064] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 11064] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 11064,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m14:01:31 (20964) WARN ChildProcessProxy[39m Child process [pid 3016] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 3016] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 3016,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m14:01:55 (20964) WARN ChildProcessProxy[39m Child process [pid 26232] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 26232] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 26232,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m14:01:56 (20964) WARN ChildProcessProxy[39m Child process [pid 7596] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 7596] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 7596,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m14:02:47 (20964) WARN ChildProcessProxy[39m Child process [pid 25680] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 25680] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 25680,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m14:02:49 (20964) WARN ChildProcessProxy[39m Child process [pid 12784] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 12784] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 12784,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m14:02:57 (20964) WARN ChildProcessProxy[39m Child process [pid 7348] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 7348] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 7348,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m14:02:58 (20964) WARN ChildProcessProxy[39m Child process [pid 29572] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 29572] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 29572,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m14:03:32 (20964) WARN ChildProcessProxy[39m Child process [pid 7688] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 7688] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 7688,
+  exitCode: 3221225477,
+  signal: null
+}
+[33m14:03:33 (20964) WARN ChildProcessProxy[39m Child process [pid 35148] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty. ChildProcessCrashedError: Child process [pid 35148] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.
+    at ChildProcess.handleUnexpectedExit (file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  innerError: undefined,
+  pid: 35148,
+  exitCode: 3221225477,
+  signal: null
+}
+
+All tests
+  manual
+    cart-orders.manual.js
+      ✓ Cart & Orders Manual Tests - Tấn Hiệp Survivor 3: PUT /api/orders/:id/cancel - Verify pending order is cancelled and DB updated to canceled [line 25] (killed 6)
+      ✓ Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 286:7 - GET /api/cart initializes empty cart array for new user [line 51] (killed 3)
+      ✓ Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 292:7 - POST /api/cart preserves existing cart items across multiple additions [line 71] (killed 8)
+      ✓ Cart & Orders Manual Tests - Tấn Hiệp POST /api/checkout - Verify successful order creation and DB pending status [line 111] (killed 2)
+      ✓ Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 326:47 - PUT /api/orders/:id/cancel returns error body when order not found [line 145] (killed 2)
+      ✓ Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 346:45 - GET /api/orders/:id returns error body when order not found [line 165] (killed 2)
+      ✓ Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 532:47 - PUT /api/admin/orders/:id/status returns error body when order not found [line 185] (killed 2)
+      ✓ Cart & Orders Manual Tests - Tấn Hiệp PUT /api/admin/orders/:id/status - Verify state transition rules and status update [line 204] (killed 5)
+    coupons.manual.js
+      ✓ MF-01 Admin input limit 3 is persisted as 3 (FR-17; mutants 111/113) [line 22] (killed 6)
+      ✓ MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113) [line 29] (killed 7)
+      ~ MF-03 usage 3 meets configured limit 3 and is refused (FR-09 C5) [line 37] (covered 85)
+      ~ MF-04 the requested code selects its own coupon and discount (FR-09 C1) [line 46] (covered 88)
+      ✓ MF-05 admin-created minimum 400000 controls total 399999 (FR-17, FR-09 C3) [line 50] (killed 1)
+      ~ MF-05 admin-created minimum 400000 controls total 400001 (FR-17, FR-09 C3) [line 50] (covered 93)
+      ~ MF-06 admin-created expiry controls quote at 2026-10-24T08:59:59.999Z (FR-17, FR-09 C2) [line 58] (covered 93)
+      ✓ MF-06 admin-created expiry controls quote at 2026-10-24T09:00:00.001Z (FR-17, FR-09 C2) [line 58] (killed 1)
+      ✓ MF-07 recording usage affects only that user and coupon (FR-09 C5) [line 62] (killed 1)
+  auth.manual.test.js
+    ✓ Profile keeps the role (API 2.2, README FR-04, SEC-06) AM-01 a profile update without `role` leaves the stored role unchanged [line 34] (killed 8)
+    ✓ Reset code is a random number (README FR-03 "ngẫu nhiên", SEC-07) AM-02 the reset code is made of digits only, with no sign (random source fixed at 0.5) [line 43] (killed 2)
+    ✓ Reset code is a random number (README FR-03 "ngẫu nhiên", SEC-07) AM-03 the reset code depends on the random source: 0.1 and 0.9 give different codes [line 49] (killed 1)
+    ✓ Error responses carry a message (README FR-02 "thông báo lỗi phù hợp"; others: convention) AM-04 the locked-account response has a non-empty error message (FR-02) [line 60] (killed 4)
+    ✓ Error responses carry a message (README FR-02 "thông báo lỗi phù hợp"; others: convention) AM-05 forgot-password for an unknown email has status 404 and a non-empty error (convention) [line 68] (killed 2)
+    ✓ Error responses carry a message (README FR-02 "thông báo lỗi phù hợp"; others: convention) AM-06 reset with a wrong token has status 400 and a non-empty error (convention) [line 74] (killed 2)
+    ✓ Error responses carry a message (README FR-02 "thông báo lỗi phù hợp"; others: convention) AM-07 a successful reset returns a non-empty message like the other auth endpoints (convention) [line 81] (killed 3)
+    ✓ Error responses carry a message (README FR-02 "thông báo lỗi phù hợp"; others: convention) AM-08 GET /me without a token has status 401 and a non-empty error (SEC-02, convention) [line 88] (killed 2)
+    ✓ Error responses carry a message (README FR-02 "thông báo lỗi phù hợp"; others: convention) AM-09 GET /me with an invalid token has a non-empty error (SEC-02, convention) [line 94] (killed 3)
+    ✓ A database failure is not reported as success (spec silent; convention: HTTP 500 with an error) AM-10 POST /register: a failed insert returns 500 with an error and no success message [line 102] (killed 2)
+    ✓ A database failure is not reported as success (spec silent; convention: HTTP 500 with an error) AM-11 POST /login: a failed lookup returns 500 with an error and no token [line 111] (killed 2)
+    ✓ A database failure is not reported as success (spec silent; convention: HTTP 500 with an error) AM-12 POST /forgot-password: a failed token save returns 500 with an error and no token [line 119] (killed 2)
+    ✓ A database failure is not reported as success (spec silent; convention: HTTP 500 with an error) AM-13 PUT /users/me: a failed update returns 500 with an error and no success message [line 127] (killed 2)
+  auth.spec.test.js
+    ✓ Registration (API 1.1) AU-R01 valid registration returns 200, the success message and a numeric id [line 18] (killed 1)
+    ✓ Registration (API 1.1) AU-R02 a registered user can log in with the same credentials (API 1.2) [line 26] (killed 4)
+    ~ Login and lock (API 1.2, README FR-02) AU-L01 correct credentials return 200, a JWT and the user [line 35] (covered 21)
+    ✓ Login and lock (API 1.2, README FR-02) AU-L02 the JWT carries the user id and role (FR-02, SEC-03) [line 43] (killed 1)
+    ✓ Login and lock (API 1.2, README FR-02) AU-L03 wrong password is refused with 401 (convention) and no token [line 50] (killed 1)
+    ✓ Login and lock (API 1.2, README FR-02) AU-L04 unknown email gets the same status and body as a wrong password (FR-02: no cause leaked) [line 56] (killed 4)
+    ✓ Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02) [line 63] (killed 6)
+    ~ Login and lock (API 1.2, README FR-02) AU-L06 the lock still holds 29 seconds after the third wrong attempt (FR-02: 30 s) [line 70] (covered 33)
+    ✓ Login and lock (API 1.2, README FR-02) AU-L07 a lock whose time has passed no longer blocks login [line 77] (killed 2)
+    ✓ Login and lock (API 1.2, README FR-02) AU-L08 a successful login resets the failure counter: wrong, ok, wrong, ok never locks (FR-02 "consecutive") [line 84] (killed 3)
+    ~ Login and lock (API 1.2, README FR-02) AU-L09 failures of one account do not lock another account [line 91] (covered 39)
+    ✓ Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P01 forgot-password for a registered email returns 200, the message and a reset token (API 1.3) [line 102] (killed 4)
+    ~ Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P02 forgot-password for an unknown email gives no token [line 110] (covered 9)
+    ✓ Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4) [line 116] (killed 4)
+    ✓ Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P04 reset with a wrong token is refused with 400 (convention) and the password is unchanged [line 124] (killed 1)
+    ~ Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P05 a token issued to one email cannot reset another account (FR-03) [line 132] (covered 46)
+    ~ Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P06 a token is invalidated after use (SEC-07): the second reset with it is refused [line 139] (covered 48)
+    ✓ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U01 GET /me without a token is refused with 401 (SEC-02) [line 153] (killed 1)
+    ~ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U02 GET /me with an invalid token is refused (SEC-02) [line 157] (covered 14)
+    ~ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U03 GET /me returns the profile of the token owner only (API 2.1) [line 162] (covered 39)
+    ✓ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2) [line 169] (killed 5)
+    ~ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U05 updating one user's profile leaves other users unchanged (FR-04: own profile only) [line 180] (covered 46)
+    ~ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U06 the email cannot be changed through PUT /me (FR-04) [line 187] (covered 51)
+    ~ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U07 PUT /me without a token is refused with 401 (SEC-02) [line 193] (covered 10)
+    ~ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U08 a valid phone is accepted (FR-04: starts with 0, 10-11 digits): 10 digits [line 197] (covered 51)
+    ~ Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U08 a valid phone is accepted (FR-04: starts with 0, 10-11 digits): 11 digits [line 197] (covered 51)
+  cart-orders.test.js
+    ✓ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-01 [invalid] get cart without token → 401 [line 21] (killed 6)
+    ✓ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-02 [normal] new user gets an empty cart [line 26] (killed 3)
+    ✓ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-03 [normal] add one item, then read the cart [line 32] (killed 1)
+    ~ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-04 [normal] add two different products [line 40] (covered 50)
+    ~ Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item [line 48] (covered 56)
+    ✓ Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-06 [invalid] checkout without token → 401 [line 58] (killed 1)
+    ~ Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-07 [normal] checkout with cart total and address [line 63] (covered 59)
+    ✓ Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order) [line 73] (killed 4)
+    ✓ Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id [line 85] (killed 6)
+    ✓ Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-10 [invalid] order detail of non-existent id → 404 [line 92] (killed 1)
+    ✓ Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users [line 98] (killed 4)
+    ✓ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200 [line 109] (killed 5)
+    ~ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order → 200 [line 109] (covered 73)
+    ✓ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400 [line 116] (killed 5)
+    ✓ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) → 400 [line 116] (killed 2)
+    ~ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-14 [invalid] cancel another user's order → 404 [line 123] (covered 60)
+    ~ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-15 [invalid] cancel a non-existent order → 404 [line 131] (covered 51)
+    ~ User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-16 [invalid] cancel without token → 401 [line 137] (covered 10)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200 [line 154] (killed 13)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200 [line 154] (killed 8)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200 [line 154] (killed 6)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → canceled → 200 [line 154] (killed 3)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → canceled → 200 [line 154] (killed 3)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400 [line 177] (killed 10)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400 [line 177] (killed 5)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] confirmed → delivered → 400 [line 177] (killed 1)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] confirmed → pending → 400 [line 177] (covered 97)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] shipping → pending → 400 [line 177] (killed 1)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] shipping → confirmed → 400 [line 177] (killed 1)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → pending → 400 [line 177] (covered 89)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → shipping → 400 [line 177] (covered 89)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → canceled → 400 [line 177] (covered 89)
+    ✓ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → pending → 400 [line 177] (killed 2)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → confirmed → 400 [line 177] (covered 92)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → unknown_status → 400 [line 177] (covered 97)
+    ~ Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-19 [invalid] change status of a non-existent order → 404 [line 184] (covered 22)
+  coupons-flow.test.js
+    ✓ CP-FLOW fixed quote -> checkout -> explicit usage recording -> limit enforced [line 7] (killed 1)
+  coupons.test.js
+    ✓ CP-01 fixed coupon: total 500001 gives final 450001 (FR-09) [line 18] (killed 10)
+    ~ CP-01 fixed coupon: total 700000 gives final 650000 (FR-09) [line 18] (covered 64)
+    ✓ CP-02 one currency unit below minimum is refused (FR-09 C3) [line 27] (killed 1)
+    ✓ CP-03 missing/empty code is refused: undefined [line 36] (killed 1)
+    ~ CP-03 missing/empty code is refused:  [line 36] (covered 27)
+    ~ CP-04 unknown code is unavailable (FR-09 C1) [line 42] (covered 34)
+    ~ CP-04 inactive code is unavailable (FR-09 C1) [line 42] (covered 34)
+    ~ CP-05 one millisecond before expiry is valid (FR-09 C2) [line 48] (covered 64)
+    ✓ CP-06 one millisecond after expiry is refused (FR-09 C2) [line 56] (killed 1)
+    ~ CP-07 usage 0 is below limit 2 (FR-09 C5) [line 64] (covered 64)
+    ~ CP-07 usage 1 is below limit 2 (FR-09 C5) [line 64] (covered 64)
+    ✓ CP-08 usage 2 meets/exceeds limit 2 (FR-09 C5) [line 72] (killed 4)
+    ~ CP-08 usage 3 meets/exceeds limit 2 (FR-09 C5) [line 72] (covered 53)
+    ~ CP-09 another user usage does not consume my per-user allowance [line 80] (covered 64)
+    ~ CP-10 another coupon usage does not consume this coupon allowance [line 85] (covered 64)
+    ✓ CP-11 quoting repeatedly does not consume allowance; recording usage does [line 94] (killed 2)
+    ~ CP-12 usage recording with absent JWT is refused (SEC-02; code is convention) [line 108] (covered 31)
+    ~ CP-12 usage recording with invalid JWT is refused (SEC-02; code is convention) [line 108] (covered 35)
+    ✓ CP-13 admin lists the current fixture; reset removed original coupons [line 116] (killed 1)
+    ~ CP-14 list without JWT is refused (API 5.2) [line 123] (covered 31)
+    ✓ CP-15 admin creates minimum=0 and max_uses=1; resulting coupon is usable [line 126] (killed 3)
+    ✓ CP-16 admin deletes only the addressed coupon (FR-17) [line 136] (killed 4)
+    ~ CP-17 create without JWT has no side effects (FR-12) [line 144] (covered 31)
+    ~ CP-17 delete without JWT has no side effects (FR-12) [line 144] (covered 31)
+    ✓ CP-18 duplicate code cannot create a second coupon (FR-17) [line 152] (killed 1)
+
+[NoCoverage] BlockStatement
+server.js:124:13
+-     if (role) {
+-       query += ", role = ?";
+-       params.push(role);
+-     }
++     if (role) {}
+
+[NoCoverage] StringLiteral
+server.js:125:14
+-       query += ", role = ?";
++       query += "";
+
+[NoCoverage] CallExpression
+server.js:126:5
+-       params.push(role);
++       ;
+
+[NoCoverage] ObjectLiteral
+server.js:305:44
+-         if (err) return res.status(500).json({ error: err.message });
++         if (err) return res.status(500).json({});
+
+[NoCoverage] BlockStatement
+server.js:398:46
+-                 if (coupon.type === "percent") {
+-                   discount_amount = Math.floor(
+-                     total_amount * (1 - coupon.discount_value),
+-                   );
+-                 } else {
++                 if (coupon.type === "percent") {} else {
+
+[NoCoverage] ArithmeticOperator
+server.js:400:19
+-                     total_amount * (1 - coupon.discount_value),
++                     total_amount / (1 - coupon.discount_value),
+
+[NoCoverage] ArithmeticOperator
+server.js:400:35
+-                     total_amount * (1 - coupon.discount_value),
++                     total_amount * (1 + coupon.discount_value),
+
+[NoCoverage] StringLiteral
+server.js:412:106
+-                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "" : coupon.discount_value.toLocaleString() + " ₫"}`,
+
+[NoCoverage] BlockStatement
+server.js:416:16
+-           } else {
+-             let discount_amount = 0;
+-             if (coupon.type === "percent") {
+-               discount_amount = Math.floor(
+-                 total_amount * (1 - coupon.discount_value),
+-               );
+-             } else {
+-               discount_amount = coupon.discount_value;
+-             }
+-             const final_amount = total_amount - discount_amount;
+-             return res.json({
+-               success: true,
+-               coupon_id: coupon.id,
+-               discount_amount,
+-               final_amount,
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+-             });
+-           }
++           } else {}
+
+[NoCoverage] ConditionalExpression
+server.js:418:15
+-             if (coupon.type === "percent") {
++             if (true) {
+
+[NoCoverage] ConditionalExpression
+server.js:418:15
+-             if (coupon.type === "percent") {
++             if (false) {
+
+[NoCoverage] EqualityOperator
+server.js:418:15
+-             if (coupon.type === "percent") {
++             if (coupon.type !== "percent") {
+
+[NoCoverage] StringLiteral
+server.js:418:31
+-             if (coupon.type === "percent") {
++             if (coupon.type === "") {
+
+[NoCoverage] BlockStatement
+server.js:418:42
+-             if (coupon.type === "percent") {
+-               discount_amount = Math.floor(
+-                 total_amount * (1 - coupon.discount_value),
+-               );
+-             } else {
++             if (coupon.type === "percent") {} else {
+
+[NoCoverage] ArithmeticOperator
+server.js:420:15
+-                 total_amount * (1 - coupon.discount_value),
++                 total_amount / (1 - coupon.discount_value),
+
+[NoCoverage] ArithmeticOperator
+server.js:420:31
+-                 total_amount * (1 - coupon.discount_value),
++                 total_amount * (1 + coupon.discount_value),
+
+[NoCoverage] BlockStatement
+server.js:422:18
+-             } else {
+-               discount_amount = coupon.discount_value;
+-             }
++             } else {}
+
+[NoCoverage] ArithmeticOperator
+server.js:425:32
+-             const final_amount = total_amount - discount_amount;
++             const final_amount = total_amount + discount_amount;
+
+[NoCoverage] ObjectLiteral
+server.js:426:27
+-             return res.json({
+-               success: true,
+-               coupon_id: coupon.id,
+-               discount_amount,
+-               final_amount,
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+-             });
++             return res.json({});
+
+[NoCoverage] BooleanLiteral
+server.js:427:22
+-               success: true,
++               success: false,
+
+[NoCoverage] StringLiteral
+server.js:431:22
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++               message: ``,
+
+[NoCoverage] ConditionalExpression
+server.js:431:50
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++               message: `Áp dụng thành công! Giảm ${true ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+
+[NoCoverage] ConditionalExpression
+server.js:431:50
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++               message: `Áp dụng thành công! Giảm ${false ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+
+[NoCoverage] EqualityOperator
+server.js:431:50
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++               message: `Áp dụng thành công! Giảm ${coupon.type !== "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+
+[NoCoverage] StringLiteral
+server.js:431:66
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++               message: `Áp dụng thành công! Giảm ${coupon.type === "" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+
+[NoCoverage] StringLiteral
+server.js:431:102
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "" : coupon.discount_value.toLocaleString() + " ₫"}`,
+
+[NoCoverage] StringLiteral
+server.js:431:149
+-               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++               message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + ""}`,
+
+[NoCoverage] ObjectLiteral
+server.js:450:44
+-         if (err) return res.status(500).json({ error: err.message });
++         if (err) return res.status(500).json({});
+
+[NoCoverage] ObjectLiteral
+server.js:485:42
+-       if (err) return res.status(500).json({ error: err.message });
++       if (err) return res.status(500).json({});
+
+[NoCoverage] BooleanLiteral
+server.js:551:29
+-           isValidTransition = true;
++           isValidTransition = false;
+
+[Survived] EqualityOperator
+server.js:40:30
+-       if (user.locked_until && new Date() < new Date(user.locked_until)) {
++       if (user.locked_until && new Date() <= new Date(user.locked_until)) {
+Tests ran:
+    Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)
+    Login and lock (API 1.2, README FR-02) AU-L06 the lock still holds 29 seconds after the third wrong attempt (FR-02: 30 s)
+    Login and lock (API 1.2, README FR-02) AU-L07 a lock whose time has passed no longer blocks login
+  and 2 more tests!
+
+
+[Survived] EqualityOperator
+server.js:56:11
+-         if (newAttempts >= 3) {
++         if (newAttempts > 3) {
+Tests ran:
+    Login and lock (API 1.2, README FR-02) AU-L03 wrong password is refused with 401 (convention) and no token
+    Login and lock (API 1.2, README FR-02) AU-L04 unknown email gets the same status and body as a wrong password (FR-02: no cause leaked)
+    Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)
+  and 6 more tests!
+
+
+[Survived] ConditionalExpression
+server.js:124:7
+-     if (role) {
++     if (false) {
+Tests ran:
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2)
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U05 updating one user's profile leaves other users unchanged (FR-04: own profile only)
+    Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U06 the email cannot be changed through PUT /me (FR-04)
+  and 4 more tests!
+
+
+[Survived] ConditionalExpression
+server.js:305:11
+-         if (err) return res.status(500).json({ error: err.message });
++         if (false) return res.status(500).json({ error: err.message });
+Tests ran:
+    Cart & Orders Manual Tests - Tấn Hiệp Survivor 3: PUT /api/orders/:id/cancel - Verify pending order is cancelled and DB updated to canceled
+    Cart & Orders Manual Tests - Tấn Hiệp POST /api/checkout - Verify successful order creation and DB pending status
+    Cart & Orders Manual Tests - Tấn Hiệp PUT /api/admin/orders/:id/status - Verify state transition rules and status update
+  and 27 more tests!
+
+
+[Survived] ArrayDeclaration
+server.js:314:5
+-       [req.user.id],
++       [],
+Tests ran:
+    Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order)
+
+
+[Survived] ObjectLiteral
+server.js:330:37
+-           return res.status(400).json({ error: "Cannot cancel this order." });
++           return res.status(400).json({});
+Tests ran:
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) → 400
+
+
+[Survived] StringLiteral
+server.js:330:46
+-           return res.status(400).json({ error: "Cannot cancel this order." });
++           return res.status(400).json({ error: "" });
+Tests ran:
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400
+    User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) → 400
+
+
+[Survived] ObjectLiteral
+server.js:367:33
+-       return res.status(400).json({ error: "Vui lòng nhập mã giảm giá" });
++       return res.status(400).json({});
+Tests ran:
+    CP-03 missing/empty code is refused: undefined
+    CP-03 missing/empty code is refused: 
+
+
+[Survived] StringLiteral
+server.js:367:42
+-       return res.status(400).json({ error: "Vui lòng nhập mã giảm giá" });
++       return res.status(400).json({ error: "" });
+Tests ran:
+    CP-03 missing/empty code is refused: undefined
+    CP-03 missing/empty code is refused: 
+
+
+[Survived] ObjectLiteral
+server.js:376:17
+-             .json({ error: "Mã giảm giá không tồn tại hoặc đã bị vô hiệu hóa" });
++             .json({});
+Tests ran:
+    CP-04 unknown code is unavailable (FR-09 C1)
+    CP-04 inactive code is unavailable (FR-09 C1)
+
+
+[Survived] StringLiteral
+server.js:376:26
+-             .json({ error: "Mã giảm giá không tồn tại hoặc đã bị vô hiệu hóa" });
++             .json({ error: "" });
+Tests ran:
+    CP-04 unknown code is unavailable (FR-09 C1)
+    CP-04 inactive code is unavailable (FR-09 C1)
+
+
+[Survived] EqualityOperator
+server.js:379:11
+-         if (total_amount > coupon.min_order_amount) {
++         if (total_amount >= coupon.min_order_amount) {
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-02 one currency unit below minimum is refused (FR-09 C3)
+  and 19 more tests!
+
+
+[Survived] EqualityOperator
+server.js:382:13
+-           if (expiry < now) {
++           if (expiry <= now) {
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 17 more tests!
+
+
+[Survived] ObjectLiteral
+server.js:383:39
+-             return res.status(400).json({ error: "Mã giảm giá đã hết hạn" });
++             return res.status(400).json({});
+Tests ran:
+    CP-06 one millisecond after expiry is refused (FR-09 C2)
+    MF-06 admin-created expiry controls quote at 2026-10-24T09:00:00.001Z (FR-17, FR-09 C2)
+
+
+[Survived] StringLiteral
+server.js:383:48
+-             return res.status(400).json({ error: "Mã giảm giá đã hết hạn" });
++             return res.status(400).json({ error: "" });
+Tests ran:
+    CP-06 one millisecond after expiry is refused (FR-09 C2)
+    MF-06 admin-created expiry controls quote at 2026-10-24T09:00:00.001Z (FR-17, FR-09 C2)
+
+
+[Survived] ConditionalExpression
+server.js:386:13
+-           if (user_id) {
++           if (true) {
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 15 more tests!
+
+
+[Survived] ObjectLiteral
+server.js:392:45
+-                   return res.status(400).json({
+-                     error: `Bạn đã sử dụng mã này ${coupon.max_uses_per_user} lần (đã đạt giới hạn)`,
+-                   });
++                   return res.status(400).json({});
+Tests ran:
+    CP-08 usage 2 meets/exceeds limit 2 (FR-09 C5)
+    CP-08 usage 3 meets/exceeds limit 2 (FR-09 C5)
+    CP-11 quoting repeatedly does not consume allowance; recording usage does
+  and 3 more tests!
+
+
+[Survived] StringLiteral
+server.js:393:26
+-                     error: `Bạn đã sử dụng mã này ${coupon.max_uses_per_user} lần (đã đạt giới hạn)`,
++                     error: ``,
+Tests ran:
+    CP-08 usage 2 meets/exceeds limit 2 (FR-09 C5)
+    CP-08 usage 3 meets/exceeds limit 2 (FR-09 C5)
+    CP-11 quoting repeatedly does not consume allowance; recording usage does
+  and 3 more tests!
+
+
+[Survived] ConditionalExpression
+server.js:398:19
+-                 if (coupon.type === "percent") {
++                 if (false) {
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 12 more tests!
+
+
+[Survived] StringLiteral
+server.js:398:35
+-                 if (coupon.type === "percent") {
++                 if (coupon.type === "") {
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 12 more tests!
+
+
+[Survived] StringLiteral
+server.js:412:26
+-                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++                   message: ``,
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 12 more tests!
+
+
+[Survived] ConditionalExpression
+server.js:412:54
+-                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++                   message: `Áp dụng thành công! Giảm ${true ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 12 more tests!
+
+
+[Survived] ConditionalExpression
+server.js:412:54
+-                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++                   message: `Áp dụng thành công! Giảm ${false ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 12 more tests!
+
+
+[Survived] EqualityOperator
+server.js:412:54
+-                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++                   message: `Áp dụng thành công! Giảm ${coupon.type !== "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 12 more tests!
+
+
+[Survived] StringLiteral
+server.js:412:70
+-                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++                   message: `Áp dụng thành công! Giảm ${coupon.type === "" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 12 more tests!
+
+
+[Survived] StringLiteral
+server.js:412:153
+-                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + " ₫"}`,
++                   message: `Áp dụng thành công! Giảm ${coupon.type === "percent" ? coupon.discount_value + "%" : coupon.discount_value.toLocaleString() + ""}`,
+Tests ran:
+    CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)
+    CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)
+    CP-05 one millisecond before expiry is valid (FR-09 C2)
+  and 12 more tests!
+
+
+[Survived] StringLiteral
+server.js:436:18
+-             error: `Đơn hàng chưa đủ giá trị tối thiểu ${coupon.min_order_amount.toLocaleString()} ₫ để áp dụng mã này`,
++             error: ``,
+Tests ran:
+    CP-02 one currency unit below minimum is refused (FR-09 C3)
+    MF-05 admin-created minimum 400000 controls total 399999 (FR-17, FR-09 C3)
+
+
+[Survived] ConditionalExpression
+server.js:450:11
+-         if (err) return res.status(500).json({ error: err.message });
++         if (false) return res.status(500).json({ error: err.message });
+Tests ran:
+    CP-11 quoting repeatedly does not consume allowance; recording usage does
+    MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)
+    MF-03 usage 3 meets configured limit 3 and is refused (FR-09 C5)
+  and 2 more tests!
+
+
+[Survived] StringLiteral
+server.js:451:27
+-         res.json({ message: "Usage recorded" });
++         res.json({ message: "" });
+Tests ran:
+    CP-11 quoting repeatedly does not consume allowance; recording usage does
+    MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)
+    MF-03 usage 3 meets configured limit 3 and is refused (FR-09 C5)
+  and 2 more tests!
+
+
+[Survived] ObjectLiteral
+server.js:451:16
+-         res.json({ message: "Usage recorded" });
++         res.json({});
+Tests ran:
+    CP-11 quoting repeatedly does not consume allowance; recording usage does
+    MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)
+    MF-03 usage 3 meets configured limit 3 and is refused (FR-09 C5)
+  and 2 more tests!
+
+
+[Survived] ObjectLiteral
+server.js:477:44
+-         if (err) return res.status(500).json({ error: err.message });
++         if (err) return res.status(500).json({});
+Tests ran:
+    CP-18 duplicate code cannot create a second coupon (FR-17)
+
+
+[Survived] StringLiteral
+server.js:478:27
+-         res.json({ message: "Coupon created", id: this.lastID });
++         res.json({ message: "", id: this.lastID });
+Tests ran:
+    CP-15 admin creates minimum=0 and max_uses=1; resulting coupon is usable
+    MF-01 Admin input limit 3 is persisted as 3 (FR-17; mutants 111/113)
+    MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)
+  and 7 more tests!
+
+
+[Survived] ConditionalExpression
+server.js:485:9
+-       if (err) return res.status(500).json({ error: err.message });
++       if (false) return res.status(500).json({ error: err.message });
+Tests ran:
+    CP-16 admin deletes only the addressed coupon (FR-17)
+
+
+[Survived] ObjectLiteral
+server.js:486:14
+-       res.json({ message: "Coupon deleted" });
++       res.json({});
+Tests ran:
+    CP-16 admin deletes only the addressed coupon (FR-17)
+
+
+[Survived] StringLiteral
+server.js:486:25
+-       res.json({ message: "Coupon deleted" });
++       res.json({ message: "" });
+Tests ran:
+    CP-16 admin deletes only the addressed coupon (FR-17)
+
+
+[Survived] StringLiteral
+server.js:512:5
+-       `
+-           SELECT orders.*, users.name as user_name 
+-           FROM orders 
+-           LEFT JOIN users ON orders.user_id = users.id
+-           ORDER BY orders.id DESC
+-       `,
++       ``,
+Tests ran:
+    Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users
+
+
+[Survived] ArrayDeclaration
+server.js:518:5
+-       [],
++       ["Stryker was here"],
+Tests ran:
+    Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users
+
+
+[Survived] ConditionalExpression
+server.js:550:11
+-         if (currentStatus === "canceled" && status === "delivered")
++         if (false)
+Tests ran:
+    Cart & Orders Manual Tests - Tấn Hiệp PUT /api/admin/orders/:id/status - Verify state transition rules and status update
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200
+  and 15 more tests!
+
+
+[Survived] StringLiteral
+server.js:550:29
+-         if (currentStatus === "canceled" && status === "delivered")
++         if (currentStatus === "" && status === "delivered")
+Tests ran:
+    Cart & Orders Manual Tests - Tấn Hiệp PUT /api/admin/orders/:id/status - Verify state transition rules and status update
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200
+  and 15 more tests!
+
+
+[Survived] StringLiteral
+server.js:550:54
+-         if (currentStatus === "canceled" && status === "delivered")
++         if (currentStatus === "canceled" && status === "")
+Tests ran:
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → pending → 400
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → confirmed → 400
+
+
+[Survived] ObjectLiteral
+server.js:554:37
+-           return res.status(400).json({
+-             error: `Invalid state transition from ${currentStatus} to ${status}`,
+-           });
++           return res.status(400).json({});
+Tests ran:
+    Cart & Orders Manual Tests - Tấn Hiệp PUT /api/admin/orders/:id/status - Verify state transition rules and status update
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400
+  and 10 more tests!
+
+
+[Survived] StringLiteral
+server.js:555:18
+-             error: `Invalid state transition from ${currentStatus} to ${status}`,
++             error: ``,
+Tests ran:
+    Cart & Orders Manual Tests - Tấn Hiệp PUT /api/admin/orders/:id/status - Verify state transition rules and status update
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400
+    Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400
+  and 10 more tests!
+
+
+[Survived] StringLiteral
+server.js:52:27
+-         res.json({ message: "Login successful", token, user });
++         res.json({ message: "", token, user });
+Ran all tests for this mutant.
+
+Ran 17.22 tests per mutant on average.
+-----------|------------------|----------|-----------|------------|----------|----------|
+           | % Mutation score |          |           |            |          |          |
+File       |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+All files  |  80.53 |   87.54 |      238 |        64 |         43 |       30 |       20 |
+ server.js |  80.53 |   87.54 |      238 |        64 |         43 |       30 |       20 |
+-----------|--------|---------|----------|-----------|------------|----------|----------|
+[32m14:04:12 (20964) INFO JsonReporter[39m Your report can be found at: file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/reports/overall/mutation.json
+[32m14:04:12 (20964) INFO HtmlReporter[39m Your report can be found at: file:///C:/Users/tdtho/AppData/Local/Temp/t10-s4-overall-f53dgj1v/sut/backend/reports/overall/mutation.html
+[32m14:04:12 (20964) INFO MutationTestExecutor[39m Done in 7 minutes and 53 seconds.

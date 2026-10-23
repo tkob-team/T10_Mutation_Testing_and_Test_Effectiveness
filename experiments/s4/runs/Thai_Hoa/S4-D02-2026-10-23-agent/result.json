@@ -1,0 +1,30 @@
+{
+  "guide": "materials/s4/Guide_Contribution_Phuc_Hoang.md",
+  "guideSHA256": "493f9d46ccafd56dfb014d233bb5fbeafc6c7fcbf072226ca6e1ecacecc9be12",
+  "docsCommit": "4c5db59c16e90ab291ff7cdfda005cf7411806ba",
+  "executor": "OpenAI Codex AI Agent",
+  "runtime": "C:\\Users\\tdtho\\AppData\\Local\\Temp\\t10-s4-auth-guide-xrqp_k7s\\eshop-sut",
+  "adaptation": "npm.cmd/npx.cmd for Windows shell; local shared clone preserves the same frozen source; no supplementary setup added",
+  "frozenCommit": "806ba19ee4e09eafe9b2696ccf117a2b1ab841ef",
+  "statusBeforeCheckout": "",
+  "versions": {
+    "node": "v24.16.0",
+    "npm": "12.0.2"
+  },
+  "protectedBefore": {
+    "server.js": "e2263811a1690a63a7dbb4446c3fd33fb87f50d073d9f8cdfab7083a52f5e8ed",
+    "database.js": "50012f35c2cf0776dd837482d76adf701f0ee40cdcb9d80143278fccde034717",
+    "database.sqlite": "c63f00544180ba1fbb1427a9b9dd3f1784842698809972f33ce90482e7420ba6",
+    "package.json": "490d9efe41331670d7f5faa191226b48bb5fc0a9a3bb2e52dc19718131cd6238",
+    "package-lock.json": "bbe5845d320b318bb2fd9d4f4c2826d6ca5c69fa417766e45886a41dd5f9da09"
+  },
+  "protectedAfter": {
+    "server.js": "e2263811a1690a63a7dbb4446c3fd33fb87f50d073d9f8cdfab7083a52f5e8ed",
+    "database.js": "50012f35c2cf0776dd837482d76adf701f0ee40cdcb9d80143278fccde034717",
+    "database.sqlite": "c63f00544180ba1fbb1427a9b9dd3f1784842698809972f33ce90482e7420ba6",
+    "package.json": "490d9efe41331670d7f5faa191226b48bb5fc0a9a3bb2e52dc19718131cd6238",
+    "package-lock.json": "bbe5845d320b318bb2fd9d4f4c2826d6ca5c69fa417766e45886a41dd5f9da09"
+  },
+  "stoppedAt": "Advanced Usage 2: npm run test:auth:manual; missing script after instructed frozen checkout",
+  "status": "Blocked at manual setup; baseline portion technically reproduced; member self-run remains Pending"
+}

@@ -185,6 +185,21 @@ Personal learning/run walkthrough is outside both team repos by explicit user re
 - **Technical boundary:** Existing shared formulas were preserved and their caches reconciled independently; the rendering engine required a preview-only workaround for its blank-score handling. Saved workbook formulas were not changed.
 - **Review:** Human confirmation supplied for source-priority choice only; final contribution percentages, hours, grading and signatures are not inferred.
 
+### Artifact TH-S4-DOCS-20261023
+
+- **Stage / Tasks:** S4-A02/B02/C02/D02/E02/F02.
+- **Authorization:** Hòa supplied the six task contracts and approved the proposed scope. Final execution instruction, verbatim: `Viết đi`.
+- **Tool / executor:** OpenAI Codex AI Agent in this chat; exact serving model revision is not exposed. No subagents or computer use.
+- **Inputs:** Existing scientific report draft; S3 notes/logs; frozen SUT 806ba19; Cart manual b77f5d6 and AI f4696c6; retained extended Coupons source snapshots; Auth F03 manual and G03 reviewed candidate. No fresh assertion generation is claimed.
+- **Outputs:** Guide_Contribution_Thai_Hoa.md, Report_Contribution_Thai_Hoa.md, Demo_Contribution_Thai_Hoa.md, Guide_Reproduction_Thai_Hoa.md, Verification_Notes_Thai_Hoa.md and Seminar_Report.md in materials/s4; experiments/s4/Overall_Comparison.md; retained joint run inputs, scripts, HTML/JSON/logs and signature mappings. Draft Seminar_Report.md is synchronized with the stage handoff copy.
+- **Execution evidence:** [Joint S4 run](../experiments/s4/runs/Thai_Hoa/S4-E02-2026-10-23-agent/README.md), [commands and actual exit codes](../experiments/s4/runs/Thai_Hoa/S4-E02-2026-10-23-agent/commands.json), [computed results](../experiments/s4/runs/Thai_Hoa/S4-E02-2026-10-23-agent/summary.json). Three local experiment branches are created in a disposable clone, not in the original SUT checkout.
+- **Review / corrections:** Updated stale Auth and missing-comparison claims in the report; removed an unsupported exact model-revision claim; kept domain and joint results separate; distinguished Timeout/native SQLite RuntimeError from assertion kills. Technical checks are recorded in [Verification Notes](../materials/s4/Verification_Notes_Thai_Hoa.md) and [document validation](../experiments/s4/runs/Thai_Hoa/S4-E02-2026-10-23-agent/document-validation.json).
+- **Sources:** Official Stryker metrics/configuration/Jest runner pages checked on 2026-10-23; inherited research references remain attributed to their retained source notes. Templates and instructor AI forms are preserved.
+- **Guide reproduction:** S4-A03/B03 arrived in external docs merge 4c5db59 during this session. Agent followed the delivered Auth guide through installation, 88 integration tests, 26 Auth tests, dry run and a full 125-mutant baseline; the next advanced command failed with Missing script: test:auth:manual. [Actual logs and tested guide snapshot](../experiments/s4/runs/Thai_Hoa/S4-D02-2026-10-23-agent/README.md) preserve the blocker without supplementary setup.
+- **Source postflight:** Original SUT received external commit 4b28756 fixing the package.json comma while experiments ran. The first runner exited at its final source-preservation assertion after all three mutation commands succeeded. Recovery documents this change; disposable runtime protected files stayed unchanged. No original SUT writes by this Agent are claimed.
+- **Boundaries:** Agent writing/execution does not replace Hòa's personal guide reproduction, domain-author acceptance, human AI verdict, narration, video recording, reflection or signature. Advanced Auth guide setup needs an author fix/retest. No teammate feedback receipt, actual media or tracker synchronization is invented. A separate Auth reproduction overlapped the final portion of the joint AI run; machine load was not controlled.
+- **Member verdict / acceptance:** Pending. This artifact is not added to the audited totals until a member supplies a verdict.
+
 ## 3. Accuracy Summary & Audit Conclusion
 
 | Metric | Count | Percentage |
