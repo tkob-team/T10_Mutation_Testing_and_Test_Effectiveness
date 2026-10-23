@@ -73,14 +73,14 @@ Công việc đã lưu hỗ trợ một phân biệt quan trọng giữa survivi
 
 ## Chữ ký
 
-| Họ tên sinh viên (in hoa): |                                        |
-|----------------------------|----------------------------------------|
-| MSSV:                      |                                        |
-| Lớp / Khoá:                |                                        |
-| Môn học:                   | CS423 / CSC13003 – Kiểm chứng Phần mềm |
-| Giảng viên:                |                                        |
-| Ngày:                      |                                        |
-| Chữ ký:                    |                                        |
+| Họ tên sinh viên (in hoa): | NGUYỄN PHÚC HOÀNG |
+| :---- | :---- |
+| **MSSV:** | 23120264 |
+| **Lớp / Khoá:** | Software Testing \- CQ2023/3 |
+| **Môn học:** | CS423 / CSC13003 - Kiểm chứng Phần mềm |
+| **Giảng viên:** | Dr. Lam Quang Vu / Dr. Tran Duy Hoang / MSc. Tran Thi Bich Hanh / MSc. Truong Phuoc Loc / MSc. Ho Tuan Thanh |
+| **Ngày:** | 23/10/2026 |
+| **Chữ ký:** | ![](signature_Hoang.jpg) |
 
 ## Tham khảo
 
