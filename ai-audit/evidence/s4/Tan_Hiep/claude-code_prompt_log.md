@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 11:49 (Asia/Saigon).
+Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 11:52 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 7 lượt prompt; theo model: claude-opus-5-5 7 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 8 lượt prompt; theo model: claude-opus-5-5 8 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-23 02:41 — model: claude-opus-5-5 — session 4a560803
 
@@ -304,4 +304,38 @@ Tấn Hiệp đã xóa mục `## Cross Reproduction` ở commit `5d5bf16` (11:2x
 ### Hành động
 
 - Write: C:\Users\[user]\AppData\Local\Temp\claude\D--HK7-Testing-Seminars-Repo\ad369217-4378-464e-a313-7cbcb8377eba\scratchpad\upd_report.py
+
+## #8 — 2026-10-23 11:51 — model: claude-opus-5-5 — session ad369217
+
+### Prompt
+
+```text
+Q2: chọn (a). Khôi phục mục "## Cross Reproduction" (heading + bảng 2 dòng I01) đúng như trước commit 5d5bf16 (lấy từ 5d5bf16^), đặt lại trước "### S3-I01 — Three shared mutant cases" để mục ### nằm dưới nó. Thêm vào dòng I01 của Tấn Hiệp nguồn lệnh: "lệnh nguyên văn trong I01-cc-REPORT.md (nguồn: phiên thảo luận claude.ai 2026-10-23 10:52, Tấn Hiệp xác nhận; khớp reflog)". Không đổi nội dung mục ###. Header dòng 6 và 8: bỏ "lệnh nguyên văn I01-1/2/3 Pending". Kiểm bằng git diff 5d5bf16^ HEAD -- Experiment_Log_Tan_Hiep.md rằng ngoài các thay đổi có chủ đích không còn dòng nào bị mất. Commit, không push. Khối báo cáo.
+```
+
+### Output
+
+```text
+Diff vs `5d5bf16^`: mọi dòng mất đều có chủ đích. Kiểm mục ### không đổi so với HEAD, rồi commit.
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: S3-I01, Q2 chọn (a) — Done. Không chạy run nào.
+- Kết quả: đã khôi phục mục `## Cross Reproduction` (heading và 2 dòng I01) đúng như ở `5d5bf16^`, đặt ở dòng 236, ngay trước `### S3-I01 — Three shared mutant cases` (dòng 243).
+- Dòng I01 của Tấn Hiệp đã thêm câu nguồn lệnh đúng như yêu cầu.
+- Header dòng 6 và 8: đã bỏ cụm "lệnh nguyên văn I01-1/2/3 Pending".
+- Mục `### S3-I01` giữ nguyên, đã so với HEAD trước khi sửa: không đổi chữ nào.
+- Kiểm `git diff 5d5bf16^ HEAD`: các dòng mất đều có chủ đích:
+  - 2 dòng header vừa sửa
+  - dòng D01 Not run và dòng `[S3-E01]` Pending, đã thay bằng D01-1/2/3 và E01-1 ở commit `87d6b08`
+  - dòng I01 của Tấn Hiệp, giờ là bản có thêm câu nguồn
+  - 4 dòng trong mục ### mà chính Tấn Hiệp đã sửa ở `5d5bf16`
+- Evidence: `experiments/s3/Experiment_Log_Tan_Hiep.md`; lệnh nguyên văn nằm trong `experiments/s3/runs/Tan_Hiep/I01-cc-REPORT.md`
+- Commit seminar `main`: `5b96419` chore(ai-log), `95b7d7e` docs(S3-I01), chưa push. Tổng cộng 4 commit chưa push (thêm `2259793`, `98407b9` từ lượt trước).
+- Bất thường mới: Không
+- Cần quyết định: Không
+```
+
+### Hành động
+
+- Write: C:\Users\[user]\AppData\Local\Temp\claude\D--HK7-Testing-Seminars-Repo\ad369217-4378-464e-a313-7cbcb8377eba\scratchpad\restore_cr.py
 
