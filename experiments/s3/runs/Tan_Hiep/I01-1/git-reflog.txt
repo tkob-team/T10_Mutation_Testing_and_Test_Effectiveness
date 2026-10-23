@@ -1,0 +1,20 @@
+f4696c6 HEAD@{2026-10-23 10:56:05 +0700}: checkout: moving from 806ba19ee4e09eafe9b2696ccf117a2b1ab841ef to s3/G01-ai
+806ba19 HEAD@{2026-10-23 10:42:08 +0700}: checkout: moving from s3/G01-ai to 806ba19
+f4696c6 HEAD@{2026-10-23 10:29:21 +0700}: checkout: moving from 806ba19ee4e09eafe9b2696ccf117a2b1ab841ef to s3/G01-ai
+806ba19 HEAD@{2026-10-23 10:26:57 +0700}: checkout: moving from s3/G01-ai to 806ba19
+f4696c6 HEAD@{2026-10-23 02:05:03 +0700}: commit: test(S3-G01): mark AI assertions as reviewed and fix provenance header
+143a016 HEAD@{2026-10-23 01:59:42 +0700}: commit: test(S3-G01): add raw AI assertions for 6 Cart & Orders survivors
+78745e2 HEAD@{2026-10-23 01:56:51 +0700}: checkout: moving from s3/F01-manual to s3/G01-ai
+b77f5d6 HEAD@{2026-10-23 01:31:12 +0700}: commit: docs(S3-F01): fix spec reference and oracle note in manual suite
+0eadd5f HEAD@{2026-10-23 01:28:38 +0700}: commit: test(S3-F01): restore cancel test and fix spec references in manual suite
+3a771c2 HEAD@{2026-10-23 01:20:14 +0700}: commit: test(S3-F01): add manual assertions for cart and order survivors, drop coupon test
+0236267 HEAD@{2026-10-22 21:35:25 +0700}: commit: test(S3-F01): add manual assertions for selected Cart & Orders survivors
+c0954de HEAD@{2026-10-22 21:13:38 +0700}: checkout: moving from s3/G01-ai to s3/F01-manual
+78745e2 HEAD@{2026-10-22 21:09:30 +0700}: commit: test(S3-G01): add AI-branch Jest and Stryker config
+8d60e9b HEAD@{2026-10-22 21:08:14 +0700}: checkout: moving from s3/F01-manual to s3/G01-ai
+c0954de HEAD@{2026-10-22 21:08:14 +0700}: commit: test(S3-F01): add manual-branch Jest and Stryker config
+8d60e9b HEAD@{2026-10-22 21:07:27 +0700}: checkout: moving from s3/D01-cart-orders to s3/F01-manual
+8d60e9b HEAD@{2026-10-22 20:15:44 +0700}: commit: test(S3-D01): add Cart & Orders baseline and defect tests with isolated harness
+92bbf22 HEAD@{2026-10-22 19:51:13 +0700}: checkout: moving from main to s3/D01-cart-orders
+92bbf22 HEAD@{2026-10-16 20:22:48 +0700}: commit: chore(S3-C01): add root .gitignore for node_modules, Stryker and coverage outputs
+85af3ba HEAD@{2026-10-16 19:12:37 +0700}: clone: from https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness.git
