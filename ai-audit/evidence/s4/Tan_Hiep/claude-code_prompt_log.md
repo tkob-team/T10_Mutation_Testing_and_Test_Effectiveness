@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 3058f82a-a124-4cce-853c-9bab797d6360.jsonl, 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 15:59 (Asia/Saigon).
+Nguồn: 3058f82a-a124-4cce-853c-9bab797d6360.jsonl, 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 16:10 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 29 lượt prompt; theo model: claude-opus-5-5 29 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 31 lượt prompt; theo model: claude-opus-5-5 31 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-23 02:41 — model: claude-opus-5-5 — session 4a560803
 
@@ -1211,6 +1211,42 @@ Kiểm lại: ở Failure Mode 6, tôi lỡ thêm một câu "Cách tránh" mà 
 Code block giữ nguyên văn 100%, link không thiếu. Kiểm thêm: mọi số liệu trong 3 nguồn đều có mặt trong bản ghép.
 
 Số liệu đủ (chỉ thiếu số thứ tự heading của Tấn Hiệp, vì heading được đánh lại). Thêm khối AI Record rồi commit.
+
+### Báo cáo cho phiên thảo luận
+- **Nhiệm vụ:** S4-E01 — Done (bản ghép chờ Tấn Hiệp review). Đã commit trên `main` seminar, chưa push:
+  - `4b58b16`: `materials/s4/User_Guide.md`, 733 dòng, thay bản copy cũ.
+  - `c26e4c9`: khối AI-S4-E01-01 trong AI Record, verdict "ĐỀ XUẤT: INCOMPLETE".
+- **Trước khi làm:** `git pull --rebase` bị kẹt vì transcript còn khóa `console.log`. Đã gỡ sau khi bạn `Stop-Transcript`, rebase xong, không có conflict nội dung.
+- **Số section:**
+  - Ghi chú bản ghép đầu file, gồm "Cần quyết định" và "Việc tác giả cần sửa".
+  - 7 mục chuẩn:
+    - Introduction.
+    - Installation: phần chung + 3 Setup riêng.
+    - First Test: 3 domain.
+    - Advanced Usage: 3 domain + Diễn giải kết quả.
+    - Troubleshooting: gộp 27 dòng nguồn còn 22.
+    - Failure Modes: gộp 15 mục còn 8.
+    - References.
+- **Kiểm tự động:**
+  - 31/31 code block của 3 nguồn giữ nguyên văn.
+  - Mọi số liệu của Hòa và Phúc đều có trong bản ghép; của Tấn Hiệp chỉ khác số thứ tự heading.
+  - Mọi link tương đối đều phân giải được.
+- **Mâu thuẫn chưa dung hòa (ghi trong "Cần quyết định"):**
+  1. Base repo khác nhau: Cart dùng workshop `6d2e790` (7 mutants, tự cài Stryker); Coupons và Auth dùng SUT `806ba19` (Stryker có sẵn, mutate cả domain).
+  2. Cùng một tỷ lệ Killed / valid nhưng Auth gọi là "Assertion kill", Coupons gọi là "Killed / valid".
+- **Mâu thuẫn đã tự dung hòa:** phiên bản Node.
+  - Workshop yêu cầu `engines` `>=24 <25`; Phúc ghi "Node 22 or later", đã chạy v26.
+  - Bản ghép dùng Node 24.x vì cả 3 domain đều đã chạy trên 24.x ở Windows.
+  - Câu gốc của Phúc vẫn giữ trong Setup riêng của Auth.
+- **Chỗ dịch thấy mơ hồ:**
+  - Cột "Evidence boundary" của Hòa không có nhãn Observed/Suggested. Tôi ghi "chưa gắn nhãn; evidence: …" chứ không tự gán nhãn.
+  - "Prior Cart handoff" và "toy example" của Hòa không rõ chỉ cái nào.
+  - Một số cụm giữ tiếng Anh: "correcting mutants", "manual-analysis/Agent profile", "equivalent candidate within that scope", "real gap / stubborn / masked by a defect".
+  - Tham chiếu "see Failure Mode 1" trong bảng Stryker option của Phúc thực ra chỉ tới mục disable comment (mục 2 của Phúc). Tôi đổi thành "Failure Modes mục 4" theo cách đánh số mới.
+- **Lỗi AI:** tôi lỡ thêm một câu "Cách tránh" không có trong nguồn ở Failure Mode 6; đã tự bỏ trước khi commit và ghi vào AI Record.
+- **Cần quyết định:**
+  - E01-Q1: giữ 2 repo, hay chuyển Cart sang `806ba19`, hay chuyển Coupons/Auth sang workshop?
+  - E01-Q2: thống nhất dùng tên "Assertion kill" hay "Killed / valid"?
 ```
 
 ### Hành động
@@ -1218,4 +1254,100 @@ Số liệu đủ (chỉ thiếu số thứ tự heading của Tấn Hiệp, vì
 - Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\User_Guide.md
 - Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\User_Guide.md
 - Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\ai-audit\AI_Record_Tan_Hiep.md
+
+## #30 — 2026-10-23 16:04 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+<pasted_content id="cce9">
+Hòa (leader) cho phép hoàn thiện materials/s4/User_Guide.md. Xử lý từng mục trong "Việc tác giả cần sửa" ngay trong User_Guide.md, CHỈ dựa trên evidence có trong repo (experiments/s4/runs/D01-1-cc, D01-1, Guide_Reproduction_*, experiments/s3/*). Cái nào không có evidence thì KHÔNG bịa: giữ lại trong danh sách với ghi chú "chưa có evidence, cần Phúc/Hòa".
+- Coupons: thêm lỗi Filename too long vào Troubleshooting (nhãn Observed, nguồn D01-1-cc/D01-1); thêm bước clone seminar repo (URL repo chính thức trong repo); làm rõ $docsRoot khi dùng lại clone; ghi chú dry-run báo gấp đôi số tests Jest (52/70/80 so với 26/35/40, nguyên nhân chưa kiểm chứng); thêm cảnh báo ChildProcessCrashedError 3221225477 (Observed); giải thích "PROVENANCE" bằng cách đọc guide gốc, viết 2-3 câu người đọc làm gì với nó; các dòng Troubleshooting của Hòa chưa gắn nhãn: giữ "chưa gắn nhãn" nếu không có evidence.
+- Auth: D02-01 (thiếu checkout s3/F03-auth, npm run test:auth:manual không tồn tại) tìm cách nạp manual/AI trong experiments/s3 của Phúc; nếu thấy thì thêm bước, nếu không thì giữ trong danh sách chưa xong. D02-02 và D02-03: sửa nếu đủ evidence.
+- Cart: sửa dòng "Tested environment" thành môi trường F01c (Windows 11, Node v24.15.0, npm 11.12.1), nêu rõ dòng cũ lấy từ bản nháp của Hòa.
+- Quyết định đã chốt: giữ hai repo, thêm 1 đoạn đầu Installation nói Cart là bài mở đầu cho người mới (workshop 6d2e790) còn Coupons/Auth dùng baseline đóng băng 806ba19; giữ định nghĩa "Assertion kill" đã có ở Introduction. Xóa mục "Cần quyết định" tương ứng.
+- Cập nhật mục "Việc tác giả cần sửa": đánh dấu cái đã xử lý (nêu commit) và cái còn lại.
+- Thêm khối AI-S4-E01-02 vào AI Record (Claude Code Opus 5.5; lượt sửa này; "ĐỀ XUẤT: ..."; Student Fix "(điền sau review)").
+</pasted_content id="cce9">
+```
+
+### Output
+
+```text
+Có URL repo seminar trong repo. Giờ tìm evidence cho Auth (D02-01/02/03).
+
+Đang thu evidence cho D02-03: run Auth Windows nằm trong thư mục `D04-merge-…-agent` của Hòa. Kiểm meta.
+
+Đủ evidence cho D02-03: meta của run Auth trên Windows ghi `executor: "OpenAI Codex AI Agent; not a member self-run"`. Lấy hash đầy đủ rồi sửa guide.
+
+Giờ sửa header (bỏ Cần quyết định, cập nhật danh sách việc).
+
+Tiếp phần Coupons.
+
+Tiếp phần Auth (D02-01/02/03).
+
+Thêm 2 dòng Troubleshooting.
+
+Thêm khối AI-S4-E01-02.
+
+### Báo cáo cho phiên thảo luận
+- **Nhiệm vụ:** S4-E01 lượt 2 — Done. Đã commit trên `main` seminar, chưa push:
+  - `e4ae989`: sửa nội dung `User_Guide.md` (+57/−25, các dòng bị bỏ đều có chủ đích).
+  - `5c6dc79`: ghi hash commit vào đầu file.
+  - `213c90c`: khối AI-S4-E01-02, verdict "ĐỀ XUẤT: INCOMPLETE".
+- **Quyết định đã chốt:** đã bỏ mục "Cần quyết định".
+  - Thêm đoạn mở đầu Installation: Cart là bài mở đầu trên workshop `6d2e790`, Coupons và Auth dùng baseline đóng băng `806ba19`.
+  - Giữ tên "Assertion kill"; ghi chú rằng cột "Killed / valid" của Coupons chính là Assertion kill.
+- **Coupons (đã xử lý):**
+  - Thêm dòng Troubleshooting `Filename too long` (Đã gặp, D01-1-cc); cách dùng lại clone đã chạy được ở D01-1-cc lần 2 và D01-1.
+  - Thêm lệnh clone repo seminar chính thức. Ghi rõ: clone này ở thư mục sâu đã lỗi, clone ở thư mục ngắn chưa kiểm chứng.
+  - Hướng dẫn đổi `$docsRoot` khi dùng lại clone có sẵn.
+  - Ghi chú dry run báo 52/70/80 tests so với Jest 26/35/40, nguyên nhân chưa kiểm chứng.
+  - Thêm dòng Troubleshooting `ChildProcessCrashedError 3221225477` (Đã gặp).
+  - Thêm đoạn giải thích PROVENANCE: người đọc đọc nguồn gốc candidate, kiểm hash, rồi review.
+- **Auth (đã xử lý):**
+  - D02-01: thêm bước checkout `eea3ed4` (manual) và `b27fce2` (AI). Đây đúng là hai commit mà Experiment Log của Phúc ghi cho F03/G03. Tôi đã kiểm cả hai tách từ `806ba19` và không đổi lockfile.
+  - Đầu nhánh `s3/G03-auth` hiện có `package.json` lỗi JSON, nên guide dặn không dùng đầu nhánh đó.
+  - D02-03: sửa thành run Windows do agent Codex chạy (có trong meta của run).
+  - D02-02: mới sửa một phần (thêm câu, chưa chạy lại lệnh).
+- **Cart:** đổi "Tested environment" sang môi trường F01c (Windows 11, Node v24.15.0, npm 11.12.1), ghi rõ dòng cũ lấy từ bản nháp của Hòa.
+- **Còn lại (chưa có evidence):**
+  - Nhãn Observed/Suggested cho các dòng Troubleshooting cũ của Coupons — cần Hòa.
+  - Mục AI Agent của Cart chưa chạy, Cart chưa có reproduction của người khác — cần Tấn Hiệp/Phúc.
+  - Chưa ai chạy lại các bước mới thêm: clone seminar, checkout `eea3ed4`/`b27fce2`, câu `prompt.txt`.
+- **Ngoài phạm vi, chưa sửa:** bảng Accuracy Summary trong AI Record vẫn ghi "Total audited 16", chưa tính các khối S4 mới.
+- **Cần quyết định:** Không.
+```
+
+### Hành động
+
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\User_Guide.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\User_Guide.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\User_Guide.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\User_Guide.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\User_Guide.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\User_Guide.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\User_Guide.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\User_Guide.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\User_Guide.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\User_Guide.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\User_Guide.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\User_Guide.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\User_Guide.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\User_Guide.md
+
+## #31 — 2026-10-23 16:10 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+Trong materials/s4/User_Guide.md, mục "Quyết định đã chốt (Hòa, leader)": đổi thành "Quyết định của bản ghép (Hòa cho phép Claude hoàn thiện User_Guide.md, chưa xác nhận từng điểm): ..." và giữ nguyên nội dung phía sau. Commit, không push, báo ≤ 2 dòng.
+```
+
+### Output
+
+```text
+Đã đổi nhãn thành "Quyết định của bản ghép (Hòa cho phép Claude hoàn thiện User_Guide.md, chưa xác nhận từng điểm):", nội dung phía sau giữ nguyên (diff chỉ đổi 1 dòng).
+Commit `768701a` trên `main` seminar, chưa push.
+```
 
