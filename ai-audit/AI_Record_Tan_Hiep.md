@@ -568,17 +568,17 @@ Claude Code: ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md, session ad
 |---|---|
 | Stage / Task ID | S3 / S3-D01, S3-E01, S3-F01, S3-G01 (member self-run và so sánh) |
 | Tool / Model | Claude (claude.ai), Claude Opus 5.5 — kiểm baseline, soạn lệnh; Claude Code, Claude Opus 5.5 — so sánh, ghi log |
-| Recorded Time & Provenance | 2026-10-23 11:30–11:50 (UTC+7). claude.ai phiên `5aa8b0cf` lượt #21–#22, #26; Claude Code session `ad369217` lượt #6 |
+| Recorded Time & Provenance | 2026-10-23 11:30–12:16 (UTC+7). claude.ai phiên `5aa8b0cf` lượt #21–#22, #27; Claude Code session `ad369217` lượt #6 |
 | Output Artifact / Section | Lệnh PowerShell (hàm `Run` ghi giờ, commit, lệnh vào đầu `console.log`); `experiments/s3/runs/Tan_Hiep/S3-member-compare/` (REPORT, `member_compare.py`, `member_comparison.md`); Experiment Log mục D01 Runs, Baseline, Comparison, header; commit `87d6b08`; bullet 'Tổng hợp Killed ↔ Timeout' cuối mục Limits của Experiment_Log_Tan_Hiep.md — claude.ai soạn, Tấn Hiệp dùng nguyên văn (commit `6a82fe7`) |
 | Verdict | VALID |
 | Reasoning & Source | `8d60e9b` vs `806ba19`: `server.js`, `database.js`, `cart-orders.test.js`, helpers Cart và `package-lock.json` giống nhau (git diff); cờ `--concurrency`, `--timeoutMS`, `--timeoutFactor` và mặc định `timeoutMS 5000`, `timeoutFactor 1.5` theo schema `@stryker-mutator/core` 10.0.0 |
 | Verification | Member run: D01-1 36 pass, D01-2 9 fail đúng lý do, D01-3 dry run 36 tests; E01-1 82/25/34/2/7 (0 khác biệt với run lại của Hòa), F01-2 112/18/11/2/7, G01-2 102/18/21/2/7. Tập Survived trùng ở cả 6 cặp; claude.ai đếm lại độc lập từ `mutation.json` |
-| Student Fix | Accepted. Hạn chế: lệnh không đặt UTF-8 cho console nên chữ tiếng Việt trong `console.log` bị lỗi mã hóa (số liệu không ảnh hưởng; giữ nguyên log thô). Giả thuyết "Killed↔Timeout do concurrency" bị dữ liệu bác: F01-2 (concurrency 2) giống hệt F01-2-cc (concurrency 15). claude.ai đưa giả thuyết Jest testTimeout 5 s chạy đua với timeout Stryker (phiên 5aa8b0cf lượt #22); dữ liệu 3 máy bác bỏ (cả hai config dùng testTimeout mặc định, kết quả lặp lại trên Windows/macOS) — claude.ai tự rút lại ở lượt #26 |
+| Student Fix | Accepted. Hạn chế: lệnh không đặt UTF-8 cho console nên chữ tiếng Việt trong `console.log` bị lỗi mã hóa (số liệu không ảnh hưởng; giữ nguyên log thô). Giả thuyết "Killed↔Timeout do concurrency" bị dữ liệu bác: F01-2 (concurrency 2) giống hệt F01-2-cc (concurrency 15). claude.ai đưa giả thuyết Jest testTimeout 5 s chạy đua với timeout Stryker (phiên 5aa8b0cf lượt #22); dữ liệu 3 máy bác bỏ (cả hai config dùng testTimeout mặc định, kết quả lặp lại trên Windows/macOS) — claude.ai tự rút lại ở lượt #27 |
 
 #### Verbatim Prompt / Verbatim AI Output
 
 ```text
-claude.ai: ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-23_5aa8b0cf.md, lượt #21–#22.
+claude.ai: ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-23_5aa8b0cf.md, lượt #21–#22, #27.
 Claude Code: ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md, session ad369217, lượt #6.
 ```
 
