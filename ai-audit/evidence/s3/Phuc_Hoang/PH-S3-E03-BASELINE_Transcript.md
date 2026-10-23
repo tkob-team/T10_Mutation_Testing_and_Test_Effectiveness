@@ -1,8 +1,8 @@
 # PH-S3-E03-BASELINE — Chat Transcript
 
 **Member:** Nguyễn Phúc Hoàng  
-**Stage / Task ID:** S3 / S3-E03 và S3-F03 (kèm cập nhật C03-5, C03-6, D03, AI-02/03/04 draft, AI Record)  
-**Tool / Model:** Claude Code 2.1.308 (CLI); model(s) ghi trong phiên: `claude-sonnet-5-5` (178 lượt)  
+**Stage / Task ID:** S3 / S3-E03, S3-F03 và S3-G03  
+**Tool / Model:** Claude Code 2.1.308 (CLI); model(s) ghi trong phiên: `claude-sonnet-5-5` (211 lượt)  
 **Date:** 2026-10-23 (giờ Asia/Saigon, lấy từ timestamp của phiên)  
 **Session file:** `60b90dce-0d5e-4502-920f-a2eb3196656d.jsonl` của Claude Code, trích tự động bằng script; transcript được trích tới lượt gần nhất tại thời điểm tạo file.
 
@@ -475,6 +475,7 @@ Mẫu: experiments/s3/Experiment_Log_TEMPLATE.md; tạo file khi bắt đầu, g
 16. `Bash: cd /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness && python3 -I - <<'EOF' p='experiments/s3/Experiment_Log_`
 17. `Bash: python3 -I - <<'EOF' p='experiments/s3/Experiment_Log_Phuc_Hoang.md' s=open(p).read() def r(a,b):     global s     assert s.count(a)==1,(a[:60],s.count(a)); s=s`
 18. `Bash: python3 -I - <<'EOF' p='ai-audit/AI_Record_Phuc_Hoang.md' s=open(p).read() T="evidence/s3/Phuc_Hoang/PH-S3-E03-BASELINE_Transcript.md" anchor="### Artifact PH-S`
+19. `Bash: cd /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness/draft && python3 -I - <<'EOF' f="[AI-02] - FIT@HCMUS - AI`
 
 ### Output (verbatim)
 
@@ -500,4 +501,100 @@ Cột "Mutation" bị trống phần code gốc. Tôi sửa lại việc cắt �
 
 ````markdown
 Giờ cập nhật Experiment Log: bảng Survivors, Comparison (hàng Baseline và Manual) và Limits.
+````
+
+````markdown
+F03 đã xong: 13 manual assertion mới pass trên code gốc, và 23 trong 30 mutant bị bỏ sót nay bị giết. Evidence đã push lên `s3/A03-B03-phuc-hoang` (commit `8c912dd`), nhưng nhánh SUT `s3/F03-auth` mới chỉ nằm ở clone cục bộ, chưa push lên repo SUT chung.
+
+**Kết quả** (cùng baseline `806ba19`, cùng cấu hình Stryker, chạy 2 lần giống hệt nhau)
+
+| | Killed | Timeout | Survived | NoCoverage | Score | Assertion kill |
+|---|---|---|---|---|---|---|
+| E03 baseline (26 test) | 60 | 27 | 23 | 7 | 74,36% | 51,28% |
+| F03 manual (39 test) | 83 | 27 | 4 | 3 | 94,02% | 70,94% |
+
+- **So khớp:** tôi so từng mutant theo dòng/cột/mutator/replacement. 23 mutant chuyển sang Killed (19 Survived và 4 NoCoverage), không mutant nào tụt.
+- **Timeout và RuntimeError:** không đổi (27 và 8), nên không có Timeout nào bị tính thành assertion kill.
+- **Không đụng production:** hash của `server.js`, `database.js`, `database.sqlite` giữ nguyên, và `npm test` vẫn 88 pass.
+
+**Các assertion** (`backend/test/auth.manual.test.js`, AM-01…AM-13)
+- **AM-01…AM-04 bám trực tiếp spec (5 mutant):** profile update không đổi `role` (FR-04/SEC-06), mã OTP gồm chữ số và phụ thuộc nguồn ngẫu nhiên (FR-03), thông báo lỗi khi tài khoản bị khóa không rỗng (FR-02).
+- **AM-05…AM-13 dựa trên convention (18 mutant):** body lỗi không rỗng, và HTTP 500 khi DB lỗi. Spec không nêu các giá trị này, và test ghi rõ "convention". Nên score 94% mạnh hơn bằng chứng thực: assertion "chuỗi không rỗng" không bắt được mutant đổi sang một chuỗi khác.
+
+**7 mutant còn lại: báo nhóm đổi case** (`F03-manual/mutant_mapping.md`, `probes.md`)
+- **#32 (`<` thành `<=`) và #47 (message đăng nhập):** spec không nói gì, nên tôi không viết assertion.
+- **#52 (`>= 3` thành `> 3`):** bị che bởi defect `+2`, vì bộ đếm trên code gốc luôn chẵn. Tôi thử trên bản copy đã vá `+1` và 30 giây: 39 test vẫn pass, còn mutant này bị 3 test hiện có giết. Vì vậy chỉ gọi nó là "masked", chưa kết luận equivalent.
+- **#133–#136 (nhánh `role`):** #133 chính là hành vi đúng spec, vì test DF-12 pass trên nó. Muốn giết cả bốn mutant phải assert rằng `role` bị đổi, tức là mã hóa chính defect SEC-06.
+
+**Tôi đã cập nhật thêm**
+- **Experiment Log:** bảng Survivors, hàng Baseline và Manual của Comparison, và mục Limits.
+- **AI Record, AI-02 và AI-LOG:** thêm `PH-S3-F03-MANUAL` với verdict đề xuất INCOMPLETE. AI-02 giờ có 6 artifact (VALID 66,67%, INCOMPLETE 33,33%).
+- **Transcript:** trích lại, hiện có 8 lượt.
+
+**Bạn cần quyết định**
+- Có push nhánh `s3/F03-auth` (commit `eea3ed4`) lên repo SUT chung `tkob-team/eshop-sut_…` không? Hiện bản lưu ở `F03-manual/sut-F03.patch` để nhóm tái lập.
+- Bạn nên đọc lại 9 test convention (AM-05…AM-13) trước khi nhóm ghép bộ chung.
+- Phần ISTQB trong artifact F03 tôi chưa gắn số mục.
+````
+
+## Turn 9 — 2026-10-23 11:22:52
+
+### Prompt (verbatim)
+
+````text
+Có push lên cho tôi branch riêng và thực hiện tiếp S3-G03 - Dùng Claude và kiểm chứng assertions: Authentication & Users: 
+
+<pasted_content id="8139">
+"Làm: Dùng cùng mutants đã phân tích; lưu Claude candidates, đối chiếu spec, ghi accepted/edited/rejected rồi chạy kiểm chứng. Nhánh AI bắt đầu từ baseline, tách nhánh manual.
+Đầu vào: Mutant analysis S3-F03; spec, code và baseline chung.
+Xong khi: Mình có prompt/raw output, human edits và actual kill mapping cho cùng mutants.
+Chờ: Mutants của mình đã được phân tích; có thể thử AI trước khi manual run hoàn tất.
+Mẫu: experiments/s3/Experiment_Log_TEMPLATE.md; tạo file khi bắt đầu, giữ nguyên TEMPLATE."
+</pasted_content id="8139">
+````
+
+### Tool Log
+
+1. `Bash: cd /private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb31966`
+2. `Bash: S=/private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb319665`
+3. `Bash: S=/private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb319665`
+4. `Bash: cd /private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb31966`
+5. `Bash: S=/private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb319665`
+6. `Bash: S=/private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb319665`
+7. `Bash: S=/private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb319665`
+8. `Bash: S=/private/tmp/claude-501/-Users-nphoang-Developer-hcmus-software-testing-Seminar-T10-Mutation-Testing-and-Test-Effectiveness/60b90dce-0d5e-4502-920f-a2eb319665`
+9. `Bash: cd /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness/experiments/s3/runs/Phuc_Hoang && S=/private/tmp/claude-5`
+10. `Bash: cd /Users/nphoang/Developer/hcmus/software-testing/Seminar/T10_Mutation_Testing_and_Test_Effectiveness && python3 -I - <<'EOF' p='experiments/s3/Experiment_Log_`
+11. `Bash: sed -n 94,99p experiments/s3/Experiment_Log_Phuc_Hoang.md | cut -c1-330; awk 'NR>=94 && NR<=106 {n=gsub(/\|/,"|"); print NR, n}' experiments/s3/Experiment_Log_P`
+12. `Bash: python3 -I - <<'EOF' p='experiments/s3/Experiment_Log_Phuc_Hoang.md' s=open(p).read() for a,b in [("thêm comment** |","thêm comment |"),("khỏi bộ so sánh** |","`
+13. `Bash: python3 -I - <<'EOF' T="evidence/s3/Phuc_Hoang/PH-S3-E03-BASELINE_Transcript.md" G="../experiments/s3/runs/Phuc_Hoang/G03-ai" p='ai-audit/AI_Record_Phuc_Hoang.m`
+
+### Output (verbatim)
+
+````markdown
+Trước hết push nhánh F03 của SUT. Sau đó dựng prompt cho G03.
+````
+
+````markdown
+Prompt 27 KB, đủ 30 mutant, không chứa test F03. Chạy Claude ở thư mục trống, không tools, giống quy trình C03-3.
+````
+
+````markdown
+Claude trả về phân tích cho 30 mutant và một file test. Tôi lưu nguyên văn, commit bản raw trước (để git có diff cho phần human edits), rồi chạy kiểm chứng.
+````
+
+````markdown
+Bản raw pass 38/38 trên code gốc (kể cả `test.failing`). Commit bản raw rồi chạy Stryker.
+````
+
+````markdown
+Bản raw: Killed 78, Survived 12, NoCoverage 0. Mutant 133–136 bị giết nhờ `test.failing` (đúng như Claude tự thừa nhận). Giờ áp dụng human edits và chạy lại.
+````
+
+````markdown
+Bản đã review: Killed 74, Survived 13, NoCoverage 3, score 86,32%. Hai run giống hệt nhau. Giờ lập kill mapping từng mutant (baseline, raw, edited, manual F03).
+````
+
+````markdown
+Giờ cập nhật AI Record, AI-02/AI-LOG, rồi commit và push cả hai repo.
 ````

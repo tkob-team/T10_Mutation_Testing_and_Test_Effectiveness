@@ -15,6 +15,7 @@ Phiếu này ghi usage của Phúc Hoàng xuyên suốt S1–S8. Mỗi artifact 
 |---|---|---|---|---|---|---|---|
 | Claude Code 2.1.292 (CLI), model Claude Opus 5.5 (`claude-opus-5-5`) | S3 | S3-A03, S3-B03 | brainstorming / data analysis / coding / drafting | [Research Notes](../research/s3/Research_Notes_Phuc_Hoang.md); [run evidence](../experiments/s3/runs/Phuc_Hoang/) | Lập plan; đọc repo/SUT; tra và đối chiếu nguồn; viết sandbox code/tests/harness; chạy Stryker; phân tích mutants; viết draft notes và phiếu này | Giao task và đầu vào; quyết định gộp B03, chạy sandbox, dùng SUT local, yêu cầu ghi audit nguyên văn. Review/sửa nội dung: Pending | PH-S3-A03B03-01 |
 | Claude Code, model Claude Sonnet 5.5 (`claude-sonnet-5-5`) | S3 | S3-E03 | coding / data analysis / drafting | [Experiment Log](../experiments/s3/Experiment_Log_Phuc_Hoang.md) (Baseline, E03-baseline); [run evidence](../experiments/s3/runs/Phuc_Hoang/E03-baseline/) | Clone SUT frozen commit, chạy `npm ci`/test/Stryker 2 lần, so khớp từng mutant với provisional và run của Thái Hòa, mapping route, viết log | Giao task và đầu vào (task note S3-E03). Review kết quả: Pending | PH-S3-E03-BASELINE ([transcript](evidence/s3/Phuc_Hoang/PH-S3-E03-BASELINE_Transcript.md)) |
+| `claude -p` (Claude Code CLI 2.1.308), model Claude Sonnet 5.5 (`claude-sonnet-5-5`) | S3 | S3-G03 | coding (đề xuất assertions) | [Experiment Log G03](../experiments/s3/Experiment_Log_Phuc_Hoang.md); [run evidence](../experiments/s3/runs/Phuc_Hoang/G03-ai/) | Phân tích 30 mutant và viết 12 test + file `auth.ai.test.js` | Viết prompt/đầu vào, chọn mutant, review accepted/edited/rejected, chạy kiểm chứng. Review của member: Pending | PH-S3-G03-AI ([transcript](evidence/s3/Phuc_Hoang/PH-S3-E03-BASELINE_Transcript.md)) |
 | Claude Code, model Claude Sonnet 5.5 (`claude-sonnet-5-5`) | S3 | S3-F03 | coding / data analysis | [Experiment Log F03](../experiments/s3/Experiment_Log_Phuc_Hoang.md); [run evidence](../experiments/s3/runs/Phuc_Hoang/F03-manual/) | Phân tích 30 survivor/NoCoverage, viết 13 manual assertions, chạy Stryker và probe | Giao task và đầu vào (task note S3-F03). Review assertions: Pending | PH-S3-F03-MANUAL ([transcript](evidence/s3/Phuc_Hoang/PH-S3-E03-BASELINE_Transcript.md)) |
 | Claude Code CLI (`claude -p`), model Claude Sonnet 5.5 (`claude-sonnet-5-5`) | S3 | S3-C03 | coding (đề xuất assertion) | [Experiment Log C03-3](../experiments/s3/Experiment_Log_Phuc_Hoang.md); [run evidence](../experiments/s3/runs/Phuc_Hoang/C03-claude/) | Đề xuất test `canRegister(18)` cho mutant `age > 18` | Viết spec demo, bỏ comment lộ đáp án, chọn mutant, chạy test và Stryker. Review: Pending | PH-S3-C03-CLAUDE |
 | Claude Code 2.1.292 (CLI), model Claude Opus 5.5 (`claude-opus-5-5`) | S3 | tooling cho S3-C03…I03 | coding / drafting | [Skill draft `s3-experiment`](evidence/s3/Phuc_Hoang/PH-S3-TOOLING-01_s3-experiment_AI_Draft/SKILL.md) | Soạn skill hỗ trợ chạy các task experiment S3 (SKILL.md, references, scripts) | Giao yêu cầu và quyết định dùng skill. Review/chỉnh nội dung: Pending | PH-S3-TOOLING-01 |
@@ -103,6 +104,40 @@ Chưa có sửa đổi của thành viên tại thời điểm tạo phiếu.
 | Reasoning & Source | Task note S3-E03, [Baseline_Manifest](../experiments/s3/Baseline_Manifest.md), SUT `806ba19`, Stryker 10.0.0 |
 | Verification | Do AI thực hiện, chưa phải xác nhận của thành viên: chạy `npm ci`, `npm test` (88 pass), `test:auth` (26 pass), dry run, hai run Stryker giống hệt từng mutant (125/125); so khớp từng mutant theo dòng/cột/mutator/replacement với run provisional (4 mutant đổi RuntimeError sang Timeout) và với run Windows của Thái Hòa (0 chênh lệch); SHA-256 `server.js`/`database.js`/`database.sqlite` trước = sau; `cmp` 5 file test D03 với SUT chung |
 | Student Fix | Không sửa số liệu. Dùng clone sạch của SUT chung thay cho fork cá nhân có thay đổi chưa commit; giữ run provisional thành record riêng |
+
+### Artifact PH-S3-G03-AI
+
+| Field | Value |
+|---|---|
+| Stage / Task ID | S3 / S3-G03 (Authentication & Users: Claude đề xuất assertions cho cùng 30 mutant của F03) |
+| Tool / Model | `claude -p` (Claude Code CLI 2.1.308) không tools, không session; model `claude-sonnet-5-5` theo `modelUsage` trong `raw.json`. Việc review và chạy kiểm chứng do Claude Code (Sonnet 5.5) trong phiên chính |
+| Recorded Time & Provenance | 2026-10-23 11:23:26–11:25:15 (request, Asia/Saigon); Stryker 11:25:58–11:30:41. Một request, một lần chạy. Transcript phiên: [PH-S3-E03-BASELINE_Transcript.md](evidence/s3/Phuc_Hoang/PH-S3-E03-BASELINE_Transcript.md) |
+| Output Artifact / Section | Test `auth.ai.test.js` (SUT nhánh `s3/G03-auth`, commit raw `0c57bf2`, commit đã review `b27fce2`); [run evidence](../experiments/s3/runs/Phuc_Hoang/G03-ai/); Experiment Log mục AI Runs, Comparison |
+| Verdict | **INCOMPLETE (proposed, AI-drafted, chờ member xác nhận)**: 11/12 test dùng được (accepted hoặc edited), 1 test (`test.failing`) bị loại; kết quả giết 14/30 mutant và có số đếm sai trong phần tóm tắt của Claude |
+| Reasoning & Source | Expected result từ `api_specification.md` §1–2, README FR-01…FR-04, SEC-06, SEC-07 (đã đưa vào prompt). Convention ghi rõ trong từng test. Claude tự từ chối 12 mutant vì spec silent hoặc vì test sẽ mã hóa lỗi `+2`, khớp với probe P2/P4 của F03. ISTQB: chưa gắn số mục |
+| Verification | Bản raw 38/38 và bản review 37/37 pass trên code gốc (3 lần mỗi bản), `npm test` 88 pass; Stryker bản review 2 lần giống hệt 125/125; bản raw 1 lần; production hash không đổi. So 30 mutant: AI giết 14, manual F03 giết 23; chung 13, chỉ AI #32, chỉ manual 10 |
+| Student Fix | Đổi tên AI-L03 và thêm comment (spec silent, cần nhóm chốt); xóa AI-U03 (`test.failing`); bỏ import thừa; sửa header. Diff: [`human-edits.diff`](../experiments/s3/runs/Phuc_Hoang/G03-ai/human-edits.diff). Member review: Pending |
+
+#### Verbatim Prompt
+
+Prompt đầy đủ (27 KB, gồm code, spec, harness, test baseline và 30 mutant) ở [`prompt.txt`](../experiments/s3/runs/Phuc_Hoang/G03-ai/prompt.txt); lệnh ở [`command.txt`](../experiments/s3/runs/Phuc_Hoang/G03-ai/command.txt). Không nhúng lại ở đây vì quá dài; nội dung nhiệm vụ cuối prompt:
+
+````text
+For each mutant:
+1. Quote the exact code lines that decide the behavior.
+2. Give the input/state that makes original and mutant behave differently, or say why none exists in this scope.
+3. State the expected result from the spec. If the spec is silent, write "spec silent" and do not invent one. If you rely on a convention instead of the spec (for example an HTTP status), say so.
+4. Write one runnable Jest test using only the harness above.
+Then output ONE complete test file, backend/test/auth.ai.test.js, ...
+````
+
+#### Verbatim AI Output
+
+Nguyên văn trường `result` của [`raw.json`](../experiments/s3/runs/Phuc_Hoang/G03-ai/raw.json) đã tách ra [`raw_result.md`](../experiments/s3/runs/Phuc_Hoang/G03-ai/raw_result.md); file test chưa sửa: [`auth.ai.raw.test.js`](../experiments/s3/runs/Phuc_Hoang/G03-ai/auth.ai.raw.test.js).
+
+#### Corrected Artifact & Highlighted Changes
+
+Xem [`human-edits.diff`](../experiments/s3/runs/Phuc_Hoang/G03-ai/human-edits.diff) (so `0c57bf2` với `b27fce2`).
 
 ### Artifact PH-S3-F03-MANUAL
 
@@ -223,10 +258,10 @@ Chưa có transcript phiên này trong repo. Bản nháp AI-02/AI-LOG trong `dra
 
 | Metric | Count | Percentage |
 |---|---|---|
-| Total audited | 5 (đề xuất, theo AI-02 draft) | 100% |
-| VALID: accepted as-is | 4 | 80% |
+| Total audited | 7 (đề xuất, gồm PH-S3-F03-MANUAL và PH-S3-G03-AI) | 100% |
+| VALID: accepted as-is | 4 | 57,14% |
 | INVALID: rejected | 0 | 0% |
-| INCOMPLETE: usable after edits | 1 | 20% |
+| INCOMPLETE: usable after edits | 3 | 42,86% |
 
 Chỉ đếm artifacts đã có verdict; tổng ba verdict phải bằng Total. Total = 0 thì Percentage ghi n.a.; pending không bị tính là verdict. Leader loại trùng cùng artifact trước khi tổng hợp.
 
@@ -259,7 +294,7 @@ Reflection chính thức nằm ở `draft/[AI-04] … - 23120264.md` mục 2 (AI
 
 ## 6. Member Review & Handoff
 
-- Missing artifacts / pending verification: member review và verdict cho PH-S3-A03B03-01, PH-S3-TOOLING-01, PH-S3-E03-BASELINE; artifact PH-S3-C03-CLAUDE đã có (verdict đề xuất, chờ xác nhận); artifact PH-S3-F03-MANUAL đã có (verdict đề xuất, chờ xác nhận); transcript phiên C03/D03 (2026-10-22) và artifact audit D03/E03-provisional đầy đủ chưa có; transcript PH-S3-E03-BASELINE đã xuất (không che, theo yêu cầu thành viên; thành viên đối chiếu với lịch sử phiên); đọc full text P03, P07–P09; nguồn course slide/ISTQB cho AI-02.
+- Missing artifacts / pending verification: member review và verdict cho PH-S3-A03B03-01, PH-S3-TOOLING-01, PH-S3-E03-BASELINE; artifact PH-S3-C03-CLAUDE đã có (verdict đề xuất, chờ xác nhận); artifact PH-S3-F03-MANUAL và PH-S3-G03-AI đã có (verdict đề xuất, chờ xác nhận); transcript phiên C03/D03 (2026-10-22) và artifact audit D03/E03-provisional đầy đủ chưa có; transcript PH-S3-E03-BASELINE đã xuất (không che, theo yêu cầu thành viên; thành viên đối chiếu với lịch sử phiên); đọc full text P03, P07–P09; nguồn course slide/ISTQB cho AI-02.
 - Member confirmation of accuracy: Pending. Verdict và reflection hiện là bản AI soạn để member đọc và sửa
 - Official AI-03 disclosure/signature: Pending; mỗi người kiểm tra và tự ký PDF khi leader chuẩn bị bản chính thức.
 - Official AI-04 signature when required: Pending; tác giả kiểm tra bản tổng hợp trước khi ký.
