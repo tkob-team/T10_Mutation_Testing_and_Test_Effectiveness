@@ -17,6 +17,7 @@ Phiếu này ghi usage của Phúc Hoàng xuyên suốt S1–S8. Mỗi artifact 
 | Claude Code, model Claude Sonnet 5.5 (`claude-sonnet-5-5`) | S3 | S3-E03 | coding / data analysis / drafting | [Experiment Log](../experiments/s3/Experiment_Log_Phuc_Hoang.md) (Baseline, E03-baseline); [run evidence](../experiments/s3/runs/Phuc_Hoang/E03-baseline/) | Clone SUT frozen commit, chạy `npm ci`/test/Stryker 2 lần, so khớp từng mutant với provisional và run của Thái Hòa, mapping route, viết log | Giao task và đầu vào (task note S3-E03). Review kết quả: Pending | PH-S3-E03-BASELINE ([transcript](evidence/s3/Phuc_Hoang/PH-S3-E03-BASELINE_Transcript.md)) |
 | Claude Code, model Claude Sonnet 5.5 (`claude-sonnet-5-5`) | S3 | S3-H03 | data analysis / drafting | [Experiment Log H03](../experiments/s3/Experiment_Log_Phuc_Hoang.md#comparison); [comparison data](../experiments/s3/runs/Phuc_Hoang/H03-comparison/comparison.md) | Viết script so sánh 4 report, tính raw counts, đối chiếu Killed/Timeout/RuntimeError, equivalent candidates và failure-mode cases | Giao task và đầu vào (task note S3-H03). Review diễn giải và nhãn spec/convention: Pending. Chưa tạo artifact audit riêng cho H03 (chưa có trong AI-02/AI-LOG) | [transcript](evidence/s3/Phuc_Hoang/PH-S3-E03-BASELINE_Transcript.md) |
 | Claude Code, model Claude Sonnet 5.5 (`claude-sonnet-5-5`) | S3 | S3-I03 | command execution / data analysis / drafting | [Experiment Log I03](../experiments/s3/Experiment_Log_Phuc_Hoang.md#cross-reproduction); [I03 evidence](../experiments/s3/runs/Phuc_Hoang/I03-cart-repro/comparison.md) | Chạy lại baseline/manual/Claude của Cart & Orders trong 3 worktree, viết script so sánh với report của Hiệp và Hòa, giải thích ba mutant case, soạn góp ý G1–G7 cho tác giả | Giao task và đầu vào (task note S3-I03). Review diễn giải và nội dung góp ý, quyết định gửi cho Hiệp: Pending. Chưa tạo artifact audit riêng cho I03 | [transcript](evidence/s3/Phuc_Hoang/PH-S3-E03-BASELINE_Transcript.md) |
+| Claude Code, model Claude Sonnet 5.5 (`claude-sonnet-5-5`) | S4 | S4-A03, S4-B03, S4-C03, S4-D03, S4-F03 | drafting / data analysis | [Guide](../materials/s4/Guide_Contribution_Phuc_Hoang.md); [Report](../materials/s4/Report_Contribution_Phuc_Hoang.md); [Demo](../materials/s4/Demo_Contribution_Phuc_Hoang.md); [Reproduction notes](../materials/s4/Guide_Reproduction_Phuc_Hoang.md); [Verification notes](../materials/s4/Verification_Notes_Phuc_Hoang.md); [verify script](../experiments/s4/runs/Phuc_Hoang/S4-F03-verify/) | Soạn bản nháp guide, report, demo script (tiếng Anh) và hai Task Notes từ Research Notes S3 và log đã chạy; viết script đếm lại số liệu từ `mutation.json` và kiểm link | Giao task (task note S4) và yêu cầu "gen hết docs". Review nội dung, số liệu, nhãn spec/convention, quyết định gửi leader: Pending. Chưa quay video; D03 chưa chạy vì thiếu guide teammate | PH-S4-GUIDE-A03, PH-S4-REPORT-B03, PH-S4-DEMO-C03 |
 | `claude -p` (Claude Code CLI 2.1.308), model Claude Sonnet 5.5 (`claude-sonnet-5-5`) | S3 | S3-G03 | coding (đề xuất assertions) | [Experiment Log G03](../experiments/s3/Experiment_Log_Phuc_Hoang.md); [run evidence](../experiments/s3/runs/Phuc_Hoang/G03-ai/) | Phân tích 30 mutant và viết 12 test + file `auth.ai.test.js` | Viết prompt/đầu vào, chọn mutant, review accepted/edited/rejected, chạy kiểm chứng. Review của member: Pending | PH-S3-G03-AI ([transcript](evidence/s3/Phuc_Hoang/PH-S3-E03-BASELINE_Transcript.md)) |
 | Claude Code, model Claude Sonnet 5.5 (`claude-sonnet-5-5`) | S3 | S3-F03 | coding / data analysis | [Experiment Log F03](../experiments/s3/Experiment_Log_Phuc_Hoang.md); [run evidence](../experiments/s3/runs/Phuc_Hoang/F03-manual/) | Phân tích 30 survivor/NoCoverage, viết 13 manual assertions, chạy Stryker và probe | Giao task và đầu vào (task note S3-F03). Review assertions: Pending | PH-S3-F03-MANUAL ([transcript](evidence/s3/Phuc_Hoang/PH-S3-E03-BASELINE_Transcript.md)) |
 | Claude Code CLI (`claude -p`), model Claude Sonnet 5.5 (`claude-sonnet-5-5`) | S3 | S3-C03 | coding (đề xuất assertion) | [Experiment Log C03-3](../experiments/s3/Experiment_Log_Phuc_Hoang.md); [run evidence](../experiments/s3/runs/Phuc_Hoang/C03-claude/) | Đề xuất test `canRegister(18)` cho mutant `age > 18` | Viết spec demo, bỏ comment lộ đáp án, chọn mutant, chạy test và Stryker. Review: Pending | PH-S3-C03-CLAUDE |
@@ -256,6 +257,45 @@ Chưa có transcript phiên này trong repo. Bản nháp AI-02/AI-LOG trong `dra
 | PH-S3-D03-AUTH | Bộ test Auth: 26 pass + 23 defect fail | VALID | `runs/Phuc_Hoang/D03-auth/`; 5 file giống hệt SUT `806ba19` (`cmp`) |
 | PH-S3-E03-PROVISIONAL | Run Stryker provisional trên `bd31bbf`: 125 mutants, 73,45% | VALID | `runs/Phuc_Hoang/E03-provisional/` |
 
+### Artifact PH-S4-GUIDE-A03
+
+| Field | Value |
+|---|---|
+| Stage / Task ID | S4 / S4-A03 (kèm S4-D03, S4-F03 Task Notes) |
+| Tool / Model | Claude Code; Claude Sonnet 5.5 (`claude-sonnet-5-5`); terminal trên máy của thành viên |
+| Recorded Time & Provenance | 2026-10-23, Asia/Saigon. Transcript: [PH-S3-E03-BASELINE_Transcript.md](evidence/s3/Phuc_Hoang/PH-S3-E03-BASELINE_Transcript.md) (cùng phiên, trích tự động) |
+| Output Artifact / Section | [Guide_Contribution_Phuc_Hoang.md](../materials/s4/Guide_Contribution_Phuc_Hoang.md); [Guide_Reproduction](../materials/s4/Guide_Reproduction_Phuc_Hoang.md); [Verification_Notes](../materials/s4/Verification_Notes_Phuc_Hoang.md) |
+| Verdict | **Pending** — chưa có member review |
+| Reasoning & Source | Chỉ dùng lệnh/số liệu từ run S3 đã lưu và Research Notes [P01]–[P16]; mục chưa chạy gắn nhãn *untested* |
+| Verification | Script [`verify_s4_docs.py`](../experiments/s4/runs/Phuc_Hoang/S4-F03-verify/verify_s4_docs.py): đếm lại số từ `mutation.json` (khớp), 0 link hỏng. Chưa chạy lại hướng dẫn trên máy sạch (Not run) |
+| Student Fix | Pending member input. Trong lúc kiểm, AI tự sửa 4 chỗ (xem Verification_Notes) |
+
+### Artifact PH-S4-REPORT-B03
+
+| Field | Value |
+|---|---|
+| Stage / Task ID | S4 / S4-B03 |
+| Tool / Model | Claude Code; Claude Sonnet 5.5 (`claude-sonnet-5-5`) |
+| Recorded Time & Provenance | 2026-10-23, Asia/Saigon; cùng transcript như trên |
+| Output Artifact / Section | [Report_Contribution_Phuc_Hoang.md](../materials/s4/Report_Contribution_Phuc_Hoang.md) |
+| Verdict | **Pending** |
+| Reasoning & Source | Theory từ Research Notes S3 (nguồn P01–P10); số liệu AI approaches lấy từ abstract/trang paper, chưa đọc full text; nhãn spec/convention là phán đoán của reviewer |
+| Verification | Số liệu bảng kết quả khớp `mutation.json` (script trên). URL ngoài và full text paper: Not checked |
+| Student Fix | Pending member input |
+
+### Artifact PH-S4-DEMO-C03
+
+| Field | Value |
+|---|---|
+| Stage / Task ID | S4 / S4-C03 |
+| Tool / Model | Claude Code; Claude Sonnet 5.5 (`claude-sonnet-5-5`) |
+| Recorded Time & Provenance | 2026-10-23, Asia/Saigon; cùng transcript như trên |
+| Output Artifact / Section | [Demo_Contribution_Phuc_Hoang.md](../materials/s4/Demo_Contribution_Phuc_Hoang.md) |
+| Verdict | **Pending** — video chưa quay |
+| Reasoning & Source | Mọi lệnh và số liệu trong cột Verified Evidence lấy từ run S3; lệnh cài Claude Code ghi Not verified |
+| Verification | Số liệu và case #132 khớp `mutation.json`; thời lượng và narration chưa đọc thử |
+| Student Fix | Pending member input |
+
 ## 3. Accuracy Summary & Audit Conclusion
 
 | Metric | Count | Percentage |
@@ -271,7 +311,7 @@ Chỉ đếm artifacts đã có verdict; tổng ba verdict phải bằng Total. 
 
 ## 4. Disclosure Inputs
 
-- All tools used: Claude Code 2.1.292 với Claude Opus 5.5 (PH-S3-A03B03-01, PH-S3-TOOLING-01); Claude Code với Claude Sonnet 5.5 (PH-S3-E03-BASELINE). Phiên C03/D03 (2026-10-22) và usage trước đó: Pending member input, chưa có artifact audit.
+- All tools used: Claude Code 2.1.292 với Claude Opus 5.5 (PH-S3-A03B03-01, PH-S3-TOOLING-01); Claude Code với Claude Sonnet 5.5 (PH-S3-E03-BASELINE, PH-S3-G03-AI, PH-S3-F03-MANUAL, PH-S4-GUIDE-A03, PH-S4-REPORT-B03, PH-S4-DEMO-C03). Phiên C03/D03 (2026-10-22) và usage trước đó: Pending member input, chưa có artifact audit.
 - AI categories used: bản nháp AI-03/AI-04 đánh Category 5 (và Cat. 2–5 ở AI-04); member tự xác nhận.
 - Stages/use types: S3: research, data analysis (mutation reports), coding (sandbox tests/harness, Auth test suite), tooling (skill draft), drafting (log/notes).
 - 2–3 most impactful prompts: PH-S3-A03B03-01, Turn 1 và Turn 2 (nguyên văn ở trên).

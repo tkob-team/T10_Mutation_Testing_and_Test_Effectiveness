@@ -1,0 +1,25 @@
+| run | mutants | K | T | S | NC | RE | score | assertion kill | matches docs |
+|---|---|---|---|---|---|---|---|---|---|
+| baseline | 125 | 60 | 27 | 23 | 7 | 8 | 74.36 | 51.28 | OK |
+| manual | 125 | 83 | 27 | 4 | 3 | 8 | 94.02 | 70.94 | OK |
+| ai | 125 | 74 | 27 | 13 | 3 | 8 | 86.32 | 63.25 | OK |
+| ai_raw | 125 | 78 | 27 | 12 | 0 | 8 | 89.74 | 66.67 | OK |
+
+Timeout sets identical across 4 runs: True | count 27
+baseline: Timeout share of detected 31.0%; Killed/125 = 48.00%
+manual: Timeout share of detected 24.5%; Killed/125 = 66.40%
+ai: Timeout share of detected 26.7%; Killed/125 = 59.20%
+
+survivors, manual kills, ai kills, both, only ai, only manual, neither, union = (30, 23, 14, 13, 1, 10, 6, 24) (docs: 30, 23, 14, 13, 1, 10, 6, 24)
+Killed->other regressions: 0
+#132 role->true in manual: Killed ['Profile keeps the role (API 2.2, README FR-04, SEC-06) AM-01']
+#132 role->true in ai: Killed ['Profile update (API 2.2, README FR-04, SEC-06) AI-U01 updati']
+
+Link check:
+  materials/s4/Guide_Contribution_Phuc_Hoang.md: 33 relative links, missing: 0
+  materials/s4/Report_Contribution_Phuc_Hoang.md: 12 relative links, missing: 0
+  materials/s4/Demo_Contribution_Phuc_Hoang.md: 21 relative links, missing: 0
+  materials/s4/Guide_Reproduction_Phuc_Hoang.md: 2 relative links, missing: 0
+  materials/s4/Verification_Notes_Phuc_Hoang.md: 5 relative links, missing: 0
+
+RESULT: ALL CHECKS PASSED
