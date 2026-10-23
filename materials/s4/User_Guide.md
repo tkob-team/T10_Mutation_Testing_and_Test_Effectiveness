@@ -35,7 +35,7 @@ Nguồn: [`Guide_Reproduction_Tan_Hiep.md`](Guide_Reproduction_Tan_Hiep.md) (Cou
   - "Tested environment": **Đã xử lý**. Đổi sang môi trường F01c.
   - Mục "Thử với AI Agent" chưa chạy và chưa có reproduction của người khác: **Còn lại**. Chưa có evidence, cần Tấn Hiệp/Phúc.
 
-Commit của lượt sửa: (điền sau commit).
+Commit của lượt sửa: `e4ae989`.
 
 ---
 
