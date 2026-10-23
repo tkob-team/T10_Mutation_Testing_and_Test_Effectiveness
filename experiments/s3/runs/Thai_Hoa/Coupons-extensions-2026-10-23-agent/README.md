@@ -52,15 +52,16 @@ SUT working HEAD at preparation: `4e014b9`; production, package/lock and baselin
 
 ## Reproduction
 
-From the SUT `backend/`, with existing pinned dependencies:
+From the SUT `backend/`. Install the pinned dependencies first if `node_modules/` is missing (always the case after extracting the frozen archive, which contains no `node_modules/`):
 
 ```powershell
+npm ci
 node node_modules/jest/bin/jest.js --config jest.coupons.manual.config.cjs --runInBand
 node node_modules/jest/bin/jest.js --config jest.coupons.ai.config.cjs --runInBand
 node node_modules/@stryker-mutator/core/bin/stryker.js run stryker.coupons.manual.config.json
 node node_modules/@stryker-mutator/core/bin/stryker.js run stryker.coupons.ai.config.json
 ```
 
-For the exact run input, extract the frozen archive to a new disposable directory and overlay the seven files under `sources/backend/` at their corresponding `backend/` paths. Use the pinned lockfile and an isolated runtime; do not place manual/Agent additions in the baseline test selection. The [runner](verify.mjs) and [summarizer](summarize.mjs) retain how this execution was driven; their local paths come from inputs.json and must be updated if reproducing elsewhere. Preserve previous evidence before generating a new run.
+For the exact run input, extract the frozen archive to a new disposable directory, overlay the seven files under `sources/backend/` at their corresponding `backend/` paths, then run `npm ci` in that `backend/` before the commands above. The archive content equals `git archive --format=zip 806ba19` (99 files, zip comment = commit SHA; text files differ only by CRLF/LF), so it can be regenerated from the SUT repo. Use the pinned lockfile and an isolated runtime; do not place manual/Agent additions in the baseline test selection. The [runner](verify.mjs) and [summarizer](summarize.mjs) retain how this execution was driven; their local paths come from inputs.json and must be updated if reproducing elsewhere. Preserve previous evidence before generating a new run.
 
 Human review, member self-run and official audit verdict remain separate. Working code changes are not committed or pushed by this run.
