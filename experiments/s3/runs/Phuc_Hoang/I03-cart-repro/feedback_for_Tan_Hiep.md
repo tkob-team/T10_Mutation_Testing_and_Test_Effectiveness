@@ -21,3 +21,13 @@ Chạy lại được cả ba run bằng đúng lệnh trong hướng dẫn, 150
 
 ## Ghi chú về nhánh
 Nhánh manual/AI (`s3/F01-manual`, `s3/G01-ai`) rẽ từ `8d60e9b`, không phải `806ba19`; file production (`server.js`, `database.js`, `database.sqlite`) giống baseline (hash trong `*/…-sha-before.txt`, không đổi sau khi chạy). Nên nói rõ trong guide để người chạy không nghĩ là sai commit.
+
+## Phản hồi của tác giả (Tấn Hiệp, 2026-10-23)
+
+- G1: Nhận — link C01-7 đổi sang `experiments/s3/runs/Tan_Hiep/D01-1-cc/` và harness trong SUT (`backend/test/helpers/isolate.js`, `app.js`); sửa ở `Experiment_Log_Tan_Hiep.md`, mục Setup (dòng C01-7).
+- G2: Nhận — ghi rõ số D01 (36/9/36) là của `8d60e9b`, trên `806ba19` là 88/54/72 (nguồn: log baseline của Phúc); sửa ở mục D01 — Runs (ghi chú commit).
+- G3: Nhận một phần — ghi lệnh mutation chuẩn cho member run `npx stryker run <config> --concurrency 2 --timeoutMS 5000 --timeoutFactor 1.5`; không đưa 3 tham số vào config nhánh F01/G01 (không sửa config nhánh); sửa ở mục Comparison; quan sát Killed↔Timeout tổng hợp ở cuối mục Limits & Failure Modes.
+- G4: Nhận một phần — thêm ghi chú setup nên dùng `npm ci`; dòng C01-6 giữ `npm install` vì ghi đúng lệnh đã chạy; sửa ở mục Setup.
+- G5: Nhận một phần — oracle "giỏ mới rỗng" ghi rõ là suy luận từ §4.1 (inferred) ở dòng 286:7 và ghi chú sau bảng Survivors; không sửa header test trên nhánh `s3/G01-ai`.
+- G6: Nhận một phần — thêm ghi chú tên CO-02/CO-04 hứa nhiều hơn assert (chỉ status) sau bảng Survivors; không đổi tên test vì baseline đã đóng băng.
+- G7: Nhận — thêm câu giới hạn về 335:10 (danh sách 6 mutant mục tiêu không có trạng thái DB sau cancel) vào mục Limits & Failure Modes.
