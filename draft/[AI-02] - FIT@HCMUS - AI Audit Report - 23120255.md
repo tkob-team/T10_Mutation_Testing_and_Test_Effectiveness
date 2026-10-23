@@ -1,93 +1,193 @@
-**Faculty of Information Technology (FIT) – Ho Chi Minh City University of Science (HCMUS)**
+**Khoa Công nghệ Thông tin (FIT) – Trường Đại học Khoa học Tự nhiên (HCMUS)**
 
-**CS423 / CSC13003 – Software Testing (AI-augmented · 2026\)**
+**CS423 / CSC13003 – Kiểm chứng Phần mềm (AI-augmented · 2026)**
 
-**AI POLICY · TEMPLATES — 2026 v1.0**
+**CHÍNH SÁCH AI · BIỂU MẪU — 2026 v1.0**
 
-# **AI Audit Report — 5-section Template per Artifact**
+# AI Audit Report — Mẫu 5 mục cho mỗi Artifact
 
-*Mandatory appendix for every AI-assisted homework (HW\#01–HW\#06, and Seminar).*
+*Phụ lục bắt buộc đính kèm cho mọi bài tập có dùng AI (HW#01–HW#06, Seminar).*
 
-*Adapted from Med Kharbach, PhD (2026) — AI Use Policy Templates for Higher Education. CC BY-NC-SA 4.0. This adaptation is prepared for FIT@HCMUS – CS423 / CSC15003 Software Testing course.*
+*Tài liệu được biên soạn lại từ Med Kharbach, PhD (2026) — Mẫu Chính sách Sử dụng AI cho Giáo dục Đại học. Giấy phép CC BY-NC-SA 4.0. Phiên bản này được FIT@HCMUS điều chỉnh cho môn CS423 / CSC15003 Kiểm chứng Phần mềm.*
 
-## **1\. Student Information**
+## 1. Thông tin Sinh viên
 
-| Field | Value |
-| :---- | :---- |
-| **Student name (printed):** | LÊ TẤN HIỆP |
-| **Student ID:** | 23120255 |
-| **Class / Cohort:** |  |
-| **Assignment ID (e.g., HW\#00, HW\#02):** | Seminar T10, Group 12 |
-| **Assignment date:** | 2026-10-16 to 2026-10-23 (recorded work) |
-| **AI tool(s) used:** | Claude (claude.ai): Claude Sonnet 4.6 and Claude Opus 5.5; Claude Code: Claude Opus 5.5 |
-| **AI tool(s) used:** | \[x\] Yes  \[ \] No |
+| Mục                              | Giá trị              |
+|----------------------------------|----------------------|
+| Họ tên sinh viên (in hoa):       | LÊ TẤN HIỆP |
+| MSSV:                            | 23120255 |
+| Mã bài tập (ví dụ HW#00, HW#02): | Seminar T10, Nhóm 12 |
+| Ngày làm bài:                    | 2026-10-16 đến 2026-10-23 (công việc đã ghi nhận) |
+| Công cụ AI đã dùng:              | Claude (claude.ai): Claude Sonnet 4.6 và Claude Opus 5.5; Claude Code: Claude Opus 5.5 |
+| Công cụ AI đã dùng:              | [x] Có [ ] Không |
 
-## **2\. Instructions (read before filling)**
+## 2. Hướng dẫn (đọc trước khi điền)
 
-* Add one row per AI-generated artifact (test case, script, checklist, OpenAPI spec, JMeter plan, etc.).  
-* Paste the verbatim prompt — DO NOT paraphrase.  
-* Paste the verbatim AI output (or include a labelled screenshot in the report).  
-* Tag the verdict: VALID / INVALID / INCOMPLETE.  
-* Reasoning must cite a course slide, ISTQB section, or technical RFC.  
-* Show the corrected artifact with the change highlighted.  
-* Sample rows are in italic — replace them before submission.
+- Thêm 1 hàng cho mỗi artifact AI sinh (test case, script, checklist, OpenAPI spec, JMeter plan…).
 
-## **3\. Audit Table — one row per artifact**
+- Dán nguyên văn prompt — KHÔNG paraphrase.
 
-| (1) Prompt \+ Tool | (2) AI Output | (3) Verdict | (4) Reasoning (ISTQB) | (5) Student Fix |
-| :---- | :---- | :---- | :---- | :---- |
-| **AI-S3-A01-01**<br>Tool: Claude (claude.ai), Claude Sonnet 4.6 and Claude Opus 5.5<br>Recorded date: 2026-10-16<br>Task: Research definitions, operators and workflow<br>Prompt source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-a01-01) | Research Notes F-A01-01 through F-A01-05 and the source register. The sandbox example compared a weak suite with 3 Killed out of 15 mutants and a stronger suite with 14 Killed out of 15. The member's Windows reproduction obtained the same counts.<br>Original-output source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-a01-01) | VALID | The recorded member verdict accepts the research artifact. Tutorial results were reproduced on the member's machine. This is evidence for the example, not a completed EShop baseline. [ISTQB CTFL 4.0.1, 1.4.4](https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf) provides the traceability basis; the research sources remain identified in the source register. | Accepted as-is for the artifact recorded on 2026-10-16. |
-| **AI-S3-B01-01**<br>Tool: Claude (claude.ai), Claude Opus 5.5<br>Recorded date: 2026-10-16<br>Task: Tool architecture and SUT inspection<br>Prompt source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-b01-01) | Tool workflow notes and source inspection originally concluded that some cart/checkout rules were unspecified. The inspection omitted the SRS in README.md. The retained notes show the corrected business references and test-only harness approach.<br>Original-output source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-b01-01) | INCOMPLETE | FR-07 and the SRS resolve assumptions that the first output treated as open questions. This affects the test basis and expected behavior. [ISTQB CTFL 4.0.1, 1.4.4](https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf) supports checking requirements against testware; the detailed correction is preserved in the source record. | Changed the cart rule to FR-07, added the SRS source, corrected Q9 and F-B01-04, and replaced a production-edit seam with test-only Express/SQLite mocks. |
-| **AI-S3-C01-01**<br>Tool: Claude (claude.ai), Claude Opus 5.5<br>Recorded date: 2026-10-16<br>Task: Jest assertions for a tutorial survivor<br>Prompt source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-c01-01) | Three executed tutorial tests pass on the original implementation. The exact free-shipping boundary kills the selected subtotal > 500000 mutant. Full mutation results contain 14 Killed and 1 Survived. The code and explanation are retained separately.<br>Original-output source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-c01-01) | VALID | The recorded verdict concerns the test code. Expected values were calculated from the requirement; the explanation about a hypothetical >= 499999 mutant was rejected because that mutation was not generated. [ISTQB CTFL 4.0.1, 4.2.2](https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf) is the boundary-design reference. | Kept the generated assertions. Added only the test wrapper around the optional standalone expect statement and rejected the unsupported mutator explanation. |
-| **AI-S3-D01-01**<br>Tool: Claude (claude.ai), Claude Opus 5.5<br>Recorded date: 2026-10-18<br>Task: Cart baseline and defect suite<br>Prompt source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-d01-01) | An initial Cart & Orders suite, isolated fixtures and separate defect tests. The original sandbox reported 36 passing baseline tests and separate expected assertion failures. Production behavior was checked against the SRS rather than silently treated as correct.<br>Original-output source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-d01-01) | INCOMPLETE | The record labels the initial suite usable after edits. Business requirements and original defects must be distinguished before freezing the baseline. [ISTQB CTFL 4.0.1, 1.4.4](https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf) supports test-basis traceability. Later execution and integration are different artifacts and are not counted as a member self-run here. |  |
-| **AI-S3-D01-02**<br>Tool: Claude Code, Claude Opus 5.5<br>Recorded date: 2026-10-22<br>Task: Execute and diagnose Cart handoff<br>Prompt source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-d01-02) | The execution report records 36 passing baseline tests, 8 separate defect failures and a Stryker dry-run failure: No tests were found. An additional diagnostic run using tempDirName stryker-tmp discovered the 36 tests.<br>Original-output source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-d01-02) | VALID | The report accurately distinguishes execution failure from mutant detection and preserves the actual outcome instead of changing tests to fit an expectation. [ISTQB CTFL 4.0.1, 5.3.2](https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf) is the reporting reference. The actor of these commands is Claude Code. |  |
-| **AI-S3-WF-01**<br>Tool: Claude (claude.ai), Claude Opus 5.5<br>Recorded date: 2026-10-22<br>Task: Prepare workspace and run-report instructions<br>Prompt source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-wf-01) | CLAUDE.md and mutation/run-report skills. The first version assumed date-named working folders and repeated cloning, while the actual workflow used one existing Repo directory containing the clones.<br>Original-output source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-wf-01) | INCOMPLETE | The first output depended on an incorrect environment assumption. Subsequent versions use the supplied workspace and a concise report format. [ISTQB CTFL 4.0.1, 1.4.2](https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf) is the context reference; the recorded user corrections identify the actual change. | Replaced date-folder assumptions with the fixed Repo workspace, reused existing clones, shortened the summary, and required asking instead of inventing missing environment details. |
-| **AI-S3-C01-02**<br>Tool: Claude (claude.ai), Claude Opus 5.5<br>Recorded date: 2026-10-16<br>Task: Record tutorial execution and mutant attribution<br>Prompt source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-c01-02) | Experiment Log C01, console interpretation and a script extracting killedBy from mutation.json. The weak, stronger and AI-assisted tutorial runs recorded 20.00%, 93.33% and 93.33%, respectively.<br>Original-output source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-c01-02) | VALID | The results were transcribed from actual console output and checked against generated reports. The member supplied and committed the local evidence. [ISTQB CTFL 4.0.1, 5.3.2](https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf) supports reporting actual execution results, including the relevant context. | Clarified the console.log location and corrected report-directory placement. |
-| **AI-S3-C01-03**<br>Tool: Claude (claude.ai), Claude Opus 5.5<br>Recorded date: 2026-10-16<br>Task: Configure ignored generated files<br>Prompt source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-c01-03) | A .gitignore proposal checked against actual Git status. Generated/runtime files were separated from the tracked backend package lockfile.<br>Original-output source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-c01-03) | VALID | The retained verification confirms the lockfile remained tracked and the ignore rules matched the intended repository state. [ISTQB CTFL 4.0.1, 5.4](https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf) is the configuration-management reference. This artifact concerns repository hygiene, not an additional mutation experiment. | Accepted as-is. |
-| **AI-S3-D01-04**<br>Tool: Claude (claude.ai), Claude Opus 5.5<br>Recorded date: 2026-10-16<br>Task: Draft domain-scope questions<br>Prompt source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-d01-04) | A scope/handoff message based on the earlier incomplete source inspection. Some questions were redundant because the SRS already contained the relevant rules.<br>Original-output source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-d01-04) | INCOMPLETE | The missing SRS affected the questions before testing began. [ISTQB CTFL 4.0.1, 1.4.4](https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf) supports tracing the questions back to the requirement source. The artifact is distinct from the later corrected suite. | Read the SRS after the scope response and corrected the underlying F-B01-04 notes. |
-| **AI-S3-D01-03**<br>Tool: Claude and Claude Code, Claude Opus 5.5<br>Recorded date: 2026-10-22<br>Task: Correct dry-run configuration and defect selection<br>Prompt source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-d01-03) | A test-only configuration update, DEF-08a/08b separation and execution records. The final diagnostic dry run discovered 36 tests; the expanded Cart defect profile contained 9 expected assertion failures.<br>Original-output source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-d01-03) | VALID | Configuration and defect changes follow the recorded D01 decisions. Production server and database logic were preserved. [ISTQB CTFL 4.0.1, 5.4](https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf) supports versioned configurations; the execution reports identify the changed selection. | Accepted the configuration and defect split as recorded; kept the original production behavior. |
-| **AI-S3-WF-02**<br>Tool: Claude and Claude Code, Claude Opus 5.5<br>Recorded date: 2026-10-22<br>Task: Extract and maintain prompt logs<br>Prompt source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-wf-02) | A transcript extraction script and Stop hook. Iterations addressed local /exit commands, empty sessions, resumed-session duplicates and username matching. The retained transcripts are evidence files rather than reconstructed conversations.<br>Original-output source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-wf-02) | INCOMPLETE | The record describes several revisions before the extractor matched actual transcript behavior. [ISTQB CTFL 4.0.1, 5.4](https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf) supports preserving versions and traceability of the evidence. Later extraction results are not substituted for the first output. | Corrected local-command filtering, empty-session overwrite, repeated prompts and username redaction; corrected the subsequent input path. |
-| **AI-S3-G01-01**<br>Tool: Claude Code and Claude (claude.ai), Claude Opus 5.5<br>Recorded date: 2026-10-23<br>Task: Generate and verify EShop Cart AI assertions<br>Prompt source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-g01-01) | Five AI tests were retained. Original-code execution passed 41 tests. In the member handoff run, 5 selected mutants were Killed and the correcting transition mutant remained Survived. The later frozen rerun is kept distinct from that run.<br>Original-output source: [Verbatim prompt/output and audit](../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-g01-01) | VALID | The recorded verdict accepts the assertions and documents implementation-derived array/error-field oracles. The six-target analysis separates business observations from unspecified payload details. [ISTQB CTFL 4.0.1, 1.4.4](https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf) is the traceability reference. | Kept assertions unchanged. Corrected the header claims about prior review and a clean session, documenting the partial-blind limitation. |
+- Dán nguyên văn output AI (hoặc kèm screenshot có chú thích trong báo cáo).
 
-## **4\. Summary of AI Accuracy**
+- Gắn nhãn: VALID / INVALID / INCOMPLETE.
 
-Aggregate the verdicts from Section 3 and complete the table below.
+- Lý do phải dẫn chiếu slide, mục ISTQB, hoặc RFC kỹ thuật.
 
-| Metric | Count | Percentage |
-| :---- | :---- | :---- |
-| **Total AI-generated artifacts audited** | 12 | 100.00% |
-| **VALID (correct, accepted as-is)** | 7 | 58.33% |
-| **INVALID (wrong; rejected)** | 0 | 0.00% |
-| **INCOMPLETE (acceptable after edits)** | 5 | 41.67% |
+- Hiển thị bản sửa với phần thay đổi được tô sáng.
 
-## **5\. Conclusion — When should AI be used (or not)?**
+- Hàng mẫu in nghiêng — thay trước khi nộp.
 
-Write 80–150 words describing patterns you observed. Where did AI shine? Where did AI fail? What is your recommendation for using AI in this kind of work in the future?
+## 3. Bảng Audit — 1 hàng / artifact
 
-AI was most useful for turning a concrete task into notes, test candidates, execution instructions and compact reports. The tutorial evidence shows why an exact boundary assertion is more informative than checking only a positive result. The main weaknesses were incomplete source reading, incorrect workspace assumptions and explanations that predicted mutants the configured tool did not generate. The EShop comparison also shows why implementation-derived error payloads need to be distinguished from business requirements. I would use AI to propose and organize work, then check the specification, run the selected tests and inspect actual mutant attribution. A successful Agent run and a personal reproduction are different evidence items. Tool output should support a decision rather than replace the test oracle.
+<table>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 21%" />
+<col style="width: 10%" />
+<col style="width: 23%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>(1) Prompt + Công cụ</th>
+<th>(2) Output AI</th>
+<th>(3) Verdict</th>
+<th>(4) Lý do (ISTQB)</th>
+<th>(5) Bản SV sửa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AI-S3-A01-01</strong><br>Công cụ: Claude (claude.ai), Claude Sonnet 4.6 and Claude Opus 5.5<br>Ngày ghi nhận: 2026-10-16<br>Nhiệm vụ: Nghiên cứu định nghĩa, operators và quy trình<br>Nguồn prompt: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-a01-01">Verbatim prompt/output and audit</a></td>
+<td>Research Notes F-A01-01 đến F-A01-05 và danh mục nguồn. Ví dụ sandbox so sánh bộ test yếu với 3 Killed trên 15 mutant và bộ test mạnh hơn với 14 Killed trên 15. Lần tái lập trên Windows của thành viên thu được cùng số đếm.<br>Nguồn output gốc: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-a01-01">Verbatim prompt/output and audit</a></td>
+<td>VALID</td>
+<td>Verdict đã ghi nhận của thành viên chấp nhận artifact nghiên cứu. Kết quả tutorial được tái lập trên máy thành viên. Đây là evidence cho ví dụ, không phải baseline EShop đã hoàn tất. <a href="https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf">ISTQB CTFL 4.0.1, 1.4.4</a> cung cấp cơ sở truy vết; các nguồn nghiên cứu vẫn được xác định trong danh mục nguồn.</td>
+<td>Chấp nhận nguyên trạng đối với artifact được ghi nhận ngày 2026-10-16.</td>
+</tr>
+<tr>
+<td><strong>AI-S3-B01-01</strong><br>Công cụ: Claude (claude.ai), Claude Opus 5.5<br>Ngày ghi nhận: 2026-10-16<br>Nhiệm vụ: Kiến trúc công cụ và kiểm tra source SUT<br>Nguồn prompt: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-b01-01">Verbatim prompt/output and audit</a></td>
+<td>Ghi chú quy trình công cụ và kiểm tra source ban đầu kết luận rằng một số quy tắc cart/checkout chưa được đặc tả. Việc kiểm tra bỏ sót SRS trong README.md. Ghi chú đã lưu thể hiện các tham chiếu nghiệp vụ đã sửa và cách dùng harness chỉ dành cho test.<br>Nguồn output gốc: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-b01-01">Verbatim prompt/output and audit</a></td>
+<td>INCOMPLETE</td>
+<td>FR-07 và SRS giải quyết các giả định mà output đầu tiên xem là câu hỏi còn mở. Điều này ảnh hưởng test basis và hành vi kỳ vọng. <a href="https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf">ISTQB CTFL 4.0.1, 1.4.4</a> hỗ trợ đối chiếu requirements với testware; bản sửa chi tiết được giữ trong phiếu nguồn.</td>
+<td>Đổi quy tắc cart sang FR-07, bổ sung nguồn SRS, sửa Q9 và F-B01-04, thay seam cần sửa production bằng Express/SQLite mocks chỉ dùng cho test.</td>
+</tr>
+<tr>
+<td><strong>AI-S3-C01-01</strong><br>Công cụ: Claude (claude.ai), Claude Opus 5.5<br>Ngày ghi nhận: 2026-10-16<br>Nhiệm vụ: Assertion Jest cho một survivor trong tutorial<br>Nguồn prompt: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-c01-01">Verbatim prompt/output and audit</a></td>
+<td>Ba test tutorial đã thực thi pass trên implementation gốc. Biên miễn phí vận chuyển chính xác kill mutant subtotal &gt; 500000 được chọn. Kết quả mutation đầy đủ có 14 Killed và 1 Survived. Code và phần giải thích được lưu riêng.<br>Nguồn output gốc: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-c01-01">Verbatim prompt/output and audit</a></td>
+<td>VALID</td>
+<td>Verdict đã ghi nhận áp dụng cho code test. Giá trị kỳ vọng được tính từ requirement; phần giải thích về mutant giả định &gt;= 499999 bị từ chối vì mutation đó không được sinh. <a href="https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf">ISTQB CTFL 4.0.1, 4.2.2</a> là tham chiếu thiết kế biên.</td>
+<td>Giữ các assertion được sinh. Chỉ bổ sung test wrapper cho câu lệnh expect độc lập tùy chọn và từ chối phần giải thích mutator không có căn cứ.</td>
+</tr>
+<tr>
+<td><strong>AI-S3-D01-01</strong><br>Công cụ: Claude (claude.ai), Claude Opus 5.5<br>Ngày ghi nhận: 2026-10-18<br>Nhiệm vụ: Baseline Cart và bộ test defect<br>Nguồn prompt: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-d01-01">Verbatim prompt/output and audit</a></td>
+<td>Bộ test Cart &amp; Orders ban đầu, fixtures cô lập và các test defect riêng. Sandbox ban đầu báo 36 baseline test pass và các assertion fail kỳ vọng riêng. Hành vi production được đối chiếu SRS, không mặc nhiên xem là đúng.<br>Nguồn output gốc: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-d01-01">Verbatim prompt/output and audit</a></td>
+<td>INCOMPLETE</td>
+<td>Phiếu ghi nhận bộ test ban đầu có thể dùng sau khi sửa. Cần phân biệt requirement nghiệp vụ với defect gốc trước khi freeze baseline. <a href="https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf">ISTQB CTFL 4.0.1, 1.4.4</a> hỗ trợ truy vết test basis. Việc thực thi và tích hợp về sau là các artifact khác, không được tính là thành viên tự chạy ở đây.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>AI-S3-D01-02</strong><br>Công cụ: Claude Code, Claude Opus 5.5<br>Ngày ghi nhận: 2026-10-22<br>Nhiệm vụ: Thực thi và chẩn đoán bàn giao Cart<br>Nguồn prompt: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-d01-02">Verbatim prompt/output and audit</a></td>
+<td>Báo cáo thực thi ghi nhận 36 baseline test pass, 8 test defect fail riêng và Stryker dry run thất bại: No tests were found. Một run chẩn đoán bổ sung dùng tempDirName stryker-tmp tìm được 36 test.<br>Nguồn output gốc: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-d01-02">Verbatim prompt/output and audit</a></td>
+<td>VALID</td>
+<td>Báo cáo phân biệt chính xác lỗi thực thi với việc phát hiện mutant và giữ kết quả thực tế, thay vì đổi test cho khớp kỳ vọng. <a href="https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf">ISTQB CTFL 4.0.1, 5.3.2</a> là tham chiếu báo cáo. Bên thực thi các lệnh này là Claude Code.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>AI-S3-WF-01</strong><br>Công cụ: Claude (claude.ai), Claude Opus 5.5<br>Ngày ghi nhận: 2026-10-22<br>Nhiệm vụ: Chuẩn bị workspace và hướng dẫn báo cáo run<br>Nguồn prompt: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-wf-01">Verbatim prompt/output and audit</a></td>
+<td>CLAUDE.md và các skill mutation/run-report. Phiên bản đầu giả định thư mục làm việc đặt tên theo ngày và clone lặp lại, trong khi quy trình thực tế dùng một thư mục Repo đã có chứa các bản clone.<br>Nguồn output gốc: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-wf-01">Verbatim prompt/output and audit</a></td>
+<td>INCOMPLETE</td>
+<td>Output đầu tiên phụ thuộc vào giả định sai về môi trường. Các phiên bản sau dùng workspace đã cung cấp và định dạng báo cáo gọn. <a href="https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf">ISTQB CTFL 4.0.1, 1.4.2</a> là tham chiếu về context; các yêu cầu sửa đã ghi nhận của người dùng xác định thay đổi thực tế.</td>
+<td>Thay giả định thư mục theo ngày bằng workspace Repo cố định, tái dùng các bản clone đã có, rút gọn tổng kết và yêu cầu hỏi thay vì tự dựng thông tin môi trường còn thiếu.</td>
+</tr>
+<tr>
+<td><strong>AI-S3-C01-02</strong><br>Công cụ: Claude (claude.ai), Claude Opus 5.5<br>Ngày ghi nhận: 2026-10-16<br>Nhiệm vụ: Ghi nhận thực thi tutorial và quy kết mutant<br>Nguồn prompt: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-c01-02">Verbatim prompt/output and audit</a></td>
+<td>Experiment Log C01, diễn giải console và script trích killedBy từ mutation.json. Các run tutorial yếu, mạnh hơn và có AI hỗ trợ lần lượt ghi nhận 20.00%, 93.33% và 93.33%.<br>Nguồn output gốc: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-c01-02">Verbatim prompt/output and audit</a></td>
+<td>VALID</td>
+<td>Kết quả được chép từ output console thực tế và đối chiếu báo cáo đã sinh. Thành viên cung cấp và commit evidence local. <a href="https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf">ISTQB CTFL 4.0.1, 5.3.2</a> hỗ trợ báo cáo kết quả thực thi thực tế cùng context liên quan.</td>
+<td>Làm rõ vị trí console.log và sửa vị trí thư mục báo cáo.</td>
+</tr>
+<tr>
+<td><strong>AI-S3-C01-03</strong><br>Công cụ: Claude (claude.ai), Claude Opus 5.5<br>Ngày ghi nhận: 2026-10-16<br>Nhiệm vụ: Cấu hình bỏ qua các file được sinh<br>Nguồn prompt: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-c01-03">Verbatim prompt/output and audit</a></td>
+<td>Đề xuất .gitignore được đối chiếu Git status thực tế. Các file được sinh/runtime được tách khỏi package lockfile backend đang được track.<br>Nguồn output gốc: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-c01-03">Verbatim prompt/output and audit</a></td>
+<td>VALID</td>
+<td>Kiểm tra đã lưu xác nhận lockfile vẫn được track và các quy tắc ignore khớp trạng thái repository dự kiến. <a href="https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf">ISTQB CTFL 4.0.1, 5.4</a> là tham chiếu quản lý cấu hình. Artifact này liên quan việc quản lý repository, không phải một thực nghiệm mutation bổ sung.</td>
+<td>Chấp nhận nguyên trạng.</td>
+</tr>
+<tr>
+<td><strong>AI-S3-D01-04</strong><br>Công cụ: Claude (claude.ai), Claude Opus 5.5<br>Ngày ghi nhận: 2026-10-16<br>Nhiệm vụ: Soạn câu hỏi scope domain<br>Nguồn prompt: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-d01-04">Verbatim prompt/output and audit</a></td>
+<td>Nội dung trao đổi scope/bàn giao dựa trên lần kiểm tra source thiếu sót trước đó. Một số câu hỏi bị thừa vì SRS đã có các quy tắc liên quan.<br>Nguồn output gốc: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-d01-04">Verbatim prompt/output and audit</a></td>
+<td>INCOMPLETE</td>
+<td>Việc thiếu SRS ảnh hưởng các câu hỏi trước khi bắt đầu test. <a href="https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf">ISTQB CTFL 4.0.1, 1.4.4</a> hỗ trợ truy vết câu hỏi về nguồn requirement. Artifact này khác với bộ test đã sửa về sau.</td>
+<td>Đọc SRS sau phản hồi về scope và sửa các ghi chú F-B01-04 làm cơ sở.</td>
+</tr>
+<tr>
+<td><strong>AI-S3-D01-03</strong><br>Công cụ: Claude and Claude Code, Claude Opus 5.5<br>Ngày ghi nhận: 2026-10-22<br>Nhiệm vụ: Sửa cấu hình dry run và lựa chọn defect<br>Nguồn prompt: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-d01-03">Verbatim prompt/output and audit</a></td>
+<td>Cập nhật cấu hình chỉ dành cho test, tách DEF-08a/08b và lưu bản ghi thực thi. Dry run chẩn đoán cuối tìm được 36 test; profile defect Cart mở rộng có 9 assertion fail kỳ vọng.<br>Nguồn output gốc: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-d01-03">Verbatim prompt/output and audit</a></td>
+<td>VALID</td>
+<td>Các thay đổi cấu hình và defect theo quyết định D01 đã ghi nhận. Logic production server và database được giữ nguyên. <a href="https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf">ISTQB CTFL 4.0.1, 5.4</a> hỗ trợ quản lý phiên bản cấu hình; các báo cáo thực thi xác định phần lựa chọn đã đổi.</td>
+<td>Chấp nhận cấu hình và cách tách defect như đã ghi nhận; giữ hành vi production gốc.</td>
+</tr>
+<tr>
+<td><strong>AI-S3-WF-02</strong><br>Công cụ: Claude and Claude Code, Claude Opus 5.5<br>Ngày ghi nhận: 2026-10-22<br>Nhiệm vụ: Trích xuất và duy trì prompt log<br>Nguồn prompt: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-wf-02">Verbatim prompt/output and audit</a></td>
+<td>Script trích xuất transcript và Stop hook. Các vòng sửa xử lý lệnh local /exit, phiên trống, nội dung trùng khi tiếp tục phiên và đối chiếu username. Các transcript đã lưu là file evidence, không phải hội thoại tái dựng.<br>Nguồn output gốc: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-wf-02">Verbatim prompt/output and audit</a></td>
+<td>INCOMPLETE</td>
+<td>Phiếu mô tả nhiều lần sửa trước khi công cụ trích xuất khớp hành vi transcript thực tế. <a href="https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf">ISTQB CTFL 4.0.1, 5.4</a> hỗ trợ giữ phiên bản và khả năng truy vết evidence. Kết quả trích xuất về sau không được dùng thay output đầu tiên.</td>
+<td>Sửa lọc lệnh local, ghi đè phiên trống, prompt lặp và che username; sửa đường dẫn input về sau.</td>
+</tr>
+<tr>
+<td><strong>AI-S3-G01-01</strong><br>Công cụ: Claude Code and Claude (claude.ai), Claude Opus 5.5<br>Ngày ghi nhận: 2026-10-23<br>Nhiệm vụ: Sinh và xác minh assertion AI cho Cart EShop<br>Nguồn prompt: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-g01-01">Verbatim prompt/output and audit</a></td>
+<td>Năm test AI được giữ lại. Thực thi trên code gốc pass 41 test. Trong run bàn giao của thành viên, 5 mutant được chọn thành Killed và mutant sửa lỗi chuyển trạng thái vẫn Survived. Run chạy lại trên baseline đã freeze về sau được giữ riêng với run đó.<br>Nguồn output gốc: <a href="../ai-audit/AI_Record_Tan_Hiep.md#artifact-ai-s3-g01-01">Verbatim prompt/output and audit</a></td>
+<td>VALID</td>
+<td>Verdict đã ghi nhận chấp nhận các assertion và nêu rõ oracle mảng/trường lỗi suy ra từ implementation. Phân tích sáu target tách quan sát nghiệp vụ khỏi chi tiết payload chưa được đặc tả. <a href="https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf">ISTQB CTFL 4.0.1, 1.4.4</a> là tham chiếu truy vết.</td>
+<td>Giữ nguyên các assertion. Sửa claim trong header về review trước đó và phiên sạch, đồng thời ghi rõ giới hạn partial-blind.</td>
+</tr>
+</tbody>
+</table>
 
+## 4. Tổng kết Độ chính xác AI
 
-## **6\. Mandatory Disclosure (paste verbatim)**
+Tổng hợp verdict từ Mục 3 và điền vào bảng dưới.
 
-The AI-assisted artifacts listed in Section 3 was initially generated by Claude (claude.ai): Claude Sonnet 4.6 and Claude Opus 5.5; Claude Code: Claude Opus 5.5; I reviewed and modified the SRS interpretation, workspace instructions and G01 provenance comments, added the documented free-shipping boundary checks and manual Cart observations; the manual Cart assertions identified in the comparison record was written entirely by me. The detailed AI Audit Report is attached as Appendix A. I confirm I did not use AI to generate any artifact listed in the prohibited category.
+| Chỉ số                             | Số lượng | Tỉ lệ |
+|------------------------------------|----------|-------|
+| Tổng artifact AI sinh đã audit     | 12 | 100.00% |
+| VALID (đúng, dùng nguyên)          | 7 | 58.33% |
+| INVALID (sai; loại bỏ)             | 0 | 0.00% |
+| INCOMPLETE (chấp nhận sau khi sửa) | 5 | 41.67% |
 
-## **Signature**
+## 5. Kết luận — Khi nào nên / không nên dùng AI?
 
-| Student name (printed): | LÊ TẤN HIỆP |
-| :---- | :---- |
-| **Student ID:** | 23120255 |
-| **Class / Cohort:** |  |
-| **Course:** | CS423 / CSC13003 – Software Testing |
-| **Instructor:** |  |
-| **Date:** |  |
-| **Signature:** |  |
+Viết 80–150 chữ mô tả pattern quan sát được. AI mạnh ở đâu? AI sai ở đâu? Khuyến nghị của bạn cho việc dùng AI trong loại công việc này?
 
-## **References**
+AI hữu ích nhất khi chuyển task cụ thể thành ghi chú, test đề xuất, hướng dẫn thực thi và báo cáo gọn. Evidence tutorial cho thấy assertion đúng tại biên cung cấp nhiều thông tin hơn việc chỉ kiểm tra kết quả dương. Điểm yếu chính là đọc thiếu nguồn, giả định sai workspace và dự đoán mutant mà công cụ không sinh. So sánh EShop cho thấy cần tách payload lỗi suy ra từ implementation khỏi requirement nghiệp vụ. Tôi sẽ dùng AI đề xuất, tổ chức công việc, rồi kiểm tra đặc tả, chạy test và xem mutant attribution thực tế. Run Agent thành công và lần tự tái lập là hai evidence khác nhau. Output công cụ nên hỗ trợ quyết định thay vì thay test oracle.
 
-* Kharbach, M. (2026). AI Use Policy Templates for Higher Education. CC BY-NC-SA 4.0.  
-* ISTQB Foundation Level Syllabus (latest version).  
-* Hardman, P. (2025). A Post-AI Learning Taxonomy.  
-* Fuster Rabella, M. (2025). OECD Education Working Paper No. 338\.  
-* Perkins, M., Roe, J., & Furze, L. (2025). AI Assessment Scale.  
-* Anthropic (2025). Building reliable AI test agents — engineering blog.  
-* DeepEval & Promptfoo documentation — testing frameworks for LLM systems.
+## 6. Mandatory Disclosure (dán nguyên văn)
+
+> *"Bộ artifact có AI hỗ trợ được liệt kê ở Mục 3 này được sinh phiên bản đầu bởi Claude (claude.ai): Claude Sonnet 4.6 và Claude Opus 5.5; Claude Code: Claude Opus 5.5; tôi đã rà soát và chỉnh sửa phần diễn giải SRS, hướng dẫn workspace và chú thích provenance G01, bổ sung các kiểm tra biên miễn phí vận chuyển đã ghi nhận và các quan sát Cart thủ công; các assertion Cart thủ công được xác định trong bản ghi so sánh do tôi tự viết. AI Audit Report chi tiết đính kèm ở Phụ lục A. Tôi cam đoan không dùng AI để sinh bất kỳ artifact nào thuộc danh mục bị cấm."*
+
+## Chữ ký
+
+| Họ tên sinh viên (in hoa): |                                        |
+|----------------------------|----------------------------------------|
+| MSSV:                      |                                        |
+| Lớp / Khoá:                |                                        |
+| Môn học:                   | CS423 / CSC13003 – Kiểm chứng Phần mềm |
+| Giảng viên:                |                                        |
+| Ngày:                      |                                        |
+| Chữ ký:                    |                                        |
+
+## Tham khảo
+
+- Kharbach, M. (2026). AI Use Policy Templates for Higher Education. CC BY-NC-SA 4.0.
+
+- ISTQB Foundation Level Syllabus (latest version).
+
+- Hardman, P. (2025). A Post-AI Learning Taxonomy.
+
+- Fuster Rabella, M. (2025). OECD Education Working Paper No. 338.
+
+- Perkins, M., Roe, J., & Furze, L. (2025). AI Assessment Scale.
+
+- Anthropic (2025). Building reliable AI test agents — engineering blog.
+
+- DeepEval & Promptfoo documentation — testing frameworks for LLM systems.
