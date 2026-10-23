@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 11:06 (Asia/Saigon).
+Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 11:44 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 5 lượt prompt; theo model: claude-opus-5-5 5 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 6 lượt prompt; theo model: claude-opus-5-5 6 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-23 02:41 — model: claude-opus-5-5 — session 4a560803
 
@@ -193,4 +193,54 @@ All 10 match. Save script + provenance md.
 - Bất thường mới: hash I01-2/3 lấy sau khi chạy, nên chỉ chứng minh trạng thái file hiện tại. Overlay có mtime 10:29:27, chưa thấy bị sửa từ đó.
 - Cần quyết định: Q1 – Bước 3 trong prompt chỉ còn chỗ `[dán 2 khối PowerShell]`, chưa có lệnh Tấn Hiệp đã chạy. Phương án: (a) dán 2 khối lệnh đã được Tấn Hiệp xác nhận để tôi ghi vào REPORT và Experiment Log; (b) ghi "Not recorded".
 ```
+
+## #6 — 2026-10-23 11:42 — model: claude-opus-5-5 — session ad369217
+
+### Prompt
+
+```text
+<pasted_content id="5c88">
+S3 member self-runs (executor Tấn Hiệp, đã chạy xong; không chạy lại): D01-1/2/3 trên s3/D01-cart-orders (8d60e9b); E01-1 trên 806ba19; F01-2, G01-2 trên s3/F01-manual, s3/G01-ai với --concurrency 2 --timeoutMS 5000 --timeoutFactor 1.5. Evidence ở experiments/s3/runs/Tan_Hiep/{D01-1,D01-2,D01-3,E01-1,F01-2,G01-2}/; console.log có dòng ### ghi giờ, commit, lệnh.
+1. Kiểm đủ file; số liệu đếm từ mutation.json.
+2. So từng mutant (khóa như H01) E01-1/F01-2/G01-2 với E01-1-cc/F01-2-cc/G01-2-cc và với Thai_Hoa/D04-merge-2026-10-23-agent/{frozen-cart-orders-baseline,cart-reproduced-manual,cart-reproduced-ai}/mutation.json. Tách Survived và Killed↔Timeout. Lưu script + md ở runs/Tan_Hiep/S3-member-compare/.
+3. Experiment Log: điền các dòng member run (D01 Runs; Baseline thay dòng [S3-E01] Pending; Comparison), cập nhật header Task IDs/Evidence Status. Không viết kết luận thay mình.
+4. Commit, không push. Khối báo cáo.
+</pasted_content id="5c88">
+```
+
+### Output
+
+```text
+Đủ file; D01-2 fail đúng 9 DEF. Giờ viết script so sánh.
+
+Script xong. Kiểm config E01-1 trên 806ba19 trước khi ghi log.
+
+Now Experiment Log edits.
+
+-cc runs dùng 15 runner. Viết script cập nhật ra file (tránh lỗi encoding stdin).
+
+I misread: line contains `G01-1-cc` too. Fix old string.
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: S3 member self-runs (D01, E01, F01, G01) — Done. Đủ file ở cả 6 thư mục; không chạy lại Jest/Stryker.
+- Kết quả: D01-1 Pass (36 test pass); D01-2 Pass (9 test fail đúng như kỳ vọng); D01-3 Pass (dry run `Ran 36 tests`)
+- Kết quả: E01-1 (`806ba19`) — Killed/Timeout/Survived/NoCoverage/RuntimeError = 82/25/34/2/7, 74.83%
+- Kết quả: F01-2 — 112/18/11/2/7, 90.91%; G01-2 — 102/18/21/2/7, 83.92%
+- So từng mutant: tập Survived trùng ở cả 6 cặp (với run -cc và với run của Hòa), không mutant nào vào hoặc ra Survived.
+- Số mutant đổi trạng thái, ghi dạng Killed↔Timeout/khác:
+  - E01-1: vs -cc 5/1 (mutant 532:11 từ RuntimeError thành Timeout); vs Hòa 0
+  - F01-2: vs -cc 0; vs Hòa 7/0
+  - G01-2: vs -cc 5/0; vs Hòa 7/0
+- Evidence: `experiments/s3/runs/Tan_Hiep/S3-member-compare/` (gồm `REPORT.md`, `member_compare.py`, `member_comparison.md`)
+- Commit seminar `main`: `3c06895` chore(ai-log), `87d6b08` test(S3), chưa push.
+- Bất thường mới: các run -cc chạy với 15 test runner process, còn run của Tấn Hiệp chạy với 2. Mỗi run Stryker của Tấn Hiệp có 14 cảnh báo crash `exit code 3221225477`.
+- Bất thường mới: chữ tiếng Việt và ký hiệu trong console.log của Tấn Hiệp bị lỗi mã hóa (ví dụ `D01-2/console.log`: `├ù`, `ΓåÆ`); số liệu không bị ảnh hưởng.
+- Cần quyết định: Q1 (từ lượt trước) – I01-1/2/3 vẫn chưa có lệnh nguyên văn Tấn Hiệp đã chạy – (a) dán 2 khối lệnh PowerShell / (b) ghi "Not recorded".
+```
+
+### Hành động
+
+- Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Tan_Hiep\S3-member-compare\member_compare.py
+- Write: C:\Users\[user]\AppData\Local\Temp\claude\D--HK7-Testing-Seminars-Repo\ad369217-4378-464e-a313-7cbcb8377eba\scratchpad\upd_log.py
+- Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Tan_Hiep\S3-member-compare\REPORT.md
 
