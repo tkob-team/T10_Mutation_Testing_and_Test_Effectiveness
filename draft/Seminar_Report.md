@@ -638,6 +638,8 @@ Dấu ":" nghĩa là chưa có dữ liệu, không phải zero. Cart và Coupons
 
 Cart mutation score tăng **16,08 pp ở manual** và **9,09 pp ở AI-assisted**. Coupons tăng **1,74 pp ở cả hai variants**. Những chênh lệch này là percentage points, không phải relative percent improvement.
 
+Số Killed và Timeout của Cart phụ thuộc cách Stryker gọi Jest. Bảng 6.5 dùng các lần chạy lại dưới config đóng băng (jest config nội tuyến), cho Timeout là 25 ở cả ba điều kiện. Các run của Tấn Hiệp dùng config của nhánh manual và AI (`configFile`) cho Timeout là 18: manual 112 Killed, AI 102 Killed. Survived (34, 11, 21) và score (74,83%, 90,91%, 83,92%) giống hệt ở cả hai cách chạy, vì Timeout vẫn được tính là detected. Cơ chế đổi Killed sang Timeout chưa được kiểm chứng; khi so các run, dùng Survived tuyệt đối và ghi rõ config.
+
 **Bảng 6.6. Phân loại initial baseline survivors theo khả năng phát hiện của additions.**
 
 | Domain | Baseline survivors | Cả hai kill | Chỉ manual condition kill | Chỉ AI condition kill | Cả hai chưa kill |
