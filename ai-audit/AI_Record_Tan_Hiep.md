@@ -239,7 +239,7 @@ Rejected: câu giải thích "would catch mutants like `>= 499999`" (StrykerJS k
 | Verdict | INCOMPLETE — usable after edits |
 | Reasoning & Source | Expected results từ `SUT/README.md` (SRS v2.0: FR-07, FR-08, FR-10, FR-11, FR-12, FR-18, FR-20, SEC-03) và `api_specification.md` §4, §6.2. [Bổ sung course slide/ISTQB section theo AI-02 khi review] |
 | Verification | Sandbox Claude (Linux, Node v22.22.0): `npm test` 36/36 pass (3 lần + `--runInBand`); `npm run test:defects` 8/8 fail đúng lý do; `database.sqlite` không đổi (md5); Stryker 150 mutants, score 74.83%. **Member run: Not run** (D01-1…3 trong Experiment Log) |
-| Student Fix | Pending |
+| Student Fix | Tôi chốt expected theo SRS (FR-07, FR-08, FR-10, FR-11, FR-12, FR-18, FR-20, SEC-03); baseline chỉ assert status; test đúng spec mà fail trên code gốc được tách sang backend/test/defects/ (quyết định S3-D01, 2026-10-18). |
 
 #### Verbatim Prompt
 
@@ -283,7 +283,7 @@ Xem prompt log ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-16_9ffbcb5b.md, l
 | Verdict | VALID — accepted as-is |
 | Reasoning & Source | Expected của từng run lấy từ Experiment Log mục D01 — Runs (bản 2026-10-18) |
 | Verification | Theo báo cáo: D01-1-cc 36/36 pass; D01-2-cc 8/8 fail đúng lý do; D01-3-cc fail (`No tests were found`). Chẩn đoán thêm với `--tempDirName stryker-tmp` thì dry run thành công. Claude Code không sửa test/config. **Member run: Not run** |
-| Student Fix | Pending |
+| Student Fix | Accepted as-is; tôi chốt dùng tempDirName stryker-tmp (quyết định 2026-10-22). |
 
 #### Verbatim Prompt
 
