@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 12:24 (Asia/Saigon).
+Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 12:27 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 10 lượt prompt; theo model: claude-opus-5-5 10 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 11 lượt prompt; theo model: claude-opus-5-5 11 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-23 02:41 — model: claude-opus-5-5 — session 4a560803
 
@@ -458,4 +458,35 @@ Hash trong prompt (`fef88f7`) là commit AI log; commit sửa Log/feedback là `
 ### Hành động
 
 - Write: C:\Users\[user]\AppData\Local\Temp\claude\D--HK7-Testing-Seminars-Repo\ad369217-4378-464e-a313-7cbcb8377eba\scratchpad\airec.py
+
+## #11 — 2026-10-23 12:26 — model: claude-opus-5-5 — session ad369217
+
+### Prompt
+
+```text
+<pasted_content id="5c88">
+AI Record AI-S3-E01-01 (ai-audit/AI_Record_Tan_Hiep.md), sửa số lượt claude.ai (claude.ai đã đếm lại trên log, lượt rút lại giả thuyết là #27, không phải #26):
+- Student Fix: "rút lại ở lượt #26" → "#27".
+- Recorded Time & Provenance: "11:30–11:50" → "11:30–12:16"; "lượt #21–#22, #26" → "lượt #21–#22, #27".
+- Verbatim: "lượt #21–#22." → "lượt #21–#22, #27."
+Không đổi gì khác. Kiểm git diff. Commit, không push. Khối báo cáo.
+</pasted_content id="5c88">
+```
+
+### Output
+
+```text
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: AI Record AI-S3-E01-01, sửa số lượt claude.ai — Done. Không chạy run nào.
+- Đã sửa đúng 4 chỗ như yêu cầu:
+  - Student Fix: lượt #26 → #27
+  - Recorded Time: 11:30–11:50 → 11:30–12:16
+  - Provenance: "lượt #21–#22, #26" → "lượt #21–#22, #27"
+  - Verbatim: "lượt #21–#22." → "lượt #21–#22, #27."
+- Kiểm diff: 3 dòng thay, chỉ 4 chỗ trên đổi, ngoài ra không có gì khác.
+- Evidence: `ai-audit/AI_Record_Tan_Hiep.md`
+- Commit seminar `main`: `de069a8` chore(ai-log), `aeea993` docs(S3-E01), chưa push.
+- Bất thường mới: tôi không kiểm được lượt #27 vì tìm heading `## #26`/`## #27` trong `ai-audit/evidence/s3/Tan_Hiep/claude-ai_2026-10-23_5aa8b0cf.md` không ra kết quả nào. Có thể file log phiên này ở repo chưa có các lượt đó, hoặc heading có định dạng khác.
+- Cần quyết định: Không
+```
 
