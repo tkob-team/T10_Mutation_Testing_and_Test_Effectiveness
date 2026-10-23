@@ -1,6 +1,6 @@
 **Khoa Công nghệ Thông tin (FIT) - Trường Đại học Khoa học Tự nhiên (HCMUS)**
 
-**CS423 / CSC15003 - Kiểm chứng Phần mềm (AI-augmented - 2026)**
+**CS423 / CSC13003 - Kiểm chứng Phần mềm (AI-augmented - 2026)**
 
 **CHÍNH SÁCH AI - BIỂU MẪU  -  2026 v1.0**
 
@@ -22,37 +22,37 @@
 
 ## 2. Câu hỏi Suy ngẫm
 
-**Draft status:** Phần trả lời được AI hỗ trợ tổng hợp từ 13 artifacts trong [Individual AI Record](../ai-audit/AI_Record_Thai_Hoa.md) đến 2026-10-23. Các mô tả thực thi dưới đây thuộc record Agent, còn suy ngẫm/trải nghiệm cá nhân cần tác giả đọc, sửa và xác nhận. Thông tin và chữ ký đã có trong working copy được giữ nguyên; không suy ra tác giả đã ký duyệt phần vừa bổ sung.
+**Draft status:** Phần trả lời được AI hỗ trợ tổng hợp từ 13 artifacts trong Individual AI Record đến 2026-10-23. Các mô tả thực thi dưới đây thuộc record Agent, còn suy ngẫm/trải nghiệm cá nhân cần tác giả đọc, sửa và xác nhận. Lượt review này đã gán verdict trong AI-02 theo yêu cầu của tác giả. Thông tin và chữ ký đã có trong working copy được giữ nguyên; không suy ra tác giả đã ký duyệt phần vừa bổ sung.
 
 ### 1. AI đã hỗ trợ công việc của bạn như thế nào?
 
 *Mô tả cụ thể AI đóng góp ở đâu trong project: thiết kế test, brainstorm scenario, sinh code, phân tích log, triage defect, viết tài liệu, chuẩn bị slide, v.v.*
 
-Em dùng Codex hỗ trợ nghiên cứu metrics, tests Coupons, integration và mutation analysis. Phần bổ sung gồm workshop starter, guide cho người mới, demo theo domain, Kill the Mutant, contribution workbook và gói docs S4. Em chỉ định scope bốn/tám nhóm Coupons, chọn Codex cùng context, yêu cầu hướng dẫn workshop và giao sáu task contracts S4. Các tài liệu audit/reflection này cũng có AI hỗ trợ soạn.
+Em dùng Codex hỗ trợ nghiên cứu metrics, tests Coupons, integration, mutation analysis, workshop, guide, demo/activity, report và contribution workbook. Em chỉ định scope bốn/tám nhóm Coupons, chọn Codex cùng context và giao sáu task contracts S4. Các biểu mẫu này cũng có AI hỗ trợ soạn.
 
 ### 2. Bạn chấp nhận / từ chối / sửa gì từ đầu ra AI?
 
 *Liệt kê đề xuất AI bạn dùng, đề xuất bạn loại bỏ, và cách bạn điều chỉnh cho phù hợp với spec, nguyên tắc ISTQB, hoặc phân tích của bạn.*
 
-Em yêu cầu summary bao quát ba thành viên, report đơn giản hơn, guide độc lập và demo chia theo domain. Với workbook, em chọn tracker làm nguồn assignee/Done khi khác CONTEXT hoặc Git authorship. Record còn ghi các sửa do Agent: disableBail, xóa stale tally, cập nhật claim Auth cũ và bỏ model-revision claim không có căn cứ. Những sửa đó chưa được gọi là phần em tự viết.
+Em yêu cầu summary bao quát ba thành viên, report đơn giản hơn, guide độc lập và demo chia theo domain. Với workbook, em chọn tracker làm nguồn assignee/Done. Record còn ghi các sửa do Agent như disableBail, xóa stale tally và bỏ model-revision claim không có căn cứ; đó chưa phải phần em tự viết.
 
 ### 3. Bạn nhận ra lỗi / bias / giới hạn nào trong đầu ra AI?
 
 *Ví dụ cụ thể: AI bịa hàm, sai boundary, miss security case, hiểu sai metric (p95 vs top 5%), bịa trích dẫn, v.v.*
 
-Coupons tăng lên 35/40 tests nhưng không thêm kill ngoài hai mutant ban đầu. Context và helpers dùng chung giới hạn so sánh độc lập. Auth guide chạy baseline rồi gặp Missing script: test:auth:manual. Joint S4 có Timeout/RuntimeError và một source postflight fail do external commit. Guide tutorial, activity và nghiên cứu dùng scope khác nhau; không thể gộp kết quả hoặc suy model vượt trội.
+Coupons có 35/40 tests nhưng không thêm kill ngoài hai mutant ban đầu. Context và helpers dùng chung giới hạn tính độc lập. Auth guide gặp Missing script: test:auth:manual. Report cuối tutorial đã bị thay bằng activity; claim 22 công thức workbook không khớp snapshot 21 hoặc file hiện tại 12. Các điểm này cần bổ sung evidence.
 
 ### 4. Bạn xác minh thông tin / nguồn / claim của AI như thế nào?
 
 *Mô tả phương pháp xác minh (chạy test, kiểm tra spec, tra RFC, hỏi TA, đối chiếu công cụ khác, thực thi trên SUT thật).*
 
-Agent checks đã lưu gồm spec/oracle, original-pass, defect profiles, hashes, signatures và JSON metrics. Joint S4 giữ 395 signatures với 88/118/118 tests và scores 67.56%/80.53%/75.47%. Workshop tutorial đạt 7 Killed sau ba thay đổi assertion; activity reference candidates kill đúng 5/5 case, weak candidates 0/5. Workbook giữ 22 formula nodes. Đây là technical verification do Agent ghi nhận, chưa thay personal self-run, native Excel, macOS execution, pilot hay human verdict.
+Agent đã kiểm tra spec/oracle, original-pass, hashes, signatures và JSON metrics. Joint S4 giữ 395 signatures, tests 88/118/118 và scores 67.56%/80.53%/75.47%. Activity reference kill đúng 5/5 case, weak 0/5. AI-02 hiện có 6 VALID và 7 INCOMPLETE từ lượt review có AI hỗ trợ; đây chưa phải personal self-run hay ký duyệt cá nhân.
 
 ### 5. Bạn học được điều gì qua project này mà nếu chỉ chấp nhận đầu ra AI thì sẽ không học được?
 
 *Suy ngẫm về đóng góp trí tuệ của chính bạn. AI đã định hình (hay không) sự hiểu của bạn về testing như thế nào? Một nguyên tắc bạn sẽ giữ cho tương lai?*
 
-Một nguyên tắc được các case hỗ trợ là xác định oracle và phạm vi trước khi đọc số kill. Stored usage-limit bằng ba phân biệt hành vi mà input một không phân biệt được; original-pass vẫn cần kiểm tra mutant mapping. Em đã đưa ra các lựa chọn scope và cách tổ chức được record lưu lại. Phần bài học và trải nghiệm cá nhân sâu hơn cần em tự bổ sung sau khi review/tái lập; bản tổng hợp AI này không thay cho xác nhận đó.
+Một nguyên tắc từ các case là xác định oracle, scope và phiên bản evidence trước khi diễn giải số kill. Usage-limit bằng ba phân biệt được hành vi mà giá trị một bỏ sót. Test pass vẫn cần mutant mapping; tăng test không tự tăng kill. Bài học và trải nghiệm cá nhân cần em tự bổ sung, xác nhận sau review/tái lập. Bản suy ngẫm giữ giới hạn này, không xác nhận em đã tự chạy hoặc trực tiếp chứng kiến kết quả.
 
 ## 3. Các Cấp độ AI đã dùng
 
