@@ -1,255 +1,394 @@
-<!-- Source: T10_Mutation_Testing_Slides.pdf. Converted in original page order. Charts/tables are represented in Markdown; decorative photos are omitted from this text-only version. -->
+<!-- Transcribed from T10_Mutation_Testing_Slides(1).pdf; 15 slides. -->
+<!-- Text and figures follow the original slide order; formatted as Markdown. -->
 
-# Mutation Testing and Test Effectiveness
+<!-- Page 1/15 — Cover -->
 
-*Seminar · EShop Case Study · Group 12*
+# Mutation Testing & Test Effectiveness
 
-## Slide 01 — Cover
+**T10 — Group 12 — EShop Case Study**
 
-**Seminar:** Mutation Testing and Test Effectiveness
+**FIT @ HCMUS — Department of Software Engineering**
 
-**Presenters**
+**Central question:** Can our tests detect a wrong result?
 
-| Student ID | Name |
-|---|---|
-| 23120255 | Lê Tấn Hiệp |
-| 23120262 | Tống Dương Thái Hòa |
-| 23120264 | Nguyễn Phúc Hoàng |
+*StrykerJS, reviewed assertions and real EShop mutants*
 
----
+**Presenters:**
 
-## Slide 02 — The Question
+- 23120255 — Lê Tấn Hiệp
+- 23120262 — Tống Dương Thái Hòa
+- 23120264 — Nguyễn Phúc Hoàng
 
-*T10 / THE QUESTION · 01/12*
+2026 AI-First · CS423/CSC15003
 
-### All tests passed. So... no bugs?
-
-**ALL TESTS: PASS**
-
-**Does PASS mean the code is correct?**
-
-> Question: Can tests catch wrong results?
+*Slide 1/15 · Cover*
 
 ---
 
-## Slide 03 — The Problem
+<!-- Page 2/15 — Why this matters -->
 
-*T10 / THE PROBLEM · 02/12*
+## Passing tests and test effectiveness
 
-### Running code ≠ checking the result.
+**All tests pass. What have we actually checked?**
 
-| Code Coverage | Mutation Testing |
-|---|---|
-| Did we visit this code? | Did we notice a wrong result? |
-| ✓ **YES** | ? **NOT ALWAYS** |
+Coverage records which code ran.  
+Assertions decide whether the result is acceptable.
 
-> A test can run the right code and still miss the wrong answer.
+A test that checks only HTTP 200 may miss an incorrect cart, discount or account state.
+
+### By the end of this session
+
+1. Read mutant outcomes and the score denominator.
+2. Explain survivors using inputs, observations and the specification.
+3. Write and review assertions, then verify a target kill.
+
+*Slide 2/15 · Why this matters*
 
 ---
 
-## Slide 04 — One Simple Example
+<!-- Page 3/15 — Method -->
 
-*T10 / ONE SIMPLE EXAMPLE · 03/12*
+## Mutation testing workflow
 
-### One character can change the answer.
+A mutant is a small code change used to challenge the tests.
 
-| Original rule | Changed rule (mutant) |
-|---|---|
-| `amount >= 100` | `amount > 100` |
-
-**Test the exact boundary:** `amount = 100`
-
-| Input | Original rule | Changed rule |
+| Step | Stage | Action |
 |---|---|---|
-| `100` | ✓ YES | × NO |
+| 01 | Original code | Run the tests first |
+| 02 | Mutate | Change one expression |
+| 03 | Retest | Use the same tests |
+| 04 | Inspect | Read state and test |
 
-> The mutant is visible only when the input exposes its difference.
+### Teaching example
 
-*The original slide uses the `≥` symbol for the original rule.*
-
----
-
-## Slide 05 — The Method
-
-*T10 / THE METHOD · 04/12*
-
-### Stryker makes mistakes. Tests hunt them.
-
-| Step | Action | Description |
+| Teaching example | Original | Mutant |
 |---|---|---|
-| 01 | **START** | Good code |
-| 02 | **MUTATE** | Change one thing |
-| 03 | **RETEST** | Run same tests |
-| 04 | **DECIDE** | Read result |
+| Rule | `amount >= 100` | `amount > 100` |
+| Input: 101 | `true` | `true` |
+| Input: 100 | `true` | `false` |
 
-| Outcome | Meaning |
-|---|---|
-| ✓ **KILLED** | A test fails on the changed code. |
-| × **SURVIVED** | The tests still pass. |
+**Input 100 exposes the boundary.**  
+**The test must assert the returned value.**
 
-> A SURVIVOR is a clue to investigate, not proof of a bug.
+*Slide 3/15 · Method*
 
 ---
 
-## Slide 06 — Our Real Case Study
+<!-- Page 4/15 — Report interpretation -->
 
-*T10 / OUR REAL CASE STUDY · 05/12*
+## Mutant states and mutation score
 
-### We tested an online shop backend.
+| State | Meaning in this report |
+|---|---|
+| Killed (K) | At least one test failed |
+| Survived (S) | Selected tests passed |
+| NoCoverage (N) | No test covered the change |
+| Timeout (T) | Execution exceeded the limit |
+| RuntimeError | Runner or runtime could not finish normally |
 
-**Starting point: 88 passing tests**
+### Stryker score
 
-| Test area | Passing tests | Scope |
+```text
+V = K + T + S + N
+Score = (K + T) / V
+
+Baseline: 252 / 373 = 67.56%
+```
+
+RuntimeError and CompileError are outside `V`.  
+Ignored and Pending also stay outside the score.
+
+**We report K and T separately. K / V is an additional assertion-kill metric.**
+
+*Slide 4/15 · Report interpretation*
+
+---
+
+<!-- Page 5/15 — Tool selection -->
+
+## StrykerJS and the AI Agent
+
+### StrykerJS: mutation execution
+
+- Fits the JavaScript / Node.js backend.
+- Runs the selected Jest tests.
+- Exports HTML and JSON evidence.
+
+### AI Agent: assertion candidates
+
+- **Inputs:** rule, mutant, tests, fixtures.
+- **Output:** candidate + expected behavior.
+- Human checks the oracle and setup.
+
+### Reusable review and verification loop
+
+1. Explain the survivor and propose an assertion.
+2. Review against the specification and run on original code.
+3. Rerun the same mutant and inspect the detecting test.
+
+**Keep the production source and configuration fixed. Save prompt, edits and reports.**
+
+*Slide 5/15 · Tool selection*
+
+---
+
+<!-- Page 6/15 — Controlled comparison -->
+
+## EShop experiment design
+
+| Domain | Baseline tests | Behavior under test |
 |---|---:|---|
-| Cart & Orders | 36 | Add items and place orders |
-| Coupons | 26 | Discount and usage limits |
-| Accounts | 26 | Login and access |
-| **Total** | **88** | |
+| Cart & Orders | 36 | Cart state, checkout and orders |
+| Coupons | 26 | Discount rules and usage limits |
+| Authentication & Users | 26 | Login, reset and profile access |
 
-> First we wrote passing tests. Then Stryker tested those tests.
+### Shared production baseline: `806ba19`
+
+- 395 matching mutant signatures across all three joint runs.
+- Original-code tests: baseline **88/88**, manual-analysis **118/118**, AI **118/118**.
+- Same source, mutation scope, timeout policy and isolated data setup.
+
+**Inputs are handed-over collections. Equal test counts do not imply independent generation.**
+
+*Slide 6/15 · Controlled comparison*
 
 ---
 
-## Slide 07 — Why These Tools
+<!-- Page 7/15 — Cart & Orders -->
 
-*T10 / WHY THESE TOOLS · 06/12*
+## Case 1: the empty-cart oracle
 
-### Two helpers. Different jobs. Humans decide.
+**Rule:** a newly created cart contains no items.
 
-| StrykerJS | AI Assistant | Human Review |
+### Original
+
+```javascript
+userCarts[userId] = [];
+```
+
+### Mutant: ArrayDeclaration
+
+```javascript
+userCarts[userId] = ["Stryker was here"];
+```
+
+### The missing observation
+
+Weak check:
+
+```javascript
+expect(empty.status).toBe(200)
+```
+
+Stronger check:
+
+```javascript
+expect(empty.body).toEqual([])
+```
+
+**A successful request can still return incorrect data. Inspect the response body.**
+
+*Slide 7/15 · Cart & Orders*
+
+---
+
+<!-- Page 8/15 — Coupons -->
+
+## Case 2: coupon usage-limit data
+
+### Original expression
+
+```javascript
+max_uses_per_user || 1
+```
+
+### Mutant replacement
+
+```javascript
+max_uses_per_user && 1
+```
+
+| Admin input | Original stores | Mutant stores | Test distinguishes? |
+|---:|---:|---:|---|
+| 1 | 1 | 1 | No |
+| 3 | 3 | 1 | Yes |
+
+MF-01 reads the created coupon back:
+
+```javascript
+expect(listed.body[0].max_uses_per_user).toBe(3)
+```
+
+**Domain reports: two related survivors became Killed. More cases added no further kills.**
+
+*Slide 8/15 · Coupons*
+
+---
+
+<!-- Page 9/15 — Authentication & Users -->
+
+## Case 3: a profile update keeps the role
+
+**Rule:** a profile update without a role field preserves the stored role.
+
+### Original condition
+
+```javascript
+if (role) { ... }
+```
+
+### Mutant: force the role-update branch
+
+```javascript
+if (true) { ... }
+```
+
+### AM-01 checks database state and API output
+
+```javascript
+expect((await testApi.userByEmail(ALICE.email)).role)
+  .toBe('user');
+expect((await me(token)).body.role).toBe('user');
+```
+
+**Auth domain report: mutant #132 changed from Survived to Killed.**
+
+*Slide 9/15 · Authentication & Users*
+
+---
+
+<!-- Page 10/15 — Measured results -->
+
+## Joint results on 395 matching mutants
+
+| Collection | Tests | Killed | Timeout | Survived | NoCov. | Error | Score |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Baseline | 88 | 191 | 61 | 87 | 34 | 22 | 67.56% |
+| Manual-analysis | 118 | 238 | 64 | 43 | 30 | 20 | 80.53% |
+| Reviewed AI | 118 | 211 | 72 | 62 | 30 | 20 | 75.47% |
+
+Score = (Killed + Timeout) / valid mutants. Error = RuntimeError.
+
+Valid denominators: **373, 375, 375**.  
+CompileError / Ignored / Pending: **0**.
+
+### New Killed from baseline Survived or NoCoverage
+
+- **48** manual-analysis.
+- **28** reviewed AI.
+
+**K / V:** 51.21% baseline, 63.47% manual-analysis, 56.27% reviewed AI.
+
+*Slide 10/15 · Measured results*
+
+---
+
+<!-- Page 11/15 — Interpretation -->
+
+## Equivalent mutants and limits
+
+### Why can a mutant survive?
+
+- Missing input or check: add a spec-based test.
+- Equivalent: same observations for all valid inputs.
+- Auth candidate: counts 0, 2, 4 mask `>= 3` vs `> 3`.
+
+### What AI can contribute
+
+- Propose counterexamples and equivalence arguments.
+- Review inputs, side effects and assumptions.
+- Keep unproven cases labeled equivalent candidates.
+
+**These runs compare collections, not model ability. Coupons used Codex on both sides.**
+
+Timeout, SQLite errors, oracle conventions and machine load limit the conclusion.
+
+*Slide 11/15 · Interpretation*
+
+---
+
+<!-- Page 12/15 — 10-minute demonstration -->
+
+## Live demo: verify the coupon mutant
+
+### StrykerJS on the real EShop backend
+
+1. Run the passing baseline and open the mutation report.
+2. Inspect line 474: input 1 leaves the mutant Survived.
+3. Add input 3 and verify the stored value on original code.
+
+### AI candidate, review and execution
+
+4. Inspect the recorded prompt and Codex candidate.
+5. Check the rule and fixture, then run the AI test collection.
+6. Match the same mutant and inspect its detecting test.
+
+*Slide 12/15 · 10-minute demonstration*
+
+---
+
+<!-- Page 13/15 — Five target mutants -->
+
+## Activity: Kill the Mutant
+
+Teams of 3–4. Write one candidate assertion per case.  
+Use the supplied worksheet and fixtures. Jest or clear pseudocode is acceptable.
+
+| Case | Mutant change | Rule to protect |
 |---|---|---|
-| **Find weak tests** | **Suggest improvements** | **Check what is right** |
-| Create mutants | Propose assertions | Read requirements |
-| Run tests | Explain candidates | Accept or reject |
-| Show survivors | May be wrong | Verify by running |
+| K1 | New cart contains an extra item | A new cart is empty |
+| K2 | Remove the push operation | Added items persist |
+| K3 | Reset cart on every read | Reading keeps cart data |
+| K4 | Remove the order-query parameter | History includes the user's order |
+| K5 | Save an empty cancellation status | Cancellation is persisted |
 
-> Why StrykerJS? Our EShop uses JavaScript. PIT targets Java; mutmut targets Python.
+**Use worksheet context: empty, cart, reread, history and canceled. No AI during scoring.**
+
+*Slide 13/15 · Five target mutants*
 
 ---
 
-## Slide 08 — EShop Finding 01
+<!-- Page 14/15 — 20-minute activity -->
 
-*T10 / ESHOP FINDING 01 · 07/12*
+## Activity steps and scoring
 
-### The new cart was not really empty.
-
-**What the mutant did**
-
-- Created a **NEW CART** containing **1 unexpected item**.
-- It should contain **ZERO items**.
-
-**What the test checked**
-
-| When | Assertion |
+| Time | Team action |
 |---|---|
-| Before | “Request succeeded” |
-| After | “Cart has 0 items” |
+| 00–02 min | Read the five diffs, rules and fixture data |
+| 02–10 min | Write five candidate assertions |
+| 10–14 min | Swap, review and revise with a peer team |
+| 14–18 min | Run on original and target mutants, then tally |
+| 18–20 min | Explain one design and submit the response sheet |
 
-**Result:** `SURVIVED → KILLED`
+**One point per verified target kill. Maximum: 5 points.**
 
-> Key idea: “Success” does not mean the DATA is correct.
+Original code must pass. The candidate must fail because of its target mutant.  
+Syntax errors, setup failures and Timeout receive no kill point.
 
----
+**Minute paper:** Which observation mattered? What would you check next?
 
-## Slide 09 — EShop Finding 02
-
-*T10 / ESHOP FINDING 02 · 08/12*
-
-### Better input reveals the hidden difference.
-
-| Scenario | Expected saved value | Mutant's saved value | Outcome |
-|---|---:|---:|---|
-| Set usage limit = **1** | 1 | 1 | **NO DIFFERENCE** |
-| Set usage limit = **3** | 3 | 1 | **MUTANT DETECTED** |
-
-> Changing the input helped our tests detect **2 related mutants**.
+*Slide 14/15 · 20-minute activity*
 
 ---
 
-## Slide 10 — Our Experiment
+<!-- Page 15/15 — Discussion -->
 
-*T10 / OUR EXPERIMENT · 09/12*
+## Takeaways and Q&A
 
-### Same starting point. Different test improvements.
+### Three things to remember
 
-**SAME ORIGINAL CODE + BASELINE TESTS**
+1. Reach the change with useful input.
+2. Check behavior against the rule.
+3. Verify the original pass and target kill.
 
-| Manual | AI-assisted |
-|---|---|
-| People add better checks. | AI suggests → human verify. |
+### Further reading
 
-**RUN TESTS AGAIN → COMPARE WHICH MUTANTS WERE KILLED**
-
----
-
-## Slide 11 — Results on EShop
-
-*T10 / RESULTS ON ESHOP · 10/12*
-
-### More useful checks caught more changes.
-
-**Cart & Orders**
-
-| Test improvement | Number of mutants detected |
-|---|---:|
-| Starting tests | **82** |
-| Manual | **105** |
-| AI-assisted | **95** |
-
-**Coupons**
-
-| Test improvement | Number of mutants detected |
-|---|---:|
-| Start | **39** |
-| Manual | **41** |
-| AI-assisted | **41** |
-
-**Auth:** comparison pending.
-
-*The chart's metric is “Number of mutants detected”, not a percentage or mutation score.*
-
----
-
-## Slide 12 — Important Limits
-
-*T10 / IMPORTANT LIMITS · 11/12*
-
-### A bigger score is not the whole truth.
-
-**01 — TIMEOUT**
-
-A slow test is not a proven bug catch.
-
-**02 — WRONG RULE**
-
-Tests can enforce bad expectations.
-
-**03 — SURVIVOR**
-
-It might be a missing test or equivalent.
-
-> AI gives ideas. A passing test on the original + a verified mutant kill gives evidence.
-
----
-
-## Slide 13 — Next: Live Demo
-
-*T10 / NEXT: LIVE DEMO · 12/12*
-
-### Now watch us hunt a mutant.
-
-**SEE IT CHANGE.**
-
-**WATCH THE TEST CATCH IT.**
-
-**NEXT 10 MIN: REAL TERMINAL + ESHOP**
-
-Afterward: your turn with **5 mutants**.
-
----
-
-## Slide 14 — Closing
-
-# THE END OF MY PRESENTATION
+- Stryker: states, metrics and equivalent mutants.
+- Jia & Harman: mutation-testing survey (2011).
+- Group 12: report, guide and activity worksheet.
 
 **ANY QUESTION BRUH?**
+
+**Discussion question:** Which survivor would you investigate next, and what evidence would convince you?
+
+*Slide 15/15 · Discussion*
