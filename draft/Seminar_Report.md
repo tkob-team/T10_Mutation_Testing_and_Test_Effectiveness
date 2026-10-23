@@ -1,34 +1,37 @@
-**BÁO CÁO SEMINAR**
+# SEMINAR REPORT
 
-**ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH**  
-**TRƯỜNG ĐẠI HỌC KHOA HỌC TỰ NHIÊN**  
+**ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH**<br>
+**TRƯỜNG ĐẠI HỌC KHOA HỌC TỰ NHIÊN**<br>
 **KHOA CÔNG NGHỆ THÔNG TIN**
 
-**Môn học: Kiểm thử phần mềm**
+---
 
-# Mutation Testing & Test Effectiveness
+## Mutation Testing & Test Effectiveness
 
-**Chủ đề T10 - Nhóm 12**
+**Topic T10 · Nhóm 12**<br>
+**Course:** Software Testing<br>
+**Năm học:** 2026–2027
 
-| Thành viên | Mã số sinh viên |
-|---|---|
-| Lê Tấn Hiệp | |
-| Tống Dương Thái Hòa | |
-| Nguyễn Phúc Hoàng | |
+**Thành viên thực hiện**
 
-| Thông tin | Nội dung |
-|---|---|
-| Giảng viên hướng dẫn | |
-| Lớp học phần | |
-| Năm học | 2026–2027 |
+- Lê Tấn Hiệp
+- Tống Dương Thái Hòa
+- Nguyễn Phúc Hoàng
+
+**Giảng viên hướng dẫn:** _Bổ sung_<br>
+**Lớp học phần:** _Bổ sung_
+
+---
 
 ## Tóm tắt
 
-Đánh giá một bộ kiểm thử đòi hỏi xem xét cả phạm vi thực thi và khả năng nhận biết hành vi sai. Một kiểm thử có thể đi qua đoạn mã cần kiểm tra nhưng vẫn bỏ sót sai lệch nếu dữ liệu đầu vào chưa phân biệt được các trường hợp hoặc điều kiện kiểm tra kết quả chưa đủ cụ thể. Kiểm thử đột biến tiếp cận vấn đề này bằng cách tạo những thay đổi nhỏ trong chương trình và quan sát phản ứng của bộ kiểm thử.
+Một test suite có thể thực thi đúng vùng source code nhưng vẫn bỏ sót hành vi sai nếu test data chưa phân biệt được các trường hợp hoặc assertions chỉ kiểm tra HTTP status. Mutation Testing đánh giá khả năng phát hiện sai khác bằng cách tạo những thay đổi nhỏ trong chương trình và quan sát phản ứng của tests. Trong seminar này, chúng tôi trình bày nền tảng Mutation Testing, khảo sát công cụ và thực hiện một case study trên EShop backend với ba domains: Cart & Orders, Coupons và Authentication & Users.
 
-Trong báo cáo này, chúng tôi trình bày cơ sở lý thuyết của kiểm thử đột biến, khảo sát công cụ và xây dựng thiết kế nghiên cứu trường hợp trên EShop backend. Phạm vi bao gồm giỏ hàng và đơn hàng, mã giảm giá, xác thực và người dùng. StrykerJS đảm nhiệm việc sinh đột biến và thực thi kiểm thử; AI Agent hỗ trợ đề xuất assertion. Thiết kế so sánh gồm bộ kiểm thử ban đầu, bộ bổ sung assertion thủ công và bộ bổ sung assertion do AI đề xuất sau khi được con người kiểm tra. Các phương án sử dụng cùng mã nguồn sản phẩm và cấu hình đột biến để đối chiếu kết quả ở mức từng mutant, đồng thời xem xét các trường hợp nghi ngờ tương đương và giới hạn của phép đo.
+Thực nghiệm sử dụng StrykerJS kết hợp Jest và Supertest trên frozen baseline có 88 tests pass; 54 defect cases được chạy riêng. Kết quả được đối chiếu theo mutant signature trên cùng production source và mutation scope. Trong Cart & Orders, manual suite bổ sung 23 assertion kills so với baseline, còn AI-assisted suite bổ sung 13; cả hai cùng phát hiện 13 mutants. Trong Coupons, hai variants ban đầu cùng bổ sung 2 kills tại logic lưu usage limit. Các suites Coupons mở rộng lên 35 và 40 tests vẫn cho cùng mutation counts với variants trước. Authentication & Users hiện có baseline với 60 Killed, 27 Timeout, 23 Survived, 7 NoCoverage và 8 RuntimeError; chưa có dữ liệu manual/AI comparison.
 
-<!-- Bổ sung kết quả định lượng chính và kết luận thực nghiệm sau khi hoàn thành Chương 6–7. Không nêu hiệu quả vượt trội của bất kỳ phương án nào khi chưa có số liệu. -->
+Các quan sát cho thấy assertions về response data và database state giúp phát hiện sai khác mà status-only tests bỏ sót. Tuy nhiên, mutation score còn phụ thuộc Timeout, runtime errors và oracle; một mutant sửa được defect gốc không nên bị kill bằng expected result trái specification. Kết quả Coupons là comparison giữa các additions có AI hỗ trợ trong cùng context, không phải experiment độc lập giữa human và AI. Báo cáo vì vậy đưa ra kết luận mô tả trong phạm vi dữ liệu hiện có, đồng thời phân biệt Agent reruns với member self-runs và human review.
+
+**Keywords:** Mutation Testing; Test Effectiveness; StrykerJS; Test Oracle; Assertions; AI-assisted Testing; EShop.
 
 ## Mục lục
 
@@ -36,63 +39,66 @@ Trong báo cáo này, chúng tôi trình bày cơ sở lý thuyết của kiểm
 - [2. Cơ sở lý thuyết và nghiên cứu liên quan](#chuong-2)
 - [3. Khảo sát và lựa chọn công cụ](#chuong-3)
 - [4. Đối tượng và thiết kế thực nghiệm](#chuong-4)
-- [5. Quy trình triển khai và các kịch bản minh họa](#chuong-5)
+- [5. Triển khai và demonstration scenarios](#chuong-5)
 - [6. Kết quả thực nghiệm](#chuong-6)
 - [7. Thảo luận và giới hạn](#chuong-7)
 - [8. Kết luận và hướng phát triển](#chuong-8)
-- [Tài liệu tham khảo](#tai-lieu-tham-khao)
-- [Phụ lục A. Thông tin tái lập thực nghiệm](#phu-luc-a)
-- [Phụ lục B. Danh mục bằng chứng](#phu-luc-b)
-- [Phụ lục C. Mẫu đầu vào và hồ sơ xử lý kết quả AI](#phu-luc-c)
-- [Phụ lục D. Demo và hoạt động thực hành](#phu-luc-d)
-- [Phụ lục E. Đóng góp và công bố sử dụng AI](#phu-luc-e)
+- [References](#tai-lieu-tham-khao)
+- [Appendix A. Reproduction procedure](#phu-luc-a)
+- [Appendix B. Reusable AI prompt](#phu-luc-b)
+- [Appendix C. Demo và activity design](#phu-luc-c)
+- [Appendix D. Contributions và AI disclosure](#phu-luc-d)
 
-## Danh mục từ viết tắt và thuật ngữ
+## Abbreviations and terminology
 
-| Ký hiệu / thuật ngữ | Diễn giải |
+| Term | Diễn giải trong báo cáo |
 |---|---|
-| AI | Trí tuệ nhân tạo (Artificial Intelligence) |
-| API | Giao diện lập trình ứng dụng (Application Programming Interface) |
-| LLM | Mô hình ngôn ngữ lớn (Large Language Model) |
-| SUT | Hệ thống được kiểm thử (System Under Test) |
-| RQ | Câu hỏi nghiên cứu (Research Question) |
-| Baseline | Mốc đối chiếu gồm trạng thái mã nguồn, cấu hình, dữ liệu và bộ kiểm thử ban đầu đã cố định |
-| Test oracle | Căn cứ xác định kết quả mong đợi của kiểm thử |
-| Assertion | Điều kiện kiểm tra kết quả thực tế so với kết quả mong đợi |
-| Mutation operator | Quy tắc tạo thay đổi trong chương trình |
-| Mutant | Một biến thể chương trình được tạo bởi phép đột biến |
-| Equivalent candidate | Mutant nghi ngờ tương đương, chưa có đủ căn cứ kết luận |
-| Run | Một lần thực thi được định danh và lưu lại điều kiện cùng kết quả |
+| AI / LLM | Artificial Intelligence / Large Language Model |
+| API / HTTP / JWT | Application Programming Interface / Hypertext Transfer Protocol / JSON Web Token |
+| SUT | System Under Test; trong seminar là EShop backend |
+| RQ | Research Question |
+| Baseline | Production source, configuration, fixtures và initial test suite được cố định để làm mốc comparison |
+| Test oracle | Căn cứ xác định expected result của một test |
+| Assertion | Điều kiện đối chiếu actual result với expected result |
+| Mutation operator / mutator | Quy tắc biến đổi source code để sinh mutant |
+| Mutant / survivor | Một program variant / mutant có trạng thái Survived trong run đang xét |
+| Equivalent candidate | Mutant được nghi ngờ tương đương nhưng chưa đủ căn cứ kết luận |
+| Fixture / test harness | Dữ liệu và trạng thái chuẩn bị cho tests / cơ chế nạp, cô lập và thực thi SUT |
+| Run / rerun | Một lần thực thi có điều kiện và kết quả được lưu / lần thực thi lại |
+| Mutant signature | Source file, location, mutator và replacement dùng để đối chiếu mutants giữa các reports |
+| Assertion kill | Killed được truy về test failure; phân biệt với Timeout hoặc lỗi runner |
+| Percentage point (pp) | Đơn vị chênh lệch tuyệt đối giữa hai tỷ lệ phần trăm |
 
 <a id="chuong-1"></a>
+
 ## 1. Giới thiệu
 
 ### 1.1. Bối cảnh và vấn đề
 
-Kiểm thử tự động giúp kiểm tra hành vi phần mềm sau mỗi thay đổi. Tuy nhiên, việc toàn bộ kiểm thử đều thành công chưa trả lời được bộ kiểm thử có đủ nhạy với các lỗi quan trọng hay không. Một nguyên nhân là kiểm thử chỉ quan sát một phần kết quả: chẳng hạn xác nhận API trả về trường tổng tiền nhưng không kiểm tra giá trị tổng tiền theo quy tắc nghiệp vụ.
+Automated testing giúp kiểm tra hành vi phần mềm sau mỗi thay đổi. Tuy nhiên, việc toàn bộ tests trong suite đều pass chưa trả lời được test suite có đủ nhạy với các lỗi quan trọng hay không. Một nguyên nhân là test chỉ quan sát một phần kết quả: chẳng hạn xác nhận API trả về trường tổng tiền nhưng không kiểm tra giá trị tổng tiền theo quy tắc nghiệp vụ.
 
-Độ bao phủ mã nguồn cho biết các thành phần mã nào được thực thi. Thông tin này hỗ trợ tìm vùng chưa được kiểm tra, nhưng cần kết hợp với đánh giá dữ liệu đầu vào và assertion. Kiểm thử đột biến bổ sung một góc nhìn bằng cách đặt câu hỏi: khi hành vi của chương trình bị thay đổi, bộ kiểm thử có nhận biết được thay đổi đó hay không [1], [7].
+Code coverage cho biết các thành phần mã nào được thực thi. Thông tin này hỗ trợ tìm vùng chưa được kiểm tra, nhưng cần kết hợp với đánh giá dữ liệu đầu vào và assertion. Mutation Testing bổ sung một góc nhìn bằng cách đặt câu hỏi: khi hành vi của chương trình bị thay đổi, test suite có nhận biết được thay đổi đó hay không [1], [7].
 
 ### 1.2. Động cơ lựa chọn seminar
 
-Trong EShop, sai lệch nhỏ tại điều kiện biên hoặc phép tính có thể ảnh hưởng đến số tiền thanh toán, quyền truy cập hoặc trạng thái đơn hàng. Các trường hợp này phù hợp để phân tích quan hệ giữa yêu cầu nghiệp vụ, dữ liệu kiểm thử và khả năng phát hiện lỗi.
+Trong EShop, sai lệch nhỏ tại điều kiện biên hoặc phép tính có thể ảnh hưởng đến số tiền thanh toán, quyền truy cập hoặc trạng thái đơn hàng. Các trường hợp này phù hợp để phân tích quan hệ giữa yêu cầu nghiệp vụ, test data và khả năng phát hiện lỗi.
 
-Sự xuất hiện của AI Agent tạo thêm một phương án xây dựng assertion. Câu hỏi cần kiểm chứng là assertion được đề xuất có dùng đúng kết quả mong đợi, chạy được trong môi trường thực tế và phát hiện đúng thay đổi mục tiêu hay không. Vì vậy, chúng tôi đặt việc kiểm tra đầu ra AI trong cùng quy trình thực nghiệm với assertion thủ công.
+Sự xuất hiện của AI Agent tạo thêm một phương án xây dựng assertion. Câu hỏi cần kiểm chứng là assertion được đề xuất có dùng đúng expected result, chạy được trong môi trường thực tế và phát hiện đúng thay đổi mục tiêu hay không. Vì vậy, chúng tôi đặt việc kiểm tra đầu ra AI trong cùng quy trình thực nghiệm với manual assertion.
 
 ### 1.3. Mục tiêu
 
 Seminar hướng đến bốn mục tiêu:
 
-1. Giải thích nguyên lý kiểm thử đột biến, cách đọc kết quả và giới hạn của mutation score.
+1. Giải thích nguyên lý Mutation Testing, cách đọc kết quả và giới hạn của mutation score.
 2. Thiết lập quy trình áp dụng StrykerJS trên phạm vi EShop được lựa chọn.
-3. Phân tích ít nhất ba surviving mutants, bổ sung ít nhất ba assertions thủ công và kiểm chứng assertions do AI đề xuất cho cùng các mutant [14].
+3. Phân tích ít nhất ba surviving mutants, bổ sung ít nhất ba manual assertions và kiểm chứng assertions do AI đề xuất cho cùng các mutant [14].
 4. Xây dựng tài liệu và bằng chứng đủ để người khác hiểu, thực hành và kiểm tra lại các kết luận.
 
 ### 1.4. Câu hỏi nghiên cứu
 
 **RQ1.** Các mutant được lựa chọn sống sót vì thiếu dữ liệu phân biệt, thiếu quan sát kết quả hay nguyên nhân nào khác?
 
-**RQ2.** Trên cùng baseline và cùng tập mutant mục tiêu, assertion thủ công và assertion có AI hỗ trợ sau review phát hiện được những thay đổi hành vi nào?
+**RQ2.** Trên cùng baseline và cùng tập mutant mục tiêu, manual assertion và assertion có AI hỗ trợ sau review phát hiện được những thay đổi hành vi nào?
 
 **RQ3.** Những mutant còn lại, sai sót của đầu ra AI và điều kiện thực thi giới hạn cách diễn giải kết quả ra sao?
 
@@ -100,36 +106,37 @@ Seminar hướng đến bốn mục tiêu:
 
 ### 1.5. Đối tượng và phạm vi
 
-Đối tượng nghiên cứu là bộ kiểm thử cho EShop backend trong ba miền: Cart & Orders, Coupons và Authentication & Users. Chúng tôi tập trung vào quan sát hành vi ở phạm vi được xác định từ đặc tả API, dữ liệu đầu vào và kết quả lưu trữ liên quan. Các endpoint, tệp nguồn và điều kiện nghiệp vụ được chọn cần được ghi cụ thể trong hồ sơ thực nghiệm.
+Đối tượng nghiên cứu là test suite cho EShop backend trong ba miền: Cart & Orders, Coupons và Authentication & Users. Chúng tôi tập trung vào quan sát hành vi ở phạm vi được xác định từ API specification, dữ liệu đầu vào và kết quả lưu trữ liên quan. Phạm vi thực tế, endpoints và baseline được trình bày tại Chương 4; Chương 6 chỉ dùng completed runs có dữ liệu đối chiếu.
 
-Thiết kế này đánh giá khả năng phát hiện các đột biến được sinh trong phạm vi cấu hình. Việc suy rộng đến lỗi thực tế hoặc hệ thống khác cần thêm bằng chứng. AI Agent được nghiên cứu ở vai trò đề xuất assertion và hỗ trợ lập luận; sinh mutant bằng AI nằm ngoài phép so sánh chính. Agent và model thực tế được ghi riêng cho từng lần sử dụng.
+Thiết kế này đánh giá khả năng phát hiện các mutation được sinh trong phạm vi cấu hình. Việc suy rộng đến lỗi thực tế hoặc hệ thống khác cần thêm bằng chứng. AI Agent được nghiên cứu ở vai trò đề xuất assertion và hỗ trợ lập luận; sinh mutant bằng AI nằm ngoài phép so sánh chính. Agent và model thực tế được ghi riêng cho từng lần sử dụng.
 
 ### 1.6. Bố cục báo cáo
 
-Chương 2 trình bày lý thuyết và các nghiên cứu liên quan. Chương 3 khảo sát, lựa chọn và giải thích vai trò công cụ. Chương 4 xác định thiết kế thực nghiệm; Chương 5 mô tả quy trình triển khai. Chương 6 dành cho kết quả, Chương 7 phân tích ý nghĩa và giới hạn, Chương 8 tổng kết seminar. Các phụ lục lưu thông tin tái lập, bằng chứng, hồ sơ AI và đóng góp thành viên.
+Chương 2 trình bày lý thuyết và các nghiên cứu liên quan. Chương 3 khảo sát, lựa chọn và giải thích vai trò công cụ. Chương 4 xác định thiết kế thực nghiệm; Chương 5 mô tả quy trình triển khai. Chương 6 dành cho kết quả, Chương 7 phân tích ý nghĩa và giới hạn, Chương 8 tổng kết seminar. Các appendices trình bày reproduction procedure, reusable AI prompt, activity design và contributions; danh mục evidence được quản lý riêng.
 
 <a id="chuong-2"></a>
+
 ## 2. Cơ sở lý thuyết và nghiên cứu liên quan
 
-### 2.1. Độ bao phủ, test oracle và assertion
+### 2.1. Coverage, test oracle và assertion
 
-Một test case gồm trạng thái ban đầu, dữ liệu hoặc thao tác kích hoạt hành vi, và điều kiện đánh giá kết quả. Test oracle cung cấp căn cứ cho điều kiện đánh giá đó. Trong seminar này, oracle xuất phát từ yêu cầu nghiệp vụ đã được làm rõ; mã nguồn hiện tại là đối tượng đối chiếu, không tự động trở thành định nghĩa hành vi đúng.
+Một test case gồm trạng thái ban đầu, dữ liệu hoặc thao tác kích hoạt hành vi, và điều kiện đánh giá kết quả. Test oracle cung cấp căn cứ cho điều kiện đánh giá đó. Trong seminar này, oracle xuất phát từ yêu cầu nghiệp vụ đã được làm rõ; source code hiện tại là đối tượng đối chiếu, không tự động trở thành định nghĩa hành vi đúng.
 
-Chẳng hạn, một kiểm thử xác nhận phản hồi có thuộc tính `discount` mới chỉ kiểm tra sự hiện diện của dữ liệu. Để đánh giá phép tính, cần xác định giá trị mong đợi, đơn vị, quy tắc làm tròn và các điều kiện áp dụng. Một assertion đúng cú pháp nhưng sử dụng giá trị mong đợi sai vẫn có thể làm giảm giá trị của bộ kiểm thử.
+Chẳng hạn, một test xác nhận phản hồi có thuộc tính `discount` mới chỉ kiểm tra sự hiện diện của dữ liệu. Để đánh giá phép tính, cần xác định expected value, đơn vị, quy tắc làm tròn và các điều kiện áp dụng. Một assertion đúng cú pháp nhưng sử dụng expected value sai vẫn có thể làm giảm giá trị của test suite.
 
 Trong báo cáo, code coverage và mutation score được trình bày như những thông tin bổ sung cho nhau. Việc bổ sung dữ liệu đầu vào có thể thay đổi coverage; việc thay đổi assertion có thể nâng khả năng phát hiện sai lệch ngay cả khi tập dòng mã được thực thi không đổi.
 
-### 2.2. Khái niệm và quy trình kiểm thử đột biến
+### 2.2. Khái niệm và quy trình Mutation Testing
 
-Kiểm thử đột biến tạo các biến thể của chương trình bằng những phép thay đổi được quy định trước, rồi dùng bộ kiểm thử để đánh giá chúng. Một mutant bị phát hiện khi kiểm thử nhận biết được sai khác do biến thể gây ra. Công trình tổng quan của Jia và Harman hệ thống hóa nền tảng và các hướng phát triển của phương pháp này [1].
+Mutation Testing tạo các biến thể của chương trình bằng những phép thay đổi được quy định trước, rồi dùng test suite để đánh giá chúng. Một mutant bị phát hiện khi test nhận biết được sai khác do biến thể gây ra. Công trình tổng quan của Jia và Harman hệ thống hóa nền tảng và các hướng phát triển của phương pháp này [1].
 
-Quy trình khái quát gồm: xác nhận bộ kiểm thử chạy trên chương trình gốc; sinh mutant trong phạm vi đã chọn; thực thi kiểm thử với mutant; tổng hợp trạng thái; phân tích nguyên nhân và cải thiện kiểm thử. Khi đọc kết quả, cần kiểm tra cả vị trí đột biến lẫn điều kiện đã sử dụng để chạy kiểm thử.
+Quy trình khái quát gồm: xác nhận test suite chạy trên original program; sinh mutant trong phạm vi đã chọn; thực thi tests với mutant; tổng hợp trạng thái; phân tích nguyên nhân và cải thiện testing. Khi đọc kết quả, cần kiểm tra cả vị trí mutation lẫn điều kiện đã sử dụng để chạy tests.
 
-### 2.3. Toán tử đột biến
+### 2.3. Mutation operators
 
-Toán tử mô tả một loại biến đổi; mutant là một lần áp dụng cụ thể của toán tử tại một vị trí. Các nhóm dưới đây minh họa những biến đổi trong danh mục mutator của Stryker [3].
+Mutation operator mô tả một loại biến đổi; mutant là một lần áp dụng cụ thể của mutator tại một vị trí. Các nhóm dưới đây minh họa những biến đổi trong danh mục mutator của Stryker [3].
 
-**Bảng 2.1. Nhóm đột biến và hướng thiết kế quan sát.**
+**Bảng 2.1. Nhóm mutation và hướng thiết kế quan sát.**
 
 | Nhóm | Ví dụ biến đổi | Quan sát có thể phân biệt |
 |---|---|---|
@@ -140,11 +147,11 @@ Toán tử mô tả một loại biến đổi; mutant là một lần áp dụn
 | Khối lệnh | Thay thân khối bằng khối rỗng | Tác động hoặc dữ liệu bắt buộc |
 | Chuỗi / tập hợp | Thay nội dung bằng giá trị rỗng | Nội dung phản hồi hoặc phần tử cần tồn tại |
 
-Bảng trên dùng để giải thích cách thiết kế kiểm thử. Danh sách mutant thực tế của EShop phải được lấy từ báo cáo của lần chạy tương ứng.
+Bảng trên dùng để giải thích cách thiết kế tests. Danh sách mutant thực tế của EShop phải được lấy từ báo cáo của lần chạy tương ứng.
 
 ### 2.4. Điều kiện phát hiện thay đổi hành vi
 
-Trong quá trình phân tích, chúng tôi sử dụng ba câu hỏi: kiểm thử có đi đến vị trí bị thay đổi không; dữ liệu có làm chương trình gốc và mutant tạo ra trạng thái khác nhau không; assertion có quan sát được sai khác đó không. Cách phân tích này giúp chuyển một survivor thành vấn đề cụ thể cần giải quyết.
+Trong quá trình phân tích, chúng tôi sử dụng ba câu hỏi: test có đi đến vị trí bị thay đổi không; dữ liệu có làm original program và mutant tạo ra trạng thái khác nhau không; assertion có quan sát được sai khác đó không. Cách phân tích này giúp chuyển một survivor thành vấn đề cụ thể cần giải quyết.
 
 Xét ví dụ minh họa độc lập với EShop: đơn hàng đủ điều kiện khi giá trị đạt tối thiểu 500 đơn vị. Hàm gốc và một mutant giả định là:
 
@@ -159,13 +166,13 @@ function eligible(amount) {
 
 **Bảng 2.2. Dữ liệu phân biệt tại biên của ví dụ.**
 
-| Đầu vào | Kết quả theo quy tắc | Chương trình gốc | Mutant giả định |
+| Đầu vào | Kết quả theo quy tắc | Original program | Mutant giả định |
 |---|---|---|---|
 | 499 | `false` | `false` | `false` |
 | 500 | `true` | `true` | `false` |
 | 501 | `true` | `true` | `true` |
 
-Nếu chỉ dùng 499 và 501, kiểm thử không phân biệt hai phiên bản. Với đầu vào 500, assertion kiểm tra chính xác kết quả `true` nhận biết được thay đổi. Nếu chỉ kiểm tra kiểu dữ liệu Boolean, đầu vào đúng biên vẫn chưa đủ. Các giá trị trong bảng được suy ra trực tiếp từ hai biểu thức; chúng không phải số liệu của một lần chạy công cụ.
+Nếu chỉ dùng 499 và 501, test không phân biệt hai phiên bản. Với đầu vào 500, assertion kiểm tra chính xác kết quả `true` nhận biết được thay đổi. Nếu chỉ kiểm tra kiểu dữ liệu Boolean, đầu vào đúng biên vẫn chưa đủ. Các giá trị trong bảng được suy ra trực tiếp từ hai biểu thức; chúng không phải số liệu của một lần chạy công cụ.
 
 ### 2.5. Trạng thái mutant và mutation score
 
@@ -175,15 +182,15 @@ Các trạng thái và công thức dưới đây theo tài liệu Stryker [2].
 
 | Trạng thái | Ý nghĩa |
 |---|---|
-| `Killed` | Có kiểm thử thất bại khi mutant hoạt động |
-| `Survived` | Các kiểm thử được chạy đều thành công |
-| `No coverage` | Không được kiểm thử bao phủ |
+| `Killed` | Có ít nhất một test fail khi mutant hoạt động |
+| `Survived` | Các tests được chạy đều thành công |
+| `NoCoverage` | Không có test coverage tại mutant |
 | `Timeout` | Thực thi vượt giới hạn thời gian |
-| `Runtime error` / `Compile error` | Lỗi thực thi công cụ hoặc biên dịch |
+| `RuntimeError` / `CompileError` | Lỗi thực thi công cụ hoặc biên dịch |
 | `Ignored` | Được bỏ qua |
 | `Pending` | Chưa có kết quả thực thi cuối |
 
-Đặt `K`, `T`, `S`, `N` lần lượt là số `Killed`, `Timeout`, `Survived`, `No coverage`. Công thức mutation score của Stryker là:
+Đặt `K`, `T`, `S`, `N` lần lượt là số `Killed`, `Timeout`, `Survived`, `NoCoverage`. Công thức mutation score của Stryker là:
 
 ```text
 V = K + T + S + N
@@ -192,17 +199,17 @@ Mutation score (%) = 100 × (K + T) / V, với V > 0
 
 Các trạng thái lỗi, bỏ qua và chưa chạy được báo riêng. Khi `V = 0`, cần giữ cách biểu diễn của công cụ và giải thích rõ.
 
-Trong phép so sánh của nhóm, số mutant chuyển sang `Killed` được đối chiếu thêm với kiểm thử gây thất bại. `Timeout` không được dùng làm bằng chứng rằng assertion đã quan sát đúng sai khác nghiệp vụ.
+Trong phép so sánh của nhóm, số mutant chuyển sang `Killed` được đối chiếu thêm với detecting test. `Timeout` không được dùng làm bằng chứng rằng assertion đã quan sát đúng sai khác nghiệp vụ.
 
 ### 2.6. Equivalent mutants
 
-Mutant tương đương giữ nguyên hành vi quan sát được so với chương trình gốc trong miền đầu vào đang xét. Vì vậy, một survivor có thể phản ánh sự tương đương thay vì thiếu kiểm thử. Stryker minh họa rằng một thay đổi điều kiện có thể không làm thay đổi kết quả cuối cùng [4].
+Equivalent mutant giữ nguyên hành vi quan sát được so với original program trong miền đầu vào đang xét. Vì vậy, một survivor có thể phản ánh sự tương đương thay vì thiếu tests. Stryker minh họa rằng một thay đổi điều kiện có thể không làm thay đổi kết quả cuối cùng [4].
 
 Chúng tôi sử dụng nhãn *equivalent candidate* khi chưa đủ căn cứ kết luận. Việc phân tích cần nêu miền dữ liệu hợp lệ, trạng thái có thể đạt tới và những đầu ra hoặc tác động được quan sát. Thử một số đầu vào và không tìm thấy khác biệt chỉ là bằng chứng trong các trường hợp đã thử. Giải thích do AI tạo ra cũng cần được kiểm tra theo cùng tiêu chí.
 
-### 2.7. Vai trò của AI trong kiểm thử đột biến
+### 2.7. Vai trò của AI trong Mutation Testing
 
-Cần phân biệt ba nhiệm vụ: sinh assertion hoặc test; hỗ trợ nhận diện mutant tương đương; và sinh mutant. Trong thiết kế này, nhiệm vụ chính là đề xuất assertion từ đặc tả, mã nguồn, kiểm thử ban đầu và mutant mục tiêu. Sản phẩm được đánh giá là kiểm thử sau review cùng khả năng phát hiện mutant của nó.
+Cần phân biệt ba nhiệm vụ: sinh assertion hoặc test; hỗ trợ nhận diện equivalent mutants; và sinh mutant. Trong thiết kế này, nhiệm vụ chính là đề xuất assertion từ specification, source code, baseline tests và mutant mục tiêu. Đầu ra được đánh giá là test candidate cùng khả năng phát hiện mutant sau verification; trạng thái Agent review và human review được phân biệt theo domain.
 
 Chúng tôi phân biệt đầu ra AI nguyên gốc với phiên bản được sửa trước khi chạy. Nếu con người phải thay oracle hoặc viết lại phần kiểm tra chính, thông tin đó cần xuất hiện trong kết quả. Khi đó, hiệu quả đo được thuộc quy trình có AI hỗ trợ và con người kiểm chứng; mức đóng góp của bản đề xuất nguyên gốc được mô tả riêng.
 
@@ -212,14 +219,15 @@ Chúng tôi phân biệt đầu ra AI nguyên gốc với phiên bản được 
 
 | Nghiên cứu | Nội dung được sử dụng | Liên hệ với thiết kế của nhóm |
 |---|---|---|
-| Jia và Harman [1] | Tổng quan nền tảng và phát triển của kiểm thử đột biến | Đặt khái niệm, toán tử và vấn đề tương đương trong bối cảnh nghiên cứu |
-| Petrović và Ivanković [9] | Phân tích đột biến theo thay đổi mã và lựa chọn vị trí có ích tại Google | Ghi rõ phạm vi lựa chọn và các loại trừ để diễn giải đúng kết quả |
+| Jia và Harman [1] | Tổng quan nền tảng và phát triển của Mutation Testing | Đặt khái niệm, mutator và vấn đề tương đương trong bối cảnh nghiên cứu |
+| Petrović và Ivanković [9] | Phân tích mutation theo thay đổi mã và lựa chọn vị trí có ích tại Google | Ghi rõ phạm vi lựa chọn và các loại trừ để diễn giải đúng kết quả |
 | Wang và cộng sự [10] | MUTGEN sử dụng phản hồi mutation trong quá trình sinh unit test bằng LLM | Đưa mutant cụ thể vào đầu vào AI và kiểm chứng kết quả thực thi |
-| Tian và cộng sự [11] | Đánh giá LLM cho nhận diện mutant tương đương | Xem nhận định của mô hình là đối tượng cần đánh giá |
+| Tian và cộng sự [11] | Đánh giá LLM cho nhận diện equivalent mutants | Xem nhận định của model là đối tượng cần đánh giá |
 
 Các công trình trên cung cấp nền tảng và hướng tiếp cận. Nghiên cứu EShop có phạm vi, ngôn ngữ, dữ liệu và điều kiện sử dụng AI riêng; kết quả từ công trình khác không được chuyển thành kết quả của nhóm. Phần tổng hợp [9]–[11] sử dụng thông tin mô tả phương pháp trên trang công bố; báo cáo không thực hiện tái lập các nghiên cứu đó.
 
 <a id="chuong-3"></a>
+
 ## 3. Khảo sát và lựa chọn công cụ
 
 ### 3.1. Tiêu chí đánh giá
@@ -234,7 +242,7 @@ Chúng tôi xem xét công cụ theo năm tiêu chí: chi phí và điều kiệ
 
 | Công cụ | Hệ sinh thái | Vai trò trong khảo sát | Đánh giá đối với EShop backend |
 |---|---|---|---|
-| StrykerJS [5] | JavaScript / TypeScript, gồm Node.js | Ứng viên thực thi mutation chính | Phù hợp về ngôn ngữ; cần tích hợp với bộ kiểm thử |
+| StrykerJS [5] | JavaScript / TypeScript, gồm Node.js | Ứng viên thực thi mutation chính | Phù hợp về ngôn ngữ; cần tích hợp với test suite |
 | PIT [7] | Java / JVM | Công cụ đối chiếu trong hệ sinh thái khác | Không trực tiếp thực thi trên backend JavaScript |
 | mutmut [8] | Python | Công cụ đối chiếu và hướng lựa chọn khi SUT dùng Python | Không trực tiếp thay StrykerJS trên SUT hiện tại |
 
@@ -242,9 +250,9 @@ Phạm vi này kế thừa khảo sát công cụ của nhóm, đồng thời t�
 
 ### 3.3. Hướng hỗ trợ bằng AI
 
-Một AI Agent có thể tiếp nhận ngữ cảnh đặc tả, mã nguồn và mutant để đề xuất kiểm thử. Giao diện sử dụng, model, quyền truy cập tệp và khả năng gọi lệnh phụ thuộc sản phẩm cụ thể. Vì vậy, báo cáo dùng tên vai trò chung trong thiết kế, còn hồ sơ từng lần sử dụng ghi đúng agent và model thực tế.
+Một AI Agent có thể tiếp nhận ngữ cảnh specification, source code và mutant để đề xuất tests. Giao diện sử dụng, model, quyền truy cập tệp và khả năng gọi lệnh phụ thuộc sản phẩm cụ thể. Vì vậy, báo cáo dùng tên vai trò chung trong thiết kế, còn hồ sơ từng lần sử dụng ghi đúng agent và model thực tế.
 
-Các hướng hỗ trợ được phân biệt theo đầu ra: đề xuất dữ liệu kiểm thử, viết assertion, giải thích nguyên nhân survivor hoặc đưa ra giả thuyết về tính tương đương. Chỉ các assertion được đưa qua quy trình kiểm chứng mới tham gia phép so sánh thực nghiệm chính.
+Các hướng hỗ trợ được phân biệt theo đầu ra: đề xuất test data, viết assertion, giải thích nguyên nhân survivor hoặc đưa ra giả thuyết về tính tương đương. Chỉ các assertion được đưa qua quy trình kiểm chứng mới tham gia phép so sánh thực nghiệm chính.
 
 ### 3.4. Ma trận đánh giá và lý do lựa chọn
 
@@ -252,29 +260,29 @@ Các hướng hỗ trợ được phân biệt theo đầu ra: đề xuất dữ
 
 | Tiêu chí | StrykerJS | AI Agent |
 |---|---|---|
-| Chi phí / điều kiện sử dụng | Ghi giấy phép phiên bản và chi phí môi trường thực thi | Ghi sản phẩm, loại truy cập và giới hạn tài khoản thực tế |
-| Kiến thức cần có | Tests, runner, cấu hình và đọc mutation report | Đặc tả, thiết kế prompt và kiểm tra mã được đề xuất |
+| Chi phí / điều kiện sử dụng | Stryker core 10.0.0 có license Apache-2.0 theo package metadata; execution dùng local runtime | Dùng Claude Code và Codex theo actual run records; chưa đo hoặc tổng hợp chi phí tài khoản |
+| Kiến thức cần có | Tests, runner, cấu hình và đọc mutation report | Specification, thiết kế prompt và kiểm tra mã được đề xuất |
 | Phù hợp với EShop | Hỗ trợ hệ sinh thái JavaScript / Node.js [5] | Đánh giá qua tính đúng và khả năng chạy của từng candidate |
 | Vai trò AI | Cung cấp phản hồi thực thi cho quy trình | Đề xuất assertion và giải thích |
-| Tài liệu / hỗ trợ | Tài liệu chính thức về cấu hình, runner và reports [6], [12], [13] | Ghi nguồn hướng dẫn của sản phẩm được sử dụng |
+| Tài liệu / hỗ trợ | Official documentation về configuration, runners và reports [6], [12], [13] | Generation được kiểm tra bằng specification và actual test/mutation results; không lấy model output làm nguồn xác nhận correctness |
 
-Lựa chọn StrykerJS và AI Agent dựa trên ba lý do: công cụ thực thi phù hợp với backend JavaScript; kết quả mutation tạo căn cứ cụ thể để cải thiện kiểm thử; và quy trình cho phép đối chiếu đề xuất AI với phương án thủ công trên cùng mục tiêu. Danh tính và điều kiện sử dụng công cụ thực tế được điền tại Phụ lục A.
+Lựa chọn StrykerJS và AI Agent dựa trên ba lý do: công cụ thực thi phù hợp với backend JavaScript; kết quả mutation tạo căn cứ cụ thể để cải thiện testing; và quy trình cho phép đối chiếu đề xuất AI với phương án manual trên cùng mục tiêu. Agent/model và điều kiện comparison thực tế được công bố tại mục 4.5 và 6.4.
 
 ### 3.5. Chức năng và kiến trúc StrykerJS
 
-StrykerJS là công cụ kiểm thử đột biến cho các dự án JavaScript và TypeScript [5]. Trong luồng tích hợp, phần lõi phối hợp tạo đột biến và thực thi, test runner chạy bộ kiểm thử, còn reporter trình bày kết quả. Stryker cung cấp các plugin runner và reporter; một số plugin được cài dưới dạng gói riêng [12].
+StrykerJS là công cụ Mutation Testing cho các dự án JavaScript và TypeScript [5]. Trong luồng tích hợp, phần lõi phối hợp tạo mutation và thực thi, test runner chạy test suite, còn reporter trình bày kết quả. Stryker cung cấp các plugin runner và reporter; một số plugin được cài dưới dạng gói riêng [12].
 
 **Hình 3.1. Luồng xử lý khái quát của thực nghiệm.**
 
 ```mermaid
 flowchart TD
-    SPEC["Đặc tả và kết quả mong đợi"] --> BASE["Bộ kiểm thử baseline"]
-    CODE["Mã nguồn và phạm vi mutation"] --> STRYKER["StrykerJS"]
+    SPEC["Specification và expected result"] --> BASE["Baseline test suite"]
+    CODE["Source code và phạm vi mutation"] --> STRYKER["StrykerJS"]
     BASE --> RUNNER["Test runner"]
     STRYKER --> RUNNER
     RUNNER --> REPORT["Báo cáo mutant"]
     REPORT --> SELECT["Phân tích và chọn survivor"]
-    SELECT --> MANUAL["Assertion thủ công"]
+    SELECT --> MANUAL["Manual assertion"]
     SELECT --> AI["AI đề xuất assertion"]
     AI --> REVIEW["Con người kiểm tra và chỉnh sửa"]
     MANUAL --> VERIFY["Kiểm chứng từng phương án từ cùng baseline"]
@@ -282,406 +290,509 @@ flowchart TD
     VERIFY --> RESULT["Đối chiếu kết quả và bằng chứng"]
 ```
 
-Hình 3.1 mô tả thiết kế quy trình. Tính hoạt động của từng thành phần trong môi trường EShop được xác nhận bằng hồ sơ triển khai và run evidence.
+Hình 3.1 mô tả workflow áp dụng cho EShop. Các thành phần execution đã có run results; human review và cross reproduction được trình bày theo tình trạng thực tế tại Chương 6.
 
 ### 3.6. Đầu vào, đầu ra và giới hạn của AI Agent
 
-Đầu vào AI cần chứa phần đặc tả liên quan, mã nguồn trong phạm vi, kiểm thử baseline, mutant mục tiêu và yêu cầu đầu ra. Candidate phải sử dụng API hoặc helper có thật, chuẩn bị dữ liệu hợp lệ và kiểm tra kết quả có căn cứ.
+Đầu vào AI cần chứa phần specification liên quan, source code trong phạm vi, baseline tests, mutant mục tiêu và yêu cầu đầu ra. Candidate phải sử dụng API hoặc helper có thật, chuẩn bị dữ liệu hợp lệ và kiểm tra kết quả có căn cứ.
 
 Đầu ra được lưu trước khi chỉnh sửa để bảo toàn quá trình đánh giá. Các thay đổi của người thực hiện phải chỉ rõ là sửa cú pháp, fixture, cách gọi API hay logic assertion. Việc một agent có thể gọi lệnh không thay thế yêu cầu kiểm tra lệnh đã chạy, trạng thái nguồn và báo cáo thực tế.
 
 ### 3.7. Mức tự động hóa
 
-Quy trình được thiết kế theo hướng bán tự động: công cụ thực hiện phần chạy kiểm thử và tổng hợp trạng thái; con người xác định oracle, lựa chọn phạm vi, kiểm tra candidate và diễn giải survivor. Khả năng tái sử dụng nằm ở cấu hình được lưu, mẫu đầu vào AI và quy trình xác minh thống nhất. Mỗi lần áp dụng cho nghiệp vụ mới vẫn cần thay dữ liệu và kết quả mong đợi theo đặc tả.
+Quy trình được thiết kế theo hướng bán tự động: công cụ thực hiện phần chạy tests và tổng hợp trạng thái; con người xác định oracle, lựa chọn phạm vi, kiểm tra candidate và diễn giải survivor. Khả năng tái sử dụng nằm ở cấu hình được lưu, mẫu đầu vào AI và quy trình xác minh thống nhất. Mỗi lần áp dụng cho nghiệp vụ mới vẫn cần thay dữ liệu và expected result theo specification.
 
 <a id="chuong-4"></a>
+
 ## 4. Đối tượng và thiết kế thực nghiệm
 
-### 4.1. Tổng quan EShop backend
+### 4.1. Kiến trúc EShop và phạm vi quan sát
 
-EShop là hệ thống thương mại điện tử dùng làm SUT của seminar. Đặc tả API mô tả các nhóm chức năng xác thực, người dùng, giỏ hàng, đơn hàng và mã giảm giá [15]. Trong mã nguồn được đối chiếu khi biên soạn, backend sử dụng JavaScript, Express và SQLite; các phụ thuộc được khai báo trong `backend/package.json` [16].
+EShop là SUT phục vụ seminar, gồm backend JavaScript chạy trên Node.js, HTTP routes dùng Express và persistence dùng SQLite [15], [16], [18]. Backend xử lý authentication, profile, cart, orders và coupons. Authentication dựa trên JWT; một số hành vi còn phụ thuộc in-memory cart state, database state hoặc thời gian hiện tại. Vì vậy, quan sát HTTP status chưa đủ để đánh giá toàn bộ business outcome.
 
-Đối với thực nghiệm, một phản hồi HTTP có thể chưa mô tả toàn bộ hành vi. Khi yêu cầu liên quan đến lưu trữ hoặc cập nhật trạng thái, kiểm thử cần quan sát dữ liệu sau thao tác. Phạm vi quan sát phải được nêu trước khi phân loại mutant.
+Test architecture gồm Jest để tổ chức test cases và lifecycle hooks; Supertest để gửi requests tới Express app; SQLite test database để quan sát persistence; StrykerJS để sinh và thực thi mutants. Tests kiểm tra response body và database state khi specification yêu cầu một thay đổi có thể quan sát được.
 
-### 4.2. Phạm vi nghiệp vụ
+Phạm vi này là backend/API testing. Không có kết luận về browser rendering, mobile UI, usability hoặc end-to-end behavior của toàn bộ frontend. Một API flow gồm nhiều HTTP calls cũng không tự chứng minh các calls tạo thành atomic transaction.
 
-**Bảng 4.1. Định hướng lựa chọn trường hợp kiểm thử theo miền.**
+### 4.2. Domains và mutation scope
 
-| Miền | Hành vi cần xem xét | Dữ liệu cần phân biệt | Quan sát cần xác định từ đặc tả |
+**Bảng 4.1. Phạm vi thực nghiệm tại frozen baseline.**
+
+| Domain | API và hành vi chính | Business references | Mutation scope trong source |
 |---|---|---|---|
-| Cart & Orders | Giỏ hàng, tạo đơn, tổng tiền, chuyển trạng thái được chọn | Giỏ hàng hợp lệ; quyền sở hữu; trạng thái trước thao tác | Phản hồi và dữ liệu đơn hàng sau thao tác |
-| Coupons | Điều kiện áp dụng, ngưỡng giá trị, thời hạn và cách tính giảm giá | Dưới / bằng / trên ngưỡng; mã hợp lệ / không hợp lệ | Khả năng áp dụng, số tiền và thông tin từ chối |
-| Authentication & Users | Xác thực, truy cập, cập nhật thông tin được chọn | Thông tin hợp lệ / không hợp lệ; token; vai trò | Quyền truy cập và trạng thái người dùng |
+| Cart & Orders | Đọc/thêm cart items; checkout; order history/detail; cancel và admin status update | FR-07, FR-08, FR-10, FR-11; API §4 và §6.2 | Hai vùng của server: lines 280–349 và 510–568 |
+| Coupons | Quote coupon; minimum amount, expiry, discount type, per-user usage; admin create/list/delete; explicit usage recording | FR-09, FR-12, FR-17; API §5 và §6.4 | Server lines 355–492 |
+| Authentication & Users | Login attempts/lock, registration, OTP/reset password, profile và access-related behavior | API §1–2; SEC-01, SEC-02, SEC-06, SEC-07 | Server lines 20–135 |
 
-Đây là ma trận định hướng thiết kế. Danh sách endpoint và test case được đưa vào phép đo chính được điền dưới đây sau khi chốt phạm vi.
+Các line ranges mô tả đúng frozen revision, không áp dụng mặc nhiên cho source đã chỉnh sửa. Mỗi domain có test selection và mutant universe riêng. Cả ba test suites được chạy chung để kiểm tra integration, còn mutation results được báo theo domain; chưa có combined mutation run cho toàn bộ ba domains.
 
-| Miền | Endpoint / tệp nguồn | Quy tắc được chọn | Test case | Nguồn xác nhận oracle |
-|---|---|---|---|---|
-| Cart & Orders | | | | |
-| Coupons | | | | |
-| Authentication & Users | | | | |
+### 4.3. Test oracle, original defects và assumptions
 
-### 4.3. Xác định kết quả mong đợi
+Chúng tôi lấy specification làm căn cứ cho expected business behavior, đối chiếu với API contract và implementation [15], [18]. Khi specification chưa quy định exact HTTP code hoặc error text, báo cáo phân biệt API convention với business requirement. Assertions về literal message có thể kiểm tra compatibility của implementation nhưng không được tự xem là một business rule độc lập.
 
-Chúng tôi đối chiếu đặc tả và hành vi hiện thực trước khi cố định baseline. Khi hai nguồn không thống nhất hoặc đặc tả chưa rõ, quyết định cần được ghi lại cùng phạm vi áp dụng. Ví dụ, điều kiện bằng ngưỡng, đơn vị phần trăm, thời điểm hết hạn hoặc quyền sửa một trường dữ liệu có thể làm thay đổi oracle.
+Production source được giữ nguyên để cố định đối tượng đo. Tests đúng specification nhưng fail trên original code được tách khỏi passing baseline và chạy trong defect profile. Cách làm này duy trì baseline hợp lệ cho mutation execution, đồng thời công bố các hành vi chưa được đánh giá bằng original-code-passing tests.
 
-Một lỗi có sẵn trong chương trình gốc được xử lý như vấn đề của SUT. Nếu cần sửa mã nguồn để thiết lập baseline hợp lệ, bản sửa phải được ghi nhận và dùng chung cho các phương án. Việc sửa sản phẩm trong một nhánh so sánh làm thay đổi đối tượng đo, do đó cần xác lập lại các lần chạy bị ảnh hưởng.
+**Bảng 4.2. Original defects và assumptions ảnh hưởng phép đo.**
 
-**Bảng 4.2. Các điểm cần làm rõ trước khi cố định baseline.**
-
-| Quy tắc / vị trí | Nội dung chưa thống nhất | Quyết định về hành vi đúng | Căn cứ và người xác nhận |
-|---|---|---|---|
-| | | | |
-
-### 4.4. Môi trường và trạng thái nguồn
-
-Một baseline có thể tái lập cần xác định commit sản phẩm, các thay đổi chưa commit nếu có, cấu hình, bộ kiểm thử, lockfile và dữ liệu khởi tạo. Phiên bản Node.js, test runner, StrykerJS và hệ điều hành được ghi theo môi trường chạy thực tế. Bảng A.1 lưu những thông tin này.
-
-Các sửa đổi phục vụ khả năng kiểm thử, như kiểm soát vòng đời ứng dụng hoặc tách cơ sở dữ liệu dùng cho test, cần được mô tả riêng với thay đổi assertion. Mọi kết luận so sánh đều phụ thuộc vào việc các phương án sử dụng cùng trạng thái nguồn đã được chấp nhận.
-
-### 4.5. Thiết kế các phương án so sánh
-
-**Bảng 4.3. Ba phương án kiểm thử.**
-
-| Phương án | Thành phần | Điều kiện |
+| Domain | Quan sát từ source/tests | Cách xử lý và giới hạn |
 |---|---|---|
-| Baseline | Bộ kiểm thử ban đầu đã cố định | Chạy thành công trên chương trình gốc trong phạm vi đã chốt |
-| Thủ công | Baseline cộng các kiểm thử / assertions do thành viên thiết kế | Dùng cùng mã nguồn, cấu hình và tập mutant mục tiêu |
-| AI hỗ trợ | Baseline cộng các candidates đã được review và chỉnh sửa nếu cần | Không đưa lời giải thủ công vào prompt; ghi rõ phần chỉnh sửa |
+| Cart & Orders | Duplicate cart items; checkout tin total từ client; cart chưa được clear; sai cancel/status rules; thiếu một số access/ownership checks | 9 defect cases chạy riêng; không đổi expected result để coi behavior sai là đúng |
+| Coupons | Sai minimum equality, expiry equality và percentage formula; thiếu JWT/role/input validation ở một số routes | 22 defect cases chạy riêng; passing baseline tập trung scenarios còn có oracle hợp lệ |
+| Authentication & Users | Login lock/count, registration, OTP và profile validation/access còn sai khác specification | 23 defect cases chạy riêng; từng oracle vẫn cần xét căn cứ |
+| OTP duration | Specification yêu cầu OTP có expiry nhưng không ấn định TTL bằng 24 giờ | Test dùng mốc 24 giờ được ghi là assumption, không phải contractual duration |
+| Coupon edge policies | Rounding, normalization, negative final amount, duplicate status và atomic usage chưa được specification xác định đủ | Không tự bổ sung business rule để tăng kill count |
 
-Hai phương án cải thiện được xây dựng từ cùng baseline. Phương án AI không kế thừa assertions của phương án thủ công. Chúng tôi vẫn công bố ảnh hưởng có thể có từ việc cùng một người đã đọc hoặc phân tích mutant trước khi review AI.
+Tổng cộng 54 defect cases fail tại assertions trong profile riêng, không phải suite failures do import hoặc setup [19]. Con số này là số test cases, không phải 54 defects độc lập; parameterized tests có thể cùng kiểm tra một defect hoặc assumption.
 
-Nếu cần thay đổi cả đầu vào và assertion để phát hiện mutant, báo cáo ghi đầy đủ hai thay đổi. Số lượng assertion mới, số test case mới và số mutant bị phát hiện là ba đại lượng khác nhau.
+Một counterfactual check trên bản sao tạm đã sửa minimum comparator, expiry comparator và percentage calculations: ba selected defect cases chuyển từ fail sang pass, trong khi 26 Coupons baseline tests vẫn pass. Check này hỗ trợ ba oracle cụ thể; nó không thay đổi production baseline và không xác nhận toàn bộ defect catalog.
 
-### 4.6. Lựa chọn surviving mutants
+### 4.4. Frozen baseline và execution environment
 
-Theo yêu cầu T10, nhóm phân tích ít nhất ba surviving mutants và bổ sung ít nhất ba assertions thủ công [14]. Tiêu chí lựa chọn gồm: mutant thuộc phạm vi nghiệp vụ đã chốt; có định danh và vị trí truy vết được; có thể phân tích nguyên nhân; và có oracle đủ rõ để kiểm chứng.
+Frozen input của comparison là commit **806ba19ee4e09eafe9b2696ccf117a2b1ab841ef**, ký hiệu **806ba19**. Baseline gồm 88 tests: Cart 36; Coupons 25 cùng 1 API flow; Auth 26. Manual/AI assertions được bổ sung trên variants riêng hoặc overlay lên bản sao của frozen input, không thay đổi initial test selection.
 
-Chúng tôi lưu cả các trường hợp không cải thiện được và lý do loại trừ. Nếu baseline không tạo đủ survivor phù hợp, cần xem lại phạm vi hoặc ghi giới hạn của nghiên cứu. Việc thay đổi phạm vi phải được công bố trước một baseline mới; không bỏ kiểm thử hợp lệ chỉ để tạo ra survivor.
+**Bảng 4.3. Execution environment được ghi trong frozen-run metadata.**
 
-### 4.7. Biến và chỉ số đánh giá
-
-Biến thay đổi chính là cách bổ sung kiểm thử. Các điều kiện giữ cố định gồm mã nguồn sản phẩm, phạm vi và toán tử đột biến, môi trường, cấu hình timeout, dữ liệu khởi tạo và cơ chế reset. Danh tính agent/model là đặc điểm của phương án AI được công bố theo từng miền.
-
-**Bảng 4.4. Các chỉ số của thiết kế đánh giá.**
-
-| Chỉ số | Mục đích và cách sử dụng |
+| Thành phần | Giá trị |
 |---|---|
-| Số lượng mutant theo trạng thái | Cho biết thành phần kết quả của từng phương án |
-| Mutation score | Giữ định nghĩa công cụ tại mục 2.5 và mẫu số của từng run |
-| Số mutant mục tiêu chuyển từ `Survived` sang `Killed` | Đo thay đổi trên cùng tập mục tiêu, truy tới kiểm thử gây thất bại |
-| Số test case và assertion bổ sung | Mô tả quy mô thay đổi của bộ kiểm thử |
-| Candidate AI được dùng nguyên, sửa hoặc loại | Mô tả quá trình xử lý đầu ra AI |
-| Coverage, nếu có báo cáo | Giúp phân biệt mở rộng phạm vi thực thi với tăng khả năng quan sát |
-| Thời gian, nếu được đo | Báo cùng cách đo, số lần chạy và điều kiện môi trường |
+| Operating system | Windows x64 |
+| Node.js / npm | v24.16.0 / 12.0.2 |
+| Jest / Supertest | 30.5.2 / 7.3.1 |
+| SQLite package | 6.0.1 |
+| Stryker core / Jest runner | 10.0.0 / 10.0.0 |
+| Coverage analysis | perTest |
+| Mutation concurrency | 2 |
+| Timeout policy | timeoutMS = 5000; timeoutFactor = 1.5 |
+| Output formats | Console, HTML và JSON |
 
-Để làm rõ quan hệ giữa kết quả hai phương án, có thể phân nhóm mutant mục tiêu thành: cả hai phát hiện; chỉ thủ công phát hiện; chỉ AI hỗ trợ phát hiện; và cả hai chưa phát hiện. Mỗi trường hợp vẫn giữ trạng thái cụ thể, đặc biệt khi xuất hiện `Timeout` hoặc lỗi công cụ.
+Production server, database module và tracked database được kiểm tra hash với original revision 92bbf22 trong integration evidence. Test isolation được thực hiện qua mocks/wrappers; không sửa production logic để tạo kết quả thuận lợi. Jest projects tách Auth harness khỏi Cart/Coupons harness để giữ nguyên các bàn giao và tránh mock conflicts.
 
-### 4.8. Thu thập dữ liệu và tái lập
+### 4.5. Comparison conditions và AI provenance
 
-Mỗi run cần có lệnh chạy, mã thoát, log, cấu hình và báo cáo thô. Định danh mutant dạng số chỉ có ý nghĩa trong báo cáo tương ứng; đối chiếu giữa các run cần thêm tệp nguồn, vị trí, toán tử và đoạn thay thế trên cùng phiên bản sản phẩm.
+**Bảng 4.4. Ba test conditions và nguồn gốc thực tế.**
 
-Kết quả chung được lấy từ lần chạy kết hợp trong phạm vi đã chốt. Không lấy trung bình đơn giản các mutation scores theo miền để tạo score toàn hệ thống. Thành viên chạy lại ghi bằng chứng riêng, những khác biệt môi trường và vấn đề gặp phải; việc đọc hướng dẫn không thay thế kiểm tra tái lập.
+| Condition | Thành phần | Cách diễn giải |
+|---|---|---|
+| Baseline | Initial tests đã freeze, pass trên original code | Mốc đối chiếu của từng domain |
+| Cart manual | Baseline 36 tests cùng 8 manual tests do Hiệp bàn giao | Human-authored suite được Agent rerun trên frozen input |
+| Cart AI-assisted | Baseline 36 tests cùng 5 tests từ Claude Code, model claude-opus-5-5 theo record gốc | Assertions đã có review record; generation có partial-blind limitation |
+| Coupons manual-analysis draft | Baseline 26 tests cùng 3 cases do Codex soạn theo yêu cầu để Hòa review | AI-assisted spec-analysis draft; không gán thành independent human manual work |
+| Coupons AI candidate | Baseline 26 tests cùng 2 parameterized cases do Codex tạo trong cùng context | Cùng context với manual-analysis; không phải blind comparison |
+| Auth manual / AI | Chưa có bàn giao completed comparison | Không suy diễn kết quả từ baseline hoặc tutorials |
+
+Một Claude CLI invocation cho Coupons thất bại do authentication. Generation sau đó được thực hiện bằng Codex trong context đã chứa manual analysis. Vì vậy, agent attribution là Codex; model ID chưa được record xác nhận.
+
+Các conditions cùng dùng production source, mutation ranges và execution policy. Tuy nhiên, số tests và breadth của additions khác nhau: Cart manual có thêm scenarios ngoài selected targets; Coupons variants chia sẻ context và, ở extension, dùng chung scenario helpers. Vì vậy, đây là descriptive comparison của các test suites cụ thể, không phải controlled experiment đo riêng tác động của “con người” hoặc một model.
+
+### 4.6. Survivor selection và unit of analysis
+
+Unit of analysis chính là mutant trên một production revision và configuration xác định. Một target cần có location, mutator, replacement, baseline status và oracle phân biệt được original với mutant. Khi original code đã sai specification tại vị trí đó, chúng tôi phân loại riêng thay vì tạo assertion củng cố defect.
+
+Yêu cầu seminar gồm phân tích ít nhất ba survivors và bổ sung ít nhất ba manual assertions [14]. Chương 6 trình bày ba Cart cases ở các locations khác nhau và một Coupons case với hai mutants cùng root cause. Hai mutants cùng usage-limit expression không được diễn giải thành hai business defects khác nhau.
+
+Numeric mutant ID chỉ có ý nghĩa trong report tương ứng. Comparison giữa các runs dùng mutant signature; không so sánh bằng ID đơn lẻ nếu source, locations hoặc mutant ordering đã đổi.
+
+### 4.7. Metrics và nguyên tắc đối chiếu
+
+Các metrics chính gồm status counts, mutation score theo Stryker, số Survived → Killed, test count và mapping từ mutant sang detecting test. Ký hiệu K, T, S, N lần lượt là Killed, Timeout, Survived, NoCoverage; valid population V = K + T + S + N [2].
+
+Để nhìn riêng test failures, báo cáo bổ sung tỷ lệ K/V và gọi rõ là **assertion-kill proportion**, không thay tên hoặc định nghĩa official mutation score. Killed vẫn cần đọc failure reason; một status riêng lẻ không chứng minh assertion phản ánh đúng specification.
+
+Coverage được báo cùng scope đo. Execution duration không được sử dụng để kết luận productivity của thành viên, vì chưa có protocol đo effort hoặc repeated runs phục vụ comparison đó. Không cộng hay lấy trung bình domain scores để tạo một “overall score”.
+
+### 4.8. Data collection và reproduction
+
+Statistics trong báo cáo được tổng hợp lại từ completed JSON reports, test results và command metadata [19], [20]. Mutants được đối chiếu theo source/location/mutator/replacement; test counts được lấy từ test execution results. Raw logs, source snapshots, hashes và artifact locations thuộc hồ sơ evidence riêng, không được lặp thành danh mục paths trong report.
+
+Agent rerun chứng minh workflow đã thực thi trong environment được ghi nhận. Nó chưa chứng minh từng thành viên đã tự chạy lại hoặc chấp thuận mọi AI candidate. Member cross reproduction và human review được ghi riêng tại mục 6.7.
 
 <a id="chuong-5"></a>
-## 5. Quy trình triển khai và các kịch bản minh họa
 
-### 5.1. Thiết lập môi trường và tích hợp công cụ
+## 5. Triển khai và demonstration scenarios
 
-Quy trình bắt đầu bằng kiểm tra cấu trúc dự án, package scripts, bộ kiểm thử và phụ thuộc đang có. Chỉ sau khi lệnh kiểm thử thực thi đúng tập test dự kiến mới tiến hành tích hợp mutation. Kết quả cài đặt phải được kiểm tra bằng phiên bản và một lần chạy, thay vì chỉ dựa trên việc xuất hiện package trong tệp khai báo.
+### 5.1. Integration của test harness
 
-Nếu sử dụng Jest, plugin `@stryker-mutator/jest-runner` kết nối Jest với Stryker; phiên bản phải đáp ứng các peer dependencies được công cụ quy định [13]. Cấu hình thực tế và lệnh đã xác minh được điền tại Phụ lục A. Hướng dẫn thao tác chi tiết nằm trong [User Guide](User_Guide.md).
+Backend ban đầu khởi động server và database tại module load, nên tests cần kiểm soát lifecycle và state. Cart/Coupons harness nạp Express app qua wrapper/mocks, dùng SQLite in-memory và reset dữ liệu; Auth giữ harness bàn giao riêng. Jest project isolation ngăn mocks/listen spies ảnh hưởng nhau.
 
-### 5.2. Chuẩn bị dữ liệu và cô lập kiểm thử
+Integration giữ nguyên năm Auth source files đã bàn giao và đối chiếu SHA-256; các chỉnh sửa phục vụ configuration/cleanup được quản lý riêng. Phân biệt này giúp tránh nhầm kết quả của adapted assertions với kết quả nguyên bản của teammate.
 
-Một test case cần xác định trước trạng thái tài khoản, giỏ hàng, đơn hàng hoặc mã giảm giá mà nó sử dụng. Sau khi hoàn tất, dữ liệu phải được khôi phục hoặc loại bỏ theo cơ chế đã chốt. Test không được phụ thuộc vào thứ tự chạy hay trạng thái do một test khác để lại.
+Package scripts hiện có phân biệt baseline tests, defect tests và mutation theo domain. Reproduction procedure của frozen input được tóm tắt tại Appendix A. Scripts manual/AI chỉ có ý nghĩa khi dùng đúng variant hoặc source overlay đi kèm.
 
-Đối với quy tắc thời hạn, cần kiểm soát thời điểm đánh giá. Đối với thao tác ghi dữ liệu, cần chờ thao tác hoàn tất trước khi đọc lại. Khi chạy song song, các worker cần tránh dùng chung dữ liệu có thể thay đổi ngoài ý muốn. Cơ chế cô lập được ghi như một điều kiện của thực nghiệm và áp dụng nhất quán cho cả ba phương án.
+### 5.2. Fixtures, state reset và clock control
 
-### 5.3. Cấu hình và chạy baseline
+Cart cần fresh user/cart state để các cases không phụ thuộc lịch sử requests. Coupons reset coupons và usage records, tạo JWT cho test user, rồi kiểm tra state trước/sau API calls. Auth reset users theo test và cô lập database mocks.
 
-Stryker cho phép cấu hình phạm vi qua `mutate`, lựa chọn `testRunner`, `reporters`, phân tích coverage và các giới hạn thực thi [6]. Trong nghiên cứu này, cấu hình được lưu cùng run để mọi thay đổi có thể được kiểm tra lại.
+Coupons chỉ fake Date, giữ timers khác hoạt động bình thường; cleanup khôi phục real timers và đóng database connections. Với expiry scenarios, clock được cố định và token có thể được tạo lại sau khi đổi thời điểm. Cơ chế này giảm nguy cơ kết quả thay đổi vì wall clock hoặc token expiry thay vì logic đang xét.
 
-Trình tự thiết lập baseline gồm:
+Một Coupons API flow thực hiện quote → checkout → explicit usage recording → quote lại. Tests kiểm tra usage chưa được ghi trước explicit call và limit được áp dụng sau call. Flow này không chứng minh checkout tự ghi usage, không chứng minh cart clearing hoặc atomicity giữa endpoints.
 
-1. Xác nhận phiên bản nguồn và các quyết định oracle.
-2. Chạy bộ kiểm thử ban đầu trên chương trình gốc, kiểm tra đúng tập test được phát hiện.
-3. Thực hiện bước kiểm tra ban đầu của công cụ và xử lý lỗi môi trường.
-4. Chạy mutation trong phạm vi đã chọn.
-5. Lưu báo cáo và thống kê trạng thái, sau đó chọn survivor theo mục 4.6.
+### 5.3. Baseline execution và scope control
 
-Một lần dry run hoặc tutorial chỉ chứng minh bước tương ứng hoạt động. Baseline mutation cần báo cáo có kết quả cho phạm vi EShop đã chốt.
+Trước mutation execution, nhóm chạy original tests để xác nhận đúng test selection và environment. Final frozen input có 88 passing tests, được kiểm tra thêm với randomized order seeds 421023 và 731023. Defect profile được chạy riêng và kết quả fail có chủ đích được diễn giải theo oracle của từng case.
 
-### 5.4. Phân tích survivor và bổ sung assertion thủ công
+Stryker dry runs nhận 36 Cart tests, 26 Coupons tests và 26 Auth tests. Sau đó full mutation runs được thực hiện theo domain. Shared timeout/concurrency policy giữ cố định; reports được lưu riêng cho baseline và variants.
 
-Với mỗi survivor, người thực hiện đọc đoạn mã gốc và đoạn thay thế, xác định yêu cầu bị tác động, sau đó tìm đầu vào khiến hai phiên bản khác nhau. Assertion được thiết kế để quan sát sai khác có ý nghĩa nghiệp vụ, chẳng hạn giá trị trả về, quyền thực hiện thao tác hoặc dữ liệu sau cập nhật.
+Trên Windows, sandbox folder dùng tên stryker-tmp. Integration evidence ghi nhận tên có dấu chấm ở đầu từng làm Jest không discover tests. Đây là environment-specific observation; không diễn giải thành quy tắc chung cho mọi version hoặc operating system.
 
-Kiểm thử mới phải thành công trên chương trình gốc. Nếu nó thất bại ngay từ đây, cần xác định lỗi của test, dữ liệu hoặc SUT trước khi đánh giá mutant. Khi mutant bị phát hiện, phải kiểm tra nguyên nhân thất bại để tránh quy nhầm lỗi thiết lập thành tác dụng của assertion.
+### 5.4. Manual assertion design
 
-### 5.5. Đề xuất assertion bằng AI và kiểm tra đầu ra
+Survivor analysis đi từ specification đến observation: xác định state/input, xem original và replacement khác nhau ở đâu, rồi chọn assertion kiểm tra response data hoặc persistence. Test thêm chỉ có ý nghĩa khi nó pass trên original và fail do intended difference trên mutant.
 
-AI nhận cùng mutant mục tiêu và thông tin baseline theo mẫu ở Phụ lục C. Người thực hiện lưu đầu ra nguyên gốc, rồi kiểm tra lần lượt: oracle có căn cứ; API/helper tồn tại; dữ liệu hợp lệ; kiểm thử có quan sát đúng sai khác; và giải thích có phù hợp với mã hay không.
+Ví dụ Cart: POST trả 200 không bảo đảm item đã được lưu; sau khi thêm hai distinct items, GET phải trả lại đúng cả hai. Ví dụ Coupons: input usage limit bằng 1 không phân biệt original expression với mutant luôn lưu 1; dùng limit 3 và đọc lại persisted value tạo observation có khả năng phân biệt.
 
-Candidate được phân thành dùng nguyên, chỉnh sửa hoặc loại bỏ. Nếu sửa, cần lưu nội dung trước và sau cùng lý do. Những phân loại này phục vụ thực nghiệm, không tự thay thế verdict trên biểu mẫu AI audit chính thức. Hồ sơ phải ghi agent, model, ngữ cảnh được cung cấp và các lần yêu cầu sửa lại.
+Assertion count, test-case count và kill count được báo riêng. Nhiều assertions trong cùng scenario có thể chỉ làm lộ một root cause; nhiều mutants bị kill có thể thuộc cùng expression hoặc cùng implementation convention.
 
-### 5.6. Kiểm chứng và lưu kết quả
+### 5.5. AI candidate generation và review
 
-Mỗi phương án được kiểm tra trên mã gốc rồi chạy mutation với cùng cấu hình. Việc chạy riêng mutant hoặc vùng mã mục tiêu hỗ trợ phân tích, nhưng báo cáo kết quả tổng hợp cần lần chạy đủ phạm vi tương ứng. Nếu test mới ảnh hưởng ngoài mutant mục tiêu, kết quả đó cũng được giữ lại.
+AI input gồm relevant specification, original source, baseline tests/helpers, mutant diff và runner/reset constraints. Reusable prompt ở Appendix B yêu cầu giải thích oracle và không khẳng định đã execution khi chưa có run. Đây là prompt pattern, không phải transcript giả lập của một run.
 
-Bằng chứng cho một kết luận gồm đặc tả, phiên bản nguồn, thay đổi kiểm thử, lệnh, báo cáo và vị trí mutant. Ảnh chụp màn hình hỗ trợ trình bày; báo cáo thô và log cho phép kiểm tra lại các con số. Danh mục bằng chứng được ghi tại Phụ lục B.
+Review kiểm tra oracle, helper/API compatibility, fixtures và failure behavior. Candidate được phân loại accepted, edited hoặc rejected; raw output và executed version được giữ riêng khi có chỉnh sửa. Agent review không tự thay human verdict của thành viên.
 
-### 5.7. Kịch bản minh họa công cụ
+Cart record ghi 5 generated tests được giữ nguyên assertions; chỉnh sửa sau đó chỉ liên quan header comments. Coupons initial AI candidate có raw/executed hashes khớp và Agent review chấp nhận; human verdict vẫn là đầu vào riêng. Không suy ra chất lượng nguyên gốc của candidate từ kết quả của bản đã sửa.
 
-**Bảng 5.1. Thiết kế các kịch bản theo mức sử dụng.**
+### 5.6. Mutation verification và diagnosis
 
-| Vai trò | Mức | Nội dung | Điểm kiểm tra | Bằng chứng thực hiện |
-|---|---|---|---|---|
-| StrykerJS | Thiết lập | Cài phụ thuộc, tích hợp runner và cấu hình phạm vi | Công cụ nhận đúng tests và nguồn | |
-| StrykerJS | Cơ bản | Chạy baseline và đọc một survivor | Chỉ ra vị trí, thay đổi và trạng thái | |
-| StrykerJS | Nâng cao | Chạy lại sau cải thiện và đối chiếu kết quả | Cùng baseline; truy được test phát hiện mutant | |
-| AI Agent | Thiết lập | Chuẩn bị truy cập và ngữ cảnh đầu vào | Ghi agent/model và phạm vi dữ liệu | |
-| AI Agent | Cơ bản | Đề xuất assertion cho một survivor | Lưu đầu ra và kiểm tra oracle | |
-| AI Agent | Nâng cao | Review, sửa hoặc loại candidate; chạy kiểm chứng | Liên hệ candidate cuối với kết quả mutation | |
+Comparison dùng cùng source bytes và mutant signatures. Khi status đổi, chúng tôi xem detecting test và failure reason; khi score đổi mà Killed không đổi, cần kiểm tra Timeout và valid denominator trước khi kết luận test effectiveness tăng.
 
-Bảng 5.1 mô tả kịch bản, chưa xác nhận việc trình diễn đã hoàn tất. Chi tiết điều phối và media được bổ sung trong [Demo Script](Demo_Script.md) và Phụ lục D.
+Trong Cart frozen reruns, cả 150 mutant signatures khớp giữa conditions. Coupons initial comparison có 120 signatures khớp và chỉ hai mutants chuyển Survived → Killed. Auth provisional/frozen comparison có 125 signatures khớp nhưng một số RuntimeError chuyển sang Timeout; trường hợp này được phân tích riêng tại Chương 7.
 
-### 5.8. Data-driven testing, checkpoints và tái sử dụng
+### 5.7. Demonstration scenarios
 
-Data-driven testing được thể hiện bằng một cấu trúc test chạy với nhiều bộ dữ liệu có kết quả mong đợi riêng. Với điều kiện biên, dữ liệu cần bao gồm trường hợp dưới, tại và trên biên nếu thuộc miền hợp lệ. Checkpoints được hiện thực bằng assertions kiểm tra phản hồi và tác động theo yêu cầu.
+**Bảng 5.1. Nội dung demonstration và điều kiện quan sát.**
 
-Trong phạm vi quy trình này, Record & Playback không được triển khai như cơ chế ghi và phát lại thao tác giao diện. Chạy lại test script hoặc mở lại report không được gọi là GUI recording. Quy trình tái sử dụng thông qua cấu hình, dữ liệu và mẫu prompt đã lưu; người thực hiện thay phần đặc tả, mutant và oracle khi áp dụng cho trường hợp mới.
+| Tool / mức | Nội dung demonstration | Checkpoint cụ thể |
+|---|---|---|
+| StrykerJS / setup | Xác nhận versions, test discovery và passing baseline | Đúng domain test set; không vô tình chạy defect suite |
+| StrykerJS / basic | Chạy mutation và mở survivor diff | Xác định location, replacement, status và scope |
+| StrykerJS / advanced | Bổ sung assertion rồi đối chiếu mutant signature | Original pass; selected mutant chuyển sang Killed; đọc detecting test |
+| AI Agent / setup | Chuẩn bị quyền truy cập và context | Ghi đúng agent/model và actual inputs |
+| AI Agent / basic | Đề xuất assertion từ survivor và specification | Oracle có căn cứ; dùng đúng API/helpers |
+| AI Agent / advanced | Review candidate, kiểm chứng và phân tích limitations | Phân biệt raw/final output, actual kills và provenance |
+
+Execution evidence đã có cho các workflows tương ứng; bảng này không xác nhận screencast, live seminar hoặc rehearsal đã diễn ra. Demo media, access checks và event records được quản lý trong deliverables riêng.
+
+### 5.8. Data-driven testing và reusable workflow
+
+Data-driven testing dùng cùng test structure với nhiều input/expected pairs. Coupons initial AI suite kiểm tra limits 2 và 4; extension dùng parameterized minimum và expiry scenarios. Mỗi row vẫn cần oracle riêng; tăng số rows không tự bảo đảm có thêm relevant mutants.
+
+Checkpoints là assertions tại response, stored data hoặc state transition. Workflow tái sử dụng qua fixtures, configuration và prompt pattern; mỗi domain mới vẫn cần specification và mutant analysis riêng. Record & Playback không được triển khai như GUI recording; rerun script hoặc mở HTML report không được gọi là GUI playback.
 
 <a id="chuong-6"></a>
+
 ## 6. Kết quả thực nghiệm
 
-<!-- Điền chỉ từ run evidence đã kiểm tra. Các bảng trống giữ chỗ cho kết quả; không dùng số liệu tutorial hoặc ví dụ Chương 2 làm kết quả EShop. -->
+### 6.1. Baseline tests và mutation results
 
-### 6.1. Kết quả baseline
+**Bảng 6.1. Passing baseline và separate defect profile.**
 
-**Bảng 6.1. Thông tin kiểm thử ban đầu.**
+| Domain | Baseline tests pass | Defect cases fail riêng | Ghi chú |
+|---|---:|---:|---|
+| Cart & Orders | 36 | 9 | Initial suite chủ yếu quan sát HTTP status |
+| Coupons | 26 | 22 | 25 cases cùng 1 explicit API flow |
+| Authentication & Users | 26 | 23 | Có OTP-duration assumption trong defect profile |
+| Integration test run | **88** | **54** | Test counts; không phải số business defects hoặc combined mutation score |
 
-| Miền | Run ID | Phiên bản nguồn | Số tests | Tests thành công | Coverage và loại đo | Report |
-|---|---|---|---|---|---|---|
-| Cart & Orders | | | | | | |
-| Coupons | | | | | | |
-| Authentication & Users | | | | | | |
-| Phạm vi kết hợp | | | | | | |
+Whole-server coverage của integration run là statements 68,70%; branches 59,68%; functions 61,42%; lines 71,84%. Đây là coverage của toàn server trong run được ghi nhận, không phải coverage riêng của từng mutation domain và không phải chứng cứ mọi covered behavior đã được assert.
 
-**Bảng 6.2. Kết quả mutation baseline.**
+**Bảng 6.2. Frozen mutation baseline theo domain.**
 
-| Phạm vi | Killed | Survived | No coverage | Timeout | Lỗi / bỏ qua / chưa chạy | V | Score (%) | Run ID |
-|---|---|---|---|---|---|---|---|---|
-| Cart & Orders | | | | | | | | |
-| Coupons | | | | | | | | |
-| Authentication & Users | | | | | | | | |
-| Phạm vi kết hợp | | | | | | | | |
+| Domain | Total | Killed | Timeout | Survived | NoCoverage | RuntimeError | Valid V | Score |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Cart & Orders | 150 | 82 | 25 | 34 | 2 | 7 | 143 | 74,83% |
+| Coupons | 120 | 39 | 21 | 30 | 25 | 5 | 115 | 52,17% |
+| Authentication & Users | 125 | 60 | 27 | 23 | 7 | 8 | 117 | 74,36% |
 
-<!-- Bổ sung mô tả phân bố mutant và những quan sát nổi bật của baseline. Giải thích từng trạng thái trong cột gộp nếu có. -->
+CompileError, Ignored và Pending bằng 0 trong ba reports trên. RuntimeError được báo ngoài valid population. Mỗi row có source scope và test selection riêng; báo cáo không tạo overall score bằng cách gộp ba rows [19].
 
-### 6.2. Phân tích surviving mutants
+### 6.2. Phân tích selected survivors
 
-#### 6.2.1. Trường hợp thứ nhất
+Các mutant diffs dưới đây lấy từ frozen reports. Assertion snippets được trích lược từ executed tests để làm rõ observation; một số tên biến được rút gọn cho dễ đọc. Numeric IDs thuộc frozen domain report tương ứng.
 
-| Nội dung | Kết quả phân tích |
-|---|---|
-| Miền, Run ID và mutant ID | |
-| Tệp, vị trí và toán tử | |
-| Yêu cầu nghiệp vụ và nguồn oracle | |
-| Mã gốc | |
-| Mã sau đột biến | |
-| Trạng thái và nguyên nhân baseline chưa phát hiện | |
-| Dữ liệu phân biệt và kết quả mong đợi | |
-| Assertion thủ công và kiểm thử liên quan | |
-| Candidate AI nguyên gốc | |
-| Chỉnh sửa / quyết định review | |
-| Kết quả trên mã gốc và mutant của từng phương án | |
-| Bằng chứng và giới hạn diễn giải | |
+#### 6.2.1. Cart khởi tạo sai nội dung nhưng vẫn trả HTTP 200
 
-#### 6.2.2. Trường hợp thứ hai
+Frozen mutant 6 tại server line 286 dùng ArrayDeclaration để thay empty array bằng array chứa một phần tử do Stryker chèn [17]:
 
-| Nội dung | Kết quả phân tích |
-|---|---|
-| Miền, Run ID và mutant ID | |
-| Tệp, vị trí và toán tử | |
-| Yêu cầu nghiệp vụ và nguồn oracle | |
-| Mã gốc | |
-| Mã sau đột biến | |
-| Trạng thái và nguyên nhân baseline chưa phát hiện | |
-| Dữ liệu phân biệt và kết quả mong đợi | |
-| Assertion thủ công và kiểm thử liên quan | |
-| Candidate AI nguyên gốc | |
-| Chỉnh sửa / quyết định review | |
-| Kết quả trên mã gốc và mutant của từng phương án | |
-| Bằng chứng và giới hạn diễn giải | |
+~~~javascript
+// Original
+userCarts[userId] = [];
 
-#### 6.2.3. Trường hợp thứ ba
+// Mutant
+userCarts[userId] = ["Stryker was here"];
+~~~
 
-| Nội dung | Kết quả phân tích |
-|---|---|
-| Miền, Run ID và mutant ID | |
-| Tệp, vị trí và toán tử | |
-| Yêu cầu nghiệp vụ và nguồn oracle | |
-| Mã gốc | |
-| Mã sau đột biến | |
-| Trạng thái và nguyên nhân baseline chưa phát hiện | |
-| Dữ liệu phân biệt và kết quả mong đợi | |
-| Assertion thủ công và kiểm thử liên quan | |
-| Candidate AI nguyên gốc | |
-| Chỉnh sửa / quyết định review | |
-| Kết quả trên mã gốc và mutant của từng phương án | |
-| Bằng chứng và giới hạn diễn giải | |
+Status-only test không quan sát cart contents nên baseline vẫn pass. Với fresh user chưa có cart, manual và AI tests đọc cart rồi yêu cầu empty array:
 
-### 6.3. Kết quả bổ sung assertion thủ công
+~~~javascript
+expect(response.status).toBe(200);
+expect(response.body).toEqual([]);
+~~~
 
-**Bảng 6.3. Assertions thủ công và mutant mục tiêu.**
+Empty cart là interpretation của cart contract được nhóm sử dụng, không phải exact JSON shape được API text mô tả đầy đủ. Giới hạn oracle này được giữ rõ. Trong frozen reports, mutant chuyển **Survived → Killed ở cả manual và AI**.
 
-| Assertion / test | Quy tắc được kiểm tra | Dữ liệu bổ sung | Mutant mục tiêu | Kết quả trên mã gốc | Kết quả mutant | Run / bằng chứng |
-|---|---|---|---|---|---|---|
-| | | | | | | |
-| | | | | | | |
-| | | | | | | |
+#### 6.2.2. Cart không lưu item nhưng request vẫn thành công
 
-<!-- Bổ sung nhận xét về tác dụng của từng assertion, kể cả trường hợp chưa phát hiện được mutant. -->
+Frozen mutant 15 tại server line 293 dùng CallExpression để xóa tác động thêm item:
 
-### 6.4. Kết quả assertion có AI hỗ trợ
+~~~javascript
+// Original
+userCarts[userId].push(req.body);
 
-**Bảng 6.4. Candidate AI và kết quả sau review.**
+// Mutant: call bị thay bằng empty statement
+;
+~~~
 
-| Candidate | Agent / model | Mutant mục tiêu | Dùng nguyên / sửa / loại | Nội dung sửa và lý do | Kết quả bản gốc nếu đã chạy | Kết quả bản cuối | Bằng chứng |
-|---|---|---|---|---|---|---|---|
-| | | | | | | | |
+Theo FR-07, thao tác thêm sản phẩm phải làm item xuất hiện trong cart. Test tạo hai distinct items, POST từng item và GET lại cart; detecting assertions quan sát danh sách và nội dung trả về:
 
-<!-- Công bố cả candidates không hợp lệ hoặc bị loại. Không suy ra kết quả thực thi của bản nguyên gốc từ kết quả của bản đã sửa. -->
+~~~javascript
+expect(cart.body).toHaveLength(2);
+expect(cart.body[0]).toEqual(item1);
+expect(cart.body[1]).toEqual(item2);
+~~~
 
-### 6.5. So sánh ba phương án
+Đây cũng là test bắt được một mutant khác luôn reset cart trước mỗi POST. Trong selected frozen mutant 15, status-only baseline bỏ sót tác động bị mất; **manual và AI cùng chuyển mutant sang Killed**.
 
-**Bảng 6.5. Đối chiếu ở mức mutant.**
+#### 6.2.3. Cancel trả thành công nhưng persisted status sai
 
-| Mutant / vị trí đối chiếu | Baseline | Thủ công | AI hỗ trợ | Test phát hiện | Giải thích khác biệt | Reports |
-|---|---|---|---|---|---|---|
-| | | | | | | |
+Frozen mutant 68 tại server line 335 dùng StringLiteral để thay giá trị "canceled" bằng empty string trong database update. HTTP success có thể không đổi trong khi stored state đã sai.
 
-**Bảng 6.6. Đối chiếu chỉ số trong cùng phạm vi.**
+Oracle từ FR-10 yêu cầu pending order được cancel chuyển sang canceled. Manual test cancel order, đọc database bằng helper và kiểm tra:
 
-| Miền / phạm vi | Phương án | Killed | Survived | No coverage | Timeout | V | Score (%) | Run ID |
-|---|---|---|---|---|---|---|---|---|
-| Cart & Orders | Baseline | | | | | | | |
-| Cart & Orders | Thủ công | | | | | | | |
-| Cart & Orders | AI hỗ trợ | | | | | | | |
-| Coupons | Baseline | | | | | | | |
-| Coupons | Thủ công | | | | | | | |
-| Coupons | AI hỗ trợ | | | | | | | |
-| Authentication & Users | Baseline | | | | | | | |
-| Authentication & Users | Thủ công | | | | | | | |
-| Authentication & Users | AI hỗ trợ | | | | | | | |
+~~~javascript
+expect(cancelResponse.status).toBe(200);
+expect(await orderStatus(db, orderId)).toBe("canceled");
+~~~
 
-<!-- Nêu số mutant cả hai phương án phát hiện, chỉ một phương án phát hiện và cả hai chưa phát hiện. Giải thích mọi thay đổi mẫu số hoặc trạng thái lỗi. -->
+Original-code manual suite pass. Mutant này **Survived ở baseline, Killed ở manual, vẫn Survived ở AI suite**. AI additions được bàn giao không có scenario tương đương kiểm tra persisted cancel state. Finding mô tả breadth của hai suites; nó không tách riêng ảnh hưởng của người viết khỏi số scenarios.
 
-### 6.6. Kết quả tổng hợp và equivalent candidates
+#### 6.2.4. Coupons lưu usage limit thành 1
 
-**Bảng 6.7. Kết quả các lần chạy kết hợp.**
+Hai frozen mutants 111 và 113 tại line 474 cùng tác động expression lưu limit:
 
-| Phương án | Phạm vi / phiên bản chung | Killed | Survived | No coverage | Timeout | V | Score (%) | Report |
-|---|---|---|---|---|---|---|---|---|
-| Baseline | | | | | | | | |
-| Thủ công | | | | | | | | |
-| AI hỗ trợ | | | | | | | | |
+~~~javascript
+// Original expression
+max_uses_per_user || 1
 
-**Bảng 6.8. Các mutant nghi ngờ tương đương còn lại.**
+// Mutant 111
+true
 
-| Mutant | Phạm vi đầu vào / trạng thái | Lập luận | Phản ví dụ đã tìm hoặc thử | Vai trò AI nếu có | Kết luận và giới hạn | Bằng chứng |
-|---|---|---|---|---|---|---|
-| | | | | | | |
+// Mutant 113
+max_uses_per_user && 1
+~~~
 
-### 6.7. Kết quả tái lập
+Baseline admin-create case dùng limit 1. Với input đó, cả original và mutants đều dẫn đến persisted value 1, nên tests không phân biệt được. Manual-analysis draft đổi input thành 3 và kiểm tra persisted value; AI candidate dùng limits 2 và 4. Assertions không chỉ xem create status mà còn đọc lại stored configuration.
 
-**Bảng 6.9. Hồ sơ chạy lại độc lập.**
+Manual-analysis có ba scenarios: lưu đúng limit 3; dùng 2 lượt vẫn áp được; dùng đủ 3 lượt bị từ chối. Với fixed discount 25.000 trên total 100.000, expected final amount là 75.000. Initial AI tests kiểm tra cùng nguyên tắc tại limit−1 và limit.
 
-| Người thực hiện | Môi trường / phiên bản | Quy trình đã chạy | Kết quả đối chiếu | Sai khác / vấn đề | Run evidence |
-|---|---|---|---|---|---|
-| | | | | | |
+Hai mutants **Survived → Killed trong cả hai variants**. Mapping ghi detecting test là persisted-limit assertion. Ba scenarios này không tương ứng ba independent business defects; chúng cùng kiểm tra usage-limit behavior tại một expression.
+
+#### 6.2.5. Survivors không nên kill bằng oracle sai
+
+Coupons mutants tại lines 379 và 382 thay strict minimum/expiry comparisons thành inclusive comparisons phù hợp hơn với specification ở equality boundary. Original-code-passing test muốn kill chúng bằng behavior tại đúng boundary sẽ phải chấp nhận defect gốc, trái business oracle.
+
+Tương tự, Cart condition mutant tại line 550 có vai trò correcting mutant đối với invalid canceled → delivered transition theo phân tích bàn giao. Các trường hợp này được giữ trong limitation/defect analysis; không đổi expected results chỉ để tăng mutation score.
+
+### 6.3. Manual additions và observed effect
+
+**Bảng 6.3. Các observations được bổ sung và kết quả.**
+
+| Domain / observation | Expected behavior | Mutation result đã xác minh |
+|---|---|---|
+| Cart / fresh cart contents | Empty cart theo interpretation được công bố | Mutant 6 bị manual kill |
+| Cart / add-read consistency | Hai distinct items vẫn tồn tại sau hai lần thêm | Mutant 15 và related state mutants bị manual kill |
+| Cart / cancel persistence | Stored order status là canceled | Mutant 68 bị manual kill |
+| Coupons / persisted limit | Input limit 3 được lưu đúng là 3 | Mutants 111/113 bị manual-analysis draft kill |
+| Coupons / usage boundary | Limit−1 được chấp nhận; đủ limit bị từ chối | Original tests pass; chưa có căn cứ quy mỗi boundary assertion thành một new kill |
+
+Cart manual suite có 44 passing tests, tăng 8 so với baseline và thêm 23 assertion kills. Trong additions có checks dùng exact error/message literals từ implementation; báo cáo không gán tất cả 23 kills thành 23 distinct specification faults.
+
+Coupons initial manual-analysis suite có 29 passing tests, tăng 3 so với baseline và thêm 2 kills. Các cases do Codex hỗ trợ soạn, nên attribution được giữ là AI-assisted draft chờ member review.
+
+### 6.4. AI-assisted assertions và provenance
+
+**Bảng 6.4. Generation/review conditions của initial AI variants.**
+
+| Domain | Agent / model được record xác nhận | Executed additions | Review và giới hạn |
+|---|---|---|---|
+| Cart & Orders | Claude Code / claude-opus-5-5 | 5 tests; tổng 41 pass | Giữ nguyên assertions theo bàn giao; header comment được sửa. Có partial-blind limitation và một số implementation-derived oracles |
+| Coupons | OpenAI Codex; model ID chưa được record xác nhận từ record | 2 parameterized tests; tổng 28 pass | Raw/executed hashes khớp; Agent review accepted, human verdict riêng. Dùng cùng context với manual-analysis draft |
+| Authentication & Users | Chưa có AI comparison bàn giao | — | Không dùng tutorial generation làm kết quả EShop |
+
+Cart initial AI suite thêm 13 assertion kills trong frozen rerun. Coupons initial AI suite thêm 2, cùng hai usage-limit mutants với manual-analysis draft. Các counts này mô tả executed versions; không chứng minh toàn bộ AI outputs đều hợp lệ hoặc hoàn toàn không cần human review.
+
+### 6.5. Comparison trên cùng frozen input
+
+**Bảng 6.5. Baseline, manual và AI-assisted conditions.**
+
+| Domain | Condition | Tests pass | Killed | Timeout | Survived | NoCoverage | RuntimeError | Score |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| Cart & Orders | Baseline | 36 | 82 | 25 | 34 | 2 | 7 | 74,83% |
+| Cart & Orders | Manual | 44 | 105 | 25 | 11 | 2 | 7 | 90,91% |
+| Cart & Orders | AI-assisted | 41 | 95 | 25 | 21 | 2 | 7 | 83,92% |
+| Coupons | Baseline | 26 | 39 | 21 | 30 | 25 | 5 | 52,17% |
+| Coupons | Manual-analysis draft | 29 | 41 | 21 | 28 | 25 | 5 | 53,91% |
+| Coupons | AI candidate | 28 | 41 | 21 | 28 | 25 | 5 | 53,91% |
+| Authentication & Users | Baseline | 26 | 60 | 27 | 23 | 7 | 8 | 74,36% |
+| Authentication & Users | Manual | — | — | — | — | — | — | — |
+| Authentication & Users | AI-assisted | — | — | — | — | — | — | — |
+
+Dấu “—” nghĩa là chưa có dữ liệu, không phải zero. Cart và Coupons có cùng mutant populations và source bytes trong từng domain comparison. Tất cả non-new-kill states của các frozen comparisons này giữ nguyên; changes quan sát được là Survived → Killed.
+
+Cart mutation score tăng **16,08 pp ở manual** và **9,09 pp ở AI-assisted**. Coupons tăng **1,74 pp ở cả hai variants**. Những chênh lệch này là percentage points, không phải relative percent improvement.
+
+**Bảng 6.6. Phân loại initial baseline survivors theo khả năng phát hiện của additions.**
+
+| Domain | Baseline survivors | Cả hai kill | Chỉ manual condition kill | Chỉ AI condition kill | Cả hai chưa kill |
+|---|---:|---:|---:|---:|---:|
+| Cart & Orders | 34 | 13 | 10 | 0 | 11 |
+| Coupons | 30 | 2 | 0 | 0 | 28 |
+
+Các groups được đối chiếu theo signatures, không chỉ trừ tổng Killed giữa reports. Cart manual suite có thêm scenarios ngoài AI target set; kết quả 10 manual-only kills cần được hiểu trong điều kiện breadth không bằng nhau.
+
+### 6.6. Supplemental Coupons extension và remaining gaps
+
+Sau initial comparison, Coupons tests được mở rộng bằng candidate-bank scenarios: chọn đúng coupon khi có nhiều codes; persisted minimum/expiry từ admin input; usage isolation theo user/coupon; và một số admin create/delete/list/JWT checks. Candidate bank chứa test ideas, không phải danh sách actual Stryker mutants.
+
+Extension được overlay lên frozen 806ba19 trong runtime riêng. Shared scenario helpers được dùng ở cả manual-analysis và AI suite; initial dataset tại mục 6.5 được giữ riêng để không thay điều kiện comparison bằng source local đang tiếp tục sửa.
+
+**Bảng 6.7. Completed supplemental Coupons runs.**
+
+| Condition | Tests pass | Total mutants | Killed | Timeout | Survived | NoCoverage | RuntimeError | Score |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Manual-analysis extension | 35 | 120 | 41 | 21 | 28 | 25 | 5 | 53,91% |
+| AI-assisted extension | 40 | 120 | 41 | 21 | 28 | 25 | 5 | 53,91% |
+
+Original-code tests và cả hai mutation commands hoàn tất với exit code 0 theo metadata [20]. Extension không tạo thêm kills so với initial variants. Điều này cho thấy tăng test count hoặc bổ sung business scenario chưa bảo đảm làm thay đổi trạng thái mutants do configured mutators sinh ra. Một phần test ideas liên quan SQL/stateful semantics không có matching mutant tương ứng; cần xem actual report trước khi dự đoán kill.
+
+Không có combined mutation results cho toàn bộ ba domains. Auth manual/AI comparison cũng chưa có bàn giao. Remaining survivors chưa được chứng minh là equivalent; không có thao tác tự loại equivalent candidates khỏi official score.
+
+### 6.7. Reproduction results và member verification
+
+**Bảng 6.8. Các reproduction checks đã có.**
+
+| Check | Executor / điều kiện | Kết quả và giới hạn |
+|---|---|---|
+| Frozen integration tests | Codex AI Agent; frozen commit | 88 pass; randomized order checks pass |
+| Cart comparison rerun | Agent; giữ nguyên source manual/AI bàn giao | 150/150 signatures khớp; manual thêm 23 kills, AI thêm 13 |
+| Coupons initial comparison | Agent; cùng source/config | 120/120 signatures khớp; hai variants cùng thêm 2 kills |
+| Auth baseline rerun | Agent; frozen Windows environment | 26 tests pass; 125 signatures đối chiếu được với provisional run |
+| Coupons extension | Agent; frozen input và test overlays | 88 integration tests vẫn pass; 35/40 variant tests pass; completed mutation counts như Bảng 6.7 |
+| Member cross reproduction | Hiệp → Coupons; Hòa → Auth; Hoàng → Cart | Chưa đủ member self-run/review evidence để xác nhận hoàn tất cả vòng |
+
+Auth provisional run có 60 Killed, 23 Timeout, 23 Survived, 7 NoCoverage và 12 RuntimeError. Frozen rerun có 60 Killed, 27 Timeout, 23 Survived, 7 NoCoverage và 8 RuntimeError. Không có new assertion kill; khác biệt platform/runtime/concurrency chưa được tách thành controlled factors.
+
+Human review, personal experience, AI audit verdict và signatures không được suy ra từ Agent execution. Đây là giới hạn của kết luận về mức hoàn tất, không phủ nhận completed technical runs đã lưu.
 
 <a id="chuong-7"></a>
+
 ## 7. Thảo luận và giới hạn
 
-### 7.1. Trả lời các câu hỏi nghiên cứu
+### 7.1. Trả lời Research Questions
 
-| Câu hỏi | Câu trả lời từ thực nghiệm | Kết quả làm căn cứ | Giới hạn |
-|---|---|---|---|
-| RQ1 | | | |
-| RQ2 | | | |
-| RQ3 | | | |
-| RQ4 | | | |
+**Bảng 7.1. Câu trả lời trong phạm vi completed runs.**
 
-### 7.2. Ý nghĩa của việc cải thiện bộ kiểm thử
+| RQ | Finding | Giới hạn |
+|---|---|---|
+| RQ1 — Vì sao selected mutants survive? | Cart thiếu observation về contents/persisted state; Coupons input limit 1 không phân biệt original với replacements lưu 1 | Một số survivors liên quan original defects hoặc unspecified payloads |
+| RQ2 — Manual và AI additions phát hiện gì? | Cart thêm 23 và 13 kills, intersection 13; Coupons initial variants cùng thêm 2 kills | Không cân bằng test breadth; Coupons cùng context; Auth chưa đủ comparison |
+| RQ3 — Cần giới hạn kết luận thế nào? | Timeout và RuntimeError ảnh hưởng score; correcting mutants và implementation-derived oracles cần xử lý riêng | Không xếp hạng model hoặc kết luận ưu thế tổng quát |
+| RQ4 — Reproduction cần gì? | Frozen source/config, isolated fixtures/clock, test selection và mutant signature mapping | Agent reruns có dữ liệu; member cross reproduction chưa đủ |
 
-<!-- Phân tích cơ chế tạo ra cải thiện: dữ liệu phân biệt, oracle hay quan sát mới. Đối chiếu Bảng 6.3, 6.5, 6.6 và coverage nếu có. Không suy ra chất lượng toàn bộ sản phẩm từ một score. -->
+### 7.2. Cơ chế cải thiện test effectiveness
 
-### 7.3. Giá trị và hạn chế của assertion có AI hỗ trợ
+Cart cases minh họa hai khoảng trống khác nhau: test thực thi handler nhưng chưa quan sát data được trả về; hoặc response thành công trong khi database side effect sai. Bổ sung response/database assertions làm khác biệt truyền tới test oracle, thay vì chỉ tăng số requests được gửi.
 
-<!-- Phân tích candidate dùng nguyên, mức chỉnh sửa và nguyên nhân bị loại từ Bảng 6.4. Kết luận về thời gian chỉ khi có phép đo. Công bố khác biệt model/ngữ cảnh và không xếp hạng model khi thiết kế không kiểm soát các yếu tố đó. -->
+Coupons usage-limit case chủ yếu bổ sung input partition có khả năng phân biệt. Input 1 làm original expression và hai mutants có cùng persisted output; inputs 2, 3 hoặc 4 tạo khoảng cách có thể quan sát. Assertion mạnh và test data phù hợp phải đi cùng nhau.
 
-### 7.4. Diễn giải các equivalent candidates
+Findings không chứng minh coverage không có giá trị. Coverage giúp chỉ ra vùng chưa được thực thi; mutant analysis giúp tìm nơi đã được thực thi nhưng observation/oracle chưa đủ. Whole-server coverage và domain mutation score đo hai khía cạnh khác nhau nên không thể thay thế trực tiếp.
 
-<!-- Tổng hợp lập luận tại Bảng 6.8, chỉ rõ trường hợp chưa đủ căn cứ và phạm vi có thể kết luận. Không tự loại candidate khỏi mẫu số chính thức để tăng score. -->
+### 7.3. Giá trị và chi phí review của AI-assisted assertions
 
-### 7.5. Các trường hợp có thể gây hiểu sai
+Cart AI output tạo tests bắt được selected behavior differences, nhưng suite có ít scenarios hơn manual. Manual-only kills phần lớn gắn với additional state/persistence observations hoặc stricter payload checks. Vì hai suites không bằng nhau về test budget và breadth, chênh lệch counts chưa cô lập được yếu tố “AI hay con người”.
 
-Bảng 7.1 là phân tích rủi ro phương pháp. Cột bằng chứng dùng để bổ sung những trường hợp được xác nhận trong thực nghiệm; việc mô tả rủi ro không đồng nghĩa đã quan sát thấy nó trong EShop.
+Coupons cho thấy hai variants cụ thể cùng đạt một hiệu quả mutation khi bắt đúng persisted-limit gap. Tuy nhiên, cả hai được Codex hỗ trợ trong cùng context và extension còn chia sẻ scenario helpers. Independence của generation không được thiết lập; kết quả chỉ mô tả variants, không ước lượng causal effect của AI.
 
-**Bảng 7.1. Rủi ro diễn giải và cách kiểm tra.**
+AI explanations vẫn cần review. Ví dụ trong tutorial records, một explanation dự đoán mutant đổi hằng số nhưng không đối chiếu configured mutators. Bài học áp dụng là đối chiếu candidate với actual mutant report, không dùng lời giải thích của model làm bằng chứng mutant đã tồn tại hoặc bị kill.
 
-| Tình huống | Cách hiểu sai có thể xảy ra | Biện pháp kiểm tra | Bằng chứng EShop |
-|---|---|---|---|
-| Test chạy qua mã nhưng chỉ kiểm tra hình thức phản hồi | Coverage cao được xem là đã kiểm tra đúng nghiệp vụ | Truy oracle và xem assertion quan sát giá trị nào | |
-| Score tăng đồng thời với `Timeout` | Quy toàn bộ cải thiện cho assertion | Đối chiếu số `Killed`, `Timeout` và nguyên nhân thất bại | |
-| Thu hẹp phạm vi hoặc bỏ mutant | So sánh phần trăm có mẫu số khác nhau | So sánh cấu hình và danh sách mutant | |
-| AI lấy hành vi hiện tại làm kết quả mong đợi | Candidate hợp thức hóa lỗi có sẵn | Xác định oracle từ đặc tả trước khi review | |
-| Fixture hoặc trạng thái dùng chung không ổn định | Test thất bại do setup được coi là phát hiện nghiệp vụ | Kiểm tra mã gốc, reset và nguyên nhân test fail | |
-| Gắn nhãn tương đương quá sớm | Bỏ qua khoảng trống kiểm thử còn tìm được phản ví dụ | Nêu miền xét và kiểm tra lập luận tương đương | |
+Chúng tôi chưa có phép đo human effort, review cost hoặc generation variance. Vì vậy, báo cáo không kết luận AI nhanh hơn, rẻ hơn hoặc cần ít chỉnh sửa hơn trong thực hành chung.
 
-### 7.6. Các yếu tố ảnh hưởng tính hợp lệ
+### 7.4. Equivalent candidates và correcting mutants
 
-**Tính hợp lệ nội tại.** Sai khác mã nguồn, cấu hình, dữ liệu hoặc thứ tự thực thi có thể tạo khác biệt kết quả ngoài yếu tố cần nghiên cứu. Biện pháp của thiết kế là cố định baseline và lưu đầy đủ điều kiện chạy. Việc cùng thành viên thiết kế thủ công và review AI có thể tạo ảnh hưởng từ kiến thức đã có; cần công bố cách thực hiện thực tế.
+Equivalent mutant giữ nguyên observable behavior trong input/state domain được xét. Correcting mutant lại có thể khác original nhưng phù hợp specification hơn. Hai loại này cần phân biệt; test pass trên original không phải lúc nào cũng có oracle hợp lệ để kill correcting mutant.
 
-**Tính hợp lệ của phép đo.** Mutation score phản ánh tập đột biến được sinh và cách công cụ phân loại. Việc thêm nhiều assertions không tự chứng minh phát hiện thêm lỗi. Do đó, kết quả được đối chiếu ở mức mutant và test thay vì chỉ dựa vào số lượng assertions hoặc một tỷ lệ tổng hợp.
+Minimum/expiry equality cases và order-transition case là ví dụ cần quay lại specification. Một số coupon error-message variants cần API contract bổ sung trước khi exact payload trở thành requirement. Chưa tìm được counterexample không đủ để gắn nhãn equivalent toàn cục.
 
-**Khả năng khái quát hóa.** Phạm vi nghiên cứu gồm một SUT và các miền được chọn. Khác biệt về agent, model và người review có thể ảnh hưởng kết quả. Những phát hiện tại EShop chỉ hỗ trợ kết luận trong điều kiện đã mô tả; đánh giá rộng hơn cần thêm hệ thống và lần lặp.
+Báo cáo chưa xác nhận equivalent set đã được chứng minh đầy đủ. Remaining counts giữ theo reports; không tự giảm denominator để tạo adjusted score thuận lợi.
 
-**Độ ổn định và khả năng tái lập.** Một lần chạy chưa cho biết mức biến thiên. Nếu không thực hiện các lần lặp, báo cáo cần nêu rõ và giữ kết luận ở mức mô tả. Khi có lặp, phải báo số lần, cách tổng hợp và sai khác, thay vì chọn riêng kết quả thuận lợi.
+### 7.5. Failure modes quan sát được
 
-<!-- Bổ sung các đe dọa thực tế đã gặp, biện pháp đã thực hiện và rủi ro còn lại. Các đoạn trên mô tả giới hạn của thiết kế, không xác nhận biện pháp đã được thực thi đầy đủ. -->
+**Bảng 7.2. Những cách công cụ hoặc cách đọc report có thể gây hiểu sai.**
+
+| Tình huống | Dữ liệu/quan sát | Cách diễn giải phù hợp |
+|---|---|---|
+| Đồng nhất detected với assertion kills | Coupons baseline score 52,17% gồm 21 Timeout; K/V chỉ 33,91% | Báo Killed và Timeout riêng; đọc failure reason |
+| Score tăng dù không có new kills | Auth score 73,45% → 74,36% khi 4 RuntimeError chuyển sang Timeout | Kiểm tra denominator và status transitions trước khi quy cho assertions |
+| Kill correcting mutant bằng wrong oracle | Minimum/expiry equality của Coupons và invalid order transition | Tách original defects; không assert behavior sai chỉ để kill |
+| Xem mọi kill là business fault độc lập | Cart có exact message/payload checks; Coupons hai mutants cùng expression | Phân loại oracle provenance và root cause |
+| Tăng test count được xem là tăng mutation effectiveness | Coupons extension 35/40 tests, mutation counts không đổi | Xem actual operators và distinguishing observations |
+| Candidate ideas được xem là actual mutants | Candidate bank có semantic/SQL scenarios ngoài built-in mutations | Đối chiếu từng kết luận với actual signature trước khi nêu kill |
+| Agent rerun được xem là member self-run | Technical execution do Agent đã có, member vòng chạy chéo còn thiếu | Giữ executor và human confirmation riêng |
+
+### 7.6. Threats to validity
+
+**Internal validity.** Frozen source, test/config control, isolated database và clock giảm các yếu tố ngoài additions. Tuy nhiên, AI context contamination và shared helpers trong Coupons hạn chế independence. Historical runs khác platform/runtime không được trộn vào frozen comparison để tính effect.
+
+**Construct validity.** Mutation score là proxy cho khả năng phát hiện generated mutants, không trực tiếp bằng production reliability. Timeout, error handling, unspecified messages và correcting mutants làm quan hệ giữa score và specification correctness không đơn giản. Counts, per-mutant mapping và oracle classification giúp giới hạn cách diễn giải.
+
+**Conclusion validity.** Các observations chủ yếu là single-run results và targeted reruns, chưa phải repeated statistical experiment. Chưa có confidence interval, flake-rate estimate hoặc significance test. Count differences được báo mô tả; không khẳng định statistical superiority.
+
+**External validity.** Case study dùng một SUT JavaScript/SQLite và ba selected domains. Agent/model, developer knowledge và business specification có thể khác ở hệ thống khác. Auth comparison chưa hoàn chỉnh cũng giới hạn khả năng tổng kết cho toàn bộ phạm vi ban đầu.
+
+**Reproducibility.** Source hashes, frozen commit và raw reports hỗ trợ kiểm tra lại. Tuy nhiên, member self-runs và human verdicts chưa đầy đủ. Source local đang tiếp tục sửa cần được version riêng; không gán completed results cho working tree mới chỉ vì filename giống nhau.
 
 ### 7.7. Khuyến nghị áp dụng
 
-<!-- Rút ra khuyến nghị từ kết quả thật: trường hợp phù hợp, chi phí kiểm tra, điều kiện cần có và trường hợp không nên dùng kết quả mutation/AI làm căn cứ duy nhất. Dẫn lại finding cụ thể. -->
+Từ các cases đã phân tích, chúng tôi đề xuất bắt đầu bằng passing baseline và explicit defect profile; chọn survivor có business oracle rõ; kiểm tra response/persistence ngoài HTTP status; và giữ signature mapping sau mỗi thay đổi tests.
+
+AI phù hợp để đề xuất distinguishing inputs và assertion candidates khi đã có specification và harness. Trước execution cần review oracle và APIs; sau execution cần xem actual failure. Với business policy chưa rõ, bổ sung specification có giá trị hơn viết thêm exact-message assertions để tăng score.
+
+Khi test count tăng nhưng mutation results không đổi, nên kiểm tra adequacy của generated mutants và behavior observations thay vì kết luận tests vô ích hoặc mặc nhiên coi mọi candidate idea là kill opportunity.
 
 <a id="chuong-8"></a>
+
 ## 8. Kết luận và hướng phát triển
 
-### 8.1. Tổng kết kết quả
+### 8.1. Tổng kết kết quả hiện có
 
-<!-- Viết sau Chương 6–7. Tóm tắt các kết quả có bằng chứng và câu trả lời chính, không đưa phát hiện mới tại đây. -->
+Seminar đã xây dựng workflow Mutation Testing trên EShop backend với frozen baseline, test isolation, separate defect profile và domain mutation reports. Baseline 88 tests pass hỗ trợ execution; 54 separate defect cases giúp công bố limitations của original implementation.
+
+Cart results cho thấy thêm response/database assertions phát hiện changes mà status-only tests bỏ sót: manual suite thêm 23 kills, AI-assisted suite thêm 13, trong đó 13 mutants được cả hai phát hiện. Coupons initial variants cùng thêm 2 kills tại usage-limit expression; extension tăng test count nhưng không tăng kills. Auth đã có baseline và Agent reproduction, chưa có đủ manual/AI comparison.
+
+Kết quả ủng hộ việc dùng Mutation Testing như feedback để xem lại test data và oracle. Nó chưa đủ để kết luận một model hoặc một phương án luôn tốt hơn, cũng chưa chứng minh toàn bộ EShop đáp ứng specification.
 
 ### 8.2. Mức độ đáp ứng mục tiêu
 
-| Mục tiêu | Kết quả đạt được | Bằng chứng |
+**Bảng 8.1. Mục tiêu và kết quả được chứng minh.**
+
+| Mục tiêu | Kết quả hiện có | Phần chưa hoàn tất |
 |---|---|---|
-| Nắm và trình bày cơ sở kiểm thử đột biến | | |
-| Thiết lập thực nghiệm EShop có thể tái lập | | |
-| Phân tích ít nhất ba survivors và bổ sung ít nhất ba assertions thủ công | | |
-| Kiểm chứng và so sánh assertion có AI hỗ trợ | | |
+| Trình bày Mutation Testing và tool selection | Lý thuyết, official references, workflow và metrics ở Chương 2–3 | Human review bản biên soạn |
+| Triển khai trên EShop | Frozen baseline; 88 tests pass; domain reports; 54 defect cases tách riêng | Member cross reproduction đầy đủ |
+| Phân tích ≥3 survivors và thêm ≥3 manual assertions | Ba Cart cases cụ thể cùng Coupons usage-limit analysis; actual kill mapping | Không xem mọi kill là independent business fault |
+| So sánh manual và AI-assisted additions | Cart và Coupons có completed comparison | Auth manual/AI; combined mutation run |
+| Chuyển kết quả thành tài liệu và demonstration | Report có actual results, limitations và reusable procedure | Guide/demo/media/activity pilot và live-event outputs cần completion riêng |
 
 ### 8.3. Hạn chế còn tồn tại
 
-<!-- Tổng hợp các hạn chế thực tế còn lại, nhất quán với mục 7.6. -->
+Phạm vi mới là case study trên một SUT, chưa có full three-domain comparison hoặc statistical replication. Original defects khiến một số specification-correct tests không tham gia passing baseline. AI provenance và context khác nhau giữa domains; Coupons comparison không độc lập. Member review và actual event outcomes không được suy ra từ technical execution.
 
 ### 8.4. Hướng phát triển
 
-<!-- Đề xuất mở rộng dựa trên hạn chế và kết quả thực tế, chẳng hạn thêm miền nghiệp vụ, lần lặp hoặc kiểm soát model. Không mô tả đề xuất như công việc đã hoàn thành. -->
+Các bước nghiên cứu tiếp theo gồm hoàn thiện Auth manual/AI trên cùng frozen input; chạy cross reproduction; và thực hiện combined mutation run nếu cần system-level comparison. Một revision nghiên cứu khác có thể sửa original defects trước khi tạo baseline mới, nhưng phải chạy lại đầy đủ các conditions.
+
+Để đánh giá riêng vai trò AI, cần controlled input context, cùng target set và test budget, repeated generations, review rubric và protocol đo effort. Có thể bổ sung semantic mutants cho SQL/stateful workflows, song phải tách rõ chúng với mutants do Stryker built-in operators sinh.
 
 <a id="tai-lieu-tham-khao"></a>
-## Tài liệu tham khảo
+
+## References
 
 [1] Y. Jia và M. Harman, “An Analysis and Survey of the Development of Mutation Testing,” *IEEE Transactions on Software Engineering*, tập 37, số 5, tr. 649–678, 2011. [DOI: 10.1109/TSE.2010.62](https://doi.org/10.1109/TSE.2010.62).
 
@@ -709,158 +820,119 @@ Bảng 7.1 là phân tích rủi ro phương pháp. Cột bằng chứng dùng �
 
 [13] Stryker Mutator, “[StrykerJS: Jest Runner](https://stryker-mutator.io/docs/stryker-js/jest-runner/),” tài liệu chính thức. Truy cập ngày 22/10/2026.
 
-[14] FIT@HCMUS, “[T10: Mutation Testing & Test Effectiveness](../docs/requirements/03_T10_Mutation_Testing_and_Test_Effectiveness_Description.md),” mô tả chủ đề seminar, 2026.
+[14] FIT@HCMUS, “[T10: Mutation Testing & Test Effectiveness](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/blob/7476be7/docs/requirements/03_T10_Mutation_Testing_and_Test_Effectiveness_Description.md),” mô tả chủ đề seminar, 2026.
 
-[15] EShop, “[Tài liệu đặc tả API](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/blob/main/api_specification.md).” Phiên bản dùng trong thực nghiệm được ghi tại Phụ lục A; liên kết nhánh chính phục vụ tra cứu.
+[15] EShop, “[API Specification](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/blob/806ba19ee4e09eafe9b2696ccf117a2b1ab841ef/api_specification.md).” Specification tại frozen commit 806ba19.
 
-[16] EShop, “[Khai báo phụ thuộc backend](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/blob/main/backend/package.json).” Thông tin công nghệ đối chiếu từ bản local khi biên soạn; phiên bản thực nghiệm được ghi tại Phụ lục A.
+[16] EShop, “[Khai báo phụ thuộc backend](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/blob/806ba19ee4e09eafe9b2696ccf117a2b1ab841ef/backend/package.json).” Package declaration tại frozen commit 806ba19; installed versions theo execution metadata.
+
+[17] EShop, “[Backend source tại frozen baseline](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/blob/806ba19ee4e09eafe9b2696ccf117a2b1ab841ef/backend/server.js),” commit 806ba19, 2026.
+
+[18] EShop, “[Software Requirements Specification](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/blob/806ba19ee4e09eafe9b2696ccf117a2b1ab841ef/README.md),” FR/SEC requirements tại frozen commit 806ba19, 2026.
+
+[19] Nhóm 12, “EShop frozen-baseline integration, Cart reproduction, Coupons comparison và Auth baseline dataset,” completed runs ngày 23/10/2026; production baseline 806ba19; Cart manual/AI revisions b77f5d6 và f4696c6; Coupons initial revisions a6abc7f và f12a6cc. Raw reports, command metadata và signature mappings được quản lý trong hồ sơ evidence riêng.
+
+[20] Nhóm 12, “Coupons extension dataset,” completed Agent runs ngày 23/10/2026; frozen production baseline 806ba19 và test overlays có source snapshots. Manual 35 tests, AI-assisted 40 tests; results không thay thế initial comparison dataset.
 
 <a id="phu-luc-a"></a>
-## Phụ lục A. Thông tin tái lập thực nghiệm
 
-**Bảng A.1. Manifest của thực nghiệm.**
+## Appendix A. Reproduction procedure
 
-| Thành phần | Giá trị / vị trí bằng chứng |
-|---|---|
-| SUT commit và đường dẫn nguồn cố định | |
-| Thay đổi chưa commit / patch đi kèm | |
-| Phạm vi tệp và nghiệp vụ | |
-| Hệ điều hành | |
-| Node.js và trình quản lý gói | |
-| Lockfile / phiên bản phụ thuộc | |
-| Test runner và phiên bản | |
-| StrykerJS và phiên bản plugin | |
-| Cấu hình mutation và danh sách loại trừ | |
-| Timeout / concurrency / cache hoặc incremental | |
-| Dữ liệu khởi tạo và cơ chế reset | |
-| Kiểm soát thời gian / môi trường | |
-| Bộ kiểm thử baseline | |
-| Bộ kiểm thử thủ công | |
-| Bộ kiểm thử AI hỗ trợ | |
-| Agent / model / giao diện sử dụng theo miền | |
-| Điều kiện sử dụng / giấy phép / chi phí thực tế | |
-| Số lần lặp và cách đo thời gian nếu có | |
+### A.1. Source version và prerequisites
 
-**Bảng A.2. Lệnh và kết quả xác minh.**
+Reproduction của initial comparison dùng [frozen revision 806ba19](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/tree/806ba19ee4e09eafe9b2696ccf117a2b1ab841ef). Installed environment và timeout policy ở Bảng 4.3 là điều kiện tham chiếu. Package lockfile được dùng để cài dependencies; SQLite native dependency cần build/install thành công trước khi chạy tests.
 
-| Bước | Thư mục thực thi | Lệnh chính xác | Điều kiện đầu vào | Run ID / mã thoát / log |
-|---|---|---|---|---|
-| Cài phụ thuộc | | | | |
-| Khởi tạo / reset dữ liệu | | | | |
-| Chạy test trên mã gốc | | | | |
-| Chạy mutation baseline | | | | |
-| Chạy phương án thủ công | | | | |
-| Chạy phương án AI hỗ trợ | | | | |
-| Chạy kết hợp | | | | |
-| Tái lập độc lập | | | | |
+Các commands dưới được thực hiện trong backend của frozen checkout. Chúng mô tả procedure đã có execution evidence, không xác nhận người đọc hoặc mọi thành viên đã tự chạy.
+
+~~~powershell
+npm ci --no-audit --no-fund
+npm test
+npm run test:defects
+npm run test:cart-orders
+npm run test:coupons
+npm run test:auth
+npm run mutate:cart-orders
+npm run mutate:coupons
+npm run mutate:auth
+~~~
+
+Expected baseline là 88 tests pass. Defect command có expected exit code 1 với 54 assertion failures trên original implementation; phải phân biệt với import/setup failure. Mutation commands dùng test selection riêng của từng domain.
+
+Manual/AI variants phải được dựng từ đúng source revision hoặc snapshot đã dùng cho report tương ứng. Không ghép manual assertions vào AI condition hoặc thêm cả hai vào baseline rồi tiếp tục dùng bảng kết quả cũ. Nếu production/config thay đổi, cần baseline revision và comparison mới.
+
+### A.2. Đối chiếu kết quả
+
+Kiểm tra source bytes, configuration và test counts trước khi so score. Dùng source location, mutator và replacement để match mutants. Với selected kills, xem detecting test và actual failure; với Timeout/RuntimeError, xem execution diagnostics.
+
+Một reproduction thành công cần giải thích được status differences, không chỉ có cùng percentage. Member run, nhận xét về hướng dẫn và human approval được ghi vào hồ sơ cá nhân/evidence riêng.
 
 <a id="phu-luc-b"></a>
-## Phụ lục B. Danh mục bằng chứng
 
-| Mã bằng chứng | Loại artifact | Phiên bản / Run ID | Đường dẫn | Kết luận hoặc bảng được hỗ trợ |
-|---|---|---|---|---|
-| | | | | |
+## Appendix B. Reusable AI prompt
 
-<!-- Khi đóng gói, kiểm tra người nhận có thể mở report HTML cùng tài nguyên phụ thuộc, đọc JSON/log và truy cập đúng phiên bản mã nguồn. Giữ raw outputs nguyên gốc. -->
+Mẫu này là reusable structure cho survivor; nó không phải raw transcript của completed generation. Relevant source/spec snippets được chèn trực tiếp theo case và chỉ chứa thông tin cần thiết.
+
+~~~text
+Task
+Đề xuất test hoặc assertion để phát hiện selected surviving mutant.
+Giữ nguyên production source và dùng đúng existing test harness.
+
+Inputs
+- Relevant business specification và nguồn xác định expected result.
+- Original source và exact mutant diff.
+- Baseline tests, available APIs/helpers và fixture/reset rules.
+- Runner/version và constraints của test environment.
+
+Required output
+1. Giải thích oracle và distinguishing input/state.
+2. Viết test/assertion candidate dùng APIs/helpers đã cung cấp.
+3. Giải thích vì sao test pass trên original và fail trên mutant.
+4. Nêu assumptions, missing specification và possible false conclusions.
+5. Nếu mutant sửa original defect, chỉ ra vấn đề thay vì assert sai spec.
+
+Constraints
+- Không sửa production, không hard-code actual output làm expected result.
+- Không dùng exact error text nếu specification chưa yêu cầu.
+- Không gán equivalent khi chưa phân tích input/state domain.
+- Không khẳng định tests đã chạy hoặc mutant đã Killed khi chưa có execution.
+~~~
+
+Review lần lượt kiểm tra oracle, test data, APIs, state isolation và observation. Kết quả accepted/edited/rejected cùng human changes được lưu riêng với raw output. Với experiment cần independence, generation session phải được thiết kế trước để kiểm soát context và tránh cung cấp manual solution.
 
 <a id="phu-luc-c"></a>
-## Phụ lục C. Mẫu đầu vào và hồ sơ xử lý kết quả AI
 
-### C.1. Mẫu yêu cầu đề xuất assertion
+## Appendix C. Demo và activity design
 
-Mẫu dưới đây mô tả cấu trúc đầu vào có thể tái sử dụng. Các trường dữ liệu được bổ sung theo mutant và đặc tả thực tế; mẫu không phải transcript của một lần sử dụng đã diễn ra.
+### C.1. Demonstration sequence
 
-```text
-Nhiệm vụ:
-Đề xuất một kiểm thử hoặc assertion bổ sung để phát hiện mutant mục tiêu.
-Giữ nguyên mã nguồn sản phẩm. Nếu đặc tả chưa đủ rõ, nêu điểm thiếu.
+Demonstration có thể bắt đầu bằng status-only Cart test, mở survivor diff rồi bổ sung response/database assertion. Người trình bày đối chiếu original pass và selected mutant Killed, sau đó dùng Coupons để giải thích distinguishing input tại usage limit. Phần AI cho thấy candidate generation, review và actual verification, đồng thời công bố context limitation.
 
-Đặc tả nghiệp vụ và nguồn:
+Nếu sử dụng recorded report thay vì live execution, cần nói rõ run conditions và provenance. Video URL, version và access verification được ghi trong media deliverable riêng.
 
-Mã nguồn baseline liên quan:
+### C.2. Kill the Mutant activity
 
-Bộ kiểm thử và helper hiện có:
+Activity design gồm năm actual mutants đã kiểm chứng, không lấy candidate ideas chưa được Stryker sinh làm kết quả. Người học nhận specification ngắn, original/mutant diff và baseline behavior; viết distinguishing input cùng assertion, rồi giải thích result.
 
-Mutant mục tiêu, vị trí và phép thay thế:
+Worksheet nên phân biệt ba câu hỏi: behavior nào bị thay đổi; observation nào khiến test nhận ra; oracle lấy từ đâu. Hints đi từ relevant rule đến boundary/state và cuối cùng là observation, tránh đưa sẵn đáp án ngay từ đầu.
 
-Runner, dữ liệu và quy tắc reset:
-
-Yêu cầu đầu ra:
-1. Dữ liệu phân biệt và kết quả mong đợi có căn cứ.
-2. Đoạn test/assertion sử dụng đúng API và helper đã cung cấp.
-3. Giải thích vì sao test thành công trên mã gốc và thất bại trên mutant.
-4. Giả định, thông tin còn thiếu và giới hạn của đề xuất.
-Không khẳng định đã chạy khi không có log thực thi.
-```
-
-### C.2. Hồ sơ sử dụng thực tế
-
-| Trường | Nội dung |
-|---|---|
-| Người thực hiện và miền | |
-| Agent / model / giao diện | |
-| Ngày sử dụng | |
-| Mutant và baseline được cung cấp | |
-| Prompt đầy đủ | |
-| Output nguyên gốc | |
-| Các lần yêu cầu chỉnh sửa | |
-| Quyết định dùng nguyên / sửa / loại | |
-| Bản cuối và phần con người thay đổi | |
-| Run evidence | |
-| Người kiểm tra và nhận xét | |
+Rubric ưu tiên oracle đúng, input phân biệt, assertion có ý nghĩa và giải thích nhất quán với actual result. Tally chỉ ghi Killed đã kiểm chứng; Timeout báo riêng. Activity giới hạn tối đa 20 phút theo scope đã chốt. Pilot duration, peer submissions và audience feedback chỉ được bổ sung từ event records thực tế.
 
 <a id="phu-luc-d"></a>
-## Phụ lục D. Demo và hoạt động thực hành
 
-### D.1. Tài liệu và video
+## Appendix D. Contributions và AI disclosure
 
-| Hạng mục | Tài liệu thiết kế | Phiên bản / media thực tế | Kiểm tra truy cập |
-|---|---|---|---|
-| Hướng dẫn sử dụng | [User Guide](User_Guide.md) | | |
-| Demo công cụ | [Demo Script](Demo_Script.md) | | |
-| Nội dung trình chiếu | [Seminar Slides Content](Seminar_Slides_Content.md) | | |
-| Hoạt động thực hành | [Activity Worksheet](Activity_Worksheet.md) | | |
+### D.1. Contributions theo domain
 
-### D.2. Hoạt động “Kill the Mutant”
+**Lê Tấn Hiệp — Cart & Orders.** Research về definitions/operators/workflow và tool architecture; bàn giao Cart baseline, manual/AI tests cùng experiment analysis. Frozen reruns do Agent thực hiện được ghi riêng với original member records.
 
-Hoạt động sử dụng năm mutant để người tham gia đọc thay đổi, đề xuất assertion, kiểm tra chéo và quan sát kết quả chạy. Thiết kế của nhóm giới hạn hoạt động trong 20 phút. Mỗi trường hợp cần kèm bối cảnh nghiệp vụ và dữ liệu đủ để xác định oracle; đáp án giải thích cơ chế phát hiện thay vì chỉ cung cấp đoạn mã.
+**Tống Dương Thái Hòa — Coupons và integration.** Research về coverage/metrics/assertions; phụ trách Coupons domain, common baseline integration và tổng hợp report/comparison. Coupons additions và phần integration do Codex hỗ trợ thực hiện được công bố theo actual provenance; không thay thế member self-run hoặc human approval.
 
-| Trường hợp | Mutant / nguồn | Quy tắc nghiệp vụ | Gợi ý | Assertion / đáp án đã kiểm chứng | Run evidence |
-|---|---|---|---|---|---|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
+**Nguyễn Phúc Hoàng — Authentication & Users.** Research về equivalent mutants/AI/limitations; bàn giao Auth tests, harness và provisional baseline evidence. Auth manual/AI comparison chưa có trong dataset được tổng hợp ở báo cáo này.
 
-### D.3. Kết quả thử nghiệm hoạt động và phản hồi
+Phân công không tự chứng minh mọi phần việc đã hoàn tất. Contribution records, review verdicts và xác nhận của từng thành viên được quản lý riêng, không suy ra từ số commits hoặc Agent execution.
 
-| Người / nhóm thực hiện | Thời lượng đo được | Kết quả | Điểm chưa rõ | Điều chỉnh | Bằng chứng |
-|---|---|---|---|---|---|
-| | | | | | |
+### D.2. Công bố AI support
 
-<a id="phu-luc-e"></a>
-## Phụ lục E. Đóng góp và công bố sử dụng AI
+Codex hỗ trợ cấu trúc và biên soạn báo cáo, đối chiếu source/configuration, tổng hợp counts từ JSON reports và trình bày limitations. Cart AI tests có provenance Claude Code theo record gốc; Coupons sử dụng Codex theo điều kiện mô tả tại mục 4.5. Việc AI hỗ trợ report không thay thế trách nhiệm của nhóm đối với oracle, statistics, references và conclusions.
 
-### E.1. Phân công và đóng góp thực tế
-
-Phân công miền là cơ sở tổ chức công việc. Cột đóng góp và bằng chứng chỉ ghi nội dung thực tế được xác nhận.
-
-| Thành viên | Miền phụ trách | Đóng góp thực tế | Artifact / commit / run | Xác nhận |
-|---|---|---|---|---|
-| Lê Tấn Hiệp | Cart & Orders | | | |
-| Tống Dương Thái Hòa | Coupons | | | |
-| Nguyễn Phúc Hoàng | Authentication & Users | | | |
-
-### E.2. Công bố hỗ trợ AI trong biên soạn báo cáo
-
-AI được sử dụng để hỗ trợ tổ chức cấu trúc, diễn đạt tiếng Việt, đối chiếu tài liệu và chuẩn bị bảng trình bày kết quả. Lần biên soạn ngày 22/10/2026 sử dụng Codex, dựa trên yêu cầu seminar, context của nhóm, bản report trước đó, research notes và các nguồn được dẫn. Hoạt động biên soạn này không thực thi thí nghiệm EShop. Các kết quả, nhận xét trải nghiệm và xác nhận của thành viên chỉ được bổ sung từ bằng chứng tương ứng.
-
-| Nội dung | Người kiểm tra | Kết quả kiểm tra / chỉnh sửa | Ngày xác nhận |
-|---|---|---|---|
-| Nội dung lý thuyết và trích dẫn | | | |
-| Thiết kế và mô tả quy trình thực tế | | | |
-| Số liệu và kết luận thực nghiệm | | | |
-| Đóng góp thành viên | | | |
-
-Các biểu mẫu AI audit, disclosure và reflection được hoàn thiện riêng theo yêu cầu môn học. Thông tin trong phụ lục này cung cấp nguồn gốc hỗ trợ biên soạn; phần xác nhận và chữ ký do thành viên thực hiện.
+Human review bản report còn cần xác nhận. AI audit/disclosure/reflection và signatures thuộc forms riêng; báo cáo này không tự xác nhận các forms đó đã hoàn tất và không tạo personal reflection hoặc audience feedback thay thành viên.

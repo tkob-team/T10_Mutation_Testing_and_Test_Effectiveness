@@ -16,6 +16,7 @@ Phiếu này ghi usage của Thái Hòa xuyên suốt S1–S8. Mỗi artifact c�
 | OpenAI Codex (exact model variant not logged) | S3 | S3-A02, S3-B02 | research/drafting/verification | Research_Notes_Thai_Hoa.md | Source checks, explanations, inline examples and draft | Pending member input; not attributed as self-authored | TH-S3-RESEARCH-01 |
 | OpenAI Codex AI Agent (GPT-6 family; exact serving revision unavailable) | S3 | S3-C02, S3-D02 | assisted production / local verification | Coupons harness/tests/tooling, tutorial and experiment evidence | Spec cases, original-defect suite, seeded memory DB, tool execution, evidence/docs | Member self-run and review Pending | TH-S3-C02D02-01 |
 | OpenAI Codex AI Agent (exact serving revision unavailable) | S3 | S3-D04/E02/F02/G02/H02/I02 | integration, experiment, analysis and assisted drafting | Frozen baseline, reports, spec-analysis draft and same-context AI candidate | Merges/import with attribution; tests, mutation runs, per-mutant comparisons and evidence | User chose workflow and same-context fallback; assertions reviewed by Agent only, human review/self-run Pending | TH-S3-D04H02-01 |
+| OpenAI Codex AI Agent (exact serving revision unavailable) | S4 | User Guide draft assistance | documentation research / assisted production | draft/User_Guide.md | Vietnamese rewrite, commands, instructional adaptations and failure modes | User approved structure; member review and reproduction remain separate | TH-S4-USERGUIDE-20261023 |
 
 ## 2. Artifact Audit
 
@@ -91,6 +92,32 @@ Personal learning/run walkthrough is outside both team repos by explicit user re
 - **Inputs / output:** SRS FR-09/12/17, API 5/6.4, baseline `806ba19`, existing suites và [bank snapshot](../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/candidate-bank.input.md). Bổ sung manual MF-04–07 và Agent AG-01–08; dùng chung scenario helper cho bốn nhóm giao nhau. [Provenance và raw source snapshots](../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/PROVENANCE.md).
 - **Agent verification:** Fresh baseline 88/88, manual profile 35/35, Agent profile 40/40 trên bản sao frozen input; commands/logs, mutation reports, signature comparisons và protected hashes trong [run evidence](../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/README.md). Không sửa production source/DB, baseline config hoặc raw evidence cũ.
 - **Limitations / human verdict:** Cả hai phần bổ sung đều AI-assisted và cùng context; Agent collection bao gồm bốn nhóm manual theo yêu cầu, không có điều kiện blind/independent. Human audit verdict, trải nghiệm/reflection và member self-run Pending; không thay đổi Accuracy Summary bằng verdict tự gán.
+
+### Artifact TH-S4-REPORT-REVISION-01
+
+- **Stage / use:** S4 report preparation; 2026-10-23 Asia/Saigon. OpenAI Codex AI Agent; exact serving model revision not independently recorded.
+- **User request / scope:** Expand and improve the Vietnamese report from existing documentation and SUT tests/results; retain English technical terms, simplify the opening layout, and remove appendix path/evidence inventories.
+- **Inputs:** Existing report; seminar requirements/context; frozen baseline 806ba19 and domain reports; Cart source/analysis; Coupons initial and extension source snapshots, test results and completed mutation reports; Auth baseline; official Stryker metrics and primary research abstracts.
+- **Output:** [Revised Seminar Report](../draft/Seminar_Report.md), including actual results, survivor cases, interpretation/limitations, and text/URL-based appendices. Existing report working copy was backed up before editing; source/tests and team tracker were not changed by this report task.
+- **Verification:** Recomputed status counts/scores from JSON; checked mutant signatures and new-kill intersection; reviewed Markdown structure, references, table consistency and absence of local evidence-path inventories. No new SUT or mutation run performed by this report task.
+- **Raw / provenance:** Current conversation and authored report are available; no exported full prompt/output transcript is claimed. Report distinguishes Agent execution from member self-runs and initial results from supplemental extensions.
+- **Human review / verdict:** Pending. No member approval, personal reflection, signatures or new experiment execution invented.
+
+### Artifact TH-S4-USERGUIDE-20261023
+
+| Field | Value |
+|---|---|
+| Stage / Task | S4; User Guide draft support, team ownership and tracker unchanged |
+| Tool / Model | OpenAI Codex AI Agent; exact serving revision unavailable |
+| Recorded Date | 2026-10-23, client Asia/Saigon context |
+| Output | [Vietnamese User Guide draft](../draft/User_Guide.md) |
+| Prompt Summary | User requested detailed documentation, Vietnamese prose, English headings/terms, six required sections and at least three real failure modes, with missing results left blank; approved the proposed eight-section structure with “Viết đi”. |
+| Inputs / Sources | Instructor requirements; frozen SUT scripts/config/spec; baseline manifest, Cart mappings, Coupons extension/Auth logs; official Stryker/Jest/Claude docs |
+| AI Contribution | Structure, prose, instructional adaptations, commands, references and five failure-mode analyses |
+| Verification Boundary | Document structure, links, commands and historical counts checked against inputs. No fresh installation, SUT/Jest/Stryker/AI experiment, member self-run or peer reproduction claimed. |
+| Document Checks | Eight main sections, five complete failure modes, 29 local-link occurrences and eight anchors resolve; eight npm script names exist; 18 PowerShell blocks and two JavaScript snippets pass syntax checks; targeted Git diff check passes. |
+| Verdict / Student Fix | Pending member review; no VALID/INVALID/INCOMPLETE verdict assigned |
+| Raw Output | Final assisted draft retained at the linked file; no separate immutable full transcript export created by this run |
 
 ## 3. Accuracy Summary & Audit Conclusion
 
