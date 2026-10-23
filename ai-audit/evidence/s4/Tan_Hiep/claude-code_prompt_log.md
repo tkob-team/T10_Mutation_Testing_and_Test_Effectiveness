@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 11:44 (Asia/Saigon).
+Nguồn: 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 11:49 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 6 lượt prompt; theo model: claude-opus-5-5 6 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 7 lượt prompt; theo model: claude-opus-5-5 7 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-23 02:41 — model: claude-opus-5-5 — session 4a560803
 
@@ -243,4 +243,65 @@ I misread: line contains `G01-1-cc` too. Fix old string.
 - Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Tan_Hiep\S3-member-compare\member_compare.py
 - Write: C:\Users\[user]\AppData\Local\Temp\claude\D--HK7-Testing-Seminars-Repo\ad369217-4378-464e-a313-7cbcb8377eba\scratchpad\upd_log.py
 - Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Tan_Hiep\S3-member-compare\REPORT.md
+
+## #7 — 2026-10-23 11:48 — model: claude-opus-5-5 — session ad369217
+
+### Prompt
+
+````text
+<pasted_content id="5c88">
+Trả lời Q1 (S3-I01): chọn (a). Lệnh nguyên văn Tấn Hiệp đã chạy cho I01-1/2/3, lấy từ phiên thảo luận claude.ai 2026-10-23 10:52, Tấn Hiệp xác nhận đã chạy đúng. Ghi vào I01-cc-REPORT.md (thay dòng Pending) và mục Cross Reproduction, nguồn ghi đúng như vậy. Commit, không push. Khối báo cáo.
+
+```powershell
+$R = "D:\HK7\Testing\Seminars\Repo"
+$E = "$R\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s3\runs\Tan_Hiep"
+mkdir "$E\I01-1","$E\I01-2","$E\I01-3" -Force | Out-Null
+
+# I01-1 baseline
+cd "$R\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness"; git checkout --detach 806ba19; cd backend
+npm run test:coupons 2>&1 | Tee-Object -FilePath "$E\I01-1\console.log"
+npm run mutate:coupons 2>&1 | Tee-Object -FilePath "$E\I01-1\console.log" -Append
+Copy-Item reports\coupons\mutation.* "$E\I01-1\"
+git status --short; git checkout -    # restore database.sqlite nếu status báo đổi
+```
+
+```powershell
+# I01-2 manual, I01-3 AI (thư mục Claude Code đã giải nén, overlay và npm ci sẵn)
+cd "$R\_tmp\I01-coupons\backend"
+node node_modules/jest/bin/jest.js --config jest.coupons.manual.config.cjs --runInBand 2>&1 | Tee-Object -FilePath "$E\I01-2\console.log"
+node node_modules/@stryker-mutator/core/bin/stryker.js run stryker.coupons.manual.config.json 2>&1 | Tee-Object -FilePath "$E\I01-2\console.log" -Append
+Copy-Item reports\coupons-manual\mutation.* "$E\I01-2\"
+node node_modules/jest/bin/jest.js --config jest.coupons.ai.config.cjs --runInBand 2>&1 | Tee-Object -FilePath "$E\I01-3\console.log"
+node node_modules/@stryker-mutator/core/bin/stryker.js run stryker.coupons.ai.config.json 2>&1 | Tee-Object -FilePath "$E\I01-3\console.log" -Append
+Copy-Item reports\coupons-ai\mutation.* "$E\I01-3\"
+```
+</pasted_content id="5c88">
+````
+
+### Output
+
+```text
+Tấn Hiệp đã sửa mục Cross Reproduction (commit 1eed38d…970f880). Đọc bản hiện tại.
+
+Tấn Hiệp đã xóa mục `## Cross Reproduction` ở commit `5d5bf16` (11:2x). Không tự thêm lại. Ghi REPORT trước, phần Experiment Log hỏi.
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: S3-I01, ghi lệnh nguyên văn của I01-1/2/3 — Partial. REPORT đã xong; Experiment Log chưa ghi vì mục đích không còn.
+- Kết quả: không chạy run nào. Hai khối PowerShell đã chép nguyên văn vào `I01-cc-REPORT.md`, thay dòng Pending, ghi nguồn "phiên thảo luận claude.ai 2026-10-23 10:52, Tấn Hiệp xác nhận".
+- Đối chiếu lệnh với evidence: khớp. Hai lệnh checkout khớp reflog lúc 10:42:08 và 10:56:05. `Copy-Item` giữ mtime nên `I01-1/mutation.json` cùng mtime với report gốc. I01-1 không có `npm ci` (dùng `node_modules` còn từ I01-1-cc).
+- Evidence: `experiments/s3/runs/Tan_Hiep/I01-cc-REPORT.md`, mục "provenance for member runs"
+- Commit seminar `main`: `2259793` chore(ai-log), `98407b9` docs(S3-I01), chưa push.
+- Bất thường mới: mục `## Cross Reproduction` không còn trong `Experiment_Log_Tan_Hiep.md`. Commit `5d5bf16` (Tấn Hiệp, "Fix Three shared mutant cases") đã xóa heading và cả hai dòng I01; phần còn lại về I01 là `### S3-I01 — Three shared mutant cases` (dòng 236).
+- Bất thường mới: header Experiment Log (dòng 6 và 8) vẫn ghi "lệnh nguyên văn của I01-1/2/3 Pending".
+- Cần quyết định: Q2 – Ghi lệnh I01 vào đâu trong Experiment Log, vì mục Cross Reproduction đã bị xóa? Phương án:
+  - (a) khôi phục mục Cross Reproduction như trước `5d5bf16`, thêm nguồn lệnh
+  - (b) thêm 1 dòng nguồn lệnh vào cuối `### S3-I01 — Three shared mutant cases`
+  - (c) không ghi vào Log, chỉ giữ trong REPORT
+
+  Với cả ba phương án, có sửa dòng Pending ở header không?
+```
+
+### Hành động
+
+- Write: C:\Users\[user]\AppData\Local\Temp\claude\D--HK7-Testing-Seminars-Repo\ad369217-4378-464e-a313-7cbcb8377eba\scratchpad\upd_report.py
 
