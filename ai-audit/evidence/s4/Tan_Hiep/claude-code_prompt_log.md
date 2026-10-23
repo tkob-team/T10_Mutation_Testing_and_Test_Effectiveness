@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 3058f82a-a124-4cce-853c-9bab797d6360.jsonl, 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 14:13 (Asia/Saigon).
+Nguồn: 3058f82a-a124-4cce-853c-9bab797d6360.jsonl, 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 14:19 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 16 lượt prompt; theo model: claude-opus-5-5 16 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 19 lượt prompt; theo model: claude-opus-5-5 19 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-23 02:41 — model: claude-opus-5-5 — session 4a560803
 
@@ -669,4 +669,84 @@ Cả 3 mốc số liệu đều khớp. Giờ chạy chẩn đoán: bỏ `tempDi
 
 - Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s4\runs\F01c-1-cc\REPORT.md
 - Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s4\runs\F01c-1-cc\REPORT.md
+
+## #17 — 2026-10-23 14:15 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+1) Xóa 3 file *.patch ở gốc repo seminar (đã apply, không commit). Unstage chúng trước.
+2) Chạy `git diff --stat` và `git diff ai-audit/AI_Record_Tan_Hiep.md`. Nếu chỉ là các khối AI-S4-* bạn tự thêm thì commit "docs(S4): AI record entries". Nếu có gì khác, không commit, tóm tắt diff cho mình.
+3) git pull --rebase. Báo cáo ≤ 6 dòng, không push.
+```
+
+### Output
+
+```text
+- Tôi đã unstage rồi xóa 3 file `.patch` ở gốc repo seminar.
+- Diff của `AI_Record_Tan_Hiep.md` chỉ thêm 51 dòng, không xóa dòng nào: 4 khối AI-S4-A01-01, B01-01, C01-01, WF-01, nằm trước mục 3. Tôi đã commit thành `63ce142` `docs(S4): AI record entries`. Các khối này do phiên claude.ai `51fe5d1c` viết, không phải Claude Code; báo để bạn biết.
+- Vài chỗ trong các khối đó giờ đã cũ:
+  - Khối B01 và C01 còn nhắc 3 file `.patch` vừa xóa.
+  - Khối WF-01 nhắc nhánh `s4/fix-package-json`, đã xóa ở lượt trước.
+  - Khối A01 ghi "chưa chạy trên Windows (F01c)", nhưng F01c nay đã chạy và Pass.
+  - Cả 4 khối vẫn để verdict "ĐỀ XUẤT … chờ bạn xác nhận".
+- Commit thêm `7504d24` cho AI log. `git pull --rebase` báo "Current branch main is up to date" (không có gì mới để kéo về), working tree sạch.
+- `main` đang ahead 6, behind 0 so với `origin/main`, chưa push.
+```
+
+## #18 — 2026-10-23 14:17 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+<pasted_content id="cce9">
+Sửa 4 khối AI-S4-* trong ai-audit/AI_Record_Tan_Hiep.md, rồi commit "docs(S4): update AI record entries", không push, báo ≤ 5 dòng:
+- B01, C01: bỏ chữ về các file .patch; ghi "sửa trực tiếp draft/Seminar_Report.md". C01: Hòa đã viết lại docs/Demo_Script.md (case Coupons) nên phần Cart nộp ở dạng kịch bản trong materials/s4/Demo_Contribution_Tan_Hiep.md, chưa quay.
+- WF-01: thay chỗ nhắc nhánh s4/fix-package-json bằng "Hòa đã sửa package.json trên SUT main (4b28756, 14:05); nhánh đề xuất đã xóa, không dùng".
+- A01: Verification đổi thành "Chạy lại trên Windows 11, Node v24.15.0, npm 11.12.1 (F01c-1-cc): 4 mốc khớp; chưa tái hiện lỗi npm.ps1".
+- Claude Code dùng model Opus 5.5; claude.ai dùng Claude Sonnet 5.5. Ghi đúng ở Tool / Model.
+- Thêm khối AI-S4-F01-01 (Claude Code, Opus 5.5): F01a và F01c, evidence experiments/s4/runs/F01a-1-cc và F01c-1-cc. Ghi lỗi AI: script áp snippet sai 2 lần (filtick ở CO-12), run 14:11:33–14:11:40 bị loại và chạy lại. Verdict "ĐỀ XUẤT: VALID". Ô Student Fix để "(điền sau review)".
+</pasted_content id="cce9">
+```
+
+### Output
+
+```text
+- Đã sửa 4 khối AI-S4-* theo đúng yêu cầu và thêm khối AI-S4-F01-01 (Claude Code, Opus 5.5, verdict "ĐỀ XUẤT: VALID", Student Fix "(điền sau review)").
+- Đã commit `9b34046` `docs(S4): update AI record entries` trên `main` seminar, chưa push. Kiểm `git diff`: +19/−6, cả 6 dòng bị thay đều là chỗ có chủ đích, không mất dòng nào khác.
+- Lỗi AI ở F01-01 tôi ghi là "CRLF ở CO-02, escaping backtick ở CO-12", hiểu chữ "filtick" trong prompt là gõ nhầm. Ghi chú này đúng với `F01c-1-cc/REPORT.md`.
+- Cần kiểm: `AI_Record_Tan_Hiep.md:512` (khối WF của S3) ghi phiên claude.ai `5aa8b0cf` dùng Opus 5.5, còn khối WF-01 giờ ghi claude.ai là Sonnet 5.5. Nếu phiên `5aa8b0cf` thật sự là Opus thì phải sửa WF-01; bạn xác nhận giúp phiên đó dùng model nào.
+- Ngoài phạm vi prompt nên giữ nguyên: ô Verification của C01 vẫn ghi "lệnh chưa chạy trên Windows", dù F01c đã chạy các lệnh của guide trên Windows.
+```
+
+### Hành động
+
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\ai-audit\AI_Record_Tan_Hiep.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\ai-audit\AI_Record_Tan_Hiep.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\ai-audit\AI_Record_Tan_Hiep.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\ai-audit\AI_Record_Tan_Hiep.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\ai-audit\AI_Record_Tan_Hiep.md
+
+## #19 — 2026-10-23 14:19 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+Sửa ai-audit/AI_Record_Tan_Hiep.md, commit "docs(S4): fix model and C01 verification", không push, báo ≤ 3 dòng:
+- WF-01, ô Tool / Model: "Claude (claude.ai), Opus 5.5 — viết handoff, phiên 5aa8b0cf (theo AI Record S3); Claude (claude.ai), Sonnet 5.5 — kiểm chứng handoff, phiên 51fe5d1c".
+- C01-01, ô Verification: "Lệnh và số liệu lấy từ run S3 của Tấn Hiệp trên Windows 11 (E01-1, F01-2, G01-2); lệnh install chạy lại ở F01a-1-cc. Chưa chạy theo kịch bản và chưa quay."
+```
+
+### Output
+
+```text
+- Đã thay nguyên văn 2 ô theo yêu cầu: ô Tool / Model của WF-01 và ô Verification của C01-01. `git diff` chỉ thay 2 dòng (+2/−2), không mất dòng nào khác.
+- Đã commit `400649b` `docs(S4): fix model and C01 verification` trên `main` seminar, chưa push.
+- Còn chưa commit: `claude-code_prompt_log.md` do hook ghi; theo quy tắc sẽ commit `chore(ai-log)` ở lượt sau.
+```
+
+### Hành động
+
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\ai-audit\AI_Record_Tan_Hiep.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\ai-audit\AI_Record_Tan_Hiep.md
 
