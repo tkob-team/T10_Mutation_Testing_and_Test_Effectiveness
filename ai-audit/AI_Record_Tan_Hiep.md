@@ -684,7 +684,7 @@ Claude Code: ai-audit/evidence/s4/Tan_Hiep/claude-code_prompt_log.md, session ad
 | Verdict | VALID |
 | Reasoning & Source | Chỉ dựa trên evidence trong repo: `experiments/s4/runs/D01-1-cc`, `Tan_Hiep/D01-1`, `C01-rehearsal-cc`, `F01c-1-cc`, `Guide_Reproduction_*`, `Experiment_Log_Phuc_Hoang.md` (commit F03 `eea3ed4`, G03 `b27fce2`), `frozen-auth-baseline.meta.json` (executor Codex). Đã kiểm trên SUT: `eea3ed4` và `b27fce2` tách từ `806ba19`, không đổi `package-lock.json`; `b27fce2` không chứa manual tests; đầu nhánh `s3/G03-auth` có `package.json` lỗi JSON. URL repo seminar lấy từ các link trong repo |
 | Verification | Link tương đối phân giải đủ; `git diff` chỉ thay các dòng có chủ đích (+57/−25). Chưa ai chạy lại các bước mới thêm: lệnh clone seminar ở thư mục ngắn, checkout `eea3ed4`/`b27fce2`, câu `prompt.txt`. Còn lại (chưa có evidence): nhãn Observed/Suggested cho các dòng Troubleshooting cũ của Coupons (cần Hòa); mục AI Agent của Cart chưa chạy, chưa có reproduction của người khác |
-| Student Fix | Accepted; tôi đọc lại các chỗ sửa. |
+| Student Fix | Accepted; tôi đọc lại các chỗ sửa. Sau đó tôi yêu cầu đổi nhãn "Quyết định đã chốt (Hòa, leader)" thành "Quyết định của bản ghép (Hòa cho phép Claude hoàn thiện User_Guide.md, chưa xác nhận từng điểm)" vì Hòa chưa xác nhận từng điểm (`768701a`). |
  
 ### Artifact AI-S4-F01-02
  

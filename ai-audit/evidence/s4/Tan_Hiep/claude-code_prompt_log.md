@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 3058f82a-a124-4cce-853c-9bab797d6360.jsonl, 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 16:17 (Asia/Saigon).
+Nguồn: 3058f82a-a124-4cce-853c-9bab797d6360.jsonl, 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 16:54 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 32 lượt prompt; theo model: claude-opus-5-5 32 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 35 lượt prompt; theo model: claude-opus-5-5 35 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-23 02:41 — model: claude-opus-5-5 — session 4a560803
 
@@ -1427,4 +1427,460 @@ Commit script + notes, rồi thêm khối AI Record.
 - Write: C:\Users\[user]\AppData\Local\Temp\claude\D--HK7-Testing-Seminars-Repo\3058f82a-a124-4cce-853c-9bab797d6360\scratchpad\vn_head.md
 - Write: C:\Users\[user]\AppData\Local\Temp\claude\D--HK7-Testing-Seminars-Repo\3058f82a-a124-4cce-853c-9bab797d6360\scratchpad\vn_tail.md
 - Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\Verification_Notes_Tan_Hiep.md
+
+## #33 — 2026-10-23 16:21 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+<pasted_content id="cce9">
+Hoàn thiện AI-02, AI-03, AI-04 của MSSV [MSSV] trong draft/. Trước khi làm: đọc docs/requirements (yêu cầu số chữ và nội dung của AI-02/03/04), docs/Working_Guide.md và ai-audit/AI_Record_Tan_Hiep.md. KHÔNG tự viết thay mình các phần chủ quan: hỏi mình từng câu (mỗi lần một câu, kèm 2-3 phương án đề xuất dựa trên AI Record để mình chọn hoặc gõ lại), rồi viết theo câu trả lời của mình bằng văn phong của mình.
+Thứ tự:
+A) Xác nhận verdict các artifact S4 trong AI Record (A01-01, B01-01, C01-01, WF-01, F01-01, D01-01, E01-01, E01-02, F01-02): hỏi mình từng cái VALID/INCOMPLETE/INVALID và ô Student Fix (mình đã sửa gì thật). Sau đó bỏ tiền tố "ĐỀ XUẤT:" và cập nhật AI Record.
+B) AI-02: điền bảng artifact (Mục 3) cho đủ mọi artifact trong AI Record (S3 + S4), tính lại Mục 4 (tổng, VALID, INCOMPLETE, INVALID), viết lại Mục 5 (80-150 chữ) sau khi hỏi mình, cập nhật câu Mandatory Disclosure với đúng model đã dùng (claude.ai: Claude Sonnet 4.6, Sonnet 5.5, Opus 5.5; Claude Code: Opus 5.5 — kiểm lại từ log), điền Chữ ký: HỌ TÊN IN HOA, MSSV, lớp/khóa, môn, giảng viên (hỏi mình nếu không có), ngày (hỏi mình), chèn draft/signature_Hiep.png.
+C) AI-03: cập nhật phần công cụ/model/mục đích dùng AI, thêm S4; hỏi mình các mục tự khai.
+D) AI-04: giữ nội dung mình đã xác nhận (Q1-Q4 giữ và thêm ví dụ S4; Q5 là lời mình đã viết: "Tôi học được rằng. Chạy chương trình thành công hay là đ phủ cao không có nghĩa là đảm bảo về chất lượng test..." — chỉ sửa chính tả khi mình đồng ý). Hỏi mình để viết phần S4 cho Q1-Q4, đạt số chữ yêu cầu, ngôi thứ nhất đúng ý mình.
+Cuối: tự kiểm số chữ từng mục, MSSV/họ tên khớp, không còn placeholder, chữ ký chèn đúng. Mình sẽ tự ký nhận bằng cách xem lại. Báo cáo ≤ 10 dòng.
+</pasted_content id="cce9">
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- A01-01 (Guide_Contribution_Tan_Hiep.md, claude.ai Sonnet 5.5). Verdict và Student Fix là gì? Theo AI Record: AI đã tự sửa 2 lỗi (dẫn FR-07 thành 'oracle suy luận'; câu 'phiên AI từng thấy bài manual' nói quá), bạn yêu cầu dịch sang tiếng Việt; các bước được kiểm lại ở F01c-1-cc (khớp 4 mốc).
+
+Trả lời:
+Your questions have been answered: "A01-01 (Guide_Contribution_Tan_Hiep.md, claude.ai Sonnet 5.5). Verdict và Student Fix là gì? Theo AI Record: AI đã tự sửa 2 lỗi (dẫn FR-07 thành 'oracle suy luận'; câu 'phiên AI từng thấy bài manual' nói quá), bạn yêu cầu dịch sang tiếng Việt; các bước được kiểm lại ở F01c-1-cc (khớp 4 mốc)."="VALID — chỉ yêu cầu dịch". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- B01-01 (Report_Contribution_Tan_Hiep.md + câu caveat Killed/Timeout trong draft/Seminar_Report.md, claude.ai Sonnet 5.5). Bảng 6.2/6.5/6.6 đối chiếu với Experiment Log S3. Khối này chưa có ô Student Fix. Verdict và Student Fix?
+
+Trả lời:
+Your questions have been answered: "B01-01 (Report_Contribution_Tan_Hiep.md + câu caveat Killed/Timeout trong draft/Seminar_Report.md, claude.ai Sonnet 5.5). Bảng 6.2/6.5/6.6 đối chiếu với Experiment Log S3. Khối này chưa có ô Student Fix. Verdict và Student Fix?"="VALID — chỉ yêu cầu dịch". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- C01-01 (Demo_Contribution_Tan_Hiep.md, kịch bản Cart, claude.ai Sonnet 5.5). Theo AI Record: lần edit đầu sai chuỗi 'Mở' (AI tự sửa), bạn yêu cầu dịch; C01-rehearsal-cc chạy lại lệnh: score/Survived khớp, Killed/Timeout lệch 2-3; chưa quay. Verdict và Student Fix?
+
+Trả lời:
+Your questions have been answered: "C01-01 (Demo_Contribution_Tan_Hiep.md, kịch bản Cart, claude.ai Sonnet 5.5). Theo AI Record: lần edit đầu sai chuỗi 'Mở' (AI tự sửa), bạn yêu cầu dịch; C01-rehearsal-cc chạy lại lệnh: score/Survived khớp, Killed/Timeout lệch 2-3; chưa quay. Verdict và Student Fix?"="INCOMPLETE — chưa quay". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- WF-01 (handoff `claude/Handoff_T10_Tan_Hiep.md`, viết ở phiên 5aa8b0cf). Kiểm chứng thấy 4 chỗ sai (hash main SUT cũ; 'User_Guide ~880 dòng' thực tế 334; main seminar đã tiến; không phát hiện lỗi package.json). Verdict và Student Fix?
+
+Trả lời:
+Your questions have been answered: "WF-01 (handoff `claude/Handoff_T10_Tan_Hiep.md`, viết ở phiên 5aa8b0cf). Kiểm chứng thấy 4 chỗ sai (hash main SUT cũ; 'User_Guide ~880 dòng' thực tế 334; main seminar đã tiến; không phát hiện lỗi package.json). Verdict và Student Fix?"="INCOMPLETE — dùng repo thật". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- F01-01 (Claude Code Opus 5.5: F01a kiểm package.json main + dry run 806ba19; F01c chạy guide Cart 2.2–4.1, khớp 4 mốc). Lỗi AI: script áp snippet sai 2 lần, run 14:11:33–14:11:40 bị loại và chạy lại. Verdict và Student Fix?
+
+Trả lời:
+Your questions have been answered: "F01-01 (Claude Code Opus 5.5: F01a kiểm package.json main + dry run 806ba19; F01c chạy guide Cart 2.2–4.1, khớp 4 mốc). Lỗi AI: script áp snippet sai 2 lần, run 14:11:33–14:11:40 bị loại và chạy lại. Verdict và Student Fix?"="VALID — accepted". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- D01-01 (Claude Code Opus 5.5: D01-1-cc walkthrough Coupons + soạn khối lệnh cho bạn tự chạy D01-1). Lỗi: khối lệnh không ghi output native vào transcript; lần 1 khối overlay bị cắt thành `-Destination $des`; khối 4 (review candidate) còn Pending. Verdict và Student Fix?
+
+Trả lời:
+Your questions have been answered: "D01-01 (Claude Code Opus 5.5: D01-1-cc walkthrough Coupons + soạn khối lệnh cho bạn tự chạy D01-1). Lỗi: khối lệnh không ghi output native vào transcript; lần 1 khối overlay bị cắt thành `-Destination $des`; khối 4 (review candidate) còn Pending. Verdict và Student Fix?"="INCOMPLETE — tôi chạy lại". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- E01-01 (Claude Code Opus 5.5: ghép User_Guide.md từ 3 contribution, dịch Coupons/Auth sang tiếng Việt; 31/31 code block nguyên văn). Lỗi: tự thêm một câu 'Cách tránh' ở FM6 (AI tự bỏ). Bản dịch bạn chưa review. Verdict và Student Fix?
+
+Trả lời:
+Your questions have been answered: "E01-01 (Claude Code Opus 5.5: ghép User_Guide.md từ 3 contribution, dịch Coupons/Auth sang tiếng Việt; 31/31 code block nguyên văn). Lỗi: tự thêm một câu 'Cách tránh' ở FM6 (AI tự bỏ). Bản dịch bạn chưa review. Verdict và Student Fix?"="VALID — accepted". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- E01-02 (Claude Code Opus 5.5: hoàn thiện User_Guide.md theo evidence — thêm clone seminar, $docsRoot, ghi chú dry run, PROVENANCE, 2 dòng Troubleshooting, checkout eea3ed4/b27fce2, sửa executor D02-03, Tested environment Cart). Các bước mới thêm chưa ai chạy lại. Verdict và Student Fix?
+
+Trả lời:
+Your questions have been answered: "E01-02 (Claude Code Opus 5.5: hoàn thiện User_Guide.md theo evidence — thêm clone seminar, $docsRoot, ghi chú dry run, PROVENANCE, 2 dòng Troubleshooting, checkout eea3ed4/b27fce2, sửa executor D02-03, Tested environment Cart). Các bước mới thêm chưa ai chạy lại. Verdict và Student Fix?"="VALID — accepted". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- F01-02 (Claude Code Opus 5.5: mở rộng Verification_Notes cho toàn bộ User_Guide; script kiểm 36/36 claim khớp, 31/31 code block, 51 link). Lỗi AI: lần đầu trỏ sai nguồn 73.45%/60%, hỏng escaping khi sửa script, làm rơi 2 mục checklist (đã thêm lại). Verdict và Student Fix?
+
+Trả lời:
+Your questions have been answered: "F01-02 (Claude Code Opus 5.5: mở rộng Verification_Notes cho toàn bộ User_Guide; script kiểm 36/36 claim khớp, 31/31 code block, 51 link). Lỗi AI: lần đầu trỏ sai nguồn 73.45%/60%, hỏng escaping khi sửa script, làm rơi 2 mục checklist (đã thêm lại). Verdict và Student Fix?"="VALID — accepted". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- Phần Chữ ký (dùng chung cho AI-02/03/04): Lớp / Khoá và Giảng viên ghi thế nào? (Gợi ý lấy từ form của bạn cùng nhóm và docs/requirements.)
+
+Trả lời:
+Your questions have been answered: "Phần Chữ ký (dùng chung cho AI-02/03/04): Lớp / Khoá và Giảng viên ghi thế nào? (Gợi ý lấy từ form của bạn cùng nhóm và docs/requirements.)"="Giống form bạn cùng nhóm". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- Ngày ký ghi ngày nào (định dạng như form bạn cùng nhóm: dd/mm/yyyy)?
+
+Trả lời:
+Your questions have been answered: "Ngày ký ghi ngày nào (định dạng như form bạn cùng nhóm: dd/mm/yyyy)?"="23/10/2026". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- AI-02 Bảng Mục 3: hai artifact S3 còn trống cột '(5) Bản SV sửa' (AI Record ghi Student Fix 'Pending'): AI-S3-D01-01 (baseline Cart + defect tests, INCOMPLETE) và AI-S3-D01-02 (Claude Code chạy/chẩn đoán, VALID). Bạn đã sửa gì thật?
+
+Trả lời:
+Your questions have been answered: "AI-02 Bảng Mục 3: hai artifact S3 còn trống cột '(5) Bản SV sửa' (AI Record ghi Student Fix 'Pending'): AI-S3-D01-01 (baseline Cart + defect tests, INCOMPLETE) và AI-S3-D01-02 (Claude Code chạy/chẩn đoán, VALID). Bạn đã sửa gì thật?"="Theo quyết định D01". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- AI-02 Mục 5 (Kết luận 80–150 chữ, ngôi thứ nhất). Bạn muốn trọng tâm là gì? Tôi sẽ viết theo hướng bạn chọn rồi đưa bạn duyệt trước khi ghi vào file.
+
+Trả lời:
+The user answered: "AI-02 Mục 5 (Kết luận 80–150 chữ, ngôi thứ nhất). Bạn muốn trọng tâm là gì? Tôi sẽ viết theo hướng bạn chọn rồi đưa bạn duyệt trước khi ghi vào file."="Cả phần AI mạnh khi có spec, yếu khi thiếu context và điểm cao cũng không chứng minh test tốt". Read the answers carefully — they may request clarification, changes, or that you not proceed — and follow what they actually say.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- Bản nháp Mục 5 (147 chữ, đếm theo khoảng trắng):
+
+"Qua S3 và S4, tôi thấy AI làm tốt khi được đưa đặc tả rõ ràng: viết test, script, cấu hình Stryker và báo cáo nhanh, số liệu chép đúng từ output. AI sai khi thiếu context: đọc thiếu README/SRS nên hỏi sai scope, giả định sai thư mục làm việc, giải thích bằng một mutant mà Stryker không sinh ra, hoặc làm hỏng lệnh vì CRLF và escaping. Trong 25 artifact tôi audit, 16 dùng được ngay và 9 phải sửa. Tôi cũng thấy mutation score cao chưa chứng minh test tốt: Timeout vẫn được tính là phát hiện, oracle lấy từ code có thể kill thêm mutant mà không đúng đặc tả, và mutant sửa lỗi gốc thì không nên kill. Vì vậy tôi dùng AI để đề xuất và chạy lệnh, còn tôi tự đối chiếu đặc tả, đọc killedBy và so số Survived."
+
+Dùng bản này?
+
+Trả lời:
+The user answered: "Bản nháp Mục 5 (147 chữ, đếm theo khoảng trắng):
+
+"Qua S3 và S4, tôi thấy AI làm tốt khi được đưa đặc tả rõ ràng: viết test, script, cấu hình Stryker và báo cáo nhanh, số liệu chép đúng từ output. AI sai khi thiếu context: đọc thiếu README/SRS nên hỏi sai scope, giả định sai thư mục làm việc, giải thích bằng một mutant mà Stryker không sinh ra, hoặc làm hỏng lệnh vì CRLF và escaping. Trong 25 artifact tôi audit, 16 dùng được ngay và 9 phải sửa. Tôi cũng thấy mutation score cao chưa chứng minh test tốt: Timeout vẫn được tính là phát hiện, oracle lấy từ code có thể kill thêm mutant mà không đúng đặc tả, và mutant sửa lỗi gốc thì không nên kill. Vì vậy tôi dùng AI để đề xuất và chạy lệnh, còn tôi tự đối chiếu đặc tả, đọc killedBy và so số Survived."
+
+Dùng bản này?"="Phần này để tôi viết". Read the answers carefully — they may request clarification, changes, or that you not proceed — and follow what they actually say.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- AI-03 câu 2 — ở S4 bạn dùng AI cho giai đoạn nào? (S3 đã ghi: nghiên cứu, lập dàn ý, viết nháp, phản hồi, chỉnh sửa, lập trình, phân tích dữ liệu.) Chọn tất cả đúng.
+
+Trả lời:
+Your questions have been answered: "AI-03 câu 2 — ở S4 bạn dùng AI cho giai đoạn nào? (S3 đã ghi: nghiên cứu, lập dàn ý, viết nháp, phản hồi, chỉnh sửa, lập trình, phân tích dữ liệu.) Chọn tất cả đúng."="Viết nháp + dịch, "Chạy lệnh, kiểm chứng", Phân tích dữ liệu, Sửa chữa + phản hồi". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- AI-03 câu 3 — thêm prompt S4 nào làm 'prompt quan trọng' (dán nguyên văn từ log Claude Code)? Form yêu cầu 2–3 prompt tổng; hiện đã có 2 prompt S3.
+
+Trả lời:
+Your questions have been answered: "AI-03 câu 3 — thêm prompt S4 nào làm 'prompt quan trọng' (dán nguyên văn từ log Claude Code)? Form yêu cầu 2–3 prompt tổng; hiện đã có 2 prompt S3."="Prompt ghép User Guide (E01)". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- AI-03 câu 5 — ở S4 bạn rà soát/xác minh đầu ra AI bằng cách nào? Chọn tất cả đúng (chỉ ghi điều bạn thật sự làm).
+
+Trả lời:
+Your questions have been answered: "AI-03 câu 5 — ở S4 bạn rà soát/xác minh đầu ra AI bằng cách nào? Chọn tất cả đúng (chỉ ghi điều bạn thật sự làm)."="Tự chạy lại guide Coupons (D01-1), Đọc REPORT của run -cc, Kiểm hash candidate G02, Duyệt verdict từng artifact". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- AI-04 Q5: tôi không tìm thấy đoạn 'Tôi học được rằng. Chạy chương trình thành công hay là đ phủ cao...' trong repo (Q5 hiện tại là một đoạn khác bắt đầu 'Bản so sánh đã ghi lại của tôi...'). Bạn chọn Other và dán nguyên văn đoạn Q5 của bạn nhé. Tôi sẽ đề xuất sửa chính tả riêng để bạn duyệt.
+
+Trả lời:
+Your questions have been answered: "AI-04 Q5: tôi không tìm thấy đoạn 'Tôi học được rằng. Chạy chương trình thành công hay là đ phủ cao...' trong repo (Q5 hiện tại là một đoạn khác bắt đầu 'Bản so sánh đã ghi lại của tôi...'). Bạn chọn Other và dán nguyên văn đoạn Q5 của bạn nhé. Tôi sẽ đề xuất sửa chính tả riêng để bạn duyệt."="Để trống, tôi tự dán sau". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- AI-04 Q1 (AI hỗ trợ thế nào) — câu thêm cho S4. Chọn hướng gần với cách bạn nói nhất (hoặc gõ lại ở Other):
+
+Trả lời:
+Your questions have been answered: "AI-04 Q1 (AI hỗ trợ thế nào) — câu thêm cho S4. Chọn hướng gần với cách bạn nói nhất (hoặc gõ lại ở Other):"="Viết tài liệu + chạy lại". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- AI-04 Q2 (chấp nhận / từ chối / sửa) — câu thêm cho S4:
+
+Trả lời:
+Your questions have been answered: "AI-04 Q2 (chấp nhận / từ chối / sửa) — câu thêm cho S4:"="Cả hai ý trên". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- AI-04 Q3 (lỗi / giới hạn của AI) — ví dụ S4 nào bạn muốn nêu?
+
+Trả lời:
+Your questions have been answered: "AI-04 Q3 (lỗi / giới hạn của AI) — ví dụ S4 nào bạn muốn nêu?"="Cả hai ví dụ". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- AI-04 Q4 (cách xác minh) — câu thêm cho S4:
+
+Trả lời:
+Your questions have been answered: "AI-04 Q4 (cách xác minh) — câu thêm cho S4:"="Cả hai ý". You can now continue with these answers in mind.
+```
+
+### Output
+
+```text
+Đọc chi tiết các khối S4 để soạn phương án hỏi.
+
+Đủ 9 verdict. Cập nhật AI Record.
+
+Cập nhật Mục 3 của AI Record (25 artifact: 16 VALID, 9 INCOMPLETE), rồi đọc 3 form trong draft.
+
+Q5 hiện tại không có câu bạn nhắc. Tìm câu đó trong repo.
+
+Bạn sẽ tự viết Mục 5; tôi để trống có đánh dấu. Đọc các khối S3 còn thiếu trong bảng AI-02 (WF-03, I01-01, I01-02, E01-01).
+
+Cập nhật AI-02: thêm 13 hàng (S3: WF-03, I01-01, I01-02, E01-01; S4: 9), điền 2 ô trống D01, tính lại Mục 4, model, chữ ký; Mục 5 để trống cho bạn.
+
+Bảng 25 hàng: 16 VALID, 9 INCOMPLETE, khớp Mục 4. Đồng bộ Student Fix của S3 D01-01/02 sang AI Record, và kiểm file chữ ký.
+
+Ảnh 1907×1004 sẽ hiện quá to trong bảng; đổi sang `<img width="160">`. Commit bước B.
+
+Bước C (AI-03). Hỏi các mục tự khai, mỗi lần một câu.
+
+Lấy nguyên văn prompt E01 từ log Claude Code.
+
+Bước D (AI-04). Câu Q5 "Tôi học được rằng…" không có trong repo hay git history (file hiện có Q5 khác). Cần bạn đưa đủ câu.
+
+Đủ câu trả lời. Ghi phần S4 vào Q1–Q4, Q5 để trống cho bạn tự dán, điền chữ ký.
+
+### Báo cáo cho phiên thảo luận
+- **Nhiệm vụ:** AI-02/03/04 của [MSSV] — Partial; còn 2 đoạn bạn tự viết. Commit trên `main` seminar, chưa push: `8ad3663`, `542b562`, `5307945`, `c25a4be`.
+- **A. AI Record:** đã ghi verdict và Student Fix của 9 artifact S4 theo lựa chọn của bạn, bỏ hết tiền tố "ĐỀ XUẤT:".
+  - Ô Student Fix của S3 D01-01/02 (trước ghi Pending) đã điền theo quyết định D01.
+  - Mục 3 tổng: 25 artifact = 16 VALID + 9 INCOMPLETE.
+- **B. AI-02:** bảng Mục 3 thêm 13 hàng, đủ 25 (đếm lại 16 VALID / 9 INCOMPLETE, khớp Mục 4: 64.00% / 36.00%).
+  - Model: claude.ai dùng Sonnet 4.6, Sonnet 5.5, Opus 5.5; transcript Claude Code chỉ có `claude-opus-5-5`. Sonnet 5.5 chưa có transcript trong repo, chỉ dựa vào AI Record.
+  - Chữ ký: tên, MSSV, lớp và giảng viên lấy giống form của bạn cùng nhóm, ngày 23/10/2026, ảnh `signature_Hiep.png` (width 160).
+  - Tổng AI-02 khoảng 3.770 chữ (yêu cầu ≥600).
+- **C. AI-03:** thêm phần S4 cho công cụ, giai đoạn, prompt E01 (nguyên văn từ log), phần AI đóng góp, cách rà soát; điền chữ ký.
+- **D. AI-04:** thêm câu S4 cho Q1–Q4 theo lựa chọn của bạn; Q1–Q4 khoảng 500 chữ (yêu cầu 300). Điền chữ ký.
+  - Q1: tôi viết "guide Cart và Coupons" thay cho "guide của cả nhóm" trong phương án, vì Claude Code không chạy guide Auth.
+- **Kiểm cuối:** MSSV và họ tên khớp ở cả 3 file; chữ ký trỏ đúng file ảnh. Chữ "ĐỀ XUẤT" còn lại trong AI-03 nằm trong prompt nguyên văn, giữ nguyên là đúng.
+- **Placeholder còn lại (bạn tự viết):**
+  - AI-02 Mục 5, dòng 253 (80–150 chữ).
+  - AI-04 Q5, dòng 61: câu "Tôi học được rằng…" không có trong repo hay git history, bạn cần dán.
+  - Mục Conclusion trong AI Record vẫn "[Tự viết sau khi có verdict]".
+- **Lưu ý:** E01-01 bạn chọn VALID ("đã đọc lại bản ghép"), trong khi Verification Notes ghi "review bản dịch Coupons/Auth — chưa làm". Nên sửa một trong hai cho khớp.
+- **Cần quyết định:** Không.
+```
+
+### Hành động
+
+- Write: C:\Users\[user]\AppData\Local\Temp\claude\D--HK7-Testing-Seminars-Repo\3058f82a-a124-4cce-853c-9bab797d6360\scratchpad\ai02.js
+- Write: C:\Users\[user]\AppData\Local\Temp\claude\D--HK7-Testing-Seminars-Repo\3058f82a-a124-4cce-853c-9bab797d6360\scratchpad\ai03.js
+- Write: C:\Users\[user]\AppData\Local\Temp\claude\D--HK7-Testing-Seminars-Repo\3058f82a-a124-4cce-853c-9bab797d6360\scratchpad\ai04.js
+
+## #34 — 2026-10-23 16:43 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+<pasted_content id="cce9">
+Hoàn thiện draft/AI-LOG-[MSSV].md để khớp ai-audit/AI_Record_Tan_Hiep.md (nguồn sự thật: 25 artifact = 16 S3 + 9 S4).
+1) Thêm 13 entry còn thiếu (S3: WF-03, I01-01, I01-02, E01-01; S4: A01-01, B01-01, C01-01, WF-01, F01-01, D01-01, E01-01, E01-02, F01-02) theo đúng mẫu hiện có, cùng thứ tự thời gian. Mỗi entry lấy từ AI Record: Tool/model, Verdict, Asked for, Kept, Changed, Rejected, By hand, Verification. Verdict phải trùng AI Record.
+2) Dịch toàn bộ các entry sang TIẾNG VIỆT (giữ tên trường, English technical terms, ID, lệnh, hash). Giữ nguyên số liệu.
+3) "By hand" và "Changed": chỉ ghi điều có trong AI Record/Student Fix. Chỗ nào AI Record không nói rõ mình tự làm gì, HỎI mình từng câu (kèm 2-3 phương án), không đoán.
+4) Entry E01-01 (VALID) mâu thuẫn Verification_Notes ("review bản dịch Coupons/Auth: chưa làm"): hỏi mình đã review gì thật, rồi sửa MỘT trong hai chỗ cho khớp sự thật.
+5) Kiểm: số entry = 25, ID không trùng, không có secret, các link trong "Public References" vẫn hợp lệ; cập nhật link AI Record sang commit mới nhất sau khi mình push.
+</pasted_content id="cce9">
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- E01-01 (ghép User_Guide.md): AI Record ghi VALID — 'Tôi đọc lại bản ghép; không sửa nội dung', còn Verification_Notes ghi 'Review bản dịch Coupons/Auth — Tấn Hiệp, chưa làm'. Thực tế bạn đã review gì?
+
+Trả lời:
+Your questions have been answered: "E01-01 (ghép User_Guide.md): AI Record ghi VALID — 'Tôi đọc lại bản ghép; không sửa nội dung', còn Verification_Notes ghi 'Review bản dịch Coupons/Auth — Tấn Hiệp, chưa làm'. Thực tế bạn đã review gì?"="Đã đọc cả bản dịch". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- AI-S3-WF-03 (handoff S3→S4, cập nhật skill, Repo/CLAUDE.md, hook log S4). AI Record không ghi rõ bạn tự làm gì. Mục 'By hand' ghi gì?
+
+Trả lời:
+Your questions have been answered: "AI-S3-WF-03 (handoff S3→S4, cập nhật skill, Repo/CLAUDE.md, hook log S4). AI Record không ghi rõ bạn tự làm gì. Mục 'By hand' ghi gì?"="Xác nhận + cài skill". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- AI-S4-C01-01 (kịch bản demo Cart). Student Fix ghi bạn 'yêu cầu' dịch, bỏ blocker, thêm ghi chú Killed/Timeout (do Claude Code sửa). Mục 'By hand' ghi gì?
+
+Trả lời:
+Your questions have been answered: "AI-S4-C01-01 (kịch bản demo Cart). Student Fix ghi bạn 'yêu cầu' dịch, bỏ blocker, thêm ghi chú Killed/Timeout (do Claude Code sửa). Mục 'By hand' ghi gì?"="Chọn cách đọc số khi quay". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- AI-S4-E01-02 (hoàn thiện User_Guide). AI Record Student Fix: 'Accepted; tôi đọc lại các chỗ sửa.' Sau lượt đó bạn yêu cầu đổi nhãn 'Quyết định đã chốt' thành 'Quyết định của bản ghép' (commit 768701a). Mục 'Changed' ghi gì?
+
+Trả lời:
+Your questions have been answered: "AI-S4-E01-02 (hoàn thiện User_Guide). AI Record Student Fix: 'Accepted; tôi đọc lại các chỗ sửa.' Sau lượt đó bạn yêu cầu đổi nhãn 'Quyết định đã chốt' thành 'Quyết định của bản ghép' (commit 768701a). Mục 'Changed' ghi gì?"="Ghi việc đổi nhãn". You can now continue with these answers in mind.
+```
+
+### Câu hỏi của AI và trả lời của người dùng
+
+```text
+Câu hỏi:
+- Bạn đang đổi 'tôi' → 'em' trong AI-02/03/04. AI-LOG-[MSSV].md (25 entry) nên xưng hô thế nào?
+
+Trả lời:
+Your questions have been answered: "Bạn đang đổi 'tôi' → 'em' trong AI-02/03/04. AI-LOG-[MSSV].md (25 entry) nên xưng hô thế nào?"="Đổi sang 'em'". You can now continue with these answers in mind.
+```
+
+### Output
+
+```text
+Hỏi trước điểm mâu thuẫn E01-01.
+
+Đủ thông tin. Viết lại AI-LOG (25 entry, tiếng Việt), sửa Verification_Notes (E01-01 đã review) và Student Fix E01-02 trong AI Record.
+
+Kiểm verdict từng ID khớp AI Record, quét secret; sửa Verification_Notes và Student Fix E01-02.
+
+AI-02/03/04 đang có thay đổi chưa commit mà tôi không làm ở lượt này. Xem qua trước khi đụng.
+
+Bạn đang đổi "tôi" thành "em" trong AI-02/03/04 (chưa commit; tôi để nguyên, không commit hộ). AI-LOG tôi đang viết là "tôi".
+
+### Báo cáo cho phiên thảo luận
+- **Nhiệm vụ:** hoàn thiện AI-LOG [MSSV] — Done, chỉ còn cập nhật link sau khi bạn push. Đã commit trên `main` seminar, chưa push:
+  - `46de80c`: `draft/AI-LOG-[MSSV].md`.
+  - `9274015`: sửa AI Record và Verification_Notes.
+- **AI-LOG:** đủ 25 entry (16 S3 + 9 S4) theo thứ tự trong AI Record, không trùng ID. Verdict từng ID khớp AI Record 25/25 (16 VALID, 9 INCOMPLETE), kiểm bằng script.
+  - Toàn bộ entry đã dịch sang tiếng Việt, xưng "em" theo lựa chọn của bạn; giữ nguyên tên trường, ID, lệnh, hash và số liệu.
+- **By hand / Changed:**
+  - Theo câu trả lời của bạn: WF-03 (cài skill, xác nhận), C01-01 (quyết định chỉ đọc score và Survived), E01-02 (đổi nhãn quyết định, `768701a`).
+  - S3 D01-01/02 dùng Student Fix vừa chốt.
+  - Các entry còn lại lấy đúng từ AI Record.
+- **Mâu thuẫn E01-01:** bạn xác nhận đã đọc cả bản dịch, nên tôi sửa Verification_Notes thành "đã làm, không sửa". AI Record vẫn giữ VALID.
+  - Đồng thời bổ sung việc đổi nhãn vào Student Fix của E01-02 trong AI Record, để khớp với AI-LOG.
+- **Kiểm:**
+  - Không có secret; chỉ có dòng hướng dẫn mẫu "Do not include secrets…".
+  - 3 link versioned trong Public References đều trỏ đúng file tại commit đã ghi.
+  - Link AI Record vẫn trỏ commit cũ `3bd2ce6`, chờ bạn push.
+- **Chưa commit (thay đổi của bạn):** AI-02/03/04 đang đổi "tôi" thành "em". Tôi không commit hộ.
+- **Cần quyết định:** sau khi push, gõ "đã push" để tôi đổi link AI Record sang `9274015` (commit mới nhất có AI Record) và kiểm link đó trên `origin/main`.
+```
+
+### Hành động
+
+- Write: C:\Users\[user]\AppData\Local\Temp\claude\D--HK7-Testing-Seminars-Repo\3058f82a-a124-4cce-853c-9bab797d6360\scratchpad\ailog_entries.md
+
+## #35 — 2026-10-23 16:52 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+<pasted_content id="cce9">
+Mình sẽ tự viết các form AI-02/03/04 của MSSV [MSSV]. Đưa 3 file draft/[AI-02|AI-03|AI-04] - FIT@HCMUS - ... - [MSSV].md về mẫu trống.
+1) git pull. Liệt kê các commit đã đổi 3 file này (hash, tác giả, đã có trên origin/main chưa). Chưa sửa gì.
+2) Sao lưu nội dung hiện tại của 3 file (và đoạn Q5 "Tôi học được rằng…" của mình) ra một thư mục NGOÀI repo, ví dụ Repo/_backup_AI_forms_23102026/. In đường dẫn.
+3) Thay nội dung 3 file bằng mẫu trống Hòa đã đưa ở draft/ (các file *_Vn.md, hoặc mẫu gốc trong docs/ nếu cần), chỉ giữ phần thông tin cố định của mẫu. Không điền tên/ngày/chữ ký/nội dung. Không đụng file 23120262 và 23120264. Commit mới "docs: đưa AI-02/03/04 [MSSV] về mẫu; Tấn Hiệp tự viết". Không dùng reset --hard hay force-push.
+4) KHÔNG sửa ai-audit/AI_Record_Tan_Hiep.md, draft/AI-LOG-[MSSV].md, materials/s4/*. Chỉ liệt kê cho mình các file khác trong repo do AI viết dưới tên mình để mình quyết định.
+</pasted_content id="cce9">
+```
+
+### Output
+
+```text
+Bạn đã soft-reset bỏ 2 commit AI-LOG của tôi (các thay đổi đó còn trong working tree, chưa commit) và push `c5c510e`. Tôi để nguyên những file đó. Pull rồi sao lưu.
+
+Mẫu trống nằm ở `ai-audit/originals/*_Vn.md`. Thay 3 file bằng mẫu, chỉ commit 3 file đó.
+
+Đã đưa 3 form về mẫu (không còn tên, MSSV, chữ ký). Giờ liệt kê các file khác do AI viết dưới tên bạn (dựa trên commit có trailer Co-Authored-By Claude).
+
+### Báo cáo cho phiên thảo luận
+- **Nhiệm vụ:** đưa AI-02/03/04 của [MSSV] về mẫu trống — Done. Commit `9ae6807` "docs: đưa AI-02/03/04 [MSSV] về mẫu; Tấn Hiệp tự viết" trên `main`, chưa push. Không dùng reset hay force-push; không đụng file 23120262, 23120264.
+- **Bước 1 — pull:** `git pull --ff-only` báo "Already up to date" (`main` = `origin/main` = `c5c510e`). Các commit đã đổi 3 file, tất cả đều đã có trên `origin/main`:
+
+  | Commit | Tác giả | Nội dung |
+  |---|---|---|
+  | `77ddedc` | Duong Thai Hoa Tong | docs: finalize seminar AI deliverables |
+  | `91b87c6` | Duong Thai Hoa Tong | docs: Update vietnamese ai audit |
+  | `542b562` | TonKnight | docs(S8): AI-02 (do tôi soạn) |
+  | `5307945` | TonKnight | docs(S8): AI-03 (do tôi soạn) |
+  | `c25a4be` | TonKnight | docs(S8): AI-04 (do tôi soạn) |
+
+- **Bước 2 — sao lưu:** `D:\HK7\Testing\Seminars\Repo\_backup_AI_forms_23102026\`
+  - `working\`: 3 file đúng như đang có trên đĩa, gồm cả các chỗ bạn đổi "tôi" → "em" chưa commit.
+  - `HEAD_c5c510e\`: 3 file theo bản đã commit.
+  - `Q5_fragment_tu_prompt.txt`: đoạn Q5 "Tôi học được rằng. Chạy chương trình thành công hay là đ phủ cao…" như bạn gõ trong prompt. Bản đầy đủ không có ở đâu trong repo, đây là tất cả những gì còn lại.
+- **Bước 3 — thay mẫu:** chép nguyên `ai-audit/originals/*_Vn.md`, vì `draft/` không có file `_Vn`. Đã kiểm: không còn tên, MSSV hay ảnh chữ ký trong 3 file.
+- **Lưu ý, chưa commit, tôi để nguyên:** working tree vẫn còn các thay đổi sau khi bạn soft-reset:
+  - `draft/AI-LOG-[MSSV].md` (bản 25 entry của tôi);
+  - `ai-audit/AI_Record_Tan_Hiep.md` (Student Fix E01-02);
+  - log AI.
+- **Bước 4 — file AI viết dưới tên bạn** (ngoài AI_Record, AI-LOG, `materials/s4/*`):
+  - `research/s3/Research_Notes_Tan_Hiep.md`: bản nháp do AI viết (A01).
+  - `experiments/s3/Experiment_Log_Tan_Hiep.md`: một phần do AI soạn (C01-02, E01-01, I01-01).
+  - `draft/Seminar_Report.md`: một câu caveat Killed/Timeout (B01).
+  - REPORT/so sánh của các run `-cc` (ghi rõ là Claude Code chạy):
+    - S3: `D01/E01/F01/G01/I01-cc-REPORT.md`, `E01-1-cc/`, `F01-2-cc/`, `G01-2-cc/`, `H01-cc/`, `I01-cc-compare/`, `S3-member-compare/`.
+    - S4: `F01a-cc-REPORT.md`, `F01c-1-cc/`, `D01-1-cc/`, `C01-rehearsal-cc/`, `F01-verify-cc/`.
+  - `experiments/s4/runs/Tan_Hiep/D01-1/REPORT.md`, `count_d01.md`, mẫu `NOTES.md`: AI viết trong thư mục run bạn tự chạy.
+  - `experiments/s3/runs/Tan_Hiep/I01-1/git-reflog.txt`: AI trích từ reflog.
+- **Cần quyết định:** những file ở bước 4 bạn muốn giữ, ghi chú lại là "AI soạn", hay tự viết lại?
+```
 
