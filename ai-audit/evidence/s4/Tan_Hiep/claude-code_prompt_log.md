@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 3058f82a-a124-4cce-853c-9bab797d6360.jsonl, 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 16:10 (Asia/Saigon).
+Nguồn: 3058f82a-a124-4cce-853c-9bab797d6360.jsonl, 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 16:17 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 31 lượt prompt; theo model: claude-opus-5-5 31 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 32 lượt prompt; theo model: claude-opus-5-5 32 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-23 02:41 — model: claude-opus-5-5 — session 4a560803
 
@@ -1350,4 +1350,81 @@ Trong materials/s4/User_Guide.md, mục "Quyết định đã chốt (Hòa, lead
 Đã đổi nhãn thành "Quyết định của bản ghép (Hòa cho phép Claude hoàn thiện User_Guide.md, chưa xác nhận từng điểm):", nội dung phía sau giữ nguyên (diff chỉ đổi 1 dòng).
 Commit `768701a` trên `main` seminar, chưa push.
 ```
+
+## #32 — 2026-10-23 16:12 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+<pasted_content id="cce9">
+S4-F01: mở rộng materials/s4/Verification_Notes_Tan_Hiep.md để kiểm TOÀN BỘ materials/s4/User_Guide.md (bản ghép), theo cấu trúc của Verification_Notes_Phuc_Hoang.md. Giữ phần Cart đã có. Nội dung bắt buộc:
+1) Đối chiếu requirements (docs/requirements): REQ-17 (≥6 section, ngôn ngữ — ghi rõ guide bằng tiếng Việt, Hòa đã đồng ý), REQ-18 (≥3 failure modes thật), Troubleshooting ≥3 lỗi thật có nhãn. Đếm thực tế bằng script.
+2) Bảng theo domain × mục (Installation/First Test/Advanced Usage): mỗi lệnh/bước ghi evidence nào kiểm (F01c-1-cc, D01-1-cc, D01-1, D02 trong Guide_Reproduction_Thai_Hoa.md, run S3 của Phúc) hoặc "chưa kiểm chứng". Liệt kê rõ các bước mới thêm ở lượt AI-S4-E01-02 (clone seminar thư mục ngắn, checkout eea3ed4/b27fce2, prompt.txt) là chưa kiểm chứng.
+3) Kiểm số liệu: viết script trích các số mutants/Killed/Survived/score trong User_Guide.md và so với mutation.json hoặc summary trong experiments/s3 và s4/runs; báo cái lệch hoặc không tìm thấy nguồn.
+4) Kiểm cơ học: mọi code block của ba Guide_Contribution_* còn nguyên trong User_Guide.md; mọi link tương đối trong User_Guide.md phân giải được; không còn từ "TODO"/placeholder.
+5) Mục "Section/bước cần tác giả sửa": theo từng tác giả, kèm vị trí (heading) và lý do. Không tự sửa guide.
+6) Mục "Việc cần người": review bản dịch Coupons/Auth (Tấn Hiệp, chưa làm), chạy lại bước mới thêm (Phúc/Hòa), mục 4.2 AI Agent của Cart.
+7) Thêm khối AI-S4-F01-02 vào AI Record (Claude Code Opus 5.5; "ĐỀ XUẤT: ..."; Student Fix "(điền sau review)").
+</pasted_content id="cce9">
+```
+
+### Output
+
+```text
+Viết script kiểm số liệu, code block, link, placeholder.
+
+2 claim chưa thấy nguồn đúng chỗ. Tìm nguồn của 73.45% và "toy example 60%".
+
+Có nguồn: 73.45% ở `E03-provisional`, toy 60% ở `C02-D02-…/tutorial-weak`. Sửa script trỏ đúng nguồn và bỏ code block khỏi quét placeholder.
+
+Escaping trong shell làm hỏng file. Viết lại file script trực tiếp.
+
+Mọi claim đều khớp nguồn. Lấy tổng kết từ output.
+
+Viết lại Verification Notes: mở rộng toàn guide, giữ nguyên bảng Cart cũ.
+
+2 mục checklist cũ (`tempDirName`, người khác chạy lại từ máy sạch) bị rơi. Thêm lại.
+
+Commit script + notes, rồi thêm khối AI Record.
+
+### Báo cáo cho phiên thảo luận
+- **Nhiệm vụ:** S4-F01, kiểm toàn bộ User Guide bản ghép — Done. Đã commit trên `main` seminar, chưa push:
+  - `6d73a0b`: script kiểm và file output.
+  - `cdbedaf`: `Verification_Notes_Tan_Hiep.md` (+123/−22).
+  - `45c0328`: khối AI-S4-F01-02, verdict "ĐỀ XUẤT: VALID".
+- **Đối chiếu requirements (đếm bằng script):**
+  - REQ-17: có đủ 6/6 section bắt buộc. Ngôn ngữ là tiếng Việt, ghi "Hòa đã đồng ý" theo lời bạn, khác chữ REQ-17.
+  - REQ-18: có 8 failure mode, 6 mục có evidence.
+  - Troubleshooting: 24 dòng, trong đó 11 dòng "Đã gặp", 5 dòng của Coupons chưa gắn nhãn.
+- **Số liệu:** 36/36 claim khớp với `mutation.json`/log của S3 và S4, không lệch.
+  - Lần đầu script báo 2 claim lệch (73.45% và toy 60%) vì tôi trỏ sai file nguồn; trỏ đúng `E03-provisional` và `tutorial-weak` thì khớp.
+- **Kiểm cơ học:**
+  - 31/31 code block của 3 contribution còn nguyên văn.
+  - 51 link tương đối, không link nào hỏng.
+  - Không còn placeholder (`<rootDir>` trong code là cú pháp thật, không tính).
+- **Bảng domain × mục:**
+  - Cart đã kiểm qua F01c-1-cc, trừ mục AI Agent.
+  - Coupons đã kiểm qua D01-1-cc và D01-1, trừ phần request AI mới và phần review candidate.
+  - Auth: Installation và First Test đã kiểm (D02 do agent Codex chạy, cộng run S3); Advanced Usage theo guide chưa kiểm chứng.
+  - Các bước mới thêm ở AI-S4-E01-02 (clone repo seminar ở thư mục ngắn, checkout `eea3ed4`/`b27fce2`, câu `prompt.txt`) đều ghi "chưa kiểm chứng".
+- **Cần tác giả sửa (ghi kèm heading trong notes):**
+  - Hòa: gắn nhãn 5 dòng Troubleshooting; thêm evidence cho Failure Mode 6 và 8; xử lý chuyện clone ở thư mục ngắn và kiểm `$overlayRoot`.
+  - Phúc: chạy lại các bước checkout mới thêm; sửa lệnh `prompt.txt`.
+  - Tấn Hiệp: thêm evidence cho Failure Mode 7; chạy mục AI Agent; xem lại dòng `No tests were found`.
+- **Việc cần người:**
+  - Review bản dịch Coupons/Auth — bạn, chưa làm.
+  - Chạy lại các bước mới thêm — Phúc, Hòa.
+  - Chạy mục AI Agent của Cart và review candidate G02 — bạn.
+- **Lỗi AI khi làm (đã ghi vào AI Record):** sửa script bằng lệnh shell làm hỏng escaping, phải sửa lại; bản notes đầu làm rơi 2 mục checklist cũ, đã thêm lại trước khi commit.
+- **Cần quyết định:** Không.
+```
+
+### Hành động
+
+- Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s4\runs\F01-verify-cc\verify_user_guide.js
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s4\runs\F01-verify-cc\verify_user_guide.js
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s4\runs\F01-verify-cc\verify_user_guide.js
+- Write: C:\Users\[user]\AppData\Local\Temp\claude\D--HK7-Testing-Seminars-Repo\3058f82a-a124-4cce-853c-9bab797d6360\scratchpad\vn_head.md
+- Write: C:\Users\[user]\AppData\Local\Temp\claude\D--HK7-Testing-Seminars-Repo\3058f82a-a124-4cce-853c-9bab797d6360\scratchpad\vn_tail.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\Verification_Notes_Tan_Hiep.md
 
