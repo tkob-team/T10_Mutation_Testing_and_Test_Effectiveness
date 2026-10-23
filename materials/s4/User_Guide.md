@@ -12,30 +12,30 @@
   - Troubleshooting, Failure Modes, References: gộp từ ba tác giả, mỗi dòng/mục ghi nguồn.
 - **Quy tắc ghép:** chỉ dịch văn xuôi; lệnh, code, số liệu, đường dẫn, mã mutant, tên test và prompt giữ nguyên văn. Nhãn Đã gặp (Observed) / Đề xuất (Suggested) giữ đúng như tác giả ghi. Ngôn ngữ: tiếng Việt theo quyết định của Tấn Hiệp, khác REQ-17 (English); cần nhóm và giảng viên biết.
 
-### Cần quyết định
-
-1. **Base repo khác nhau giữa các domain.** Cart & Orders dùng `eshop-sut-workshop` @ `6d2e790` (tự cài Stryker, mutate 3 dòng, 7 mutants). Coupons và Authentication dùng `eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness` @ `806ba19` (Stryker có sẵn trong lockfile, mutate cả domain). Bản ghép giữ cả hai và tách "Setup riêng", không tự chọn. Giữ hai repo, hay chuyển Cart sang `806ba19` (đã có số liệu E01-1: 150 mutants), hay ngược lại?
-2. **Tên của tỷ lệ Killed / valid.** Auth gọi là "Assertion kill", Coupons gọi là "Killed / valid" / "assertion-kill proportion"; công thức giống nhau. Có thống nhất một tên không?
-
-Đã tự dung hòa (không cần quyết định): phiên bản Node. Workshop yêu cầu `node >=24 <25`, `npm >=11 <13`; SUT `806ba19` không khai `engines`. Cả ba domain đã chạy trên Windows với Node 24.x (Cart và Coupons 24.15.0; Coupons và Auth 24.16.0), nên Installation chung ghi Node 24.x. Câu "Node.js 22 or later (tested with v26.12.1)" của phần Auth được giữ nguyên trong Setup riêng của Auth.
+- **Quyết định đã chốt (Hòa, leader):** giữ hai repo: Cart & Orders là bài mở đầu trên workshop `6d2e790`, còn Coupons và Authentication dùng baseline đóng băng `806ba19`. Dùng tên "Assertion kill" như định nghĩa ở Introduction. Hòa cho phép bản ghép sửa trực tiếp các mục trong danh sách dưới đây, chỉ dựa trên evidence có trong repo.
+- **Phiên bản Node (bản ghép tự dung hòa):** workshop yêu cầu `node >=24 <25`, `npm >=11 <13`; SUT `806ba19` không khai `engines`. Cả ba domain đã chạy trên Windows với Node 24.x (Cart và Coupons 24.15.0; Coupons và Auth 24.16.0), nên Installation chung ghi Node 24.x. Câu "Node.js 22 trở lên (đã thử với v26.12.1)" của phần Auth giữ nguyên trong Setup riêng của Auth.
 
 ### Việc tác giả cần sửa
 
-Lấy từ [`Guide_Reproduction_Tan_Hiep.md`](Guide_Reproduction_Tan_Hiep.md) (Coupons) và [`Guide_Reproduction_Thai_Hoa.md`](Guide_Reproduction_Thai_Hoa.md) (Auth). Bản ghép **không** tự sửa nội dung của tác giả khác.
+Nguồn: [`Guide_Reproduction_Tan_Hiep.md`](Guide_Reproduction_Tan_Hiep.md) (Coupons), [`Guide_Reproduction_Thai_Hoa.md`](Guide_Reproduction_Thai_Hoa.md) (Auth), `Verification_Notes_Tan_Hiep.md` (Cart). Các mục **Đã xử lý** được sửa trong lượt AI-S4-E01-02 (commit ghi ở cuối mục này); mục **Còn lại** chưa có evidence, cần tác giả.
 
 - **Thái Hòa (Coupons):**
-  - D01-01: clone seminar repo vào thư mục sâu trên Windows lỗi `Filename too long`; thêm dòng Troubleshooting.
-  - D01-02: thiếu lệnh và URL clone seminar repo trước bước overlay.
-  - D01-03: khối overlay hard-code `'../../T10_Mutation_Testing_and_Test_Effectiveness'`; chưa nói rõ cách đổi `$docsRoot` khi dùng lại clone có sẵn, và script không dừng khi `$overlayRoot` sai.
-  - D01-04: dry run báo "Ran 52 / 70 / 80 tests", gấp đôi số Jest (26 / 35 / 40), chưa giải thích.
-  - D01-05: cảnh báo `ChildProcessCrashedError ... exit code 3221225477` chưa có trong Troubleshooting.
-  - Bước Review or Request an AI Candidate: người chạy lại (Tấn Hiệp) ghi "Provenance, không hiểu làm gì"; cần nói rõ người đọc làm gì với PROVENANCE.
-  - Các dòng Troubleshooting chưa gắn nhãn Observed/Suggested.
+  - D01-01 `Filename too long`: **Đã xử lý**. Thêm dòng Troubleshooting (Đã gặp, D01-1-cc).
+  - D01-02 thiếu lệnh clone seminar repo: **Đã xử lý**. Thêm lệnh clone với URL repo chính thức. Lưu ý: lần clone duy nhất có evidence (D01-1-cc) lỗi `Filename too long` ở thư mục sâu; clone ở thư mục ngắn chưa được kiểm chứng.
+  - D01-03 `$docsRoot` khi dùng lại clone: **Đã xử lý**. Thêm hướng dẫn đổi dòng `$docsRoot` (cách D01-1-cc lần 2 và D01-1 đã chạy). Chưa thêm lệnh tự dừng khi `$overlayRoot` sai, vì chưa có evidence chạy lệnh đó.
+  - D01-04 dry run báo gấp đôi số tests: **Đã xử lý**. Thêm ghi chú; nguyên nhân chưa kiểm chứng.
+  - D01-05 `ChildProcessCrashedError ... 3221225477`: **Đã xử lý**. Thêm dòng Troubleshooting (Đã gặp).
+  - PROVENANCE: **Đã xử lý**. Thêm đoạn giải thích người đọc làm gì với PROVENANCE.
+  - Nhãn Observed/Suggested cho các dòng Troubleshooting cũ của Coupons: **Còn lại**. Chưa có evidence, cần Hòa; các dòng đó vẫn ghi "chưa gắn nhãn".
 - **Phúc Hoàng (Auth):**
-  - D02-01 (chặn): sau checkout `806ba19`, `npm run test:auth:manual` không tồn tại; guide nhắc nhánh `s3/F03-auth` nhưng không có bước checkout/overlay. Cần chỉ cách nạp sources/configs của manual và AI.
-  - D02-02: lệnh AI tạo `ai-run` rồi `cd` vào đó trước `cat prompt.txt`, nhưng chưa có bước đặt `prompt.txt` vào thư mục mới.
-  - D02-03: câu "reproduced on Windows ... by another team member" cần ghi đúng executor (run của agent Codex, không phải thành viên tự chạy).
-- **Tấn Hiệp (Cart):** chưa có reproduction của người khác (S4-D03 của Phúc ghi Not run). Các điểm tự kiểm ở `Verification_Notes_Tan_Hiep.md`: "Tested environment" ghi Node 24.16.0 / npm 12.0.2 nhưng F01c chạy trên 24.15.0 / 11.12.1; mục 4.2 chưa chạy.
+  - D02-01 thiếu bước nạp manual/AI: **Đã xử lý**. Thêm bước checkout commit `eea3ed4` (manual) và `b27fce2` (AI), là đúng hai commit mà Experiment Log của Phúc ghi cho run F03/G03. Chưa có người chạy lại các bước này theo guide.
+  - D02-02 `prompt.txt` chưa được đặt vào `ai-run`: **Đã xử lý một phần**. Thêm câu chỉ phải đặt `prompt.txt` vào `ai-run` và nguồn file; chưa chạy lại lệnh.
+  - D02-03 ghi sai executor của run Windows: **Đã xử lý**. Meta của run ghi `"executor": "OpenAI Codex AI Agent; not a member self-run"`.
+- **Tấn Hiệp (Cart):**
+  - "Tested environment": **Đã xử lý**. Đổi sang môi trường F01c.
+  - Mục "Thử với AI Agent" chưa chạy và chưa có reproduction của người khác: **Còn lại**. Chưa có evidence, cần Tấn Hiệp/Phúc.
+
+Commit của lượt sửa: (điền sau commit).
 
 ---
 
@@ -56,11 +56,13 @@ Guide có ba walkthrough, mỗi walkthrough một domain:
 
 | Domain | Repo / commit | Tác giả | Môi trường đã ghi |
 |---|---|---|---|
-| Cart & Orders | [`eshop-sut-workshop`](https://github.com/tkob-team/eshop-sut-workshop) @ `6d2e790` | Lê Tấn Hiệp | Windows x64, Node.js 24.16.0, npm 12.0.2 (theo guide); F01c chạy lại trên Windows 11, Node v24.15.0, npm 11.12.1 |
+| Cart & Orders | [`eshop-sut-workshop`](https://github.com/tkob-team/eshop-sut-workshop) @ `6d2e790` | Lê Tấn Hiệp | Windows 11, Node v24.15.0, npm 11.12.1 (run F01c-1-cc) |
 | Coupons | `eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness` @ `806ba19ee4e09eafe9b2696ccf117a2b1ab841ef` | Tống Dương Thái Hòa | Windows, Node.js 24.16.0, npm 12.0.2 |
 | Authentication & Users | `eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness` @ `806ba19ee4e09eafe9b2696ccf117a2b1ab841ef` | Nguyễn Phúc Hoàng | macOS (Darwin arm64), Node v26.12.1, npm 11.20.0 |
 
 ## Installation
+
+Guide dùng hai repo. **Cart & Orders** là bài mở đầu cho người mới, chạy trên repo workshop [`eshop-sut-workshop`](https://github.com/tkob-team/eshop-sut-workshop) @ `6d2e790`: bạn tự cài Stryker và chỉ mutate ba dòng, nên chỉ có 7 mutants. **Coupons** và **Authentication & Users** dùng baseline đóng băng `806ba19ee4e09eafe9b2696ccf117a2b1ab841ef` của repo `eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness`: Stryker đã có sẵn trong lockfile và mutate cả domain. Hãy làm Installation chung trước, rồi làm Setup riêng của domain bạn chọn.
 
 ### Installation chung
 
@@ -88,7 +90,7 @@ Bài thực hành dùng [eshop-sut-workshop](https://github.com/tkob-team/eshop-
 
 Quy trình: cài công cụ, chạy tests có sẵn, thêm Stryker, đọc một mutant còn sống, thêm assertion, rồi thử gợi ý từ một AI agent (Claude Code hoặc Codex).
 
-**Môi trường đã thử:** Windows x64, Node.js 24.16.0, npm 12.0.2, Jest 30.5.2, StrykerJS 10.0.0; workshop starter [6d2e790](https://github.com/tkob-team/eshop-sut-workshop/tree/6d2e790be54193d44f7e401c59dbdf8283a3f42d). Hướng dẫn cho macOS theo tài liệu chính thức, chưa chạy thử trên máy Mac.
+**Môi trường đã thử:** Windows 11, Node v24.15.0, npm 11.12.1, Jest 30.5.2, StrykerJS 10.0.0; workshop starter [6d2e790](https://github.com/tkob-team/eshop-sut-workshop/tree/6d2e790be54193d44f7e401c59dbdf8283a3f42d). Các mục từ "Clone và chạy tests có sẵn" đến "Củng cố ba kiểm tra hành vi" đã chạy lại trên môi trường này và khớp mọi số liệu (run [F01c-1-cc](../../experiments/s4/runs/F01c-1-cc/REPORT.md)). Dòng cũ "Windows x64, Node.js 24.16.0, npm 12.0.2" lấy từ bản nháp `draft/User_Guide.md` của Hòa. Hướng dẫn cho macOS theo tài liệu chính thức, chưa chạy thử trên máy Mac.
 
 #### Clone và chạy tests có sẵn
 
@@ -163,6 +165,16 @@ Dùng một checkout dùng một lần (disposable checkout). Research baseline 
 Các run Windows đã lưu dùng Node.js 24.16.0, npm 12.0.2, Jest 30.5.2, Supertest 7.3.1, SQLite 6.0.1 và Stryker core/Jest runner 10.0.0. Đây là các version đã ghi lại, không phải khẳng định về bản mới nhất. Hướng dẫn macOS chưa được tác giả contribution này tái lập.
 
 Trong PowerShell, bắt đầu ở một thư mục cha mới có chứa clone tài liệu seminar. Nếu đã có clone đó, dùng lại đường dẫn của nó ở bước overlay.
+
+Nếu chưa có clone seminar, clone nó vào thư mục cha này trước (repo seminar chính thức):
+
+```powershell
+git clone https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness.git
+```
+
+Repo seminar có đường dẫn file rất dài. Ở run D01-1-cc, lệnh clone này trong một thư mục tạm sâu trên Windows lỗi `Filename too long` và checkout thất bại; xem Troubleshooting. Clone trong thư mục cha ngắn chưa được kiểm chứng. Cách đã chạy được ở D01-1-cc (lần 2) và D01-1 là dùng lại một clone seminar có sẵn (xem bước overlay).
+
+Sau đó clone SUT:
 
 ```powershell
 git clone https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness.git eshop-coupons-s4
@@ -285,7 +297,7 @@ npm.cmd run coupons:dry
 npm.cmd run mutate:coupons
 ```
 
-Dry run kiểm tra instrumentation và việc tìm tests. Nó không chạy từng mutant và không cho mutation score cuối. Sau full run, mở `reports/coupons/mutation.html`; giữ lại file JSON bên cạnh và console output trước khi chạy lại.
+Dry run kiểm tra instrumentation và việc tìm tests. Nó không chạy từng mutant và không cho mutation score cuối. Lưu ý: dòng `Initial test run succeeded` của Stryker báo số tests gấp đôi số Jest đếm: "Ran 52 tests" so với 26 ở đây, và "Ran 70 / 80 tests" so với 35 / 40 ở hai profile mở rộng (run D01-1-cc). Nguyên nhân chưa kiểm chứng; khi ghi kết quả, dùng số của Jest. Sau full run, mở `reports/coupons/mutation.html`; giữ lại file JSON bên cạnh và console output trước khi chạy lại.
 
 Tham chiếu lịch sử trên source đã đóng băng:
 
@@ -334,7 +346,7 @@ Report được ghi vào `reports/auth/mutation.html` và `reports/auth/mutation
 |---:|---:|---:|---:|---:|---:|---:|---:|
 | 125 | 60 | 27 | 23 | 7 | 8 | 74.36% (= 87/117) | 51.28% (= 60/117) |
 
-Evidence: [`E03-baseline/`](../../experiments/s3/runs/Phuc_Hoang/E03-baseline/) (`console.log`, `mutation.html`, `mutation.json`, `run_meta.txt`, `repeat/`). Cùng 125 mutant và trạng thái cũng đã được một thành viên khác tái lập trên Windows (Node v24.16.0), 0 khác biệt, xem [`compare_vs_thai_hoa_frozen.txt`](../../experiments/s3/runs/Phuc_Hoang/E03-baseline/compare_vs_thai_hoa_frozen.txt).
+Evidence: [`E03-baseline/`](../../experiments/s3/runs/Phuc_Hoang/E03-baseline/) (`console.log`, `mutation.html`, `mutation.json`, `run_meta.txt`, `repeat/`). Cùng 125 mutant và trạng thái cũng đã được tái lập trên Windows (Node v24.16.0), 0 khác biệt, xem [`compare_vs_thai_hoa_frozen.txt`](../../experiments/s3/runs/Phuc_Hoang/E03-baseline/compare_vs_thai_hoa_frozen.txt). Run Windows đó do agent OpenAI Codex chạy trong thư mục của Thái Hòa, không phải thành viên tự chạy ([`frozen-auth-baseline.meta.json`](../../experiments/s3/runs/Thai_Hoa/D04-merge-2026-10-23-agent/frozen-auth-baseline.meta.json): `"executor": "OpenAI Codex AI Agent; not a member self-run"`).
 
 **Cách đọc HTML report.** Mở `mutation.html`, lọc theo trạng thái *Survived*. Mỗi dòng hiển thị dòng code bị đổi. Bắt đầu với mutant làm thay đổi hành vi mà user nhìn thấy. Ví dụ từ baseline này:
 
@@ -467,7 +479,9 @@ Nếu không tìm được test phân biệt một survivor với code gốc, h�
 
 #### Load the Retained Additional Tests
 
-Frozen checkout không có file extended manual/AI. Copy đúng overlay bảy file từ [source snapshot](../../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/sources/backend) của seminar repo. Ví dụ này giả định clone seminar nằm cạnh `eshop-coupons-s4`:
+Frozen checkout không có file extended manual/AI. Copy đúng overlay bảy file từ [source snapshot](../../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/sources/backend) của seminar repo. Ví dụ này giả định clone seminar nằm cạnh `eshop-coupons-s4`.
+
+**Nếu dùng lại một clone seminar ở chỗ khác**, thay dòng đầu của khối lệnh dưới đây bằng đường dẫn tuyệt đối tới clone đó, ví dụ `$docsRoot = 'D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness'`, và giữ nguyên các dòng còn lại. D01-1-cc (lần 2) và D01-1 đã chạy theo cách này và copy đủ 7 file. Nếu `$docsRoot` sai, `Get-ChildItem` báo `Cannot find path ...` nhưng khối lệnh vẫn chạy tiếp, và hai lệnh jest sau đó exit 1 (D01-1-cc lần 1). Thấy lỗi này thì dừng, sửa `$docsRoot` rồi chạy lại khối.
 
 ```powershell
 $docsRoot = (Resolve-Path '../../T10_Mutation_Testing_and_Test_Effectiveness').Path
@@ -492,11 +506,13 @@ Mong đợi 35 tests trên code gốc ở extended manual-analysis profile và 4
 | Extended manual-analysis | 41 | 21 | 28 | 25 | 5 | 53.91% | 35.65% |
 | Extended Agent | 41 | 21 | 28 | 25 | 5 | 53.91% | 35.65% |
 
-Đây là kết quả domain đã lưu. Cả hai profile phát hiện cùng hai limit mutant bổ sung. Các kịch bản thêm cải thiện độ phủ hành vi quan sát được nhưng không thêm mutant kill nào trong tập mutant này. Xem [extension evidence](../../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/README.md).
+Cột "Killed / valid" chính là Assertion kill định nghĩa ở Introduction. Đây là kết quả domain đã lưu; D01-1-cc và D01-1 chạy lại cho đúng các số này. Cả hai profile phát hiện cùng hai limit mutant bổ sung. Các kịch bản thêm cải thiện độ phủ hành vi quan sát được nhưng không thêm mutant kill nào trong tập mutant này. Xem [extension evidence](../../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/README.md).
 
 #### Review or Request an AI Candidate
 
 Để quay video với evidence đã lưu, mở [request gốc, lỗi và Codex provenance](../../experiments/s3/runs/Thai_Hoa/D04-merge-2026-10-23-agent/G02-Codex/PROVENANCE.md). Nói rõ bạn đang review một candidate đã lưu. Request Claude CLI trước đây lỗi xác thực; user đã chọn Codex trong cùng context. Đừng gọi output này là một lần sinh thành công của Claude hay một thử nghiệm người-với-AI độc lập.
+
+**PROVENANCE dùng để làm gì.** `PROVENANCE.md` cho biết candidate đã lưu (`G02-Codex/candidate.raw.js`, một test `test.each([2,4])` cho `max_uses_per_user`) do ai sinh ra, từ context nào, và bằng chứng rằng file đã chạy chính là file đó. Người đọc làm ba việc: (1) đọc PROVENANCE và `candidate.raw.js` để nói đúng nguồn gốc khi trình bày (Codex, không phải Claude); (2) so SHA-256 của `candidate.raw.js` (sau khi đổi CRLF thành LF) với `executed-sha256.json`, phải khớp `7B51BFBD…1E81` (Tấn Hiệp đã kiểm và khớp ở run D01-1); (3) review candidate theo các điểm ở đoạn "Review imports…" bên dưới. File `test/ai/coupons.ai.js` trong overlay chứa candidate này cùng các test AG bổ sung, nên AI profile có 40 tests.
 
 Với request mới, dùng một AI Agent đã xác thực và ghi lại tool/model thực tế. Cung cấp specification, test harness, baseline report và mutant diff. Prompt sau là prompt mới dùng lại được, không phải transcript lịch sử:
 
@@ -541,6 +557,14 @@ test('AM-01 a profile update without `role` leaves the stored role unchanged', a
 });
 ```
 
+Frozen checkout `806ba19` không có file, config và npm script của manual tests, nên `npm run test:auth:manual` báo `Missing script` (reproduction D02-01 của Hòa). Manual tests của Auth nằm ở commit `eea3ed4` trên nhánh `s3/F03-auth` của SUT; đây là commit mà run F03 đã dùng (Experiment Log của Phúc). Commit này thêm `test/auth.manual.test.js`, `jest.auth.manual.config.cjs`, `stryker.auth.manual.config.json` và hai npm script, không đổi `package-lock.json`, nên không cần `npm ci` lại. Từ thư mục `backend` của checkout ở Setup riêng:
+
+```sh
+git switch --detach eea3ed403c2365709c4c22f2d5518c08ee8752e3
+```
+
+Bước checkout này do bản ghép thêm, dựa trên commit ghi trong Experiment Log; chưa có ai chạy lại theo guide.
+
 Chạy test mới trên code **gốc** trước (phải pass), rồi chạy mutation trên bộ test mở rộng:
 
 ```sh
@@ -563,10 +587,16 @@ Kết quả: Killed 83, Timeout 27, Survived 4, NoCoverage 3, RuntimeError 8; St
      --disable-slash-commands --strict-mcp-config --no-session-persistence --setting-sources local
    ```
 
+   `prompt.txt` phải nằm trong `ai-run` trước khi gọi lệnh, vì `cat prompt.txt` chạy sau `cd ai-run`. Hãy đặt file prompt của bạn vào đó; prompt đã dùng ở S3 có tại [`G03-ai/prompt.txt`](../../experiments/s3/runs/Phuc_Hoang/G03-ai/prompt.txt). Câu này do bản ghép thêm theo reproduction D02-02; lệnh chưa được chạy lại.
+
    Lưu raw JSON và text không chỉnh sửa (`raw.json`, `raw_result.md`).
 3. **Review từng candidate theo spec** và gắn nhãn Accepted, Edited hoặc Rejected kèm lý do. Trong domain này Claude đề xuất 9 nhóm test: 7 accepted, 1 edited (đổi tên để ghi "interpretation, spec silent"), 1 rejected (xem Failure Modes). Claude cũng từ chối viết test cho 12 mutant vì spec không nói gì, và việc từ chối đó được chấp nhận.
 4. **Commit file raw trước, rồi file đã sửa** trên một nhánh tách từ baseline (`s3/G03-auth`: raw `0c57bf2`, edited `b27fce2`) để phần người sửa hiện thành diff ([`human-edits.diff`](../../experiments/s3/runs/Phuc_Hoang/G03-ai/human-edits.diff)).
-5. **Kiểm chứng bằng cách chạy**, không tin vào tóm tắt của Claude:
+5. **Kiểm chứng bằng cách chạy**, không tin vào tóm tắt của Claude. Để chạy lại đúng bộ AI đã review của S3, checkout commit `b27fce2` (edited) của nhánh `s3/G03-auth`; nhánh này tách từ baseline, không chứa manual tests, và không đổi `package-lock.json`. Không dùng đầu nhánh `s3/G03-auth` hiện tại: các commit merge sau `b27fce2` mang theo `backend/package.json` lỗi JSON (thiếu dấu phẩy sau `mutate:auth:ai`). Bước checkout này do bản ghép thêm; chưa có ai chạy lại theo guide.
+
+   ```sh
+   git switch --detach b27fce2f7d21e69f687faf47a2f0bb6403cd3f68
+   ```
 
    ```sh
    npm run test:auth:ai       # 37 tests pass on the original code
@@ -629,6 +659,8 @@ RuntimeError và CompileError nằm ngoài mẫu số này. Luôn đọc các c�
 | 4 mutant `if (!user)` → `false` là RuntimeError ở harness này và Timeout ở harness khác | Nguyên nhân: lỗi throw trong callback ngoài `try/catch` làm chết process; trạng thái thấy được phụ thuộc test harness. Chỉ so score giữa các run cùng harness và commit (provisional 73.45% với baseline 74.36% khác nhau chỉ vì điểm này; [`compare_vs_provisional.txt`](../../experiments/s3/runs/Phuc_Hoang/E03-baseline/compare_vs_provisional.txt)) | Đã gặp | Auth (Phúc Hoàng) |
 | HTML hiển thị giá trị cũ | Chờ lần chạy hoàn tất rồi mở lại đúng HTML/JSON của profile | Chưa gắn nhãn; giữ lại report trước lần chạy kế tiếp | Coupons (Thái Hòa) |
 | Xác thực AI thất bại | Ghi lại lỗi; dùng bản replay candidate đã lưu (có công bố) hoặc xác thực trước khi gửi request mới | Chưa gắn nhãn; không suy ra có lần sinh thành công từ một request đã thử | Coupons (Thái Hòa) |
+| `git clone` repo seminar báo `fatal: cannot create directory at '...': Filename too long` và `Clone succeeded, but checkout failed`; sau đó bước overlay báo `Cannot find path ...` | Dùng lại một clone seminar có sẵn và trỏ `$docsRoot` tới nó (xem Coupons, Load the Retained Additional Tests). Clone vào thư mục cha ngắn hơn, hoặc `git config --global core.longpaths true`, có thể tránh lỗi nhưng chưa được kiểm chứng | Đã gặp (D01-1-cc, Windows 11, thư mục tạm sâu). Cách dùng lại clone: đã chạy được ở D01-1-cc lần 2 và D01-1. Thư mục ngắn / `core.longpaths`: Đề xuất | Coupons (bản ghép, theo D01-1-cc) |
+| Stryker in nhiều cảnh báo `ChildProcessCrashedError: Child process [pid ...] exited unexpectedly with exit code 3221225477` | Run vẫn hoàn tất (exit 0) và số liệu khớp guide. Không cần sửa; đây không phải mutant kill. Đọc trạng thái mutant từ `mutation.json`, đừng đếm cảnh báo | Đã gặp (D01-1-cc: 60 dòng trong ba run Coupons; C01-rehearsal-cc: 42 dòng trong ba run Cart; cũng có trong các run S3 E01-1, F01-2, G01-2). Nguyên nhân chưa kiểm chứng | Coupons, Cart (bản ghép, theo D01-1-cc và C01-rehearsal-cc) |
 | `claude --bare` lỗi "Not logged in" | Nguyên nhân: `--bare` cần API key và bỏ qua subscription login. Dùng `claude -p` với `--setting-sources local` như bước 3 của Auth | Đã gặp | Auth (Phúc Hoàng) |
 | `npm ci` hiện `ERESOLVE overriding peer dependency`, `deprecated glob`, "21 moderate severity vulnerabilities" | Cảnh báo dependency của toolchain. Bỏ qua; run vẫn chạy được. Không sửa: không chạy `npm audit fix` | Đã gặp | Auth (Phúc Hoàng) |
 | Node được Homebrew nâng cấp giữa hai phiên (v26.12.0 → v26.12.1) | Do máy tự cập nhật. Không thấy kết quả thay đổi, nhưng ghi `node -v` ở mọi run | Đã gặp | Auth (Phúc Hoàng) |
