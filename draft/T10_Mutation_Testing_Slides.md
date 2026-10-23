@@ -19,7 +19,7 @@
 - 23120262 — Tống Dương Thái Hòa
 - 23120264 — Nguyễn Phúc Hoàng
 
-2026 AI-First · CS423/CSC15003
+2026 AI-First · CS423/CSC13003
 
 *Slide 1/15 · Cover*
 

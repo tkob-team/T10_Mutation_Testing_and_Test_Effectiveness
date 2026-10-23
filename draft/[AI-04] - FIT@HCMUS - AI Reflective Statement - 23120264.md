@@ -1,7 +1,7 @@
 <!-- AI-drafted update 2026-10-23 (Claude Code): E03-BASELINE entries and verdicts are proposals for member review; Date, Class/Cohort, Instructor and Signature are left for the member. -->
 **Khoa Công nghệ Thông tin (FIT) – Trường Đại học Khoa học Tự nhiên (HCMUS)**
 
-**CS423 / CSC15003 – Kiểm chứng Phần mềm (AI-augmented · 2026)**
+**CS423 / CSC13003 – Kiểm chứng Phần mềm (AI-augmented · 2026)**
 
 **CHÍNH SÁCH AI · BIỂU MẪU — 2026 v1.0**
 
