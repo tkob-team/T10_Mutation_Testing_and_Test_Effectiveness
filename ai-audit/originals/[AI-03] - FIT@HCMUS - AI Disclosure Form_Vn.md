@@ -1,6 +1,6 @@
 **Khoa Công nghệ Thông tin (FIT) – Trường Đại học Khoa học Tự nhiên (HCMUS)**
 
-**CS423 / CSC15003 – Kiểm chứng Phần mềm (AI-augmented · 2026)**
+**CS423 / CSC13003 – Kiểm chứng Phần mềm (AI-augmented · 2026)**
 
 **CHÍNH SÁCH AI · BIỂU MẪU — 2026 v1.0**
 
@@ -8,7 +8,7 @@
 
 *Đính kèm cho mọi bài tập có dùng AI ở bất kỳ mức nào.*
 
-*Tài liệu được biên soạn lại từ Med Kharbach, PhD (2026) — Mẫu Chính sách Sử dụng AI cho Giáo dục Đại học. Giấy phép CC BY-NC-SA 4.0. Phiên bản này được FIT@HCMUS điều chỉnh cho môn CS423 / CSC15003 Kiểm chứng Phần mềm.*
+*Tài liệu được biên soạn lại từ Med Kharbach, PhD (2026) — Mẫu Chính sách Sử dụng AI cho Giáo dục Đại học. Giấy phép CC BY-NC-SA 4.0. Phiên bản này được FIT@HCMUS điều chỉnh cho môn CS423 / CSC13003 Kiểm chứng Phần mềm.*
 
 ## 1. Thông tin Môn học & Sinh viên
 

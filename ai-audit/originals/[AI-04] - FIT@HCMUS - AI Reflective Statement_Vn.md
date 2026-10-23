@@ -1,6 +1,6 @@
 **Khoa Công nghệ Thông tin (FIT) – Trường Đại học Khoa học Tự nhiên (HCMUS)**
 
-**CS423 / CSC15003 – Kiểm chứng Phần mềm (AI-augmented · 2026)**
+**CS423 / CSC13003 – Kiểm chứng Phần mềm (AI-augmented · 2026)**
 
 **CHÍNH SÁCH AI · BIỂU MẪU — 2026 v1.0**
 

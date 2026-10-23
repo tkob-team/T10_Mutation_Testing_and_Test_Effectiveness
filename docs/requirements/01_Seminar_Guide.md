@@ -1,6 +1,6 @@
 **2026 AI-First Edition**
 
-**CS423 / CSC15003 — Software Testing**
+**CS423 / CSC13003 — Software Testing**
 
 **Seminar Track — Master Guide**
 

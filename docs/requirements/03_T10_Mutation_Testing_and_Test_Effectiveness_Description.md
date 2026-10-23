@@ -1,4 +1,4 @@
-*2026 AI-First \- CS423/CSC15003 Software Testing \- Seminar Track*
+*2026 AI-First \- CS423/CSC13003 Software Testing \- Seminar Track*
 
 **T10 \- Mutation Testing & Test Effectiveness**
 
