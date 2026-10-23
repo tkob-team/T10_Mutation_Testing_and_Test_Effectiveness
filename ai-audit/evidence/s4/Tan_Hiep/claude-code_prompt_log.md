@@ -1,8 +1,8 @@
 # AI Prompt Log — Claude Code
 
-Nguồn: 3058f82a-a124-4cce-853c-9bab797d6360.jsonl, 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 15:46 (Asia/Saigon).
+Nguồn: 3058f82a-a124-4cce-853c-9bab797d6360.jsonl, 4a560803-6139-4895-978a-8e9a46518c2e.jsonl, 56351756-b34b-4820-930f-b3ea0f568fed.jsonl, 85a13ef2-a921-4f8e-a7c6-1836f0e09dd0.jsonl, ad369217-4378-464e-a313-7cbcb8377eba.jsonl, d1bb546b-c515-45ad-8a09-6edba4cad43b.jsonl, ece200c2-13a4-4d31-92f9-faafb430c3fd.jsonl. Trích bằng `tools/extract_ai_log.py` lúc 2026-10-23 15:48 (Asia/Saigon).
 Lọc bỏ: `<system-reminder>`, nội dung nền tảng chèn (`isMeta`: skill được nạp, thông báo giao file), kết quả tool, lệnh shell, subagent. MSSV, email cá nhân và tên user trong đường dẫn Windows được thay bằng `[MSSV]`, `[email]`, `[user]`. Dòng trùng (phiên resume) và lệnh local (`/exit`…) bị bỏ.
-Tổng: 25 lượt prompt; theo model: claude-opus-5-5 25 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
+Tổng: 26 lượt prompt; theo model: claude-opus-5-5 26 lượt. Lượt có output từ hơn một model được đếm ở cả hai.
 
 ## #1 — 2026-10-23 02:41 — model: claude-opus-5-5 — session 4a560803
 
@@ -1079,6 +1079,23 @@ xong
 Số liệu khớp D01-1-cc, 0 mutant khác. Còn 3 file overlay nằm lạc ở `backend/` gốc, đang kiểm.
 
 Ghi kết quả vào `Guide_Reproduction_Tan_Hiep.md`.
+
+### Báo cáo cho phiên thảo luận
+- Nhiệm vụ: S4-D01, bản Tấn Hiệp tự chạy (D01-1) — Done, trừ khối 4.
+- Kết quả D01-1 **Pass**, đếm từ `mutation.json` của bạn:
+  - Baseline: 120 mutants, 39/21/30/25/5, 52.17%.
+  - Manual và AI: 41/21/28/25/5, 53.91%, cùng kill thêm 2 mutant 111 và 113 ở dòng 474.
+  - So với D01-1-cc: 0 mutant khác trạng thái ở cả 3 report.
+- Đã commit trên `main` seminar, chưa push: `0526f97` evidence (console.log, NOTES, 3 bộ report, `count_d01.md`), `a8f98be` mục "Tấn Hiệp tự chạy" trong `Guide_Reproduction_Tan_Hiep.md` (+23/−2, 2 dòng bị thay đều có chủ đích), `4bb90c4` AI log.
+- Bất thường ở lần chạy 1 (14:56–15:19): log cho thấy 2 lệnh bị cắt, giả thuyết là do dán.
+  - Khối overlay kết thúc ở `-Destination $des`, nên 3 file bị copy lạc vào `C:\w\D01-1\eshop-coupons-s4\backend\`.
+  - Lệnh Stryker manual bị cắt, exit 1.
+  - Lần chạy 2 (15:23–15:35) chạy lại khối 0–3 thì ổn. 3 file lạc không khớp `testMatch` nên không ảnh hưởng kết quả.
+- Lỗi do tôi soạn khối lệnh: `console.log` chỉ có header và exit code, không có output của Jest/Stryker/npm (output lệnh native không vào transcript khi chạy qua hàm `Step`). Số liệu lấy từ `mutation.json` và NOTES của bạn.
+- Khối 4: NOTES ghi "không làm", nhưng cuối log có lệnh kiểm hash candidate (khớp `7B51…`). Tôi ghi cả hai sự kiện, không tự kết luận là bạn đã review.
+- Ghi chú "Provenance, không hiểu làm gì" của bạn được ghi lại thành feedback cho Hòa.
+- Bạn cần làm: chạy `Stop-Transcript` trong cửa sổ PowerShell đó; transcript chưa đóng nên `console.log` sẽ đổi thêm vài dòng, cần commit lại sau.
+- Cần quyết định: D01-Q1 – khối 4 (review candidate G02) – (a) bạn làm rồi tôi cập nhật, (b) để Pending.
 ```
 
 ### Hành động
@@ -1086,4 +1103,31 @@ Ghi kết quả vào `Guide_Reproduction_Tan_Hiep.md`.
 - Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\Guide_Reproduction_Tan_Hiep.md
 - Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\Guide_Reproduction_Tan_Hiep.md
 - Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\materials\s4\Guide_Reproduction_Tan_Hiep.md
+
+## #26 — 2026-10-23 15:47 — model: claude-opus-5-5 — session 3058f82a
+
+### Prompt
+
+```text
+1) Mình đã chạy Stop-Transcript. Commit lại console.log nếu đổi, nói rõ hạn chế (không có output native của Jest/Stryker; số liệu từ mutation.json + NOTES) trong REPORT.md/Guide_Reproduction_Tan_Hiep.md. Khối 4: Pending.
+2) Thêm khối AI-S4-D01-01 vào ai-audit/AI_Record_Tan_Hiep.md (Claude Code Opus 5.5, D01-1-cc và chuẩn bị khối lệnh D01-1; lỗi AI: khối lệnh không ghi output native và khối overlay bị cắt thành -Destination $des; verdict "ĐỀ XUẤT: INCOMPLETE"; Student Fix "(điền sau review)"). Commit. Không push.
+```
+
+### Output
+
+```text
+- **Việc 1:** `console.log` không đổi sau khi bạn chạy `Stop-Transcript`: cuối file không có dòng "PowerShell transcript end", nên không có gì để commit lại.
+  - Đã ghi hạn chế vào REPORT: log không có output của Jest/Stryker/npm, số tests lấy từ NOTES, số mutation lấy từ `mutation.json`.
+  - Vì trong `Tan_Hiep/D01-1` chưa có REPORT nên tôi tạo mới `experiments/s4/runs/Tan_Hiep/D01-1/REPORT.md`.
+  - Trong `Guide_Reproduction_Tan_Hiep.md`, khối 4 đổi thành **Pending** và câu về transcript được cập nhật (+2/−2, không mất dòng nào khác).
+  - Commit `83d6e64`.
+- **Việc 2:** thêm khối AI-S4-D01-01 vào `AI_Record_Tan_Hiep.md` (+13 dòng, không xóa dòng nào), verdict "ĐỀ XUẤT: INCOMPLETE", Student Fix "(điền sau review)". Commit `5ae4675`. AI log commit `b7afd6b`. Cả ba commit đều chưa push.
+- **Bạn cần biết:** về lỗi `-Destination $des`, khối lệnh tôi in trong chat là đầy đủ (`-Destination $destination`); lệnh chỉ bị cắt khi chạy ở lần 1. Vì vậy khối AI Record ghi "nguyên nhân bị cắt chưa xác định", chưa quy hẳn đó là lỗi AI. Muốn ghi khác thì bạn sửa câu đó.
+- **Cần quyết định:** nếu muốn `console.log` có dòng kết thúc, mở PowerShell rồi chạy `Get-Transcript`/`Stop-Transcript` đúng trong cửa sổ đã bắt đầu transcript; nếu không thì giữ nguyên như hiện tại.
+```
+
+### Hành động
+
+- Write: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\experiments\s4\runs\Tan_Hiep\D01-1\REPORT.md
+- Edit: D:\HK7\Testing\Seminars\Repo\T10_Mutation_Testing_and_Test_Effectiveness\ai-audit\AI_Record_Tan_Hiep.md
 
