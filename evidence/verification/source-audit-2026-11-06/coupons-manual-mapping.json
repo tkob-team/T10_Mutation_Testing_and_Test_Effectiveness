@@ -1,0 +1,2248 @@
+[
+  {
+    "signature": "[\"server.js\",398,46,402,16,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 16,
+        "line": 402
+      },
+      "start": {
+        "column": 46,
+        "line": 398
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",400,19,400,61,\"ArithmeticOperator\",\"total_amount / (1 - coupon.discount_value)\"]",
+    "location": {
+      "end": {
+        "column": 61,
+        "line": 400
+      },
+      "start": {
+        "column": 19,
+        "line": 400
+      }
+    },
+    "mutatorName": "ArithmeticOperator",
+    "replacement": "total_amount / (1 - coupon.discount_value)",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",400,35,400,60,\"ArithmeticOperator\",\"1 + coupon.discount_value\"]",
+    "location": {
+      "end": {
+        "column": 60,
+        "line": 400
+      },
+      "start": {
+        "column": 35,
+        "line": 400
+      }
+    },
+    "mutatorName": "ArithmeticOperator",
+    "replacement": "1 + coupon.discount_value",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",412,106,412,109,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 109,
+        "line": 412
+      },
+      "start": {
+        "column": 106,
+        "line": 412
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",416,16,433,10,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 10,
+        "line": 433
+      },
+      "start": {
+        "column": 16,
+        "line": 416
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",418,15,418,40,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 40,
+        "line": 418
+      },
+      "start": {
+        "column": 15,
+        "line": 418
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",418,15,418,40,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 40,
+        "line": 418
+      },
+      "start": {
+        "column": 15,
+        "line": 418
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",418,15,418,40,\"EqualityOperator\",\"coupon.type !== \\\"percent\\\"\"]",
+    "location": {
+      "end": {
+        "column": 40,
+        "line": 418
+      },
+      "start": {
+        "column": 15,
+        "line": 418
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "coupon.type !== \"percent\"",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",418,31,418,40,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 40,
+        "line": 418
+      },
+      "start": {
+        "column": 31,
+        "line": 418
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",418,42,422,12,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 422
+      },
+      "start": {
+        "column": 42,
+        "line": 418
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",420,15,420,57,\"ArithmeticOperator\",\"total_amount / (1 - coupon.discount_value)\"]",
+    "location": {
+      "end": {
+        "column": 57,
+        "line": 420
+      },
+      "start": {
+        "column": 15,
+        "line": 420
+      }
+    },
+    "mutatorName": "ArithmeticOperator",
+    "replacement": "total_amount / (1 - coupon.discount_value)",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",420,31,420,56,\"ArithmeticOperator\",\"1 + coupon.discount_value\"]",
+    "location": {
+      "end": {
+        "column": 56,
+        "line": 420
+      },
+      "start": {
+        "column": 31,
+        "line": 420
+      }
+    },
+    "mutatorName": "ArithmeticOperator",
+    "replacement": "1 + coupon.discount_value",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",422,18,424,12,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 424
+      },
+      "start": {
+        "column": 18,
+        "line": 422
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",425,32,425,62,\"ArithmeticOperator\",\"total_amount + discount_amount\"]",
+    "location": {
+      "end": {
+        "column": 62,
+        "line": 425
+      },
+      "start": {
+        "column": 32,
+        "line": 425
+      }
+    },
+    "mutatorName": "ArithmeticOperator",
+    "replacement": "total_amount + discount_amount",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",426,27,432,12,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 432
+      },
+      "start": {
+        "column": 27,
+        "line": 426
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",427,22,427,26,\"BooleanLiteral\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 26,
+        "line": 427
+      },
+      "start": {
+        "column": 22,
+        "line": 427
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "false",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",431,22,431,155,\"StringLiteral\",\"``\"]",
+    "location": {
+      "end": {
+        "column": 155,
+        "line": 431
+      },
+      "start": {
+        "column": 22,
+        "line": 431
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "``",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",431,50,431,75,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 75,
+        "line": 431
+      },
+      "start": {
+        "column": 50,
+        "line": 431
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",431,50,431,75,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 75,
+        "line": 431
+      },
+      "start": {
+        "column": 50,
+        "line": 431
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",431,50,431,75,\"EqualityOperator\",\"coupon.type !== \\\"percent\\\"\"]",
+    "location": {
+      "end": {
+        "column": 75,
+        "line": 431
+      },
+      "start": {
+        "column": 50,
+        "line": 431
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "coupon.type !== \"percent\"",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",431,66,431,75,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 75,
+        "line": 431
+      },
+      "start": {
+        "column": 66,
+        "line": 431
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",431,102,431,105,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 105,
+        "line": 431
+      },
+      "start": {
+        "column": 102,
+        "line": 431
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",431,149,431,153,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 153,
+        "line": 431
+      },
+      "start": {
+        "column": 149,
+        "line": 431
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",450,44,450,66,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 66,
+        "line": 450
+      },
+      "start": {
+        "column": 44,
+        "line": 450
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",485,42,485,64,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 64,
+        "line": 485
+      },
+      "start": {
+        "column": 42,
+        "line": 485
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",356,58,360,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 360
+      },
+      "start": {
+        "column": 58,
+        "line": 356
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",357,10,357,33,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 33,
+        "line": 357
+      },
+      "start": {
+        "column": 10,
+        "line": 357
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-13 admin lists the current fixture; reset removed original coupons"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",357,35,357,37,\"ArrayDeclaration\",\"[\\\"Stryker was here\\\"]\"]",
+    "location": {
+      "end": {
+        "column": 37,
+        "line": 357
+      },
+      "start": {
+        "column": 35,
+        "line": 357
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[\"Stryker was here\"]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-13 admin lists the current fixture; reset removed original coupons"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",357,54,359,4,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 4,
+        "line": 359
+      },
+      "start": {
+        "column": 54,
+        "line": 357
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",358,5,358,20,\"CallExpression\",\";\"]",
+    "location": {
+      "end": {
+        "column": 20,
+        "line": 358
+      },
+      "start": {
+        "column": 5,
+        "line": 358
+      }
+    },
+    "mutatorName": "CallExpression",
+    "replacement": ";",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",363,45,441,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 441
+      },
+      "start": {
+        "column": 45,
+        "line": 363
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",366,7,366,12,\"BooleanLiteral\",\"code\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 366
+      },
+      "start": {
+        "column": 7,
+        "line": 366
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "code",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",366,7,366,12,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 366
+      },
+      "start": {
+        "column": 7,
+        "line": 366
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",366,7,366,12,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 366
+      },
+      "start": {
+        "column": 7,
+        "line": 366
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-03 missing/empty code is refused: undefined"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",367,33,367,71,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 71,
+        "line": 367
+      },
+      "start": {
+        "column": 33,
+        "line": 367
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",367,42,367,69,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 69,
+        "line": 367
+      },
+      "start": {
+        "column": 42,
+        "line": 367
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",370,5,370,61,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 61,
+        "line": 370
+      },
+      "start": {
+        "column": 5,
+        "line": 370
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",371,5,371,11,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 11,
+        "line": 371
+      },
+      "start": {
+        "column": 5,
+        "line": 371
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",372,22,439,6,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 439
+      },
+      "start": {
+        "column": 22,
+        "line": 372
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",373,11,373,18,\"BooleanLiteral\",\"coupon\"]",
+    "location": {
+      "end": {
+        "column": 18,
+        "line": 373
+      },
+      "start": {
+        "column": 11,
+        "line": 373
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "coupon",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",373,11,373,18,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 18,
+        "line": 373
+      },
+      "start": {
+        "column": 11,
+        "line": 373
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",373,11,373,18,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 18,
+        "line": 373
+      },
+      "start": {
+        "column": 11,
+        "line": 373
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",373,20,377,8,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 8,
+        "line": 377
+      },
+      "start": {
+        "column": 20,
+        "line": 373
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",376,17,376,78,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 78,
+        "line": 376
+      },
+      "start": {
+        "column": 17,
+        "line": 376
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",376,26,376,76,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 76,
+        "line": 376
+      },
+      "start": {
+        "column": 26,
+        "line": 376
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",379,11,379,49,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 49,
+        "line": 379
+      },
+      "start": {
+        "column": 11,
+        "line": 379
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-05 admin-created minimum 400000 controls total 399999 (FR-17, FR-09 C3)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",379,11,379,49,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 49,
+        "line": 379
+      },
+      "start": {
+        "column": 11,
+        "line": 379
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",379,11,379,49,\"EqualityOperator\",\"total_amount >= coupon.min_order_amount\"]",
+    "location": {
+      "end": {
+        "column": 49,
+        "line": 379
+      },
+      "start": {
+        "column": 11,
+        "line": 379
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "total_amount >= coupon.min_order_amount",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",379,11,379,49,\"EqualityOperator\",\"total_amount <= coupon.min_order_amount\"]",
+    "location": {
+      "end": {
+        "column": 49,
+        "line": 379
+      },
+      "start": {
+        "column": 11,
+        "line": 379
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "total_amount <= coupon.min_order_amount",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",379,51,434,8,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 8,
+        "line": 434
+      },
+      "start": {
+        "column": 51,
+        "line": 379
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",382,13,382,25,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 25,
+        "line": 382
+      },
+      "start": {
+        "column": 13,
+        "line": 382
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",382,13,382,25,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 25,
+        "line": 382
+      },
+      "start": {
+        "column": 13,
+        "line": 382
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-06 admin-created expiry controls quote at 2026-10-24T09:00:00.001Z (FR-17, FR-09 C2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",382,13,382,25,\"EqualityOperator\",\"expiry <= now\"]",
+    "location": {
+      "end": {
+        "column": 25,
+        "line": 382
+      },
+      "start": {
+        "column": 13,
+        "line": 382
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "expiry <= now",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",382,13,382,25,\"EqualityOperator\",\"expiry >= now\"]",
+    "location": {
+      "end": {
+        "column": 25,
+        "line": 382
+      },
+      "start": {
+        "column": 13,
+        "line": 382
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "expiry >= now",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",382,27,384,10,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 10,
+        "line": 384
+      },
+      "start": {
+        "column": 27,
+        "line": 382
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-06 admin-created expiry controls quote at 2026-10-24T09:00:00.001Z (FR-17, FR-09 C2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",383,39,383,74,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 74,
+        "line": 383
+      },
+      "start": {
+        "column": 39,
+        "line": 383
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",383,48,383,72,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 72,
+        "line": 383
+      },
+      "start": {
+        "column": 48,
+        "line": 383
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",386,13,386,20,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 20,
+        "line": 386
+      },
+      "start": {
+        "column": 13,
+        "line": 386
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",386,13,386,20,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 20,
+        "line": 386
+      },
+      "start": {
+        "column": 13,
+        "line": 386
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-FLOW fixed quote -> checkout -> explicit usage recording -> limit enforced"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",386,22,416,10,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 10,
+        "line": 416
+      },
+      "start": {
+        "column": 22,
+        "line": 386
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",388,13,388,99,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 99,
+        "line": 388
+      },
+      "start": {
+        "column": 13,
+        "line": 388
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",389,13,389,33,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 33,
+        "line": 389
+      },
+      "start": {
+        "column": 13,
+        "line": 389
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-03 usage 3 meets configured limit 3 and is refused (FR-09 C5)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",390,30,414,14,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 414
+      },
+      "start": {
+        "column": 30,
+        "line": 390
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",391,19,391,65,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 391
+      },
+      "start": {
+        "column": 19,
+        "line": 391
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",391,19,391,65,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 391
+      },
+      "start": {
+        "column": 19,
+        "line": 391
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-03 usage 3 meets configured limit 3 and is refused (FR-09 C5)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",391,19,391,65,\"EqualityOperator\",\"result.usage_count > coupon.max_uses_per_user\"]",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 391
+      },
+      "start": {
+        "column": 19,
+        "line": 391
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "result.usage_count > coupon.max_uses_per_user",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-03 usage 3 meets configured limit 3 and is refused (FR-09 C5)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",391,19,391,65,\"EqualityOperator\",\"result.usage_count < coupon.max_uses_per_user\"]",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 391
+      },
+      "start": {
+        "column": 19,
+        "line": 391
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "result.usage_count < coupon.max_uses_per_user",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",391,67,395,16,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 16,
+        "line": 395
+      },
+      "start": {
+        "column": 67,
+        "line": 391
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-03 usage 3 meets configured limit 3 and is refused (FR-09 C5)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",392,45,394,18,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 18,
+        "line": 394
+      },
+      "start": {
+        "column": 45,
+        "line": 392
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",393,26,393,99,\"StringLiteral\",\"``\"]",
+    "location": {
+      "end": {
+        "column": 99,
+        "line": 393
+      },
+      "start": {
+        "column": 26,
+        "line": 393
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "``",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",398,19,398,44,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 398
+      },
+      "start": {
+        "column": 19,
+        "line": 398
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",398,19,398,44,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 398
+      },
+      "start": {
+        "column": 19,
+        "line": 398
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",398,19,398,44,\"EqualityOperator\",\"coupon.type !== \\\"percent\\\"\"]",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 398
+      },
+      "start": {
+        "column": 19,
+        "line": 398
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "coupon.type !== \"percent\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",398,35,398,44,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 398
+      },
+      "start": {
+        "column": 35,
+        "line": 398
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",402,22,404,16,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 16,
+        "line": 404
+      },
+      "start": {
+        "column": 22,
+        "line": 402
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",406,36,406,66,\"ArithmeticOperator\",\"total_amount + discount_amount\"]",
+    "location": {
+      "end": {
+        "column": 66,
+        "line": 406
+      },
+      "start": {
+        "column": 36,
+        "line": 406
+      }
+    },
+    "mutatorName": "ArithmeticOperator",
+    "replacement": "total_amount + discount_amount",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",407,31,413,16,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 16,
+        "line": 413
+      },
+      "start": {
+        "column": 31,
+        "line": 407
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",408,26,408,30,\"BooleanLiteral\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 30,
+        "line": 408
+      },
+      "start": {
+        "column": 26,
+        "line": 408
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-04 the requested code selects its own coupon and discount (FR-09 C1)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",412,26,412,159,\"StringLiteral\",\"``\"]",
+    "location": {
+      "end": {
+        "column": 159,
+        "line": 412
+      },
+      "start": {
+        "column": 26,
+        "line": 412
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "``",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",412,54,412,79,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 79,
+        "line": 412
+      },
+      "start": {
+        "column": 54,
+        "line": 412
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",412,54,412,79,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 79,
+        "line": 412
+      },
+      "start": {
+        "column": 54,
+        "line": 412
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",412,54,412,79,\"EqualityOperator\",\"coupon.type !== \\\"percent\\\"\"]",
+    "location": {
+      "end": {
+        "column": 79,
+        "line": 412
+      },
+      "start": {
+        "column": 54,
+        "line": 412
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "coupon.type !== \"percent\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",412,70,412,79,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 79,
+        "line": 412
+      },
+      "start": {
+        "column": 70,
+        "line": 412
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",412,153,412,157,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 157,
+        "line": 412
+      },
+      "start": {
+        "column": 153,
+        "line": 412
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",434,14,438,8,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 8,
+        "line": 438
+      },
+      "start": {
+        "column": 14,
+        "line": 434
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",435,37,437,10,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 10,
+        "line": 437
+      },
+      "start": {
+        "column": 37,
+        "line": 435
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-02 one currency unit below minimum is refused (FR-09 C3)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",436,18,436,118,\"StringLiteral\",\"``\"]",
+    "location": {
+      "end": {
+        "column": 118,
+        "line": 436
+      },
+      "start": {
+        "column": 18,
+        "line": 436
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "``",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",444,64,454,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 454
+      },
+      "start": {
+        "column": 64,
+        "line": 444
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",447,5,447,66,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 66,
+        "line": 447
+      },
+      "start": {
+        "column": 5,
+        "line": 447
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",448,5,448,29,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 448
+      },
+      "start": {
+        "column": 5,
+        "line": 448
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-FLOW fixed quote -> checkout -> explicit usage recording -> limit enforced"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",449,20,452,6,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 452
+      },
+      "start": {
+        "column": 20,
+        "line": 449
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",450,11,450,14,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 450
+      },
+      "start": {
+        "column": 11,
+        "line": 450
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",450,11,450,14,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 450
+      },
+      "start": {
+        "column": 11,
+        "line": 450
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",451,16,451,45,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 45,
+        "line": 451
+      },
+      "start": {
+        "column": 16,
+        "line": 451
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",451,27,451,43,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 43,
+        "line": 451
+      },
+      "start": {
+        "column": 27,
+        "line": 451
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",457,65,481,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 481
+      },
+      "start": {
+        "column": 65,
+        "line": 457
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",467,5,467,130,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 130,
+        "line": 467
+      },
+      "start": {
+        "column": 5,
+        "line": 467
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",468,5,475,6,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 475
+      },
+      "start": {
+        "column": 5,
+        "line": 468
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-01 Admin input limit 3 is persisted as 3 (FR-17; mutants 111/113)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",474,7,474,29,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 474
+      },
+      "start": {
+        "column": 7,
+        "line": 474
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Survived",
+    "after": "Killed",
+    "killingTests": [
+      "MF-01 Admin input limit 3 is persisted as 3 (FR-17; mutants 111/113)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",474,7,474,29,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 474
+      },
+      "start": {
+        "column": 7,
+        "line": 474
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-01 Admin input limit 3 is persisted as 3 (FR-17; mutants 111/113)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",474,7,474,29,\"LogicalOperator\",\"max_uses_per_user && 1\"]",
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 474
+      },
+      "start": {
+        "column": 7,
+        "line": 474
+      }
+    },
+    "mutatorName": "LogicalOperator",
+    "replacement": "max_uses_per_user && 1",
+    "before": "Survived",
+    "after": "Killed",
+    "killingTests": [
+      "MF-01 Admin input limit 3 is persisted as 3 (FR-17; mutants 111/113)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",476,20,479,6,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 479
+      },
+      "start": {
+        "column": 20,
+        "line": 476
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",477,11,477,14,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 477
+      },
+      "start": {
+        "column": 11,
+        "line": 477
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",477,11,477,14,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 477
+      },
+      "start": {
+        "column": 11,
+        "line": 477
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-18 duplicate code cannot create a second coupon (FR-17)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",477,44,477,66,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 66,
+        "line": 477
+      },
+      "start": {
+        "column": 44,
+        "line": 477
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",478,16,478,62,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 62,
+        "line": 478
+      },
+      "start": {
+        "column": 16,
+        "line": 478
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-03 usage 3 meets configured limit 3 and is refused (FR-09 C5)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",478,27,478,43,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 43,
+        "line": 478
+      },
+      "start": {
+        "column": 27,
+        "line": 478
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",483,71,488,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 488
+      },
+      "start": {
+        "column": 71,
+        "line": 483
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-16 admin deletes only the addressed coupon (FR-17)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",484,10,484,44,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 484
+      },
+      "start": {
+        "column": 10,
+        "line": 484
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",484,46,484,61,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 61,
+        "line": 484
+      },
+      "start": {
+        "column": 46,
+        "line": 484
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-16 admin deletes only the addressed coupon (FR-17)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",484,78,487,4,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 4,
+        "line": 487
+      },
+      "start": {
+        "column": 78,
+        "line": 484
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-16 admin deletes only the addressed coupon (FR-17)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",485,9,485,12,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 485
+      },
+      "start": {
+        "column": 9,
+        "line": 485
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",485,9,485,12,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 485
+      },
+      "start": {
+        "column": 9,
+        "line": 485
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",486,14,486,43,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 43,
+        "line": 486
+      },
+      "start": {
+        "column": 14,
+        "line": 486
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",486,25,486,41,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 41,
+        "line": 486
+      },
+      "start": {
+        "column": 25,
+        "line": 486
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",356,9,356,23,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 23,
+        "line": 356
+      },
+      "start": {
+        "column": 9,
+        "line": 356
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-01 Admin input limit 3 is persisted as 3 (FR-17; mutants 111/113)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",363,10,363,29,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 363
+      },
+      "start": {
+        "column": 10,
+        "line": 363
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",444,10,444,29,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 444
+      },
+      "start": {
+        "column": 10,
+        "line": 444
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-11 quoting repeatedly does not consume allowance; recording usage does"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",457,10,457,30,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 30,
+        "line": 457
+      },
+      "start": {
+        "column": 10,
+        "line": 457
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-15 admin creates minimum=0 and max_uses=1; resulting coupon is usable"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",483,12,483,36,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 36,
+        "line": 483
+      },
+      "start": {
+        "column": 12,
+        "line": 483
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-16 admin deletes only the addressed coupon (FR-17)"
+    ]
+  }
+]

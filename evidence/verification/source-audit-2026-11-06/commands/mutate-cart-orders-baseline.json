@@ -1,0 +1,15 @@
+{
+  "name": "mutate-cart-orders-baseline",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\@stryker-mutator\\core\\bin\\stryker.js",
+    "run",
+    "stryker.cart-orders.config.json"
+  ],
+  "cwd": "D:\\Temp\\t10-source-audit-2026-11-06\\backend",
+  "startedUtc": "2026-11-06T08:57:54.093Z",
+  "finishedUtc": "2026-11-06T09:01:36.974Z",
+  "elapsedMs": 222881,
+  "exitCode": 0,
+  "signal": null
+}

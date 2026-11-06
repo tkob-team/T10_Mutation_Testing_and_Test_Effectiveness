@@ -1,0 +1,2418 @@
+[
+  {
+    "signature": "[\"server.js\",26,44,26,66,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 66,
+        "line": 26
+      },
+      "start": {
+        "column": 44,
+        "line": 26
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "Killed",
+    "killingTests": [
+      "A database failure is not reported as success (spec silent; convention: HTTP 500 with an error) AM-10 POST /register: a failed insert returns 500 with an error and no success message"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",36,42,36,64,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 64,
+        "line": 36
+      },
+      "start": {
+        "column": 42,
+        "line": 36
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "Killed",
+    "killingTests": [
+      "A database failure is not reported as success (spec silent; convention: HTTP 500 with an error) AM-11 POST /login: a failed lookup returns 500 with an error and no token"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",77,46,77,68,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 68,
+        "line": 77
+      },
+      "start": {
+        "column": 46,
+        "line": 77
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "Killed",
+    "killingTests": [
+      "A database failure is not reported as success (spec silent; convention: HTTP 500 with an error) AM-12 POST /forgot-password: a failed token save returns 500 with an error and no token"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",124,13,127,4,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 4,
+        "line": 127
+      },
+      "start": {
+        "column": 13,
+        "line": 124
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",125,14,125,26,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 26,
+        "line": 125
+      },
+      "start": {
+        "column": 14,
+        "line": 125
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",126,5,126,23,\"CallExpression\",\";\"]",
+    "location": {
+      "end": {
+        "column": 23,
+        "line": 126
+      },
+      "start": {
+        "column": 5,
+        "line": 126
+      }
+    },
+    "mutatorName": "CallExpression",
+    "replacement": ";",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",132,42,132,64,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 64,
+        "line": 132
+      },
+      "start": {
+        "column": 42,
+        "line": 132
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "Killed",
+    "killingTests": [
+      "A database failure is not reported as success (spec silent; convention: HTTP 500 with an error) AM-13 PUT /users/me: a failed update returns 500 with an error and no success message"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",20,41,30,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 30
+      },
+      "start": {
+        "column": 41,
+        "line": 20
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",23,5,23,65,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 23
+      },
+      "start": {
+        "column": 5,
+        "line": 23
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",24,5,24,28,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 28,
+        "line": 24
+      },
+      "start": {
+        "column": 5,
+        "line": 24
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Registration (API 1.1) AU-R02 a registered user can log in with the same credentials (API 1.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",25,20,28,6,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 28
+      },
+      "start": {
+        "column": 20,
+        "line": 25
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",26,11,26,14,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 26
+      },
+      "start": {
+        "column": 11,
+        "line": 26
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "RuntimeError",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",26,11,26,14,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 26
+      },
+      "start": {
+        "column": 11,
+        "line": 26
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Survived",
+    "after": "Killed",
+    "killingTests": [
+      "A database failure is not reported as success (spec silent; convention: HTTP 500 with an error) AM-10 POST /register: a failed insert returns 500 with an error and no success message"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",27,16,27,76,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 76,
+        "line": 27
+      },
+      "start": {
+        "column": 16,
+        "line": 27
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Registration (API 1.1) AU-R01 valid registration returns 200, the success message and a numeric id"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",27,27,27,57,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 57,
+        "line": 27
+      },
+      "start": {
+        "column": 27,
+        "line": 27
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Registration (API 1.1) AU-R01 valid registration returns 200, the success message and a numeric id"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",32,38,66,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 66
+      },
+      "start": {
+        "column": 38,
+        "line": 32
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",35,10,35,47,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 47,
+        "line": 35
+      },
+      "start": {
+        "column": 10,
+        "line": 35
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",35,49,35,56,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 56,
+        "line": 35
+      },
+      "start": {
+        "column": 49,
+        "line": 35
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile keeps the role (API 2.2, README FR-04, SEC-06) AM-01 a profile update without `role` leaves the stored role unchanged"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",35,73,65,4,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 4,
+        "line": 65
+      },
+      "start": {
+        "column": 73,
+        "line": 35
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",36,9,36,12,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 36
+      },
+      "start": {
+        "column": 9,
+        "line": 36
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",36,9,36,12,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 36
+      },
+      "start": {
+        "column": 9,
+        "line": 36
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Survived",
+    "after": "Killed",
+    "killingTests": [
+      "A database failure is not reported as success (spec silent; convention: HTTP 500 with an error) AM-11 POST /login: a failed lookup returns 500 with an error and no token"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",37,9,37,14,\"BooleanLiteral\",\"user\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 37
+      },
+      "start": {
+        "column": 9,
+        "line": 37
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "user",
+    "before": "RuntimeError",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",37,9,37,14,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 37
+      },
+      "start": {
+        "column": 9,
+        "line": 37
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile keeps the role (API 2.2, README FR-04, SEC-06) AM-01 a profile update without `role` leaves the stored role unchanged"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",37,9,37,14,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 37
+      },
+      "start": {
+        "column": 9,
+        "line": 37
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "RuntimeError",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",38,35,38,73,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 73,
+        "line": 38
+      },
+      "start": {
+        "column": 35,
+        "line": 38
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L04 unknown email gets the same status and body as a wrong password (FR-02: no cause leaked)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",38,44,38,71,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 71,
+        "line": 38
+      },
+      "start": {
+        "column": 44,
+        "line": 38
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L04 unknown email gets the same status and body as a wrong password (FR-02: no cause leaked)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",40,9,40,70,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 70,
+        "line": 40
+      },
+      "start": {
+        "column": 9,
+        "line": 40
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile keeps the role (API 2.2, README FR-04, SEC-06) AM-01 a profile update without `role` leaves the stored role unchanged"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",40,9,40,70,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 70,
+        "line": 40
+      },
+      "start": {
+        "column": 9,
+        "line": 40
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",40,9,40,70,\"LogicalOperator\",\"user.locked_until || new Date() < new Date(user.locked_until)\"]",
+    "location": {
+      "end": {
+        "column": 70,
+        "line": 40
+      },
+      "start": {
+        "column": 9,
+        "line": 40
+      }
+    },
+    "mutatorName": "LogicalOperator",
+    "replacement": "user.locked_until || new Date() < new Date(user.locked_until)",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L07 a lock whose time has passed no longer blocks login"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",40,30,40,70,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 70,
+        "line": 40
+      },
+      "start": {
+        "column": 30,
+        "line": 40
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L07 a lock whose time has passed no longer blocks login"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",40,30,40,70,\"EqualityOperator\",\"new Date() <= new Date(user.locked_until)\"]",
+    "location": {
+      "end": {
+        "column": 70,
+        "line": 40
+      },
+      "start": {
+        "column": 30,
+        "line": 40
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "new Date() <= new Date(user.locked_until)",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",40,30,40,70,\"EqualityOperator\",\"new Date() >= new Date(user.locked_until)\"]",
+    "location": {
+      "end": {
+        "column": 70,
+        "line": 40
+      },
+      "start": {
+        "column": 30,
+        "line": 40
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "new Date() >= new Date(user.locked_until)",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",40,72,44,6,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 44
+      },
+      "start": {
+        "column": 72,
+        "line": 40
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",43,15,43,71,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 71,
+        "line": 43
+      },
+      "start": {
+        "column": 15,
+        "line": 43
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Killed",
+    "killingTests": [
+      "Error responses carry a message (README FR-02 \"thông báo lỗi phù hợp\"; others: convention) AM-04 the locked-account response has a non-empty error message (FR-02)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",43,24,43,69,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 69,
+        "line": 43
+      },
+      "start": {
+        "column": 24,
+        "line": 43
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Killed",
+    "killingTests": [
+      "Error responses carry a message (README FR-02 \"thông báo lỗi phù hợp\"; others: convention) AM-04 the locked-account response has a non-empty error message (FR-02)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",46,9,46,35,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 35,
+        "line": 46
+      },
+      "start": {
+        "column": 9,
+        "line": 46
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Error responses carry a message (README FR-02 \"thông báo lỗi phù hợp\"; others: convention) AM-04 the locked-account response has a non-empty error message (FR-02)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",46,9,46,35,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 35,
+        "line": 46
+      },
+      "start": {
+        "column": 9,
+        "line": 46
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Registration (API 1.1) AU-R02 a registered user can log in with the same credentials (API 1.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",46,9,46,35,\"EqualityOperator\",\"user.password !== password\"]",
+    "location": {
+      "end": {
+        "column": 35,
+        "line": 46
+      },
+      "start": {
+        "column": 9,
+        "line": 46
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "user.password !== password",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Registration (API 1.1) AU-R02 a registered user can log in with the same credentials (API 1.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",46,37,53,6,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 53
+      },
+      "start": {
+        "column": 37,
+        "line": 46
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",48,9,48,80,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 80,
+        "line": 48
+      },
+      "start": {
+        "column": 9,
+        "line": 48
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",49,9,49,18,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 18,
+        "line": 49
+      },
+      "start": {
+        "column": 9,
+        "line": 49
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L08 a successful login resets the failure counter: wrong, ok, wrong, ok never locks (FR-02 \"consecutive\")"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",51,30,51,62,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 62,
+        "line": 51
+      },
+      "start": {
+        "column": 30,
+        "line": 51
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L02 the JWT carries the user id and role (FR-02, SEC-03)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",52,16,52,60,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 60,
+        "line": 52
+      },
+      "start": {
+        "column": 16,
+        "line": 52
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Registration (API 1.1) AU-R02 a registered user can log in with the same credentials (API 1.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",52,27,52,45,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 45,
+        "line": 52
+      },
+      "start": {
+        "column": 27,
+        "line": 52
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",53,12,64,6,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 64
+      },
+      "start": {
+        "column": 12,
+        "line": 53
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",54,27,54,50,\"ArithmeticOperator\",\"user.login_attempts - 2\"]",
+    "location": {
+      "end": {
+        "column": 50,
+        "line": 54
+      },
+      "start": {
+        "column": 27,
+        "line": 54
+      }
+    },
+    "mutatorName": "ArithmeticOperator",
+    "replacement": "user.login_attempts - 2",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",56,11,56,27,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 27,
+        "line": 56
+      },
+      "start": {
+        "column": 11,
+        "line": 56
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L08 a successful login resets the failure counter: wrong, ok, wrong, ok never locks (FR-02 \"consecutive\")"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",56,11,56,27,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 27,
+        "line": 56
+      },
+      "start": {
+        "column": 11,
+        "line": 56
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",56,11,56,27,\"EqualityOperator\",\"newAttempts > 3\"]",
+    "location": {
+      "end": {
+        "column": 27,
+        "line": 56
+      },
+      "start": {
+        "column": 11,
+        "line": 56
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "newAttempts > 3",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",56,11,56,27,\"EqualityOperator\",\"newAttempts < 3\"]",
+    "location": {
+      "end": {
+        "column": 27,
+        "line": 56
+      },
+      "start": {
+        "column": 11,
+        "line": 56
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "newAttempts < 3",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L08 a successful login resets the failure counter: wrong, ok, wrong, ok never locks (FR-02 \"consecutive\")"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",56,29,58,8,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 8,
+        "line": 58
+      },
+      "start": {
+        "column": 29,
+        "line": 56
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",57,32,57,51,\"ArithmeticOperator\",\"Date.now() - 180000\"]",
+    "location": {
+      "end": {
+        "column": 51,
+        "line": 57
+      },
+      "start": {
+        "column": 32,
+        "line": 57
+      }
+    },
+    "mutatorName": "ArithmeticOperator",
+    "replacement": "Date.now() - 180000",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",60,9,60,77,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 77,
+        "line": 60
+      },
+      "start": {
+        "column": 9,
+        "line": 60
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",61,9,61,44,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 61
+      },
+      "start": {
+        "column": 9,
+        "line": 61
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",63,28,63,66,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 66,
+        "line": 63
+      },
+      "start": {
+        "column": 28,
+        "line": 63
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L04 unknown email gets the same status and body as a wrong password (FR-02: no cause leaked)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",63,37,63,64,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 64,
+        "line": 63
+      },
+      "start": {
+        "column": 37,
+        "line": 63
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L04 unknown email gets the same status and body as a wrong password (FR-02: no cause leaked)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",68,48,85,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 85
+      },
+      "start": {
+        "column": 48,
+        "line": 68
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",70,10,70,47,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 47,
+        "line": 70
+      },
+      "start": {
+        "column": 10,
+        "line": 70
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",70,49,70,56,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 56,
+        "line": 70
+      },
+      "start": {
+        "column": 49,
+        "line": 70
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P01 forgot-password for a registered email returns 200, the message and a reset token (API 1.3)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",70,73,84,4,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 4,
+        "line": 84
+      },
+      "start": {
+        "column": 73,
+        "line": 70
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",71,9,71,14,\"BooleanLiteral\",\"user\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 71
+      },
+      "start": {
+        "column": 9,
+        "line": 71
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "user",
+    "before": "RuntimeError",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",71,9,71,14,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 71
+      },
+      "start": {
+        "column": 9,
+        "line": 71
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P01 forgot-password for a registered email returns 200, the message and a reset token (API 1.3)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",71,9,71,14,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 71
+      },
+      "start": {
+        "column": 9,
+        "line": 71
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "RuntimeError",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",71,44,71,71,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 71,
+        "line": 71
+      },
+      "start": {
+        "column": 44,
+        "line": 71
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Killed",
+    "killingTests": [
+      "Error responses carry a message (README FR-02 \"thông báo lỗi phù hợp\"; others: convention) AM-05 forgot-password for an unknown email has status 404 and a non-empty error (convention)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",71,53,71,69,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 69,
+        "line": 71
+      },
+      "start": {
+        "column": 53,
+        "line": 71
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Killed",
+    "killingTests": [
+      "Error responses carry a message (README FR-02 \"thông báo lỗi phù hợp\"; others: convention) AM-05 forgot-password for an unknown email has status 404 and a non-empty error (convention)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",72,35,72,62,\"ArithmeticOperator\",\"1000 - Math.random() * 9000\"]",
+    "location": {
+      "end": {
+        "column": 62,
+        "line": 72
+      },
+      "start": {
+        "column": 35,
+        "line": 72
+      }
+    },
+    "mutatorName": "ArithmeticOperator",
+    "replacement": "1000 - Math.random() * 9000",
+    "before": "Survived",
+    "after": "Killed",
+    "killingTests": [
+      "Reset code is a random number (README FR-03 \"ngẫu nhiên\", SEC-07) AM-02 the reset code is made of digits only, with no sign (random source fixed at 0.5)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",72,42,72,62,\"ArithmeticOperator\",\"Math.random() / 9000\"]",
+    "location": {
+      "end": {
+        "column": 62,
+        "line": 72
+      },
+      "start": {
+        "column": 42,
+        "line": 72
+      }
+    },
+    "mutatorName": "ArithmeticOperator",
+    "replacement": "Math.random() / 9000",
+    "before": "Survived",
+    "after": "Killed",
+    "killingTests": [
+      "Reset code is a random number (README FR-03 \"ngẫu nhiên\", SEC-07) AM-03 the reset code depends on the random source: 0.1 and 0.9 give different codes"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",74,7,74,54,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 54,
+        "line": 74
+      },
+      "start": {
+        "column": 7,
+        "line": 74
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",75,7,75,28,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 28,
+        "line": 75
+      },
+      "start": {
+        "column": 7,
+        "line": 75
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Error responses carry a message (README FR-02 \"thông báo lỗi phù hợp\"; others: convention) AM-07 a successful reset returns a non-empty message like the other auth endpoints (convention)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",76,16,82,8,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 8,
+        "line": 82
+      },
+      "start": {
+        "column": 16,
+        "line": 76
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",77,13,77,16,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 16,
+        "line": 77
+      },
+      "start": {
+        "column": 13,
+        "line": 77
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",77,13,77,16,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 16,
+        "line": 77
+      },
+      "start": {
+        "column": 13,
+        "line": 77
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Survived",
+    "after": "Killed",
+    "killingTests": [
+      "A database failure is not reported as success (spec silent; convention: HTTP 500 with an error) AM-12 POST /forgot-password: a failed token save returns 500 with an error and no token"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",78,18,81,10,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 10,
+        "line": 81
+      },
+      "start": {
+        "column": 18,
+        "line": 78
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Reset code is a random number (README FR-03 \"ngẫu nhiên\", SEC-07) AM-02 the reset code is made of digits only, with no sign (random source fixed at 0.5)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",79,20,79,53,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 53,
+        "line": 79
+      },
+      "start": {
+        "column": 20,
+        "line": 79
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P01 forgot-password for a registered email returns 200, the message and a reset token (API 1.3)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",87,47,98,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 98
+      },
+      "start": {
+        "column": 47,
+        "line": 87
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",90,5,90,92,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 92,
+        "line": 90
+      },
+      "start": {
+        "column": 5,
+        "line": 90
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",91,5,91,37,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 37,
+        "line": 91
+      },
+      "start": {
+        "column": 5,
+        "line": 91
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",92,20,96,6,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 96
+      },
+      "start": {
+        "column": 20,
+        "line": 92
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",93,11,93,29,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 93
+      },
+      "start": {
+        "column": 11,
+        "line": 93
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",93,11,93,29,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 93
+      },
+      "start": {
+        "column": 11,
+        "line": 93
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P04 reset with a wrong token is refused with 400 (convention) and the password is unchanged"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",93,11,93,29,\"EqualityOperator\",\"this.changes !== 0\"]",
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 93
+      },
+      "start": {
+        "column": 11,
+        "line": 93
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "this.changes !== 0",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",94,37,94,72,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 72,
+        "line": 94
+      },
+      "start": {
+        "column": 37,
+        "line": 94
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Killed",
+    "killingTests": [
+      "Error responses carry a message (README FR-02 \"thông báo lỗi phù hợp\"; others: convention) AM-06 reset with a wrong token has status 400 and a non-empty error (convention)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",94,46,94,70,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 70,
+        "line": 94
+      },
+      "start": {
+        "column": 46,
+        "line": 94
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Killed",
+    "killingTests": [
+      "Error responses carry a message (README FR-02 \"thông báo lỗi phù hợp\"; others: convention) AM-06 reset with a wrong token has status 400 and a non-empty error (convention)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",95,16,95,58,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 58,
+        "line": 95
+      },
+      "start": {
+        "column": 16,
+        "line": 95
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Killed",
+    "killingTests": [
+      "Error responses carry a message (README FR-02 \"thông báo lỗi phù hợp\"; others: convention) AM-07 a successful reset returns a non-empty message like the other auth endpoints (convention)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",95,27,95,56,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 56,
+        "line": 95
+      },
+      "start": {
+        "column": 27,
+        "line": 95
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Killed",
+    "killingTests": [
+      "Error responses carry a message (README FR-02 \"thông báo lỗi phù hợp\"; others: convention) AM-07 a successful reset returns a non-empty message like the other auth endpoints (convention)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",100,47,110,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 110
+      },
+      "start": {
+        "column": 47,
+        "line": 100
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",101,34,101,49,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 49,
+        "line": 101
+      },
+      "start": {
+        "column": 34,
+        "line": 101
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile keeps the role (API 2.2, README FR-04, SEC-06) AM-01 a profile update without `role` leaves the stored role unchanged"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",102,17,102,55,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 55,
+        "line": 102
+      },
+      "start": {
+        "column": 17,
+        "line": 102
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile keeps the role (API 2.2, README FR-04, SEC-06) AM-01 a profile update without `role` leaves the stored role unchanged"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",102,17,102,55,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 55,
+        "line": 102
+      },
+      "start": {
+        "column": 17,
+        "line": 102
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile keeps the role (API 2.2, README FR-04, SEC-06) AM-01 a profile update without `role` leaves the stored role unchanged"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",102,17,102,55,\"LogicalOperator\",\"authHeader || authHeader.split(\\\" \\\")[1]\"]",
+    "location": {
+      "end": {
+        "column": 55,
+        "line": 102
+      },
+      "start": {
+        "column": 17,
+        "line": 102
+      }
+    },
+    "mutatorName": "LogicalOperator",
+    "replacement": "authHeader || authHeader.split(\" \")[1]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile keeps the role (API 2.2, README FR-04, SEC-06) AM-01 a profile update without `role` leaves the stored role unchanged"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",102,48,102,51,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 51,
+        "line": 102
+      },
+      "start": {
+        "column": 48,
+        "line": 102
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile keeps the role (API 2.2, README FR-04, SEC-06) AM-01 a profile update without `role` leaves the stored role unchanged"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",103,7,103,20,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 20,
+        "line": 103
+      },
+      "start": {
+        "column": 7,
+        "line": 103
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile keeps the role (API 2.2, README FR-04, SEC-06) AM-01 a profile update without `role` leaves the stored role unchanged"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",103,7,103,20,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 20,
+        "line": 103
+      },
+      "start": {
+        "column": 7,
+        "line": 103
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Error responses carry a message (README FR-02 \"thông báo lỗi phù hợp\"; others: convention) AM-08 GET /me without a token has status 401 and a non-empty error (SEC-02, convention)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",103,7,103,20,\"EqualityOperator\",\"token != null\"]",
+    "location": {
+      "end": {
+        "column": 20,
+        "line": 103
+      },
+      "start": {
+        "column": 7,
+        "line": 103
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "token != null",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile keeps the role (API 2.2, README FR-04, SEC-06) AM-01 a profile update without `role` leaves the stored role unchanged"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",103,50,103,75,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 75,
+        "line": 103
+      },
+      "start": {
+        "column": 50,
+        "line": 103
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Killed",
+    "killingTests": [
+      "Error responses carry a message (README FR-02 \"thông báo lỗi phù hợp\"; others: convention) AM-08 GET /me without a token has status 401 and a non-empty error (SEC-02, convention)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",103,59,103,73,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 73,
+        "line": 103
+      },
+      "start": {
+        "column": 59,
+        "line": 103
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Killed",
+    "killingTests": [
+      "Error responses carry a message (README FR-02 \"thông báo lỗi phù hợp\"; others: convention) AM-08 GET /me without a token has status 401 and a non-empty error (SEC-02, convention)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",105,48,109,4,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 4,
+        "line": 109
+      },
+      "start": {
+        "column": 48,
+        "line": 105
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",106,9,106,12,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 106
+      },
+      "start": {
+        "column": 9,
+        "line": 106
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile keeps the role (API 2.2, README FR-04, SEC-06) AM-01 a profile update without `role` leaves the stored role unchanged"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",106,9,106,12,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 106
+      },
+      "start": {
+        "column": 9,
+        "line": 106
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Error responses carry a message (README FR-02 \"thông báo lỗi phù hợp\"; others: convention) AM-09 GET /me with an invalid token has a non-empty error (SEC-02, convention)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",106,42,106,64,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 64,
+        "line": 106
+      },
+      "start": {
+        "column": 42,
+        "line": 106
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Killed",
+    "killingTests": [
+      "Error responses carry a message (README FR-02 \"thông báo lỗi phù hợp\"; others: convention) AM-09 GET /me with an invalid token has a non-empty error (SEC-02, convention)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",106,51,106,62,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 62,
+        "line": 106
+      },
+      "start": {
+        "column": 51,
+        "line": 106
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Killed",
+    "killingTests": [
+      "Error responses carry a message (README FR-02 \"thông báo lỗi phù hợp\"; others: convention) AM-09 GET /me with an invalid token has a non-empty error (SEC-02, convention)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",108,5,108,12,\"CallExpression\",\";\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 108
+      },
+      "start": {
+        "column": 5,
+        "line": 108
+      }
+    },
+    "mutatorName": "CallExpression",
+    "replacement": ";",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",112,59,116,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 116
+      },
+      "start": {
+        "column": 59,
+        "line": 112
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",113,10,113,44,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 113
+      },
+      "start": {
+        "column": 10,
+        "line": 113
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",113,46,113,59,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 59,
+        "line": 113
+      },
+      "start": {
+        "column": 46,
+        "line": 113
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile keeps the role (API 2.2, README FR-04, SEC-06) AM-01 a profile update without `role` leaves the stored role unchanged"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",113,76,115,4,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 4,
+        "line": 115
+      },
+      "start": {
+        "column": 76,
+        "line": 113
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",114,5,114,20,\"CallExpression\",\";\"]",
+    "location": {
+      "end": {
+        "column": 20,
+        "line": 114
+      },
+      "start": {
+        "column": 5,
+        "line": 114
+      }
+    },
+    "mutatorName": "CallExpression",
+    "replacement": ";",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",118,59,135,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 135
+      },
+      "start": {
+        "column": 59,
+        "line": 118
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",121,15,121,75,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 75,
+        "line": 121
+      },
+      "start": {
+        "column": 15,
+        "line": 121
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile keeps the role (API 2.2, README FR-04, SEC-06) AM-01 a profile update without `role` leaves the stored role unchanged"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",122,16,122,47,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 47,
+        "line": 122
+      },
+      "start": {
+        "column": 16,
+        "line": 122
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",124,7,124,11,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 11,
+        "line": 124
+      },
+      "start": {
+        "column": 7,
+        "line": 124
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Survived",
+    "after": "Killed",
+    "killingTests": [
+      "Profile keeps the role (API 2.2, README FR-04, SEC-06) AM-01 a profile update without `role` leaves the stored role unchanged"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",124,7,124,11,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 11,
+        "line": 124
+      },
+      "start": {
+        "column": 7,
+        "line": 124
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",128,12,128,27,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 27,
+        "line": 128
+      },
+      "start": {
+        "column": 12,
+        "line": 128
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile keeps the role (API 2.2, README FR-04, SEC-06) AM-01 a profile update without `role` leaves the stored role unchanged"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",129,3,129,28,\"CallExpression\",\";\"]",
+    "location": {
+      "end": {
+        "column": 28,
+        "line": 129
+      },
+      "start": {
+        "column": 3,
+        "line": 129
+      }
+    },
+    "mutatorName": "CallExpression",
+    "replacement": ";",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",131,40,134,4,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 4,
+        "line": 134
+      },
+      "start": {
+        "column": 40,
+        "line": 131
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",132,9,132,12,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 132
+      },
+      "start": {
+        "column": 9,
+        "line": 132
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",132,9,132,12,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 132
+      },
+      "start": {
+        "column": 9,
+        "line": 132
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Survived",
+    "after": "Killed",
+    "killingTests": [
+      "A database failure is not reported as success (spec silent; convention: HTTP 500 with an error) AM-13 PUT /users/me: a failed update returns 500 with an error and no success message"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",133,14,133,44,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 133
+      },
+      "start": {
+        "column": 14,
+        "line": 133
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",133,25,133,42,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 42,
+        "line": 133
+      },
+      "start": {
+        "column": 25,
+        "line": 133
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",20,10,20,25,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 25,
+        "line": 20
+      },
+      "start": {
+        "column": 10,
+        "line": 20
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Registration (API 1.1) AU-R01 valid registration returns 200, the success message and a numeric id"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",32,10,32,22,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 22,
+        "line": 32
+      },
+      "start": {
+        "column": 10,
+        "line": 32
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Registration (API 1.1) AU-R02 a registered user can log in with the same credentials (API 1.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",68,10,68,32,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 32,
+        "line": 68
+      },
+      "start": {
+        "column": 10,
+        "line": 68
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P01 forgot-password for a registered email returns 200, the message and a reset token (API 1.3)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",87,10,87,31,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 31,
+        "line": 87
+      },
+      "start": {
+        "column": 10,
+        "line": 87
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",112,9,112,24,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 24,
+        "line": 112
+      },
+      "start": {
+        "column": 9,
+        "line": 112
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U01 GET /me without a token is refused with 401 (SEC-02)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",118,9,118,24,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 24,
+        "line": 118
+      },
+      "start": {
+        "column": 9,
+        "line": 118
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2)"
+    ]
+  }
+]

@@ -1,0 +1,1966 @@
+{
+  "executor": "OpenAI Codex AI Agent",
+  "scope": "Source/requirements review of retained collections; not human acceptance",
+  "groups": [
+    {
+      "profile": "cart-orders-baseline",
+      "source": "README.md FR-07/08/10/11/18; api_specification.md sections 4 and 6.2",
+      "treatment": "36 historical status-only cases retained. Test names do not imply assertions on cart contents or persisted state.",
+      "cases": [
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-01 [invalid] get cart without token → 401",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-02 [normal] new user gets an empty cart",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-03 [normal] add one item, then read the cart",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-04 [normal] add two different products",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-06 [invalid] checkout without token → 401",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-07 [normal] checkout with cart total and address",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-10 [invalid] order detail of non-existent id → 404",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order → 200",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-14 [invalid] cancel another user's order → 404",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-15 [invalid] cancel a non-existent order → 404",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-16 [invalid] cancel without token → 401",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → canceled → 200",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → canceled → 200",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] confirmed → delivered → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] confirmed → pending → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] shipping → pending → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] shipping → confirmed → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → pending → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → shipping → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → canceled → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → pending → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → confirmed → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → unknown_status → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-19 [invalid] change status of a non-existent order → 404",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "profile": "cart-orders-manual",
+      "source": "Exact imported collection b77f5d6; baseline plus 8 cases",
+      "treatment": "Exact error messages, item ordering, product_id input shape and client-supplied checkout total are implementation-dependent or conventions. Results quantify this retained collection, not full SRS compliance.",
+      "cases": [
+        {
+          "file": "test\\manual\\cart-orders.manual.js",
+          "name": "Cart & Orders Manual Tests - Tấn Hiệp Survivor 3: PUT /api/orders/:id/cancel - Verify pending order is cancelled and DB updated to canceled",
+          "status": "passed"
+        },
+        {
+          "file": "test\\manual\\cart-orders.manual.js",
+          "name": "Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 286:7 - GET /api/cart initializes empty cart array for new user",
+          "status": "passed"
+        },
+        {
+          "file": "test\\manual\\cart-orders.manual.js",
+          "name": "Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 292:7 - POST /api/cart preserves existing cart items across multiple additions",
+          "status": "passed"
+        },
+        {
+          "file": "test\\manual\\cart-orders.manual.js",
+          "name": "Cart & Orders Manual Tests - Tấn Hiệp POST /api/checkout - Verify successful order creation and DB pending status",
+          "status": "passed"
+        },
+        {
+          "file": "test\\manual\\cart-orders.manual.js",
+          "name": "Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 326:47 - PUT /api/orders/:id/cancel returns error body when order not found",
+          "status": "passed"
+        },
+        {
+          "file": "test\\manual\\cart-orders.manual.js",
+          "name": "Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 346:45 - GET /api/orders/:id returns error body when order not found",
+          "status": "passed"
+        },
+        {
+          "file": "test\\manual\\cart-orders.manual.js",
+          "name": "Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 532:47 - PUT /api/admin/orders/:id/status returns error body when order not found",
+          "status": "passed"
+        },
+        {
+          "file": "test\\manual\\cart-orders.manual.js",
+          "name": "Cart & Orders Manual Tests - Tấn Hiệp PUT /api/admin/orders/:id/status - Verify state transition rules and status update",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-01 [invalid] get cart without token → 401",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-02 [normal] new user gets an empty cart",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-03 [normal] add one item, then read the cart",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-04 [normal] add two different products",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-06 [invalid] checkout without token → 401",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-07 [normal] checkout with cart total and address",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-10 [invalid] order detail of non-existent id → 404",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order → 200",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-14 [invalid] cancel another user's order → 404",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-15 [invalid] cancel a non-existent order → 404",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-16 [invalid] cancel without token → 401",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → canceled → 200",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → canceled → 200",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] confirmed → delivered → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] confirmed → pending → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] shipping → pending → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] shipping → confirmed → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → pending → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → shipping → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → canceled → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → pending → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → confirmed → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → unknown_status → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-19 [invalid] change status of a non-existent order → 404",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "profile": "cart-orders-ai",
+      "source": "Exact imported collection f4696c6; baseline plus 5 cases",
+      "treatment": "Partial-blind historical generation. Empty-array representation and error field are implementation observations; no independent fresh generation claimed.",
+      "cases": [
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-01 [invalid] get cart without token → 401",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-02 [normal] new user gets an empty cart",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-03 [normal] add one item, then read the cart",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-04 [normal] add two different products",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-05 [normal] another user reads own cart after user 1 adds an item",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-06 [invalid] checkout without token → 401",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-07 [normal] checkout with cart total and address",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-10 [invalid] order detail of non-existent id → 404",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a confirmed order → 200",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-14 [invalid] cancel another user's order → 404",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-15 [invalid] cancel a non-existent order → 404",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-16 [invalid] cancel without token → 401",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → canceled → 200",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → canceled → 200",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] confirmed → delivered → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] confirmed → pending → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] shipping → pending → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] shipping → confirmed → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → pending → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → shipping → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] delivered → canceled → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → pending → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → confirmed → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → unknown_status → 400",
+          "status": "passed"
+        },
+        {
+          "file": "test\\cart-orders.test.js",
+          "name": "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-19 [invalid] change status of a non-existent order → 404",
+          "status": "passed"
+        },
+        {
+          "file": "test\\ai\\cart-orders.ai.js",
+          "name": "AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-01 new user GET /api/cart → 200 with an empty array",
+          "status": "passed"
+        },
+        {
+          "file": "test\\ai\\cart-orders.ai.js",
+          "name": "AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-02 add two different products → GET /api/cart returns both",
+          "status": "passed"
+        },
+        {
+          "file": "test\\ai\\cart-orders.ai.js",
+          "name": "AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-03 cancel a non-existent order → 404 with an error message",
+          "status": "passed"
+        },
+        {
+          "file": "test\\ai\\cart-orders.ai.js",
+          "name": "AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-04 order detail of non-existent id → 404 with an error message",
+          "status": "passed"
+        },
+        {
+          "file": "test\\ai\\cart-orders.ai.js",
+          "name": "AI — 404 error bodies (spec §4.5, §4.6, §6.2, FR-10, FR-18) AI-CO-05 admin changes status of a non-existent order → 404 with an error message",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "profile": "coupons-baseline",
+      "source": "README.md FR-09/12/17; api_specification.md sections 5 and 6.4",
+      "treatment": "26 passing cases retained, including separate quote, checkout and explicit usage recording. No automatic or atomic usage claim.",
+      "cases": [
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-02 one currency unit below minimum is refused (FR-09 C3)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-03 missing/empty code is refused: undefined",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-03 missing/empty code is refused: ",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-04 unknown code is unavailable (FR-09 C1)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-04 inactive code is unavailable (FR-09 C1)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-05 one millisecond before expiry is valid (FR-09 C2)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-06 one millisecond after expiry is refused (FR-09 C2)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-07 usage 0 is below limit 2 (FR-09 C5)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-07 usage 1 is below limit 2 (FR-09 C5)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-08 usage 2 meets/exceeds limit 2 (FR-09 C5)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-08 usage 3 meets/exceeds limit 2 (FR-09 C5)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-09 another user usage does not consume my per-user allowance",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-10 another coupon usage does not consume this coupon allowance",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-11 quoting repeatedly does not consume allowance; recording usage does",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-12 usage recording with absent JWT is refused (SEC-02; code is convention)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-12 usage recording with invalid JWT is refused (SEC-02; code is convention)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-13 admin lists the current fixture; reset removed original coupons",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-14 list without JWT is refused (API 5.2)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-15 admin creates minimum=0 and max_uses=1; resulting coupon is usable",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-16 admin deletes only the addressed coupon (FR-17)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-17 create without JWT has no side effects (FR-12)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-17 delete without JWT has no side effects (FR-12)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-18 duplicate code cannot create a second coupon (FR-17)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons-flow.test.js",
+          "name": "CP-FLOW fixed quote -> checkout -> explicit usage recording -> limit enforced",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "profile": "coupons-manual",
+      "source": "Historical Codex-assisted extension; baseline plus 9 cases",
+      "treatment": "MF-04..07 reuse the same shared scenarios as AI. Exact rejection status is a convention. Boundaries at exact minimum/expiry are excluded because original production violates the spec.",
+      "cases": [
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-02 one currency unit below minimum is refused (FR-09 C3)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-03 missing/empty code is refused: undefined",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-03 missing/empty code is refused: ",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-04 unknown code is unavailable (FR-09 C1)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-04 inactive code is unavailable (FR-09 C1)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-05 one millisecond before expiry is valid (FR-09 C2)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-06 one millisecond after expiry is refused (FR-09 C2)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-07 usage 0 is below limit 2 (FR-09 C5)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-07 usage 1 is below limit 2 (FR-09 C5)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-08 usage 2 meets/exceeds limit 2 (FR-09 C5)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-08 usage 3 meets/exceeds limit 2 (FR-09 C5)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-09 another user usage does not consume my per-user allowance",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-10 another coupon usage does not consume this coupon allowance",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-11 quoting repeatedly does not consume allowance; recording usage does",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-12 usage recording with absent JWT is refused (SEC-02; code is convention)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-12 usage recording with invalid JWT is refused (SEC-02; code is convention)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-13 admin lists the current fixture; reset removed original coupons",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-14 list without JWT is refused (API 5.2)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-15 admin creates minimum=0 and max_uses=1; resulting coupon is usable",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-16 admin deletes only the addressed coupon (FR-17)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-17 create without JWT has no side effects (FR-12)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-17 delete without JWT has no side effects (FR-12)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-18 duplicate code cannot create a second coupon (FR-17)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\manual\\coupons.manual.js",
+          "name": "MF-01 Admin input limit 3 is persisted as 3 (FR-17; mutants 111/113)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\manual\\coupons.manual.js",
+          "name": "MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\manual\\coupons.manual.js",
+          "name": "MF-03 usage 3 meets configured limit 3 and is refused (FR-09 C5)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\manual\\coupons.manual.js",
+          "name": "MF-04 the requested code selects its own coupon and discount (FR-09 C1)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\manual\\coupons.manual.js",
+          "name": "MF-05 admin-created minimum 400000 controls total 399999 (FR-17, FR-09 C3)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\manual\\coupons.manual.js",
+          "name": "MF-05 admin-created minimum 400000 controls total 400001 (FR-17, FR-09 C3)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\manual\\coupons.manual.js",
+          "name": "MF-06 admin-created expiry controls quote at 2026-10-24T08:59:59.999Z (FR-17, FR-09 C2)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\manual\\coupons.manual.js",
+          "name": "MF-06 admin-created expiry controls quote at 2026-10-24T09:00:00.001Z (FR-17, FR-09 C2)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\manual\\coupons.manual.js",
+          "name": "MF-07 recording usage affects only that user and coupon (FR-09 C5)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons-flow.test.js",
+          "name": "CP-FLOW fixed quote -> checkout -> explicit usage recording -> limit enforced",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "profile": "coupons-ai",
+      "source": "Historical Codex-assisted extension in the same context; baseline plus 14 cases",
+      "treatment": "Shared helpers and unequal scenario counts prevent an independent human-versus-AI or equal-budget conclusion. Duplicate 500 is tolerated as refusal, not endorsed as correct design.",
+      "cases": [
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-01 fixed coupon: total 700000 gives final 650000 (FR-09)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-02 one currency unit below minimum is refused (FR-09 C3)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-03 missing/empty code is refused: undefined",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-03 missing/empty code is refused: ",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-04 unknown code is unavailable (FR-09 C1)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-04 inactive code is unavailable (FR-09 C1)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-05 one millisecond before expiry is valid (FR-09 C2)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-06 one millisecond after expiry is refused (FR-09 C2)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-07 usage 0 is below limit 2 (FR-09 C5)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-07 usage 1 is below limit 2 (FR-09 C5)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-08 usage 2 meets/exceeds limit 2 (FR-09 C5)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-08 usage 3 meets/exceeds limit 2 (FR-09 C5)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-09 another user usage does not consume my per-user allowance",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-10 another coupon usage does not consume this coupon allowance",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-11 quoting repeatedly does not consume allowance; recording usage does",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-12 usage recording with absent JWT is refused (SEC-02; code is convention)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-12 usage recording with invalid JWT is refused (SEC-02; code is convention)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-13 admin lists the current fixture; reset removed original coupons",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-14 list without JWT is refused (API 5.2)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-15 admin creates minimum=0 and max_uses=1; resulting coupon is usable",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-16 admin deletes only the addressed coupon (FR-17)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-17 create without JWT has no side effects (FR-12)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-17 delete without JWT has no side effects (FR-12)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons.test.js",
+          "name": "CP-18 duplicate code cannot create a second coupon (FR-17)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\ai\\coupons.ai.js",
+          "name": "AI: admin limit 2 persists and controls the per-user boundary (FR-17, FR-09 C5)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\ai\\coupons.ai.js",
+          "name": "AI: admin limit 4 persists and controls the per-user boundary (FR-17, FR-09 C5)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\ai\\coupons.ai.js",
+          "name": "AG-01 the requested code selects its own coupon and discount (FR-09 C1)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\ai\\coupons.ai.js",
+          "name": "AG-02 admin-created minimum 400000 controls total 399999 (FR-17, FR-09 C3)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\ai\\coupons.ai.js",
+          "name": "AG-02 admin-created minimum 400000 controls total 400001 (FR-17, FR-09 C3)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\ai\\coupons.ai.js",
+          "name": "AG-03 admin-created expiry controls quote at 2026-10-24T08:59:59.999Z (FR-17, FR-09 C2)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\ai\\coupons.ai.js",
+          "name": "AG-03 admin-created expiry controls quote at 2026-10-24T09:00:00.001Z (FR-17, FR-09 C2)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\ai\\coupons.ai.js",
+          "name": "AG-04 recording usage affects only that user and coupon (FR-09 C5)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\ai\\coupons.ai.js",
+          "name": "AG-05 duplicate creation preserves the existing coupon and its discount (FR-17)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\ai\\coupons.ai.js",
+          "name": "AG-06 deleting one coupon prevents its use and preserves another (FR-17, FR-09 C1)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\ai\\coupons.ai.js",
+          "name": "AG-07 admin list returns every created coupon with its own configuration (FR-17)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\ai\\coupons.ai.js",
+          "name": "AG-08 invalid JWT cannot list coupons or change stored data (FR-12, API 5.2/6.4)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\ai\\coupons.ai.js",
+          "name": "AG-08 invalid JWT cannot create coupons or change stored data (FR-12, API 5.2/6.4)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\ai\\coupons.ai.js",
+          "name": "AG-08 invalid JWT cannot delete coupons or change stored data (FR-12, API 5.2/6.4)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\coupons-flow.test.js",
+          "name": "CP-FLOW fixed quote -> checkout -> explicit usage recording -> limit enforced",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "profile": "auth-baseline",
+      "source": "README.md FR-01..04 and SEC-01..07; api_specification.md sections 1 and 2",
+      "treatment": "26 passing historical cases. Baseline does not detect every original defect: an expired-lock check at 24h does not verify the specified 30s duration.",
+      "cases": [
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Registration (API 1.1) AU-R01 valid registration returns 200, the success message and a numeric id",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Registration (API 1.1) AU-R02 a registered user can log in with the same credentials (API 1.2)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L01 correct credentials return 200, a JWT and the user",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L02 the JWT carries the user id and role (FR-02, SEC-03)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L03 wrong password is refused with 401 (convention) and no token",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L04 unknown email gets the same status and body as a wrong password (FR-02: no cause leaked)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L06 the lock still holds 29 seconds after the third wrong attempt (FR-02: 30 s)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L07 a lock whose time has passed no longer blocks login",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L08 a successful login resets the failure counter: wrong, ok, wrong, ok never locks (FR-02 \"consecutive\")",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L09 failures of one account do not lock another account",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P01 forgot-password for a registered email returns 200, the message and a reset token (API 1.3)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P02 forgot-password for an unknown email gives no token",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P04 reset with a wrong token is refused with 400 (convention) and the password is unchanged",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P05 a token issued to one email cannot reset another account (FR-03)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P06 a token is invalidated after use (SEC-07): the second reset with it is refused",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U01 GET /me without a token is refused with 401 (SEC-02)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U02 GET /me with an invalid token is refused (SEC-02)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U03 GET /me returns the profile of the token owner only (API 2.1)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U05 updating one user's profile leaves other users unchanged (FR-04: own profile only)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U06 the email cannot be changed through PUT /me (FR-04)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U07 PUT /me without a token is refused with 401 (SEC-02)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U08 a valid phone is accepted (FR-04: starts with 0, 10-11 digits): 10 digits",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U08 a valid phone is accepted (FR-04: starts with 0, 10-11 digits): 11 digits",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "profile": "auth-manual",
+      "source": "Historical F03 collection; baseline plus 13 cases",
+      "treatment": "Non-empty messages and HTTP 500 fault handling include explicitly labelled conventions. Existing expected results retained.",
+      "cases": [
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Registration (API 1.1) AU-R01 valid registration returns 200, the success message and a numeric id",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Registration (API 1.1) AU-R02 a registered user can log in with the same credentials (API 1.2)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L01 correct credentials return 200, a JWT and the user",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L02 the JWT carries the user id and role (FR-02, SEC-03)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L03 wrong password is refused with 401 (convention) and no token",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L04 unknown email gets the same status and body as a wrong password (FR-02: no cause leaked)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L06 the lock still holds 29 seconds after the third wrong attempt (FR-02: 30 s)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L07 a lock whose time has passed no longer blocks login",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L08 a successful login resets the failure counter: wrong, ok, wrong, ok never locks (FR-02 \"consecutive\")",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L09 failures of one account do not lock another account",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P01 forgot-password for a registered email returns 200, the message and a reset token (API 1.3)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P02 forgot-password for an unknown email gives no token",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P04 reset with a wrong token is refused with 400 (convention) and the password is unchanged",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P05 a token issued to one email cannot reset another account (FR-03)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P06 a token is invalidated after use (SEC-07): the second reset with it is refused",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U01 GET /me without a token is refused with 401 (SEC-02)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U02 GET /me with an invalid token is refused (SEC-02)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U03 GET /me returns the profile of the token owner only (API 2.1)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U05 updating one user's profile leaves other users unchanged (FR-04: own profile only)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U06 the email cannot be changed through PUT /me (FR-04)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U07 PUT /me without a token is refused with 401 (SEC-02)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U08 a valid phone is accepted (FR-04: starts with 0, 10-11 digits): 10 digits",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U08 a valid phone is accepted (FR-04: starts with 0, 10-11 digits): 11 digits",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.manual.test.js",
+          "name": "Profile keeps the role (API 2.2, README FR-04, SEC-06) AM-01 a profile update without `role` leaves the stored role unchanged",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.manual.test.js",
+          "name": "Reset code is a random number (README FR-03 \"ngẫu nhiên\", SEC-07) AM-02 the reset code is made of digits only, with no sign (random source fixed at 0.5)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.manual.test.js",
+          "name": "Reset code is a random number (README FR-03 \"ngẫu nhiên\", SEC-07) AM-03 the reset code depends on the random source: 0.1 and 0.9 give different codes",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.manual.test.js",
+          "name": "Error responses carry a message (README FR-02 \"thông báo lỗi phù hợp\"; others: convention) AM-04 the locked-account response has a non-empty error message (FR-02)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.manual.test.js",
+          "name": "Error responses carry a message (README FR-02 \"thông báo lỗi phù hợp\"; others: convention) AM-05 forgot-password for an unknown email has status 404 and a non-empty error (convention)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.manual.test.js",
+          "name": "Error responses carry a message (README FR-02 \"thông báo lỗi phù hợp\"; others: convention) AM-06 reset with a wrong token has status 400 and a non-empty error (convention)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.manual.test.js",
+          "name": "Error responses carry a message (README FR-02 \"thông báo lỗi phù hợp\"; others: convention) AM-07 a successful reset returns a non-empty message like the other auth endpoints (convention)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.manual.test.js",
+          "name": "Error responses carry a message (README FR-02 \"thông báo lỗi phù hợp\"; others: convention) AM-08 GET /me without a token has status 401 and a non-empty error (SEC-02, convention)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.manual.test.js",
+          "name": "Error responses carry a message (README FR-02 \"thông báo lỗi phù hợp\"; others: convention) AM-09 GET /me with an invalid token has a non-empty error (SEC-02, convention)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.manual.test.js",
+          "name": "A database failure is not reported as success (spec silent; convention: HTTP 500 with an error) AM-10 POST /register: a failed insert returns 500 with an error and no success message",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.manual.test.js",
+          "name": "A database failure is not reported as success (spec silent; convention: HTTP 500 with an error) AM-11 POST /login: a failed lookup returns 500 with an error and no token",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.manual.test.js",
+          "name": "A database failure is not reported as success (spec silent; convention: HTTP 500 with an error) AM-12 POST /forgot-password: a failed token save returns 500 with an error and no token",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.manual.test.js",
+          "name": "A database failure is not reported as success (spec silent; convention: HTTP 500 with an error) AM-13 PUT /users/me: a failed update returns 500 with an error and no success message",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "profile": "auth-ai",
+      "source": "Historical reviewed G03 collection; baseline plus 11 cases",
+      "treatment": "AI-L03 exact lock-expiry instant is an interpretation, not an explicit spec boundary. Historical source says reviewed; no new member acceptance is inferred.",
+      "cases": [
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Registration (API 1.1) AU-R01 valid registration returns 200, the success message and a numeric id",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Registration (API 1.1) AU-R02 a registered user can log in with the same credentials (API 1.2)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L01 correct credentials return 200, a JWT and the user",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L02 the JWT carries the user id and role (FR-02, SEC-03)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L03 wrong password is refused with 401 (convention) and no token",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L04 unknown email gets the same status and body as a wrong password (FR-02: no cause leaked)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L06 the lock still holds 29 seconds after the third wrong attempt (FR-02: 30 s)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L07 a lock whose time has passed no longer blocks login",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L08 a successful login resets the failure counter: wrong, ok, wrong, ok never locks (FR-02 \"consecutive\")",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Login and lock (API 1.2, README FR-02) AU-L09 failures of one account do not lock another account",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P01 forgot-password for a registered email returns 200, the message and a reset token (API 1.3)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P02 forgot-password for an unknown email gives no token",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P04 reset with a wrong token is refused with 400 (convention) and the password is unchanged",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P05 a token issued to one email cannot reset another account (FR-03)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P06 a token is invalidated after use (SEC-07): the second reset with it is refused",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U01 GET /me without a token is refused with 401 (SEC-02)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U02 GET /me with an invalid token is refused (SEC-02)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U03 GET /me returns the profile of the token owner only (API 2.1)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U05 updating one user's profile leaves other users unchanged (FR-04: own profile only)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U06 the email cannot be changed through PUT /me (FR-04)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U07 PUT /me without a token is refused with 401 (SEC-02)",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U08 a valid phone is accepted (FR-04: starts with 0, 10-11 digits): 10 digits",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.spec.test.js",
+          "name": "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U08 a valid phone is accepted (FR-04: starts with 0, 10-11 digits): 11 digits",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.ai.test.js",
+          "name": "Registration failure (API 1.1; 500 and error shape are conventions) AI-R01 a failed insert is not reported as a successful registration",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.ai.test.js",
+          "name": "Registration failure (API 1.1; 500 and error shape are conventions) AI-R02 a failed insert returns a non-empty error message",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.ai.test.js",
+          "name": "Login failure and lock (API 1.2, README FR-02) AI-L01 a database failure during login is a 500 (convention), not \"invalid credentials\"",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.ai.test.js",
+          "name": "Login failure and lock (API 1.2, README FR-02) AI-L02 a database failure during login returns a non-empty error message",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.ai.test.js",
+          "name": "Login failure and lock (API 1.2, README FR-02) AI-L03 (interpretation, spec silent) at the exact instant the lock ends the account can log in; 1 ms earlier it cannot",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.ai.test.js",
+          "name": "Login failure and lock (API 1.2, README FR-02) AI-L04 a locked account gets a non-empty error message",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.ai.test.js",
+          "name": "Forgot password (API 1.3, README FR-03) AI-P01 the reset code is all digits and depends on the random source",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.ai.test.js",
+          "name": "Forgot password (API 1.3, README FR-03) AI-P02 if the token cannot be stored, no reset token is handed out",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.ai.test.js",
+          "name": "Forgot password (API 1.3, README FR-03) AI-P03 if the token cannot be stored, a non-empty error message is returned",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.ai.test.js",
+          "name": "Profile update (API 2.2, README FR-04, SEC-06) AI-U01 updating the profile without a role leaves the role unchanged",
+          "status": "passed"
+        },
+        {
+          "file": "test\\auth.ai.test.js",
+          "name": "Profile update (API 2.2, README FR-04, SEC-06) AI-U02 a failed profile update is a 500 with a non-empty error message",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "profile": "original-defects",
+      "source": "README.md and api_specification.md; separate 54-case profile",
+      "treatment": "54 assertion failures verified in this audit. DF-10 uses an assumed 24h OTP bound; no contractual 24h expiry claimed. No failing case enters passing mutation selections.",
+      "cases": [
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-LOCK: README FR-02 login counter and lock DF-01 each wrong login adds exactly 1 to the counter (\"đúng 1 đơn vị\")",
+          "status": "failed"
+        },
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-LOCK: README FR-02 login counter and lock DF-02 two wrong logins do not lock; the third does (\"từ 3 lần trở lên\")",
+          "status": "failed"
+        },
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-LOCK: README FR-02 login counter and lock DF-03 the lock lasts 30 seconds: login succeeds 31 s after the third wrong attempt",
+          "status": "failed"
+        },
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-REG: README FR-01 registration validation and SEC-01 DF-04 invalid email is refused: no @",
+          "status": "failed"
+        },
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-REG: README FR-01 registration validation and SEC-01 DF-04 invalid email is refused: no domain",
+          "status": "failed"
+        },
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-REG: README FR-01 registration validation and SEC-01 DF-04 invalid email is refused: empty",
+          "status": "failed"
+        },
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-REG: README FR-01 registration validation and SEC-01 DF-05 a duplicate email is refused (\"duy nhất\")",
+          "status": "failed"
+        },
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-REG: README FR-01 registration validation and SEC-01 DF-06 weak password is refused: 7 characters",
+          "status": "failed"
+        },
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-REG: README FR-01 registration validation and SEC-01 DF-06 weak password is refused: no upper case",
+          "status": "failed"
+        },
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-REG: README FR-01 registration validation and SEC-01 DF-06 weak password is refused: no lower case",
+          "status": "failed"
+        },
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-REG: README FR-01 registration validation and SEC-01 DF-06 weak password is refused: no digit",
+          "status": "failed"
+        },
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-REG: README FR-01 registration validation and SEC-01 DF-06 weak password is refused: no special character",
+          "status": "failed"
+        },
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-REG: README FR-01 registration validation and SEC-01 DF-07 the name is required",
+          "status": "failed"
+        },
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-REG: README FR-01 registration validation and SEC-01 DF-08 the password is not stored as plaintext (SEC-01)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-OTP: README FR-03 and SEC-07 DF-09 the OTP has 6 digits (\"6 chữ số\", SEC-07 \"tối thiểu 6 chữ số\")",
+          "status": "failed"
+        },
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-OTP: README FR-03 and SEC-07 DF-10 the OTP expires: a token older than 24 hours is refused (SEC-07 \"có thời hạn\"; 24 h is the test's assumed bound, the spec gives none)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-OTP: README FR-03 and SEC-07 DF-11 the new password must satisfy the FR-01 strength rule",
+          "status": "failed"
+        },
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-PROFILE: README FR-04, SEC-06 and API 2.2 DF-12 PUT /me cannot change the role (SEC-06, FR-04)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-PROFILE: README FR-04, SEC-06 and API 2.2 DF-13 invalid phone is refused (FR-04): 9 digits",
+          "status": "failed"
+        },
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-PROFILE: README FR-04, SEC-06 and API 2.2 DF-13 invalid phone is refused (FR-04): 12 digits",
+          "status": "failed"
+        },
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-PROFILE: README FR-04, SEC-06 and API 2.2 DF-13 invalid phone is refused (FR-04): not starting with 0",
+          "status": "failed"
+        },
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-PROFILE: README FR-04, SEC-06 and API 2.2 DF-13 invalid phone is refused (FR-04): letters",
+          "status": "failed"
+        },
+        {
+          "file": "test\\auth.defects.test.js",
+          "name": "D-PROFILE: README FR-04, SEC-06 and API 2.2 DF-13 invalid phone is refused (FR-04): empty",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\cart-orders.defects.js",
+          "name": "DEF-01 FR-07: adding the same product again increases quantity, no new line",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\cart-orders.defects.js",
+          "name": "DEF-02 FR-08: backend recomputes total from the cart, ignores client total_amount",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\cart-orders.defects.js",
+          "name": "DEF-03 FR-08: cart is cleared after a successful checkout",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\cart-orders.defects.js",
+          "name": "DEF-04 FR-10/FR-20: user cannot cancel a shipping order",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\cart-orders.defects.js",
+          "name": "DEF-05 FR-10: canceled is a final state, canceled → delivered is rejected",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\cart-orders.defects.js",
+          "name": "DEF-06 FR-12/SEC-03: non-admin cannot change order status",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\cart-orders.defects.js",
+          "name": "DEF-07 FR-12/SEC-03: non-admin cannot list all orders",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\cart-orders.defects.js",
+          "name": "DEF-08a spec §4 header, SEC-02: order detail without token is rejected",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\cart-orders.defects.js",
+          "name": "DEF-08b FR-11: user cannot view another user's order detail",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\coupons.defects.js",
+          "name": "CD-01 exact minimum must be accepted (FR-09 C3 >=)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\coupons.defects.js",
+          "name": "CD-02 10 percent means divide by 100 (FR-09 formula)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\coupons.defects.js",
+          "name": "CD-03 exactly at expiry is invalid (FR-09 C2 now < expiry)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\coupons.defects.js",
+          "name": "CD-04 absent JWT cannot apply a valid coupon (FR-09 C4)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\coupons.defects.js",
+          "name": "CD-04 invalid JWT cannot apply a valid coupon (FR-09 C4)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\coupons.defects.js",
+          "name": "CD-05 body user_id omitted cannot bypass my limit (FR-09 C4/C5)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\coupons.defects.js",
+          "name": "CD-05 body user_id another-user cannot bypass my limit (FR-09 C4/C5)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\coupons.defects.js",
+          "name": "CD-06 ordinary user cannot list coupons (FR-12, SEC-03; API 5.2)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\coupons.defects.js",
+          "name": "CD-06 ordinary user cannot create coupons (FR-12, SEC-03; API 5.2)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\coupons.defects.js",
+          "name": "CD-06 ordinary user cannot delete coupons (FR-12, SEC-03; API 5.2)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\coupons.defects.js",
+          "name": "CD-07 admin validation: missing-code is refused without insertion (FR-17)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\coupons.defects.js",
+          "name": "CD-07 admin validation: missing-type is refused without insertion (FR-17)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\coupons.defects.js",
+          "name": "CD-07 admin validation: missing-discount is refused without insertion (FR-17)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\coupons.defects.js",
+          "name": "CD-07 admin validation: missing-minimum is refused without insertion (FR-17)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\coupons.defects.js",
+          "name": "CD-07 admin validation: missing-uses is refused without insertion (FR-17)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\coupons.defects.js",
+          "name": "CD-07 admin validation: unknown-type is refused without insertion (FR-17)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\coupons.defects.js",
+          "name": "CD-07 admin validation: zero-discount is refused without insertion (FR-17)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\coupons.defects.js",
+          "name": "CD-07 admin validation: negative-discount is refused without insertion (FR-17)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\coupons.defects.js",
+          "name": "CD-07 admin validation: negative-minimum is refused without insertion (FR-17)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\coupons.defects.js",
+          "name": "CD-07 admin validation: zero-uses is refused without insertion (FR-17)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\coupons.defects.js",
+          "name": "CD-07 admin validation: negative-uses is refused without insertion (FR-17)",
+          "status": "failed"
+        },
+        {
+          "file": "test\\defects\\coupons.defects.js",
+          "name": "CD-07 admin validation: missing-expiry is refused without insertion (FR-17)",
+          "status": "failed"
+        }
+      ]
+    }
+  ]
+}

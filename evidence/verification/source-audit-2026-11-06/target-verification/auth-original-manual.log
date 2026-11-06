@@ -1,0 +1,7 @@
+
+Test Suites: 1 passed, 1 total
+Tests:       12 skipped, 1 passed, 13 total
+Snapshots:   0 total
+Time:        0.516 s
+Ran all test suites within paths "test/auth.manual.test.js".
+Test results written to: ..\..\..\Workspace\Study\courses-fit-hcmus\2026-2027\csc13003-testing\seminar\T10_Mutation_Testing_and_Test_Effectiveness\evidence\verification\source-audit-2026-11-06\target-verification\auth-original-manual.json

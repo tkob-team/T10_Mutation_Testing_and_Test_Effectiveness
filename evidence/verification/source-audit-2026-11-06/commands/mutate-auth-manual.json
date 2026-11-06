@@ -1,0 +1,15 @@
+{
+  "name": "mutate-auth-manual",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\@stryker-mutator\\core\\bin\\stryker.js",
+    "run",
+    "stryker.auth.manual.config.json"
+  ],
+  "cwd": "D:\\Temp\\t10-source-audit-2026-11-06\\backend",
+  "startedUtc": "2026-11-06T09:30:53.572Z",
+  "finishedUtc": "2026-11-06T09:34:51.909Z",
+  "elapsedMs": 238339,
+  "exitCode": 0,
+  "signal": null
+}

@@ -1,0 +1,22 @@
+[32m17:22:56 (29352) INFO ProjectReader[39m Found 1 of 102 file(s) to be mutated.
+[32m17:22:56 (29352) INFO Instrumenter[39m Instrumented 1 source file(s) with 5 mutant(s)
+[32m17:22:56 (29352) INFO ConcurrencyTokenProvider[39m Creating 1 test runner process(es).
+[32m17:22:57 (29352) INFO DryRunExecutor[39m Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+[32m17:22:58 (29352) INFO DryRunExecutor[39m Initial test run succeeded. Ran 3 tests in 0 seconds (net 2 ms, overhead 411 ms).
+
+All tests/strong.test.js
+  ✓ eligibility(120,100) is true under the inclusive contract [line 2] (killed 3)
+  ✓ eligibility(100,100) is true under the inclusive contract [line 2] (killed 1)
+  ✓ eligibility(99,100) is false under the inclusive contract [line 2] (killed 1)
+
+Ran 3.00 tests per mutant on average.
+----------------|------------------|----------|-----------|------------|----------|----------|
+                | % Mutation score |          |           |            |          |          |
+File            |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+----------------|--------|---------|----------|-----------|------------|----------|----------|
+All files       | 100.00 |  100.00 |        5 |         0 |          0 |        0 |        0 |
+ eligibility.js | 100.00 |  100.00 |        5 |         0 |          0 |        0 |        0 |
+----------------|--------|---------|----------|-----------|------------|----------|----------|
+[32m17:22:58 (29352) INFO JsonReporter[39m Your report can be found at: file:///D:/Temp/t10-source-audit-2026-11-06/backend/reports/tutorial-strong/mutation.json
+[32m17:22:58 (29352) INFO HtmlReporter[39m Your report can be found at: file:///D:/Temp/t10-source-audit-2026-11-06/backend/reports/tutorial-strong/mutation.html
+[32m17:22:58 (29352) INFO MutationTestExecutor[39m Done in 2 seconds.

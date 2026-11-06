@@ -1,0 +1,26 @@
+{
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "testRunner": "jest",
+  "coverageAnalysis": "perTest",
+  "mutate": [
+    "server.js:355-492"
+  ],
+  "tempDirName": "stryker-tmp",
+  "concurrency": 1,
+  "timeoutMS": 5000,
+  "timeoutFactor": 1.5,
+  "reporters": [
+    "clear-text",
+    "html",
+    "json"
+  ],
+  "htmlReporter": {
+    "fileName": "reports/coupons/mutation.html"
+  },
+  "jsonReporter": {
+    "fileName": "reports/coupons/mutation.json"
+  },
+  "jest": {
+    "configFile": "jest.coupons.config.cjs"
+  }
+}

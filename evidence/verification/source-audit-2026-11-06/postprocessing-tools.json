@@ -1,0 +1,21 @@
+{
+  "capturedUtc": "2026-11-06T10:24:07.174Z",
+  "tools": [
+    {
+      "source": "scripts/audit.cjs",
+      "snapshot": "tools/audit.cjs",
+      "sha256": "5bbb9e1f42dd70397ca4000689fdec76d084e6417522c4e56f4288ed1640c911"
+    },
+    {
+      "source": "scripts/summarize-audit.cjs",
+      "snapshot": "tools/summarize-audit.cjs",
+      "sha256": "6b4dba4f38c8ae95edbe2c4cd454076482ec8906c7d78486955584dc344568a4"
+    },
+    {
+      "source": "scripts/verify-targets.cjs",
+      "snapshot": "tools/verify-targets.cjs",
+      "sha256": "50c6e003d9234b4542759eb77751e845c5aa77d46d5e987d69ed4c90e4648836"
+    }
+  ],
+  "note": "Experiment inputs are the immutable inputs/ snapshot. The summarizer was refined after the completed matrix to canonicalize report positions and compute common-valid metrics. The target verifier is a separate diagnostic tool; its guarded continuation is recorded in target-verification/continuation.json. Neither changes SUT or collection inputs."
+}

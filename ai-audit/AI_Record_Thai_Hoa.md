@@ -46,7 +46,7 @@ Pending — chưa có bản raw output bất biến trong bộ tài liệu hiệ
 
 #### Corrected Artifact & Highlighted Changes
 
-Current artifact: [Research Notes](../research/s3/Research_Notes_Thai_Hoa.md). Human/student corrections and highlighted changes: Pending. Agent validation does not count as member approval.
+Current artifact: [Research Notes](../evidence/research/Research_Notes_Thai_Hoa.md). Human/student corrections and highlighted changes: Pending. Agent validation does not count as member approval.
 
 ### Artifact TH-S3-C02D02-01
 
@@ -285,3 +285,20 @@ Adapted as an internal collection worksheet from FIT@HCMUS, AI Policy Templates 
 | Git handling | Không stage, commit, push hoặc đổi Git refs theo yêu cầu người dùng |
 
 Commit follow-up cho TH-DOCS-REORGANIZATION-20261106: người dùng yêu cầu commit checkpoint sau khi đã dừng để review. Agent cập nhật trạng thái hiện hành, kiểm tra lại preservation/links và commit phần tái cấu trúc; không push. Đây không phải human acceptance cho nội dung hoặc thực nghiệm.
+
+### Artifact TH-SOURCE-AUDIT-20261106
+
+| Field | Value |
+|---|---|
+| Work item | Audit và sửa research source, môi trường, test/mutation profiles và reproduction tooling |
+| Tool / Model | OpenAI Codex AI Agent; exact serving revision not recorded |
+| Authorization | Người dùng yêu cầu làm đầy đủ kế hoạch đã review, gom implementation trước rồi kiểm chứng chung |
+| Prompt summary | Kiểm tra revisions, môi trường, baseline/manual/AI, fixtures/reset, configs, native failures và evidence; hoàn thành code rồi chạy batch verification |
+| AI contribution | Đọc source/spec/tool docs; import nguyên bytes hai Cart collections; viết shared config factory, cleanup, profile/audit runners, kiểm chứng và báo cáo |
+| Preserved work | Giữ production và assertions hiện có; dependency graph không đổi; raw historical reports và submission snapshots không sửa |
+| Sources | SUT HEAD 4b28756, frozen production 806ba19, Cart refs b77f5d6/f4696c6, retained source snapshots, source SRS/API và official Jest/Stryker/npm/sqlite3 docs |
+| Outputs | [Source Audit](../docs/Source_Audit.md), [inputs](../evidence/verification/source-audit-2026-11-06/inputs.json), source TESTING.md và tooling |
+| Verification | 12 test/dry/mutation profiles completed; 54 separate assertion failures, driver probes, 18 target controls, 3 tutorial mutation profiles và web/admin builds; xem Source Audit và raw evidence |
+| Human work / verdict | Người dùng chọn scope và thứ tự; human review, member self-run và verdict cá nhân Pending |
+| Limits | Không sinh assertions mới để nhận là independent manual work; không xếp hạng model; native RuntimeError và Timeout không tính là assertion kills |
+| Git handling | Audit ban đầu dừng trước commit. Sau đó người dùng yêu cầu commit phần audit: source checkpoint 1be4637, docs/evidence commit riêng; không push. Raw execution metadata giữ nguyên |

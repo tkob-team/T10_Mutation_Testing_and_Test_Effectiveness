@@ -16,7 +16,7 @@ Thứ tự công việc đã chốt:
 4. Bàn và xây platform activity có submission, thực thi và ranking cùng session với việc chọn SUT.
 5. Rà và viết kỹ từng tài liệu, dựng lại slides theo hệ thống và kết quả đã chốt.
 
-Session hiện tại chỉ thực hiện mục 1. Không mặc định workshop cũ là SUT cho activity mới. Việc tổ chức repo không xác nhận các commands, kết quả, video access hoặc human acceptance hiện tại.
+Mục 1 đã hoàn tất theo xác nhận trực tiếp của người dùng. Mục 2 đã hoàn tất technical audit và batch verification theo yêu cầu người dùng: 12 test/dry/mutation profiles, driver diagnosis, 3 target assertion controls và web/admin builds. Xem [Source Audit](docs/Source_Audit.md) cho trạng thái và evidence mới. Không mặc định workshop cũ là SUT cho activity mới. Audit kỹ thuật không xác nhận video access hoặc human acceptance.
 
 ## Sources and Authority
 
@@ -51,6 +51,7 @@ Người dùng đã xác nhận phần khảo sát và review scope ban đầu h
 - Video nộp bằng link theo người dùng; nội dung, phiên bản và access cần evidence thật.
 - Không tự đặt ngày, lịch hoặc estimate cho roadmap. Deadline của GV vẫn có trong nguồn requirements.
 - Lượt triển khai đã dừng trước stage/commit để người dùng review. Sau đó người dùng yêu cầu commit checkpoint tái cấu trúc trong chat. Không tự push.
+- Sau khi hoàn tất source audit, người dùng tiếp tục yêu cầu commit phần audit. Source checkpoint là `1be4637`; docs và evidence được commit riêng trong repo tài liệu. Không push; raw run metadata vẫn giữ revision và working tree tại thời điểm execution.
 
 ## Experiment Contract
 
@@ -73,4 +74,4 @@ Người dùng đã xác nhận phần khảo sát và review scope ban đầu h
 
 ## Open Inputs
 
-Ngày seminar và các mốc thực tế; kết quả audit source; SUT/platform activity mới; nguồn verdict/rehearsal cụ thể; guide English; media access; audience feedback; hai peer-review partners; cách tách AI-04 và Final Reflection. Các mục này được theo dõi trong checklist, không tự điền thành Done.
+Ngày seminar và các mốc thực tế; SUT/platform activity mới; nguồn verdict/rehearsal cụ thể; guide English; media access; audience feedback; hai peer-review partners; cách tách AI-04 và Final Reflection. Kết quả technical source audit đã có trong Source Audit; member review và self-runs vẫn theo evidence riêng.

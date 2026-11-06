@@ -1,0 +1,19 @@
+{
+  "name": "test-cart-orders-manual",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest\\bin\\jest.js",
+    "--config",
+    "jest.cart-orders.manual.config.cjs",
+    "--runInBand",
+    "--json",
+    "--outputFile",
+    "D:\\Workspace\\Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\T10_Mutation_Testing_and_Test_Effectiveness\\evidence\\verification\\source-audit-2026-11-06\\tests\\cart-orders-manual.json"
+  ],
+  "cwd": "D:\\Temp\\t10-source-audit-2026-11-06\\backend",
+  "startedUtc": "2026-11-06T08:57:18.187Z",
+  "finishedUtc": "2026-11-06T08:57:19.503Z",
+  "elapsedMs": 1316,
+  "exitCode": 0,
+  "signal": null
+}

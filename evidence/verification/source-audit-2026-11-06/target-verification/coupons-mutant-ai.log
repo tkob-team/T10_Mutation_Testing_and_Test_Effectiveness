@@ -1,0 +1,25 @@
+
+FAIL cart-coupons test/ai/coupons.ai.js
+  ● AI: admin limit 2 persists and controls the per-user boundary (FR-17, FR-09 C5)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 2
+    Received: 1
+
+      17 |   expect(listed.status).toBe(200);
+      18 |   expect(listed.body).toHaveLength(1);
+    > 19 |   expect(listed.body[0].max_uses_per_user).toBe(limit);
+         |                                            ^
+      20 |   const quote = () => h.request(app).post('/api/apply-coupon').set(h.bearer(token)).send({ code: 'AI_LIMIT', total_amount: 100000, user_id: 2 });
+      21 |   const consume = () => h.request(app).post('/api/coupon-usage').set(h.bearer(token)).send({ coupon_id: created.body.id });
+      22 |   for (let i=0; i<limit-1; i++) expect((await consume()).status).toBe(200);
+
+      at test/ai/coupons.ai.js:19:44
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 13 skipped, 14 total
+Snapshots:   0 total
+Time:        0.522 s, estimated 1 s
+Ran all test suites within paths "test/ai/coupons.ai.js".
+Test results written to: ..\..\..\Workspace\Study\courses-fit-hcmus\2026-2027\csc13003-testing\seminar\T10_Mutation_Testing_and_Test_Effectiveness\evidence\verification\source-audit-2026-11-06\target-verification\coupons-mutant-ai.json

@@ -1,0 +1,15 @@
+{
+  "name": "build-frontend-admin",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "C:\\nvm4w\\nodejs\\node_modules\\npm\\bin\\npm-cli.js",
+    "run",
+    "build"
+  ],
+  "cwd": "D:\\Temp\\t10-source-audit-2026-11-06\\frontend-admin",
+  "startedUtc": "2026-11-06T10:19:59.814Z",
+  "finishedUtc": "2026-11-06T10:20:01.456Z",
+  "elapsedMs": 1642,
+  "exitCode": 0,
+  "signal": null
+}

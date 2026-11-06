@@ -1,0 +1,19 @@
+{
+  "name": "test-overall-ai",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest\\bin\\jest.js",
+    "--config",
+    "jest.overall.ai.config.cjs",
+    "--runInBand",
+    "--json",
+    "--outputFile",
+    "D:\\Workspace\\Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\T10_Mutation_Testing_and_Test_Effectiveness\\evidence\\verification\\source-audit-2026-11-06\\tests\\overall-ai.json"
+  ],
+  "cwd": "D:\\Temp\\t10-source-audit-2026-11-06\\backend",
+  "startedUtc": "2026-11-06T08:57:41.919Z",
+  "finishedUtc": "2026-11-06T08:57:44.602Z",
+  "elapsedMs": 2683,
+  "exitCode": 0,
+  "signal": null
+}

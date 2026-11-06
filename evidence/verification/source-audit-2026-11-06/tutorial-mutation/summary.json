@@ -1,0 +1,22 @@
+[
+  {
+    "name": "weak",
+    "counts": {
+      "Killed": 3,
+      "Survived": 2
+    }
+  },
+  {
+    "name": "strong",
+    "counts": {
+      "Killed": 5
+    }
+  },
+  {
+    "name": "ai",
+    "counts": {
+      "Killed": 4,
+      "Survived": 1
+    }
+  }
+]

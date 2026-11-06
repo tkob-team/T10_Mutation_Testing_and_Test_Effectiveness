@@ -1,0 +1,31 @@
+{
+  "name": "coupons-mutant-ai",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:\\Temp\\t10-source-audit-targets-2026-11-06-v2\\backend\\node_modules\\jest\\bin\\jest.js",
+    "--config",
+    "jest.coupons.ai.config.cjs",
+    "--runInBand",
+    "--json",
+    "--outputFile",
+    "D:\\Workspace\\Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\T10_Mutation_Testing_and_Test_Effectiveness\\evidence\\verification\\source-audit-2026-11-06\\target-verification\\coupons-mutant-ai.json",
+    "--runTestsByPath",
+    "test/ai/coupons.ai.js",
+    "--testNamePattern",
+    "AI: admin limit 2 "
+  ],
+  "cwd": "D:\\Temp\\t10-source-audit-targets-2026-11-06-v2\\backend",
+  "exitCode": 1,
+  "total": 14,
+  "passed": 0,
+  "failed": 1,
+  "mutantSignature": "[474,7,474,29,\"LogicalOperator\",\"max_uses_per_user && 1\"]",
+  "failures": [
+    {
+      "name": "AI: admin limit 2 persists and controls the per-user boundary (FR-17, FR-09 C5)",
+      "messages": [
+        "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 2\nReceived: 1\n    at D:\\Temp\\t10-source-audit-targets-2026-11-06-v2\\backend\\test\\ai\\coupons.ai.js:19:44\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)"
+      ]
+    }
+  ]
+}

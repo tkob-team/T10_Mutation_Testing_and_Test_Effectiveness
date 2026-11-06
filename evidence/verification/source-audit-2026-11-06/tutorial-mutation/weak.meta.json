@@ -1,0 +1,13 @@
+{
+  "name": "weak",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\@stryker-mutator\\core\\bin\\stryker.js",
+    "run",
+    "tutorial/stryker.weak.config.json"
+  ],
+  "cwd": "D:/Temp/t10-source-audit-2026-11-06/backend",
+  "startedUtc": "2026-11-06T10:22:52.110Z",
+  "finishedUtc": "2026-11-06T10:22:55.384Z",
+  "exitCode": 0
+}

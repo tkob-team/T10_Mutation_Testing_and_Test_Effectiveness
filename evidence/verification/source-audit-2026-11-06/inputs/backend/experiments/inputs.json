@@ -1,0 +1,125 @@
+{
+  "baselineProduction": "806ba19ee4e09eafe9b2696ccf117a2b1ab841ef",
+  "sourceHead": "4b28756a1d2a59cb4b74300709122180056f9f55",
+  "executor": "OpenAI Codex AI Agent; member review and self-runs remain separate",
+  "imports": [
+    {
+      "file": "test/manual/cart-orders.manual.js",
+      "commit": "b77f5d6ab580ae1823fb4272290116a94328c42e",
+      "sha256": "5a6c41a6a1639623571b726e552566ef49e32898725fce4100f74ca0bf1fa70c",
+      "treatment": "Exact copy. Assertions, fixtures and attribution retained. Shared cleanup supplied by config."
+    },
+    {
+      "file": "test/ai/cart-orders.ai.js",
+      "commit": "f4696c6188d2277fe860a7f7ad2fe2234f61b68c",
+      "sha256": "07975e21aeaf806a446daedfe2bc576b15a6746421f0f543f131a01d82455a14",
+      "treatment": "Exact copy. Assertions, fixtures and attribution retained. Shared cleanup supplied by config."
+    }
+  ],
+  "profiles": {
+    "cart-orders": {
+      "baseline": {
+        "files": [
+          "test/cart-orders.test.js"
+        ],
+        "expectedTests": 36
+      },
+      "manual": {
+        "files": [
+          "test/cart-orders.test.js",
+          "test/manual/cart-orders.manual.js"
+        ],
+        "expectedTests": 44
+      },
+      "ai": {
+        "files": [
+          "test/cart-orders.test.js",
+          "test/ai/cart-orders.ai.js"
+        ],
+        "expectedTests": 41
+      }
+    },
+    "coupons": {
+      "baseline": {
+        "files": [
+          "test/coupons.test.js",
+          "test/coupons-flow.test.js"
+        ],
+        "expectedTests": 26
+      },
+      "manual": {
+        "files": [
+          "test/coupons.test.js",
+          "test/coupons-flow.test.js",
+          "test/manual/coupons.manual.js"
+        ],
+        "expectedTests": 35
+      },
+      "ai": {
+        "files": [
+          "test/coupons.test.js",
+          "test/coupons-flow.test.js",
+          "test/ai/coupons.ai.js"
+        ],
+        "expectedTests": 40
+      }
+    },
+    "auth": {
+      "baseline": {
+        "files": [
+          "test/auth.spec.test.js"
+        ],
+        "expectedTests": 26
+      },
+      "manual": {
+        "files": [
+          "test/auth.spec.test.js",
+          "test/auth.manual.test.js"
+        ],
+        "expectedTests": 39
+      },
+      "ai": {
+        "files": [
+          "test/auth.spec.test.js",
+          "test/auth.ai.test.js"
+        ],
+        "expectedTests": 37
+      }
+    },
+    "overall": {
+      "baseline": {
+        "files": [
+          "test/cart-orders.test.js",
+          "test/coupons.test.js",
+          "test/coupons-flow.test.js",
+          "test/auth.spec.test.js"
+        ],
+        "expectedTests": 88
+      },
+      "manual": {
+        "files": [
+          "test/cart-orders.test.js",
+          "test/manual/cart-orders.manual.js",
+          "test/coupons.test.js",
+          "test/coupons-flow.test.js",
+          "test/manual/coupons.manual.js",
+          "test/auth.spec.test.js",
+          "test/auth.manual.test.js"
+        ],
+        "expectedTests": 118
+      },
+      "ai": {
+        "files": [
+          "test/cart-orders.test.js",
+          "test/ai/cart-orders.ai.js",
+          "test/coupons.test.js",
+          "test/coupons-flow.test.js",
+          "test/ai/coupons.ai.js",
+          "test/auth.spec.test.js",
+          "test/auth.ai.test.js"
+        ],
+        "expectedTests": 118
+      }
+    }
+  }
+}

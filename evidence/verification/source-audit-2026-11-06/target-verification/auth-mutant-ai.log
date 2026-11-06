@@ -1,0 +1,25 @@
+
+FAIL auth test/auth.ai.test.js
+  ● Profile update (API 2.2, README FR-04, SEC-06) › AI-U01 updating the profile without a role leaves the role unchanged
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "user"
+    Received: null
+
+      134 |     const token = await loginOk(app, ALICE);
+      135 |     expect((await update(token, PROFILE)).status).toBe(200);
+    > 136 |     expect((await testApi.userByEmail(ALICE.email)).role).toBe('user');
+          |                                                           ^
+      137 |   });
+      138 |
+      139 |   // kills mutants 142, 143 (500 and error shape are conventions); token is obtained before the trigger exists
+
+      at Object.<anonymous> (test/auth.ai.test.js:136:59)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 10 skipped, 11 total
+Snapshots:   0 total
+Time:        0.504 s, estimated 1 s
+Ran all test suites within paths "test/auth.ai.test.js".
+Test results written to: ..\..\..\Workspace\Study\courses-fit-hcmus\2026-2027\csc13003-testing\seminar\T10_Mutation_Testing_and_Test_Effectiveness\evidence\verification\source-audit-2026-11-06\target-verification\auth-mutant-ai.json

@@ -1,0 +1,73 @@
+{
+  "scope": "Direct driver controls with one bind parameter; fresh process and in-memory DB per case",
+  "node": "v24.16.0",
+  "sqlite3": "6.0.1",
+  "probes": [
+    {
+      "method": "run",
+      "sql": "SELECT ? AS value",
+      "params": [
+        1
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "{}\n",
+      "stderr": ""
+    },
+    {
+      "method": "run",
+      "sql": "",
+      "params": [
+        1
+      ],
+      "exitCode": 3221225477,
+      "signal": null,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "method": "get",
+      "sql": "SELECT ? AS value",
+      "params": [
+        1
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "{\"row\":{\"value\":1}}\n",
+      "stderr": ""
+    },
+    {
+      "method": "get",
+      "sql": "",
+      "params": [
+        1
+      ],
+      "exitCode": 3221225477,
+      "signal": null,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "method": "all",
+      "sql": "SELECT ? AS value",
+      "params": [
+        1
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "{\"row\":[{\"value\":1}]}\n",
+      "stderr": ""
+    },
+    {
+      "method": "all",
+      "sql": "",
+      "params": [
+        1
+      ],
+      "exitCode": 3221225477,
+      "signal": null,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

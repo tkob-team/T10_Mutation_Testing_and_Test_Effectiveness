@@ -1,0 +1,25 @@
+
+FAIL cart-coupons test/manual/coupons.manual.js
+  ● MF-01 Admin input limit 3 is persisted as 3 (FR-17; mutants 111/113)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 3
+    Received: 1
+
+      24 |   expect(listed.status).toBe(200);
+      25 |   expect(listed.body).toHaveLength(1);
+    > 26 |   expect(listed.body[0].max_uses_per_user).toBe(3);
+         |                                            ^
+      27 | });
+      28 | test('MF-02 usage 2 is below configured limit 3 (FR-09 C5; mutants 111/113)', async () => {
+      29 |   const id=await createLimitThree();
+
+      at Object.<anonymous> (test/manual/coupons.manual.js:26:44)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 8 skipped, 9 total
+Snapshots:   0 total
+Time:        0.516 s, estimated 1 s
+Ran all test suites within paths "test/manual/coupons.manual.js".
+Test results written to: ..\..\..\Workspace\Study\courses-fit-hcmus\2026-2027\csc13003-testing\seminar\T10_Mutation_Testing_and_Test_Effectiveness\evidence\verification\source-audit-2026-11-06\target-verification\coupons-mutant-manual.json

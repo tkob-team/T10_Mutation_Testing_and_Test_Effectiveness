@@ -1,0 +1,15 @@
+{
+  "name": "mutate-cart-orders-ai",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\@stryker-mutator\\core\\bin\\stryker.js",
+    "run",
+    "stryker.cart-orders.ai.config.json"
+  ],
+  "cwd": "D:\\Temp\\t10-source-audit-2026-11-06\\backend",
+  "startedUtc": "2026-11-06T09:05:43.637Z",
+  "finishedUtc": "2026-11-06T09:09:43.553Z",
+  "elapsedMs": 239915,
+  "exitCode": 0,
+  "signal": null
+}

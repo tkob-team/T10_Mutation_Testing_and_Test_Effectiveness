@@ -1,0 +1,14 @@
+{
+  "name": "environment",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "-e",
+    "const fs=require('node:fs');const names=['jest','@stryker-mutator/core','@stryker-mutator/jest-runner','sqlite3'];console.log(JSON.stringify(Object.fromEntries(names.map(n=>[n,JSON.parse(fs.readFileSync('node_modules/'+n+'/package.json')).version]))));const sqlite=require('sqlite3');const db=new sqlite.Database(':memory:');db.get('SELECT sqlite_version() version',(e,r)=>{if(e)throw e;console.log(r);db.close()});"
+  ],
+  "cwd": "D:\\Temp\\t10-source-audit-2026-11-06\\backend",
+  "startedUtc": "2026-11-06T08:57:15.091Z",
+  "finishedUtc": "2026-11-06T08:57:15.148Z",
+  "elapsedMs": 56,
+  "exitCode": 0,
+  "signal": null
+}

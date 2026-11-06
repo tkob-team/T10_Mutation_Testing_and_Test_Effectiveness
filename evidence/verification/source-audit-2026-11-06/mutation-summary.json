@@ -1,0 +1,670 @@
+{
+  "generatedUtc": "2026-11-06T10:20:38.573Z",
+  "profiles": {
+    "cart-orders-baseline": {
+      "Killed": 89,
+      "Timeout": 18,
+      "Survived": 34,
+      "NoCoverage": 2,
+      "RuntimeError": 7,
+      "CompileError": 0,
+      "Ignored": 0,
+      "Pending": 0,
+      "total": 150,
+      "valid": 143,
+      "toolScore": 74.82517482517483,
+      "killedProportion": 62.23776223776224,
+      "sourceHashes": {
+        "server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487"
+      },
+      "reportedTests": 36,
+      "workerCrashMentions": 28,
+      "initialTestTiming": {
+        "tests": 36,
+        "netMs": 328,
+        "overheadMs": 672,
+        "configuredTimeoutMs": 6164
+      },
+      "expectedTests": 36
+    },
+    "cart-orders-manual": {
+      "Killed": 112,
+      "Timeout": 18,
+      "Survived": 11,
+      "NoCoverage": 2,
+      "RuntimeError": 7,
+      "CompileError": 0,
+      "Ignored": 0,
+      "Pending": 0,
+      "total": 150,
+      "valid": 143,
+      "toolScore": 90.9090909090909,
+      "killedProportion": 78.32167832167832,
+      "sourceHashes": {
+        "server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487"
+      },
+      "reportedTests": 44,
+      "workerCrashMentions": 28,
+      "initialTestTiming": {
+        "tests": 44,
+        "netMs": 375,
+        "overheadMs": 786,
+        "configuredTimeoutMs": 6348.5
+      },
+      "expectedTests": 44
+    },
+    "cart-orders-ai": {
+      "Killed": 102,
+      "Timeout": 18,
+      "Survived": 21,
+      "NoCoverage": 2,
+      "RuntimeError": 7,
+      "CompileError": 0,
+      "Ignored": 0,
+      "Pending": 0,
+      "total": 150,
+      "valid": 143,
+      "toolScore": 83.91608391608392,
+      "killedProportion": 71.32867132867133,
+      "sourceHashes": {
+        "server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487"
+      },
+      "reportedTests": 41,
+      "workerCrashMentions": 28,
+      "initialTestTiming": {
+        "tests": 41,
+        "netMs": 399,
+        "overheadMs": 838,
+        "configuredTimeoutMs": 6436.5
+      },
+      "expectedTests": 41
+    },
+    "coupons-baseline": {
+      "Killed": 42,
+      "Timeout": 18,
+      "Survived": 30,
+      "NoCoverage": 25,
+      "RuntimeError": 5,
+      "CompileError": 0,
+      "Ignored": 0,
+      "Pending": 0,
+      "total": 120,
+      "valid": 115,
+      "toolScore": 52.17391304347826,
+      "killedProportion": 36.52173913043478,
+      "sourceHashes": {
+        "server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487"
+      },
+      "reportedTests": 26,
+      "workerCrashMentions": 20,
+      "initialTestTiming": {
+        "tests": 26,
+        "netMs": 273,
+        "overheadMs": 744,
+        "configuredTimeoutMs": 6153.5
+      },
+      "expectedTests": 26
+    },
+    "coupons-manual": {
+      "Killed": 43,
+      "Timeout": 19,
+      "Survived": 28,
+      "NoCoverage": 25,
+      "RuntimeError": 5,
+      "CompileError": 0,
+      "Ignored": 0,
+      "Pending": 0,
+      "total": 120,
+      "valid": 115,
+      "toolScore": 53.91304347826087,
+      "killedProportion": 37.391304347826086,
+      "sourceHashes": {
+        "server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487"
+      },
+      "reportedTests": 35,
+      "workerCrashMentions": 20,
+      "initialTestTiming": {
+        "tests": 35,
+        "netMs": 368,
+        "overheadMs": 818,
+        "configuredTimeoutMs": 6370
+      },
+      "expectedTests": 35
+    },
+    "coupons-ai": {
+      "Killed": 41,
+      "Timeout": 21,
+      "Survived": 28,
+      "NoCoverage": 25,
+      "RuntimeError": 5,
+      "CompileError": 0,
+      "Ignored": 0,
+      "Pending": 0,
+      "total": 120,
+      "valid": 115,
+      "toolScore": 53.91304347826087,
+      "killedProportion": 35.65217391304348,
+      "sourceHashes": {
+        "server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487"
+      },
+      "reportedTests": 40,
+      "workerCrashMentions": 20,
+      "initialTestTiming": {
+        "tests": 40,
+        "netMs": 542,
+        "overheadMs": 853,
+        "configuredTimeoutMs": 6666
+      },
+      "expectedTests": 40
+    },
+    "auth-baseline": {
+      "Killed": 64,
+      "Timeout": 18,
+      "Survived": 23,
+      "NoCoverage": 7,
+      "RuntimeError": 13,
+      "CompileError": 0,
+      "Ignored": 0,
+      "Pending": 0,
+      "total": 125,
+      "valid": 112,
+      "toolScore": 73.21428571428571,
+      "killedProportion": 57.142857142857146,
+      "sourceHashes": {
+        "server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487"
+      },
+      "reportedTests": 26,
+      "workerCrashMentions": 32,
+      "initialTestTiming": {
+        "tests": 26,
+        "netMs": 813,
+        "overheadMs": 18678,
+        "configuredTimeoutMs": 24897.5
+      },
+      "expectedTests": 26
+    },
+    "auth-manual": {
+      "Killed": 83,
+      "Timeout": 27,
+      "Survived": 4,
+      "NoCoverage": 3,
+      "RuntimeError": 8,
+      "CompileError": 0,
+      "Ignored": 0,
+      "Pending": 0,
+      "total": 125,
+      "valid": 117,
+      "toolScore": 94.01709401709402,
+      "killedProportion": 70.94017094017094,
+      "sourceHashes": {
+        "server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487"
+      },
+      "reportedTests": 39,
+      "workerCrashMentions": 32,
+      "initialTestTiming": {
+        "tests": 39,
+        "netMs": 230,
+        "overheadMs": 738,
+        "configuredTimeoutMs": 6083
+      },
+      "expectedTests": 39
+    },
+    "auth-ai": {
+      "Killed": 74,
+      "Timeout": 27,
+      "Survived": 13,
+      "NoCoverage": 3,
+      "RuntimeError": 8,
+      "CompileError": 0,
+      "Ignored": 0,
+      "Pending": 0,
+      "total": 125,
+      "valid": 117,
+      "toolScore": 86.32478632478633,
+      "killedProportion": 63.24786324786325,
+      "sourceHashes": {
+        "server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487"
+      },
+      "reportedTests": 37,
+      "workerCrashMentions": 32,
+      "initialTestTiming": {
+        "tests": 37,
+        "netMs": 266,
+        "overheadMs": 808,
+        "configuredTimeoutMs": 6207
+      },
+      "expectedTests": 37
+    },
+    "overall-baseline": {
+      "Killed": 191,
+      "Timeout": 63,
+      "Survived": 87,
+      "NoCoverage": 34,
+      "RuntimeError": 20,
+      "CompileError": 0,
+      "Ignored": 0,
+      "Pending": 0,
+      "total": 395,
+      "valid": 375,
+      "toolScore": 67.73333333333333,
+      "killedProportion": 50.93333333333333,
+      "sourceHashes": {
+        "server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487"
+      },
+      "reportedTests": 88,
+      "workerCrashMentions": 80,
+      "initialTestTiming": {
+        "tests": 88,
+        "netMs": 780,
+        "overheadMs": 1113,
+        "configuredTimeoutMs": 7283
+      },
+      "expectedTests": 88
+    },
+    "overall-manual": {
+      "Killed": 238,
+      "Timeout": 64,
+      "Survived": 43,
+      "NoCoverage": 30,
+      "RuntimeError": 20,
+      "CompileError": 0,
+      "Ignored": 0,
+      "Pending": 0,
+      "total": 395,
+      "valid": 375,
+      "toolScore": 80.53333333333333,
+      "killedProportion": 63.46666666666667,
+      "sourceHashes": {
+        "server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487"
+      },
+      "reportedTests": 118,
+      "workerCrashMentions": 80,
+      "initialTestTiming": {
+        "tests": 118,
+        "netMs": 1039,
+        "overheadMs": 1353,
+        "configuredTimeoutMs": 7911.5
+      },
+      "expectedTests": 118
+    },
+    "overall-ai": {
+      "Killed": 217,
+      "Timeout": 66,
+      "Survived": 62,
+      "NoCoverage": 30,
+      "RuntimeError": 20,
+      "CompileError": 0,
+      "Ignored": 0,
+      "Pending": 0,
+      "total": 395,
+      "valid": 375,
+      "toolScore": 75.46666666666667,
+      "killedProportion": 57.86666666666667,
+      "sourceHashes": {
+        "server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487"
+      },
+      "reportedTests": 118,
+      "workerCrashMentions": 80,
+      "initialTestTiming": {
+        "tests": 118,
+        "netMs": 1105,
+        "overheadMs": 1337,
+        "configuredTimeoutMs": 7994.5
+      },
+      "expectedTests": 118
+    }
+  },
+  "comparisons": {
+    "cart-orders-manual": {
+      "sameUniverse": true,
+      "transitions": {
+        "Survived -> Killed": 23
+      },
+      "newKilledFromSurvivedOrNoCoverage": 23,
+      "detectedToUndetected": 0,
+      "sameSource": true
+    },
+    "cart-orders-ai": {
+      "sameUniverse": true,
+      "transitions": {
+        "Survived -> Killed": 13
+      },
+      "newKilledFromSurvivedOrNoCoverage": 13,
+      "detectedToUndetected": 0,
+      "sameSource": true
+    },
+    "coupons-manual": {
+      "sameUniverse": true,
+      "transitions": {
+        "Killed -> Timeout": 1,
+        "Survived -> Killed": 2
+      },
+      "newKilledFromSurvivedOrNoCoverage": 2,
+      "detectedToUndetected": 0,
+      "sameSource": true
+    },
+    "coupons-ai": {
+      "sameUniverse": true,
+      "transitions": {
+        "Killed -> Timeout": 3,
+        "Survived -> Killed": 2
+      },
+      "newKilledFromSurvivedOrNoCoverage": 2,
+      "detectedToUndetected": 0,
+      "sameSource": true
+    },
+    "auth-manual": {
+      "sameUniverse": true,
+      "transitions": {
+        "NoCoverage -> Killed": 4,
+        "Killed -> Timeout": 4,
+        "RuntimeError -> Timeout": 5,
+        "Survived -> Killed": 19
+      },
+      "newKilledFromSurvivedOrNoCoverage": 23,
+      "detectedToUndetected": 0,
+      "sameSource": true
+    },
+    "auth-ai": {
+      "sameUniverse": true,
+      "transitions": {
+        "NoCoverage -> Killed": 4,
+        "Killed -> Timeout": 4,
+        "RuntimeError -> Timeout": 5,
+        "Survived -> Killed": 10
+      },
+      "newKilledFromSurvivedOrNoCoverage": 14,
+      "detectedToUndetected": 0,
+      "sameSource": true
+    },
+    "overall-manual": {
+      "sameUniverse": true,
+      "transitions": {
+        "NoCoverage -> Killed": 4,
+        "Survived -> Killed": 44,
+        "Killed -> Timeout": 1
+      },
+      "newKilledFromSurvivedOrNoCoverage": 48,
+      "detectedToUndetected": 0,
+      "sameSource": true
+    },
+    "overall-ai": {
+      "sameUniverse": true,
+      "transitions": {
+        "NoCoverage -> Killed": 4,
+        "Survived -> Killed": 25,
+        "Killed -> Timeout": 3
+      },
+      "newKilledFromSurvivedOrNoCoverage": 29,
+      "detectedToUndetected": 0,
+      "sameSource": true
+    }
+  },
+  "historical": {
+    "baseline": {
+      "old": {
+        "Killed": 191,
+        "Timeout": 61,
+        "Survived": 87,
+        "NoCoverage": 34,
+        "RuntimeError": 22,
+        "CompileError": 0,
+        "Ignored": 0,
+        "Pending": 0,
+        "total": 395,
+        "valid": 373,
+        "toolScore": 67.5603217158177,
+        "killedProportion": 51.206434316353885,
+        "sourceHashes": {
+          "server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487"
+        },
+        "reportedTests": 88
+      },
+      "current": {
+        "Killed": 191,
+        "Timeout": 63,
+        "Survived": 87,
+        "NoCoverage": 34,
+        "RuntimeError": 20,
+        "CompileError": 0,
+        "Ignored": 0,
+        "Pending": 0,
+        "total": 395,
+        "valid": 375,
+        "toolScore": 67.73333333333333,
+        "killedProportion": 50.93333333333333,
+        "sourceHashes": {
+          "server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487"
+        },
+        "reportedTests": 88
+      },
+      "sameUniverse": true,
+      "transitions": {
+        "RuntimeError -> Timeout": 2
+      },
+      "newKilledFromSurvivedOrNoCoverage": 0,
+      "detectedToUndetected": 0
+    },
+    "manual": {
+      "old": {
+        "Killed": 238,
+        "Timeout": 64,
+        "Survived": 43,
+        "NoCoverage": 30,
+        "RuntimeError": 20,
+        "CompileError": 0,
+        "Ignored": 0,
+        "Pending": 0,
+        "total": 395,
+        "valid": 375,
+        "toolScore": 80.53333333333333,
+        "killedProportion": 63.46666666666667,
+        "sourceHashes": {
+          "server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487"
+        },
+        "reportedTests": 118
+      },
+      "current": {
+        "Killed": 238,
+        "Timeout": 64,
+        "Survived": 43,
+        "NoCoverage": 30,
+        "RuntimeError": 20,
+        "CompileError": 0,
+        "Ignored": 0,
+        "Pending": 0,
+        "total": 395,
+        "valid": 375,
+        "toolScore": 80.53333333333333,
+        "killedProportion": 63.46666666666667,
+        "sourceHashes": {
+          "server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487"
+        },
+        "reportedTests": 118
+      },
+      "sameUniverse": true,
+      "transitions": {},
+      "newKilledFromSurvivedOrNoCoverage": 0,
+      "detectedToUndetected": 0
+    },
+    "ai": {
+      "old": {
+        "Killed": 211,
+        "Timeout": 72,
+        "Survived": 62,
+        "NoCoverage": 30,
+        "RuntimeError": 20,
+        "CompileError": 0,
+        "Ignored": 0,
+        "Pending": 0,
+        "total": 395,
+        "valid": 375,
+        "toolScore": 75.46666666666667,
+        "killedProportion": 56.266666666666666,
+        "sourceHashes": {
+          "server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487"
+        },
+        "reportedTests": 118
+      },
+      "current": {
+        "Killed": 217,
+        "Timeout": 66,
+        "Survived": 62,
+        "NoCoverage": 30,
+        "RuntimeError": 20,
+        "CompileError": 0,
+        "Ignored": 0,
+        "Pending": 0,
+        "total": 395,
+        "valid": 375,
+        "toolScore": 75.46666666666667,
+        "killedProportion": 57.86666666666667,
+        "sourceHashes": {
+          "server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487"
+        },
+        "reportedTests": 118
+      },
+      "sameUniverse": true,
+      "transitions": {
+        "Timeout -> Killed": 6
+      },
+      "newKilledFromSurvivedOrNoCoverage": 0,
+      "detectedToUndetected": 0
+    }
+  },
+  "commonValid": {
+    "cart-orders": {
+      "count": 143,
+      "excludedFromAnyCondition": 7,
+      "profiles": {
+        "baseline": {
+          "Killed": 89,
+          "Timeout": 18,
+          "Survived": 34,
+          "NoCoverage": 2,
+          "valid": 143,
+          "detectedProportion": 74.82517482517483,
+          "killedProportion": 62.23776223776224
+        },
+        "manual": {
+          "Killed": 112,
+          "Timeout": 18,
+          "Survived": 11,
+          "NoCoverage": 2,
+          "valid": 143,
+          "detectedProportion": 90.9090909090909,
+          "killedProportion": 78.32167832167832
+        },
+        "ai": {
+          "Killed": 102,
+          "Timeout": 18,
+          "Survived": 21,
+          "NoCoverage": 2,
+          "valid": 143,
+          "detectedProportion": 83.91608391608392,
+          "killedProportion": 71.32867132867133
+        }
+      }
+    },
+    "coupons": {
+      "count": 115,
+      "excludedFromAnyCondition": 5,
+      "profiles": {
+        "baseline": {
+          "Killed": 42,
+          "Timeout": 18,
+          "Survived": 30,
+          "NoCoverage": 25,
+          "valid": 115,
+          "detectedProportion": 52.17391304347826,
+          "killedProportion": 36.52173913043478
+        },
+        "manual": {
+          "Killed": 43,
+          "Timeout": 19,
+          "Survived": 28,
+          "NoCoverage": 25,
+          "valid": 115,
+          "detectedProportion": 53.91304347826087,
+          "killedProportion": 37.391304347826086
+        },
+        "ai": {
+          "Killed": 41,
+          "Timeout": 21,
+          "Survived": 28,
+          "NoCoverage": 25,
+          "valid": 115,
+          "detectedProportion": 53.91304347826087,
+          "killedProportion": 35.65217391304348
+        }
+      }
+    },
+    "auth": {
+      "count": 112,
+      "excludedFromAnyCondition": 13,
+      "profiles": {
+        "baseline": {
+          "Killed": 64,
+          "Timeout": 18,
+          "Survived": 23,
+          "NoCoverage": 7,
+          "valid": 112,
+          "detectedProportion": 73.21428571428571,
+          "killedProportion": 57.142857142857146
+        },
+        "manual": {
+          "Killed": 83,
+          "Timeout": 22,
+          "Survived": 4,
+          "NoCoverage": 3,
+          "valid": 112,
+          "detectedProportion": 93.75,
+          "killedProportion": 74.10714285714286
+        },
+        "ai": {
+          "Killed": 74,
+          "Timeout": 22,
+          "Survived": 13,
+          "NoCoverage": 3,
+          "valid": 112,
+          "detectedProportion": 85.71428571428571,
+          "killedProportion": 66.07142857142857
+        }
+      }
+    },
+    "overall": {
+      "count": 375,
+      "excludedFromAnyCondition": 20,
+      "profiles": {
+        "baseline": {
+          "Killed": 191,
+          "Timeout": 63,
+          "Survived": 87,
+          "NoCoverage": 34,
+          "valid": 375,
+          "detectedProportion": 67.73333333333333,
+          "killedProportion": 50.93333333333333
+        },
+        "manual": {
+          "Killed": 238,
+          "Timeout": 64,
+          "Survived": 43,
+          "NoCoverage": 30,
+          "valid": 375,
+          "detectedProportion": 80.53333333333333,
+          "killedProportion": 63.46666666666667
+        },
+        "ai": {
+          "Killed": 217,
+          "Timeout": 66,
+          "Survived": 62,
+          "NoCoverage": 30,
+          "valid": 375,
+          "detectedProportion": 75.46666666666667,
+          "killedProportion": 57.86666666666667
+        }
+      }
+    }
+  },
+  "interpretation": "Killed counts and new Killed transitions are tool observations; only separately probed examples are assertion-verified. Agent execution of retained collections, not fresh generation, independent human-only control, member self-run or model ranking."
+}

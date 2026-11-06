@@ -1,0 +1,71 @@
+{
+  "scope": "Direct installed driver controls, outside Jest/Stryker/SUT; each uses a new in-memory DB",
+  "probes": [
+    {
+      "method": "run",
+      "sql": "SELECT 1 AS value",
+      "node": "v24.16.0",
+      "sqlite3": "6.0.1",
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "{}\n",
+      "stderr": "",
+      "elapsedMs": 72
+    },
+    {
+      "method": "run",
+      "sql": "",
+      "node": "v24.16.0",
+      "sqlite3": "6.0.1",
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "{\"error\":\"SQLITE_MISUSE: not an error\"}\n",
+      "stderr": "",
+      "elapsedMs": 68
+    },
+    {
+      "method": "get",
+      "sql": "SELECT 1 AS value",
+      "node": "v24.16.0",
+      "sqlite3": "6.0.1",
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "{\"row\":{\"value\":1}}\n",
+      "stderr": "",
+      "elapsedMs": 71
+    },
+    {
+      "method": "get",
+      "sql": "",
+      "node": "v24.16.0",
+      "sqlite3": "6.0.1",
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "{\"error\":\"SQLITE_MISUSE: not an error\"}\n",
+      "stderr": "",
+      "elapsedMs": 67
+    },
+    {
+      "method": "all",
+      "sql": "SELECT 1 AS value",
+      "node": "v24.16.0",
+      "sqlite3": "6.0.1",
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "{\"row\":[{\"value\":1}]}\n",
+      "stderr": "",
+      "elapsedMs": 69
+    },
+    {
+      "method": "all",
+      "sql": "",
+      "node": "v24.16.0",
+      "sqlite3": "6.0.1",
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "{\"error\":\"SQLITE_MISUSE: not an error\"}\n",
+      "stderr": "",
+      "elapsedMs": 65
+    }
+  ]
+}

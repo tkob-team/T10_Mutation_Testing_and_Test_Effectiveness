@@ -1,0 +1,7 @@
+{
+  "error": "Source coordinate guard rejected the probe before any test or mutation was executed. Report columns are one-based; initial helper used zero-based offset.",
+  "actualSlice": "];",
+  "expectedSlice": "[]",
+  "corrected": "Subtract one from report column before slicing source",
+  "createdUtc": "2026-11-06T10:21:05.295Z"
+}

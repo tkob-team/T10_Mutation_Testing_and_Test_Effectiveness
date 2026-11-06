@@ -1,0 +1,31 @@
+{
+  "name": "cart-orders-mutant-ai",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:\\Temp\\t10-source-audit-targets-2026-11-06-v2\\backend\\node_modules\\jest\\bin\\jest.js",
+    "--config",
+    "jest.cart-orders.ai.config.cjs",
+    "--runInBand",
+    "--json",
+    "--outputFile",
+    "D:\\Workspace\\Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\T10_Mutation_Testing_and_Test_Effectiveness\\evidence\\verification\\source-audit-2026-11-06\\target-verification\\cart-orders-mutant-ai.json",
+    "--runTestsByPath",
+    "test/ai/cart-orders.ai.js",
+    "--testNamePattern",
+    "AI-CO-01"
+  ],
+  "cwd": "D:\\Temp\\t10-source-audit-targets-2026-11-06-v2\\backend",
+  "exitCode": 1,
+  "total": 5,
+  "passed": 0,
+  "failed": 1,
+  "mutantSignature": "[286,47,286,49,\"ArrayDeclaration\",\"[\\\"Stryker was here\\\"]\"]",
+  "failures": [
+    {
+      "name": "AI — Cart contents (spec §4.1–4.2, FR-07) AI-CO-01 new user GET /api/cart → 200 with an empty array",
+      "messages": [
+        "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 1\n+ Received  + 3\n\n- Array []\n+ Array [\n+   \"Stryker was here\",\n+ ]\n    at Object.<anonymous> (D:\\Temp\\t10-source-audit-targets-2026-11-06-v2\\backend\\test\\ai\\cart-orders.ai.js:31:22)\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)"
+      ]
+    }
+  ]
+}

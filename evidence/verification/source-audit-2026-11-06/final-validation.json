@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "checkedUtc": "2026-11-06T10:28:49.894Z",
+  "checks": {
+    "coreMatrixCompleted": true,
+    "corePreservation": true,
+    "twelveProfilesAndMatchedComparisons": true,
+    "historicalSourcesMatch": true,
+    "eighteenTargetControls": true,
+    "tutorialMutations": true,
+    "factoryConfigsMatch": true,
+    "backendSyntaxFiles": 57,
+    "postprocessingOnlyChanges": [
+      "backend/scripts/summarize-audit.cjs"
+    ],
+    "currentProductionUnchanged": true,
+    "newBrokenLinks": [],
+    "preexistingBrokenLinks": [],
+    "sourceIndex": "",
+    "docsIndex": "",
+    "currentWorkingDocumentLinks": "All local targets in six current working/index documents exist after link correction",
+    "gitDiffWhitespace": "Both repos passed",
+    "startupBashSyntax": "bash -n passed; script not executed against tracked database"
+  }
+}

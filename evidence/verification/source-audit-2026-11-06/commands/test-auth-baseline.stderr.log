@@ -1,0 +1,6 @@
+Test Suites: 1 passed, 1 total
+Tests:       26 passed, 26 total
+Snapshots:   0 total
+Time:        0.822 s
+Ran all test suites.
+Test results written to: ..\..\..\Workspace\Study\courses-fit-hcmus\2026-2027\csc13003-testing\seminar\T10_Mutation_Testing_and_Test_Effectiveness\evidence\verification\source-audit-2026-11-06\tests\auth-baseline.json

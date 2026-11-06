@@ -1,0 +1,31 @@
+{
+  "name": "coupons-mutant-manual",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:\\Temp\\t10-source-audit-targets-2026-11-06-v2\\backend\\node_modules\\jest\\bin\\jest.js",
+    "--config",
+    "jest.coupons.manual.config.cjs",
+    "--runInBand",
+    "--json",
+    "--outputFile",
+    "D:\\Workspace\\Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\T10_Mutation_Testing_and_Test_Effectiveness\\evidence\\verification\\source-audit-2026-11-06\\target-verification\\coupons-mutant-manual.json",
+    "--runTestsByPath",
+    "test/manual/coupons.manual.js",
+    "--testNamePattern",
+    "MF-01"
+  ],
+  "cwd": "D:\\Temp\\t10-source-audit-targets-2026-11-06-v2\\backend",
+  "exitCode": 1,
+  "total": 9,
+  "passed": 0,
+  "failed": 1,
+  "mutantSignature": "[474,7,474,29,\"LogicalOperator\",\"max_uses_per_user && 1\"]",
+  "failures": [
+    {
+      "name": "MF-01 Admin input limit 3 is persisted as 3 (FR-17; mutants 111/113)",
+      "messages": [
+        "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 3\nReceived: 1\n    at Object.<anonymous> (D:\\Temp\\t10-source-audit-targets-2026-11-06-v2\\backend\\test\\manual\\coupons.manual.js:26:44)\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "executor": "OpenAI Codex AI Agent; not a member self-run or human review",
+  "source": "D:\\Workspace\\Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness",
+  "sourceHead": "4b28756a1d2a59cb4b74300709122180056f9f55",
+  "sourceStatus": "M backend/jest.auth-defects.config.cjs\n M backend/jest.auth.ai.config.cjs\n M backend/jest.auth.config.cjs\n M backend/jest.auth.manual.config.cjs\n M backend/jest.coupons.ai.config.cjs\n M backend/jest.coupons.manual.config.cjs\n M backend/jest.defects.config.cjs\n M backend/package-lock.json\n M backend/package.json\n M backend/scripts/prepare-baseline.cjs\n M backend/stryker.auth.ai.config.json\n M backend/stryker.auth.config.json\n M backend/stryker.auth.manual.config.json\n M backend/stryker.cart-orders.config.json\n M backend/stryker.coupons.ai.config.json\n M backend/stryker.coupons.config.json\n M backend/stryker.coupons.manual.config.json\n M backend/test/ai/coupons.ai.js\n M backend/test/auth-cleanup.cjs\n M backend/test/coupons-flow.test.js\n M backend/test/coupons.test.js\n M backend/test/defects/coupons.defects.js\n M backend/test/helpers/app.js\n M backend/test/manual/coupons.manual.js\n M backend/test/testDb.js\n M backend/tutorial/jest.ai.config.cjs\n M backend/tutorial/jest.strong.config.cjs\n M backend/tutorial/jest.weak.config.cjs\n M run_servers.sh\n M setup_guide.md\n?? .nvmrc\n?? TESTING.md\n?? backend/.nvmrc\n?? backend/config/\n?? backend/experiments/\n?? backend/jest.cart-orders.ai.config.cjs\n?? backend/jest.cart-orders.config.cjs\n?? backend/jest.cart-orders.manual.config.cjs\n?? backend/jest.config.cjs\n?? backend/jest.coupons.config.cjs\n?? backend/jest.overall.ai.config.cjs\n?? backend/jest.overall.ai.mutation.config.cjs\n?? backend/jest.overall.config.cjs\n?? backend/jest.overall.manual.config.cjs\n?? backend/jest.overall.manual.mutation.config.cjs\n?? backend/jest.overall.mutation.config.cjs\n?? backend/scripts/audit.cjs\n?? backend/scripts/profile.cjs\n?? backend/scripts/summarize-audit.cjs\n?? backend/stryker.cart-orders.ai.config.json\n?? backend/stryker.cart-orders.manual.config.json\n?? backend/stryker.overall.ai.config.json\n?? backend/stryker.overall.config.json\n?? backend/stryker.overall.manual.config.json\n?? backend/test/ai/cart-orders.ai.js\n?? backend/test/cleanup.cjs\n?? backend/test/manual/cart-orders.manual.js",
+  "runtime": "D:\\Temp\\t10-source-audit-2026-11-06",
+  "historicalProduction": "806ba19ee4e09eafe9b2696ccf117a2b1ab841ef",
+  "node": "v24.16.0",
+  "platform": "win32",
+  "arch": "x64",
+  "npm": "12.0.2",
+  "createdUtc": "2026-11-06T08:56:29.868Z",
+  "inputSha256": {
+    ".nvmrc": "2722b61f414f07f08be7f1f1316012813818f26f1c40d6a24a748686cec7d2ff",
+    "backend/.nvmrc": "2722b61f414f07f08be7f1f1316012813818f26f1c40d6a24a748686cec7d2ff",
+    "backend/config/profiles.cjs": "c1b4f30b21453e0134841c94bdb3f0e46b4f152b7b2232dea915bbd70b660843",
+    "backend/experiments/inputs.json": "c86ba3da8d3d20be45a7ce04aeb9ea92ebffbd88c56ca809f4187cdfeb7c5d29",
+    "backend/jest.cart-orders.ai.config.cjs": "75260ef8b428864904d175ab17529777b09f5d3019a42bb1ded6a33ff37b0371",
+    "backend/jest.cart-orders.config.cjs": "2f4067b1951e237e8ac8591fafb78793dd151ba9a126ff43670dce6e4e9c7798",
+    "backend/jest.cart-orders.manual.config.cjs": "1f889fa844ff4f6d2375b5e5c608743c7db5126ffabe573287b9757637c6b731",
+    "backend/jest.config.cjs": "eb60fc963ca20271464681b18b885480c0e76e1f381dc369ebc7779af54479ba",
+    "backend/jest.coupons.config.cjs": "eb4b60bea4961413f350af34bdbba1f173962843785612d55f016bfcba23e06d",
+    "backend/jest.overall.ai.config.cjs": "7b8d49bdccad884ebbd42798f65ef82cb0b5eaa2019fccf6a5a9f1e574d1f0c6",
+    "backend/jest.overall.ai.mutation.config.cjs": "65eaa8bd8af02bffab90cef7fef9775390f7dbaa4e6b7946c46e198da05cb540",
+    "backend/jest.overall.config.cjs": "eb60fc963ca20271464681b18b885480c0e76e1f381dc369ebc7779af54479ba",
+    "backend/jest.overall.manual.config.cjs": "f3f204b93fc42dac7590fce03288e22324ddd6ff977cac9fabb1306acf3a0966",
+    "backend/jest.overall.manual.mutation.config.cjs": "c55577d31cafe6b807a2423124e7eaf2fbbea4100b126b881c6d0ae474ac7709",
+    "backend/jest.overall.mutation.config.cjs": "b37d775f64e327cbbea589b1f652d302b4ebe48b24ec848c76d150a8a2c6df2a",
+    "backend/scripts/audit.cjs": "5bbb9e1f42dd70397ca4000689fdec76d084e6417522c4e56f4288ed1640c911",
+    "backend/scripts/profile.cjs": "aeb1eebdf0ff4846fb57fcca37a71ca0729668bf53f10817cff4c8d410ff9b44",
+    "backend/scripts/summarize-audit.cjs": "06816755d4cc840a9d90468e54001f0b8006b48b343f104aaec4ef51afd1dbb5",
+    "backend/stryker.cart-orders.ai.config.json": "cfd1dfe97e0ca4817641c28aebb9a9fdef84dfc8a4a3029907087f2512f5d8b7",
+    "backend/stryker.cart-orders.manual.config.json": "cc9d1d808c6398f40484f058660c7737a455873653b3213bb84b26acefc2932a",
+    "backend/stryker.overall.ai.config.json": "04272198cc19bb5dffab24290d8823c68f3ad0a0107a5298cd9617b9543e6e06",
+    "backend/stryker.overall.config.json": "a0666dde1a75e495d9dcecd24353d75d2b2c92b1134d9aaa003b4ce914e35f81",
+    "backend/stryker.overall.manual.config.json": "badf03b0b6efa119024f67f1e1d94f2c88f2b833b015e1ef5266865072271374",
+    "backend/test/ai/cart-orders.ai.js": "07975e21aeaf806a446daedfe2bc576b15a6746421f0f543f131a01d82455a14",
+    "backend/test/cleanup.cjs": "c7f9c7ea155ea1741c7311128c21f595232604f16d9666e3f75d4c88cfce5ab9",
+    "backend/test/manual/cart-orders.manual.js": "5a6c41a6a1639623571b726e552566ef49e32898725fce4100f74ca0bf1fa70c",
+    "backend/database.js": "50012f35c2cf0776dd837482d76adf701f0ee40cdcb9d80143278fccde034717",
+    "backend/database.sqlite": "c63f00544180ba1fbb1427a9b9dd3f1784842698809972f33ce90482e7420ba6",
+    "backend/jest.auth-defects.config.cjs": "1de0630ccf469610c73ad2c7501a4580c121c6ce476cae9e77a6543edbf228f2",
+    "backend/jest.auth.ai.config.cjs": "d749eb736cbc650a6188d6012f4098f1188a188a616becc803f231696d7f4688",
+    "backend/jest.auth.config.cjs": "9267ca7ddbddc02567cf8c34c003c04a5861ac8ba68f8ebda2d29e6dbed74e44",
+    "backend/jest.auth.manual.config.cjs": "e917c611718d33942a6dc54bb12e04f2dd384ccf9e7c55451b67b583b6ddbeb1",
+    "backend/jest.coupons.ai.config.cjs": "f34daede3655a9d1f4abef90b66cef0eedb8d4dd3014ecc779672b728d6938c8",
+    "backend/jest.coupons.manual.config.cjs": "4a01d967d03bc2c8acd2fe47ab1cd2562b605f5c653c17f26317f54b1f8407ad",
+    "backend/jest.defects.config.cjs": "6e9f63d4b066ea55a0a54a1cc2259d4b4bdbff507ce9eeab0d1f2d08bf7dbe6e",
+    "backend/package-lock.json": "6b96ae458203a46681bc715042b2c779a7b45a411ff54603558687d9f7e0ef50",
+    "backend/package.json": "a0d7aa0c0579d9a0a400edf404dd169a0eb89e47d8395e340247fca39661ef40",
+    "backend/scripts/evidence-runner.cjs": "37271afd4fd6d6311ea653e8d840e1c980a8d57f232d08455f83a9dfb9c30732",
+    "backend/scripts/prepare-baseline.cjs": "1caed8866075c5c2f243f5766cbc1942ee05f8b2da7a64026204c9fb02c47933",
+    "backend/server.js": "e2263811a1690a63a7dbb4446c3fd33fb87f50d073d9f8cdfab7083a52f5e8ed",
+    "backend/stryker.auth.ai.config.json": "7d0c8f0395dd359018c0c3c7957bb497b5d6e8a5eec3ffb80dd020e526c158f4",
+    "backend/stryker.auth.config.json": "60aaa37eb10b45d09b8f11e18b57ba60cf75e248ee6b2f6cb66917bba0f7557e",
+    "backend/stryker.auth.manual.config.json": "636c5584d7dd37ea3a873bf48509bb8ae42bcaf39e963153abe66afd5f41362f",
+    "backend/stryker.cart-orders.config.json": "7fa04e7c2e47b05320d53c1e6cbeb74e4f071e5b3a8c638686fe3c61c39bb87b",
+    "backend/stryker.coupons.ai.config.json": "a38490e9c0b342fc52886be7b543162bb0862a5c4ce174076544f5b9e5479cce",
+    "backend/stryker.coupons.config.json": "93cdcff556bab5905ecbf97e5522f30974e8c4dd3d9c7db95f068880991d46ea",
+    "backend/stryker.coupons.manual.config.json": "556d5eaa02279d39abfc8793f6ec58b6f4d1b1308bd34a537611deb52e60c826",
+    "backend/test/ai/coupons.ai.js": "498f0c140e8ace63b431d7b33b941cf3eb7c8bad6d01ef0c4ecd4358e8287b45",
+    "backend/test/auth-cleanup.cjs": "29d072869b93447efe08ccd0f14d9e8ff020f0ab972283de4041fdae4c8d3084",
+    "backend/test/auth.ai.test.js": "fb9977e60c4d3b7d2502fba80649668ddeb1c1767abf0f0e9c6bacc255530609",
+    "backend/test/auth.defects.test.js": "5a3e4eb2283ff45762abcfc2b9fb7b57731ce568a1be085c3ea08642b81d160c",
+    "backend/test/auth.manual.test.js": "d78b81cde718d9b9e37ac12a46465e5da6e05c414599a17d2d1ff837507b24f2",
+    "backend/test/auth.spec.test.js": "9d59dc64e10436d6f87ff72ca313831389db4e1dcf80b3ea42d23dbee932b4cd",
+    "backend/test/cart-orders.test.js": "c8ca8dc84b57c8139fde10318f663b6359a6a9af7c089402445b50e642e28689",
+    "backend/test/coupons-flow.test.js": "1a0e50a270ae88c19591d9fff5a441d7a4027d50f23188461fab331726b4ee96",
+    "backend/test/coupons.test.js": "9cbcb66c7df28958f4baf6397d035c2ea83977a98c65596a9ea91270789e8871",
+    "backend/test/defects/cart-orders.defects.js": "c4e7b2f3bf0ab4ca59a5c44f9621fe4ec286a685e73c526157678464c7682955",
+    "backend/test/defects/coupons.defects.js": "60bb3fc7a520badb0bccb0a6b5fbfa578e2a28f85cf17207c40666d3c9dd3bb1",
+    "backend/test/fixtures.js": "bbe9aba2a324d2fa9a75c2168b850beeec9554c1f6c7c0d45c7f85db617b90c0",
+    "backend/test/harness.js": "a287b5cf5861e460cead07826cce371d3d774b894f3205e81109c7adfde11eb6",
+    "backend/test/helpers/app.js": "3636d246636845e016e606bb073ca6d0c1a76835f6070834790ff4ce562a5154",
+    "backend/test/helpers/coupons-scenarios.js": "31580ac123cb75f12b6d097f0d5d6adeb7cf66ec08142a0698a5b17b5c68bb95",
+    "backend/test/helpers/coupons.js": "2a1b2289b1be4fa8753f9333450867ba36b5c37d13d6d2925897099efbef0662",
+    "backend/test/helpers/isolate.js": "e59572d86e37458739b4121068750056ac8c0366e36be917e4b4217cea52d187",
+    "backend/test/manual/coupons.manual.js": "b0eaa6b57125fb4ee347d635073f2b7138b73424b7a6125ad6a380e1b6235391",
+    "backend/test/testDb.js": "d0e831726fdc80061dba8931c506d728808e3b64330c1c92f825846987df8ac1",
+    "backend/test_profile.js": "c6c40d8c9055ab8388edea20d32a0fb7482b2a037a7d25fe8dfb391de13965c9",
+    "backend/tutorial/ai.test.js": "e24afc9ec22147587d3f24ad77d6d43bc0f187240abc2e37fe48f1d9a655af1d",
+    "backend/tutorial/eligibility.js": "162d8ed590f78678ac6cf8346ba80274f5d88063a2ee28b87ecb2972b57d01f4",
+    "backend/tutorial/jest.ai.config.cjs": "beab19b887a38ad602e0109de9412fb05a1b77d5dff8f2e018786e137053bfc0",
+    "backend/tutorial/jest.strong.config.cjs": "daa0a6a7ddb4a9e95a8f9f409e20e7c09616da12c54d78c25a37e1addd155771",
+    "backend/tutorial/jest.weak.config.cjs": "50d0d2d3d2f0dd03c9428705384f950367d7f8ba4255e3cbd51e366182dd7025",
+    "backend/tutorial/strong.test.js": "6302339c57c34308d9b1fdc7e57c81ebe5b465b5797e607affa4aa0c7d020728",
+    "backend/tutorial/stryker.ai.config.json": "3f2a138b4bdfd1802ca3f2b4562d8859ca75c42d8c92a97914c29d9a87c0062f",
+    "backend/tutorial/stryker.strong.config.json": "a00a9ed56e55c1db0f9fc77bd5a409bf97124a6c5198bdce6a9a0580994bc61f",
+    "backend/tutorial/stryker.weak.config.json": "657d0a8af718f23d6c0a7badb18fb37450315ca810fa7c26df21afd06e221c3b",
+    "backend/tutorial/weak.test.js": "cb760115148cb210c07b44db345ffd47b3293c72e172e05e1771bb1ac9f318f0",
+    "frontend-admin/.gitignore": "d50ab07e11fa4bf3b1c7c3312e1d7baeab56cca756832ccf40476823ad2a38b7",
+    "frontend-admin/README.md": "a2648adf2f4e92d188d79e14c2b26e207bb0654e90beb5d99e7eb594d995fe65",
+    "frontend-admin/eslint.config.js": "9f9b44b8e55768eaf86e417b96919510b12055d87806e0e2f0703c5a0eb64817",
+    "frontend-admin/index.html": "5b07a50393b8680ba8bb6a934f97481bc70f21d74562eafef40b97cd41796c6b",
+    "frontend-admin/package-lock.json": "e6849174a2b04edc42e86e2da2250d960c67440db2dca11773c626ebbb33166e",
+    "frontend-admin/package.json": "7480710172139223a6101dc9ae314ab9239d1d85308882b21c577ebf0d6fc722",
+    "frontend-admin/postcss.config.js": "374f669f08b18e67d0a7264fa45b71228017e604fe7f6db8a5c1bd5ba27e5c98",
+    "frontend-admin/public/favicon.svg": "61bc9a161de58248288e6905425d7180f0624c2865007b97d763fdac12043a66",
+    "frontend-admin/public/icons.svg": "7ca2d67c9c3aebf50cdc8709ee8aacf8cdb8cc7ea6325ea94939caef5da1c53d",
+    "frontend-admin/src/App.css": "c2571ce7245629994b8adc84f6c48e1920f047a4e7e29c89a4aeb51eeb1b5433",
+    "frontend-admin/src/App.jsx": "f43a7ed720eb2608563ab5329edc2858f4aab913ecfb57784b30a467803c5b5f",
+    "frontend-admin/src/assets/hero.png": "881ffbcaafc212e49addad08846a5b82761355fa20624253af3477ba33262c5c",
+    "frontend-admin/src/assets/react.svg": "35ef61ed53b323ae94a16a8ec659b3d0af3880698791133f23b084085ab1c2e5",
+    "frontend-admin/src/assets/vite.svg": "2f1f6c6f90a0ef7422cbb4cfafcd8ad329c507a18afdc34cc21fa72179b9c54a",
+    "frontend-admin/src/index.css": "fe45b8b501f6e1017fb3b854a55e110e88a4e72ccc7eabc637f64fad1fea701b",
+    "frontend-admin/src/main.jsx": "6bf20ed84acf549812a5aca0ace32c7fdbbc1a9e93897e240aaa69cd10964844",
+    "frontend-admin/tailwind.config.js": "af56bf883fdeb1a969e93a860f72b9afd5f3bbca20686c47a2314a82369ff670",
+    "frontend-admin/vite.config.js": "737f549c50a6b05933222c95662e8cb6a1d75e2b94011aab5647d87f2ff50a9d",
+    "frontend-mobile/.gitignore": "e251834bb25ee532544443f249277daffe44e9eab5e7c65d34a5bd8cdd1fa683",
+    "frontend-mobile/App.js": "f32d1e6288602407d82b34ec2e1b39efb652ec82d1c4173dd6a4bf477795de1b",
+    "frontend-mobile/app.json": "02ea75559cb0b38dc12665de47236c88b7d3614771fa0602a8d8c70edcd3797f",
+    "frontend-mobile/assets/adaptive-icon.png": "5f4c0a732b6325bf4071d9124d2ae67e037cb24fcc9c482ef82bea742109a3b8",
+    "frontend-mobile/assets/favicon.png": "24272cdaeff82cc5facdaccd982a6f05b60c4504704bbf94c19a6388659880bb",
+    "frontend-mobile/assets/icon.png": "74c64047eb557b1341bba7a2831eedde9ddb705e6451a9ad9f5552bf558f13de",
+    "frontend-mobile/assets/splash-icon.png": "5f4c0a732b6325bf4071d9124d2ae67e037cb24fcc9c482ef82bea742109a3b8",
+    "frontend-mobile/index.js": "eeb521c7e92449108273176e095741230773d345d528455c1f70cf7f2e9c7ee1",
+    "frontend-mobile/package-lock.json": "00a7e18e1ea354ebb71769f8905e8a88a754b1fd9c673cd753e36cd55c9d7878",
+    "frontend-mobile/package.json": "4dd021b710ae0cffe614eed6947bd041802127b83c33799ef7f20957c2c9ea54",
+    "frontend-web/.gitignore": "d50ab07e11fa4bf3b1c7c3312e1d7baeab56cca756832ccf40476823ad2a38b7",
+    "frontend-web/README.md": "a2648adf2f4e92d188d79e14c2b26e207bb0654e90beb5d99e7eb594d995fe65",
+    "frontend-web/eslint.config.js": "9f9b44b8e55768eaf86e417b96919510b12055d87806e0e2f0703c5a0eb64817",
+    "frontend-web/index.html": "fc737b6e08805db5d332d646bd0dbceda8ee9c08a5a7ee4be316a75a5d27c077",
+    "frontend-web/package-lock.json": "3a2f77044ea23f8aabcfeda91ce374bf04f8e5cd719171756ec6436df7b42608",
+    "frontend-web/package.json": "d4060489ce1e9aa1fc7427bc411feb648596e7aec30dce1417b9a79ffb3d2cdb",
+    "frontend-web/postcss.config.js": "374f669f08b18e67d0a7264fa45b71228017e604fe7f6db8a5c1bd5ba27e5c98",
+    "frontend-web/public/favicon.svg": "61bc9a161de58248288e6905425d7180f0624c2865007b97d763fdac12043a66",
+    "frontend-web/public/icons.svg": "7ca2d67c9c3aebf50cdc8709ee8aacf8cdb8cc7ea6325ea94939caef5da1c53d",
+    "frontend-web/src/App.css": "c2571ce7245629994b8adc84f6c48e1920f047a4e7e29c89a4aeb51eeb1b5433",
+    "frontend-web/src/App.jsx": "87183b80b99bd8a7e51777642f9b4ae1ad849ee4669ec7ed123f62eca68c3fed",
+    "frontend-web/src/assets/hero.png": "881ffbcaafc212e49addad08846a5b82761355fa20624253af3477ba33262c5c",
+    "frontend-web/src/assets/react.svg": "35ef61ed53b323ae94a16a8ec659b3d0af3880698791133f23b084085ab1c2e5",
+    "frontend-web/src/assets/vite.svg": "2f1f6c6f90a0ef7422cbb4cfafcd8ad329c507a18afdc34cc21fa72179b9c54a",
+    "frontend-web/src/context/AuthContext.jsx": "562a306cbeaae152a5ebaf2f9feaf75a0da9f78618b798668ce1491ef0b4e968",
+    "frontend-web/src/context/CartContext.jsx": "9183a9c420522f26954aa995105100ae88070a2143ff2ccbe9e6163b4a1c104d",
+    "frontend-web/src/index.css": "6e36b259af03bf74eb83cc4e8126ed4e601f596c17c88435182f408d8e601344",
+    "frontend-web/src/main.jsx": "6bf20ed84acf549812a5aca0ace32c7fdbbc1a9e93897e240aaa69cd10964844",
+    "frontend-web/src/pages/Cart.jsx": "503d1f8a0f5b5e5f3eb91dd819795c1e04e6ca7a48cd4f8d5c99c8ffebe2c521",
+    "frontend-web/src/pages/Checkout.jsx": "c8246642b7935dc3feb93056f8b61990584a7f16f1f1759d7ecbc9172521287a",
+    "frontend-web/src/pages/ForgotPassword.jsx": "a2005b8860b2cb24da63386ac38641c0278f274c441bdf0ad5a038ba829e49df",
+    "frontend-web/src/pages/Home.jsx": "d6bf712e66f605256afc1ccf6642adfd3cac5ef344aa3dac231dafb6c2547a52",
+    "frontend-web/src/pages/Login.jsx": "1809a1ec12da8e26217c84848c0f48d9008979cf985626dac6f68f2238e513dd",
+    "frontend-web/src/pages/ProductDetail.jsx": "f9211ecb9a0a033029ad1ebd30b9fa5ce3c30beab7a657d7bba1f0e2b052dbe2",
+    "frontend-web/src/pages/Profile.jsx": "847f893bf17b311373d6670e027d0083f79bafa50d6552771e4c20fc29bd1469",
+    "frontend-web/src/pages/Register.jsx": "813676211c74de395eb613808e2aa09d66a76b3544dd1b6364ed9882117e041c",
+    "frontend-web/tailwind.config.js": "af56bf883fdeb1a969e93a860f72b9afd5f3bbca20686c47a2314a82369ff670",
+    "frontend-web/vite.config.js": "5cabb639b6b62e19064337abc9f5b4fda0f83e50a47396ca9a3bba388abfdd13"
+  },
+  "protectedBefore": {
+    "backend/server.js": "e2263811a1690a63a7dbb4446c3fd33fb87f50d073d9f8cdfab7083a52f5e8ed",
+    "backend/database.js": "50012f35c2cf0776dd837482d76adf701f0ee40cdcb9d80143278fccde034717",
+    "backend/database.sqlite": "c63f00544180ba1fbb1427a9b9dd3f1784842698809972f33ce90482e7420ba6"
+  },
+  "policy": {
+    "concurrency": 1,
+    "timeoutMS": 5000,
+    "timeoutFactor": 1.5,
+    "coverageAnalysis": "perTest"
+  },
+  "profiles": {
+    "cart-orders": {
+      "baseline": {
+        "files": [
+          "test/cart-orders.test.js"
+        ],
+        "expectedTests": 36
+      },
+      "manual": {
+        "files": [
+          "test/cart-orders.test.js",
+          "test/manual/cart-orders.manual.js"
+        ],
+        "expectedTests": 44
+      },
+      "ai": {
+        "files": [
+          "test/cart-orders.test.js",
+          "test/ai/cart-orders.ai.js"
+        ],
+        "expectedTests": 41
+      }
+    },
+    "coupons": {
+      "baseline": {
+        "files": [
+          "test/coupons.test.js",
+          "test/coupons-flow.test.js"
+        ],
+        "expectedTests": 26
+      },
+      "manual": {
+        "files": [
+          "test/coupons.test.js",
+          "test/coupons-flow.test.js",
+          "test/manual/coupons.manual.js"
+        ],
+        "expectedTests": 35
+      },
+      "ai": {
+        "files": [
+          "test/coupons.test.js",
+          "test/coupons-flow.test.js",
+          "test/ai/coupons.ai.js"
+        ],
+        "expectedTests": 40
+      }
+    },
+    "auth": {
+      "baseline": {
+        "files": [
+          "test/auth.spec.test.js"
+        ],
+        "expectedTests": 26
+      },
+      "manual": {
+        "files": [
+          "test/auth.spec.test.js",
+          "test/auth.manual.test.js"
+        ],
+        "expectedTests": 39
+      },
+      "ai": {
+        "files": [
+          "test/auth.spec.test.js",
+          "test/auth.ai.test.js"
+        ],
+        "expectedTests": 37
+      }
+    },
+    "overall": {
+      "baseline": {
+        "files": [
+          "test/cart-orders.test.js",
+          "test/coupons.test.js",
+          "test/coupons-flow.test.js",
+          "test/auth.spec.test.js"
+        ],
+        "expectedTests": 88
+      },
+      "manual": {
+        "files": [
+          "test/cart-orders.test.js",
+          "test/manual/cart-orders.manual.js",
+          "test/coupons.test.js",
+          "test/coupons-flow.test.js",
+          "test/manual/coupons.manual.js",
+          "test/auth.spec.test.js",
+          "test/auth.manual.test.js"
+        ],
+        "expectedTests": 118
+      },
+      "ai": {
+        "files": [
+          "test/cart-orders.test.js",
+          "test/ai/cart-orders.ai.js",
+          "test/coupons.test.js",
+          "test/coupons-flow.test.js",
+          "test/ai/coupons.ai.js",
+          "test/auth.spec.test.js",
+          "test/auth.ai.test.js"
+        ],
+        "expectedTests": 118
+      }
+    }
+  }
+}

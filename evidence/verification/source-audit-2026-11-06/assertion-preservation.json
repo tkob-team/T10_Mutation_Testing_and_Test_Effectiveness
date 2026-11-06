@@ -1,0 +1,119 @@
+{
+  "method": "AST extraction of complete expect(...)[.not].matcher(...) calls, including received and expected expressions, in source order; CRLF normalized. Exact Cart imports verified separately.",
+  "rows": [
+    {
+      "file": "backend/test/ai/coupons.ai.js",
+      "matcherAssertions": 22,
+      "sameAssertions": true,
+      "sha256": "821a3e7174fd78f6fdeb22710fe77734e84ac681460b0e320954a64fe4a48838"
+    },
+    {
+      "file": "backend/test/auth-cleanup.cjs",
+      "matcherAssertions": 0,
+      "sameAssertions": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "file": "backend/test/auth.ai.test.js",
+      "matcherAssertions": 19,
+      "sameAssertions": true,
+      "sha256": "92b0a5859885aff458c336bdf9203b924a15ab09eb0ef614b9aae32f5598caaf"
+    },
+    {
+      "file": "backend/test/auth.defects.test.js",
+      "matcherAssertions": 15,
+      "sameAssertions": true,
+      "sha256": "4e2ee3376043189259ce1308e2d53fce46c8644fbecff567f5ec06a4c312757b"
+    },
+    {
+      "file": "backend/test/auth.manual.test.js",
+      "matcherAssertions": 29,
+      "sameAssertions": true,
+      "sha256": "d88ed37b2d8d2593be438a5f56f6986e2da56e0575d53c5aa63eb67daa18e9a1"
+    },
+    {
+      "file": "backend/test/auth.spec.test.js",
+      "matcherAssertions": 54,
+      "sameAssertions": true,
+      "sha256": "ca238bf23f8ab048baa651c3c657506d6cd55c73facb3e42ed1a564ba8337fd5"
+    },
+    {
+      "file": "backend/test/cart-orders.test.js",
+      "matcherAssertions": 21,
+      "sameAssertions": true,
+      "sha256": "2cf941620d0a41865e5f6ebdb96190bd724b177f9633c5df6616faaab615842e"
+    },
+    {
+      "file": "backend/test/coupons-flow.test.js",
+      "matcherAssertions": 9,
+      "sameAssertions": true,
+      "sha256": "9a582354f08c335aca4d3bef83738882144f8a7f8c9ccd331f4c5d573996afd5"
+    },
+    {
+      "file": "backend/test/coupons.test.js",
+      "matcherAssertions": 45,
+      "sameAssertions": true,
+      "sha256": "e641f92941ee37fea0b9888851c2036f428efd8d3b499992b446eb81f768bf59"
+    },
+    {
+      "file": "backend/test/defects/cart-orders.defects.js",
+      "matcherAssertions": 12,
+      "sameAssertions": true,
+      "sha256": "e1bf2e5e20b7294d5eb32c2686c486a70990a2498950f8e1863f3b8aa32c6617"
+    },
+    {
+      "file": "backend/test/defects/coupons.defects.js",
+      "matcherAssertions": 7,
+      "sameAssertions": true,
+      "sha256": "a4933555d8a82bb9ce24ee50093d1c14fd1d1e4bfae6a8fd071e5971dfd6dd61"
+    },
+    {
+      "file": "backend/test/fixtures.js",
+      "matcherAssertions": 0,
+      "sameAssertions": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "file": "backend/test/harness.js",
+      "matcherAssertions": 0,
+      "sameAssertions": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "file": "backend/test/helpers/app.js",
+      "matcherAssertions": 0,
+      "sameAssertions": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "file": "backend/test/helpers/coupons-scenarios.js",
+      "matcherAssertions": 13,
+      "sameAssertions": true,
+      "sha256": "dd41a0113175934ee092f29e8e4374bdb251ff446c5ddf278962a6a5e715d97a"
+    },
+    {
+      "file": "backend/test/helpers/coupons.js",
+      "matcherAssertions": 0,
+      "sameAssertions": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "file": "backend/test/helpers/isolate.js",
+      "matcherAssertions": 0,
+      "sameAssertions": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "file": "backend/test/manual/coupons.manual.js",
+      "matcherAssertions": 11,
+      "sameAssertions": true,
+      "sha256": "ec2a7466a85b1f4761be94ad6de9f959229d0361f43b6a114159fbac24a03966"
+    },
+    {
+      "file": "backend/test/testDb.js",
+      "matcherAssertions": 0,
+      "sameAssertions": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ]
+}

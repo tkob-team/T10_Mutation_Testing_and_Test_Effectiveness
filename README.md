@@ -8,7 +8,7 @@ Repo tài liệu seminar Nhóm 12, CSC13003 Software Testing, FIT@HCMUS.
 2. Đọc [Project Context](CONTEXT.md) cho scope, ownership và experiment contract. Khi dùng agent, đọc [Agent Instructions](AGENTS.md).
 3. Sửa trực tiếp tài liệu tại đường dẫn trong bảng dưới. Mỗi đầu ra có một bản nguồn đang làm.
 
-**Current work:** Cấu trúc docs đã được tổ chức lại theo đầu ra. Việc tiếp theo là audit repo source; SUT và platform activity mới bàn ở session riêng. Xem [kế hoạch đã duyệt](docs/superpowers/plans/2026-11-06-docs-reorganization.md).
+**Current work:** Docs reorganization đã hoàn tất theo xác nhận người dùng. [Source Audit](docs/Source_Audit.md) đã hoàn tất kiểm chứng kỹ thuật môi trường và baseline/manual/AI; SUT và platform activity mới bàn ở session riêng.
 
 ## Working Documents
 
@@ -20,6 +20,7 @@ Repo tài liệu seminar Nhóm 12, CSC13003 Software Testing, FIT@HCMUS.
 | Seminar proposal | [Seminar Proposal](docs/Seminar_Proposal.md) |
 | User guide | [User Guide](docs/User_Guide.md) |
 | Báo cáo | [Seminar Report](docs/Seminar_Report.md) |
+| Audit source và thực nghiệm | [Source Audit](docs/Source_Audit.md) |
 | Demo | [Demo Script](docs/Demo_Script.md), [Video Link](docs/Demo_Video_Link.md) |
 | Slides và transcript | [Slides workspace](docs/slides/README.md) |
 | Activity | [Activity workspace](activity/README.md) |

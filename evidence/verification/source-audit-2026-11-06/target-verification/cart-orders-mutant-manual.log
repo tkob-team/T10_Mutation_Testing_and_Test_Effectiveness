@@ -1,0 +1,30 @@
+
+FAIL cart-coupons test/manual/cart-orders.manual.js
+  ● Cart & Orders Manual Tests - Tấn Hiệp › Kill Mutant 286:7 - GET /api/cart initializes empty cart array for new user
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Stryker was here",
+    + ]
+
+      57 |
+      58 |     expect(resGet.status).toBe(200);
+    > 59 |     expect(resGet.body).toEqual([]);
+         |                         ^
+      60 |   });
+      61 |
+      62 |   /**
+
+      at Object.<anonymous> (test/manual/cart-orders.manual.js:59:25)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 7 skipped, 8 total
+Snapshots:   0 total
+Time:        0.521 s, estimated 1 s
+Ran all test suites within paths "test/manual/cart-orders.manual.js".
+Test results written to: ..\..\..\Workspace\Study\courses-fit-hcmus\2026-2027\csc13003-testing\seminar\T10_Mutation_Testing_and_Test_Effectiveness\evidence\verification\source-audit-2026-11-06\target-verification\cart-orders-mutant-manual.json

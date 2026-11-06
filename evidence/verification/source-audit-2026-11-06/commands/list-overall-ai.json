@@ -1,0 +1,18 @@
+{
+  "name": "list-overall-ai",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest\\bin\\jest.js",
+    "--config",
+    "jest.overall.ai.config.cjs",
+    "--listTests",
+    "--json",
+    "--runInBand"
+  ],
+  "cwd": "D:\\Temp\\t10-source-audit-2026-11-06\\backend",
+  "startedUtc": "2026-11-06T08:57:41.650Z",
+  "finishedUtc": "2026-11-06T08:57:41.904Z",
+  "elapsedMs": 254,
+  "exitCode": 0,
+  "signal": null
+}

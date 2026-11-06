@@ -1,0 +1,7 @@
+
+Test Suites: 1 passed, 1 total
+Tests:       7 skipped, 1 passed, 8 total
+Snapshots:   0 total
+Time:        0.552 s
+Ran all test suites within paths "test/manual/cart-orders.manual.js".
+Test results written to: ..\..\..\Workspace\Study\courses-fit-hcmus\2026-2027\csc13003-testing\seminar\T10_Mutation_Testing_and_Test_Effectiveness\evidence\verification\source-audit-2026-11-06\target-verification\cart-orders-original-manual.json

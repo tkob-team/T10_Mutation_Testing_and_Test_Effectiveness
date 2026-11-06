@@ -1,0 +1,2252 @@
+[
+  {
+    "profile": "cart-orders-baseline",
+    "location": {
+      "end": {
+        "column": 95,
+        "line": 302
+      },
+      "start": {
+        "column": 5,
+        "line": 302
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 19444] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 19444] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "cart-orders-baseline",
+    "location": {
+      "end": {
+        "column": 62,
+        "line": 313
+      },
+      "start": {
+        "column": 5,
+        "line": 313
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 11120] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 11120] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "cart-orders-baseline",
+    "location": {
+      "end": {
+        "column": 56,
+        "line": 323
+      },
+      "start": {
+        "column": 5,
+        "line": 323
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 24968] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 24968] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "cart-orders-baseline",
+    "location": {
+      "end": {
+        "column": 52,
+        "line": 334
+      },
+      "start": {
+        "column": 9,
+        "line": 334
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 15628] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 15628] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "cart-orders-baseline",
+    "location": {
+      "end": {
+        "column": 45,
+        "line": 345
+      },
+      "start": {
+        "column": 10,
+        "line": 345
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 18344] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 18344] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "cart-orders-baseline",
+    "location": {
+      "end": {
+        "column": 45,
+        "line": 529
+      },
+      "start": {
+        "column": 5,
+        "line": 529
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 29680] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 29680] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "cart-orders-baseline",
+    "location": {
+      "end": {
+        "column": 52,
+        "line": 560
+      },
+      "start": {
+        "column": 9,
+        "line": 560
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 4896] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 4896] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "cart-orders-manual",
+    "location": {
+      "end": {
+        "column": 95,
+        "line": 302
+      },
+      "start": {
+        "column": 5,
+        "line": 302
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 5968] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 5968] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "cart-orders-manual",
+    "location": {
+      "end": {
+        "column": 62,
+        "line": 313
+      },
+      "start": {
+        "column": 5,
+        "line": 313
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 26496] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 26496] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "cart-orders-manual",
+    "location": {
+      "end": {
+        "column": 56,
+        "line": 323
+      },
+      "start": {
+        "column": 5,
+        "line": 323
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 24300] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 24300] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "cart-orders-manual",
+    "location": {
+      "end": {
+        "column": 52,
+        "line": 334
+      },
+      "start": {
+        "column": 9,
+        "line": 334
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 26692] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 26692] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "cart-orders-manual",
+    "location": {
+      "end": {
+        "column": 45,
+        "line": 345
+      },
+      "start": {
+        "column": 10,
+        "line": 345
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 14036] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 14036] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "cart-orders-manual",
+    "location": {
+      "end": {
+        "column": 45,
+        "line": 529
+      },
+      "start": {
+        "column": 5,
+        "line": 529
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 25968] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 25968] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "cart-orders-manual",
+    "location": {
+      "end": {
+        "column": 52,
+        "line": 560
+      },
+      "start": {
+        "column": 9,
+        "line": 560
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 25764] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 25764] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "cart-orders-ai",
+    "location": {
+      "end": {
+        "column": 95,
+        "line": 302
+      },
+      "start": {
+        "column": 5,
+        "line": 302
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 22320] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 22320] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "cart-orders-ai",
+    "location": {
+      "end": {
+        "column": 62,
+        "line": 313
+      },
+      "start": {
+        "column": 5,
+        "line": 313
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 8264] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 8264] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "cart-orders-ai",
+    "location": {
+      "end": {
+        "column": 56,
+        "line": 323
+      },
+      "start": {
+        "column": 5,
+        "line": 323
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 6680] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 6680] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "cart-orders-ai",
+    "location": {
+      "end": {
+        "column": 52,
+        "line": 334
+      },
+      "start": {
+        "column": 9,
+        "line": 334
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 7608] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 7608] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "cart-orders-ai",
+    "location": {
+      "end": {
+        "column": 45,
+        "line": 345
+      },
+      "start": {
+        "column": 10,
+        "line": 345
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 24156] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 24156] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "cart-orders-ai",
+    "location": {
+      "end": {
+        "column": 45,
+        "line": 529
+      },
+      "start": {
+        "column": 5,
+        "line": 529
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 26996] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 26996] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "cart-orders-ai",
+    "location": {
+      "end": {
+        "column": 52,
+        "line": 560
+      },
+      "start": {
+        "column": 9,
+        "line": 560
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 28948] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 28948] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "coupons-baseline",
+    "location": {
+      "end": {
+        "column": 61,
+        "line": 370
+      },
+      "start": {
+        "column": 5,
+        "line": 370
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 29072] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 29072] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "coupons-baseline",
+    "location": {
+      "end": {
+        "column": 99,
+        "line": 388
+      },
+      "start": {
+        "column": 13,
+        "line": 388
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 28912] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 28912] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "coupons-baseline",
+    "location": {
+      "end": {
+        "column": 66,
+        "line": 447
+      },
+      "start": {
+        "column": 5,
+        "line": 447
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 14928] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 14928] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "coupons-baseline",
+    "location": {
+      "end": {
+        "column": 130,
+        "line": 467
+      },
+      "start": {
+        "column": 5,
+        "line": 467
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 3728] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 3728] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "coupons-baseline",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 484
+      },
+      "start": {
+        "column": 10,
+        "line": 484
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 9684] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 9684] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "coupons-manual",
+    "location": {
+      "end": {
+        "column": 61,
+        "line": 370
+      },
+      "start": {
+        "column": 5,
+        "line": 370
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 15292] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 15292] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "coupons-manual",
+    "location": {
+      "end": {
+        "column": 99,
+        "line": 388
+      },
+      "start": {
+        "column": 13,
+        "line": 388
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 24828] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 24828] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "coupons-manual",
+    "location": {
+      "end": {
+        "column": 66,
+        "line": 447
+      },
+      "start": {
+        "column": 5,
+        "line": 447
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 20644] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 20644] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "coupons-manual",
+    "location": {
+      "end": {
+        "column": 130,
+        "line": 467
+      },
+      "start": {
+        "column": 5,
+        "line": 467
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 7312] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 7312] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "coupons-manual",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 484
+      },
+      "start": {
+        "column": 10,
+        "line": 484
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 2376] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 2376] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "coupons-ai",
+    "location": {
+      "end": {
+        "column": 61,
+        "line": 370
+      },
+      "start": {
+        "column": 5,
+        "line": 370
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 12912] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 12912] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "coupons-ai",
+    "location": {
+      "end": {
+        "column": 99,
+        "line": 388
+      },
+      "start": {
+        "column": 13,
+        "line": 388
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 26472] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 26472] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "coupons-ai",
+    "location": {
+      "end": {
+        "column": 66,
+        "line": 447
+      },
+      "start": {
+        "column": 5,
+        "line": 447
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 29360] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 29360] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "coupons-ai",
+    "location": {
+      "end": {
+        "column": 130,
+        "line": 467
+      },
+      "start": {
+        "column": 5,
+        "line": 467
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 28948] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 28948] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "coupons-ai",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 484
+      },
+      "start": {
+        "column": 10,
+        "line": 484
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 29232] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 29232] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-baseline",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 23
+      },
+      "start": {
+        "column": 5,
+        "line": 23
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 12724] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 12724] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-baseline",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 26
+      },
+      "start": {
+        "column": 11,
+        "line": 26
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "status": "RuntimeError",
+    "reason": " TypeError: Cannot read properties of null (reading 'message')\n    at Statement.<anonymous> (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\stryker-tmp\\sandbox-Z0LbAC\\server.js:80:22)\nTypeError: Cannot read properties of null (reading 'message')\n    at Statement.<anonymous> (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\stryker-tmp\\sandbox-Z0LbAC\\server.js:80:22)\nError: thrown: \"Exceeded timeout of 5000 ms for a hook.\nAdd a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout.\"\n    at _getError (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\jestAdapterInit.js:1985:12)\n    at Array.map (<anonymous>)\n    at makeRunResult (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\jestAdapterInit.js:1874:51)\n    at run (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\jestAdapterInit.js:797:35)\n    at runAndTransformResultsToJestFormat (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\jestAdapterInit.js:2300:21)\n    at jestAdapter (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\runner.js:111:19)\n    at runTestInternal (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runner\\build\\index.js:247:16)\n    at runTest (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runner\\build\\index.js:315:7)\n\n[cause]: Error: \n    at Object.<anonymous> (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\stryker-tmp\\sandbox-Z0LbAC\\test\\cleanup.cjs:9:1)\n    at ModuleExecutor.exec (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runtime\\build\\index.js:3055:26)\n    at CjsLoader.loadModule (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runtime\\build\\index.js:440:36)\n    at CjsLoader.requireModule (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runtime\\build\\index.js:335:12)\n    at Runtime.requireModule (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runtime\\build\\index.js:4981:27)\n    at jestAdapter (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\runner.js:85:33)\n    at runTestInternal (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runner\\build\\index.js:247:16)\n    at runTest (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runner\\build\\index.js:315:7)",
+    "classification": "Other mutant execution error; retain raw reason, exclude from valid-mutant comparison"
+  },
+  {
+    "profile": "auth-baseline",
+    "location": {
+      "end": {
+        "column": 47,
+        "line": 35
+      },
+      "start": {
+        "column": 10,
+        "line": 35
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 11956] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 11956] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-baseline",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 37
+      },
+      "start": {
+        "column": 9,
+        "line": 37
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "user",
+    "status": "RuntimeError",
+    "reason": " TypeError: Cannot read properties of undefined (reading 'locked_until')\n    at Statement.<anonymous> (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\stryker-tmp\\sandbox-Z0LbAC\\server.js:110:206)\nError: thrown: \"Exceeded timeout of 5000 ms for a hook.\nAdd a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout.\"\n    at _getError (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\jestAdapterInit.js:1985:12)\n    at Array.map (<anonymous>)\n    at makeRunResult (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\jestAdapterInit.js:1874:51)\n    at run (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\jestAdapterInit.js:797:35)\n    at runAndTransformResultsToJestFormat (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\jestAdapterInit.js:2300:21)\n    at jestAdapter (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\runner.js:111:19)\n    at runTestInternal (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runner\\build\\index.js:247:16)\n    at runTest (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runner\\build\\index.js:315:7)\n\n[cause]: Error: \n    at Object.<anonymous> (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\stryker-tmp\\sandbox-Z0LbAC\\test\\cleanup.cjs:9:1)\n    at ModuleExecutor.exec (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runtime\\build\\index.js:3055:26)\n    at CjsLoader.loadModule (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runtime\\build\\index.js:440:36)\n    at CjsLoader.requireModule (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runtime\\build\\index.js:335:12)\n    at Runtime.requireModule (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runtime\\build\\index.js:4981:27)\n    at jestAdapter (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\runner.js:85:33)\n    at runTestInternal (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runner\\build\\index.js:247:16)\n    at runTest (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runner\\build\\index.js:315:7)",
+    "classification": "Other mutant execution error; retain raw reason, exclude from valid-mutant comparison"
+  },
+  {
+    "profile": "auth-baseline",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 37
+      },
+      "start": {
+        "column": 9,
+        "line": 37
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "status": "RuntimeError",
+    "reason": " TypeError: Cannot read properties of undefined (reading 'locked_until')\n    at Statement.<anonymous> (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\stryker-tmp\\sandbox-Z0LbAC\\server.js:110:206)\nError: thrown: \"Exceeded timeout of 5000 ms for a hook.\nAdd a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout.\"\n    at _getError (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\jestAdapterInit.js:1985:12)\n    at Array.map (<anonymous>)\n    at makeRunResult (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\jestAdapterInit.js:1874:51)\n    at run (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\jestAdapterInit.js:797:35)\n    at runAndTransformResultsToJestFormat (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\jestAdapterInit.js:2300:21)\n    at jestAdapter (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\runner.js:111:19)\n    at runTestInternal (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runner\\build\\index.js:247:16)\n    at runTest (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runner\\build\\index.js:315:7)\n\n[cause]: Error: \n    at Object.<anonymous> (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\stryker-tmp\\sandbox-Z0LbAC\\test\\cleanup.cjs:9:1)\n    at ModuleExecutor.exec (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runtime\\build\\index.js:3055:26)\n    at CjsLoader.loadModule (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runtime\\build\\index.js:440:36)\n    at CjsLoader.requireModule (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runtime\\build\\index.js:335:12)\n    at Runtime.requireModule (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runtime\\build\\index.js:4981:27)\n    at jestAdapter (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\runner.js:85:33)\n    at runTestInternal (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runner\\build\\index.js:247:16)\n    at runTest (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runner\\build\\index.js:315:7)",
+    "classification": "Other mutant execution error; retain raw reason, exclude from valid-mutant comparison"
+  },
+  {
+    "profile": "auth-baseline",
+    "location": {
+      "end": {
+        "column": 80,
+        "line": 48
+      },
+      "start": {
+        "column": 9,
+        "line": 48
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 15676] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 15676] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-baseline",
+    "location": {
+      "end": {
+        "column": 77,
+        "line": 60
+      },
+      "start": {
+        "column": 9,
+        "line": 60
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 9376] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 9376] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-baseline",
+    "location": {
+      "end": {
+        "column": 47,
+        "line": 70
+      },
+      "start": {
+        "column": 10,
+        "line": 70
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 22896] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 22896] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-baseline",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 71
+      },
+      "start": {
+        "column": 9,
+        "line": 71
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "user",
+    "status": "RuntimeError",
+    "reason": " TypeError: Cannot read properties of undefined (reading 'id')\n    at Statement.<anonymous> (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\stryker-tmp\\sandbox-Z0LbAC\\server.js:178:188)\nError: thrown: \"Exceeded timeout of 5000 ms for a hook.\nAdd a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout.\"\n    at _getError (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\jestAdapterInit.js:1985:12)\n    at Array.map (<anonymous>)\n    at makeRunResult (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\jestAdapterInit.js:1874:51)\n    at run (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\jestAdapterInit.js:797:35)\n    at runAndTransformResultsToJestFormat (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\jestAdapterInit.js:2300:21)\n    at jestAdapter (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\runner.js:111:19)\n    at runTestInternal (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runner\\build\\index.js:247:16)\n    at runTest (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runner\\build\\index.js:315:7)\n\n[cause]: Error: \n    at Object.<anonymous> (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\stryker-tmp\\sandbox-Z0LbAC\\test\\cleanup.cjs:9:1)\n    at ModuleExecutor.exec (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runtime\\build\\index.js:3055:26)\n    at CjsLoader.loadModule (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runtime\\build\\index.js:440:36)\n    at CjsLoader.requireModule (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runtime\\build\\index.js:335:12)\n    at Runtime.requireModule (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runtime\\build\\index.js:4981:27)\n    at jestAdapter (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\runner.js:85:33)\n    at runTestInternal (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runner\\build\\index.js:247:16)\n    at runTest (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runner\\build\\index.js:315:7)",
+    "classification": "Other mutant execution error; retain raw reason, exclude from valid-mutant comparison"
+  },
+  {
+    "profile": "auth-baseline",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 71
+      },
+      "start": {
+        "column": 9,
+        "line": 71
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "status": "RuntimeError",
+    "reason": " TypeError: Cannot read properties of undefined (reading 'id')\n    at Statement.<anonymous> (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\stryker-tmp\\sandbox-Z0LbAC\\server.js:178:188)\nError: thrown: \"Exceeded timeout of 5000 ms for a hook.\nAdd a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout.\"\n    at _getError (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\jestAdapterInit.js:1985:12)\n    at Array.map (<anonymous>)\n    at makeRunResult (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\jestAdapterInit.js:1874:51)\n    at run (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\jestAdapterInit.js:797:35)\n    at runAndTransformResultsToJestFormat (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\jestAdapterInit.js:2300:21)\n    at jestAdapter (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\runner.js:111:19)\n    at runTestInternal (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runner\\build\\index.js:247:16)\n    at runTest (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runner\\build\\index.js:315:7)\n\n[cause]: Error: \n    at Object.<anonymous> (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\stryker-tmp\\sandbox-Z0LbAC\\test\\cleanup.cjs:9:1)\n    at ModuleExecutor.exec (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runtime\\build\\index.js:3055:26)\n    at CjsLoader.loadModule (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runtime\\build\\index.js:440:36)\n    at CjsLoader.requireModule (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runtime\\build\\index.js:335:12)\n    at Runtime.requireModule (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runtime\\build\\index.js:4981:27)\n    at jestAdapter (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-circus\\build\\runner.js:85:33)\n    at runTestInternal (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runner\\build\\index.js:247:16)\n    at runTest (D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\jest-runner\\build\\index.js:315:7)",
+    "classification": "Other mutant execution error; retain raw reason, exclude from valid-mutant comparison"
+  },
+  {
+    "profile": "auth-baseline",
+    "location": {
+      "end": {
+        "column": 54,
+        "line": 74
+      },
+      "start": {
+        "column": 7,
+        "line": 74
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 10032] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 10032] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-baseline",
+    "location": {
+      "end": {
+        "column": 92,
+        "line": 90
+      },
+      "start": {
+        "column": 5,
+        "line": 90
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 27980] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 27980] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-baseline",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 113
+      },
+      "start": {
+        "column": 10,
+        "line": 113
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 25452] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 25452] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-manual",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 23
+      },
+      "start": {
+        "column": 5,
+        "line": 23
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 3884] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 3884] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-manual",
+    "location": {
+      "end": {
+        "column": 47,
+        "line": 35
+      },
+      "start": {
+        "column": 10,
+        "line": 35
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 23144] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 23144] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-manual",
+    "location": {
+      "end": {
+        "column": 80,
+        "line": 48
+      },
+      "start": {
+        "column": 9,
+        "line": 48
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 23344] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 23344] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-manual",
+    "location": {
+      "end": {
+        "column": 77,
+        "line": 60
+      },
+      "start": {
+        "column": 9,
+        "line": 60
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 21440] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 21440] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-manual",
+    "location": {
+      "end": {
+        "column": 47,
+        "line": 70
+      },
+      "start": {
+        "column": 10,
+        "line": 70
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 13984] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 13984] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-manual",
+    "location": {
+      "end": {
+        "column": 54,
+        "line": 74
+      },
+      "start": {
+        "column": 7,
+        "line": 74
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 27416] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 27416] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-manual",
+    "location": {
+      "end": {
+        "column": 92,
+        "line": 90
+      },
+      "start": {
+        "column": 5,
+        "line": 90
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 26900] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 26900] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-manual",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 113
+      },
+      "start": {
+        "column": 10,
+        "line": 113
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 29680] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 29680] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-ai",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 23
+      },
+      "start": {
+        "column": 5,
+        "line": 23
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 14184] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 14184] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-ai",
+    "location": {
+      "end": {
+        "column": 47,
+        "line": 35
+      },
+      "start": {
+        "column": 10,
+        "line": 35
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 4856] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 4856] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-ai",
+    "location": {
+      "end": {
+        "column": 80,
+        "line": 48
+      },
+      "start": {
+        "column": 9,
+        "line": 48
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 27928] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 27928] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-ai",
+    "location": {
+      "end": {
+        "column": 77,
+        "line": 60
+      },
+      "start": {
+        "column": 9,
+        "line": 60
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 26160] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 26160] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-ai",
+    "location": {
+      "end": {
+        "column": 47,
+        "line": 70
+      },
+      "start": {
+        "column": 10,
+        "line": 70
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 7032] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 7032] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-ai",
+    "location": {
+      "end": {
+        "column": 54,
+        "line": 74
+      },
+      "start": {
+        "column": 7,
+        "line": 74
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 25452] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 25452] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-ai",
+    "location": {
+      "end": {
+        "column": 92,
+        "line": 90
+      },
+      "start": {
+        "column": 5,
+        "line": 90
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 28544] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 28544] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "auth-ai",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 113
+      },
+      "start": {
+        "column": 10,
+        "line": 113
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 29044] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 29044] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-baseline",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 23
+      },
+      "start": {
+        "column": 5,
+        "line": 23
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 21932] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 21932] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-baseline",
+    "location": {
+      "end": {
+        "column": 77,
+        "line": 60
+      },
+      "start": {
+        "column": 9,
+        "line": 60
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 6760] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 6760] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-baseline",
+    "location": {
+      "end": {
+        "column": 47,
+        "line": 70
+      },
+      "start": {
+        "column": 10,
+        "line": 70
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 9552] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 9552] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-baseline",
+    "location": {
+      "end": {
+        "column": 54,
+        "line": 74
+      },
+      "start": {
+        "column": 7,
+        "line": 74
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 9120] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 9120] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-baseline",
+    "location": {
+      "end": {
+        "column": 92,
+        "line": 90
+      },
+      "start": {
+        "column": 5,
+        "line": 90
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 6880] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 6880] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-baseline",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 113
+      },
+      "start": {
+        "column": 10,
+        "line": 113
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 13632] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 13632] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-baseline",
+    "location": {
+      "end": {
+        "column": 95,
+        "line": 302
+      },
+      "start": {
+        "column": 5,
+        "line": 302
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 10896] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 10896] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-baseline",
+    "location": {
+      "end": {
+        "column": 62,
+        "line": 313
+      },
+      "start": {
+        "column": 5,
+        "line": 313
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 18796] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 18796] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-baseline",
+    "location": {
+      "end": {
+        "column": 56,
+        "line": 323
+      },
+      "start": {
+        "column": 5,
+        "line": 323
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 14256] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 14256] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-baseline",
+    "location": {
+      "end": {
+        "column": 52,
+        "line": 334
+      },
+      "start": {
+        "column": 9,
+        "line": 334
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 26912] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 26912] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-baseline",
+    "location": {
+      "end": {
+        "column": 45,
+        "line": 345
+      },
+      "start": {
+        "column": 10,
+        "line": 345
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 11904] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 11904] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-baseline",
+    "location": {
+      "end": {
+        "column": 61,
+        "line": 370
+      },
+      "start": {
+        "column": 5,
+        "line": 370
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 15972] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 15972] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-baseline",
+    "location": {
+      "end": {
+        "column": 99,
+        "line": 388
+      },
+      "start": {
+        "column": 13,
+        "line": 388
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 9936] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 9936] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-baseline",
+    "location": {
+      "end": {
+        "column": 66,
+        "line": 447
+      },
+      "start": {
+        "column": 5,
+        "line": 447
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 4924] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 4924] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-baseline",
+    "location": {
+      "end": {
+        "column": 130,
+        "line": 467
+      },
+      "start": {
+        "column": 5,
+        "line": 467
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 3396] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 3396] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-baseline",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 484
+      },
+      "start": {
+        "column": 10,
+        "line": 484
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 23712] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 23712] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-baseline",
+    "location": {
+      "end": {
+        "column": 45,
+        "line": 529
+      },
+      "start": {
+        "column": 5,
+        "line": 529
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 23880] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 23880] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-baseline",
+    "location": {
+      "end": {
+        "column": 52,
+        "line": 560
+      },
+      "start": {
+        "column": 9,
+        "line": 560
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 21996] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 21996] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-baseline",
+    "location": {
+      "end": {
+        "column": 47,
+        "line": 35
+      },
+      "start": {
+        "column": 10,
+        "line": 35
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 11236] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 11236] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-baseline",
+    "location": {
+      "end": {
+        "column": 80,
+        "line": 48
+      },
+      "start": {
+        "column": 9,
+        "line": 48
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 21084] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 21084] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-manual",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 23
+      },
+      "start": {
+        "column": 5,
+        "line": 23
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 25244] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 25244] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-manual",
+    "location": {
+      "end": {
+        "column": 77,
+        "line": 60
+      },
+      "start": {
+        "column": 9,
+        "line": 60
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 9088] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 9088] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-manual",
+    "location": {
+      "end": {
+        "column": 47,
+        "line": 70
+      },
+      "start": {
+        "column": 10,
+        "line": 70
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 24708] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 24708] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-manual",
+    "location": {
+      "end": {
+        "column": 54,
+        "line": 74
+      },
+      "start": {
+        "column": 7,
+        "line": 74
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 12948] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 12948] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-manual",
+    "location": {
+      "end": {
+        "column": 92,
+        "line": 90
+      },
+      "start": {
+        "column": 5,
+        "line": 90
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 4716] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 4716] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-manual",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 113
+      },
+      "start": {
+        "column": 10,
+        "line": 113
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 25152] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 25152] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-manual",
+    "location": {
+      "end": {
+        "column": 95,
+        "line": 302
+      },
+      "start": {
+        "column": 5,
+        "line": 302
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 24968] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 24968] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-manual",
+    "location": {
+      "end": {
+        "column": 62,
+        "line": 313
+      },
+      "start": {
+        "column": 5,
+        "line": 313
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 21180] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 21180] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-manual",
+    "location": {
+      "end": {
+        "column": 56,
+        "line": 323
+      },
+      "start": {
+        "column": 5,
+        "line": 323
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 14372] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 14372] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-manual",
+    "location": {
+      "end": {
+        "column": 52,
+        "line": 334
+      },
+      "start": {
+        "column": 9,
+        "line": 334
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 15144] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 15144] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-manual",
+    "location": {
+      "end": {
+        "column": 45,
+        "line": 345
+      },
+      "start": {
+        "column": 10,
+        "line": 345
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 21092] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 21092] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-manual",
+    "location": {
+      "end": {
+        "column": 61,
+        "line": 370
+      },
+      "start": {
+        "column": 5,
+        "line": 370
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 22496] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 22496] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-manual",
+    "location": {
+      "end": {
+        "column": 99,
+        "line": 388
+      },
+      "start": {
+        "column": 13,
+        "line": 388
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 4724] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 4724] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-manual",
+    "location": {
+      "end": {
+        "column": 66,
+        "line": 447
+      },
+      "start": {
+        "column": 5,
+        "line": 447
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 14348] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 14348] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-manual",
+    "location": {
+      "end": {
+        "column": 130,
+        "line": 467
+      },
+      "start": {
+        "column": 5,
+        "line": 467
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 28728] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 28728] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-manual",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 484
+      },
+      "start": {
+        "column": 10,
+        "line": 484
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 27372] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 27372] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-manual",
+    "location": {
+      "end": {
+        "column": 45,
+        "line": 529
+      },
+      "start": {
+        "column": 5,
+        "line": 529
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 8608] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 8608] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-manual",
+    "location": {
+      "end": {
+        "column": 52,
+        "line": 560
+      },
+      "start": {
+        "column": 9,
+        "line": 560
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 24408] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 24408] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-manual",
+    "location": {
+      "end": {
+        "column": 47,
+        "line": 35
+      },
+      "start": {
+        "column": 10,
+        "line": 35
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 20788] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 20788] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-manual",
+    "location": {
+      "end": {
+        "column": 80,
+        "line": 48
+      },
+      "start": {
+        "column": 9,
+        "line": 48
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 7368] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 7368] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-ai",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 23
+      },
+      "start": {
+        "column": 5,
+        "line": 23
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 28812] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 28812] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-ai",
+    "location": {
+      "end": {
+        "column": 77,
+        "line": 60
+      },
+      "start": {
+        "column": 9,
+        "line": 60
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 9348] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 9348] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-ai",
+    "location": {
+      "end": {
+        "column": 47,
+        "line": 70
+      },
+      "start": {
+        "column": 10,
+        "line": 70
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 7888] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 7888] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-ai",
+    "location": {
+      "end": {
+        "column": 54,
+        "line": 74
+      },
+      "start": {
+        "column": 7,
+        "line": 74
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 28024] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 28024] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-ai",
+    "location": {
+      "end": {
+        "column": 92,
+        "line": 90
+      },
+      "start": {
+        "column": 5,
+        "line": 90
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 9560] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 9560] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-ai",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 113
+      },
+      "start": {
+        "column": 10,
+        "line": 113
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 21448] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 21448] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-ai",
+    "location": {
+      "end": {
+        "column": 95,
+        "line": 302
+      },
+      "start": {
+        "column": 5,
+        "line": 302
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 28340] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 28340] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-ai",
+    "location": {
+      "end": {
+        "column": 62,
+        "line": 313
+      },
+      "start": {
+        "column": 5,
+        "line": 313
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 16360] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 16360] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-ai",
+    "location": {
+      "end": {
+        "column": 56,
+        "line": 323
+      },
+      "start": {
+        "column": 5,
+        "line": 323
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 25060] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 25060] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-ai",
+    "location": {
+      "end": {
+        "column": 52,
+        "line": 334
+      },
+      "start": {
+        "column": 9,
+        "line": 334
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 24852] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 24852] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-ai",
+    "location": {
+      "end": {
+        "column": 45,
+        "line": 345
+      },
+      "start": {
+        "column": 10,
+        "line": 345
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 14780] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 14780] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-ai",
+    "location": {
+      "end": {
+        "column": 61,
+        "line": 370
+      },
+      "start": {
+        "column": 5,
+        "line": 370
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 2972] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 2972] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-ai",
+    "location": {
+      "end": {
+        "column": 99,
+        "line": 388
+      },
+      "start": {
+        "column": 13,
+        "line": 388
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 12296] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 12296] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-ai",
+    "location": {
+      "end": {
+        "column": 66,
+        "line": 447
+      },
+      "start": {
+        "column": 5,
+        "line": 447
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 21156] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 21156] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-ai",
+    "location": {
+      "end": {
+        "column": 130,
+        "line": 467
+      },
+      "start": {
+        "column": 5,
+        "line": 467
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 28204] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 28204] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-ai",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 484
+      },
+      "start": {
+        "column": 10,
+        "line": 484
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 27164] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 27164] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-ai",
+    "location": {
+      "end": {
+        "column": 45,
+        "line": 529
+      },
+      "start": {
+        "column": 5,
+        "line": 529
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 26052] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 26052] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-ai",
+    "location": {
+      "end": {
+        "column": 52,
+        "line": 560
+      },
+      "start": {
+        "column": 9,
+        "line": 560
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 27072] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 27072] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-ai",
+    "location": {
+      "end": {
+        "column": 47,
+        "line": 35
+      },
+      "start": {
+        "column": 10,
+        "line": 35
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 29408] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 29408] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  },
+  {
+    "profile": "overall-ai",
+    "location": {
+      "end": {
+        "column": 80,
+        "line": 48
+      },
+      "start": {
+        "column": 9,
+        "line": 48
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "status": "RuntimeError",
+    "reason": "Test runner crashed. Tried twice to restart it without any luck. Last time the error message was: Error: Child process [pid 12928] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\nError: Child process [pid 12928] exited unexpectedly with exit code 3221225477 (without signal). Stdout and stderr were empty.\n    at ChildProcess.handleUnexpectedExit (file:///D:/Temp/t10-source-audit-2026-11-06/backend/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:180:31)\n    at ChildProcess.emit (node:events:509:28)\n    at maybeClose (node:internal/child_process:1124:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:306:5)",
+    "classification": "Native crash matching independently reproduced empty-SQL/bind-parameter pattern"
+  }
+]

@@ -1,0 +1,7494 @@
+[
+  {
+    "signature": "[\"server.js\",26,44,26,66,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 66,
+        "line": 26
+      },
+      "start": {
+        "column": 44,
+        "line": 26
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",36,42,36,64,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 64,
+        "line": 36
+      },
+      "start": {
+        "column": 42,
+        "line": 36
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",77,46,77,68,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 68,
+        "line": 77
+      },
+      "start": {
+        "column": 46,
+        "line": 77
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",124,13,127,4,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 4,
+        "line": 127
+      },
+      "start": {
+        "column": 13,
+        "line": 124
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",125,14,125,26,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 26,
+        "line": 125
+      },
+      "start": {
+        "column": 14,
+        "line": 125
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",126,5,126,23,\"CallExpression\",\";\"]",
+    "location": {
+      "end": {
+        "column": 23,
+        "line": 126
+      },
+      "start": {
+        "column": 5,
+        "line": 126
+      }
+    },
+    "mutatorName": "CallExpression",
+    "replacement": ";",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",132,42,132,64,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 64,
+        "line": 132
+      },
+      "start": {
+        "column": 42,
+        "line": 132
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",305,44,305,66,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 66,
+        "line": 305
+      },
+      "start": {
+        "column": 44,
+        "line": 305
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",398,46,402,16,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 16,
+        "line": 402
+      },
+      "start": {
+        "column": 46,
+        "line": 398
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",400,19,400,61,\"ArithmeticOperator\",\"total_amount / (1 - coupon.discount_value)\"]",
+    "location": {
+      "end": {
+        "column": 61,
+        "line": 400
+      },
+      "start": {
+        "column": 19,
+        "line": 400
+      }
+    },
+    "mutatorName": "ArithmeticOperator",
+    "replacement": "total_amount / (1 - coupon.discount_value)",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",400,35,400,60,\"ArithmeticOperator\",\"1 + coupon.discount_value\"]",
+    "location": {
+      "end": {
+        "column": 60,
+        "line": 400
+      },
+      "start": {
+        "column": 35,
+        "line": 400
+      }
+    },
+    "mutatorName": "ArithmeticOperator",
+    "replacement": "1 + coupon.discount_value",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",412,106,412,109,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 109,
+        "line": 412
+      },
+      "start": {
+        "column": 106,
+        "line": 412
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",416,16,433,10,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 10,
+        "line": 433
+      },
+      "start": {
+        "column": 16,
+        "line": 416
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",418,15,418,40,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 40,
+        "line": 418
+      },
+      "start": {
+        "column": 15,
+        "line": 418
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",418,15,418,40,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 40,
+        "line": 418
+      },
+      "start": {
+        "column": 15,
+        "line": 418
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",418,15,418,40,\"EqualityOperator\",\"coupon.type !== \\\"percent\\\"\"]",
+    "location": {
+      "end": {
+        "column": 40,
+        "line": 418
+      },
+      "start": {
+        "column": 15,
+        "line": 418
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "coupon.type !== \"percent\"",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",418,31,418,40,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 40,
+        "line": 418
+      },
+      "start": {
+        "column": 31,
+        "line": 418
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",418,42,422,12,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 422
+      },
+      "start": {
+        "column": 42,
+        "line": 418
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",420,15,420,57,\"ArithmeticOperator\",\"total_amount / (1 - coupon.discount_value)\"]",
+    "location": {
+      "end": {
+        "column": 57,
+        "line": 420
+      },
+      "start": {
+        "column": 15,
+        "line": 420
+      }
+    },
+    "mutatorName": "ArithmeticOperator",
+    "replacement": "total_amount / (1 - coupon.discount_value)",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",420,31,420,56,\"ArithmeticOperator\",\"1 + coupon.discount_value\"]",
+    "location": {
+      "end": {
+        "column": 56,
+        "line": 420
+      },
+      "start": {
+        "column": 31,
+        "line": 420
+      }
+    },
+    "mutatorName": "ArithmeticOperator",
+    "replacement": "1 + coupon.discount_value",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",422,18,424,12,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 424
+      },
+      "start": {
+        "column": 18,
+        "line": 422
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",425,32,425,62,\"ArithmeticOperator\",\"total_amount + discount_amount\"]",
+    "location": {
+      "end": {
+        "column": 62,
+        "line": 425
+      },
+      "start": {
+        "column": 32,
+        "line": 425
+      }
+    },
+    "mutatorName": "ArithmeticOperator",
+    "replacement": "total_amount + discount_amount",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",426,27,432,12,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 432
+      },
+      "start": {
+        "column": 27,
+        "line": 426
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",427,22,427,26,\"BooleanLiteral\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 26,
+        "line": 427
+      },
+      "start": {
+        "column": 22,
+        "line": 427
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "false",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",431,22,431,155,\"StringLiteral\",\"``\"]",
+    "location": {
+      "end": {
+        "column": 155,
+        "line": 431
+      },
+      "start": {
+        "column": 22,
+        "line": 431
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "``",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",431,50,431,75,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 75,
+        "line": 431
+      },
+      "start": {
+        "column": 50,
+        "line": 431
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",431,50,431,75,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 75,
+        "line": 431
+      },
+      "start": {
+        "column": 50,
+        "line": 431
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",431,50,431,75,\"EqualityOperator\",\"coupon.type !== \\\"percent\\\"\"]",
+    "location": {
+      "end": {
+        "column": 75,
+        "line": 431
+      },
+      "start": {
+        "column": 50,
+        "line": 431
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "coupon.type !== \"percent\"",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",431,66,431,75,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 75,
+        "line": 431
+      },
+      "start": {
+        "column": 66,
+        "line": 431
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",431,102,431,105,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 105,
+        "line": 431
+      },
+      "start": {
+        "column": 102,
+        "line": 431
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",431,149,431,153,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 153,
+        "line": 431
+      },
+      "start": {
+        "column": 149,
+        "line": 431
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",450,44,450,66,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 66,
+        "line": 450
+      },
+      "start": {
+        "column": 44,
+        "line": 450
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",485,42,485,64,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 64,
+        "line": 485
+      },
+      "start": {
+        "column": 42,
+        "line": 485
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",551,29,551,33,\"BooleanLiteral\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 33,
+        "line": 551
+      },
+      "start": {
+        "column": 29,
+        "line": 551
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "false",
+    "before": "NoCoverage",
+    "after": "NoCoverage",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",23,5,23,65,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 23
+      },
+      "start": {
+        "column": 5,
+        "line": 23
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",24,5,24,28,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 28,
+        "line": 24
+      },
+      "start": {
+        "column": 5,
+        "line": 24
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Registration (API 1.1) AU-R02 a registered user can log in with the same credentials (API 1.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",20,41,30,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 30
+      },
+      "start": {
+        "column": 41,
+        "line": 20
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",25,20,28,6,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 28
+      },
+      "start": {
+        "column": 20,
+        "line": 25
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",26,11,26,14,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 26
+      },
+      "start": {
+        "column": 11,
+        "line": 26
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",27,16,27,76,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 76,
+        "line": 27
+      },
+      "start": {
+        "column": 16,
+        "line": 27
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Registration (API 1.1) AU-R01 valid registration returns 200, the success message and a numeric id"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",27,27,27,57,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 57,
+        "line": 27
+      },
+      "start": {
+        "column": 27,
+        "line": 27
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Registration (API 1.1) AU-R01 valid registration returns 200, the success message and a numeric id"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",38,35,38,73,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 73,
+        "line": 38
+      },
+      "start": {
+        "column": 35,
+        "line": 38
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L04 unknown email gets the same status and body as a wrong password (FR-02: no cause leaked)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",38,44,38,71,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 71,
+        "line": 38
+      },
+      "start": {
+        "column": 44,
+        "line": 38
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L04 unknown email gets the same status and body as a wrong password (FR-02: no cause leaked)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",40,30,40,70,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 70,
+        "line": 40
+      },
+      "start": {
+        "column": 30,
+        "line": 40
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L07 a lock whose time has passed no longer blocks login"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",26,11,26,14,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 26
+      },
+      "start": {
+        "column": 11,
+        "line": 26
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",40,30,40,70,\"EqualityOperator\",\"new Date() <= new Date(user.locked_until)\"]",
+    "location": {
+      "end": {
+        "column": 70,
+        "line": 40
+      },
+      "start": {
+        "column": 30,
+        "line": 40
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "new Date() <= new Date(user.locked_until)",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",40,72,44,6,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 44
+      },
+      "start": {
+        "column": 72,
+        "line": 40
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",43,15,43,71,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 71,
+        "line": 43
+      },
+      "start": {
+        "column": 15,
+        "line": 43
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",40,30,40,70,\"EqualityOperator\",\"new Date() >= new Date(user.locked_until)\"]",
+    "location": {
+      "end": {
+        "column": 70,
+        "line": 40
+      },
+      "start": {
+        "column": 30,
+        "line": 40
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "new Date() >= new Date(user.locked_until)",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",43,24,43,69,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 69,
+        "line": 43
+      },
+      "start": {
+        "column": 24,
+        "line": 43
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",54,27,54,50,\"ArithmeticOperator\",\"user.login_attempts - 2\"]",
+    "location": {
+      "end": {
+        "column": 50,
+        "line": 54
+      },
+      "start": {
+        "column": 27,
+        "line": 54
+      }
+    },
+    "mutatorName": "ArithmeticOperator",
+    "replacement": "user.login_attempts - 2",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",56,11,56,27,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 27,
+        "line": 56
+      },
+      "start": {
+        "column": 11,
+        "line": 56
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L08 a successful login resets the failure counter: wrong, ok, wrong, ok never locks (FR-02 \"consecutive\")"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",56,11,56,27,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 27,
+        "line": 56
+      },
+      "start": {
+        "column": 11,
+        "line": 56
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",56,11,56,27,\"EqualityOperator\",\"newAttempts > 3\"]",
+    "location": {
+      "end": {
+        "column": 27,
+        "line": 56
+      },
+      "start": {
+        "column": 11,
+        "line": 56
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "newAttempts > 3",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",56,11,56,27,\"EqualityOperator\",\"newAttempts < 3\"]",
+    "location": {
+      "end": {
+        "column": 27,
+        "line": 56
+      },
+      "start": {
+        "column": 11,
+        "line": 56
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "newAttempts < 3",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L08 a successful login resets the failure counter: wrong, ok, wrong, ok never locks (FR-02 \"consecutive\")"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",56,29,58,8,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 8,
+        "line": 58
+      },
+      "start": {
+        "column": 29,
+        "line": 56
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",57,32,57,51,\"ArithmeticOperator\",\"Date.now() - 180000\"]",
+    "location": {
+      "end": {
+        "column": 51,
+        "line": 57
+      },
+      "start": {
+        "column": 32,
+        "line": 57
+      }
+    },
+    "mutatorName": "ArithmeticOperator",
+    "replacement": "Date.now() - 180000",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",60,9,60,77,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 77,
+        "line": 60
+      },
+      "start": {
+        "column": 9,
+        "line": 60
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",61,9,61,44,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 61
+      },
+      "start": {
+        "column": 9,
+        "line": 61
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",63,28,63,66,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 66,
+        "line": 63
+      },
+      "start": {
+        "column": 28,
+        "line": 63
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L04 unknown email gets the same status and body as a wrong password (FR-02: no cause leaked)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",63,37,63,64,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 64,
+        "line": 63
+      },
+      "start": {
+        "column": 37,
+        "line": 63
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L04 unknown email gets the same status and body as a wrong password (FR-02: no cause leaked)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",53,12,64,6,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 64
+      },
+      "start": {
+        "column": 12,
+        "line": 53
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",70,10,70,47,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 47,
+        "line": 70
+      },
+      "start": {
+        "column": 10,
+        "line": 70
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",70,49,70,56,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 56,
+        "line": 70
+      },
+      "start": {
+        "column": 49,
+        "line": 70
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P01 forgot-password for a registered email returns 200, the message and a reset token (API 1.3)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",68,48,85,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 85
+      },
+      "start": {
+        "column": 48,
+        "line": 68
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",70,73,84,4,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 4,
+        "line": 84
+      },
+      "start": {
+        "column": 73,
+        "line": 70
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",71,9,71,14,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 71
+      },
+      "start": {
+        "column": 9,
+        "line": 71
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P01 forgot-password for a registered email returns 200, the message and a reset token (API 1.3)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",71,9,71,14,\"BooleanLiteral\",\"user\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 71
+      },
+      "start": {
+        "column": 9,
+        "line": 71
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "user",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",71,44,71,71,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 71,
+        "line": 71
+      },
+      "start": {
+        "column": 44,
+        "line": 71
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",71,53,71,69,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 69,
+        "line": 71
+      },
+      "start": {
+        "column": 53,
+        "line": 71
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",72,35,72,62,\"ArithmeticOperator\",\"1000 - Math.random() * 9000\"]",
+    "location": {
+      "end": {
+        "column": 62,
+        "line": 72
+      },
+      "start": {
+        "column": 35,
+        "line": 72
+      }
+    },
+    "mutatorName": "ArithmeticOperator",
+    "replacement": "1000 - Math.random() * 9000",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",72,42,72,62,\"ArithmeticOperator\",\"Math.random() / 9000\"]",
+    "location": {
+      "end": {
+        "column": 62,
+        "line": 72
+      },
+      "start": {
+        "column": 42,
+        "line": 72
+      }
+    },
+    "mutatorName": "ArithmeticOperator",
+    "replacement": "Math.random() / 9000",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",74,7,74,54,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 54,
+        "line": 74
+      },
+      "start": {
+        "column": 7,
+        "line": 74
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",71,9,71,14,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 71
+      },
+      "start": {
+        "column": 9,
+        "line": 71
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",75,7,75,28,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 28,
+        "line": 75
+      },
+      "start": {
+        "column": 7,
+        "line": 75
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",76,16,82,8,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 8,
+        "line": 82
+      },
+      "start": {
+        "column": 16,
+        "line": 76
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",77,13,77,16,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 16,
+        "line": 77
+      },
+      "start": {
+        "column": 13,
+        "line": 77
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",77,13,77,16,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 16,
+        "line": 77
+      },
+      "start": {
+        "column": 13,
+        "line": 77
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",78,18,81,10,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 10,
+        "line": 81
+      },
+      "start": {
+        "column": 18,
+        "line": 78
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P01 forgot-password for a registered email returns 200, the message and a reset token (API 1.3)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",79,20,79,53,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 53,
+        "line": 79
+      },
+      "start": {
+        "column": 20,
+        "line": 79
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P01 forgot-password for a registered email returns 200, the message and a reset token (API 1.3)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",90,5,90,92,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 92,
+        "line": 90
+      },
+      "start": {
+        "column": 5,
+        "line": 90
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",91,5,91,37,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 37,
+        "line": 91
+      },
+      "start": {
+        "column": 5,
+        "line": 91
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",87,47,98,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 98
+      },
+      "start": {
+        "column": 47,
+        "line": 87
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",93,11,93,29,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 93
+      },
+      "start": {
+        "column": 11,
+        "line": 93
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",93,11,93,29,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 93
+      },
+      "start": {
+        "column": 11,
+        "line": 93
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P04 reset with a wrong token is refused with 400 (convention) and the password is unchanged"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",93,11,93,29,\"EqualityOperator\",\"this.changes !== 0\"]",
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 93
+      },
+      "start": {
+        "column": 11,
+        "line": 93
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "this.changes !== 0",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",94,37,94,72,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 72,
+        "line": 94
+      },
+      "start": {
+        "column": 37,
+        "line": 94
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",94,46,94,70,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 70,
+        "line": 94
+      },
+      "start": {
+        "column": 46,
+        "line": 94
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",95,16,95,58,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 58,
+        "line": 95
+      },
+      "start": {
+        "column": 16,
+        "line": 95
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",95,27,95,56,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 56,
+        "line": 95
+      },
+      "start": {
+        "column": 27,
+        "line": 95
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",92,20,96,6,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 96
+      },
+      "start": {
+        "column": 20,
+        "line": 92
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",101,34,101,49,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 49,
+        "line": 101
+      },
+      "start": {
+        "column": 34,
+        "line": 101
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-02 [normal] new user gets an empty cart"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",102,17,102,55,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 55,
+        "line": 102
+      },
+      "start": {
+        "column": 17,
+        "line": 102
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-01 [invalid] get cart without token → 401"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",102,17,102,55,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 55,
+        "line": 102
+      },
+      "start": {
+        "column": 17,
+        "line": 102
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-01 [invalid] get cart without token → 401"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",102,17,102,55,\"LogicalOperator\",\"authHeader || authHeader.split(\\\" \\\")[1]\"]",
+    "location": {
+      "end": {
+        "column": 55,
+        "line": 102
+      },
+      "start": {
+        "column": 17,
+        "line": 102
+      }
+    },
+    "mutatorName": "LogicalOperator",
+    "replacement": "authHeader || authHeader.split(\" \")[1]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-01 [invalid] get cart without token → 401"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",102,48,102,51,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 51,
+        "line": 102
+      },
+      "start": {
+        "column": 48,
+        "line": 102
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-02 [normal] new user gets an empty cart"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",103,7,103,20,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 20,
+        "line": 103
+      },
+      "start": {
+        "column": 7,
+        "line": 103
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-02 [normal] new user gets an empty cart"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",100,47,110,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 110
+      },
+      "start": {
+        "column": 47,
+        "line": 100
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",103,7,103,20,\"EqualityOperator\",\"token != null\"]",
+    "location": {
+      "end": {
+        "column": 20,
+        "line": 103
+      },
+      "start": {
+        "column": 7,
+        "line": 103
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "token != null",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-01 [invalid] get cart without token → 401"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",103,7,103,20,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 20,
+        "line": 103
+      },
+      "start": {
+        "column": 7,
+        "line": 103
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-01 [invalid] get cart without token → 401"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",103,50,103,75,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 75,
+        "line": 103
+      },
+      "start": {
+        "column": 50,
+        "line": 103
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",103,59,103,73,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 73,
+        "line": 103
+      },
+      "start": {
+        "column": 59,
+        "line": 103
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",106,9,106,12,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 106
+      },
+      "start": {
+        "column": 9,
+        "line": 106
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-FLOW fixed quote -> checkout -> explicit usage recording -> limit enforced"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",106,9,106,12,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 106
+      },
+      "start": {
+        "column": 9,
+        "line": 106
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U02 GET /me with an invalid token is refused (SEC-02)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",106,42,106,64,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 64,
+        "line": 106
+      },
+      "start": {
+        "column": 42,
+        "line": 106
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",106,51,106,62,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 62,
+        "line": 106
+      },
+      "start": {
+        "column": 51,
+        "line": 106
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",105,48,109,4,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 4,
+        "line": 109
+      },
+      "start": {
+        "column": 48,
+        "line": 105
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",108,5,108,12,\"CallExpression\",\";\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 108
+      },
+      "start": {
+        "column": 5,
+        "line": 108
+      }
+    },
+    "mutatorName": "CallExpression",
+    "replacement": ";",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",113,10,113,44,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 113
+      },
+      "start": {
+        "column": 10,
+        "line": 113
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",112,59,116,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 116
+      },
+      "start": {
+        "column": 59,
+        "line": 112
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",113,46,113,59,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 59,
+        "line": 113
+      },
+      "start": {
+        "column": 46,
+        "line": 113
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U03 GET /me returns the profile of the token owner only (API 2.1)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",113,76,115,4,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 4,
+        "line": 115
+      },
+      "start": {
+        "column": 76,
+        "line": 113
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",114,5,114,20,\"CallExpression\",\";\"]",
+    "location": {
+      "end": {
+        "column": 20,
+        "line": 114
+      },
+      "start": {
+        "column": 5,
+        "line": 114
+      }
+    },
+    "mutatorName": "CallExpression",
+    "replacement": ";",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",121,15,121,75,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 75,
+        "line": 121
+      },
+      "start": {
+        "column": 15,
+        "line": 121
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",122,16,122,47,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 47,
+        "line": 122
+      },
+      "start": {
+        "column": 16,
+        "line": 122
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",124,7,124,11,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 11,
+        "line": 124
+      },
+      "start": {
+        "column": 7,
+        "line": 124
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",124,7,124,11,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 11,
+        "line": 124
+      },
+      "start": {
+        "column": 7,
+        "line": 124
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",128,12,128,27,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 27,
+        "line": 128
+      },
+      "start": {
+        "column": 12,
+        "line": 128
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",129,3,129,28,\"CallExpression\",\";\"]",
+    "location": {
+      "end": {
+        "column": 28,
+        "line": 129
+      },
+      "start": {
+        "column": 3,
+        "line": 129
+      }
+    },
+    "mutatorName": "CallExpression",
+    "replacement": ";",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",118,59,135,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 135
+      },
+      "start": {
+        "column": 59,
+        "line": 118
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",131,40,134,4,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 4,
+        "line": 134
+      },
+      "start": {
+        "column": 40,
+        "line": 131
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",132,9,132,12,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 132
+      },
+      "start": {
+        "column": 9,
+        "line": 132
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",133,14,133,44,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 133
+      },
+      "start": {
+        "column": 14,
+        "line": 133
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",133,25,133,42,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 42,
+        "line": 133
+      },
+      "start": {
+        "column": 25,
+        "line": 133
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",132,9,132,12,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 132
+      },
+      "start": {
+        "column": 9,
+        "line": 132
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",286,7,286,25,\"BooleanLiteral\",\"userCarts[userId]\"]",
+    "location": {
+      "end": {
+        "column": 25,
+        "line": 286
+      },
+      "start": {
+        "column": 7,
+        "line": 286
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "userCarts[userId]",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",286,7,286,25,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 25,
+        "line": 286
+      },
+      "start": {
+        "column": 7,
+        "line": 286
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",286,7,286,25,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 25,
+        "line": 286
+      },
+      "start": {
+        "column": 7,
+        "line": 286
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",286,47,286,49,\"ArrayDeclaration\",\"[\\\"Stryker was here\\\"]\"]",
+    "location": {
+      "end": {
+        "column": 49,
+        "line": 286
+      },
+      "start": {
+        "column": 47,
+        "line": 286
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[\"Stryker was here\"]",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",284,55,288,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 288
+      },
+      "start": {
+        "column": 55,
+        "line": 284
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",287,3,287,31,\"CallExpression\",\";\"]",
+    "location": {
+      "end": {
+        "column": 31,
+        "line": 287
+      },
+      "start": {
+        "column": 3,
+        "line": 287
+      }
+    },
+    "mutatorName": "CallExpression",
+    "replacement": ";",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",292,7,292,25,\"BooleanLiteral\",\"userCarts[userId]\"]",
+    "location": {
+      "end": {
+        "column": 25,
+        "line": 292
+      },
+      "start": {
+        "column": 7,
+        "line": 292
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "userCarts[userId]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-03 [normal] add one item, then read the cart"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",292,7,292,25,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 25,
+        "line": 292
+      },
+      "start": {
+        "column": 7,
+        "line": 292
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",292,7,292,25,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 25,
+        "line": 292
+      },
+      "start": {
+        "column": 7,
+        "line": 292
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-03 [normal] add one item, then read the cart"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",292,47,292,49,\"ArrayDeclaration\",\"[\\\"Stryker was here\\\"]\"]",
+    "location": {
+      "end": {
+        "column": 49,
+        "line": 292
+      },
+      "start": {
+        "column": 47,
+        "line": 292
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[\"Stryker was here\"]",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",290,56,295,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 295
+      },
+      "start": {
+        "column": 56,
+        "line": 290
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",293,3,293,36,\"CallExpression\",\";\"]",
+    "location": {
+      "end": {
+        "column": 36,
+        "line": 293
+      },
+      "start": {
+        "column": 3,
+        "line": 293
+      }
+    },
+    "mutatorName": "CallExpression",
+    "replacement": ";",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",294,12,294,40,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 40,
+        "line": 294
+      },
+      "start": {
+        "column": 12,
+        "line": 294
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",294,23,294,38,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 38,
+        "line": 294
+      },
+      "start": {
+        "column": 23,
+        "line": 294
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",302,5,302,95,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 95,
+        "line": 302
+      },
+      "start": {
+        "column": 5,
+        "line": 302
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",303,5,303,56,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 56,
+        "line": 303
+      },
+      "start": {
+        "column": 5,
+        "line": 303
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",303,28,303,37,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 37,
+        "line": 303
+      },
+      "start": {
+        "column": 28,
+        "line": 303
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",297,60,309,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 309
+      },
+      "start": {
+        "column": 60,
+        "line": 297
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",304,20,307,6,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 307
+      },
+      "start": {
+        "column": 20,
+        "line": 304
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",305,11,305,14,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 305
+      },
+      "start": {
+        "column": 11,
+        "line": 305
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",306,16,306,72,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 72,
+        "line": 306
+      },
+      "start": {
+        "column": 16,
+        "line": 306
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",306,27,306,48,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 48,
+        "line": 306
+      },
+      "start": {
+        "column": 27,
+        "line": 306
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",305,11,305,14,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 305
+      },
+      "start": {
+        "column": 11,
+        "line": 305
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",313,5,313,62,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 62,
+        "line": 313
+      },
+      "start": {
+        "column": 5,
+        "line": 313
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",314,5,314,18,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 18,
+        "line": 314
+      },
+      "start": {
+        "column": 5,
+        "line": 314
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",311,67,319,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 319
+      },
+      "start": {
+        "column": 67,
+        "line": 311
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",315,22,317,6,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 317
+      },
+      "start": {
+        "column": 22,
+        "line": 315
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",316,7,316,24,\"CallExpression\",\";\"]",
+    "location": {
+      "end": {
+        "column": 24,
+        "line": 316
+      },
+      "start": {
+        "column": 7,
+        "line": 316
+      }
+    },
+    "mutatorName": "CallExpression",
+    "replacement": ";",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",323,5,323,56,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 56,
+        "line": 323
+      },
+      "start": {
+        "column": 5,
+        "line": 323
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",324,5,324,33,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 33,
+        "line": 324
+      },
+      "start": {
+        "column": 5,
+        "line": 324
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",321,68,342,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 342
+      },
+      "start": {
+        "column": 68,
+        "line": 321
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",325,21,340,6,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 340
+      },
+      "start": {
+        "column": 21,
+        "line": 325
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",326,11,326,17,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 17,
+        "line": 326
+      },
+      "start": {
+        "column": 11,
+        "line": 326
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",326,11,326,17,\"BooleanLiteral\",\"order\"]",
+    "location": {
+      "end": {
+        "column": 17,
+        "line": 326
+      },
+      "start": {
+        "column": 11,
+        "line": 326
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "order",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",326,47,326,75,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 75,
+        "line": 326
+      },
+      "start": {
+        "column": 47,
+        "line": 326
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",326,56,326,73,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 73,
+        "line": 326
+      },
+      "start": {
+        "column": 56,
+        "line": 326
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",329,11,329,70,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 70,
+        "line": 329
+      },
+      "start": {
+        "column": 11,
+        "line": 329
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",329,11,329,70,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 70,
+        "line": 329
+      },
+      "start": {
+        "column": 11,
+        "line": 329
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",329,11,329,70,\"LogicalOperator\",\"order.status === \\\"delivered\\\" && order.status === \\\"canceled\\\"\"]",
+    "location": {
+      "end": {
+        "column": 70,
+        "line": 329
+      },
+      "start": {
+        "column": 11,
+        "line": 329
+      }
+    },
+    "mutatorName": "LogicalOperator",
+    "replacement": "order.status === \"delivered\" && order.status === \"canceled\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",329,11,329,39,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 39,
+        "line": 329
+      },
+      "start": {
+        "column": 11,
+        "line": 329
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",329,11,329,39,\"EqualityOperator\",\"order.status !== \\\"delivered\\\"\"]",
+    "location": {
+      "end": {
+        "column": 39,
+        "line": 329
+      },
+      "start": {
+        "column": 11,
+        "line": 329
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "order.status !== \"delivered\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",329,28,329,39,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 39,
+        "line": 329
+      },
+      "start": {
+        "column": 28,
+        "line": 329
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",329,43,329,70,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 70,
+        "line": 329
+      },
+      "start": {
+        "column": 43,
+        "line": 329
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",326,11,326,17,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 17,
+        "line": 326
+      },
+      "start": {
+        "column": 11,
+        "line": 326
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",329,43,329,70,\"EqualityOperator\",\"order.status !== \\\"canceled\\\"\"]",
+    "location": {
+      "end": {
+        "column": 70,
+        "line": 329
+      },
+      "start": {
+        "column": 43,
+        "line": 329
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "order.status !== \"canceled\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",329,60,329,70,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 70,
+        "line": 329
+      },
+      "start": {
+        "column": 60,
+        "line": 329
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a canceled order (final state) → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",329,72,331,8,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 8,
+        "line": 331
+      },
+      "start": {
+        "column": 72,
+        "line": 329
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-13 [invalid] cancel a delivered order (final state) → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",330,37,330,75,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 75,
+        "line": 330
+      },
+      "start": {
+        "column": 37,
+        "line": 330
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",330,46,330,73,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 73,
+        "line": 330
+      },
+      "start": {
+        "column": 46,
+        "line": 330
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",335,9,335,36,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 36,
+        "line": 335
+      },
+      "start": {
+        "column": 9,
+        "line": 335
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",335,10,335,20,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 20,
+        "line": 335
+      },
+      "start": {
+        "column": 10,
+        "line": 335
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",334,9,334,52,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 52,
+        "line": 334
+      },
+      "start": {
+        "column": 9,
+        "line": 334
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",337,20,337,62,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 62,
+        "line": 337
+      },
+      "start": {
+        "column": 20,
+        "line": 337
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",337,31,337,60,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 60,
+        "line": 337
+      },
+      "start": {
+        "column": 31,
+        "line": 337
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",336,24,338,10,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 10,
+        "line": 338
+      },
+      "start": {
+        "column": 24,
+        "line": 336
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",344,42,349,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 349
+      },
+      "start": {
+        "column": 42,
+        "line": 344
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",345,47,345,62,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 62,
+        "line": 345
+      },
+      "start": {
+        "column": 47,
+        "line": 345
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",345,10,345,45,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 45,
+        "line": 345
+      },
+      "start": {
+        "column": 10,
+        "line": 345
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",346,9,346,15,\"BooleanLiteral\",\"order\"]",
+    "location": {
+      "end": {
+        "column": 15,
+        "line": 346
+      },
+      "start": {
+        "column": 9,
+        "line": 346
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "order",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",346,9,346,15,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 15,
+        "line": 346
+      },
+      "start": {
+        "column": 9,
+        "line": 346
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",346,9,346,15,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 15,
+        "line": 346
+      },
+      "start": {
+        "column": 9,
+        "line": 346
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-10 [invalid] order detail of non-existent id → 404"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",346,45,346,73,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 73,
+        "line": 346
+      },
+      "start": {
+        "column": 45,
+        "line": 346
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",346,54,346,71,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 71,
+        "line": 346
+      },
+      "start": {
+        "column": 54,
+        "line": 346
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",345,80,348,4,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 4,
+        "line": 348
+      },
+      "start": {
+        "column": 80,
+        "line": 345
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",347,5,347,21,\"CallExpression\",\";\"]",
+    "location": {
+      "end": {
+        "column": 21,
+        "line": 347
+      },
+      "start": {
+        "column": 5,
+        "line": 347
+      }
+    },
+    "mutatorName": "CallExpression",
+    "replacement": ";",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",357,10,357,33,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 33,
+        "line": 357
+      },
+      "start": {
+        "column": 10,
+        "line": 357
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-13 admin lists the current fixture; reset removed original coupons"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",357,35,357,37,\"ArrayDeclaration\",\"[\\\"Stryker was here\\\"]\"]",
+    "location": {
+      "end": {
+        "column": 37,
+        "line": 357
+      },
+      "start": {
+        "column": 35,
+        "line": 357
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[\"Stryker was here\"]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-13 admin lists the current fixture; reset removed original coupons"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",356,58,360,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 360
+      },
+      "start": {
+        "column": 58,
+        "line": 356
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",357,54,359,4,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 4,
+        "line": 359
+      },
+      "start": {
+        "column": 54,
+        "line": 357
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",358,5,358,20,\"CallExpression\",\";\"]",
+    "location": {
+      "end": {
+        "column": 20,
+        "line": 358
+      },
+      "start": {
+        "column": 5,
+        "line": 358
+      }
+    },
+    "mutatorName": "CallExpression",
+    "replacement": ";",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",366,7,366,12,\"BooleanLiteral\",\"code\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 366
+      },
+      "start": {
+        "column": 7,
+        "line": 366
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "code",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",366,7,366,12,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 366
+      },
+      "start": {
+        "column": 7,
+        "line": 366
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",366,7,366,12,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 366
+      },
+      "start": {
+        "column": 7,
+        "line": 366
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-03 missing/empty code is refused: undefined"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",367,33,367,71,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 71,
+        "line": 367
+      },
+      "start": {
+        "column": 33,
+        "line": 367
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",363,45,441,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 441
+      },
+      "start": {
+        "column": 45,
+        "line": 363
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",367,42,367,69,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 69,
+        "line": 367
+      },
+      "start": {
+        "column": 42,
+        "line": 367
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",371,5,371,11,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 11,
+        "line": 371
+      },
+      "start": {
+        "column": 5,
+        "line": 371
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",370,5,370,61,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 61,
+        "line": 370
+      },
+      "start": {
+        "column": 5,
+        "line": 370
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",372,22,439,6,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 439
+      },
+      "start": {
+        "column": 22,
+        "line": 372
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",373,11,373,18,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 18,
+        "line": 373
+      },
+      "start": {
+        "column": 11,
+        "line": 373
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",373,11,373,18,\"BooleanLiteral\",\"coupon\"]",
+    "location": {
+      "end": {
+        "column": 18,
+        "line": 373
+      },
+      "start": {
+        "column": 11,
+        "line": 373
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "coupon",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",373,11,373,18,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 18,
+        "line": 373
+      },
+      "start": {
+        "column": 11,
+        "line": 373
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",373,20,377,8,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 8,
+        "line": 377
+      },
+      "start": {
+        "column": 20,
+        "line": 373
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",376,17,376,78,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 78,
+        "line": 376
+      },
+      "start": {
+        "column": 17,
+        "line": 376
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",376,26,376,76,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 76,
+        "line": 376
+      },
+      "start": {
+        "column": 26,
+        "line": 376
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",379,11,379,49,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 49,
+        "line": 379
+      },
+      "start": {
+        "column": 11,
+        "line": 379
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-02 one currency unit below minimum is refused (FR-09 C3)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",379,11,379,49,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 49,
+        "line": 379
+      },
+      "start": {
+        "column": 11,
+        "line": 379
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",379,11,379,49,\"EqualityOperator\",\"total_amount >= coupon.min_order_amount\"]",
+    "location": {
+      "end": {
+        "column": 49,
+        "line": 379
+      },
+      "start": {
+        "column": 11,
+        "line": 379
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "total_amount >= coupon.min_order_amount",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",379,11,379,49,\"EqualityOperator\",\"total_amount <= coupon.min_order_amount\"]",
+    "location": {
+      "end": {
+        "column": 49,
+        "line": 379
+      },
+      "start": {
+        "column": 11,
+        "line": 379
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "total_amount <= coupon.min_order_amount",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",382,13,382,25,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 25,
+        "line": 382
+      },
+      "start": {
+        "column": 13,
+        "line": 382
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",382,13,382,25,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 25,
+        "line": 382
+      },
+      "start": {
+        "column": 13,
+        "line": 382
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-06 one millisecond after expiry is refused (FR-09 C2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",382,13,382,25,\"EqualityOperator\",\"expiry <= now\"]",
+    "location": {
+      "end": {
+        "column": 25,
+        "line": 382
+      },
+      "start": {
+        "column": 13,
+        "line": 382
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "expiry <= now",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",382,13,382,25,\"EqualityOperator\",\"expiry >= now\"]",
+    "location": {
+      "end": {
+        "column": 25,
+        "line": 382
+      },
+      "start": {
+        "column": 13,
+        "line": 382
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "expiry >= now",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",382,27,384,10,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 10,
+        "line": 384
+      },
+      "start": {
+        "column": 27,
+        "line": 382
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-06 one millisecond after expiry is refused (FR-09 C2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",383,39,383,74,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 74,
+        "line": 383
+      },
+      "start": {
+        "column": 39,
+        "line": 383
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",383,48,383,72,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 72,
+        "line": 383
+      },
+      "start": {
+        "column": 48,
+        "line": 383
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",386,13,386,20,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 20,
+        "line": 386
+      },
+      "start": {
+        "column": 13,
+        "line": 386
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",379,51,434,8,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 8,
+        "line": 434
+      },
+      "start": {
+        "column": 51,
+        "line": 379
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",386,13,386,20,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 20,
+        "line": 386
+      },
+      "start": {
+        "column": 13,
+        "line": 386
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-08 usage 2 meets/exceeds limit 2 (FR-09 C5)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",388,13,388,99,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 99,
+        "line": 388
+      },
+      "start": {
+        "column": 13,
+        "line": 388
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",389,13,389,33,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 33,
+        "line": 389
+      },
+      "start": {
+        "column": 13,
+        "line": 389
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-08 usage 2 meets/exceeds limit 2 (FR-09 C5)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",386,22,416,10,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 10,
+        "line": 416
+      },
+      "start": {
+        "column": 22,
+        "line": 386
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",391,19,391,65,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 391
+      },
+      "start": {
+        "column": 19,
+        "line": 391
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",391,19,391,65,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 391
+      },
+      "start": {
+        "column": 19,
+        "line": 391
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-08 usage 2 meets/exceeds limit 2 (FR-09 C5)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",391,19,391,65,\"EqualityOperator\",\"result.usage_count > coupon.max_uses_per_user\"]",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 391
+      },
+      "start": {
+        "column": 19,
+        "line": 391
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "result.usage_count > coupon.max_uses_per_user",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-08 usage 2 meets/exceeds limit 2 (FR-09 C5)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",391,19,391,65,\"EqualityOperator\",\"result.usage_count < coupon.max_uses_per_user\"]",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 391
+      },
+      "start": {
+        "column": 19,
+        "line": 391
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "result.usage_count < coupon.max_uses_per_user",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",391,67,395,16,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 16,
+        "line": 395
+      },
+      "start": {
+        "column": 67,
+        "line": 391
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-08 usage 2 meets/exceeds limit 2 (FR-09 C5)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",390,30,414,14,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 414
+      },
+      "start": {
+        "column": 30,
+        "line": 390
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",392,45,394,18,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 18,
+        "line": 394
+      },
+      "start": {
+        "column": 45,
+        "line": 392
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",393,26,393,99,\"StringLiteral\",\"``\"]",
+    "location": {
+      "end": {
+        "column": 99,
+        "line": 393
+      },
+      "start": {
+        "column": 26,
+        "line": 393
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "``",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",398,19,398,44,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 398
+      },
+      "start": {
+        "column": 19,
+        "line": 398
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-FLOW fixed quote -> checkout -> explicit usage recording -> limit enforced"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",398,19,398,44,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 398
+      },
+      "start": {
+        "column": 19,
+        "line": 398
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",398,19,398,44,\"EqualityOperator\",\"coupon.type !== \\\"percent\\\"\"]",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 398
+      },
+      "start": {
+        "column": 19,
+        "line": 398
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "coupon.type !== \"percent\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",398,35,398,44,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 398
+      },
+      "start": {
+        "column": 35,
+        "line": 398
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",402,22,404,16,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 16,
+        "line": 404
+      },
+      "start": {
+        "column": 22,
+        "line": 402
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",406,36,406,66,\"ArithmeticOperator\",\"total_amount + discount_amount\"]",
+    "location": {
+      "end": {
+        "column": 66,
+        "line": 406
+      },
+      "start": {
+        "column": 36,
+        "line": 406
+      }
+    },
+    "mutatorName": "ArithmeticOperator",
+    "replacement": "total_amount + discount_amount",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",407,31,413,16,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 16,
+        "line": 413
+      },
+      "start": {
+        "column": 31,
+        "line": 407
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",408,26,408,30,\"BooleanLiteral\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 30,
+        "line": 408
+      },
+      "start": {
+        "column": 26,
+        "line": 408
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",412,26,412,159,\"StringLiteral\",\"``\"]",
+    "location": {
+      "end": {
+        "column": 159,
+        "line": 412
+      },
+      "start": {
+        "column": 26,
+        "line": 412
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "``",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",412,54,412,79,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 79,
+        "line": 412
+      },
+      "start": {
+        "column": 54,
+        "line": 412
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",412,54,412,79,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 79,
+        "line": 412
+      },
+      "start": {
+        "column": 54,
+        "line": 412
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",412,54,412,79,\"EqualityOperator\",\"coupon.type !== \\\"percent\\\"\"]",
+    "location": {
+      "end": {
+        "column": 79,
+        "line": 412
+      },
+      "start": {
+        "column": 54,
+        "line": 412
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "coupon.type !== \"percent\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",412,70,412,79,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 79,
+        "line": 412
+      },
+      "start": {
+        "column": 70,
+        "line": 412
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",412,153,412,157,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 157,
+        "line": 412
+      },
+      "start": {
+        "column": 153,
+        "line": 412
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",435,37,437,10,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 10,
+        "line": 437
+      },
+      "start": {
+        "column": 37,
+        "line": 435
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-02 one currency unit below minimum is refused (FR-09 C3)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",436,18,436,118,\"StringLiteral\",\"``\"]",
+    "location": {
+      "end": {
+        "column": 118,
+        "line": 436
+      },
+      "start": {
+        "column": 18,
+        "line": 436
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "``",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",434,14,438,8,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 8,
+        "line": 438
+      },
+      "start": {
+        "column": 14,
+        "line": 434
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-02 one currency unit below minimum is refused (FR-09 C3)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",447,5,447,66,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 66,
+        "line": 447
+      },
+      "start": {
+        "column": 5,
+        "line": 447
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",444,64,454,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 454
+      },
+      "start": {
+        "column": 64,
+        "line": 444
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",448,5,448,29,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 448
+      },
+      "start": {
+        "column": 5,
+        "line": 448
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-11 quoting repeatedly does not consume allowance; recording usage does"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",449,20,452,6,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 452
+      },
+      "start": {
+        "column": 20,
+        "line": 449
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",450,11,450,14,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 450
+      },
+      "start": {
+        "column": 11,
+        "line": 450
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",450,11,450,14,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 450
+      },
+      "start": {
+        "column": 11,
+        "line": 450
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",451,16,451,45,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 45,
+        "line": 451
+      },
+      "start": {
+        "column": 16,
+        "line": 451
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",451,27,451,43,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 43,
+        "line": 451
+      },
+      "start": {
+        "column": 27,
+        "line": 451
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",467,5,467,130,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 130,
+        "line": 467
+      },
+      "start": {
+        "column": 5,
+        "line": 467
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",468,5,475,6,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 475
+      },
+      "start": {
+        "column": 5,
+        "line": 468
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-15 admin creates minimum=0 and max_uses=1; resulting coupon is usable"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",474,7,474,29,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 474
+      },
+      "start": {
+        "column": 7,
+        "line": 474
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",474,7,474,29,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 474
+      },
+      "start": {
+        "column": 7,
+        "line": 474
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-15 admin creates minimum=0 and max_uses=1; resulting coupon is usable"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",474,7,474,29,\"LogicalOperator\",\"max_uses_per_user && 1\"]",
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 474
+      },
+      "start": {
+        "column": 7,
+        "line": 474
+      }
+    },
+    "mutatorName": "LogicalOperator",
+    "replacement": "max_uses_per_user && 1",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",457,65,481,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 481
+      },
+      "start": {
+        "column": 65,
+        "line": 457
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",476,20,479,6,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 479
+      },
+      "start": {
+        "column": 20,
+        "line": 476
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",477,11,477,14,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 477
+      },
+      "start": {
+        "column": 11,
+        "line": 477
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-18 duplicate code cannot create a second coupon (FR-17)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",477,44,477,66,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 66,
+        "line": 477
+      },
+      "start": {
+        "column": 44,
+        "line": 477
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",478,16,478,62,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 62,
+        "line": 478
+      },
+      "start": {
+        "column": 16,
+        "line": 478
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-15 admin creates minimum=0 and max_uses=1; resulting coupon is usable"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",478,27,478,43,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 43,
+        "line": 478
+      },
+      "start": {
+        "column": 27,
+        "line": 478
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",477,11,477,14,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 477
+      },
+      "start": {
+        "column": 11,
+        "line": 477
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",484,10,484,44,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 44,
+        "line": 484
+      },
+      "start": {
+        "column": 10,
+        "line": 484
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",484,46,484,61,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 61,
+        "line": 484
+      },
+      "start": {
+        "column": 46,
+        "line": 484
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-16 admin deletes only the addressed coupon (FR-17)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",483,71,488,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 488
+      },
+      "start": {
+        "column": 71,
+        "line": 483
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-16 admin deletes only the addressed coupon (FR-17)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",484,78,487,4,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 4,
+        "line": 487
+      },
+      "start": {
+        "column": 78,
+        "line": 484
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-16 admin deletes only the addressed coupon (FR-17)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",485,9,485,12,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 485
+      },
+      "start": {
+        "column": 9,
+        "line": 485
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",486,14,486,43,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 43,
+        "line": 486
+      },
+      "start": {
+        "column": 14,
+        "line": 486
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",486,25,486,41,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 41,
+        "line": 486
+      },
+      "start": {
+        "column": 25,
+        "line": 486
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",485,9,485,12,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 485
+      },
+      "start": {
+        "column": 9,
+        "line": 485
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",512,5,517,6,\"StringLiteral\",\"``\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 517
+      },
+      "start": {
+        "column": 5,
+        "line": 512
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "``",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",518,5,518,7,\"ArrayDeclaration\",\"[\\\"Stryker was here\\\"]\"]",
+    "location": {
+      "end": {
+        "column": 7,
+        "line": 518
+      },
+      "start": {
+        "column": 5,
+        "line": 518
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[\"Stryker was here\"]",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",510,63,523,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 523
+      },
+      "start": {
+        "column": 63,
+        "line": 510
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",519,22,521,6,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 521
+      },
+      "start": {
+        "column": 22,
+        "line": 519
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",520,7,520,24,\"CallExpression\",\";\"]",
+    "location": {
+      "end": {
+        "column": 24,
+        "line": 520
+      },
+      "start": {
+        "column": 7,
+        "line": 520
+      }
+    },
+    "mutatorName": "CallExpression",
+    "replacement": ";",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",529,5,529,45,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 45,
+        "line": 529
+      },
+      "start": {
+        "column": 5,
+        "line": 529
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",530,5,530,20,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 20,
+        "line": 530
+      },
+      "start": {
+        "column": 5,
+        "line": 530
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",525,74,568,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 568
+      },
+      "start": {
+        "column": 74,
+        "line": 525
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",531,21,566,6,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 566
+      },
+      "start": {
+        "column": 21,
+        "line": 531
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",532,11,532,17,\"BooleanLiteral\",\"order\"]",
+    "location": {
+      "end": {
+        "column": 17,
+        "line": 532
+      },
+      "start": {
+        "column": 11,
+        "line": 532
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "order",
+    "before": "RuntimeError",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",532,11,532,17,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 17,
+        "line": 532
+      },
+      "start": {
+        "column": 11,
+        "line": 532
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",532,47,532,75,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 75,
+        "line": 532
+      },
+      "start": {
+        "column": 47,
+        "line": 532
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",532,56,532,73,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 73,
+        "line": 532
+      },
+      "start": {
+        "column": 56,
+        "line": 532
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",535,31,535,36,\"BooleanLiteral\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 36,
+        "line": 535
+      },
+      "start": {
+        "column": 31,
+        "line": 535
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",538,9,539,58,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 58,
+        "line": 539
+      },
+      "start": {
+        "column": 9,
+        "line": 538
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",538,9,539,58,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 58,
+        "line": 539
+      },
+      "start": {
+        "column": 9,
+        "line": 538
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",538,9,539,58,\"LogicalOperator\",\"currentStatus === \\\"pending\\\" || status === \\\"confirmed\\\" || status === \\\"canceled\\\"\"]",
+    "location": {
+      "end": {
+        "column": 58,
+        "line": 539
+      },
+      "start": {
+        "column": 9,
+        "line": 538
+      }
+    },
+    "mutatorName": "LogicalOperator",
+    "replacement": "currentStatus === \"pending\" || status === \"confirmed\" || status === \"canceled\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",532,11,532,17,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 17,
+        "line": 532
+      },
+      "start": {
+        "column": 11,
+        "line": 532
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "RuntimeError",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",538,9,538,36,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 36,
+        "line": 538
+      },
+      "start": {
+        "column": 9,
+        "line": 538
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] shipping → confirmed → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",538,27,538,36,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 36,
+        "line": 538
+      },
+      "start": {
+        "column": 27,
+        "line": 538
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",538,9,538,36,\"EqualityOperator\",\"currentStatus !== \\\"pending\\\"\"]",
+    "location": {
+      "end": {
+        "column": 36,
+        "line": 538
+      },
+      "start": {
+        "column": 9,
+        "line": 538
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "currentStatus !== \"pending\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",539,10,539,57,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 57,
+        "line": 539
+      },
+      "start": {
+        "column": 10,
+        "line": 539
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",539,10,539,57,\"LogicalOperator\",\"status === \\\"confirmed\\\" && status === \\\"canceled\\\"\"]",
+    "location": {
+      "end": {
+        "column": 57,
+        "line": 539
+      },
+      "start": {
+        "column": 10,
+        "line": 539
+      }
+    },
+    "mutatorName": "LogicalOperator",
+    "replacement": "status === \"confirmed\" && status === \"canceled\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",539,10,539,32,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 32,
+        "line": 539
+      },
+      "start": {
+        "column": 10,
+        "line": 539
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",539,10,539,32,\"EqualityOperator\",\"status !== \\\"confirmed\\\"\"]",
+    "location": {
+      "end": {
+        "column": 32,
+        "line": 539
+      },
+      "start": {
+        "column": 10,
+        "line": 539
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "status !== \"confirmed\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",539,21,539,32,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 32,
+        "line": 539
+      },
+      "start": {
+        "column": 21,
+        "line": 539
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",539,36,539,57,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 57,
+        "line": 539
+      },
+      "start": {
+        "column": 36,
+        "line": 539
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → canceled → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",539,36,539,57,\"EqualityOperator\",\"status !== \\\"canceled\\\"\"]",
+    "location": {
+      "end": {
+        "column": 57,
+        "line": 539
+      },
+      "start": {
+        "column": 36,
+        "line": 539
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "status !== \"canceled\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → canceled → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",539,47,539,57,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 57,
+        "line": 539
+      },
+      "start": {
+        "column": 47,
+        "line": 539
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → canceled → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",541,29,541,33,\"BooleanLiteral\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 33,
+        "line": 541
+      },
+      "start": {
+        "column": 29,
+        "line": 541
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",543,9,544,57,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 57,
+        "line": 544
+      },
+      "start": {
+        "column": 9,
+        "line": 543
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",543,9,544,57,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 57,
+        "line": 544
+      },
+      "start": {
+        "column": 9,
+        "line": 543
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",543,9,544,57,\"LogicalOperator\",\"currentStatus === \\\"confirmed\\\" || status === \\\"shipping\\\" || status === \\\"canceled\\\"\"]",
+    "location": {
+      "end": {
+        "column": 57,
+        "line": 544
+      },
+      "start": {
+        "column": 9,
+        "line": 543
+      }
+    },
+    "mutatorName": "LogicalOperator",
+    "replacement": "currentStatus === \"confirmed\" || status === \"shipping\" || status === \"canceled\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",543,9,543,38,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 38,
+        "line": 543
+      },
+      "start": {
+        "column": 9,
+        "line": 543
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",543,9,543,38,\"EqualityOperator\",\"currentStatus !== \\\"confirmed\\\"\"]",
+    "location": {
+      "end": {
+        "column": 38,
+        "line": 543
+      },
+      "start": {
+        "column": 9,
+        "line": 543
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "currentStatus !== \"confirmed\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",543,27,543,38,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 38,
+        "line": 543
+      },
+      "start": {
+        "column": 27,
+        "line": 543
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",544,10,544,56,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 56,
+        "line": 544
+      },
+      "start": {
+        "column": 10,
+        "line": 544
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] confirmed → delivered → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",544,10,544,56,\"LogicalOperator\",\"status === \\\"shipping\\\" && status === \\\"canceled\\\"\"]",
+    "location": {
+      "end": {
+        "column": 56,
+        "line": 544
+      },
+      "start": {
+        "column": 10,
+        "line": 544
+      }
+    },
+    "mutatorName": "LogicalOperator",
+    "replacement": "status === \"shipping\" && status === \"canceled\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",544,10,544,31,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 31,
+        "line": 544
+      },
+      "start": {
+        "column": 10,
+        "line": 544
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",544,10,544,31,\"EqualityOperator\",\"status !== \\\"shipping\\\"\"]",
+    "location": {
+      "end": {
+        "column": 31,
+        "line": 544
+      },
+      "start": {
+        "column": 10,
+        "line": 544
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "status !== \"shipping\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",544,21,544,31,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 31,
+        "line": 544
+      },
+      "start": {
+        "column": 21,
+        "line": 544
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",544,35,544,56,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 56,
+        "line": 544
+      },
+      "start": {
+        "column": 35,
+        "line": 544
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → canceled → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",544,35,544,56,\"EqualityOperator\",\"status !== \\\"canceled\\\"\"]",
+    "location": {
+      "end": {
+        "column": 56,
+        "line": 544
+      },
+      "start": {
+        "column": 35,
+        "line": 544
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "status !== \"canceled\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → canceled → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",544,46,544,56,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 56,
+        "line": 544
+      },
+      "start": {
+        "column": 46,
+        "line": 544
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → canceled → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",546,29,546,33,\"BooleanLiteral\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 33,
+        "line": 546
+      },
+      "start": {
+        "column": 29,
+        "line": 546
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] confirmed → shipping → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",547,11,547,65,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 547
+      },
+      "start": {
+        "column": 11,
+        "line": 547
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",547,11,547,65,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 547
+      },
+      "start": {
+        "column": 11,
+        "line": 547
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",547,11,547,65,\"LogicalOperator\",\"currentStatus === \\\"shipping\\\" || status === \\\"delivered\\\"\"]",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 547
+      },
+      "start": {
+        "column": 11,
+        "line": 547
+      }
+    },
+    "mutatorName": "LogicalOperator",
+    "replacement": "currentStatus === \"shipping\" || status === \"delivered\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",547,11,547,39,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 39,
+        "line": 547
+      },
+      "start": {
+        "column": 11,
+        "line": 547
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",547,11,547,39,\"EqualityOperator\",\"currentStatus !== \\\"shipping\\\"\"]",
+    "location": {
+      "end": {
+        "column": 39,
+        "line": 547
+      },
+      "start": {
+        "column": 11,
+        "line": 547
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "currentStatus !== \"shipping\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",547,29,547,39,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 39,
+        "line": 547
+      },
+      "start": {
+        "column": 29,
+        "line": 547
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",547,43,547,65,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 547
+      },
+      "start": {
+        "column": 43,
+        "line": 547
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] shipping → pending → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",547,43,547,65,\"EqualityOperator\",\"status !== \\\"delivered\\\"\"]",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 547
+      },
+      "start": {
+        "column": 43,
+        "line": 547
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "status !== \"delivered\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",547,54,547,65,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 547
+      },
+      "start": {
+        "column": 54,
+        "line": 547
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",548,29,548,33,\"BooleanLiteral\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 33,
+        "line": 548
+      },
+      "start": {
+        "column": 29,
+        "line": 548
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] shipping → delivered → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",550,11,550,65,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 550
+      },
+      "start": {
+        "column": 11,
+        "line": 550
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",550,11,550,65,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 550
+      },
+      "start": {
+        "column": 11,
+        "line": 550
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",550,11,550,65,\"LogicalOperator\",\"currentStatus === \\\"canceled\\\" || status === \\\"delivered\\\"\"]",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 550
+      },
+      "start": {
+        "column": 11,
+        "line": 550
+      }
+    },
+    "mutatorName": "LogicalOperator",
+    "replacement": "currentStatus === \"canceled\" || status === \"delivered\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",550,11,550,39,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 39,
+        "line": 550
+      },
+      "start": {
+        "column": 11,
+        "line": 550
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",550,29,550,39,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 39,
+        "line": 550
+      },
+      "start": {
+        "column": 29,
+        "line": 550
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",550,11,550,39,\"EqualityOperator\",\"currentStatus !== \\\"canceled\\\"\"]",
+    "location": {
+      "end": {
+        "column": 39,
+        "line": 550
+      },
+      "start": {
+        "column": 11,
+        "line": 550
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "currentStatus !== \"canceled\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → delivered → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",550,43,550,65,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 550
+      },
+      "start": {
+        "column": 43,
+        "line": 550
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → pending → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",550,43,550,65,\"EqualityOperator\",\"status !== \\\"delivered\\\"\"]",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 550
+      },
+      "start": {
+        "column": 43,
+        "line": 550
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "status !== \"delivered\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] canceled → pending → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",550,54,550,65,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 65,
+        "line": 550
+      },
+      "start": {
+        "column": 54,
+        "line": 550
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",553,11,553,29,\"BooleanLiteral\",\"isValidTransition\"]",
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 553
+      },
+      "start": {
+        "column": 11,
+        "line": 553
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "isValidTransition",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",553,11,553,29,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 553
+      },
+      "start": {
+        "column": 11,
+        "line": 553
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",553,11,553,29,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 553
+      },
+      "start": {
+        "column": 11,
+        "line": 553
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",553,31,557,8,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 8,
+        "line": 557
+      },
+      "start": {
+        "column": 31,
+        "line": 553
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-18 [invalid] pending → shipping → 400"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",554,37,556,10,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 10,
+        "line": 556
+      },
+      "start": {
+        "column": 37,
+        "line": 554
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",555,18,555,79,\"StringLiteral\",\"``\"]",
+    "location": {
+      "end": {
+        "column": 79,
+        "line": 555
+      },
+      "start": {
+        "column": 18,
+        "line": 555
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "``",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",561,9,561,32,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 32,
+        "line": 561
+      },
+      "start": {
+        "column": 9,
+        "line": 561
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",560,9,560,52,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 52,
+        "line": 560
+      },
+      "start": {
+        "column": 9,
+        "line": 560
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",563,20,563,55,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 55,
+        "line": 563
+      },
+      "start": {
+        "column": 20,
+        "line": 563
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",563,31,563,53,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 53,
+        "line": 563
+      },
+      "start": {
+        "column": 31,
+        "line": 563
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",20,10,20,25,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 25,
+        "line": 20
+      },
+      "start": {
+        "column": 10,
+        "line": 20
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Registration (API 1.1) AU-R01 valid registration returns 200, the success message and a numeric id"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",32,10,32,22,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 22,
+        "line": 32
+      },
+      "start": {
+        "column": 10,
+        "line": 32
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Registration (API 1.1) AU-R02 a registered user can log in with the same credentials (API 1.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",562,24,564,10,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 10,
+        "line": 564
+      },
+      "start": {
+        "column": 24,
+        "line": 562
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",35,10,35,47,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 47,
+        "line": 35
+      },
+      "start": {
+        "column": 10,
+        "line": 35
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",35,49,35,56,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 56,
+        "line": 35
+      },
+      "start": {
+        "column": 49,
+        "line": 35
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Registration (API 1.1) AU-R02 a registered user can log in with the same credentials (API 1.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",32,38,66,2,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 2,
+        "line": 66
+      },
+      "start": {
+        "column": 38,
+        "line": 32
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",35,73,65,4,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 4,
+        "line": 65
+      },
+      "start": {
+        "column": 73,
+        "line": 35
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",36,9,36,12,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 36
+      },
+      "start": {
+        "column": 9,
+        "line": 36
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",36,9,36,12,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 12,
+        "line": 36
+      },
+      "start": {
+        "column": 9,
+        "line": 36
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",37,9,37,14,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 37
+      },
+      "start": {
+        "column": 9,
+        "line": 37
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Registration (API 1.1) AU-R02 a registered user can log in with the same credentials (API 1.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",37,9,37,14,\"BooleanLiteral\",\"user\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 37
+      },
+      "start": {
+        "column": 9,
+        "line": 37
+      }
+    },
+    "mutatorName": "BooleanLiteral",
+    "replacement": "user",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",40,9,40,70,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 70,
+        "line": 40
+      },
+      "start": {
+        "column": 9,
+        "line": 40
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Registration (API 1.1) AU-R02 a registered user can log in with the same credentials (API 1.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",37,9,37,14,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 14,
+        "line": 37
+      },
+      "start": {
+        "column": 9,
+        "line": 37
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",40,9,40,70,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 70,
+        "line": 40
+      },
+      "start": {
+        "column": 9,
+        "line": 40
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L05 three consecutive wrong passwords lock the account: the correct password is then refused (FR-02)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",40,9,40,70,\"LogicalOperator\",\"user.locked_until || new Date() < new Date(user.locked_until)\"]",
+    "location": {
+      "end": {
+        "column": 70,
+        "line": 40
+      },
+      "start": {
+        "column": 9,
+        "line": 40
+      }
+    },
+    "mutatorName": "LogicalOperator",
+    "replacement": "user.locked_until || new Date() < new Date(user.locked_until)",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L07 a lock whose time has passed no longer blocks login"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",46,9,46,35,\"ConditionalExpression\",\"true\"]",
+    "location": {
+      "end": {
+        "column": 35,
+        "line": 46
+      },
+      "start": {
+        "column": 9,
+        "line": 46
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "true",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L03 wrong password is refused with 401 (convention) and no token"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",46,9,46,35,\"ConditionalExpression\",\"false\"]",
+    "location": {
+      "end": {
+        "column": 35,
+        "line": 46
+      },
+      "start": {
+        "column": 9,
+        "line": 46
+      }
+    },
+    "mutatorName": "ConditionalExpression",
+    "replacement": "false",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Registration (API 1.1) AU-R02 a registered user can log in with the same credentials (API 1.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",46,9,46,35,\"EqualityOperator\",\"user.password !== password\"]",
+    "location": {
+      "end": {
+        "column": 35,
+        "line": 46
+      },
+      "start": {
+        "column": 9,
+        "line": 46
+      }
+    },
+    "mutatorName": "EqualityOperator",
+    "replacement": "user.password !== password",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Registration (API 1.1) AU-R02 a registered user can log in with the same credentials (API 1.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",48,9,48,80,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 80,
+        "line": 48
+      },
+      "start": {
+        "column": 9,
+        "line": 48
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "RuntimeError",
+    "after": "RuntimeError",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",49,9,49,18,\"ArrayDeclaration\",\"[]\"]",
+    "location": {
+      "end": {
+        "column": 18,
+        "line": 49
+      },
+      "start": {
+        "column": 9,
+        "line": 49
+      }
+    },
+    "mutatorName": "ArrayDeclaration",
+    "replacement": "[]",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L08 a successful login resets the failure counter: wrong, ok, wrong, ok never locks (FR-02 \"consecutive\")"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",51,30,51,62,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 62,
+        "line": 51
+      },
+      "start": {
+        "column": 30,
+        "line": 51
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Login and lock (API 1.2, README FR-02) AU-L02 the JWT carries the user id and role (FR-02, SEC-03)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",52,16,52,60,\"ObjectLiteral\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 60,
+        "line": 52
+      },
+      "start": {
+        "column": 16,
+        "line": 52
+      }
+    },
+    "mutatorName": "ObjectLiteral",
+    "replacement": "{}",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-02 [normal] new user gets an empty cart"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",52,27,52,45,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 45,
+        "line": 52
+      },
+      "start": {
+        "column": 27,
+        "line": 52
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Survived",
+    "after": "Survived",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",68,10,68,32,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 32,
+        "line": 68
+      },
+      "start": {
+        "column": 10,
+        "line": 68
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P01 forgot-password for a registered email returns 200, the message and a reset token (API 1.3)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",46,37,53,6,\"BlockStatement\",\"{}\"]",
+    "location": {
+      "end": {
+        "column": 6,
+        "line": 53
+      },
+      "start": {
+        "column": 37,
+        "line": 46
+      }
+    },
+    "mutatorName": "BlockStatement",
+    "replacement": "{}",
+    "before": "Timeout",
+    "after": "Timeout",
+    "killingTests": []
+  },
+  {
+    "signature": "[\"server.js\",87,10,87,31,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 31,
+        "line": 87
+      },
+      "start": {
+        "column": 10,
+        "line": 87
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Forgot / reset password (API 1.3-1.4, README FR-03, SEC-07) AU-P03 reset with the issued token changes the password: new works, old no longer works (API 1.4)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",118,9,118,24,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 24,
+        "line": 118
+      },
+      "start": {
+        "column": 9,
+        "line": 118
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U04 PUT /me updates name, shipping address and phone, and GET /me reflects them (API 2.2)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",112,9,112,24,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 24,
+        "line": 112
+      },
+      "start": {
+        "column": 9,
+        "line": 112
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Profile (API 2.1-2.2, README FR-04, SEC-02) AU-U01 GET /me without a token is refused with 401 (SEC-02)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",284,9,284,20,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 20,
+        "line": 284
+      },
+      "start": {
+        "column": 9,
+        "line": 284
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-01 [invalid] get cart without token → 401"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",290,10,290,21,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 21,
+        "line": 290
+      },
+      "start": {
+        "column": 10,
+        "line": 290
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Cart — GET/POST /api/cart (spec §4.1–4.2, FR-07) CO-03 [normal] add one item, then read the cart"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",297,10,297,25,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 25,
+        "line": 297
+      },
+      "start": {
+        "column": 10,
+        "line": 297
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-06 [invalid] checkout without token → 401"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",311,9,311,32,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 32,
+        "line": 311
+      },
+      "start": {
+        "column": 9,
+        "line": 311
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Checkout & order history — POST /api/checkout, GET /api/orders/my-orders (spec §4.3–4.4, FR-08, FR-11) CO-08 [normal] user reads own order history (another user also has an order)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",321,9,321,33,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 33,
+        "line": 321
+      },
+      "start": {
+        "column": 9,
+        "line": 321
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "User cancels order — PUT /api/orders/:id/cancel (spec §4.6, FR-10, FR-20) CO-12 [normal] cancel a pending order → 200"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",344,9,344,26,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 26,
+        "line": 344
+      },
+      "start": {
+        "column": 9,
+        "line": 344
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-09 [normal] owner reads order detail by id"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",356,9,356,23,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 23,
+        "line": 356
+      },
+      "start": {
+        "column": 9,
+        "line": 356
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-13 admin lists the current fixture; reset removed original coupons"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",363,10,363,29,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 363
+      },
+      "start": {
+        "column": 10,
+        "line": 363
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-01 fixed coupon: total 500001 gives final 450001 (FR-09)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",444,10,444,29,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 29,
+        "line": 444
+      },
+      "start": {
+        "column": 10,
+        "line": 444
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-11 quoting repeatedly does not consume allowance; recording usage does"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",457,10,457,30,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 30,
+        "line": 457
+      },
+      "start": {
+        "column": 10,
+        "line": 457
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-15 admin creates minimum=0 and max_uses=1; resulting coupon is usable"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",483,12,483,36,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 36,
+        "line": 483
+      },
+      "start": {
+        "column": 12,
+        "line": 483
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "CP-16 admin deletes only the addressed coupon (FR-17)"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",510,9,510,28,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 28,
+        "line": 510
+      },
+      "start": {
+        "column": 9,
+        "line": 510
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Order detail & admin list — GET /api/orders/:id, GET /api/admin/orders (spec §4.5, §6.2, FR-18) CO-11 [normal] admin lists orders of all users"
+    ]
+  },
+  {
+    "signature": "[\"server.js\",525,9,525,39,\"StringLiteral\",\"\\\"\\\"\"]",
+    "location": {
+      "end": {
+        "column": 39,
+        "line": 525
+      },
+      "start": {
+        "column": 9,
+        "line": 525
+      }
+    },
+    "mutatorName": "StringLiteral",
+    "replacement": "\"\"",
+    "before": "Killed",
+    "after": "Killed",
+    "killingTests": [
+      "Admin order status — PUT /api/admin/orders/:id/status (spec §6.2, FR-10, FR-18) CO-17 [normal] pending → confirmed → 200"
+    ]
+  }
+]

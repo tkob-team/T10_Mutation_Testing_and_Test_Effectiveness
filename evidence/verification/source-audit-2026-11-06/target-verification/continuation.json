@@ -1,0 +1,5 @@
+{
+  "reason": "Guard rejected stale Auth line 127 before any Auth test. Source and report identify the role condition at line 124.",
+  "treatment": "Resume preserves the 12 completed Cart/Coupons checks and executes only the six Auth checks.",
+  "createdUtc": "2026-11-06T10:22:15.300Z"
+}

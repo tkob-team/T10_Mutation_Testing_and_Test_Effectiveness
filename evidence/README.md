@@ -8,6 +8,7 @@ Thư mục này giữ evidence và hồ sơ tham chiếu, không phải các b�
 | [Integration and reproduction](experiments/integration-and-reproduction/) | Joint comparison và guide reproduction |
 | [Contributions](contributions/) | Nội dung từng tác giả đã bàn giao; giữ attribution |
 | [Verification](verification/) | Records review và reproduction lịch sử |
+| [Source audit 2026-11-06](verification/source-audit-2026-11-06/) | New input snapshots, commands, test matrix, mutation reports và driver probes; trạng thái theo Source Audit |
 | [Research](research/) | Notes, tool surveys và generated references chỉ để tham khảo |
 | [Document history](document-history/) | Bản ghép hoặc proposal trước khi chọn bản nguồn hiện tại |
 | [Previous activity sandbox](activity/previous-sandbox/) | Runner, candidates và verification của thiết kế cũ |

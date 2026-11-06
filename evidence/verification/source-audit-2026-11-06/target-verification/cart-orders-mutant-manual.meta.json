@@ -1,0 +1,31 @@
+{
+  "name": "cart-orders-mutant-manual",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:\\Temp\\t10-source-audit-targets-2026-11-06-v2\\backend\\node_modules\\jest\\bin\\jest.js",
+    "--config",
+    "jest.cart-orders.manual.config.cjs",
+    "--runInBand",
+    "--json",
+    "--outputFile",
+    "D:\\Workspace\\Study\\courses-fit-hcmus\\2026-2027\\csc13003-testing\\seminar\\T10_Mutation_Testing_and_Test_Effectiveness\\evidence\\verification\\source-audit-2026-11-06\\target-verification\\cart-orders-mutant-manual.json",
+    "--runTestsByPath",
+    "test/manual/cart-orders.manual.js",
+    "--testNamePattern",
+    "Kill Mutant 286:7"
+  ],
+  "cwd": "D:\\Temp\\t10-source-audit-targets-2026-11-06-v2\\backend",
+  "exitCode": 1,
+  "total": 8,
+  "passed": 0,
+  "failed": 1,
+  "mutantSignature": "[286,47,286,49,\"ArrayDeclaration\",\"[\\\"Stryker was here\\\"]\"]",
+  "failures": [
+    {
+      "name": "Cart & Orders Manual Tests - Tấn Hiệp Kill Mutant 286:7 - GET /api/cart initializes empty cart array for new user",
+      "messages": [
+        "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 1\n+ Received  + 3\n\n- Array []\n+ Array [\n+   \"Stryker was here\",\n+ ]\n    at Object.<anonymous> (D:\\Temp\\t10-source-audit-targets-2026-11-06-v2\\backend\\test\\manual\\cart-orders.manual.js:59:25)\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)"
+      ]
+    }
+  ]
+}

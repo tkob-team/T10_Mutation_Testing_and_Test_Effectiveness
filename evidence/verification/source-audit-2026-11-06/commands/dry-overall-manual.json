@@ -1,0 +1,16 @@
+{
+  "name": "dry-overall-manual",
+  "executable": "C:\\nvm4w\\nodejs\\node.exe",
+  "args": [
+    "D:\\Temp\\t10-source-audit-2026-11-06\\backend\\node_modules\\@stryker-mutator\\core\\bin\\stryker.js",
+    "run",
+    "stryker.overall.manual.config.json",
+    "--dryRunOnly"
+  ],
+  "cwd": "D:\\Temp\\t10-source-audit-2026-11-06\\backend",
+  "startedUtc": "2026-11-06T09:51:45.908Z",
+  "finishedUtc": "2026-11-06T09:51:53.503Z",
+  "elapsedMs": 7595,
+  "exitCode": 0,
+  "signal": null
+}

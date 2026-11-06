@@ -1,0 +1,25 @@
+
+FAIL auth test/auth.manual.test.js
+  ● Profile keeps the role (API 2.2, README FR-04, SEC-06) › AM-01 a profile update without `role` leaves the stored role unchanged
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "user"
+    Received: null
+
+      35 |     const token = await loginOk(app, ALICE);
+      36 |     expect((await update(token, PROFILE)).status).toBe(200);
+    > 37 |     expect((await testApi.userByEmail(ALICE.email)).role).toBe('user');
+         |                                                           ^
+      38 |     expect((await me(token)).body.role).toBe('user');
+      39 |   });
+      40 | });
+
+      at Object.<anonymous> (test/auth.manual.test.js:37:59)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 12 skipped, 13 total
+Snapshots:   0 total
+Time:        0.507 s, estimated 1 s
+Ran all test suites within paths "test/auth.manual.test.js".
+Test results written to: ..\..\..\Workspace\Study\courses-fit-hcmus\2026-2027\csc13003-testing\seminar\T10_Mutation_Testing_and_Test_Effectiveness\evidence\verification\source-audit-2026-11-06\target-verification\auth-mutant-manual.json

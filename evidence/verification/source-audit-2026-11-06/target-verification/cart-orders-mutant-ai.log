@@ -1,0 +1,30 @@
+
+FAIL cart-coupons test/ai/cart-orders.ai.js
+  ● AI — Cart contents (spec §4.1–4.2, FR-07) › AI-CO-01 new user GET /api/cart → 200 with an empty array
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Stryker was here",
+    + ]
+
+      29 |     expect(res.status).toBe(200);
+      30 |     expect(Array.isArray(res.body)).toBe(true);
+    > 31 |     expect(res.body).toEqual([]);
+         |                      ^
+      32 |   });
+      33 |
+      34 |   // Mutant: server.js 292:7 ConditionalExpression → true (POST /api/cart luôn reset giỏ → chỉ còn item cuối).
+
+      at Object.<anonymous> (test/ai/cart-orders.ai.js:31:22)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 4 skipped, 5 total
+Snapshots:   0 total
+Time:        0.51 s, estimated 1 s
+Ran all test suites within paths "test/ai/cart-orders.ai.js".
+Test results written to: ..\..\..\Workspace\Study\courses-fit-hcmus\2026-2027\csc13003-testing\seminar\T10_Mutation_Testing_and_Test_Effectiveness\evidence\verification\source-audit-2026-11-06\target-verification\cart-orders-mutant-ai.json
