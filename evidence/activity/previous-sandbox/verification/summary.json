@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-23",
+  "timezone": "Asia/Saigon",
+  "executor": "Codex AI Agent",
+  "node": "v24.16.0",
+  "starter": "6d2e790be54193d44f7e401c59dbdf8283a3f42d",
+  "baseline": "36 Cart tests pass; 8 Survived",
+  "reference": "5 tests pass; 5/5 own-case target kills",
+  "weak": "5 tests pass; 0/5 kills",
+  "empty": "5 original tests fail expect.hasAssertions; runner exits 1, no tally",
+  "limits": "Windows execution only; no audience pilot, member rehearsal or AI scene execution claimed"
+}

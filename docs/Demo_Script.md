@@ -200,4 +200,4 @@ Mở `server.js`, tìm cùng dòng 474 và replacement. Chỉ trạng thái `Kil
 - Nếu `npx` lỗi trên Windows, dùng `node node_modules/jest/bin/jest.js` thay cho `npx jest`, hoặc `node node_modules/@stryker-mutator/core/bin/stryker.js` thay cho `npx stryker`; giữ nguyên các tham số phía sau.
 - Khi dựng video, giữ đủ phần cài đặt, chạy tests, phân tích mutant và kiểm chứng assertions/AI. Mục tiêu 5 đến 8 phút, không nhạc nền, ưu tiên 1080p và MP4 tối đa 100 MB.
 
-Nguồn đối chiếu: [Baseline Manifest](../experiments/s3/Baseline_Manifest.md), [Coupons evidence](../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/README.md) và [Codex provenance](../experiments/s3/runs/Thai_Hoa/D04-merge-2026-10-23-agent/G02-Codex/PROVENANCE.md).
+Nguồn đối chiếu: [Baseline Manifest](../evidence/experiments/domain-runs/Baseline_Manifest.md), [Coupons evidence](../evidence/experiments/domain-runs/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/README.md) và [Codex provenance](../evidence/experiments/domain-runs/runs/Thai_Hoa/D04-merge-2026-10-23-agent/G02-Codex/PROVENANCE.md).

@@ -1,0 +1,39 @@
+{
+  "testRunner": "jest",
+  "coverageAnalysis": "perTest",
+  "disableBail": true,
+  "mutate": [
+    "server.js:286-286",
+    "server.js:293-293",
+    "server.js:314-314",
+    "server.js:335-335"
+  ],
+  "tempDirName": "stryker-tmp",
+  "concurrency": 1,
+  "reporters": [
+    "clear-text",
+    "json",
+    "html"
+  ],
+  "jsonReporter": {
+    "fileName": "reports/activity/mutation.json"
+  },
+  "htmlReporter": {
+    "fileName": "reports/activity/mutation.html"
+  },
+  "jest": {
+    "config": {
+      "projects": [],
+      "testEnvironment": "node",
+      "setupFiles": [
+        "<rootDir>/test/helpers/isolate.js"
+      ],
+      "testMatch": [
+        "<rootDir>/test/activity.test.js"
+      ],
+      "modulePathIgnorePatterns": [
+        "<rootDir>/stryker-tmp/"
+      ]
+    }
+  }
+}

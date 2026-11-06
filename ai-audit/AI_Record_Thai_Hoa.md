@@ -4,14 +4,15 @@
 **Member:** Tống Dương Thái Hòa  
 **Assignment:** T10 Seminar  
 **Class / Cohort:** Pending member input  
-**AI Use:** Yes — Codex-assisted S3 research/drafting  
+**AI Use:** Yes - Codex-assisted S3 research/drafting
+
 **Evidence Status:** AI usage recorded; member review/reflection/disclosure Pending
 
-Phiếu này ghi usage của Thái Hòa xuyên suốt S1–S8. Mỗi artifact có Stage và Task ID; reflection do thành viên viết từ trải nghiệm thật. Student ID, ngày nộp và chữ ký do thành viên điền trực tiếp vào bản nộp.
+Phiếu này giữ provenance theo từng artifact; reflection do thành viên viết từ trải nghiệm thật. Các phase/task labels cũ là metadata lịch sử, không là workflow mới. Thông tin cá nhân và chữ ký điền trực tiếp ở bản nộp.
 
-## 1. Tools, Stages & Contributions
+## 1. Tools and Historical Contributions
 
-| Tool / Model | Stage | Task ID | Use Type | Artifact / Section | AI Contribution | My Own Work | Evidence |
+| Tool / Model | Historical phase | Historical task ID | Use Type | Artifact / Section | AI Contribution | My Own Work | Evidence |
 |---|---|---|---|---|---|---|---|
 | OpenAI Codex (exact model variant not logged) | S3 | S3-A02, S3-B02 | research/drafting/verification | Research_Notes_Thai_Hoa.md | Source checks, explanations, inline examples and draft | Pending member input; not attributed as self-authored | TH-S3-RESEARCH-01 |
 | OpenAI Codex AI Agent (GPT-6 family; exact serving revision unavailable) | S3 | S3-C02, S3-D02 | assisted production / local verification | Coupons harness/tests/tooling, tutorial and experiment evidence | Spec cases, original-defect suite, seeded memory DB, tool execution, evidence/docs | Member self-run and review Pending | TH-S3-C02D02-01 |
@@ -27,9 +28,9 @@ Phiếu này ghi usage của Thái Hòa xuyên suốt S1–S8. Mỗi artifact c�
 | Stage / Task ID | S3 / S3-A02, S3-B02 |
 | Tool / Model | OpenAI Codex; exact model variant not logged in this record |
 | Recorded Time & Provenance | Date 2026-10-18 from client session context; exact time unknown |
-| Output Artifact / Section | [Research Notes](../research/s3/Research_Notes_Thai_Hoa.md), S3-A02/B02 |
+| Output Artifact / Section | [Research Notes](../evidence/research/Research_Notes_Thai_Hoa.md), S3-A02/B02 |
 | Verdict | Pending member review; no VALID/INVALID/INCOMPLETE verdict assigned |
-| Reasoning & Source | Stryker official docs/schema, Anthropic official docs, Jia & Harman §1–2.2, Google Research abstract, Node docs and SUT source inspection; Source Register in notes |
+| Reasoning & Source | Stryker official docs/schema, Anthropic official docs, Jia & Harman §1-2.2, Google Research abstract, Node docs and SUT source inspection; Source Register in notes |
 | Verification | Codex checked sources, SUT source, example calculations and document links. Research remains pending member review; EShop/Stryker/Claude experiment Not run |
 | Student Fix | Pending; no student review, edit, reflection or acceptance invented |
 
@@ -54,11 +55,11 @@ Current artifact: [Research Notes](../research/s3/Research_Notes_Thai_Hoa.md). H
 | Stage / Task ID | S3 / S3-C02, S3-D02 |
 | Tool / Model | OpenAI Codex AI Agent; GPT-6 family, exact serving revision not exposed |
 | Recorded Time & Provenance | 2026-10-22 Asia/Saigon; actual UTC timestamps in commands.json |
-| Output Artifact / Section | [Experiment Log](../experiments/s3/Experiment_Log_Thai_Hoa.md), [Contract](../experiments/s3/Coupons_Test_Contract_Thai_Hoa.md), SUT branch codex/s3-coupons-hoa |
+| Output Artifact / Section | [Experiment Log](../evidence/experiments/domain-runs/Experiment_Log_Thai_Hoa.md), [Contract](../evidence/experiments/domain-runs/Coupons_Test_Contract_Thai_Hoa.md), SUT branch codex/s3-coupons-hoa |
 | Verdict | Pending member review; no official verdict assigned |
 | Reasoning & Source | SUT README FR-09/12/17/SEC-02/03, API §5/6.4; official Jest/Stryker docs; npm 12 local help/source |
-| Verification | Agent-run: npm ci pass, 25 baseline tests pass twice, 16 defect tests fail at assertions, dry run pass; tutorial target Survived→Killed; source/DB hashes unchanged |
-| Raw / Provenance | [AI Provenance](../experiments/s3/runs/Thai_Hoa/C02-D02-2026-10-22-agent/AI_Provenance.md), [raw toy candidate](../experiments/s3/runs/Thai_Hoa/C02-D02-2026-10-22-agent/ai-candidate.raw.txt); full chat transcript not exported |
+| Verification | Agent-run: npm ci pass, 25 baseline tests pass twice, 16 defect tests fail at assertions, dry run pass; tutorial target Survived -> Killed; source/DB hashes unchanged |
+| Raw / Provenance | [AI Provenance](../evidence/experiments/domain-runs/runs/Thai_Hoa/C02-D02-2026-10-22-agent/AI_Provenance.md), [raw toy candidate](../evidence/experiments/domain-runs/runs/Thai_Hoa/C02-D02-2026-10-22-agent/ai-candidate.raw.txt); full chat transcript not exported |
 | Student Fix | Pending; no member corrections/approval invented |
 
 Personal learning/run walkthrough is outside both team repos by explicit user request. This artifact is AI-assisted D02 and a C02 tutorial, not self-authored F02 or completed G02. Same-session toy candidate generation is not a blinded manual-vs-AI comparison.
@@ -71,9 +72,9 @@ Personal learning/run walkthrough is outside both team repos by explicit user re
 | Tool / Model | OpenAI Codex; exact serving revision not exposed. Attempted Claude Code 2.1.301 returned Not logged in, zero successful model output |
 | Provenance | User approved review/merge to main and new D04 branch; authorized import from Hoàng handoff without a SUT commit; asked Codex to draft manual analysis for human review; selected same-context Codex G02 after login failure |
 | Inputs / sources | SUT SRS/API, original delivered suites, frozen source/config, mutation JSONs; no credentials/student IDs supplied |
-| Output | [Manifest](../experiments/s3/Baseline_Manifest.md), [log/comparison](../experiments/s3/Experiment_Log_Thai_Hoa.md), [analysis](../experiments/s3/Coupons_Survivor_Analysis_Thai_Hoa.md), [integration review](../experiments/s3/D04_Integration_Review_2026-10-23.md) |
-| Raw / retained output | [Codex G02 raw file and provenance](../experiments/s3/runs/Thai_Hoa/D04-merge-2026-10-23-agent/G02-Codex/PROVENANCE.md), failed Claude request, run commands/metadata/HTML/JSON. This is file-output evidence, not a fabricated full API/conversation transcript |
-| Agent verification | 88 baseline pass, 54 defect assertion failures; original source/DB unchanged; Auth import SHA-256 identical; 120 Coupons signatures match across baseline/F02/G02; two Survived→Killed in each variant; exact G02 raw/executed hashes match |
+| Output | [Manifest](../evidence/experiments/domain-runs/Baseline_Manifest.md), [log/comparison](../evidence/experiments/domain-runs/Experiment_Log_Thai_Hoa.md), [analysis](../evidence/experiments/domain-runs/Coupons_Survivor_Analysis_Thai_Hoa.md), [integration review](../evidence/experiments/domain-runs/D04_Integration_Review_2026-10-23.md) |
+| Raw / retained output | [Codex G02 raw file and provenance](../evidence/experiments/domain-runs/runs/Thai_Hoa/D04-merge-2026-10-23-agent/G02-Codex/PROVENANCE.md), failed Claude request, run commands/metadata/HTML/JSON. This is file-output evidence, not a fabricated full API/conversation transcript |
+| Agent verification | 88 baseline pass, 54 defect assertion failures; original source/DB unchanged; Auth import SHA-256 identical; 120 Coupons signatures match across baseline/F02/G02; two Survived -> Killed in each variant; exact G02 raw/executed hashes match |
 | Review / edits | Agent accepted G02 file without edits after spec check and original/mutation execution; F02 is Codex-assisted, not human-independent. Auto verdict is not the member's AI audit verdict |
 | Limitations | Shared context; only two business targets at one location; original defects remain; Auth manual/AI input absent; performance/model superiority conclusions unsupported |
 | Human verdict / fixes | Pending Hòa review. No member approval, reflection, labour time or signature invented |
@@ -82,15 +83,15 @@ Personal learning/run walkthrough is outside both team repos by explicit user re
 
 - **Stage / use:** S3 handoff explanation; OpenAI Codex, exact serving revision unavailable; 2026-10-23.
 - **User request:** Explain S3 simply in `docs/Stage3-Sumary.md`, including where Hòa can review the manual tests; follow-up expands the summary into separate sections for Hiệp, Hòa and Hoàng and asks to identify unclear/pending comments for the user to remove.
-- **Output / inputs:** [Stage 3 summary](../docs/Stage3-Sumary.md), derived from the frozen manifest, three member logs, cross reproduction, survivor analysis, original-defect notes, recorded comparisons and SUT F02 commit `a6abc7f`. Read-only inspection covers backend tests/helpers/tutorial and Cart manual/AI remote-tracking refs. No new experiment results generated; existing user edits in SUT preserved.
+- **Output / inputs:** [Stage 3 summary](../evidence/experiments/Experiment_Summary_2026-10-23.md), derived from the frozen manifest, three member logs, cross reproduction, survivor analysis, original-defect notes, recorded comparisons and SUT F02 commit `a6abc7f`. Read-only inspection covers backend tests/helpers/tutorial and Cart manual/AI remote-tracking refs. No new experiment results generated; existing user edits in SUT preserved.
 - **Verification / review:** Read original F02 code and configs using `git show`; checked summary numbers against retained reports and local links. Human review Pending; no new member verdict assigned.
 
 ### Artifact TH-S3-COUPONS-EXTENSION-01
 
 - **Stage / tasks:** S3-F02/G02/H02; 2026-10-23 Asia/Saigon. OpenAI Codex AI Agent; exact serving revision unavailable.
 - **User authorization:** Sau khi review candidate bank và shortlist, Hòa yêu cầu thêm bốn nhóm vào manual, và đủ tám nhóm vào Agent, gồm cả bốn nhóm đầu. Đây là phê duyệt phạm vi triển khai; không tự gán verdict audit hoặc xác nhận member self-run.
-- **Inputs / output:** SRS FR-09/12/17, API 5/6.4, baseline `806ba19`, existing suites và [bank snapshot](../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/candidate-bank.input.md). Bổ sung manual MF-04–07 và Agent AG-01–08; dùng chung scenario helper cho bốn nhóm giao nhau. [Provenance và raw source snapshots](../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/PROVENANCE.md).
-- **Agent verification:** Fresh baseline 88/88, manual profile 35/35, Agent profile 40/40 trên bản sao frozen input; commands/logs, mutation reports, signature comparisons và protected hashes trong [run evidence](../experiments/s3/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/README.md). Không sửa production source/DB, baseline config hoặc raw evidence cũ.
+- **Inputs / output:** SRS FR-09/12/17, API 5/6.4, baseline `806ba19`, existing suites và [bank snapshot](../evidence/experiments/domain-runs/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/candidate-bank.input.md). Bổ sung manual MF-04-07 và Agent AG-01-08; dùng chung scenario helper cho bốn nhóm giao nhau. [Provenance và raw source snapshots](../evidence/experiments/domain-runs/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/PROVENANCE.md).
+- **Agent verification:** Fresh baseline 88/88, manual profile 35/35, Agent profile 40/40 trên bản sao frozen input; commands/logs, mutation reports, signature comparisons và protected hashes trong [run evidence](../evidence/experiments/domain-runs/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/README.md). Không sửa production source/DB, baseline config hoặc raw evidence cũ.
 - **Limitations / human verdict:** Cả hai phần bổ sung đều AI-assisted và cùng context; Agent collection bao gồm bốn nhóm manual theo yêu cầu, không có điều kiện blind/independent. Human audit verdict, trải nghiệm/reflection và member self-run Pending; không thay đổi Accuracy Summary bằng verdict tự gán.
 
 ### Artifact TH-S4-REPORT-REVISION-01
@@ -98,7 +99,7 @@ Personal learning/run walkthrough is outside both team repos by explicit user re
 - **Stage / use:** S4 report preparation; 2026-10-23 Asia/Saigon. OpenAI Codex AI Agent; exact serving model revision not independently recorded.
 - **User request / scope:** Expand and improve the Vietnamese report from existing documentation and SUT tests/results; retain English technical terms, simplify the opening layout, and remove appendix path/evidence inventories.
 - **Inputs:** Existing report; seminar requirements/context; frozen baseline 806ba19 and domain reports; Cart source/analysis; Coupons initial and extension source snapshots, test results and completed mutation reports; Auth baseline; official Stryker metrics and primary research abstracts.
-- **Output:** [Revised Seminar Report](../draft/Seminar_Report.md), including actual results, survivor cases, interpretation/limitations, and text/URL-based appendices. Existing report working copy was backed up before editing; source/tests and team tracker were not changed by this report task.
+- **Output:** [Revised Seminar Report](../docs/Seminar_Report.md), including actual results, survivor cases, interpretation/limitations, and text/URL-based appendices. Existing report working copy was backed up before editing; source/tests and team tracker were not changed by this report task.
 - **Verification:** Recomputed status counts/scores from JSON; checked mutant signatures and new-kill intersection; reviewed Markdown structure, references, table consistency and absence of local evidence-path inventories. No new SUT or mutation run performed by this report task.
 - **Raw / provenance:** Current conversation and authored report are available; no exported full prompt/output transcript is claimed. Report distinguishes Agent execution from member self-runs and initial results from supplemental extensions.
 - **Human review / verdict:** Pending. No member approval, personal reflection, signatures or new experiment execution invented.
@@ -110,7 +111,7 @@ Personal learning/run walkthrough is outside both team repos by explicit user re
 | Stage / Task | S4; User Guide draft support, team ownership and tracker unchanged |
 | Tool / Model | OpenAI Codex AI Agent; exact serving revision unavailable |
 | Recorded Date | 2026-10-23, client Asia/Saigon context |
-| Output | [Vietnamese User Guide draft](../draft/User_Guide.md) |
+| Output | [Vietnamese User Guide draft](../docs/User_Guide.md) |
 | Prompt Summary | User requested detailed documentation, Vietnamese prose, English headings/terms, six required sections and at least three real failure modes, with missing results left blank; approved the proposed eight-section structure with “Viết đi”. |
 | Inputs / Sources | Instructor requirements; frozen SUT scripts/config/spec; baseline manifest, Cart mappings, Coupons extension/Auth logs; official Stryker/Jest/Claude docs |
 | AI Contribution | Structure, prose, instructional adaptations, commands, references and five failure-mode analyses |
@@ -142,7 +143,7 @@ Personal learning/run walkthrough is outside both team repos by explicit user re
 | Stage / Task | S4-E01 draft support; team ownership and tracker unchanged |
 | Tool / Model | OpenAI Codex AI Agent; exact serving revision unavailable |
 | Authorization | User requested rewriting the guide after preparation of eshop-sut-workshop, with Vietnamese prose, English technical headings, beginner instructions and common terminal commands |
-| Output | [Rewritten User Guide](../draft/User_Guide.md), 334 lines, eight main sections, three failure modes |
+| Output | [Rewritten User Guide](../docs/User_Guide.md), 334 lines, eight main sections, three failure modes |
 | Sources | Workshop starter 6d2e790; original EShop specification; current official Stryker, Jest, npm, Git, Node.js, Claude Code and Codex documentation |
 | AI Contribution | Replaced research-baseline and internal evidence material with a standalone workshop tutorial; added Windows/macOS installation, first-install troubleshooting, three assertion changes and optional AI validation workflow |
 | Execution | In a separate disposable clone on Windows Node 24.16.0/npm 12.0.2, installed Stryker core/Jest runner 10.0.0 and executed the documented three-line mutation scope. Baseline: 36 tests pass, 7 Survived. First assertion: 36 tests pass, 3 Killed and 4 Survived. All three assertion changes: 88 tests pass, 7 Killed, no Timeout or other mutant states. |
@@ -192,10 +193,10 @@ Personal learning/run walkthrough is outside both team repos by explicit user re
 - **Tool / executor:** OpenAI Codex AI Agent in this chat; exact serving model revision is not exposed. No subagents or computer use.
 - **Inputs:** Existing scientific report draft; S3 notes/logs; frozen SUT 806ba19; Cart manual b77f5d6 and AI f4696c6; retained extended Coupons source snapshots; Auth F03 manual and G03 reviewed candidate. No fresh assertion generation is claimed.
 - **Outputs:** Guide_Contribution_Thai_Hoa.md, Report_Contribution_Thai_Hoa.md, Demo_Contribution_Thai_Hoa.md, Guide_Reproduction_Thai_Hoa.md, Verification_Notes_Thai_Hoa.md and Seminar_Report.md in materials/s4; experiments/s4/Overall_Comparison.md; retained joint run inputs, scripts, HTML/JSON/logs and signature mappings. Draft Seminar_Report.md is synchronized with the stage handoff copy.
-- **Execution evidence:** [Joint S4 run](../experiments/s4/runs/Thai_Hoa/S4-E02-2026-10-23-agent/README.md), [commands and actual exit codes](../experiments/s4/runs/Thai_Hoa/S4-E02-2026-10-23-agent/commands.json), [computed results](../experiments/s4/runs/Thai_Hoa/S4-E02-2026-10-23-agent/summary.json). Three local experiment branches are created in a disposable clone, not in the original SUT checkout.
-- **Review / corrections:** Updated stale Auth and missing-comparison claims in the report; removed an unsupported exact model-revision claim; kept domain and joint results separate; distinguished Timeout/native SQLite RuntimeError from assertion kills. Technical checks are recorded in [Verification Notes](../materials/s4/Verification_Notes_Thai_Hoa.md) and [document validation](../experiments/s4/runs/Thai_Hoa/S4-E02-2026-10-23-agent/document-validation.json).
+- **Execution evidence:** [Joint S4 run](../evidence/experiments/integration-and-reproduction/runs/Thai_Hoa/S4-E02-2026-10-23-agent/README.md), [commands and actual exit codes](../evidence/experiments/integration-and-reproduction/runs/Thai_Hoa/S4-E02-2026-10-23-agent/commands.json), [computed results](../evidence/experiments/integration-and-reproduction/runs/Thai_Hoa/S4-E02-2026-10-23-agent/summary.json). Three local experiment branches are created in a disposable clone, not in the original SUT checkout.
+- **Review / corrections:** Updated stale Auth and missing-comparison claims in the report; removed an unsupported exact model-revision claim; kept domain and joint results separate; distinguished Timeout/native SQLite RuntimeError from assertion kills. Technical checks are recorded in [Verification Notes](../evidence/verification/Verification_Notes_Thai_Hoa.md) and [document validation](../evidence/experiments/integration-and-reproduction/runs/Thai_Hoa/S4-E02-2026-10-23-agent/document-validation.json).
 - **Sources:** Official Stryker metrics/configuration/Jest runner pages checked on 2026-10-23; inherited research references remain attributed to their retained source notes. Templates and instructor AI forms are preserved.
-- **Guide reproduction:** S4-A03/B03 arrived in external docs merge 4c5db59 during this session. Agent followed the delivered Auth guide through installation, 88 integration tests, 26 Auth tests, dry run and a full 125-mutant baseline; the next advanced command failed with Missing script: test:auth:manual. [Actual logs and tested guide snapshot](../experiments/s4/runs/Thai_Hoa/S4-D02-2026-10-23-agent/README.md) preserve the blocker without supplementary setup.
+- **Guide reproduction:** S4-A03/B03 arrived in external docs merge 4c5db59 during this session. Agent followed the delivered Auth guide through installation, 88 integration tests, 26 Auth tests, dry run and a full 125-mutant baseline; the next advanced command failed with Missing script: test:auth:manual. [Actual logs and tested guide snapshot](../evidence/experiments/integration-and-reproduction/runs/Thai_Hoa/S4-D02-2026-10-23-agent/README.md) preserve the blocker without supplementary setup.
 - **Source postflight:** Original SUT received external commit 4b28756 fixing the package.json comma while experiments ran. The first runner exited at its final source-preservation assertion after all three mutation commands succeeded. Recovery documents this change; disposable runtime protected files stayed unchanged. No original SUT writes by this Agent are claimed.
 - **Boundaries:** Agent writing/execution does not replace Hòa's personal guide reproduction, domain-author acceptance, human AI verdict, narration, video recording, reflection or signature. Advanced Auth guide setup needs an author fix/retest. No teammate feedback receipt, actual media or tracker synchronization is invented. A separate Auth reproduction overlapped the final portion of the joint AI run; machine load was not controlled.
 - **Member verdict / acceptance:** Pending. This artifact is not added to the audited totals until a member supplies a verdict.
@@ -211,14 +212,14 @@ Personal learning/run walkthrough is outside both team repos by explicit user re
 
 Chỉ đếm artifacts đã có verdict; tổng ba verdict phải bằng Total. Total = 0 thì Percentage ghi n.a.; pending không bị tính là verdict. Leader loại trùng cùng artifact trước khi tổng hợp.
 
-**Conclusion (80–150 words):** [Tự viết patterns, điểm tốt/yếu và khuyến nghị từ artifacts của mình. ≥600 từ là yêu cầu AI-02 chung trong Seminar Guide, không tự áp mỗi thành viên một quota mới.]
+**Conclusion (80-150 words):** [Tự viết patterns, điểm tốt/yếu và khuyến nghị từ artifacts của mình. >=600 từ là yêu cầu AI-02 chung trong Seminar Guide, không tự áp mỗi thành viên một quota mới.]
 
 ## 4. Disclosure Inputs
 
 - All tools used: OpenAI Codex in this record; prior usage Pending member input.
 - AI categories used: [Cat.1 No AI / Cat.2 preparation / Cat.3 feedback & revision / Cat.4 assisted production / Cat.5 integrated; tự xác nhận]
 - Stages/use types: [ ]
-- 2–3 most impactful prompts: [Artifact IDs + prompt nguyên văn]
+- 2-3 most impactful prompts: [Artifact IDs + prompt nguyên văn]
 - Full prompt log: nội dung yêu cầu nghiên cứu ở trên; transcript đầy đủ và prior artifacts Pending member input.
 - Specific AI-assisted parts: S3-A02/B02 notes và ví dụ trong notes; TH-S3-RESEARCH-01.
 - Entirely self-authored parts: [ ]
@@ -260,8 +261,27 @@ Write your answers in English from your own experience. Leader uses these inputs
 
 ## Sources & Attribution
 
-Adapted as an internal collection worksheet from FIT@HCMUS, AI Policy Templates — 2026 v1.0, adapted from Med Kharbach (2026), CC BY-NC-SA 4.0. This worksheet retains that attribution/license; the originals remain unchanged:
+Adapted as an internal collection worksheet from FIT@HCMUS, AI Policy Templates  -  2026 v1.0, adapted from Med Kharbach (2026), CC BY-NC-SA 4.0. This worksheet retains that attribution/license; the originals remain unchanged:
 
 - [AI-02 Audit Report](originals/%5BAI-02%5D%20-%20FIT%40HCMUS%20-%20AI%20Audit%20Report.md)
 - [AI-03 Disclosure Form](originals/%5BAI-03%5D%20-%20FIT%40HCMUS%20-%20AI%20Disclosure%20Form.md)
 - [AI-04 Reflective Statement](originals/%5BAI-04%5D%20-%20FIT%40HCMUS%20-%20AI%20Reflective%20Statement.md)
+
+
+### Artifact TH-DOCS-REORGANIZATION-20261106
+
+| Field | Value |
+|---|---|
+| Work item | Documentation repository reorganization; không chia theo stage |
+| Tool / Model | OpenAI Codex AI Agent; exact serving revision not recorded |
+| Authorization | Người dùng duyệt sơ đồ, yêu cầu thực hiện bước 1 và dừng trước commit |
+| Prompt summary | Rà requirements/checklist, gom một bản nguồn mỗi deliverable, di dời và sửa routing/links; giữ nguồn và evidence |
+| AI contribution | File inventory, SHA-256 manifest, di dời tài liệu, khôi phục support cũ từ Git, viết routing và checklist, kiểm tra cấu trúc |
+| Sources | HEAD f419962, historical activity support f6c69f6, local requirements và quyết định trực tiếp trong chat |
+| Outputs | [README](../README.md), [Checklist](../docs/Deliverables_Checklist.md), [Manifest](../evidence/coordination/Repository_Migration_Manifest.json) |
+| Verification | Xem [migration validation](../evidence/coordination/Repository_Migration_Validation.json); không chạy source tests, mutation hoặc audience pilot |
+| Human work / verdict | Người dùng chọn scope và duyệt thiết kế; nghiệm thu output/content và verdict cá nhân vẫn Pending |
+| Limits | Không thay tracker, attribution, signatures/reflection; không nhận Agent checks là member self-run hoặc independent human review |
+| Git handling | Không stage, commit, push hoặc đổi Git refs theo yêu cầu người dùng |
+
+Commit follow-up cho TH-DOCS-REORGANIZATION-20261106: người dùng yêu cầu commit checkpoint sau khi đã dừng để review. Agent cập nhật trạng thái hiện hành, kiểm tra lại preservation/links và commit phần tái cấu trúc; không push. Đây không phải human acceptance cho nội dung hoặc thực nghiệm.
