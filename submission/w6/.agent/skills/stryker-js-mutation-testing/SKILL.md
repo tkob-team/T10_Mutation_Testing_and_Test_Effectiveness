@@ -3,7 +3,7 @@ name: "stryker-js-mutation-testing"
 description: "Set up, run and interpret StrykerJS mutation testing for JavaScript/TypeScript (Jest, Vitest, Mocha), then strengthen tests by killing surviving mutants with spec-based assertions, including AI-written ones. Use whenever someone mentions Stryker, mutation testing, mutation score, surviving/killed mutants, mutation.json/mutation.html, 'are my tests actually checking anything', or wants one test that kills a specific survivor, even if they don't say 'mutation testing'."
 ---
 
-# StrykerJS Mutation Testing (v2)
+# StrykerJS Mutation Testing
 
 Reply in the user's language; keep commands, mutator names and statuses (Killed, Survived...) in English.
 

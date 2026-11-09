@@ -1,4 +1,4 @@
-# stryker-js-mutation-testing (v3)
+# stryker-js-mutation-testing
 
 Skill cho Claude Code: chạy StrykerJS, đọc kết quả, kill survivor bằng assertion dựa trên spec, báo cáo theo template.
 
