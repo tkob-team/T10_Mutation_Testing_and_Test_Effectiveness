@@ -1,0 +1,6 @@
+{"step":"Same room via Cloudflare, 127.0.0.1 and localhost; origin and cookie checks pass","poolSize":69}
+{"step":"Public submission earns expected feature score","feature":0,"points":21,"total":21,"durationMs":9137}
+{"step":"Public submission earns expected feature score","feature":1,"points":44,"total":65,"durationMs":6687}
+{"step":"Public submission earns expected feature score","feature":2,"points":4,"total":69,"durationMs":1688}
+{"step":"Six fresh scorers, 84 steps each, entire pool","durationsMs":[36974,60165,40204,39047,41504,60161],"maxMs":60165}
+{"step":"Fresh room open and empty on both player origins and Host","poolSize":69,"publicUrl":"https://treating-cigarette-miami-saving.trycloudflare.com"}

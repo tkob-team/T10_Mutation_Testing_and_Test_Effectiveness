@@ -12,8 +12,8 @@ Thứ tự công việc đã chốt:
 
 1. Chuẩn hóa và di dời docs theo requirements và checklist.
 2. Audit kỹ môi trường, tests, baseline và các conditions ở repo source.
-3. Chọn SUT cho activity có tests/cases và độ khó phù hợp; bàn tiêu chí hạn chế lợi thế từ AI Agent.
-4. Bàn và xây platform activity có submission, thực thi và ranking cùng session với việc chọn SUT.
+3. Dùng EShop `1be4637` để chuẩn bị feature, starter tests và pack activity. Điều chỉnh độ khó theo pilot.
+4. Dựng T10 Mutation Lab cho submission, thực thi và ranking. Kiểm chứng kỹ thuật trước khi review cùng người học.
 5. Rà và viết kỹ từng tài liệu, dựng lại slides theo hệ thống và kết quả đã chốt.
 
 Mục 1 đã hoàn tất theo xác nhận trực tiếp của người dùng. Mục 2 đã hoàn tất technical audit và batch verification theo yêu cầu người dùng: 12 test/dry/mutation profiles, driver diagnosis, 3 target assertion controls và web/admin builds. Xem [Source Audit](docs/Source_Audit.md) cho trạng thái và evidence mới. Không mặc định workshop cũ là SUT cho activity mới. Audit kỹ thuật không xác nhận video access hoặc human acceptance.
@@ -38,7 +38,8 @@ Người dùng đã xác nhận phần khảo sát và review scope ban đầu h
 
 - [Documentation repo](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness): requirements, docs, activity materials, AI audit và evidence.
 - [EShop research repo](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness): source, tests, fixtures và mutation config. Local sibling dùng tên `eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness`; xác minh root/HEAD trước khi làm.
-- [Previous workshop](https://github.com/tkob-team/eshop-sut-workshop): input của guide/activity cũ; lựa chọn mới còn chờ session activity.
+- [T10 Mutation Lab](https://github.com/tkob-team/t10-mutation-lab): source platform riêng. [Platform Spec](activity/Activity_Platform_Spec.md) giữ luật activity hiện hành.
+- [Previous workshop](https://github.com/tkob-team/eshop-sut-workshop): nguồn của guide và activity cũ.
 - Bản nguồn hiện tại được dẫn từ [README](README.md) và [Checklist](docs/Deliverables_Checklist.md). Bản lấy từ w6 là điểm bắt đầu để sửa, không phải xác nhận đã nghiệm thu.
 
 ## Confirmed Decisions
@@ -46,7 +47,8 @@ Người dùng đã xác nhận phần khảo sát và review scope ban đầu h
 - Vai trò triển khai/demo là StrykerJS và AI Agent; ghi tool/model thực tế theo từng run. Giữ đúng tên trong records lịch sử.
 - Mỗi deliverable có một bản nguồn đang chỉnh. Source snapshots, raw evidence và các gói đã đóng băng không phải bản làm việc song song.
 - Không giới hạn số slides theo quyết định người dùng ngày 2026-11-06; số lượng phục vụ đủ nội dung và thời lượng. Không ghi thành thông báo mới của GV.
-- Activity tối đa 20 phút theo quyết định đã có. SUT, cơ chế hạn chế AI và platform ranking bàn riêng sau; chưa được triển khai ở session này.
+- Activity tối đa 20 phút. Theo trao đổi 2026-11-10, dùng một phòng và một tổng điểm. Cart and Orders, Coupons và Auth là nhóm feature. Nộp bài lấy nội dung của tab hiện tại và chạy original trong quy trình chấm. Mất phiên thì nhờ điều phối viên cấp liên kết dùng một lần. Bỏ thiết kế luật AI và quyền captain riêng.
+- Pilot kỹ thuật dùng Docker Compose trên Windows/WSL2, EShop `1be4637` và pack đã đối chứng. [Validation](evidence/activity/rebuild-validation-2026-11-10/README.md) giữ kết quả và phần chờ human review.
 - Record and Playback có thể bỏ hoặc thay theo người dùng; giữ mapping Data-driven và Checkpoints chính xác. Không mô tả test runner như GUI recorder.
 - Video nộp bằng link theo người dùng; nội dung, phiên bản và access cần evidence thật.
 - Không tự đặt ngày, lịch hoặc estimate cho roadmap. Deadline của GV vẫn có trong nguồn requirements.
@@ -69,9 +71,9 @@ Người dùng đã xác nhận phần khảo sát và review scope ban đầu h
 - [Baseline manifest](evidence/experiments/domain-runs/Baseline_Manifest.md): frozen SUT `806ba19`; historical baseline 88 tests, defect profiles riêng.
 - [Overall comparison](evidence/experiments/integration-and-reproduction/Overall_Comparison.md): joint runs có 395 signatures, test counts 88/118/118 và scores 67.56%/80.53%/75.47%. Đây là số từ evidence lịch sử, chưa được chạy lại trong session này.
 - Coupons assertions ở hai conditions cũ có Codex hỗ trợ trong cùng context. Không trình bày như independent human-vs-AI experiment.
-- [Previous activity](activity/README.md): support được khôi phục từ Git, summary ghi executor Codex và không có audience pilot/member rehearsal tại thời điểm lưu.
+- [Previous activity evidence](evidence/activity/previous-sandbox/): runner và verification của thiết kế cũ.
 - Các xác nhận tự chạy, human review, chữ ký và nghiệm thu vẫn theo evidence của đúng người và đúng phiên bản.
 
 ## Open Inputs
 
-Ngày seminar và các mốc thực tế; SUT/platform activity mới; nguồn verdict/rehearsal cụ thể; guide English; media access; audience feedback; hai peer-review partners; cách tách AI-04 và Final Reflection. Kết quả technical source audit đã có trong Source Audit; member review và self-runs vẫn theo evidence riêng.
+Ngày seminar và các mốc thực tế; human review và pilot activity 20 phút trên mạng lớp; guide English; media access; audience feedback; hai peer-review partners; cách tách AI-04 và Final Reflection. Kết quả technical source audit đã có trong Source Audit; member review và self-runs vẫn theo evidence riêng.

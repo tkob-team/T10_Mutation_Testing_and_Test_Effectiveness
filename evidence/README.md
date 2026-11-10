@@ -12,6 +12,7 @@ Thư mục này giữ evidence và hồ sơ tham chiếu, không phải các b�
 | [Research](research/) | Notes, tool surveys và generated references chỉ để tham khảo |
 | [Document history](document-history/) | Bản ghép hoặc proposal trước khi chọn bản nguồn hiện tại |
 | [Previous activity sandbox](activity/previous-sandbox/) | Runner, candidates và verification của thiết kế cũ |
+| [T10 Mutation Lab rebuild](activity/rebuild-validation-2026-11-10/README.md) | Reference controls, HTTP/load qualification, crash recovery và backup restore trên Docker |
 | [Coordination](coordination/) | Context cũ, task map, Git log snapshot và hồ sơ di dời |
 | [Previous workflow templates](previous-workflow/templates/) | Templates lịch sử, không dùng làm workflow hiện hành |
 

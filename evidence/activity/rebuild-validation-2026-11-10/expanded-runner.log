@@ -1,0 +1,83 @@
+
+> t10-mutation-lab@1.0.0 test
+> node --test test/*.test.ts
+
+{"id":"orders-3","outcome":"ASSERTION_MISMATCH","mutant":200,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toBe","actual":"(không có)","expected":"0"}}
+{"id":"orders-5","outcome":"ASSERTION_MISMATCH","mutant":204,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toBe","actual":"(không có)","expected":"0"}}
+{"id":"orders-6","outcome":"ASSERTION_MISMATCH","mutant":211,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toBe","actual":"1","expected":"0"}}
+{"id":"orders-4","outcome":"ASSERTION_MISMATCH","mutant":246,"failure":{"testId":"case-1","stepIndex":5,"matcher":"toBe","actual":"0","expected":"2"}}
+{"id":"orders-12","outcome":"ASSERTION_MISMATCH","mutant":235,"failure":{"testId":"case-1","stepIndex":5,"matcher":"toBe","actual":"1","expected":"2"}}
+{"id":"orders-14","outcome":"ASSERTION_MISMATCH","mutant":247,"failure":{"testId":"case-1","stepIndex":5,"matcher":"toBe","actual":"3","expected":"2"}}
+{"id":"orders-15","outcome":"ASSERTION_MISMATCH","mutant":251,"failure":{"testId":"case-1","stepIndex":5,"matcher":"toBe","actual":"0","expected":"2"}}
+{"id":"orders-17","outcome":"ASSERTION_MISMATCH","mutant":208,"failure":{"testId":"case-1","stepIndex":1,"matcher":"toContain","actual":"(không có)","expected":"\"Added to cart\""}}
+{"id":"orders-18","outcome":"ASSERTION_MISMATCH","mutant":206,"failure":{"testId":"case-1","stepIndex":1,"matcher":"toContain","actual":"\"\"","expected":"\"Added to cart\""}}
+{"id":"orders-32","outcome":"ASSERTION_MISMATCH","mutant":205,"failure":{"testId":"case-1","stepIndex":1,"matcher":"toContain","actual":"\"\"","expected":"\"Checkout successful\""}}
+{"id":"orders-38","outcome":"ASSERTION_MISMATCH","mutant":244,"failure":{"testId":"case-1","stepIndex":3,"matcher":"toBe","actual":"(không có)","expected":"1"}}
+{"id":"orders-51","outcome":"ASSERTION_MISMATCH","mutant":242,"failure":{"testId":"case-1","stepIndex":3,"matcher":"toContain","actual":"(không có)","expected":"\"Order not found\""}}
+{"id":"orders-52","outcome":"ASSERTION_MISMATCH","mutant":233,"failure":{"testId":"case-1","stepIndex":3,"matcher":"toContain","actual":"\"\"","expected":"\"Order not found\""}}
+{"id":"orders-63","outcome":"ASSERTION_MISMATCH","mutant":233,"failure":{"testId":"case-1","stepIndex":8,"matcher":"toContain","actual":"(không có)","expected":"\"Cannot cancel\""}}
+{"id":"orders-64","outcome":"ASSERTION_MISMATCH","mutant":249,"failure":{"testId":"case-1","stepIndex":8,"matcher":"toContain","actual":"\"\"","expected":"\"Cannot cancel\""}}
+{"id":"orders-67","outcome":"ASSERTION_MISMATCH","mutant":245,"failure":{"testId":"case-1","stepIndex":5,"matcher":"toBe","actual":"\"pending\"","expected":"\"canceled\""}}
+{"id":"orders-68","outcome":"ASSERTION_MISMATCH","mutant":260,"failure":{"testId":"case-1","stepIndex":5,"matcher":"toBe","actual":"\"\"","expected":"\"canceled\""}}
+{"id":"orders-71","outcome":"ASSERTION_MISMATCH","mutant":295,"failure":{"testId":"case-1","stepIndex":3,"matcher":"toContain","actual":"(không có)","expected":"\"Order canceled successfully\""}}
+{"id":"orders-83","outcome":"ASSERTION_MISMATCH","mutant":267,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toContain","actual":"(không có)","expected":"\"Order not found\""}}
+{"id":"orders-72","outcome":"ASSERTION_MISMATCH","mutant":310,"failure":{"testId":"case-1","stepIndex":3,"matcher":"toContain","actual":"\"\"","expected":"\"Order canceled successfully\""}}
+{"id":"orders-84","outcome":"ASSERTION_MISMATCH","mutant":225,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toContain","actual":"\"\"","expected":"\"Order not found\""}}
+{"id":"coupons-14","outcome":"ASSERTION_MISMATCH","mutant":238,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toContain","actual":"(không có)","expected":"\"nhập mã giảm giá\""}}
+{"id":"coupons-15","outcome":"ASSERTION_MISMATCH","mutant":213,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toContain","actual":"\"\"","expected":"\"nhập mã giảm giá\""}}
+{"id":"coupons-24","outcome":"ASSERTION_MISMATCH","mutant":209,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toContain","actual":"(không có)","expected":"\"không tồn tại\""}}
+{"id":"coupons-25","outcome":"ASSERTION_MISMATCH","mutant":218,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toContain","actual":"\"\"","expected":"\"không tồn tại\""}}
+{"id":"coupons-33","outcome":"ASSERTION_MISMATCH","mutant":218,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toBe","actual":"400","expected":"200"}}
+{"id":"coupons-36","outcome":"ASSERTION_MISMATCH","mutant":253,"failure":{"testId":"case-1","stepIndex":7,"matcher":"toContain","actual":"(không có)","expected":"\"hết hạn\""}}
+{"id":"coupons-37","outcome":"ASSERTION_MISMATCH","mutant":253,"failure":{"testId":"case-1","stepIndex":7,"matcher":"toContain","actual":"\"\"","expected":"\"hết hạn\""}}
+{"id":"coupons-64","outcome":"ASSERTION_MISMATCH","mutant":211,"failure":{"testId":"case-1","stepIndex":4,"matcher":"toContain","actual":"\"Áp dụng thành công! Giảm 35000%\"","expected":"\"₫\""}}
+{"id":"coupons-63","outcome":"ASSERTION_MISMATCH","mutant":213,"failure":{"testId":"case-1","stepIndex":3,"matcher":"toContain","actual":"\"\"","expected":"\"Áp dụng thành công\""}}
+{"id":"coupons-66","outcome":"ASSERTION_MISMATCH","mutant":206,"failure":{"testId":"case-1","stepIndex":4,"matcher":"toContain","actual":"\"Áp dụng thành công! Giảm 35000%\"","expected":"\"₫\""}}
+{"id":"coupons-69","outcome":"ASSERTION_MISMATCH","mutant":218,"failure":{"testId":"case-1","stepIndex":4,"matcher":"toContain","actual":"\"Áp dụng thành công! Giảm 35,000\"","expected":"\"₫\""}}
+{"id":"coupons-71","outcome":"ASSERTION_MISMATCH","mutant":221,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toBe","actual":"-10499700000","expected":"35000"}}
+{"id":"coupons-73","outcome":"ASSERTION_MISMATCH","mutant":214,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toBe","actual":"-10499700000","expected":"35000"}}
+{"id":"coupons-79","outcome":"ASSERTION_MISMATCH","mutant":219,"failure":{"testId":"case-1","stepIndex":3,"matcher":"toBe","actual":"335000","expected":"265000"}}
+{"id":"coupons-78","outcome":"ASSERTION_MISMATCH","mutant":230,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toBe","actual":"0","expected":"35000"}}
+{"id":"coupons-82","outcome":"ASSERTION_MISMATCH","mutant":210,"failure":{"testId":"case-1","stepIndex":4,"matcher":"toContain","actual":"\"\"","expected":"\"Áp dụng thành công\""}}
+{"id":"coupons-81","outcome":"ASSERTION_MISMATCH","mutant":213,"failure":{"testId":"case-1","stepIndex":1,"matcher":"toBe","actual":"false","expected":"true"}}
+{"id":"coupons-85","outcome":"ASSERTION_MISMATCH","mutant":200,"failure":{"testId":"case-1","stepIndex":5,"matcher":"toContain","actual":"\"Áp dụng thành công! Giảm 35000%\"","expected":"\"₫\""}}
+{"id":"coupons-83","outcome":"ASSERTION_MISMATCH","mutant":194,"failure":{"testId":"case-1","stepIndex":5,"matcher":"toContain","actual":"\"Áp dụng thành công! Giảm 35000%\"","expected":"\"₫\""}}
+{"id":"coupons-88","outcome":"ASSERTION_MISMATCH","mutant":226,"failure":{"testId":"case-1","stepIndex":5,"matcher":"toContain","actual":"\"Áp dụng thành công! Giảm 35,000\"","expected":"\"₫\""}}
+{"id":"coupons-53","outcome":"ASSERTION_MISMATCH","mutant":250,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toBe","actual":"0.5","expected":"150000"}}
+{"id":"coupons-55","outcome":"ASSERTION_MISMATCH","mutant":235,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toBe","actual":"0.5","expected":"150000"}}
+{"id":"coupons-56","outcome":"ASSERTION_MISMATCH","mutant":230,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toBe","actual":"0","expected":"150000"}}
+{"id":"coupons-57","outcome":"ASSERTION_MISMATCH","mutant":249,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toBe","actual":"600000","expected":"150000"}}
+{"id":"coupons-58","outcome":"ASSERTION_MISMATCH","mutant":245,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toBe","actual":"450000","expected":"150000"}}
+{"id":"coupons-65","outcome":"ASSERTION_MISMATCH","mutant":258,"failure":{"testId":"case-1","stepIndex":4,"matcher":"toContain","actual":"\"Áp dụng thành công! Giảm 0.5 ₫\"","expected":"\"%\""}}
+{"id":"coupons-67","outcome":"ASSERTION_MISMATCH","mutant":249,"failure":{"testId":"case-1","stepIndex":4,"matcher":"toContain","actual":"\"Áp dụng thành công! Giảm 0.5 ₫\"","expected":"\"%\""}}
+{"id":"coupons-72","outcome":"ASSERTION_MISMATCH","mutant":261,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toBe","actual":"0.5","expected":"150000"}}
+{"id":"coupons-68","outcome":"ASSERTION_MISMATCH","mutant":271,"failure":{"testId":"case-1","stepIndex":4,"matcher":"toContain","actual":"\"Áp dụng thành công! Giảm 0.5\"","expected":"\"%\""}}
+{"id":"coupons-75","outcome":"ASSERTION_MISMATCH","mutant":243,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toBe","actual":"0","expected":"150000"}}
+{"id":"coupons-74","outcome":"ASSERTION_MISMATCH","mutant":237,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toBe","actual":"0.5","expected":"150000"}}
+{"id":"coupons-77","outcome":"ASSERTION_MISMATCH","mutant":250,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toBe","actual":"450000","expected":"150000"}}
+{"id":"coupons-76","outcome":"ASSERTION_MISMATCH","mutant":251,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toBe","actual":"600000","expected":"150000"}}
+{"id":"coupons-86","outcome":"ASSERTION_MISMATCH","mutant":261,"failure":{"testId":"case-1","stepIndex":4,"matcher":"toContain","actual":"\"Áp dụng thành công! Giảm 0.5 ₫\"","expected":"\"%\""}}
+{"id":"coupons-84","outcome":"ASSERTION_MISMATCH","mutant":261,"failure":{"testId":"case-1","stepIndex":4,"matcher":"toContain","actual":"\"Áp dụng thành công! Giảm 0.5 ₫\"","expected":"\"%\""}}
+{"id":"coupons-91","outcome":"ASSERTION_MISMATCH","mutant":206,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toContain","actual":"\"\"","expected":"\"giá trị tối thiểu\""}}
+{"id":"coupons-87","outcome":"ASSERTION_MISMATCH","mutant":238,"failure":{"testId":"case-1","stepIndex":4,"matcher":"toContain","actual":"\"Áp dụng thành công! Giảm 0.5\"","expected":"\"%\""}}
+{"id":"coupons-51","outcome":"ASSERTION_MISMATCH","mutant":259,"failure":{"testId":"case-1","stepIndex":13,"matcher":"toContain","actual":"\"\"","expected":"\"đã đạt giới hạn\""}}
+{"id":"coupons-50","outcome":"ASSERTION_MISMATCH","mutant":252,"failure":{"testId":"case-1","stepIndex":13,"matcher":"toContain","actual":"(không có)","expected":"\"đã đạt giới hạn\""}}
+{"id":"coupons-104","outcome":"ASSERTION_MISMATCH","mutant":242,"failure":{"testId":"case-1","stepIndex":6,"matcher":"toContain","actual":"\"\"","expected":"\"Usage recorded\""}}
+{"id":"coupons-103","outcome":"ASSERTION_MISMATCH","mutant":244,"failure":{"testId":"case-1","stepIndex":6,"matcher":"toContain","actual":"(không có)","expected":"\"Usage recorded\""}}
+{"id":"coupons-113","outcome":"ASSERTION_MISMATCH","mutant":251,"failure":{"testId":"case-1","stepIndex":9,"matcher":"toBe","actual":"400","expected":"200"}}
+{"id":"coupons-111","outcome":"ASSERTION_MISMATCH","mutant":251,"failure":{"testId":"case-1","stepIndex":9,"matcher":"toBe","actual":"400","expected":"200"}}
+{"id":"coupons-120","outcome":"ASSERTION_MISMATCH","mutant":200,"failure":{"testId":"case-1","stepIndex":2,"matcher":"toContain","actual":"\"\"","expected":"\"Coupon created\""}}
+{"id":"auth-32","outcome":"ASSERTION_MISMATCH","mutant":235,"failure":{"testId":"case-1","stepIndex":8,"matcher":"toBe","actual":"403","expected":"200"}}
+{"id":"auth-35","outcome":"ASSERTION_MISMATCH","mutant":216,"failure":{"testId":"case-1","stepIndex":3,"matcher":"toContain","actual":"(không có)","expected":"\"khóa\""}}
+{"id":"auth-36","outcome":"ASSERTION_MISMATCH","mutant":211,"failure":{"testId":"case-1","stepIndex":3,"matcher":"toContain","actual":"\"\"","expected":"\"khóa\""}}
+{"id":"auth-47","outcome":"ASSERTION_MISMATCH","mutant":237,"failure":{"testId":"case-1","stepIndex":5,"matcher":"toContain","actual":"\"\"","expected":"\"Login successful\""}}
+✔ pinned EShop passes original and has a real kill control for every scored variant (11946.992383ms)
+✔ judge distinguishes an original assertion, a survivor and a timeout (554.67455ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 12608.464001

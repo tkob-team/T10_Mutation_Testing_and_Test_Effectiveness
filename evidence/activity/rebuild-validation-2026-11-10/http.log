@@ -1,0 +1,10 @@
+{"step":"Access control, builder preview, original rejection and recovery","passed":true}
+{"step":"Scheduler killed during an active lease","submissionId":"cc040321-1d45-474c-9b0f-60fbaddd5867","recovered":"GRADED","points":7}
+{"step":"Executor child killed with SIGKILL and retried","submissionId":"d4bba01b-a4e1-4552-bdee-ebda6e591ccf","points":0}
+{"step":"Concurrent scoring batch","round":1,"teams":6,"durationMs":[598,3641,2125,3831,2124,4584]}
+{"step":"Concurrent scoring batch","round":2,"teams":6,"durationMs":[773,401,2287,2284,3610,3610]}
+{"step":"Concurrent scoring batch","round":3,"teams":6,"durationMs":[394,393,2100,3426,2291,3620]}
+{"step":"Six-entrant latency summary","samples":18,"p50":2284,"p95":4584,"max":4584}
+{"step":"Close, drain, ranking tie, SSE and finalize","report":"cd5d9fddeb4d65b2e15555dcac6b2f79f4e10df2c6f71c7269cbccecd99af24e","room":"997545f8-f1a9-4295-a622-c3a18b93228e","points":[6,6,0,0,0,0]}
+{"step":"Six fresh entrants, seven variants each, 12 cases and 84 steps per suite","durationMs":[3649,6114,8584,5929,3647,8768],"max":8768}
+{"step":"Full-pool report","room":"ee8e8427-ec6b-4d91-84ef-0bb47d34c81a","report":"86e24caa57c6b4dafcc761d00a276d97525f0fc576a0659ea09c854f6f00a22f"}

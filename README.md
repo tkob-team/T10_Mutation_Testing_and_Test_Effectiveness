@@ -8,7 +8,9 @@ Repo tài liệu seminar Nhóm 12, CSC13003 Software Testing, FIT@HCMUS.
 2. Đọc [Project Context](CONTEXT.md) cho scope, ownership và experiment contract. Khi dùng agent, đọc [Agent Instructions](AGENTS.md).
 3. Sửa trực tiếp tài liệu tại đường dẫn trong bảng dưới. Mỗi đầu ra có một bản nguồn đang làm.
 
-**Current work:** Docs reorganization đã hoàn tất theo xác nhận người dùng. [Source Audit](docs/Source_Audit.md) đã hoàn tất kiểm chứng kỹ thuật môi trường và baseline/manual/AI; SUT và platform activity mới bàn ở session riêng.
+**Current work**
+
+Source Audit đã hoàn tất kiểm chứng kỹ thuật môi trường và baseline/manual/AI. T10 Mutation Lab có bản local cho người dùng kiểm chứng với EShop `1be4637`. Pilot với người học và mạng lớp đang Pending. [Source Audit](docs/Source_Audit.md) và [Activity Validation](evidence/activity/rebuild-validation-2026-11-10/README.md)
 
 ## Working Documents
 
@@ -23,7 +25,7 @@ Repo tài liệu seminar Nhóm 12, CSC13003 Software Testing, FIT@HCMUS.
 | Audit source và thực nghiệm | [Source Audit](docs/Source_Audit.md) |
 | Demo | [Demo Script](docs/Demo_Script.md), [Video Link](docs/Demo_Video_Link.md) |
 | Slides và transcript | [Slides workspace](docs/slides/README.md) |
-| Activity | [Activity workspace](activity/README.md) |
+| Activity | [Platform Spec](activity/Activity_Platform_Spec.md), [Worksheet](activity/Activity_Worksheet.md), [Facilitator Guide](activity/Facilitator_Guide.md), [Source](https://github.com/tkob-team/t10-mutation-lab) |
 | AI audit và disclosure | [AI audit workspace](ai-audit/README.md) |
 | Đóng góp | [Contribution workbook](docs/Contribution_Summary.xlsx) |
 | Evidence và lịch sử | [Evidence index](evidence/README.md) |

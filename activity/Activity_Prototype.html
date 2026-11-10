@@ -1,0 +1,982 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval'; style-src 'unsafe-inline'; worker-src blob:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Kill the Mutant | T10</title>
+<style>
+:root {
+  color-scheme: light;
+  --background: #edf1f6; --surface: #fff; --subtle: #f5f7fa; --ink: #142132;
+  --muted: #4f6074; --border: #cfd8e3; --accent: #1d51ad; --selected: #eaf1ff;
+  --good: #146047; --bad: #a22c3e; --error-bg: #fff4f5;
+  font: 15px/1.55 system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--background); color: var(--ink); }
+main { max-width: 1320px; margin: auto; padding: 24px 24px 48px; }
+h1, h2, h3, h4, p { margin: 0; }
+h1 { font-size: clamp(1.9rem, 4vw, 2.7rem); font-weight: 750; letter-spacing: -.045em; line-height: 1.1; }
+h2 { font-size: 1.18rem; line-height: 1.35; }
+h3 { font-size: 1.03rem; }
+h4 { font-size: .93rem; }
+p + p { margin-top: 6px; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button, input, select, textarea { border: 1px solid var(--border); border-radius: 6px; background: var(--surface); }
+button, input, select { min-height: 40px; padding: 7px 11px; }
+button { cursor: pointer; font-weight: 650; }
+button:hover:not(:disabled) { background: var(--selected); }
+button:disabled { opacity: .55; cursor: not-allowed; }
+:focus-visible { outline: 3px solid #5984d8; outline-offset: 2px; }
+.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.primary:hover:not(:disabled) { background: #15438f; }
+.secondary { color: #164287; }
+.quiet { color: var(--muted); background: transparent; border-color: transparent; }
+.row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.split { justify-content: space-between; }
+.top { padding-bottom: 20px; border-bottom: 1px solid var(--border); align-items: end; gap: 16px; }
+.top h1 { margin: 4px 0 8px; }
+.muted, .hint { color: var(--muted); }
+.hint { font-size: .88rem; }
+.eyebrow { color: var(--accent); font-size: .75rem; font-weight: 740; letter-spacing: .07em; text-transform: uppercase; }
+.nav { margin: 12px 0; }
+.nav button { background: transparent; border-color: transparent; }
+.nav button[aria-pressed=true] { background: var(--selected); border-color: #aabfee; color: #164287; }
+.problems { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-bottom: 16px; }
+.problem { display: grid; text-align: left; padding: 10px 12px; }
+.problem[aria-pressed=true] { border-color: var(--accent); box-shadow: inset 0 -2px var(--accent); }
+.problem small { color: var(--muted); font-weight: 500; }
+.workspace { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: 16px; align-items: start; }
+.panel { min-width: 0; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
+.reading { padding: 16px; }
+.panel-title { align-items: flex-start; gap: 8px; }
+.panel-title h2 { margin-top: 3px; }
+.composer-head { padding: 16px 16px 0; }
+.tabs { border-bottom: 1px solid var(--border); margin: 12px 0; gap: 4px; }
+.tabs button { background: transparent; border: 0; border-bottom: 2px solid transparent; border-radius: 0; color: var(--muted); min-height: 42px; }
+.tabs button[aria-selected=true], .tabs button[aria-pressed=true] { color: var(--accent); border-bottom-color: var(--accent); }
+.tabs button:hover { background: var(--subtle); }
+.composer .tabs { margin-bottom: 0; }
+.compose-panel { padding: 16px; }
+.badge { font-size: .79rem; color: var(--muted); font-weight: 700; background: var(--subtle); border: 1px solid var(--border); border-radius: 4px; padding: 3px 7px; white-space: nowrap; }
+.rules { margin: 8px 0 0; padding-left: 20px; }
+.rules li + li { margin-top: 8px; }
+pre { background: var(--subtle); border: 1px solid var(--border); border-radius: 6px; padding: 12px; margin: 0; max-height: 440px; overflow: auto; font: 12.5px/1.65 ui-monospace, Consolas, monospace; }
+textarea.code { display: block; width: 100%; resize: vertical; min-height: 248px; margin-top: 10px; padding: 12px; background: var(--subtle); font: .9rem/1.6 ui-monospace, Consolas, monospace; tab-size: 2; }
+.test-rail { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.test-rail [aria-pressed=true] { background: var(--selected); border-color: var(--accent); color: #164287; }
+.test-title { padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.step-heading { margin: 16px 0 8px; }
+.step { border: 1px solid var(--border); border-radius: 6px; padding: 12px; background: var(--subtle); margin-bottom: 8px; }
+.step-header { margin-bottom: 8px; }
+.step-header button, .test-title button { min-height: 36px; }
+.control-group { display: grid; gap: 4px; min-width: 0; }
+.control-group > label, .control-group > legend { font-size: .88rem; font-weight: 650; }
+.control-group > input, .control-group > select { width: 100%; }
+.control-group + .control-group { margin-top: 8px; }
+.arguments { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); margin-top: 10px; }
+.arguments .control-group { margin-top: 0; }
+fieldset.control-group { padding: 0; margin: 0; border: 0; }
+.options { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 14px; min-height: 40px; }
+.options label, .include label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; font-size: .9rem; }
+.options input, .include input { width: 17px; height: 17px; min-height: 0; margin: 0; padding: 0; accent-color: var(--accent); }
+.assertion-value { margin-top: 10px; }
+.field-error { color: var(--bad); font-size: .86rem; margin: 0; }
+[aria-invalid=true] { border-color: var(--bad); }
+fieldset[aria-invalid=true] .options { padding-inline: 8px; border-left: 2px solid var(--bad); }
+.empty { padding: 16px; background: var(--subtle); border-radius: 6px; margin-bottom: 12px; }
+.empty p { margin-top: 5px; }
+.submit-bar { position: sticky; bottom: 0; background: var(--surface); border-top: 1px solid var(--border); padding: 12px 16px; z-index: 1; }
+.submit-label { font-size: .87rem; font-weight: 700; }
+.include { display: flex; flex-wrap: wrap; gap: 6px 14px; min-height: 24px; align-items: center; }
+.status { margin-top: 12px; padding: 12px 16px; min-height: 48px; }
+.good { color: var(--good); }
+.bad { color: var(--bad); }
+.result-detail { overflow-wrap: anywhere; }
+.loading { display: flex; align-items: center; gap: 8px; color: var(--accent); font-weight: 680; }
+.spinner { height: 16px; width: 16px; border-radius: 50%; border: 2px solid #c4d5ee; border-top-color: var(--accent); animation: spin .75s linear infinite; }
+@keyframes spin { to { transform: rotate(1turn); } }
+.table-wrap { overflow: auto; }
+table { width: 100%; border-collapse: collapse; text-align: left; }
+th, td { padding: 9px 12px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+th { font-size: .87rem; }
+tbody tr.active { background: var(--selected); }
+#leaderboard { padding: 16px; }
+#leaderboard p { margin: 5px 0 8px; }
+label.team { font-size: .85rem; font-weight: 680; }
+.side-note { min-height: 1.5em; margin-top: 4px; }
+footer { margin-top: 16px; }
+@media (max-width: 880px) { .workspace { grid-template-columns: 1fr; } }
+@media (max-width: 560px) {
+  main { padding: 16px 12px 32px; }
+  .problems { grid-template-columns: 1fr; }
+  .problem { grid-template-columns: 1fr auto; align-items: center; gap: 8px; }
+  .reading, .compose-panel, .status { padding: 12px; }
+  .composer-head { padding: 12px 12px 0; }
+  .submit-bar { position: static; padding: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { .spinner { animation: none; } }
+</style>
+</head>
+<body>
+<main>
+<header class="top row split">
+  <div>
+    <p class="eyebrow">Seminar T10 / Activity prototype</p>
+    <h1>Kill the Mutant</h1>
+    <p class="muted">Đọc đề, bổ sung test, phát hiện mutant.</p>
+  </div>
+  <div>
+    <form class="row" id="join">
+      <label class="team" for="team">Mã đội</label>
+      <input id="team" value="ORBIT" size="8" maxlength="12" autocomplete="off" required>
+      <button type="submit">Vào đội</button>
+    </form>
+    <p id="team-status" class="hint side-note" role="status"></p>
+  </div>
+</header>
+
+<nav class="row nav" aria-label="Phòng thi">
+  <button type="button" data-page="contest" aria-pressed="true">Bộ đề</button>
+  <button type="button" data-page="leaderboard" aria-pressed="false">Leaderboard</button>
+</nav>
+
+<section id="contest">
+  <div id="problems" class="problems" aria-label="Danh sách đề"></div>
+  <div class="workspace">
+    <article class="panel reading">
+      <div class="row split panel-title">
+        <div><p class="eyebrow">Hồ sơ đề</p><h2 id="problem-title"></h2></div>
+        <span id="problem-score" class="badge"></span>
+      </div>
+      <div class="row tabs" aria-label="Tài liệu của đề">
+        <button type="button" data-doc="spec" aria-pressed="true">Đặc tả</button>
+        <button type="button" data-doc="source" aria-pressed="false">Source code</button>
+        <button type="button" data-doc="starter" aria-pressed="false">Tests có sẵn</button>
+      </div>
+      <div id="problem-doc"></div>
+    </article>
+    <div>
+      <article class="panel composer">
+        <div class="composer-head">
+          <p class="eyebrow">Bản nháp của đội</p>
+          <h2>Soạn bộ test</h2>
+          <div class="row tabs" role="tablist" aria-label="Cách soạn test">
+            <button type="button" id="tab-builder" role="tab" aria-controls="panel-builder" data-compose="builder" aria-selected="true">Dựng test</button>
+            <button type="button" id="tab-code" role="tab" aria-controls="panel-code" data-compose="code" aria-selected="false" tabindex="-1">Viết code</button>
+          </div>
+        </div>
+        <div id="panel-builder" class="compose-panel" role="tabpanel" aria-labelledby="tab-builder">
+          <div id="test-list" class="test-rail" aria-label="Các test đang soạn"></div>
+          <div id="builder-editor"></div>
+        </div>
+        <div id="panel-code" class="compose-panel" role="tabpanel" aria-labelledby="tab-code" hidden>
+          <label for="manual-code"><strong>Code test của đội</strong></label>
+          <p class="hint" id="code-hint">Có thể viết nhiều test trong cùng ô. Demo hỗ trợ test đồng bộ với test, it, describe, toBe và toEqual.</p>
+          <textarea id="manual-code" class="code" spellcheck="false" aria-describedby="code-hint" placeholder="test('Tên test', () => {&#10;  // Gọi hàm qua sut và kiểm tra bằng expect.&#10;})"></textarea>
+        </div>
+        <div class="submit-bar row split">
+          <div><p class="submit-label">Đưa vào lượt nộp</p><div id="include" class="include"></div></div>
+          <button type="button" class="primary" id="submit">Nộp bộ test</button>
+        </div>
+      </article>
+      <article class="panel status" id="result" role="status" aria-live="polite" aria-atomic="true"></article>
+    </div>
+  </div>
+</section>
+
+<section id="leaderboard" class="panel" hidden>
+  <h2>Leaderboard</h2>
+  <p class="muted">Mỗi mutant được tính một lần cho mỗi đội. Bằng điểm thì đồng hạng.</p>
+  <div class="table-wrap">
+    <table><thead><tr><th scope="col">Hạng</th><th scope="col">Đội</th><th scope="col">Tổng</th><th scope="col">A</th><th scope="col">B</th><th scope="col">C</th></tr></thead><tbody id="ranking"></tbody></table>
+  </div>
+</section>
+
+<footer class="hint">Bản demo chạy chấm trong tab này với 5 mutant minh họa. Dùng ORBIT, NOVA hoặc PIXEL để thử đổi đội. Bản nháp và điểm được đặt lại khi tải lại trang.</footer>
+</main>
+
+<script id="sut-source" type="text/plain">
+function createLocker() {
+  let parcelStatus = 'BOOKED'
+  let lockerStatus = 'BUSY'
+
+  function fee(hours) {
+    if (!Number.isInteger(hours) || hours < 0) throw new RangeError('Invalid hours')
+    if (hours < 24) return 0
+    const cost = 10 * (1 + Math.floor((hours - 24) / 24))
+    return Math.min(40, cost)
+  }
+
+  function canCollect(isOwner, validCode) {
+    return isOwner && validCode ? 'ALLOW' : 'DENY'
+  }
+
+  function cancelParcel() {
+    if (parcelStatus !== 'BOOKED') return 'REJECTED'
+    parcelStatus = 'CANCELED'
+    lockerStatus = 'FREE'
+    return 'OK'
+  }
+
+  function collectParcel() {
+    if (parcelStatus !== 'BOOKED') return 'REJECTED'
+    parcelStatus = 'COLLECTED'
+    lockerStatus = 'FREE'
+    return 'OK'
+  }
+
+  function getParcelStatus() {
+    return parcelStatus
+  }
+
+  function getLockerStatus() {
+    return lockerStatus
+  }
+
+  return { fee, canCollect, cancelParcel, collectParcel, getParcelStatus, getLockerStatus }
+}
+</script>
+<script id="judge-core">
+const problems = [
+  {
+    id: 'A', title: 'Phí giữ hàng', mutants: ['M01', 'M02'],
+    rules: [
+      'Thời gian lưu kiện được tính theo số giờ nguyên không âm.',
+      'Lưu kiện dưới 24 giờ được miễn phí. Từ 24 giờ, phí là 10 nghìn đồng cho mỗi khoảng 24 giờ đã bắt đầu.',
+      'Mỗi kiện có trần phí 40 nghìn đồng. Hàm tính phí trả về số tiền theo đơn vị nghìn đồng.'
+    ],
+    starter: [
+      "test('miễn phí trong thời gian đầu', () => {",
+      "  expect(sut.fee(12)).toBe(0)",
+      "})",
+      "",
+      "test('tính phí lưu kiện', () => {",
+      "  expect(sut.fee(25)).toBe(10)",
+      "  expect(sut.fee(50)).toBe(20)",
+      "})"
+    ].join('\n')
+  },
+  {
+    id: 'B', title: 'Quyền nhận hàng', mutants: ['M03'],
+    rules: [
+      'Quyền nhận hàng phụ thuộc vào hai điều kiện độc lập. Người nhận phải là chủ kiện và mã họ đưa ra phải hợp lệ.',
+      'Kết quả kiểm tra quyền là ALLOW khi đủ điều kiện, DENY trong các trường hợp còn lại.'
+    ],
+    starter: [
+      "test('chủ kiện có mã đúng', () => {",
+      "  expect(sut.canCollect(true, true)).toBe('ALLOW')",
+      "})",
+      "",
+      "test('chủ kiện có mã sai', () => {",
+      "  expect(sut.canCollect(true, false)).toBe('DENY')",
+      "})"
+    ].join('\n')
+  },
+  {
+    id: 'C', title: 'Vòng đời ô tủ', mutants: ['M04', 'M05'],
+    rules: [
+      'Mỗi test bắt đầu với một kiện đang giữ chỗ (BOOKED) và ô tủ đang bận (BUSY).',
+      'Hủy kiện đang giữ chỗ đưa kiện về CANCELED. Nhận kiện đưa kiện về COLLECTED. Cả hai thao tác đều trả OK và giải phóng ô tủ (FREE).',
+      'Kiện đã hủy hoặc đã nhận không thể được hủy hay nhận lại. Hệ thống trả REJECTED và giữ nguyên trạng thái.'
+    ],
+    starter: [
+      "test('hủy kiện cập nhật trạng thái', () => {",
+      "  sut.cancelParcel()",
+      "  expect(sut.getParcelStatus()).toBe('CANCELED')",
+      "})",
+      "",
+      "test('nhận kiện cập nhật trạng thái', () => {",
+      "  sut.collectParcel()",
+      "  expect(sut.getParcelStatus()).toBe('COLLECTED')",
+      "})"
+    ].join('\n')
+  }
+]
+
+const mutations = {
+  M01: ['if (hours < 24) return 0', 'if (hours <= 24) return 0'],
+  M02: ['return Math.min(40, cost)', 'return cost'],
+  M03: ["return isOwner && validCode ? 'ALLOW' : 'DENY'", "return validCode ? 'ALLOW' : 'DENY'"],
+  M04: ["parcelStatus = 'CANCELED'\n    lockerStatus = 'FREE'", "parcelStatus = 'CANCELED'"],
+  M05: ["function collectParcel() {\n    if", "function collectParcel() {\n    if (parcelStatus === 'COLLECTED') return 'OK'\n    if"]
+}
+
+function variantSource(source, id) {
+  const [before, after] = mutations[id]
+  if (source.split(before).length !== 2) throw new Error('Vị trí mutant không còn khớp source.')
+  return source.replace(before, after)
+}
+
+const publicApi = {
+  fee: {params: [{label: 'Thời gian lưu (giờ)', type: 'integer'}], result: {label: 'Phí mong đợi (nghìn đồng)', type: 'integer'}},
+  canCollect: {
+    params: [
+      {label: 'Người nhận là chủ kiện?', type: 'boolean'},
+      {label: 'Mã nhận hợp lệ?', type: 'boolean'}
+    ],
+    result: {label: 'Quyền nhận mong đợi', type: 'enum', options: [['ALLOW', 'Cho phép (ALLOW)'], ['DENY', 'Từ chối (DENY)']]}
+  },
+  cancelParcel: {params: [], result: {label: 'Kết quả hủy mong đợi', type: 'enum', options: [['OK', 'Thành công (OK)'], ['REJECTED', 'Từ chối (REJECTED)']]}},
+  collectParcel: {params: [], result: {label: 'Kết quả nhận mong đợi', type: 'enum', options: [['OK', 'Thành công (OK)'], ['REJECTED', 'Từ chối (REJECTED)']]}},
+  getParcelStatus: {params: [], result: {label: 'Trạng thái kiện mong đợi', type: 'enum', options: [['BOOKED', 'Đang giữ chỗ (BOOKED)'], ['CANCELED', 'Đã hủy (CANCELED)'], ['COLLECTED', 'Đã nhận (COLLECTED)']]}},
+  getLockerStatus: {params: [], result: {label: 'Trạng thái ô tủ mong đợi', type: 'enum', options: [['BUSY', 'Đang bận (BUSY)'], ['FREE', 'Còn trống (FREE)']]}}
+}
+
+function fieldKey(test, kind, id, part) {
+  return ['test', test.id, kind, id, part].join('-')
+}
+
+function inputOptions(schema) {
+  return schema.type === 'boolean' ? [['true', 'Có'], ['false', 'Không']] : schema.options
+}
+
+function readTyped(schema, value, invalid) {
+  if (schema.type === 'integer') {
+    if (!value || !Number.isSafeInteger(Number(value))) invalid('Nhập số nguyên cho ' + schema.label.toLowerCase() + '.')
+    return Number(value)
+  }
+  if (!inputOptions(schema).some(([choice]) => choice === value)) {
+    invalid(schema.type === 'boolean' ? 'Chọn Có hoặc Không.' : 'Chọn ' + schema.label.toLowerCase() + '.')
+  }
+  return schema.type === 'boolean' ? value === 'true' : value
+}
+
+function compileSuite(draft, api) {
+  const tests = []
+  if (draft.includeBuilder) {
+    for (const [index, test] of draft.builders.entries()) {
+      const fail = (field, message) => {
+        throw Object.assign(new Error(message), {testId: test.id, field})
+      }
+      if (!test.calls.length) fail('add-call', 'Thêm một lời gọi hàm cho test này.')
+      const lines = test.calls.map(call => {
+        const key = part => fieldKey(test, 'call', call.id, part)
+        if (!api.includes(call.method)) fail(key('method'), 'Chọn hàm cần gọi.')
+        const args = publicApi[call.method].params.map((schema, i) =>
+          readTyped(schema, call.args[i], message => fail(key('arg-' + i), message)))
+        return 'const r' + call.id + ' = sut[' + JSON.stringify(call.method) + '](...' + JSON.stringify(args) + ')'
+      })
+      if (!test.checks.length) fail('add-check', 'Thêm một kiểm tra kết quả cho test này.')
+      for (const check of test.checks) {
+        const key = part => fieldKey(test, 'check', check.id, part)
+        const call = test.calls.find(item => String(item.id) === check.ref)
+        if (!call) fail(key('ref'), 'Chọn lời gọi có kết quả cần kiểm tra.')
+        const expected = readTyped(publicApi[call.method].result, check.expected, message => fail(key('value'), message))
+        lines.push('expect(r' + check.ref + ').toBe(' + JSON.stringify(expected) + ')')
+      }
+      tests.push('test(' + JSON.stringify('Builder / Test ' + (index + 1)) + ', () => {\n' + lines.join('\n') + '\n})')
+    }
+  }
+  if (draft.includeCode && draft.code.trim()) tests.push(draft.code)
+  if (!tests.length) throw new Error('Chọn ít nhất một phần có test để đưa vào lượt nộp.')
+  return tests.map(code => '{\n' + code + '\n}').join('\n')
+}
+
+function runSuite(source, code) {
+  const cases = []
+  let currentSut
+  let assertions = 0
+  class AssertionError extends Error {}
+  function equal(left, right) {
+    if (Object.is(left, right)) return true
+    if (!left || !right || typeof left !== 'object' || typeof right !== 'object') return false
+    if (Array.isArray(left) !== Array.isArray(right)) return false
+    const keys = Object.keys(left)
+    return keys.length === Object.keys(right).length && keys.every(key => Object.hasOwn(right, key) && equal(left[key], right[key]))
+  }
+  function expect(actual) {
+    function check(expected, matches) {
+      assertions++
+      if (!matches) throw new AssertionError('Expected ' + String(JSON.stringify(expected)) + ', received ' + String(JSON.stringify(actual)))
+    }
+    return {
+      toBe(expected) { check(expected, Object.is(actual, expected)) },
+      toEqual(expected) { check(expected, equal(actual, expected)) }
+    }
+  }
+  function test(name, body) {
+    if (typeof body !== 'function') throw new Error('test(name, callback) cần một callback.')
+    if (cases.length >= 40) throw new Error('Bản demo hỗ trợ tối đa 40 test cases mỗi lượt.')
+    cases.push({name: String(name), body})
+  }
+  try {
+    const make = new Function(source + '\nreturn createLocker')()
+    const sut = Object.freeze(Object.fromEntries(Object.keys(make()).map(key => [key, (...args) => currentSut[key](...args)])))
+    const describe = (_name, body) => body()
+    new Function('sut', 'test', 'it', 'expect', 'describe', '"use strict";\n' + code)(sut, test, test, expect, describe)
+    if (!cases.length) throw new Error('Bộ test chưa có test case.')
+    let firstMismatch = ''
+    for (const entry of cases) {
+      currentSut = make()
+      assertions = 0
+      try {
+        const outcome = entry.body()
+        if (outcome && typeof outcome.then === 'function') {
+          outcome.catch(() => {})
+          throw new Error('Bản demo chỉ hỗ trợ test đồng bộ.')
+        }
+        if (!assertions) throw new Error('Test cần có ít nhất một assertion.')
+      } catch (error) {
+        const detail = entry.name + ' / ' + error.message
+        if (!(error instanceof AssertionError)) return {status: 'error', detail}
+        if (!firstMismatch) firstMismatch = detail
+      }
+    }
+    return firstMismatch ? {status: 'assertion', detail: firstMismatch} : {status: 'pass', count: cases.length}
+  } catch (error) {
+    return {status: 'error', detail: error.message}
+  }
+}
+
+function rankTeams(teams) {
+  const rows = Object.entries(teams).sort(([a, left], [b, right]) => right.kills.size - left.kills.size || a.localeCompare(b))
+  let rank = 0
+  return rows.map(([name, team], index) => {
+    if (!index || rows[index - 1][1].kills.size !== team.kills.size) rank = index + 1
+    return {name, team, rank}
+  })
+}
+</script>
+<script id="contest-ui">
+const el = id => document.getElementById(id)
+const source = el('sut-source').textContent.trim()
+const api = Object.keys(new Function(source + '\nreturn createLocker()')())
+if (api.length !== Object.keys(publicApi).length || api.some(name => !Object.hasOwn(publicApi, name))) {
+  throw new Error('Khai báo trường nhập không khớp API công khai của SUT.')
+}
+const teams = Object.fromEntries(['ORBIT', 'NOVA', 'PIXEL'].map(name => [name, {kills: new Set(), drafts: {}, results: {}}]))
+const workerURL = URL.createObjectURL(new Blob([
+  runSuite.toString(),
+  "\nself.onmessage = ({data, ports}) => ports[0].postMessage(runSuite(data.source, data.code))"
+], {type: 'text/javascript'}))
+let teamName = 'ORBIT'
+let selected = problems[0]
+let page = 'contest'
+let doc = 'spec'
+let running = null
+
+function node(tag, className, text) {
+  const element = document.createElement(tag)
+  if (className) element.className = className
+  if (text !== undefined) element.textContent = text
+  return element
+}
+
+function button(text, action, className) {
+  const control = node('button', className, text)
+  control.type = 'button'
+  control.addEventListener('click', action)
+  return control
+}
+
+function draft() {
+  return teams[teamName].drafts[selected.id] ??= {
+    mode: 'builder', builders: [], nextTest: 1, activeTest: null, code: '',
+    includeBuilder: true, includeCode: true, error: null
+  }
+}
+
+function activeFieldError(key) {
+  const state = draft()
+  return state.error?.testId === state.activeTest && state.error.field === key ? state.error : null
+}
+
+function clearFieldError(key) {
+  if (!activeFieldError(key)) return
+  draft().error = null
+  const target = el(key)
+  target?.removeAttribute('aria-invalid')
+  target?.removeAttribute('aria-describedby')
+  el(key + '-error')?.remove()
+  if (teams[teamName].results[selected.id]?.validation) {
+    delete teams[teamName].results[selected.id]
+    renderResult()
+  }
+}
+
+function showFieldError(group, control, key) {
+  const error = activeFieldError(key)
+  if (!error) return
+  const message = node('p', 'field-error', error.message)
+  message.id = key + '-error'
+  control.setAttribute('aria-invalid', 'true')
+  control.setAttribute('aria-describedby', message.id)
+  group.append(message)
+}
+
+function labelledSelect(key, label, options, value, onChange) {
+  const group = node('div', 'control-group')
+  const caption = node('label', '', label)
+  caption.htmlFor = key
+  const select = node('select')
+  select.id = key
+  for (const [choice, text] of options) select.append(new Option(text, choice))
+  select.value = value
+  select.addEventListener('change', () => {
+    clearFieldError(key)
+    onChange(select.value)
+  })
+  group.append(caption, select)
+  showFieldError(group, select, key)
+  return group
+}
+
+function typedControl(key, schema, value, onChange) {
+  if (schema.type === 'enum') {
+    return labelledSelect(key, schema.label, [['', 'Chọn giá trị'], ...schema.options], value, onChange)
+  }
+  if (schema.type === 'boolean') {
+    const group = node('fieldset', 'control-group')
+    group.id = key
+    const options = node('div', 'options')
+    for (const [choice, label] of inputOptions(schema)) {
+      const item = node('label')
+      const input = node('input')
+      input.type = 'radio'
+      input.name = key
+      input.value = choice
+      input.checked = value === choice
+      input.addEventListener('change', () => {
+        clearFieldError(key)
+        onChange(choice)
+      })
+      item.append(input, node('span', '', label))
+      options.append(item)
+    }
+    group.append(node('legend', '', schema.label), options)
+    showFieldError(group, group, key)
+    return group
+  }
+  const group = node('div', 'control-group')
+  const caption = node('label', '', schema.label)
+  caption.htmlFor = key
+  const input = node('input')
+  input.id = key
+  input.type = 'number'
+  input.step = '1'
+  input.value = value
+  input.addEventListener('input', () => {
+    clearFieldError(key)
+    onChange(input.value)
+  })
+  group.append(caption, input)
+  showFieldError(group, input, key)
+  return group
+}
+
+function refreshProblems() {
+  const team = teams[teamName]
+  el('team-status').textContent = teamName + ' / ' + team.kills.size + ' điểm'
+  el('problems').replaceChildren(...problems.map(problem => {
+    const score = problem.mutants.filter(id => team.kills.has(id)).length
+    const item = button(problem.id + '. ' + problem.title, () => {
+      selected = problem
+      doc = 'spec'
+      renderContest()
+      el('problems').querySelector('[aria-pressed=true]').focus()
+    }, 'problem')
+    item.setAttribute('aria-pressed', String(problem === selected))
+    item.append(node('small', '', score + '/' + problem.mutants.length + ' mutant'))
+    return item
+  }))
+  el('problem-title').textContent = selected.id + '. ' + selected.title
+  el('problem-score').textContent = selected.mutants.length + ' mutant'
+}
+
+function renderDoc() {
+  const container = el('problem-doc')
+  document.querySelectorAll('[data-doc]').forEach(control => control.setAttribute('aria-pressed', String(control.dataset.doc === doc)))
+  if (doc === 'spec') {
+    const list = node('ul', 'rules')
+    for (const rule of selected.rules) list.append(node('li', '', rule))
+    container.replaceChildren(node('h3', '', 'Đặc tả'), list)
+  } else {
+    const content = node('pre')
+    content.tabIndex = 0
+    content.append(node('code', '', doc === 'source' ? source : selected.starter))
+    container.replaceChildren(content)
+  }
+}
+
+function submissionParts(state) {
+  return {builder: state.builders.length > 0, code: state.code.trim() !== ''}
+}
+
+function updateSubmit() {
+  const state = draft()
+  const parts = submissionParts(state)
+  const control = el('submit')
+  control.disabled = Boolean(running) || !(parts.builder && state.includeBuilder || parts.code && state.includeCode)
+  control.textContent = running?.team === teamName && running.problem === selected ? 'Bot đang chấm bài...' : 'Nộp bộ test'
+  el('tab-builder').textContent = state.builders.length ? 'Dựng test (' + state.builders.length + ')' : 'Dựng test'
+  el('tab-code').textContent = parts.code ? 'Viết code (bản nháp)' : 'Viết code'
+
+  const include = el('include')
+  if (!parts.builder && !parts.code) {
+    if (include.dataset.parts !== '') include.replaceChildren(node('span', 'hint', 'Chưa có test'))
+    include.dataset.parts = ''
+    return
+  }
+  const partKey = String(parts.builder) + String(parts.code)
+  if (include.dataset.parts === partKey) {
+    if (parts.builder) el('include-builder').checked = state.includeBuilder
+    if (parts.code) el('include-code').checked = state.includeCode
+    return
+  }
+  include.dataset.parts = partKey
+  include.replaceChildren()
+  for (const [id, label, property] of [['builder', 'Test dựng bằng form', 'includeBuilder'], ['code', 'Code tự viết', 'includeCode']]) {
+    if (!parts[id]) continue
+    const item = node('label')
+    const checkbox = node('input')
+    checkbox.type = 'checkbox'
+    checkbox.id = 'include-' + id
+    checkbox.checked = state[property]
+    checkbox.addEventListener('change', () => {
+      draft()[property] = checkbox.checked
+      updateSubmit()
+    })
+    item.append(checkbox, node('span', '', label))
+    include.append(item)
+  }
+}
+
+function focusField(key) {
+  const target = el(key)
+  const field = target?.tagName === 'FIELDSET' ? target.querySelector('input') : target
+  field?.focus()
+}
+
+function addBuilder() {
+  const state = draft()
+  const test = {id: state.nextTest++, nextCall: 2, nextCheck: 2,
+    calls: [{id: 1, method: '', args: []}], checks: [{id: 1, ref: '', expected: ''}]}
+  state.builders.push(test)
+  state.activeTest = test.id
+  state.error = null
+  renderComposer()
+  focusField(fieldKey(test, 'call', 1, 'method'))
+}
+
+function renderCall(test, call, index) {
+  const step = node('div', 'step')
+  const head = node('div', 'row split step-header')
+  head.append(node('h4', '', 'Lời gọi ' + (index + 1)), button('Xóa lời gọi', () => {
+    test.calls.splice(index, 1)
+    for (const check of test.checks) {
+      if (check.ref === String(call.id)) Object.assign(check, {ref: '', expected: ''})
+    }
+    draft().error = null
+    renderComposer()
+    focusField('add-call')
+  }, 'quiet'))
+  const key = part => fieldKey(test, 'call', call.id, part)
+  step.append(head, labelledSelect(key('method'), 'Hàm cần gọi', [['', 'Chọn một hàm'], ...api.map(name => [name, name])], call.method, value => {
+    call.method = value
+    call.args = value ? publicApi[value].params.map(() => '') : []
+    for (const check of test.checks) if (check.ref === String(call.id)) check.expected = ''
+    renderComposer()
+    focusField(key('method'))
+  }))
+  if (call.method) {
+    const params = publicApi[call.method].params
+    if (!params.length) step.append(node('p', 'hint assertion-value', 'Hàm này không cần tham số.'))
+    else {
+      const group = node('div', 'arguments')
+      params.forEach((schema, i) => group.append(typedControl(key('arg-' + i), schema, call.args[i], value => { call.args[i] = value })))
+      step.append(group)
+    }
+  }
+  return step
+}
+
+function renderCheck(test, check, index) {
+  const step = node('div', 'step')
+  const head = node('div', 'row split step-header')
+  head.append(node('h4', '', 'Kiểm tra ' + (index + 1)), button('Xóa kiểm tra', () => {
+    test.checks.splice(index, 1)
+    draft().error = null
+    renderComposer()
+    focusField('add-check')
+  }, 'quiet'))
+  const key = part => fieldKey(test, 'check', check.id, part)
+  const calls = test.calls.flatMap((call, i) => call.method ? [[String(call.id), 'Lời gọi ' + (i + 1) + ' / ' + call.method]] : [])
+  step.append(head, labelledSelect(key('ref'), 'Kết quả cần kiểm tra', [['', 'Chọn một lời gọi'], ...calls], check.ref, value => {
+    check.ref = value
+    check.expected = ''
+    renderComposer()
+    focusField(key('ref'))
+  }))
+  const chosen = test.calls.find(call => String(call.id) === check.ref && call.method)
+  if (chosen) {
+    const expected = typedControl(key('value'), publicApi[chosen.method].result, check.expected, value => { check.expected = value })
+    expected.classList.add('assertion-value')
+    step.append(expected)
+  }
+  return step
+}
+
+function renderBuilders() {
+  const state = draft()
+  const list = el('test-list')
+  const editor = el('builder-editor')
+  list.replaceChildren()
+  editor.replaceChildren()
+  if (!state.builders.length) {
+    const empty = node('div', 'empty')
+    empty.append(node('h3', '', 'Bắt đầu từ một test'), node('p', 'muted', 'Chọn hàm cần gọi, nhập dữ liệu rồi xác định kết quả mong đợi.'))
+    editor.append(empty, button('Thêm test', addBuilder, 'secondary'))
+    return
+  }
+  state.builders.forEach((test, index) => {
+    const item = button('Test ' + (index + 1), () => {
+      state.activeTest = test.id
+      renderComposer()
+      focusField('pick-test-' + test.id)
+    })
+    item.id = 'pick-test-' + test.id
+    item.setAttribute('aria-pressed', String(state.activeTest === test.id))
+    list.append(item)
+  })
+  list.append(button('+ Test', addBuilder, 'secondary'))
+  const index = state.builders.findIndex(test => test.id === state.activeTest)
+  const test = state.builders[index]
+  const heading = node('div', 'row split test-title')
+  heading.append(node('h3', '', 'Test ' + (index + 1)), button('Xóa test', () => {
+    state.builders.splice(index, 1)
+    state.activeTest = state.builders[Math.min(index, state.builders.length - 1)]?.id ?? null
+    state.error = null
+    renderComposer()
+    if (state.activeTest) focusField('pick-test-' + state.activeTest)
+    else el('builder-editor').querySelector('button')?.focus()
+  }, 'quiet'))
+  const addCall = button('+ Lời gọi', () => {
+    const id = test.nextCall++
+    test.calls.push({id, method: '', args: []})
+    clearFieldError('add-call')
+    renderComposer()
+    focusField(fieldKey(test, 'call', id, 'method'))
+  }, 'secondary')
+  addCall.id = 'add-call'
+  editor.append(heading, node('h3', 'step-heading', '1. Gọi hàm'),
+    ...test.calls.map((call, i) => renderCall(test, call, i)), addCall)
+  showFieldError(editor, addCall, 'add-call')
+  if (test.calls.some(call => call.method)) {
+    const addCheck = button('+ Kiểm tra', () => {
+      const id = test.nextCheck++
+      test.checks.push({id, ref: '', expected: ''})
+      clearFieldError('add-check')
+      renderComposer()
+      focusField(fieldKey(test, 'check', id, 'ref'))
+    }, 'secondary')
+    addCheck.id = 'add-check'
+    editor.append(node('h3', 'step-heading', '2. Kiểm tra kết quả'),
+      ...test.checks.map((check, i) => renderCheck(test, check, i)), addCheck)
+    showFieldError(editor, addCheck, 'add-check')
+  }
+}
+
+function renderComposer() {
+  const state = draft()
+  for (const mode of ['builder', 'code']) {
+    const selectedMode = state.mode === mode
+    el('tab-' + mode).setAttribute('aria-selected', String(selectedMode))
+    el('tab-' + mode).tabIndex = selectedMode ? 0 : -1
+    el('panel-' + mode).hidden = !selectedMode
+  }
+  if (state.mode === 'builder') renderBuilders()
+  else if (el('manual-code').value !== state.code) el('manual-code').value = state.code
+  updateSubmit()
+}
+
+function switchComposer(mode) {
+  draft().mode = mode
+  renderComposer()
+}
+
+function renderResult() {
+  const container = el('result')
+  if (running?.team === teamName && running.problem === selected) {
+    const line = node('div', 'loading')
+    const spinner = node('span', 'spinner')
+    spinner.setAttribute('aria-hidden', 'true')
+    line.append(spinner, node('span', '', 'Bot đang chấm bài...'))
+    container.replaceChildren(line)
+    return
+  }
+  const entry = teams[teamName].results[selected.id]
+  if (!entry) {
+    container.replaceChildren(node('p', 'muted', 'Kết quả sẽ xuất hiện sau khi bạn nộp bài.'))
+    return
+  }
+  container.replaceChildren(node('h3', entry.ok ? 'good' : 'bad', entry.title), node('p', 'result-detail', entry.detail))
+  if (entry.note) container.append(node('p', 'hint', entry.note))
+}
+
+function renderContest() {
+  refreshProblems()
+  renderDoc()
+  renderComposer()
+  renderResult()
+}
+
+function renderRank() {
+  el('ranking').replaceChildren(...rankTeams(teams).map(({name, team, rank}) => {
+    const row = node('tr', name === teamName ? 'active' : '')
+    row.append(node('td', '', rank))
+    const nameCell = node('th', '', name)
+    nameCell.scope = 'row'
+    row.append(nameCell, node('td', '', team.kills.size + '/5'))
+    for (const problem of problems) {
+      row.append(node('td', '', problem.mutants.filter(id => team.kills.has(id)).length + '/' + problem.mutants.length))
+    }
+    return row
+  }))
+}
+
+function renderPage() {
+  el('contest').hidden = page !== 'contest'
+  el('leaderboard').hidden = page !== 'leaderboard'
+  document.querySelectorAll('[data-page]').forEach(control => control.setAttribute('aria-pressed', String(control.dataset.page === page)))
+  if (page === 'contest') renderContest()
+  else renderRank()
+}
+
+function judgeInWorker(code, inputSource) {
+  return new Promise(resolve => {
+    let worker
+    try { worker = new Worker(workerURL) } catch {
+      resolve({status: 'error', detail: 'Trình duyệt không khởi động được worker chấm bài.'})
+      return
+    }
+    const channel = new MessageChannel()
+    let finished = false
+    const timer = setTimeout(() => finish({status: 'timeout', detail: 'Lượt chạy quá thời gian.'}), 1800)
+    function finish(result) {
+      if (finished) return
+      finished = true
+      clearTimeout(timer)
+      channel.port1.close()
+      worker.terminate()
+      resolve(result)
+    }
+    channel.port1.onmessage = event => finish(event.data)
+    worker.onerror = () => finish({status: 'error', detail: 'Worker chấm bài gặp lỗi.'})
+    worker.postMessage({source: inputSource, code}, [channel.port2])
+  })
+}
+
+async function gradeSubmission(code, problem, team) {
+  const original = await judgeInWorker(code, source)
+  if (original.status !== 'pass') {
+    return {
+      ok: false,
+      title: original.status === 'assertion' ? 'Bộ test fail trên bản gốc' : 'Lượt nộp chưa hợp lệ',
+      detail: original.detail
+    }
+  }
+  const results = await Promise.all(problem.mutants.map(async id => ({
+    id,
+    result: await judgeInWorker(code, variantSource(source, id))
+  })))
+  const kills = results.filter(({result}) => result.status === 'assertion')
+  const fresh = kills.filter(({id}) => !team.kills.has(id))
+  fresh.forEach(({id}) => team.kills.add(id))
+  const errors = results.filter(({result}) => result.status === 'error').length
+  const timeouts = results.filter(({result}) => result.status === 'timeout').length
+  const survived = results.filter(({result}) => result.status === 'pass').length
+  return {
+    ok: true,
+    title: 'Bản gốc PASS / +' + fresh.length + ' điểm',
+    detail: original.count + ' test pass trên bản gốc. ' + kills.length + '/' + results.length + ' mutant được phát hiện. ' + survived + ' mutant còn sống.',
+    note: errors || timeouts ? errors + ' lỗi chạy, ' + timeouts + ' timeout. Các lượt này không tính điểm.' :
+      'Mỗi mutant đã được tính điểm ở lượt trước sẽ giữ nguyên điểm.'
+  }
+}
+
+document.querySelectorAll('[data-page]').forEach(control => control.addEventListener('click', () => {
+  page = control.dataset.page
+  renderPage()
+}))
+document.querySelectorAll('[data-doc]').forEach(control => control.addEventListener('click', () => {
+  doc = control.dataset.doc
+  renderDoc()
+}))
+el('join').addEventListener('submit', event => {
+  event.preventDefault()
+  const candidate = el('team').value.trim().toUpperCase()
+  if (!Object.hasOwn(teams, candidate)) {
+    el('team-status').textContent = 'Mã demo hợp lệ gồm ORBIT, NOVA và PIXEL.'
+    return
+  }
+  teamName = candidate
+  el('team').value = candidate
+  refreshProblems()
+  renderPage()
+})
+const composerTabs = ['builder', 'code']
+composerTabs.forEach((mode, index) => {
+  const tab = el('tab-' + mode)
+  tab.addEventListener('click', () => switchComposer(mode))
+  tab.addEventListener('keydown', event => {
+    let next
+    if (event.key === 'Home') next = 0
+    else if (event.key === 'End') next = composerTabs.length - 1
+    else if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+      const offset = event.key === 'ArrowRight' ? 1 : -1
+      next = (index + offset + composerTabs.length) % composerTabs.length
+    } else return
+    event.preventDefault()
+    switchComposer(composerTabs[next])
+    el('tab-' + composerTabs[next]).focus()
+  })
+})
+el('manual-code').addEventListener('input', event => {
+  draft().code = event.target.value
+  updateSubmit()
+})
+el('submit').addEventListener('click', async () => {
+  if (running) return
+  const problem = selected
+  const team = teams[teamName]
+  let code
+  try {
+    code = compileSuite(draft(), api)
+    draft().error = null
+  } catch (error) {
+    if (error.field) {
+      draft().error = error
+      draft().activeTest = error.testId
+      switchComposer('builder')
+    }
+    team.results[problem.id] = {ok: false, title: 'Kiểm tra lại bộ test', detail: error.message, validation: true}
+    renderResult()
+    if (error.field) focusField(error.field)
+    return
+  }
+  running = {team: teamName, problem}
+  updateSubmit()
+  renderResult()
+  try {
+    const [result] = await Promise.all([
+      gradeSubmission(code, problem, team),
+      new Promise(resolve => setTimeout(resolve, 650))
+    ])
+    team.results[problem.id] = result
+  } catch (error) {
+    team.results[problem.id] = {ok: false, title: 'Chấm bài gặp lỗi', detail: error.message}
+  } finally {
+    running = null
+    refreshProblems()
+    renderResult()
+    updateSubmit()
+    if (page === 'leaderboard') renderRank()
+  }
+})
+renderPage()
+</script>
+</body>
+</html>

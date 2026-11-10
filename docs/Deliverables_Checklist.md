@@ -26,8 +26,8 @@
 | D08 | Source/tests/fixtures/scripts/config và commit được xác định, hướng dẫn chạy khớp | [Source repo](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness), [Source Audit](Source_Audit.md) | 12 test/dry/full mutation profiles đã kiểm chứng; native invalid mutants công bố riêng; source checkpoint 1be4637, chưa push | 09, 11-14, 30 |
 | D09 | Baseline report, ít nhất 3 survivors và 3 manual assertions; AI raw/reviewed candidate trên cùng input | [New audit evidence](../evidence/verification/source-audit-2026-11-06/), [historical joint comparison](../evidence/experiments/integration-and-reproduction/Overall_Comparison.md) | Historical evidence giữ nguyên; kết quả mới và giới hạn theo Source Audit, không thay human review | 12-16 |
 | D10 | Mapping demo setup/basic/advanced, traditional/AI, Data-driven và Checkpoints | Chưa có file hợp nhất `Demo_Coverage_Matrix.md`; xem [Demo Script](Demo_Script.md) | Missing bản hợp nhất; giữ việc bỏ/thay Record and Playback có nguồn | 07-10 |
-| D11 | Activity worksheet có rules, input, hints, response sheet và scoring | [Worksheet](../activity/Activity_Worksheet.md) | Present thiết kế cũ; session activity sẽ chốt SUT và cơ chế mới | 22-23 |
-| D12 | Answer key/rubric và hướng dẫn facilitator; đáp án không phát trước vòng thi | [Facilitator Guide](../activity/Facilitator_Guide.md) | Recovered; kết quả runner là Agent evidence lịch sử, không là audience pilot | 22-23 |
+| D11 | Activity worksheet có rules, input, hints, response sheet và scoring | [Worksheet](../activity/Activity_Worksheet.md) | Updated cho T10 Mutation Lab. Pending human review và pilot | 22-23 |
+| D12 | Answer key/rubric và hướng dẫn facilitator | [Facilitator Guide](../activity/Facilitator_Guide.md) | Updated theo pack đối chứng. Pending facilitator review và diễn tập | 22-23 |
 | D13 | AI-02 theo mẫu, 5 phần và ít nhất 600 từ | [Member forms](../ai-audit/members/), [AI audit index](../ai-audit/README.md) | Present Markdown/PDF; verdict, completeness và review cần đúng người | 27, 31-32 |
 | D14 | AI-03 signed PDF cho từng thành viên | [Member forms](../ai-audit/members/) | Present PDFs; chưa kiểm tra chữ ký hoặc xác nhận nộp | 28, 31 |
 | D15 | AI-04 300 từ theo mẫu | [Member forms](../ai-audit/members/) | Present; reflection do thành viên xác nhận từ trải nghiệm thật | 29 |
@@ -49,8 +49,8 @@
 - [ ] Mỗi thành viên tự chạy tool được; không dùng Agent execution làm member self-run.
 - [ ] Kiểm tra đúng revision, môi trường, fixtures/reset, configs và commands trên máy demo.
 - [ ] Có report/video dự phòng truy được nguồn; nói rõ khi dùng kết quả đã lưu.
-- [ ] Chốt SUT, độ khó và cơ chế hạn chế lợi thế AI cho activity trong session riêng.
-- [ ] Chốt submission, execution, scoring và ranking; chưa xem runner cũ là platform đã hoàn tất.
+- [x] Chọn EShop `1be4637` cho pack thử và triển khai một activity theo feature, hai tab, một tổng điểm.
+- [x] Dựng submission, execution, scoring và ranking. [Validation](../evidence/activity/rebuild-validation-2026-11-10/README.md) ghi kỹ thuật đã chạy.
 - [ ] Pilot với người học thật và kiểm thời lượng tối đa 20 phút.
 - [ ] Chuẩn bị worksheet, facilitator guide/answer key, nhận bài, peer review và tally.
 - [ ] Kiểm chứng original pass và target kill đúng case; không tính setup errors, crashes hoặc Timeout thành assertion kills.
@@ -73,4 +73,4 @@
 
 ## Current Session Boundary
 
-Docs reorganization đã hoàn tất theo xác nhận người dùng. Source Audit đã hoàn tất technical verification và sửa tooling, với implementation được gom trước batch checks. Checklist không thay human acceptance hoặc tracker. SUT/activity platform mới, content review, slides và buổi diễn tập tiếp tục theo CONTEXT.
+Source Audit đã hoàn tất technical verification. Bản local T10 Mutation Lab sẵn sàng cho review. Content review, slides và buổi diễn tập tiếp tục theo CONTEXT. Human acceptance và phân công ghi ở nguồn tương ứng.

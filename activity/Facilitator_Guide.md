@@ -1,87 +1,47 @@
-# Facilitator Guide and Answer Key
+# Facilitator Guide
 
-**Design status:** Khôi phục từ Git revision `f6c69f6`, chưa chạy lại trong session này. Đây là hướng dẫn cho activity cũ; xem [Activity workspace](README.md) cho phạm vi bàn tiếp.
+## Preparation
 
-**Distribution:** Not_submit. Không phát đáp án trước vòng thi. Audience nhận Activity_Worksheet.md. Sandbox cũ tại [previous sandbox](../evidence/activity/previous-sandbox/) dùng để tham khảo việc chuẩn bị và chấm bài.
+- Dùng Docker Compose trên máy seminar. Chuẩn bị pack từ revision `1be4637`, xác nhận hash và chạy toàn bộ reference controls trước khi mở phòng.
+- Mở Participant, Host Console và Projector trên các địa chỉ được ghi trong README của platform. Mở thử URL từ thiết bị học viên dùng cùng mạng.
+- Chuẩn bị bản phát tay [Worksheet](Activity_Worksheet.md), bảng tally và các diff đã chọn. Phần đáp án ở dưới dành cho điều phối viên.
+- Kiểm tra lần lượt join, nộp, xem lỗi từng test, đổi bài review và chốt bảng điểm với người học thử. Ghi thời gian và người xác nhận.
 
-## 1. Prepare before Class
+## Suggested 20-minute flow
 
-Dùng một clone thực hành riêng của workshop starter 6d2e790, Node 24.x. Không dùng checkout nghiên cứu hoặc code đã thêm assertions từ User Guide.
+| Thời gian | Việc làm |
+|---|---|
+| 0 đến 2 phút | Mở phòng, nói quy tắc 1 điểm và trình chiếu 5 diff đã chuẩn bị. |
+| 2 đến 12 phút | Người chơi soạn và nộp assertions. Có thể tiếp tục thử các ca ngoài ví dụ. |
+| 12 đến 16 phút | Đóng nhận bài. Đổi một test để review trong khi queue xử lý các bài đã nhận. |
+| 16 đến 20 phút | Kiểm tra các lượt lỗi, tally, giải thích một assertion và thu phản hồi ngắn. Nếu còn lượt ảnh hưởng điểm, giữ bảng tạm tính. |
 
-~~~sh
-git clone https://github.com/tkob-team/eshop-sut-workshop.git activity-lab
-cd activity-lab
-git switch --detach 6d2e790be54193d44f7e401c59dbdf8283a3f42d
-cd backend
-npm ci
-npm test
-npm install --save-dev --save-exact @stryker-mutator/core@10.0.0 @stryker-mutator/jest-runner@10.0.0
-~~~
+## Answer key
 
-Mở terminal thứ hai tại thư mục `evidence/activity/previous-sandbox/` chứa `run-activity.cjs`. Truyền đường dẫn backend clone vừa tạo và reference.cjs:
+Bộ đối chứng chạy với fixture chuẩn. Các diff 1 đến 5 là mẫu xuyên feature trong cùng phòng. Nếu cần bám nguyên văn brief chỉ dùng checkout, cần chuẩn bị 5 diff checkout đã qua đối chứng và pilot trước khi đổi worksheet.
 
-~~~sh
-node run-activity.cjs "/absolute/path/activity-lab/backend" reference.cjs
-~~~
+| Diff | Mutant | Hành vi đúng và test đối chứng |
+|---|---|---|
+| 1 | orders-4 | Thêm sản phẩm với quantity 2 cho Alice. Đọc giỏ hai lần vẫn thấy 2. Giỏ Bob rỗng. |
+| 2 | orders-68 | Tạo đơn rồi hủy bằng chủ đơn. Lấy ID checkout và đọc lại, trạng thái phải là canceled. |
+| 3 | coupons-33 | Mã LABFIXED còn hợp lệ ở phút 6 trên đơn 250.000 và giảm 35.000. Phút 7 phải từ chối. |
+| 4 | coupons-113 | Tạo mã có 3 lượt. Sau 2 lần ghi nhận vẫn áp dụng được. Sau lần thứ ba phải từ chối. |
+| 5 | auth-32 | Bob bị khóa ở phút 3 và có thể đăng nhập ở phút 4. Alice vẫn đăng nhập được trước đó. |
 
-Thay đường dẫn bằng vị trí thật; Windows chấp nhận dạng C:/... trong dấu ngoặc kép. Runner không clone hay cài packages thay người chuẩn bị. Chỉ chạy trên clone riêng; runner tạo test/activity.test.js, test/activity.candidate.cjs, activity.stryker.json và reports/activity, không sửa server.js.
+Hai biến thể mở rộng trong pack thử là orders-32 và coupons-120. Kiểm tra nội dung message thành công trong checkout và tạo coupon. Giữ diff của hai biến thể này cho phần giải thích sau lượt làm bài.
 
-Runner xác minh commit/source, chạy 5 candidate tests trên original trước, rồi chạy Stryker với disableBail để thu đầy đủ killedBy. Điểm được đối chiếu với tên test K1 đến K5, không dựa riêng vào trạng thái Killed tổng hợp.
+## Review rubric
 
-## 2. Reference Answers
+Một test tốt nêu đúng quy tắc, chọn input phân biệt hai hành vi, dùng expected có căn cứ và pass trên bản gốc. Review ghi lại một điểm tốt và một điểm cần sửa. Điểm ranking lấy từ judge. Lỗi thực thi, timeout và ca chỉ pass trên original cần được giải thích riêng.
 
-~~~js
-K1: ({ empty }) => expect(empty.body).toEqual([])
+## Demo cue
 
-K2: ({ cart, itemA, itemB }) =>
-  expect(cart.body).toEqual([itemA, itemB])
+Mở tính năng Giỏ hàng và đơn hàng. Trong Builder, thêm sản phẩm cho Alice với ID 7, số lượng 2 và đơn giá 50000. Gọi cart hai lần cho Alice. Kiểm tra body[0].quantity của lần đọc thứ hai bằng 2. Bấm Nộp bài để thấy một điểm mới trên bảng chiếu. Mở tab Viết code để chỉ vị trí soạn. Quay lại Builder để kiểm tra nháp. Trong Host Console, chọn tên người chơi rồi mở lượt vừa nộp.
 
-K3: ({ reread, itemA, itemB }) =>
-  expect(reread.body).toEqual([itemA, itemB])
+## Contingency
 
-K4: ({ history, ownId }) =>
-  expect(history.body).toEqual(
-    expect.arrayContaining([expect.objectContaining({ id: ownId })])
-  )
+Nếu URL gián đoạn, giữ lượt đã nhận và hướng dẫn tải lại. Nếu người chơi mất phiên, chọn tên của họ trong Host Console rồi cấp liên kết vào lại. Gửi riêng, dùng một lần trong 10 phút. Nếu máy chấm không phục hồi trong cửa sổ activity, phát worksheet với cùng quy tắc và diff, đổi bài review, dùng runner đối chứng đã kiểm tra nếu còn truy cập được. Ghi tally đã xác minh và ca đang chờ.
 
-K5: ({ canceled }) => expect(canceled.status).toBe('canceled')
-~~~
+## Evidence
 
-K2 phát hiện thiếu thao tác ghi; K3 phát hiện GET phá dữ liệu. Hai mutants khác nhau dù cùng có thể dẫn đến giỏ rỗng. K4 dùng ID thật của fixture, tránh hard-code ID seed. K5 đọc persisted state, không chỉ thông báo HTTP.
-
-Chấp nhận cách viết khác nếu oracle tương đương. Nếu candidate mở rộng thêm yêu cầu như chỉ có đơn của U, review spec rồi chạy kiểm chứng; không chấm theo mức giống đáp án mẫu.
-
-## 3. Run Audience Candidates
-
-Copy candidate.cjs thành file riêng cho từng đội. Điền đúng 5 functions, giữ nguyên keys K1 đến K5. Không dán pseudocode trực tiếp vào file JavaScript.
-
-~~~sh
-node run-activity.cjs "/absolute/path/activity-lab/backend" team-a.cjs
-~~~
-
-Đọc reports/activity/tally.json, lưu toàn bộ reports/activity sang thư mục riêng của đội trước lần chạy tiếp theo. Runner ghi đè output hiện tại. Mỗi đội chạy từ fixtures mới vì Jest mở process mới; không trộn assertions của các đội vào một test set.
-
-Xem original.log và mutation.log khi lỗi. Nếu original fail hoặc thiếu assertion, runner dừng và không tạo tally mới. Không dùng tally cũ để chấm lần chạy lỗi. ReferenceError, lỗi setup hoặc test timeout phải được review lại, không quy thành lỗi đã được assertion phát hiện.
-
-Chỉ chạy code đã facilitator review. Race tính số kills hợp lệ, không tính tốc độ chạy máy. Có thể dùng nhiều clone đã cài sẵn để đáp ứng cửa sổ chấm 4 phút; diễn tập theo số đội thật trước giờ học.
-
-## 4. Baseline and Evidence
-
-Phạm vi gồm lines 286, 293, 314, 335 của server.js. Baseline 36 tests Cart & Orders cho 8 Survived, 0 Killed, 0 Timeout; chọn 5 signatures như worksheet. Đây là baseline dạy học riêng, không thay baseline nghiên cứu của nhóm.
-
-Reference run cần đạt 5 original tests pass và 5/5 target kills, mỗi case có đúng test K tương ứng trong killedBy. Ba mutants ngoài bài không được cộng điểm. Báo lỗi thực thi riêng, không gọi là equivalent. Raw JSON và cấu hình lịch sử được giữ trong [verification](../evidence/activity/previous-sandbox/verification/).
-
-## 5. Facilitation Checklist
-
-- Chuẩn bị 5 diffs, context và worksheet trước giờ, giấu reference.cjs.
-- Kiểm tra reference đạt 5/5; kiểm tra candidate rỗng bị từ chối.
-- Cho đội đọc rule, viết, đổi bài, rồi xác nhận bản chuyển pseudocode nếu có.
-- Ghi original pass và mutant outcome thật vào bảng.
-- Hòa điểm thì đồng hạng; chọn một đội giải thích cách quan sát dữ liệu.
-- Chưa có audience run/pilot thật thì để trống các kết quả tương ứng.
-
-## 6. Troubleshooting
-
-Nếu thiếu sqlite binding, kiểm tra Node 24 và chạy npm ci --ignore-scripts=false. Nếu port 3000 bị chiếm, xác minh harness test/helpers/isolate.js được nạp; tests không cần server listen. Nếu runtime lỗi khi mở rộng phạm vi, quay về config activity đã kiểm chứng; không xóa mutant lỗi khỏi thống kê mà không ghi nhận.
-
-Sandbox là semi-automated workflow: viết/review candidate thủ công, chạy original và mutation cùng tally tự động. Killed vẫn cần xem failure khi có nghi ngờ test fail do nguyên nhân ngoài assertion.
+Sau buổi chạy thử, ghi host, mạng, số người hoặc đội, số phút từng phần, lượt chưa xử lý, phản hồi về Builder/Editor và người review. Technical verification nằm trong [Validation](../evidence/activity/rebuild-validation-2026-11-10/README.md).

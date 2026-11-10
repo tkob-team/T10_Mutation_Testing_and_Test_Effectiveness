@@ -1,0 +1,3 @@
+Backup verified: {"pack":"b9cdead5e48eaf6ca028f1be90b998d8a700264c9fdb41ecb742d6cdbe4be8d1","database":"b2ac19bbe3c727642f8e658dd1171beeb7f0e78350cdf9d2b1bc8eca8ffeb3b0","createdAt":"2026-11-09T19:16:45.158Z"}
+Restore completed with verified input checksums.
+{"sameReport":true,"packHash":"b9cdead5e48eaf6ca028f1be90b998d8a700264c9fdb41ecb742d6cdbe4be8d1","reportHash":"86e24caa57c6b4dafcc761d00a276d97525f0fc576a0659ea09c854f6f00a22f","entrants":6,"state":"FINALIZED"}
