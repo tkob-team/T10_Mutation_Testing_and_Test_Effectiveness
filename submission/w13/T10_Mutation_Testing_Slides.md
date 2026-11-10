@@ -1,40 +1,40 @@
-<!-- Transcribed from T10_Mutation_Testing_Slides.pdf; 22 slides. -->
-<!-- Text and figures follow the original slide order; formatted as Markdown. -->
+<!-- Transcribed and synchronized with T10_Mutation_Testing_Slides(2).pdf; 20 slides. -->
+<!-- Slide order, wording, tables, and figures described in text follow the updated PDF. -->
 
-<!-- Page 1/22 - Cover -->
+<!-- Page 1/20 - Cover -->
 
 # Mutation Testing and Test Effectiveness
 
-**Khoa Công nghệ Thông tin / FIT HCMUS**
+**KHOA CÔNG NGHỆ THÔNG TIN / FIT HCMUS**
 
-**Seminar T10 / Nhóm 12**
+**SEMINAR T10 / NHÓM 12**
 
 - 23120255 - Lê Tấn Hiệp
 - 23120262 - Tống Dương Thái Hòa
 - 23120264 - Nguyễn Phúc Hoàng
 
-*Slide 1/22 - Cover*
+*Slide 1/20 - Cover*
 
 ---
 
-<!-- Page 2/22 - Opening example -->
+<!-- Page 2/20 - Opening example; Section 01: Cơ sở -->
 
 ## Giỏ hàng sai vẫn báo thành công
 
 Cùng thao tác mở giỏ của một tài khoản mới.
 
-| Bản gốc | Biến thể |
+| BẢN GỐC | BIẾN THỂ |
 |---|---|
 | Giỏ trống | Có sẵn một món |
 | Yêu cầu thành công | Yêu cầu thành công |
 
 **Nếu test chỉ kiểm tra thao tác thành công, nó sẽ báo gì?**
 
-*Slide 2/22 - Opening example*
+*Slide 2/20 - Opening example*
 
 ---
 
-<!-- Page 3/22 - Coverage and assertions -->
+<!-- Page 3/20 - Coverage and assertion; Section 01: Cơ sở -->
 
 ## Coverage và assertion
 
@@ -44,46 +44,49 @@ Cùng thao tác mở giỏ của một tài khoản mới.
 
 **Giỏ của tài khoản mới phải trống theo quy tắc đang kiểm tra.**
 
-*Slide 3/22 - Coverage and assertions*
+*Slide 3/20 - Coverage and assertion*
 
 ---
 
-<!-- Page 4/22 - Mutation testing workflow -->
+<!-- Page 4/20 - How StrykerJS creates mutants; Section 01: Cơ sở -->
 
-## Mutation Testing hoạt động thế nào?
+## StrykerJS tạo mutant như thế nào?
 
-Dùng các thay đổi nhỏ để thử độ nhạy của bộ test.
+Nhóm chọn vùng code. StrykerJS áp dụng quy tắc biến đổi.
 
-1. **Bản gốc.** Xác nhận bộ test chạy đạt.
-2. **Tạo biến thể.** Đổi một chi tiết, ví dụ bỏ bước lưu.
-3. **Chạy lại.** Dùng lại bộ test với biến thể.
-4. **Đọc kết quả.** Xem test nào nhận ra sai khác.
+1. **Chọn phạm vi.** Chọn file và khoảng dòng.
+2. **Tìm chỗ khớp.** Tìm biểu thức khớp quy tắc.
+3. **Tạo biến thể.** Từ `a >= b`, sinh riêng `a > b` và `a < b`.
+4. **Chạy test.** Jest kiểm bản gốc rồi chạy từng mutant.
 
-**Mỗi phiên bản có thay đổi được gọi là một mutant.**
+**Một vị trí có thể sinh nhiều mutant. Mỗi lượt test chỉ bật một thay đổi.**
 
-*Slide 4/22 - Mutation testing workflow*
+*Slide 4/20 - How StrykerJS creates mutants*
 
 ---
 
-<!-- Page 5/22 - Boundary inputs -->
+<!-- Page 5/20 - Comparison operator mutation; Section 01: Cơ sở -->
 
-## Dữ liệu nào làm lộ sai khác?
+## Vì sao Stryker chọn dấu so sánh?
 
-Ví dụ minh họa về điều kiện nhận ưu đãi. Bản gốc nhận từ 500 nghìn. Biến thể chỉ nhận trên 500 nghìn.
+Trong vùng đã chọn, dấu `>=` khớp quy tắc so sánh.
 
-| Đầu vào | Kết quả |
+- **Bản gốc:** `total >= 500000`
+- **Mutant:** `total > 500000`
+
+| Đầu vào | Kết quả so sánh |
 |---|---|
 | 499 nghìn | Hai bản đều từ chối |
-| 500 nghìn | Kết quả khác nhau |
+| 500 nghìn | Chỉ bản gốc chấp nhận |
 | 501 nghìn | Hai bản đều chấp nhận |
 
-**Chọn đúng điểm biên và kiểm tra có được ưu đãi hay không.**
+**Test chọn đúng 500 nghìn để hai bản cho kết quả khác nhau.**
 
-*Slide 5/22 - Boundary inputs*
+*Slide 5/20 - Comparison operator mutation*
 
 ---
 
-<!-- Page 6/22 - Mutant states -->
+<!-- Page 6/20 - Mutant statuses; Section 01: Cơ sở -->
 
 ## Đọc trạng thái mutant
 
@@ -95,74 +98,79 @@ Ví dụ minh họa về điều kiện nhận ưu đãi. Bản gốc nhận t�
 | Vấn đề khi chạy | Timeout | Quá thời gian chạy. |
 | Vấn đề khi chạy | RuntimeError | Có lỗi khi thực thi. |
 
-*Slide 6/22 - Mutant states*
+*Slide 6/20 - Mutant statuses*
 
 ---
 
-<!-- Page 7/22 - Mutation score -->
+<!-- Page 7/20 - Mutation score; Section 01: Cơ sở -->
 
 ## Mutation score đo gì?
 
-| Thành phần | Trạng thái được tính |
-|---|---|
-| Tử số, mutant được phát hiện | Killed + Timeout |
-| Mẫu số, mutant hợp lệ | Killed + Timeout + Survived + NoCoverage |
+**Mutant được phát hiện:** `Killed + Timeout`
+
+**Mutant hợp lệ:** `Killed + Timeout + Survived + NoCoverage`
+
+\[
+\text{Mutation score} = \frac{\text{Killed} + \text{Timeout}}{\text{Killed} + \text{Timeout} + \text{Survived} + \text{NoCoverage}}
+\]
 
 **Muốn biết phép kiểm nào bắt được lỗi, đọc test thất bại.**
 
-*Slide 7/22 - Mutation score*
+*Slide 7/20 - Mutation score*
 
 ---
 
-<!-- Page 8/22 - Tool selection -->
+<!-- Page 8/20 - Tool comparison; Section 02: Áp dụng vào EShop -->
 
-## Vì sao chọn StrykerJS?
+## Các công cụ chọn chỗ sửa ra sao?
 
-EShop backend dùng JavaScript và đã có Jest.
+So sánh vị trí được chọn và cách tạo mutant.
 
-| Công cụ | Hệ sinh thái | Phù hợp |
+| Công cụ | Chọn vị trí | Tạo mutant |
 |---|---|---|
-| StrykerJS | JavaScript / TypeScript | Dùng trực tiếp trên EShop |
-| PIT | Java / JVM | Phù hợp dự án Java |
-| mutmut | Python | Phù hợp dự án Python |
+| **StrykerJS** | Node JS/TS khớp quy tắc trong file hoặc dòng đã chọn. | Thay node trên cây cú pháp. Ví dụ đổi `>=` thành `>`. |
+| **PIT** | Lệnh trong bytecode của các class đã chọn. | Sửa lệnh nhảy JVM tương ứng với việc đổi `>=` thành `>`. |
+| **mutmut** | Node trong hàm Python được gọi. Có thể lọc theo coverage. | Dùng LibCST thay node Python. Ví dụ đổi `>=` thành `>`. |
 
-**Tích hợp với bộ test hiện có và truy được từng mutant.**
+**EShop dùng StrykerJS với Jest. AI Agent đề xuất test.**
 
-*Slide 8/22 - Tool selection*
-
----
-
-<!-- Page 9/22 - StrykerJS and Jest -->
-
-## StrykerJS và Jest phối hợp ra sao?
-
-1. **StrykerJS.** Tạo từng biến thể trong phần đã chọn.
-2. **Jest.** Chạy các test với biến thể.
-3. **Báo cáo.** Cho biết chỗ bị đổi, trạng thái và test fail.
-
-**Từ báo cáo, chọn một mutant còn sống để tìm test đang thiếu gì.**
-
-*Slide 9/22 - StrykerJS and Jest*
+*Slide 8/20 - Tool comparison*
 
 ---
 
-<!-- Page 10/22 - AI review workflow -->
+<!-- Page 9/20 - Tool versus analyst; Section 02: Áp dụng vào EShop -->
+
+## Tool chạy gì, người kiểm gì?
+
+| Bước | Nội dung |
+|---|---|
+| **StrykerJS và Jest** | Chạy bản gốc. `perTest` chọn test đi qua chỗ bị đổi. |
+| **Báo cáo** | Ghi trạng thái và test fail. Chỗ chưa được chạy là NoCoverage. |
+| **Người phân tích** | Chọn survivor, đọc phần code bị đổi và tra đặc tả. |
+
+**Cùng test phải pass trên bản gốc và fail tại assertion trên đúng mutant.**
+
+*Slide 9/20 - Tool versus analyst*
+
+---
+
+<!-- Page 10/20 - AI review workflow; Section 02: Áp dụng vào EShop -->
 
 ## AI Agent đề xuất, nhóm kiểm chứng
 
 | Bước | Nội dung |
 |---|---|
-| Đầu vào | Đặc tả, mutant và test hiện có. |
-| Đề xuất | Tình huống và kết quả kỳ vọng. |
-| Rà soát | Rà lại kỳ vọng, rồi chạy lại. |
+| **Đầu vào** | Đặc tả, mutant và test hiện có. |
+| **Đề xuất** | Tình huống và kết quả kỳ vọng. |
+| **Rà soát** | Rà lại kỳ vọng, rồi chạy lại. |
 
 **Chấp nhận phép kiểm khi nó pass trên bản gốc và fail trên đúng mutant.**
 
-*Slide 10/22 - AI review workflow*
+*Slide 10/20 - AI review workflow*
 
 ---
 
-<!-- Page 11/22 - Experiment scope -->
+<!-- Page 11/20 - Experiment scope; Section 02: Áp dụng vào EShop -->
 
 ## Ba phần nghiệp vụ được kiểm tra
 
@@ -170,17 +178,17 @@ Case study trên API của EShop.
 
 | Nghiệp vụ | Phạm vi |
 |---|---|
-| Cart & Orders | Giỏ hàng, đặt và hủy đơn. |
-| Coupons | Mức giảm giá, giới hạn lượt dùng. |
-| Authentication & Users | Đăng nhập, cập nhật tài khoản. |
+| **Cart & Orders** | Giỏ hàng, đặt và hủy đơn. |
+| **Coupons** | Mức giảm giá, giới hạn lượt dùng. |
+| **Authentication & Users** | Đăng nhập, cập nhật tài khoản. |
 
 **Nhóm đọc phản hồi API và kiểm tra dữ liệu sau thao tác.**
 
-*Slide 11/22 - Experiment scope*
+*Slide 11/20 - Experiment scope*
 
 ---
 
-<!-- Page 12/22 - Comparison design -->
+<!-- Page 12/20 - Test suite comparison; Section 02: Áp dụng vào EShop -->
 
 ## Cách so sánh ba bộ test
 
@@ -188,151 +196,183 @@ Giữ cùng bản EShop và cùng tập mutant.
 
 | Bộ test | Thành phần |
 |---|---|
-| Bộ ban đầu | Các test đã có và pass trên bản gốc. |
-| Nhóm bổ sung | Thêm ca từ phân tích quy tắc nghiệp vụ. |
-| AI đã rà soát | Thêm ca có AI hỗ trợ sau khi nhóm kiểm tra. |
+| **Bộ ban đầu** | Các test đã có và pass trên bản gốc. |
+| **Nhóm bổ sung** | Thêm ca từ phân tích quy tắc nghiệp vụ. |
+| **AI đã rà soát** | Thêm ca có AI hỗ trợ sau khi nhóm kiểm tra. |
 
 **Các ca phát hiện lỗi sẵn có trên bản gốc được chạy riêng.**
 
-*Slide 12/22 - Comparison design*
+*Slide 12/20 - Test suite comparison*
 
 ---
 
-<!-- Page 13/22 - Cart and Orders -->
+<!-- Page 13/20 - Cart & Orders results; Section 03: Ca thực tế và kết quả -->
 
 ## Giỏ mới phải trống
 
-**Cart & Orders**
+**Cart & Orders / 150 mutant**
 
-Mở giỏ bằng tài khoản chưa từng thêm sản phẩm.
+**Mutant 6 ở `server.js` dòng 286 đổi `[]` thành `["Stryker was here"]`.**
 
-| Test cũ | Phép kiểm thêm |
-|---|---|
-| Thấy yêu cầu thành công thì pass. | Đọc phản hồi và kiểm tra giỏ không có món nào. |
+### Test cũ
 
-**Cả hai bộ bổ sung đều phát hiện mutant trả giỏ có sẵn một món.**
+Cả hai trả HTTP 200. Test chỉ kiểm tra status nên vẫn pass.
 
-*Slide 13/22 - Cart and Orders*
+### Phép kiểm thêm
+
+Đọc phản hồi và kiểm tra giỏ mới phải là mảng rỗng.
+
+| Chỉ số | Ban đầu | Nhóm bổ sung | AI đã rà soát |
+|---|---:|---:|---:|
+| Tests pass | 36 | 44 | 41 |
+| Killed | 89 | 112 | 102 |
+| Timeout | 18 | 18 | 18 |
+| Survived | 34 | 11 | 21 |
+| NoCoverage | 2 | 2 | 2 |
+| RuntimeError | 7 | 7 | 7 |
+
+**Mutant này Survived ở bộ ban đầu và Killed ở cả hai bộ bổ sung.**
+
+*Slide 13/20 - Cart & Orders results*
 
 ---
 
-<!-- Page 14/22 - Coupons -->
+<!-- Page 14/20 - Coupons results; Section 03: Ca thực tế và kết quả -->
 
 ## Nhập 3 lượt, hệ thống lại lưu 1
 
-**Coupons**
+**Coupons / 120 mutant**
+
+Mutant 113 ở `server.js` dòng 474 đổi `||` thành `&&` khi lưu giới hạn.
 
 | Giới hạn nhập | Bản gốc lưu | Mutant lưu |
-|---|---|---|
+|---:|---:|---:|
 | 1 | 1 | 1 |
 | 3 | 3 | 1 |
 
-**Nhập giới hạn khác 1, sau đó đọc lại giá trị coupon đã lưu.**
+| Chỉ số | Ban đầu | Nhóm bổ sung | AI đã rà soát |
+|---|---:|---:|---:|
+| Tests pass | 26 | 35 | 40 |
+| Killed | 42 | 43 | 41 |
+| Timeout | 18 | 19 | 21 |
+| Survived | 30 | 28 | 28 |
+| NoCoverage | 25 | 25 | 25 |
+| RuntimeError | 5 | 5 | 5 |
 
-*Slide 14/22 - Coupons*
+**Đọc lại giới hạn đã lưu. Mutant từ Survived sang Killed ở cả hai bộ bổ sung.**
+
+*Slide 14/20 - Coupons results*
 
 ---
 
-<!-- Page 15/22 - Authentication and Users -->
+<!-- Page 15/20 - Authentication & Users results; Section 03: Ca thực tế và kết quả -->
 
 ## Sửa hồ sơ phải giữ nguyên quyền
 
-**Authentication & Users**
+**Authentication & Users / 125 mutant**
 
-Đổi tên hiển thị mà không yêu cầu đổi quyền.
+**Mutant 132 ở `server.js` dòng 124 đổi `if (role)` thành `if (true)`.**
 
-| Test cũ | Phép kiểm thêm |
-|---|---|
-| Yêu cầu cập nhật thành công, nhưng có thể bỏ sót thay đổi sai ở quyền. | Đọc lại tài khoản và kiểm tra quyền giữ nguyên. |
+### Test cũ
 
-**Cả hai bộ bổ sung đều phát hiện mutant xử lý quyền sai.**
+Chỉ đổi tên. API báo thành công, nhưng mutant lưu quyền `null`.
 
-*Slide 15/22 - Authentication and Users*
+### Phép kiểm thêm
+
+Đọc lại hồ sơ và kiểm tra quyền vẫn là `user`.
+
+| Chỉ số | Ban đầu | Nhóm bổ sung | AI đã rà soát |
+|---|---:|---:|---:|
+| Tests pass | 26 | 39 | 37 |
+| Killed | 64 | 83 | 74 |
+| Timeout | 18 | 27 | 27 |
+| Survived | 23 | 4 | 13 |
+| NoCoverage | 7 | 3 | 3 |
+| RuntimeError | 13 | 8 | 8 |
+
+**Mutant này Survived ở bộ ban đầu và Killed ở cả hai bộ bổ sung.**
+
+*Slide 15/20 - Authentication & Users results*
 
 ---
 
-<!-- Page 16/22 - Survivor diagnosis -->
+<!-- Page 16/20 - Survived diagnosis; Section 03: Ca thực tế và kết quả -->
 
-## Khi nào một mutant sống sót?
+## Khi nào một mutant survived?
 
-### Kiểm tra lại test
+Survived nghĩa là mutant đã chạy nhưng mọi test vẫn pass.
 
-- Test có đi tới chỗ bị đổi?
+### Đọc một mutant Survived
+
 - Đầu vào có tạo sai khác?
-- Phép kiểm có thấy sai khác?
+- Test có đọc được sai khác?
+- Assertion có kiểm tra chỗ sai?
 
 ### Kiểm tra lại quy tắc
 
 - **Ứng viên tương đương.** Hai bản có thể cho cùng hành vi trên mọi đầu vào hợp lệ.
 - **Mutant có thể sửa lỗi gốc.** Chấp nhận đơn vừa chạm mức tối thiểu theo đặc tả coupon.
 
-*Slide 16/22 - Survivor diagnosis*
+**NoCoverage nghĩa là chưa có test đi qua vị trí bị đổi.**
+
+*Slide 16/20 - Survived diagnosis*
 
 ---
 
-<!-- Page 17/22 - Joint results -->
+<!-- Page 17/20 - Consolidated results; Section 03: Ca thực tế và kết quả -->
 
 ## Kết quả chạy chung ba nghiệp vụ
 
-Mutation score trên cùng tập mutant hợp lệ.
+Cùng **395 mutant**, trong đó **375 hợp lệ** ở cả ba bộ.
+
+### Mutation score (biểu đồ trong slide)
 
 | Bộ test | Mutation score hiển thị |
 |---|---:|
 | Ban đầu | 68% |
-| Bổ sung | 81% |
-| AI đề xuất | 75% |
+| Nhóm | 81% |
+| AI đã rà soát | 75% |
 
-*Slide 17/22 - Joint results*
+### Bảng kết quả chi tiết
 
----
+| Chỉ số | Ban đầu | Nhóm | AI | Cả ba |
+|---|---:|---:|---:|---:|
+| Tests pass | 88 | 118 | 118 | |
+| Killed | 191 | 238 | 217 | 188 |
+| Timeout | 63 | 64 | 66 | 63 |
+| Survived | 87 | 43 | 62 | 42 |
+| NoCoverage | 34 | 30 | 30 | 30 |
+| RuntimeError | 20 | 20 | 20 | 20 |
+| Mutation score | 67,73% | 80,53% | 75,47% | |
 
-<!-- Page 18/22 - Differences between test suites -->
+**343 mutant giữ cùng trạng thái.**
 
-## Vì sao hai bộ bổ sung phát hiện khác nhau?
+**Cả hai bắt thêm 28. Chỉ nhóm bắt 20 (10 Cart & Orders, 10 Auth). Chỉ AI bắt 1 ở Auth.**
 
-**Ví dụ hủy đơn.** Hệ thống báo thành công, nhưng trạng thái lưu lại sai.
+**Nhóm kiểm trạng thái đơn và thông báo Auth. AI thử đúng lúc hết khóa.**
 
-| Nhóm bổ sung | AI đã rà soát |
-|---|---|
-| Có ca đọc lại trạng thái đơn sau khi hủy. | Bộ test lần này thiếu ca kiểm tra tương ứng. |
+**Killed tăng ròng 47 và 26 vì 1 và 3 ca cũ chuyển sang Timeout.**
 
-**Hai bộ bao phủ tình huống khác nhau. Hai biến thể Coupons dùng chung ngữ cảnh AI.**
-
-*Slide 18/22 - Differences between test suites*
-
----
-
-<!-- Page 19/22 - Improving an assertion -->
-
-## Cách cải thiện một test đang bỏ sót lỗi
-
-1. Chọn đầu vào làm lộ khác biệt.
-2. Kiểm tra kết quả theo quy tắc nghiệp vụ.
-3. Chạy lại trên bản gốc và mutant.
-
-**Ưu tiên kiểm tra số tiền, trạng thái đơn và quyền tài khoản.**
-
-*Slide 19/22 - Improving an assertion*
+*Slide 17/20 - Consolidated results*
 
 ---
 
-<!-- Page 20/22 - Live demo -->
+<!-- Page 18/20 - Live demo; Section 04: Thực hành và thảo luận -->
 
 ## Live Demo
 
-Kiểm tra giới hạn dùng coupon.
-
 **10 phút / StrykerJS và AI Agent**
 
-1. Mở báo cáo và xem mutant còn sống.
-2. Xem đề xuất từ AI và rà lại kỳ vọng.
-3. Kiểm chứng trên bản gốc và mutant.
+1. Mở config cùng các loại Mutant
+2. Xem report sinh trước
+3. Thử tự kill mutant bằng cách sửa test
+4. Kill mutant manual và bằng ứng dụng AI
 
-*Slide 20/22 - Live demo*
+*Slide 18/20 - Live demo*
 
 ---
 
-<!-- Page 21/22 - Audience activity -->
+<!-- Page 19/20 - Class activity; Section 04: Thực hành và thảo luận -->
 
 ## Kill the Mutant
 
@@ -345,13 +385,15 @@ Một phòng T10 Mutation Lab cho cả lớp.
 3. Dựng hoặc viết test rồi đổi bài góp ý.
 4. Nộp bài ở tab đang soạn.
 
-**Bản gốc phải pass trước khi chấm. Mỗi mutant mới được phát hiện hợp lệ cộng 1 điểm.**
+**Bản gốc phải pass trước khi chấm.**
 
-*Slide 21/22 - Audience activity*
+**Mỗi mutant mới được phát hiện hợp lệ cộng 1 điểm.**
+
+*Slide 19/20 - Class activity*
 
 ---
 
-<!-- Page 22/22 - Q&A -->
+<!-- Page 20/20 - Q&A; Section 04: Thực hành và thảo luận -->
 
 ## Q&A
 
@@ -359,4 +401,4 @@ Một phòng T10 Mutation Lab cho cả lớp.
 
 **ANY QUESTION BRUH?**
 
-*Slide 22/22 - Q&A*
+*Slide 20/20 - Q&A*
