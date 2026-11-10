@@ -2,16 +2,28 @@
 
 ## Task
 
-Tạo test để tìm hành vi mà starter tests chưa phát hiện trong EShop. Chọn tính năng để đọc quy tắc. Mọi test đều làm trong cùng một phòng. Khi nộp bài, máy chấm kiểm tra suite trên bản gốc trước khi chạy các biến thể.
+Viết một assertion cho mỗi diff trong năm ca checkout và đơn hàng của EShop. Dùng cùng phòng T10 Mutation Lab trong tối đa 20 phút. Năm ca hướng dẫn thuộc Cart and Orders. Máy chấm dùng cùng pack cho cả phòng và kiểm tra suite trên bản gốc trước khi chạy các biến thể.
 
 ## Steps
 
-1. Mở link T10 Mutation Lab do facilitator cung cấp và nhập tên hiển thị.
+1. Mở link T10 Mutation Lab do điều phối viên cung cấp, nhập tên hiển thị và chọn nhóm nếu phòng yêu cầu.
 2. Xem các diff được facilitator trình chiếu. Với mỗi diff, ghi điều kiện kích hoạt và kết quả đúng. Có thể tự tìm thêm ca từ quy tắc, source gốc và starter tests.
 3. Mở Dựng test hoặc Viết code. Chọn tình huống dữ liệu, thêm các lời gọi rồi kiểm tra kết quả. Dùng ca chuẩn nếu không cần điều kiện ban đầu khác.
 4. Bấm Nộp bài ở tab đang soạn. Nếu có test chưa đạt, xem bước lỗi, đối chiếu giá trị nhận được với quy tắc, sửa rồi nộp lại.
 5. Chia sẻ một test với người review. Giải thích test gap, input, kết quả mong đợi và lý do biến thể có thể bị phát hiện.
 6. Xem tally. Mỗi mutant được phát hiện bằng assertion hợp lệ cộng 1 điểm lần đầu. Phần đang chấm hoặc lỗi thực thi có trạng thái riêng.
+
+## Five checkout cases
+
+Mở Cart and Orders và dùng fixture chuẩn. Điều phối viên chiếu diff theo thứ tự dưới đây. Ghi lại điều kiện kích hoạt và kết quả theo quy tắc trước khi viết assertion.
+
+| Diff | Mutant | Phép thử gợi ý |
+|---|---|---|
+| 1 | orders-32 | Checkout thành công. Xem nội dung phản hồi xác nhận tạo đơn. |
+| 2 | orders-38 | Checkout rồi đọc danh sách đơn của chủ đơn. Dùng ID vừa nhận để đối chiếu. |
+| 3 | orders-51 | Dùng tài khoản khác để hủy một đơn vừa tạo. Kiểm tra mã HTTP và nội dung lỗi. |
+| 4 | orders-68 | Hủy đơn bằng chủ đơn. Đọc lại đơn để xác định trạng thái đã lưu. |
+| 5 | orders-63 | Hủy cùng một đơn lần thứ hai. Quan sát phản hồi từ chối thao tác. |
 
 ## Response sheet
 

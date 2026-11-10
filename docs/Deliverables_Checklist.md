@@ -18,26 +18,26 @@
 |---|---|---|---|---|
 | D01 | Proposal ngắn, tối đa 1 trang; 3 candidates, 5 tiêu chí, 3 lý do, AI disclosure | [Tool Proposal](Tool_Survey_Proposal.md) | Present; review nội dung và độ dài khi hoàn thiện | 04-06 |
 | D02 | Survey chi tiết và seminar scope/proposal có sources | [Tool Survey](Tool_Survey.md), [Seminar Proposal](Seminar_Proposal.md) | Present; PDF exports cũ chưa đồng bộ sau sửa | 02-06 |
-| D03 | User Guide English với ít nhất 6 phần bắt buộc | [User Guide](User_Guide.md) | Present; prose hiện chủ yếu tiếng Việt, reproduction còn cần audit | 08-09, 11, 17 |
-| D04 | Guide có ít nhất 3 Failure Modes thật, troubleshooting và references | [User Guide](User_Guide.md) | Present; kiểm chứng nội dung theo source/evidence | 15, 18, 31 |
-| D05 | Báo cáo lý thuyết, phương pháp, kết quả manual/AI, equivalent candidates và giới hạn | [Seminar Report](Seminar_Report.md) | Present; audit source trước, rồi review kỹ nội dung | 03, 12-15, 20 |
-| D06 | Slides dùng template, đầy đủ nội dung, chữ lớn/nền sáng; không giới hạn count theo người dùng | [Slides workspace](slides/README.md) | Present; chưa dựng lại hoặc kiểm tra native render | 20, 25 |
+| D03 | User Guide English với ít nhất 6 phần bắt buộc | [User Guide](User_Guide.md) | W13 English guide có 8 phần và dùng source archive 1be4637 | 08-09, 11, 17 |
+| D04 | Guide có ít nhất 3 Failure Modes thật, troubleshooting và references | [User Guide](User_Guide.md) | Đủ ba Failure Modes, troubleshooting và references. Các kết quả tham chiếu từ Source Audit | 15, 18, 31 |
+| D05 | Báo cáo lý thuyết, phương pháp, kết quả manual/AI, equivalent candidates và giới hạn | [Seminar Report](Seminar_Report.md) | W13 MD/PDF tách historical joint run và source audit, cập nhật activity và reproduction | 03, 12-15, 20 |
+| D06 | Slides dùng template, đầy đủ nội dung, chữ lớn/nền sáng; không giới hạn count theo người dùng | [Slides workspace](slides/README.md) | W13 có 22 slide, transcript và PDF. Native rehearsal Pending | 20, 25 |
 | D07 | Video 5-8 phút, English narration, không nhạc nền; MP4 tối đa 100 MB hoặc link theo quyết định áp dụng | [Video Link](Demo_Video_Link.md), [Demo Script](Demo_Script.md) | Present link/script; duration, language, media và access Pending | 07-10, 19, 21 |
 | D08 | Source/tests/fixtures/scripts/config và commit được xác định, hướng dẫn chạy khớp | [Source repo](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness), [Source Audit](Source_Audit.md) | 12 test/dry/full mutation profiles đã kiểm chứng; native invalid mutants công bố riêng; source checkpoint 1be4637, chưa push | 09, 11-14, 30 |
 | D09 | Baseline report, ít nhất 3 survivors và 3 manual assertions; AI raw/reviewed candidate trên cùng input | [New audit evidence](../evidence/verification/source-audit-2026-11-06/), [historical joint comparison](../evidence/experiments/integration-and-reproduction/Overall_Comparison.md) | Historical evidence giữ nguyên; kết quả mới và giới hạn theo Source Audit, không thay human review | 12-16 |
-| D10 | Mapping demo setup/basic/advanced, traditional/AI, Data-driven và Checkpoints | Chưa có file hợp nhất `Demo_Coverage_Matrix.md`; xem [Demo Script](Demo_Script.md) | Missing bản hợp nhất; giữ việc bỏ/thay Record and Playback có nguồn | 07-10 |
-| D11 | Activity worksheet có rules, input, hints, response sheet và scoring | [Worksheet](../activity/Activity_Worksheet.md) | Updated cho T10 Mutation Lab. Pending human review và pilot | 22-23 |
-| D12 | Answer key/rubric và hướng dẫn facilitator | [Facilitator Guide](../activity/Facilitator_Guide.md) | Updated theo pack đối chứng. Pending facilitator review và diễn tập | 22-23 |
-| D13 | AI-02 theo mẫu, 5 phần và ít nhất 600 từ | [Member forms](../ai-audit/members/), [AI audit index](../ai-audit/README.md) | Present Markdown/PDF; verdict, completeness và review cần đúng người | 27, 31-32 |
+| D10 | Mapping demo setup/basic/advanced, traditional/AI, Data-driven và Checkpoints | [Demo Coverage](Demo_Script.md#9-demo-coverage) | Mapping theo từng scene. Playback và rehearsal Pending | 07-10 |
+| D11 | Activity worksheet có rules, input, hints, response sheet và scoring | [Worksheet](../activity/Activity_Worksheet.md) | W13 dùng năm diff checkout và đơn hàng trong pack đã đối chứng. Pilot Pending | 22-23 |
+| D12 | Answer key/rubric và hướng dẫn facilitator | [Facilitator Guide](../activity/Facilitator_Guide.md) | W13 có diff, expected, rubric và tally. Facilitator review và diễn tập Pending | 22-23 |
+| D13 | AI-02 theo mẫu, 5 phần và ít nhất 600 từ | [Member forms](../ai-audit/members/), [W13 Addendum](../submission/w13/AI_Usage_Declaration/W13_AI_Usage_Addendum.md) | Có provenance mới cho w13. Verdict và review cá nhân Pending | 27, 31-32 |
 | D14 | AI-03 signed PDF cho từng thành viên | [Member forms](../ai-audit/members/) | Present PDFs; chưa kiểm tra chữ ký hoặc xác nhận nộp | 28, 31 |
 | D15 | AI-04 300 từ theo mẫu | [Member forms](../ai-audit/members/) | Present; reflection do thành viên xác nhận từ trải nghiệm thật | 29 |
-| D16 | Final Reflection 300 từ English | Chưa có file riêng `Final_Reflection.md` | Missing file riêng; cần quyết định tách/gộp với AI-04 | 29 |
-| D17 | Phân công và đóng góp có minh chứng | [Contribution workbook](Contribution_Summary.xlsx), [records](../evidence/contributions/), [Git log snapshot](../evidence/coordination/Git_Commit_Log_2026-10-23.md) | Present; workbook giữ nguyên, status/assignee theo tracker, không suy từ Git author | 02, 30-31 |
+| D16 | Final Reflection 300 từ English | [W13 Final Reflection](../submission/w13/Final_Reflection.md) | Có bản thảo 300 từ dựa trên evidence. Tác giả cần bổ sung hoặc xác nhận phần trải nghiệm cá nhân | 29 |
+| D17 | Phân công và đóng góp có minh chứng | [Contribution workbook](Contribution_Summary.xlsx), [records](../evidence/contributions/), [W13 Git log](../submission/w13/Git_Commit_Log.md) | Git log cập nhật 10/11. Workbook có 70 dòng. Tracker read-only ghi 71 Done, chênh P-A06. Giữ số liệu và công thức theo mốc workbook | 02, 30-31 |
 | D18 | Peer review cho 2 nhóm: mỗi nhóm 3 strengths, 3 suggestions gắn guide section, 1 câu hỏi và cách trả lời | Chưa có bản reviews thật | Missing inputs và reviews, không dùng template thay nội dung đã làm | 34 |
 | D19 | Audience feedback thật và action items sau seminar | Chưa có bản tổng hợp thật | Pending sự kiện và dữ liệu người tham gia | 26, 32 |
 | D20 | Evidence review scope và trình bày thử với GV | [Context lịch sử](../evidence/coordination/Context_Before_Reorganization.md) | Scope ban đầu đã được người dùng xác nhận; chưa thấy record rehearsal cụ thể | 02, 06, 31 |
 | D21 | Chia sẻ guide/video/worksheet qua Moodle ít nhất 3 ngày làm việc trước seminar | Cần link post và version | Pending evidence chia sẻ/access, không suy từ file local | 24 |
-| D22 | Bộ nộp đúng kênh, đủ sources, access và receipt | [Snapshots](../submission/) | Có snapshots w3/w6; tình trạng nộp thực tế chưa xác minh | 21, 24, 30 |
+| D22 | Bộ nộp đúng kênh, đủ sources, access và receipt | [W13](../submission/w13/) | Có bộ tài liệu kỹ thuật w13. Video trên slide, dữ liệu sau seminar, xác nhận cá nhân và receipt còn Pending | 21, 24, 30 |
 
 ## Presentation Readiness
 
@@ -73,4 +73,4 @@
 
 ## Current Session Boundary
 
-Source Audit đã hoàn tất technical verification. Bản local T10 Mutation Lab sẵn sàng cho review. Content review, slides và buổi diễn tập tiếp tục theo CONTEXT. Human acceptance và phân công ghi ở nguồn tương ứng.
+W13 đã cập nhật guide, report, worksheet, answer key và hồ sơ provenance. Link video trên slide do thành viên phụ trách bổ sung. Hoàn tất Audience Feedback Aggregated từ minute papers và bài nộp thật sau seminar. Peer review cần tên hai nhóm được phân và guide của từng nhóm. Các thành viên tự xác nhận reflection, disclosure và chữ ký theo bản cuối. Trạng thái tracker được giữ theo mốc nhóm chốt.

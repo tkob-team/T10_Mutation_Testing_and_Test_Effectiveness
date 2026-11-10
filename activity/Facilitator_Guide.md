@@ -2,7 +2,7 @@
 
 ## Preparation
 
-- Dùng Docker Compose trên máy seminar. Chuẩn bị pack từ revision `1be4637`, xác nhận hash và chạy toàn bộ reference controls trước khi mở phòng.
+- Dùng Docker Compose trên máy seminar. Chuẩn bị pack 69 mutant từ revision `1be4637`, xác nhận hash và chạy reference controls trước khi mở phòng.
 - Mở Participant, Host Console và Projector trên các địa chỉ được ghi trong README của platform. Mở thử URL từ thiết bị học viên dùng cùng mạng.
 - Chuẩn bị bản phát tay [Worksheet](Activity_Worksheet.md), bảng tally và các diff đã chọn. Phần đáp án ở dưới dành cho điều phối viên.
 - Kiểm tra lần lượt join, nộp, xem lỗi từng test, đổi bài review và chốt bảng điểm với người học thử. Ghi thời gian và người xác nhận.
@@ -18,17 +18,17 @@
 
 ## Answer key
 
-Bộ đối chứng chạy với fixture chuẩn. Các diff 1 đến 5 là mẫu xuyên feature trong cùng phòng. Nếu cần bám nguyên văn brief chỉ dùng checkout, cần chuẩn bị 5 diff checkout đã qua đối chứng và pilot trước khi đổi worksheet.
+Bộ đối chứng dùng fixture chuẩn và năm survivor của luồng checkout và quản lý đơn trong pack 69 mutant. Chuẩn bị các diff từ `backend/server.js` tại revision `1be4637`. Dùng ID và dòng dưới đây để chiếu đúng thay đổi. Giữ phần expected dành cho điều phối viên.
 
-| Diff | Mutant | Hành vi đúng và test đối chứng |
-|---|---|---|
-| 1 | orders-4 | Thêm sản phẩm với quantity 2 cho Alice. Đọc giỏ hai lần vẫn thấy 2. Giỏ Bob rỗng. |
-| 2 | orders-68 | Tạo đơn rồi hủy bằng chủ đơn. Lấy ID checkout và đọc lại, trạng thái phải là canceled. |
-| 3 | coupons-33 | Mã LABFIXED còn hợp lệ ở phút 6 trên đơn 250.000 và giảm 35.000. Phút 7 phải từ chối. |
-| 4 | coupons-113 | Tạo mã có 3 lượt. Sau 2 lần ghi nhận vẫn áp dụng được. Sau lần thứ ba phải từ chối. |
-| 5 | auth-32 | Bob bị khóa ở phút 3 và có thể đăng nhập ở phút 4. Alice vẫn đăng nhập được trước đó. |
+| Diff | Mutant | Thay đổi để chiếu | Test đối chứng |
+|---|---|---|---|
+| 1 | orders-32, dòng 306 | Message `Checkout successful` thành chuỗi rỗng. | Checkout bằng Alice, tổng 200000. Kiểm tra message có `Checkout successful`. |
+| 2 | orders-38, dòng 314 | Tham số truy vấn `[req.user.id]` thành `[]`. | Checkout bằng Alice. Lấy ID trả về rồi đọc danh sách của Alice. Kiểm tra ID và trạng thái `pending`. |
+| 3 | orders-51, dòng 326 | Body 404 `{ error: "Order not found" }` thành `{}`. | Checkout bằng Alice, thử hủy bằng Bob. Kiểm tra HTTP 404 và `error` có `Order not found`. |
+| 4 | orders-68, dòng 335 | Giá trị lưu `"canceled"` thành chuỗi rỗng. | Checkout rồi hủy bằng Alice. Đọc lại theo ID và kiểm tra trạng thái `canceled`. |
+| 5 | orders-63, dòng 330 | Body 400 `{ error: "Cannot cancel this order." }` thành `{}`. | Checkout bằng Alice rồi hủy hai lần. Kiểm tra lần hai trả 400 và `error` có `Cannot cancel`. |
 
-Hai biến thể mở rộng trong pack thử là orders-32 và coupons-120. Kiểm tra nội dung message thành công trong checkout và tạo coupon. Giữ diff của hai biến thể này cho phần giải thích sau lượt làm bài.
+Các assertion về message là phép kiểm hợp đồng phản hồi được runner đối chứng. Với mỗi bài, phân biệt việc xác minh message, mã HTTP và trạng thái lưu. Người chơi có thể phát hiện thêm mutant khác trong pack cùng phòng.
 
 ## Review rubric
 

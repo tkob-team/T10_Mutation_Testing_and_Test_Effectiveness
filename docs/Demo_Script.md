@@ -201,3 +201,16 @@ Mở `server.js`, tìm cùng dòng 474 và replacement. Chỉ trạng thái `Kil
 - Khi dựng video, giữ đủ phần cài đặt, chạy tests, phân tích mutant và kiểm chứng assertions/AI. Mục tiêu 5 đến 8 phút, không nhạc nền, ưu tiên 1080p và MP4 tối đa 100 MB.
 
 Nguồn đối chiếu: [Baseline Manifest](../evidence/experiments/domain-runs/Baseline_Manifest.md), [Coupons evidence](../evidence/experiments/domain-runs/runs/Thai_Hoa/Coupons-extensions-2026-10-23-agent/README.md) và [Codex provenance](../evidence/experiments/domain-runs/runs/Thai_Hoa/D04-merge-2026-10-23-agent/G02-Codex/PROVENANCE.md).
+
+## 9. Demo Coverage
+
+| Requirement | Scene | Evidence to show |
+|---|---|---|
+| Setup | Preparation, Scene 1 | Revision, Node/npm versions, npm ci và scripts. Dùng User Guide khi diễn tập với source_code.zip w13. |
+| Traditional basic | Scenes 2 and 3 | Jest baseline pass. Mở report StrykerJS và xác định survivor theo vị trí, mutator và replacement. |
+| Traditional advanced | Scenes 4 and 6 | Chạy original với assertion mới, rồi kiểm chứng cùng mutant bằng bộ manual. Đối chiếu MF-01 và report. |
+| AI basic and advanced | Scene 5 | Trình bày đầu vào và đề xuất Codex đã lưu, rà oracle và fixture, chạy original rồi kiểm chứng mutant. |
+| Data-driven testing | Scene 5 | Chỉ test.each với giới hạn 2 và 4. Mỗi input có kỳ vọng lưu tương ứng. |
+| Checkpoints | Scenes 4 and 5 | Kiểm tra HTTP thành công, đọc lại giá trị đã lưu và xác nhận assertion thất bại trên đúng mutant. |
+
+Mở raw evidence trong rehearsal để đối chiếu đoạn thực thi. Ghi rõ khi chiếu report đã lưu.

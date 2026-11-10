@@ -14,7 +14,7 @@
 
 **Thành viên thực hiện**
 
-- Lê Tấn Hiệp - 23129255
+- Lê Tấn Hiệp - 23120255
 - Tống Dương Thái Hòa - 23120262
 - Nguyễn Phúc Hoàng - 23120264
 
@@ -663,7 +663,7 @@ Comparison Auth khớp 125 signatures giữa baseline, manual và reviewed AI [2
 
 Trong manual, năm kills dựa trực tiếp vào FR-02/03/04; 18 dựa trên conventions body/HTTP khi specification không định nghĩa đủ. Reviewed AI có năm spec-based kills, tám convention kills và một lock-expiry interpretation. Candidate test.failing ban đầu bị loại vì tính một mutant sửa bug role thành kill. Report giữ các giới hạn này thay vì gọi mọi kill là một lỗi nghiệp vụ độc lập.
 
-### 6.7. Thực thi chung ba domains
+### 6.7. Historical Joint Run
 
 Lần thực thi chung chạy mới ba conditions trong local clone riêng từ frozen 806ba19, với branches codex/s4-overall-baseline, codex/s4-overall-manual và codex/s4-overall-ai. Scope là hợp bốn ranges: server.js:20-135, 280-349, 355-492, 510-568. Jest projects giữ harness Auth riêng với Cart/Coupons; defect profiles không tham gia. Production, package/lock và baseline test files được đối chiếu SHA-256 trước/sau [22].
 
@@ -679,9 +679,21 @@ Manual condition dùng Cart b77f5d6, extended Coupons source snapshot và Auth F
 
 Cả ba reports khớp 395 signatures và normalized source. So joint baseline, manual có 48 mutant Survived/NoCoverage chuyển sang Killed; AI có 28. Intersection added-kill là 27, manual-only 21, AI-only 1. Từng state transition và detecting tests được giữ trong mapping [22].
 
-Các score trên lấy trực tiếp từ counts của run chung, không cộng hoặc lấy trung bình S3 domain scores. Joint test selection tăng cross-domain coverage, nên kết quả baseline này có thể khác tổng counts domain cũ. RuntimeError và Timeout có thể đổi phân loại; chỉ transitions từ Survived/NoCoverage sang Killed mới được gọi là added assertion kills. Native SQLite crashes được giữ trong logs. Đoạn cuối joint AI run có Auth guide reproduction chạy đồng thời ở clone riêng; machine load không được kiểm soát, không suy causal effect từ timeout changes. Số tests tổng hai variants có thể bằng nhau nhưng phân bổ, scenarios, generation context và oracle basis khác nhau; không suy ra authorship/model superiority.
+Các score trên lấy trực tiếp từ counts của run chung, không cộng hoặc lấy trung bình S3 domain scores. Joint test selection tăng cross-domain coverage, nên kết quả baseline này có thể khác tổng counts domain cũ. RuntimeError và Timeout có thể đổi phân loại; Các chuyển trạng thái từ Survived hoặc NoCoverage sang Killed là kết quả do Stryker ghi. Muốn xác nhận assertion kill cần xem test thất bại và đối chứng với bản gốc. Native SQLite crashes được giữ trong logs. Đoạn cuối joint AI run có Auth guide reproduction chạy đồng thời ở clone riêng; machine load không được kiểm soát, không suy causal effect từ timeout changes. Số tests tổng hai variants có thể bằng nhau nhưng phân bổ, scenarios, generation context và oracle basis khác nhau; không suy ra authorship/model superiority.
 
 Source postflight phát hiện SUT chính nhận commit ngoài phiên 4b28756 để sửa package.json. Runner lần đầu dừng ở preservation assertion sau khi đủ ba mutation commands hoàn tất; raw reports vẫn được giữ. Runtime frozen production/package/tests không đổi qua ba profiles. Xem recovery record và manifest trong [22]; không báo SUT chính giữ nguyên HEAD.
+
+### 6.8. Source Audit Joint Run
+
+Ngày 06/11/2026, Codex chạy lại ba bộ test với harness lưu tại 1be4637 và production khớp frozen revision 806ba19. Audit đối chiếu cùng 395 signatures, với 375 mutant hợp lệ chung và 20 RuntimeError do native crash trong mỗi bộ. Đây là nguồn số liệu của slide 17. [Source Audit](../../docs/Source_Audit.md#joint-comparison)
+
+| Bộ test | Tests pass | Killed | Timeout | Survived | NoCoverage | RuntimeError | Tool score |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Baseline | 88 | 191 | 63 | 87 | 34 | 20 | 67,73% |
+| Manual | 118 | 238 | 64 | 43 | 30 | 20 | 80,53% |
+| Reviewed AI | 118 | 217 | 66 | 62 | 30 | 20 | 75,47% |
+
+So với Bảng 6.8 lịch sử, hai RuntimeError ở baseline chuyển sang Timeout và sáu Timeout ở reviewed AI chuyển sang Killed. Manual giữ nguyên trạng thái. Score của reviewed AI giữ nguyên vì Killed và Timeout đều nằm trong tử số. Audit ghi 48 và 29 mutant chuyển từ Survived hoặc NoCoverage sang Killed trong hai bộ bổ sung. Ba ca Cart, Coupons và Auth được đối chứng riêng ở mức assertion. Kết quả do Agent chạy, tách khỏi member self-run và human review.
 
 <a id="chuong-7"></a>
 
@@ -768,7 +780,7 @@ Khi test count tăng nhưng mutation results không đổi, nên kiểm tra adeq
 
 Seminar đã xây dựng workflow Mutation Testing trên EShop backend với frozen baseline, test isolation, separate defect profile và domain mutation reports. Baseline 88 tests pass hỗ trợ execution; 54 separate defect cases giúp công bố limitations của original implementation.
 
-Cart results cho thấy thêm response/database assertions phát hiện changes mà status-only tests bỏ sót: manual suite thêm 23 kills, AI-assisted suite thêm 13, trong đó 13 mutants được cả hai phát hiện. Coupons initial variants cùng thêm 2 kills tại usage-limit expression; extension tăng test count nhưng không tăng kills. Auth đã có S3 manual/reviewed-AI comparison với 23/14 added kills; năm kills mỗi condition có basis trực tiếp từ specification, các kills còn lại cần xét convention hoặc interpretation [21]. Lần thực thi chung ba domains trên 395 mutants cho score 67,56% ở baseline, 80,53% ở manual và 75,47% ở reviewed AI; manual thêm 48 và AI thêm 28 assertion kills, trong đó 27 mutants được cả hai phát hiện [22].
+Cart results cho thấy thêm response/database assertions phát hiện changes mà status-only tests bỏ sót: manual suite thêm 23 kills, AI-assisted suite thêm 13, trong đó 13 mutants được cả hai phát hiện. Coupons initial variants cùng thêm 2 kills tại usage-limit expression; extension tăng test count nhưng không tăng kills. Auth đã có S3 manual/reviewed-AI comparison với 23/14 added kills; năm kills mỗi condition có basis trực tiếp từ specification, các kills còn lại cần xét convention hoặc interpretation [21]. Lần thực thi chung ba domains trên 395 mutants cho score 67,56% ở baseline, 80,53% ở manual và 75,47% ở reviewed AI; manual thêm 48 và AI thêm 28 tool Killed từ trạng thái Survived hoặc NoCoverage, trong đó 27 mutants được cả hai phát hiện [22].
 
 Kết quả ủng hộ việc dùng Mutation Testing như feedback để xem lại test data và oracle. Nó chưa đủ để kết luận một model hoặc một phương án luôn tốt hơn, cũng chưa chứng minh toàn bộ EShop đáp ứng specification.
 
@@ -856,7 +868,19 @@ Các bước tiếp theo gồm bổ sung bước nạp manual/AI tests vào guid
 
 ## Appendix A. Reproduction procedure
 
-### A.1. Source version và prerequisites
+### A.1. Source Versions and Prerequisites
+
+File source_code.zip trong w13 khớp toàn bộ tracked files của [SUT audit 1be4637](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/tree/1be4637e20241054e23b99c8e2412fd2e7cbbc68). Để tái lập mục 6.8, giải nén ZIP, mở thư mục backend và dùng Node.js 24.16.0 với npm 12.0.2 như audit. Xem [User Guide](User_Guide.md) và TESTING.md trong ZIP cho cách tìm reports và đọc kết quả.
+
+~~~powershell
+npm ci
+npm test
+npm run mutate:overall
+npm run mutate:overall:manual
+npm run mutate:overall:ai
+~~~
+
+ZIP chứa source, lockfile, test, fixtures, script và cấu hình. Báo cáo HTML/JSON của lần audit nằm trong [Source Audit evidence](../../evidence/verification/source-audit-2026-11-06/mutation/). Khi cần đối chiếu Bảng 6.8 lịch sử, dùng revision và điều kiện dưới đây.
 
 Reproduction của initial comparison dùng [frozen revision 806ba19](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/tree/806ba19ee4e09eafe9b2696ccf117a2b1ab841ef). Installed environment và timeout policy ở Bảng 4.3 là điều kiện tham chiếu. Package lockfile được dùng để cài dependencies; SQLite native dependency cần build/install thành công trước khi chạy tests.
 
@@ -927,13 +951,13 @@ Demonstration có thể bắt đầu bằng status-only Cart test, mở survivor
 
 Nếu sử dụng recorded report thay vì live execution, cần nói rõ run conditions và provenance. Video demonstration của nhóm: [https://youtu.be/tVNW5gYQSiM](https://youtu.be/tVNW5gYQSiM).
 
-### C.2. Kill the Mutant activity
+### C.2. Kill the Mutant Activity
 
-Activity design gồm năm actual mutants đã kiểm chứng, không lấy candidate ideas chưa được Stryker sinh làm kết quả. Người học nhận specification ngắn, original/mutant diff và baseline behavior; viết distinguishing input cùng assertion, rồi giải thích result.
+Lớp dùng một phòng T10 Mutation Lab trong tối đa 20 phút. Điều phối viên chiếu năm survivor của luồng checkout và đơn hàng. Người học đọc quy tắc, chọn input và viết assertion bằng Dựng test hoặc Viết code. Sau khi nộp bài ở tab đang soạn, người học đổi một test để góp ý về input, kỳ vọng và điểm quan sát.
 
-Worksheet nên phân biệt ba câu hỏi: behavior nào bị thay đổi; observation nào khiến test nhận ra; oracle lấy từ đâu. Hints đi từ relevant rule đến boundary/state và cuối cùng là observation, tránh đưa sẵn đáp án ngay từ đầu.
+Máy chấm chạy toàn bộ bài trên bản gốc trước, sau đó chạy các mutant của pack. Một mutant mới được phát hiện bằng assertion hợp lệ cộng 1 điểm. Timeout, crash và lỗi môi trường có kết quả riêng. Năm diff trong worksheet thuộc pack 69 mutant từ revision 1be4637. Technical validation đã đối chứng toàn pack. Pilot với người học và tally lớp còn Pending.
 
-Rubric ưu tiên oracle đúng, input phân biệt, assertion có ý nghĩa và giải thích nhất quán với actual result. Tally chỉ ghi Killed đã kiểm chứng; Timeout báo riêng. Activity giới hạn tối đa 20 phút theo scope đã chốt. Worksheet và hướng dẫn cho người điều phối nằm tại [Activity Worksheet](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/blob/50fd1194c018b3c08e7a68936d068442cf5a485d/draft/Activity_Worksheet.md) và [Activity Facilitator Guide](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/blob/50fd1194c018b3c08e7a68936d068442cf5a485d/Activity_Support/Activity_Facilitator_Guide.md). Báo cáo trình bày thiết kế activity; kết quả của người tham gia không thuộc phạm vi báo cáo này.
+[Activity Worksheet](Activity_Worksheet.md) dành cho người tham gia. [Facilitator Guide](Facilitator_Guide.md) giữ diff, answer key, rubric và quy trình chốt bảng điểm. Xem [Activity Validation](../../evidence/activity/rebuild-validation-2026-11-10/README.md) để truy kết quả kỹ thuật.
 
 <a id="phu-luc-d"></a>
 

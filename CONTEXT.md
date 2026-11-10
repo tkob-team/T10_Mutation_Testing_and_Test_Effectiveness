@@ -76,4 +76,4 @@ Người dùng đã xác nhận phần khảo sát và review scope ban đầu h
 
 ## Open Inputs
 
-Ngày seminar và các mốc thực tế; human review và pilot activity 20 phút trên mạng lớp; guide English; media access; audience feedback; hai peer-review partners; cách tách AI-04 và Final Reflection. Kết quả technical source audit đã có trong Source Audit; member review và self-runs vẫn theo evidence riêng.
+Ngày seminar và các mốc thực tế, human review và pilot activity 20 phút trên mạng lớp, media access, audience feedback, hai peer-review partners và xác nhận của tác giả cho AI-04 và Final Reflection. Guide tiếng Anh dùng archive w13 đã có tại [User Guide](docs/User_Guide.md). Kết quả technical source audit đã có trong Source Audit. Member review và self-runs theo evidence riêng.

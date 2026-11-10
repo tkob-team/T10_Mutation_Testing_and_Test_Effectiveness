@@ -1,20 +1,55 @@
 # Git Commit Log
 
-**Snapshot date:** 2026-10-23, Asia/Saigon.
+**Snapshot date:** 2026-11-10, Asia/Saigon.
 
-Lịch sử được xuất trực tiếp từ các Git refs có sẵn trên máy bằng git log --all. Không fetch trong lần xuất này; không suy ra mọi nhánh trên GitHub đã được đồng bộ. Các thay đổi chưa commit và commit tạo sau snapshot không nằm trong log. Thời gian trong bảng là AuthorDate ISO 8601, giữ offset gốc.
-
-Commit author là metadata Git, không thay xác nhận đóng góp hoặc trải nghiệm cá nhân. Workshop được ghi riêng như repo hỗ trợ demo, không gộp vào hai repo chính. Lần cập nhật file log này chưa được commit.
+Lịch sử lấy từ Git refs và HEAD có sẵn trên máy. AuthorDate giữ offset gốc. Commit author là metadata. Đóng góp dùng tracker assignee và trạng thái Done.
 
 ## Seminar Documentation
 
 **Repository:** https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness
+
 **Branch:** main
-**HEAD:** 45c032809938f14d3ee0eedd51bdf33433b751b1
-**Unique commits in available refs:** 165
+
+**HEAD:** ca88e994511792af7401db77c7fcce5c6a897fca
+
+**Unique commits in available refs:** 199
 
 | Commit | Author | AuthorDate | Subject |
 |---|---|---|---|
+| [ca88e9945117](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/ca88e994511792af7401db77c7fcce5c6a897fca) | Duong Thai Hoa Tong | 2026-11-10T11:48:10+07:00 | chore: activity docs and w13 submission |
+| [de1b1f50669b](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/de1b1f50669b0ad8679881f82bfc90b189b491f8) | TonKnight | 2026-11-09T22:12:09+07:00 | docs(skill): drop version labels from titles |
+| [4eecd9432185](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/4eecd94321857050d8fffad23cf6a3e1eee64d3b) | TonKnight | 2026-11-09T21:59:41+07:00 | docs(skill): update stryker-js-mutation-testing to v3 |
+| [615957c02b8f](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/615957c02b8ff01e4a0f8ec2f6fa84dd8b86e9a9) | Duong Thai Hoa Tong | 2026-11-06T17:32:42+07:00 | docs: record source audit and verified mutation evidence |
+| [23b751700774](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/23b751700774f865b9487fca688300524215c40a) | Duong Thai Hoa Tong | 2026-11-06T15:35:48+07:00 | docs: reorganize seminar materials by deliverable |
+| [f41996275883](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/f41996275883ce3f9ca574ce6b83aabf6e861085) | Duong Thai Hoa Tong | 2026-10-28T15:37:00+07:00 | chore: prepare seminar submissions |
+| [f6c69f6afe1a](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/f6c69f6afe1ab8d86e6538a352e98cdec154808c) | Duong Thai Hoa Tong | 2026-10-23T19:05:39+07:00 | docs: Update course code to CSC13003 |
+| [3fa67b5b1a43](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/3fa67b5b1a433b2ce417b5110e708a894725fbdf) | TonKnight | 2026-10-23T18:56:34+07:00 | Merge branch 'main' of https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness |
+| [b0d18a10bdc8](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/b0d18a10bdc896653053a0bcf3384dc4b4fd6290) | TonKnight | 2026-10-23T18:56:25+07:00 | docs(S8): Update 15003 to 13003 |
+| [0dd234c1df12](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/0dd234c1df127d3b5dc749fae040f5e9b0e28d1b) | Duong Thai Hoa Tong | 2026-10-23T18:54:53+07:00 | docs: update ai audit |
+| [3faf147ebfc8](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/3faf147ebfc869325d3258d30d8cfdfa3d271830) | TonKnight | 2026-10-23T18:43:30+07:00 | docs(S8): update AI-02 pdf |
+| [f8fc21cee70a](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/f8fc21cee70a539bb30d99f6fbac4a21c65d97d5) | TonKnight | 2026-10-23T18:36:04+07:00 | Merge branch 'main' of https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness |
+| [96d72e0d2797](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/96d72e0d27978c1942d7a96bf33c809a4e77ca49) | TonKnight | 2026-10-23T18:31:30+07:00 | docs(S8): Transfer PDF for Hoang |
+| [00e36ac24f09](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/00e36ac24f091a5b4368f1bf13038ec266b81cdd) | TonKnight | 2026-10-23T18:31:20+07:00 | docs(S8): Update AI-02 |
+| [3332fe08874c](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/3332fe08874c34079d3542941079e02a4c280e3b) | Duong Thai Hoa Tong | 2026-10-23T18:26:11+07:00 | Create SKILL.md |
+| [b3ac5839ce94](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/b3ac5839ce94576541800aba974265fa5af1679f) | TonKnight | 2026-10-23T18:24:30+07:00 | Merge branch 'main' of https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness |
+| [92f6ec007b40](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/92f6ec007b403a21c2ec0af5689b2268f72ddabb) | TonKnight | 2026-10-23T18:24:21+07:00 | add stryker skill |
+| [53d4b4b7e19b](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/53d4b4b7e19b6fd45c1cd7b20ce4b8aa8774bf99) | Duong Thai Hoa Tong | 2026-10-23T18:24:01+07:00 | Update Seminar_Report.md |
+| [4604b8903d14](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/4604b8903d143ea8c0121ed758a7626d5af3094c) | TonKnight | 2026-10-23T18:21:28+07:00 | docs(S8): Write Seminar Report |
+| [50fd1194c018](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/50fd1194c018b3c08e7a68936d068442cf5a485d) | Duong Thai Hoa Tong | 2026-10-23T17:43:05+07:00 | docs: Hoangs sign |
+| [0d5af102ec79](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/0d5af102ec79279a7282ef47f9e39efd88528176) | TonKnight | 2026-10-23T17:34:57+07:00 | Merge branch 'main' of https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness |
+| [9d07ce25b2c2](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/9d07ce25b2c2c1279fff5f993d9924e6a8118fe8) | TonKnight | 2026-10-23T17:24:02+07:00 | docs(S8): Write AI-04 |
+| [49482e8aebd0](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/49482e8aebd092b260a89034f3269ed563fc4216) | TonKnight | 2026-10-23T17:23:51+07:00 | docs(S8): Write AI-03 |
+| [f2822fda7232](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/f2822fda7232f72e0feec430a20f7cf15fe45b64) | TonKnight | 2026-10-23T17:23:38+07:00 | docs(S8): Write AI-02 |
+| [284c007c2b84](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/284c007c2b8424865d272af593065e7c5fc37f11) | Duong Thai Hoa Tong | 2026-10-23T16:57:51+07:00 | Merge branch 'main' of https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness |
+| [0c2e87ff4393](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/0c2e87ff4393f7ef61d5b54c9275ddc87d45e2c5) | Duong Thai Hoa Tong | 2026-10-23T16:57:48+07:00 | chore: source codes + contribute sheet |
+| [8cd978d7012b](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/8cd978d7012b0409e9bb1bfaa4a25147b8e7953f) | TonKnight | 2026-10-23T16:56:01+07:00 | Update all AI-LOG |
+| [9ae6807a7d03](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/9ae6807a7d033d1db2b4ce0a2a7bc0075f8778a5) | TonKnight | 2026-10-23T16:53:29+07:00 | docs: đưa AI-02/03/04 23120255 về mẫu; Tấn Hiệp tự viết |
+| [c5c510e7b1e7](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/c5c510e7b1e7a65ea7bce5a00f6f9ce77c19a6da) | TonKnight | 2026-10-23T16:52:32+07:00 | docs(S4): update Verification Note |
+| [c25a4be05fc8](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/c25a4be05fc882498da9d92850b290eaaa534c95) | TonKnight | 2026-10-23T16:41:51+07:00 | docs(S8): add S4 reflections and signature to AI-04 for 23120255 |
+| [5307945c2215](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/5307945c2215b235cd59b36977f9fddbb6e0d5b4) | TonKnight | 2026-10-23T16:36:55+07:00 | docs(S8): add S4 tool use, prompt, verification and signature to AI-03 for 23120255 |
+| [542b562b1f54](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/542b562b1f545a78d6e8f84a926c99072c41c399) | TonKnight | 2026-10-23T16:34:12+07:00 | docs(S8): update AI-02 audit table, totals and signature for 23120255 |
+| [8ad3663f334f](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/8ad3663f334f5262684c64a9d56289e7e41f63c3) | TonKnight | 2026-10-23T16:27:04+07:00 | docs(S4): confirm S4 artifact verdicts and student fixes in AI record |
+| [3c5f0bd93460](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/3c5f0bd9346059f40df05642232b94f9f3239f35) | TonKnight | 2026-10-23T16:21:42+07:00 | chore(ai-log): update prompt logs |
 | [45c032809938](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/45c032809938f14d3ee0eedd51bdf33433b751b1) | TonKnight | 2026-10-23T16:17:34+07:00 | docs(S4): add AI record entry for S4-F01 guide verification |
 | [cdbedafa2bd3](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/cdbedafa2bd35baece3d4397c785bcd2a149abc3) | TonKnight | 2026-10-23T16:17:18+07:00 | docs(S4-F01): extend verification notes to the merged User Guide |
 | [6d73a0bad846](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/6d73a0bad846b16bb2b101c87972aea33e931317) | TonKnight | 2026-10-23T16:17:18+07:00 | docs(S4-F01): add User Guide verification script and output |
@@ -74,7 +109,7 @@ Commit author là metadata Git, không thay xác nhận đóng góp hoặc trả
 | [0b52b3071423](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/0b52b3071423397a8ef4033c9158b689a6bd8bbd) | TonKnight | 2026-10-23T12:14:59+07:00 | docs(S3): add AI Record artifacts WF-03, I01-01, I01-02, E01-01 |
 | [6536c4b74ca9](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/6536c4b74ca9590fb900cf44d44c5b8b46abcc14) | TonKnight | 2026-10-23T12:14:18+07:00 | chore(ai-log): add claude.ai session log 5aa8b0cf for S3-I01 and member self-runs |
 | [ce7d817464fa](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/ce7d817464fa1d46d0fd30b56e7d639e2efc1ec6) | Duong Thai Hoa Tong | 2026-10-23T12:02:46+07:00 | Merge branch 's3/A03-B03-phuc-hoang' into main |
-| [831e7b5f29e5](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/831e7b5f29e5e8cd4d419e8301e3dc5db856ffb3) | Hoang Nguyen Phuc | 2026-10-23T11:57:13+07:00 | docs(S3-I03): rerun Cart &amp; Orders baseline/manual/Claude and send guide feedback to author |
+| [831e7b5f29e5](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/831e7b5f29e5e8cd4d419e8301e3dc5db856ffb3) | Hoang Nguyen Phuc | 2026-10-23T11:57:13+07:00 | docs(S3-I03): rerun Cart & Orders baseline/manual/Claude and send guide feedback to author |
 | [93a9ca645468](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/93a9ca645468b712f64647873176f89debda4ee5) | TonKnight | 2026-10-23T11:44:37+07:00 | test(S3): record member self-runs D01/E01/F01/G01 and mutant comparison |
 | [d1ae9d20561f](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/d1ae9d20561f9282c4d34ecca267878556457b50) | TonKnight | 2026-10-23T11:42:23+07:00 | chore(ai-log): update prompt logs |
 | [506d9f6bcb6a](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/506d9f6bcb6a06acdbca8776ce40f0b2cefd0e2b) | TonKnight | 2026-10-23T11:30:29+07:00 | docs(S3-I01): add npm ci step and archive provenance to Coupons reproduction guide |
@@ -117,7 +152,7 @@ Commit author là metadata Git, không thay xác nhận đóng góp hoặc trả
 | [7f3df43fffdd](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/7f3df43fffdd6d635b290c20b199cb98e021fc0e) | Hoang Nguyen Phuc | 2026-10-23T10:29:28+07:00 | Merge remote-tracking branch 'origin/main' into s3/A03-B03-phuc-hoang |
 | [0b1ae95eba57](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/0b1ae95eba5737751f7ee8549ee9e32abfe37f70) | TonKnight | 2026-10-23T10:26:17+07:00 | chore(ai-log): update prompt logs |
 | [77ddedca248f](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/77ddedca248f9e6a7afe5589db579c1d4993979b) | Duong Thai Hoa Tong | 2026-10-23T10:15:02+07:00 | docs: finalize seminar AI deliverables |
-| [d4020220671e](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/d4020220671e23ed714e3c9215ab0d73a5468c96) | Hoang Nguyen Phuc | 2026-10-23T10:13:31+07:00 | docs(S3-E03): record Authentication &amp; Users Stryker run on frozen baseline 806ba19 |
+| [d4020220671e](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/d4020220671e23ed714e3c9215ab0d73a5468c96) | Hoang Nguyen Phuc | 2026-10-23T10:13:31+07:00 | docs(S3-E03): record Authentication & Users Stryker run on frozen baseline 806ba19 |
 | [98620f0a7609](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/98620f0a760908309047a9db8b5deb10450ac4ca) | Hoang Nguyen Phuc | 2026-10-23T10:08:11+07:00 | Merge remote-tracking branch 'origin/main' into s3/A03-B03-phuc-hoang |
 | [0c41e2ffe3e2](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/0c41e2ffe3e2d987eac9655fb9258b56612a77d2) | Hoang Nguyen Phuc | 2026-10-23T10:08:11+07:00 | docs(S3-TOOLING): add Phuc Hoang AI transcript and s3-experiment skill draft |
 | [3bd2ce66abcd](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/3bd2ce66abcd5acba23c9c9f7175f03e104779fb) | Duong Thai Hoa Tong | 2026-10-23T08:03:54+07:00 | docs: expand seminar report and user guide |
@@ -152,20 +187,20 @@ Commit author là metadata Git, không thay xác nhận đóng góp hoặc trả
 | [0bb84797b9e0](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/0bb84797b9e0d8980b7c0a75670c5c711ad33744) | Duong Thai Hoa Tong | 2026-10-22T22:34:31+07:00 | docs: add seminar deliverable drafts |
 | [49c680326c3d](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/49c680326c3d3f0c2e9c8b5b5d3a8e1addeadb10) | Tong Duong Thai Hoa | 2026-10-22T22:12:00+07:00 | Merge pull request #1 from tkob-team/s3/A03-B03-phuc-hoang |
 | [4d4b48f8f1fa](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/4d4b48f8f1fa7ce7c223c5188102cdb3dfab20b9) | Hoang Nguyen Phuc | 2026-10-22T21:59:07+07:00 | docs(S3-A03): record notes correction in AI Record and describe FM-S3 check without script names |
-| [9e7d83072e1d](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/9e7d83072e1ddb17125648e991eac57dda1f7ebd) | Hoang Nguyen Phuc | 2026-10-22T21:54:09+07:00 | docs(S3-E03): add provisional Auth &amp; Users mutation run (no common baseline yet) |
+| [9e7d83072e1d](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/9e7d83072e1ddb17125648e991eac57dda1f7ebd) | Hoang Nguyen Phuc | 2026-10-22T21:54:09+07:00 | docs(S3-E03): add provisional Auth & Users mutation run (no common baseline yet) |
 | [77ce322cc6c1](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/77ce322cc6c1eafc982d2fdb88bbb3451ba7338f) | Hoang Nguyen Phuc | 2026-10-22T21:47:45+07:00 | docs(S3-C03,S3-D03): add Phuc Hoang experiment log, setup runs and Auth test suite evidence |
 | [359b6532e4db](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/359b6532e4db6db1edbd8e12c8db11bdacb99c86) | Hoang Nguyen Phuc | 2026-10-22T21:47:45+07:00 | docs(S3-A03): correct lock rule in notes using SUT README FR-02 |
 | [bb6be7ba94a0](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/bb6be7ba94a0af921e259472f78ca0bbe141222f) | TonKnight | 2026-10-22T21:35:04+07:00 | docs(S3-F01): add manual-branch mutation run F01-1 evidence |
 | [3c85ea36be87](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/3c85ea36be87603845c431cda8429c8a5ec7386e) | TonKnight | 2026-10-22T21:10:23+07:00 | docs(S3-F01): add F01/G01 setup report; tighten E01 Timeout note |
 | [3cf939cd0988](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/3cf939cd0988ff4c2b9585beb4d7cf78ed62c5a5) | TonKnight | 2026-10-22T21:09:43+07:00 | docs(S3-E01): note environment-dependent Timeout counts |
 | [69a0a16653c1](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/69a0a16653c15fd5e21a58ec6d59ee0541854389) | TonKnight | 2026-10-22T21:07:27+07:00 | chore(ai-log): update prompt logs |
-| [16a4f72d5701](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/16a4f72d5701e75d70ad8f5d85a814dd251fd063) | TonKnight | 2026-10-22T21:00:57+07:00 | docs(S3-E01): record Cart &amp; Orders domain baseline run; finalize AI Record verdicts |
+| [16a4f72d5701](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/16a4f72d5701e75d70ad8f5d85a814dd251fd063) | TonKnight | 2026-10-22T21:00:57+07:00 | docs(S3-E01): record Cart & Orders domain baseline run; finalize AI Record verdicts |
 | [e2851f8d71cd](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/e2851f8d71cddf148d18dc2c9a70b91cefb6eac6) | TonKnight | 2026-10-22T20:58:03+07:00 | chore(ai-log): update prompt logs |
 | [bbfd308a11b8](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/bbfd308a11b814ea6c0da82bfa162cd9a6328ec6) | TonKnight | 2026-10-22T20:46:41+07:00 | docs(S3-D01): map AI Record artifacts to prompt logs; add C01-02, C01-03, D01-03, D01-04, WF-02 |
 | [78642bd4eed6](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/78642bd4eed628287656e9291105b8f53132c79f) | TonKnight | 2026-10-22T20:36:33+07:00 | chore(ai-log): redact Windows username in prompt logs |
 | [345e1b18b5db](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/345e1b18b5dbe949c91f4ac224fc3e53dc9a73f6) | TonKnight | 2026-10-22T20:31:50+07:00 | chore(ai-log): merge Claude Code sessions into one prompt log; refresh claude.ai log |
 | [b1674c88a615](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/b1674c88a6153df862fd249c3c967823fc183397) | TonKnight | 2026-10-22T20:25:52+07:00 | chore(ai-log): add claude.ai and Claude Code prompt logs (S3) |
-| [5fc08df1811e](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/5fc08df1811eb83c93160e96eebeadf328830d48) | TonKnight | 2026-10-22T20:15:44+07:00 | docs(S3-D01): record Cart &amp; Orders tests, defects, decisions and Claude Code runs; clarify F-A01-05 |
+| [5fc08df1811e](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/5fc08df1811eb83c93160e96eebeadf328830d48) | TonKnight | 2026-10-22T20:15:44+07:00 | docs(S3-D01): record Cart & Orders tests, defects, decisions and Claude Code runs; clarify F-A01-05 |
 | [e0e82a4bba81](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/e0e82a4bba81ac69a9d78c92db033cebb646a35a) | Duong Thai Hoa Tong | 2026-10-22T11:34:33+07:00 | docs: update AI Agent seminar scope |
 | [0525bff5f52d](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/0525bff5f52d3dae2c7c1a21401c8cbe9847b96a) | Hoang Nguyen Phuc | 2026-10-21T21:27:32+07:00 | docs(S3-A03,S3-B03): add Phuc Hoang research notes, sandbox runs and AI record |
 | [017b080c1c39](https://github.com/tkob-team/T10_Mutation_Testing_and_Test_Effectiveness/commit/017b080c1c39f0249b31d3d4516b72c65a904537) | Duong Thai Hoa Tong | 2026-10-18T13:09:01+07:00 | docs(workflow): remove local planning references and redundant record |
@@ -184,12 +219,16 @@ Commit author là metadata Git, không thay xác nhận đóng góp hoặc trả
 ## Research SUT
 
 **Repository:** https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness
+
 **Branch:** main
-**HEAD:** 4b28756a1d2a59cb4b74300709122180056f9f55
-**Unique commits in available refs:** 33
+
+**HEAD:** 1be4637e20241054e23b99c8e2412fd2e7cbbc68
+
+**Unique commits in available refs:** 34
 
 | Commit | Author | AuthorDate | Subject |
 |---|---|---|---|
+| [1be4637e2024](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/commit/1be4637e20241054e23b99c8e2412fd2e7cbbc68) | Duong Thai Hoa Tong | 2026-11-06T17:30:42+07:00 | fix: make mutation research profiles reproducible |
 | [4b28756a1d2a](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/commit/4b28756a1d2a59cb4b74300709122180056f9f55) | Duong Thai Hoa Tong | 2026-10-23T14:05:10+07:00 | Update package.json |
 | [69b845a52df2](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/commit/69b845a52df2320439917f3c0544175b36f9b4f3) | Tong Duong Thai Hoa | 2026-10-23T12:25:46+07:00 | Merge pull request #3 from tkob-team/s3/G03-auth |
 | [87fb61d31d2d](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/commit/87fb61d31d2d4c69123f134422278dfca07b08fd) | Tong Duong Thai Hoa | 2026-10-23T12:25:04+07:00 | Merge branch 'main' into s3/G03-auth |
@@ -211,18 +250,34 @@ Commit author là metadata Git, không thay xác nhận đóng góp hoặc trả
 | [6dc835e7e0c7](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/commit/6dc835e7e0c774e41fe90e17330da75412126f91) | Duong Thai Hoa Tong | 2026-10-23T02:36:44+07:00 | index on s3/coupons: 6850e9f test(S3-C02,D02): add isolated Coupons suites and Agent tutorial |
 | [8763195b6f18](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/commit/8763195b6f18d40f4b60cc05d94d7d698ccdae34) | Duong Thai Hoa Tong | 2026-10-23T02:36:44+07:00 | untracked files on s3/coupons: 6850e9f test(S3-C02,D02): add isolated Coupons suites and Agent tutorial |
 | [f4696c6188d2](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/commit/f4696c6188d2277fe860a7f7ad2fe2234f61b68c) | TonKnight | 2026-10-23T02:05:03+07:00 | test(S3-G01): mark AI assertions as reviewed and fix provenance header |
-| [143a01622617](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/commit/143a016226172602be6f40fce5378cdd69d8ff0d) | TonKnight | 2026-10-23T01:59:42+07:00 | test(S3-G01): add raw AI assertions for 6 Cart &amp; Orders survivors |
+| [143a01622617](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/commit/143a016226172602be6f40fce5378cdd69d8ff0d) | TonKnight | 2026-10-23T01:59:42+07:00 | test(S3-G01): add raw AI assertions for 6 Cart & Orders survivors |
 | [b77f5d6ab580](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/commit/b77f5d6ab580ae1823fb4272290116a94328c42e) | TonKnight | 2026-10-23T01:31:12+07:00 | docs(S3-F01): fix spec reference and oracle note in manual suite |
 | [0eadd5f52b7b](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/commit/0eadd5f52b7b127f94a8fff242c152f8f6fa7808) | TonKnight | 2026-10-23T01:28:38+07:00 | test(S3-F01): restore cancel test and fix spec references in manual suite |
 | [3a771c2c408f](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/commit/3a771c2c408f7691ab87e2907a69718227507ce0) | TonKnight | 2026-10-23T01:20:14+07:00 | test(S3-F01): add manual assertions for cart and order survivors, drop coupon test |
 | [6850e9f899a4](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/commit/6850e9f899a47702982fb65a482ad821245de31e) | Duong Thai Hoa Tong | 2026-10-22T23:18:15+07:00 | test(S3-C02,D02): add isolated Coupons suites and Agent tutorial |
-| [02362677c6d3](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/commit/02362677c6d339a0de8f6f002b4d8dbb8140c5ca) | TonKnight | 2026-10-22T21:35:25+07:00 | test(S3-F01): add manual assertions for selected Cart &amp; Orders survivors |
+| [02362677c6d3](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/commit/02362677c6d339a0de8f6f002b4d8dbb8140c5ca) | TonKnight | 2026-10-22T21:35:25+07:00 | test(S3-F01): add manual assertions for selected Cart & Orders survivors |
 | [78745e20d1e9](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/commit/78745e20d1e92ddc7bb63c0e7907a88c757cc502) | TonKnight | 2026-10-22T21:09:30+07:00 | test(S3-G01): add AI-branch Jest and Stryker config |
 | [c0954def84e2](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/commit/c0954def84e2255895f8029ec903d8263a353728) | TonKnight | 2026-10-22T21:08:14+07:00 | test(S3-F01): add manual-branch Jest and Stryker config |
-| [8d60e9b8ab6b](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/commit/8d60e9b8ab6b79d533c18d8c5b5e5b60b4b6720f) | TonKnight | 2026-10-22T20:15:44+07:00 | test(S3-D01): add Cart &amp; Orders baseline and defect tests with isolated harness |
+| [8d60e9b8ab6b](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/commit/8d60e9b8ab6b79d533c18d8c5b5e5b60b4b6720f) | TonKnight | 2026-10-22T20:15:44+07:00 | test(S3-D01): add Cart & Orders baseline and defect tests with isolated harness |
 | [92bbf226459b](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/commit/92bbf226459bc8de076a465e368c1f20401380a0) | TonKnight | 2026-10-16T20:22:48+07:00 | chore(S3-C01): add root .gitignore for node_modules, Stryker and coverage outputs |
 | [85af3ba875c8](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/commit/85af3ba875c88283615e22cb108f13e2fccaf0e9) | ttbhanh-hcmus | 2026-05-15T08:30:35+07:00 | first upload |
 | [2f9bf2bab458](https://github.com/tkob-team/eshop-sut_T10_Mutation_Testing_and_Test_Effectiveness/commit/2f9bf2bab45855abf211377a5d5eba10031649e3) | Hanh Tran | 2026-05-15T08:27:44+07:00 | Initial commit |
+
+## T10 Mutation Lab
+
+**Repository:** https://github.com/tkob-team/t10-mutation-lab
+
+**Branch:** main
+
+**HEAD:** 064aca0ea4230c3eba7cccdddaacf1815e0a7d2d
+
+**Unique commits in available refs:** 3
+
+| Commit | Author | AuthorDate | Subject |
+|---|---|---|---|
+| [064aca0ea423](https://github.com/tkob-team/t10-mutation-lab/commit/064aca0ea4230c3eba7cccdddaacf1815e0a7d2d) | Duong Thai Hoa Tong | 2026-11-10T12:30:43+07:00 | feat: add participant groups and ranking score totals |
+| [fff079849b38](https://github.com/tkob-team/t10-mutation-lab/commit/fff079849b38ccc85440cddf702009e2ef5b7bc4) | Duong Thai Hoa Tong | 2026-11-10T11:46:28+07:00 | refactor |
+| [2e43a5665205](https://github.com/tkob-team/t10-mutation-lab/commit/2e43a56652050587c3ddae5503d3a43385cf2a18) | Duong Thai Hoa Tong | 2026-11-09T17:32:24+07:00 | feat: add mutation lab activity platform |
 
 ## Supporting Workshop Repository
 

@@ -302,3 +302,25 @@ Commit follow-up cho TH-DOCS-REORGANIZATION-20261106: người dùng yêu cầu 
 | Human work / verdict | Người dùng chọn scope và thứ tự; human review, member self-run và verdict cá nhân Pending |
 | Limits | Không sinh assertions mới để nhận là independent manual work; không xếp hạng model; native RuntimeError và Timeout không tính là assertion kills |
 | Git handling | Audit ban đầu dừng trước commit. Sau đó người dùng yêu cầu commit phần audit: source checkpoint 1be4637, docs/evidence commit riêng; không push. Raw execution metadata giữ nguyên |
+
+### Artifact TH-W13-SLIDE-TRANSCRIPT-20261110
+
+| Field | Value |
+|---|---|
+| Work item | Đồng bộ Markdown và bộ slide làm việc theo PowerPoint/PDF w13 do người dùng cung cấp |
+| Tool / Model | OpenAI Codex AI Agent, phiên bản model phục vụ chưa được xác nhận |
+| AI contribution | Chuyển 22 slide sang format w6, đối chiếu speaker notes, đồng bộ `docs/slides` và kiểm kê các mục w13 cần review |
+| Outputs | [W13 Slide Markdown](../submission/w13/T10_Mutation_Testing_Slides.md), [Slides Workspace](../docs/slides/README.md) |
+| Verification | Đối chiếu thứ tự 22 slide, 21 speaker notes, nhãn biểu đồ, local links và hash của hai cặp PDF/PPTX |
+| Human review | Pending. Việc xác nhận nội dung, chữ ký, playback video và nghiệm thu thuộc nhóm |
+
+### Artifact TH-W13-DOCUMENTATION-20261110
+
+| Field | Value |
+|---|---|
+| Work item | Hoàn thiện tài liệu w13 theo deck và source audit, giữ phần link video cho thành viên phụ trách |
+| Tool / Model | OpenAI Codex AI Agent, phiên bản model phục vụ chưa được xác nhận |
+| AI contribution | Tách historical joint run và source audit, cập nhật hướng dẫn chạy từ ZIP, chọn năm diff checkout có đối chứng, xuất lại PDF và làm mới Git log |
+| Outputs | [W13 AI Usage Addendum](../submission/w13/AI_Usage_Declaration/W13_AI_Usage_Addendum.md), [Deliverables Checklist](../docs/Deliverables_Checklist.md) |
+| Verification | Từ ZIP giải nén riêng, npm ci hoàn tất. Overall baseline pass 88 tests. Coupons baseline/manual/AI pass 26/35/40 tests. Tutorial weak có 3 Killed và 2 Survived, strong có 5 Killed. Ba lượt mutation Coupons hoàn tất. Mutant dòng 474 với replacement max_uses_per_user && 1 là Survived ở baseline và Killed ở hai bộ bổ sung. Năm diff activity khớp controls đã lưu. PDF 28 trang và local links được kiểm tra |
+| Limits | Tracker được đọc để đối chiếu. Audience feedback, peer review, reflection cá nhân và chữ ký cần đúng nguồn và đúng người |
